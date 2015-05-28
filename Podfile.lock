@@ -1,0 +1,27 @@
+PODS:
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - Toast (2.4)
+  - WCAlertView (1.0.1)
+
+DEPENDENCIES:
+  - ReactiveCocoa
+  - SDWebImage
+  - Toast
+  - WCAlertView
+
+SPEC CHECKSUMS:
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
+  WCAlertView: 36a1d087d0b3eb7f6ce3dae623fbb474f26f2beb
+
+COCOAPODS: 0.36.0
