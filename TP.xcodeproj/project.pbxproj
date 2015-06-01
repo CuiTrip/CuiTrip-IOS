@@ -34,14 +34,18 @@
 		45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AA21B1B535E00417606 /* VZListDefaultErrorCell.m */; };
 		45028AC11B1B535E00417606 /* VZListDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AA41B1B535E00417606 /* VZListDefaultLoadingCell.m */; };
 		45028AC21B1B535E00417606 /* VZListDefaultTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AA61B1B535E00417606 /* VZListDefaultTextCell.m */; };
+		45028AC71B1C753300417606 /* ETContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AC61B1C753300417606 /* ETContainerViewController.m */; };
+		45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AC91B1C755700417606 /* TPRootViewController.m */; };
+		45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028ACC1B1C75BB00417606 /* TPTabBarViewController.m */; };
+		45028AD11B1C764A00417606 /* TPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AD01B1C764A00417606 /* TPUser.m */; };
+		45028AD61B1C797C00417606 /* TPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AD51B1C797C00417606 /* TPLoginViewController.m */; };
+		45028AD91B1C79CA00417606 /* TPLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AD81B1C79CA00417606 /* TPLoginManager.m */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
-		459B24951B176A1C009BB189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459B248B1B176A1C009BB189 /* Main.storyboard */; };
 		459B24961B176A1C009BB189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459B248D1B176A1C009BB189 /* Images.xcassets */; };
 		459B24971B176A1C009BB189 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459B248E1B176A1C009BB189 /* Info.plist */; };
 		459B24981B176A1C009BB189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B248F1B176A1C009BB189 /* main.m */; };
-		459B24991B176A1C009BB189 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 459B24911B176A1C009BB189 /* ViewController.mm */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +119,19 @@
 		45028AA51B1B535E00417606 /* VZListDefaultTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZListDefaultTextCell.h; sourceTree = "<group>"; };
 		45028AA61B1B535E00417606 /* VZListDefaultTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZListDefaultTextCell.m; sourceTree = "<group>"; };
 		45028AA71B1B535E00417606 /* Vizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vizzle.h; sourceTree = "<group>"; };
+		45028AC51B1C753300417606 /* ETContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETContainerViewController.h; sourceTree = "<group>"; };
+		45028AC61B1C753300417606 /* ETContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETContainerViewController.m; sourceTree = "<group>"; };
+		45028AC81B1C755700417606 /* TPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPRootViewController.h; sourceTree = "<group>"; };
+		45028AC91B1C755700417606 /* TPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPRootViewController.m; sourceTree = "<group>"; };
+		45028ACB1B1C75BB00417606 /* TPTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTabBarViewController.h; sourceTree = "<group>"; };
+		45028ACC1B1C75BB00417606 /* TPTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTabBarViewController.m; sourceTree = "<group>"; };
+		45028ACF1B1C764A00417606 /* TPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUser.h; sourceTree = "<group>"; };
+		45028AD01B1C764A00417606 /* TPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUser.m; sourceTree = "<group>"; };
+		45028AD21B1C76E200417606 /* TPHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPHeader.h; sourceTree = "<group>"; };
+		45028AD41B1C797C00417606 /* TPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLoginViewController.h; sourceTree = "<group>"; };
+		45028AD51B1C797C00417606 /* TPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLoginViewController.m; sourceTree = "<group>"; };
+		45028AD71B1C79CA00417606 /* TPLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLoginManager.h; sourceTree = "<group>"; };
+		45028AD81B1C79CA00417606 /* TPLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLoginManager.m; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,12 +139,9 @@
 		459B24871B176A1C009BB189 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		459B24881B176A1C009BB189 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		459B248A1B176A1C009BB189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		459B248C1B176A1C009BB189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		459B248D1B176A1C009BB189 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		459B248E1B176A1C009BB189 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459B248F1B176A1C009BB189 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		459B24901B176A1C009BB189 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		459B24911B176A1C009BB189 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		459B25DB1B1819B2009BB189 /* TP.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TP.pch; path = ../TP.pch; sourceTree = "<group>"; };
 		459B267D1B1838E4009BB189 /* TPAssert.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = TPAssert.h; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +280,49 @@
 			path = list;
 			sourceTree = "<group>";
 		};
+		45028AC31B1C753300417606 /* 业务 */ = {
+			isa = PBXGroup;
+			children = (
+				45028AD31B1C773A00417606 /* 登录注册 */,
+				45028ACE1B1C763900417606 /* 用户 */,
+				45028AC41B1C753300417606 /* 容器 */,
+			);
+			path = "业务";
+			sourceTree = "<group>";
+		};
+		45028AC41B1C753300417606 /* 容器 */ = {
+			isa = PBXGroup;
+			children = (
+				45028AC51B1C753300417606 /* ETContainerViewController.h */,
+				45028AC61B1C753300417606 /* ETContainerViewController.m */,
+				45028AC81B1C755700417606 /* TPRootViewController.h */,
+				45028AC91B1C755700417606 /* TPRootViewController.m */,
+				45028ACB1B1C75BB00417606 /* TPTabBarViewController.h */,
+				45028ACC1B1C75BB00417606 /* TPTabBarViewController.m */,
+			);
+			path = "容器";
+			sourceTree = "<group>";
+		};
+		45028ACE1B1C763900417606 /* 用户 */ = {
+			isa = PBXGroup;
+			children = (
+				45028ACF1B1C764A00417606 /* TPUser.h */,
+				45028AD01B1C764A00417606 /* TPUser.m */,
+				45028AD71B1C79CA00417606 /* TPLoginManager.h */,
+				45028AD81B1C79CA00417606 /* TPLoginManager.m */,
+			);
+			path = "用户";
+			sourceTree = "<group>";
+		};
+		45028AD31B1C773A00417606 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				45028AD41B1C797C00417606 /* TPLoginViewController.h */,
+				45028AD51B1C797C00417606 /* TPLoginViewController.m */,
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
 		4547815C1B14234F00B4A24D = {
 			isa = PBXGroup;
 			children = (
@@ -307,17 +364,16 @@
 		459B24851B176A1C009BB189 /* TP */ = {
 			isa = PBXGroup;
 			children = (
+				45028AC31B1C753300417606 /* 业务 */,
 				45028A671B1B535E00417606 /* Vizzle */,
 				459B24871B176A1C009BB189 /* AppDelegate.h */,
 				459B24881B176A1C009BB189 /* AppDelegate.m */,
 				459B24891B176A1C009BB189 /* LaunchScreen.xib */,
-				459B248B1B176A1C009BB189 /* Main.storyboard */,
 				459B248D1B176A1C009BB189 /* Images.xcassets */,
 				459B248E1B176A1C009BB189 /* Info.plist */,
 				459B248F1B176A1C009BB189 /* main.m */,
-				459B24901B176A1C009BB189 /* ViewController.h */,
-				459B24911B176A1C009BB189 /* ViewController.mm */,
 				459B267D1B1838E4009BB189 /* TPAssert.h */,
+				45028AD21B1C76E200417606 /* TPHeader.h */,
 			);
 			path = TP;
 			sourceTree = "<group>";
@@ -421,7 +477,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459B24951B176A1C009BB189 /* Main.storyboard in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
@@ -481,23 +536,28 @@
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
+				45028AC71B1C753300417606 /* ETContainerViewController.m in Sources */,
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
+				45028AD61B1C797C00417606 /* TPLoginViewController.m in Sources */,
+				45028AD11B1C764A00417606 /* TPUser.m in Sources */,
 				45028AA81B1B535E00417606 /* VZAFRequest.m in Sources */,
-				459B24991B176A1C009BB189 /* ViewController.mm in Sources */,
 				45028AC11B1B535E00417606 /* VZListDefaultLoadingCell.m in Sources */,
 				45028AB61B1B535E00417606 /* VZHTTPNetworkAgent.m in Sources */,
 				45028ABC1B1B535E00417606 /* VZHTTPURLResponseCache.m in Sources */,
+				45028AD91B1C79CA00417606 /* TPLoginManager.m in Sources */,
 				45028AB21B1B535E00417606 /* VZListItem.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
 				45028AB31B1B535E00417606 /* VZModel.m in Sources */,
 				45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */,
+				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
 				45028AB01B1B535E00417606 /* VZItem.m in Sources */,
 				45028AC21B1B535E00417606 /* VZListDefaultTextCell.m in Sources */,
+				45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */,
 				45028AAE1B1B535E00417606 /* VZHTTPModel.m in Sources */,
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
@@ -533,14 +593,6 @@
 				459B248A1B176A1C009BB189 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		459B248B1B176A1C009BB189 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				459B248C1B176A1C009BB189 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TPRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +17,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    TPRootViewController* rootViewController = [TPRootViewController new];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = rootViewController;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [self.window makeKeyAndVisible];
+    
+    
+    //push
+    if (launchOptions) {
+        
+        NSDictionary*userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if(userInfo)
+        {
+            //[self didReiveceRemoteNotificatison:userInfo];
+        }
+    }
+    
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
