@@ -9,8 +9,23 @@
 #ifndef TP_TP_pch
 #define TP_TP_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-#import "TPTheme.h"
+
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <Toast/UIView+Toast.h>
+#import <WCAlertView/WCAlertView.h>
+#import "Vizzle.h"
+
+#endif
+
+#ifdef __cplusplus
+#include "TPAssert.h"
+#endif
+
 
 #endif

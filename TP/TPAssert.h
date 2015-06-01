@@ -9,15 +9,17 @@
 #ifndef TP_TPTheme_h
 #define TP_TPTheme_h
 
-namespace TP {
+#ifdef __cplusplus
+extern "C"{
+#endif
     
+    namespace TP
+    {
     
+    }
     
+#ifdef __cplusplus
 }
-
-
-#define TPDefaultColor  [UIColor colorWithGray]
-
-
-
+#endif
+    
 #endif

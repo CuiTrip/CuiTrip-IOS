@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TPAssert.h"
 
 @interface ViewController ()
 
