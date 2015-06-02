@@ -22,6 +22,15 @@
     [super autoKVCBinding:dictionary];
     
     //todo...
+    if (self.userName.length > 0 && self.userCity.length > 0) {
+        self.attributedUserString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@   %@",self.userName,self.userCity]];
+        [self.attributedUserString addAttributes:@{NSForegroundColorAttributeName:[TPTheme themeColor]} range:NSMakeRange(0, self.userName.length)];
+    }
+    else
+        self.attributedUserString = [[NSMutableAttributedString alloc]initWithString:@""];
+   
+    
+    
 }
 
 @end

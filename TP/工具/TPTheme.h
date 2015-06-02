@@ -1,0 +1,21 @@
+//
+//  TPTheme.h
+//  TP
+//
+//  Created by moxin on 15/6/2.
+//  Copyright (c) 2015年 VizLab. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface TPTheme : NSObject
+
++ (void)config;
+
++ (UIColor* )bgColor;
+
++ (UIColor* )subTitleColor;
+
++ (UIColor* )themeColor;
+
+@end

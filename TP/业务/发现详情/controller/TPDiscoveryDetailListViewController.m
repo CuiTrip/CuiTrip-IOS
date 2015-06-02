@@ -1,30 +1,30 @@
   
 //
-//  TPDiscoveryListViewController.m
+//  TPDiscoveryDetailListViewController.m
 //  TP
 //
-//  Created by moxin on 2015-06-01 19:38:20 +0800.
+//  Created by moxin on 2015-06-02 22:32:08 +0800.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
 
 
-#import "TPDiscoveryListViewController.h"
-#import "TPDiscoveryListModel.h" 
-#import "TPDiscoveryListViewDataSource.h"
-#import "TPDiscoveryListViewDelegate.h"
 #import "TPDiscoveryDetailListViewController.h"
-
-@interface TPDiscoveryListViewController()
-
  
-@property(nonatomic,strong)TPDiscoveryListModel *discoveryListModel; 
-@property(nonatomic,strong)TPDiscoveryListViewDataSource *ds;
-@property(nonatomic,strong)TPDiscoveryListViewDelegate *dl;
+#import "TPDiscoveryDetailListModel.h" 
+#import "TPDiscoveryDetailListViewDataSource.h"
+#import "TPDiscoveryDetailListViewDelegate.h"
+
+@interface TPDiscoveryDetailListViewController()
+
+@property(nonatomic,strong)UIImageView* parallexView;
+@property(nonatomic,strong)TPDiscoveryDetailListModel *discoveryDetailListModel; 
+@property(nonatomic,strong)TPDiscoveryDetailListViewDataSource *ds;
+@property(nonatomic,strong)TPDiscoveryDetailListViewDelegate *dl;
 
 @end
 
-@implementation TPDiscoveryListViewController
+@implementation TPDiscoveryDetailListViewController
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - setters 
@@ -35,29 +35,29 @@
 #pragma mark - getters 
 
    
-- (TPDiscoveryListModel *)discoveryListModel
+- (TPDiscoveryDetailListModel *)discoveryDetailListModel
 {
-    if (!_discoveryListModel) {
-        _discoveryListModel = [TPDiscoveryListModel new];
-        _discoveryListModel.key = @"__TPDiscoveryListModel__";
+    if (!_discoveryDetailListModel) {
+        _discoveryDetailListModel = [TPDiscoveryDetailListModel new];
+        _discoveryDetailListModel.key = @"__TPDiscoveryDetailListModel__";
     }
-    return _discoveryListModel;
+    return _discoveryDetailListModel;
 }
 
 
-- (TPDiscoveryListViewDataSource *)ds{
+- (TPDiscoveryDetailListViewDataSource *)ds{
 
   if (!_ds) {
-      _ds = [TPDiscoveryListViewDataSource new];
+      _ds = [TPDiscoveryDetailListViewDataSource new];
    }
    return _ds;
 }
 
  
-- (TPDiscoveryListViewDelegate *)dl{
+- (TPDiscoveryDetailListViewDelegate *)dl{
 
   if (!_dl) {
-      _dl = [TPDiscoveryListViewDelegate new];
+      _dl = [TPDiscoveryDetailListViewDelegate new];
    }
    return _dl;
 }
@@ -69,11 +69,8 @@
 - (void)loadView
 {
     [super loadView];
-    
-    [self setTitle:@"发现"];
-    
-    self.view.backgroundColor = [TPTheme bgColor];
-    
+    self.navigationController.navigationBarHidden = true;
+    self.tabBarController.tabBar.hidden  =  true;
 }
 
 - (void)viewDidLoad
@@ -82,9 +79,9 @@
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = NO;
+    self.tableView.separatorStyle = YES;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -94,8 +91,6 @@
     //3，bind your delegate and datasource to tableview
     self.dataSource = self.ds;
     self.delegate = self.dl;
-    
-    [self.tableView reloadData];
     
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
@@ -157,8 +152,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   //todo...
-    TPDiscoveryDetailListViewController* vc= [ TPDiscoveryDetailListViewController new ];
-    [self.navigationController pushViewController:vc animated:YES];
   
 }
 

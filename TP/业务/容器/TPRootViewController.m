@@ -8,7 +8,6 @@
 
 #import "TPRootViewController.h"
 #import "TPTabBarViewController.h"
-#import "TPPortalViewController.h"
 
 @interface TPRootViewController ()
 
@@ -111,28 +110,28 @@
 
 - (void)reboot
 {
-    if ([TPUser isLogined]) {
-        
-        TPTabBarViewController* vc2 = [TPTabBarViewController new];
-        
-        UINavigationController* tabNav = [[UINavigationController alloc]initWithRootViewController:vc2];
-        
-        self.viewControllers = @[tabNav];
-        
-    }
-    else
-    {
-        TPPortalViewController* vc1 =  [TPPortalViewController new];
-        UINavigationController* portalNav = [[UINavigationController alloc]initWithRootViewController:vc1];
-        
-        TPTabBarViewController* vc2 = [TPTabBarViewController new];
-        
-        //UINavigationController* tabNav = [[UINavigationController alloc]initWithRootViewController:vc2];
-        
-        self.viewControllers = @[portalNav,vc2];
-        
-        
-    }
+//    if ([TPUser isLogined]) {
+//        
+//        TPTabBarViewController* vc2 = [TPTabBarViewController new];
+//        
+//        UINavigationController* tabNav = [[UINavigationController alloc]initWithRootViewController:vc2];
+//        
+//        self.viewControllers = @[tabNav];
+//        
+//    }
+//    else
+//    {
+//        TPPortalViewController* vc1 =  [TPPortalViewController new];
+//        UINavigationController* portalNav = [[UINavigationController alloc]initWithRootViewController:vc1];
+//        
+//        TPTabBarViewController* vc2 = [TPTabBarViewController new];
+//        
+//        //UINavigationController* tabNav = [[UINavigationController alloc]initWithRootViewController:vc2];
+//        
+//        self.viewControllers = @[portalNav,vc2];
+//        
+//        
+//    }
     
     [self setSelectedIndex:0 animated:NO];
 }

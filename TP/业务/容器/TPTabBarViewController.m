@@ -36,30 +36,23 @@
     
 //    UIImage *tabbarBackground = [[UIImage imageNamed:@"tabbar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //    [[UITabBar appearance] setBackgroundImage:tabbarBackground];
+
+    UITabBarItem* a = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  selectedImage:[[UIImage imageNamed:@"trip_nav_1_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    NSDictionary* attr = [NSDictionary dictionaryWithObjectsAndKeys:
-                          [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0], NSForegroundColorAttributeName,nil];
+    a.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
+    a.titlePositionAdjustment = UIOffsetMake(0, 12.0);
+
+    UITabBarItem* b = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_2_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    b.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
+    b.titlePositionAdjustment = UIOffsetMake(0, 12.0);
     
-    NSDictionary* attrSelected = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:119/255.0 green:203/255.0 blue:255/255.0 alpha:1.0],NSForegroundColorAttributeName, nil];
+    UITabBarItem* c = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_3.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_3_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    c.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
+    c.titlePositionAdjustment = UIOffsetMake(0, 12.0);
     
-    UITabBarItem* a = [[UITabBarItem alloc]initWithTitle:@"发现" image:[[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  selectedImage:[[UIImage imageNamed:@"home_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [a setTitleTextAttributes:attr forState:UIControlStateNormal];
-    [a setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
-    
-    UITabBarItem* b = [[UITabBarItem alloc]initWithTitle:@"消息" image:[[UIImage imageNamed:@"record.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"record_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [b setTitleTextAttributes:attr forState:UIControlStateNormal];
-    [b setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
-    
-    
-    UITabBarItem* c = [[UITabBarItem alloc]initWithTitle:@"旅程" image:[[UIImage imageNamed:@"discover.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"discover_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [c setTitleTextAttributes:attr forState:UIControlStateNormal];
-    [c setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
-    
-    
-    UITabBarItem* d = [[UITabBarItem alloc]initWithTitle:@"我的" image:[[UIImage imageNamed:@"mine.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"mine_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [d setTitleTextAttributes:attr forState:UIControlStateNormal];
-    [d setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
-    
+    UITabBarItem* d = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_4.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_4_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    d.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
+    d.titlePositionAdjustment = UIOffsetMake(0, 12.0);
     
     UIViewController* messages      = [TPMessageListViewController new];
     UIViewController* trip          = [TPTripListViewController new];

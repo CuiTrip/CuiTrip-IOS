@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TPRootViewController.h"
+#import "TPTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
     
 
     
-    TPRootViewController* rootViewController = [TPRootViewController new];
+    TPTabBarViewController* rootViewController = [TPTabBarViewController new];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = rootViewController;
@@ -37,6 +38,8 @@
             //[self didReiveceRemoteNotificatison:userInfo];
         }
     }
+    
+    [TPTheme config];
     
     return YES;
 

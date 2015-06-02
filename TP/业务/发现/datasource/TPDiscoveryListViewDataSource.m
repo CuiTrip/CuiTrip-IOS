@@ -11,6 +11,7 @@
 
 #import "TPDiscoveryListViewDataSource.h"
 #import "TPDiscoveryListCell.h"
+#import "TPDiscoveryListItem.h"
 
 @interface TPDiscoveryListViewDataSource()
 
@@ -34,13 +35,19 @@
 
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
 //@optional:
-//- (TBCitySBTableViewItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
+- (TPDiscoveryListItem* )itemForCellAtIndexPath:(NSIndexPath*)indexPath{
+    
+    TPDiscoveryListItem* item =  [TPDiscoveryListItem new];
+    [item autoKVCBinding:@{@"cardName":@"探索台湾文学之旅",@"userName":@"小佩",@"userCity":@"台北",@"cardImageUrl":@"",@"avatarUrl":@""}];
+    return item;
 
-    //default:
-    //return [super itemForCellAtIndexPath:indexPath]; 
-
-//}
+}
 
 
 @end  

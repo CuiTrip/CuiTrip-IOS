@@ -13,6 +13,14 @@
 
 @interface TPDiscoveryListItem : VZListItem
 
+@property(nonatomic,strong) NSString* cardImageUrl;
+@property(nonatomic,strong) NSString* avatarUrl;
+@property(nonatomic,strong) NSString* cardName;
+@property(nonatomic,strong) NSString* userName;
+@property(nonatomic,strong) NSString* userCity;
+
+@property(nonatomic,strong) NSMutableAttributedString* attributedUserString;
+
 
 @end
 

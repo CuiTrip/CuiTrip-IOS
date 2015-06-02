@@ -16,6 +16,7 @@
 #define kTPHeightWithMargin(y) (kTPScreenHeight - y*2)
 
 
-
+#define __image(x) [UIImage imageNamed:(x)]
+#define __url(x) [NSURL URLWithString:(x)]
 
 #endif
