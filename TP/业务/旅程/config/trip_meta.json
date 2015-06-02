@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPTripListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "tripListModel",
+          "class": "TPTripListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPTripListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPTripListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./Trip/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPTripListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./Trip/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPTripListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPTripListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Trip/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPTripListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./Trip/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPTripListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPTripListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./Trip/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPTripListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPTripListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./Trip/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPTripListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./Trip/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPTripConfig",
+    "proj": "TP",
+    "package_name": "Trip",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Trip/config/"
+  }
+}

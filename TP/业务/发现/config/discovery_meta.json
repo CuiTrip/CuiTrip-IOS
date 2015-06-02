@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPDiscoveryListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "discoveryListModel",
+          "class": "TPDiscoveryListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPDiscoveryListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPDiscoveryListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./Discovery/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPDiscoveryListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./Discovery/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPDiscoveryListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPDiscoveryListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Discovery/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPDiscoveryListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./Discovery/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPDiscoveryListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPDiscoveryListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./Discovery/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPDiscoveryListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPDiscoveryListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./Discovery/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPDiscoveryListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./Discovery/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPDiscoveryConfig",
+    "proj": "TP",
+    "package_name": "Discovery",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Discovery/config/"
+  }
+}

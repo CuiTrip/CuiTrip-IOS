@@ -23,7 +23,7 @@ typedef enum
 
 + (instancetype)sharedInstance;
 
-+ (TPUserType)userType;
++ (TPUserType)type;
 
 + (NSString* )avatar;
 

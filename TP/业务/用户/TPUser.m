@@ -22,7 +22,7 @@
     return instance;
 }
 
-+ (TPUserType)userType
++ (TPUserType)type
 {
     return kCustomer;
 }

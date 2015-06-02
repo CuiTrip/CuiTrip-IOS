@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPMeViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "meModel",
+          "class": "TPMeModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./Me/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPMeModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./Me/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPMeModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPMeModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Me/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPMeItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./Me/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPMeSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./Me/view/",
+      "namespace": "T_View",
+      "itemclass": "TPMeItem"
+    }
+  ],
+  "config": {
+    "class": "TPMeConfig",
+    "proj": "TP",
+    "package_name": "Me",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Me/config/"
+  }
+}

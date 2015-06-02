@@ -9,6 +9,7 @@
 #ifndef TP_TPHeader_h
 #define TP_TPHeader_h
 
+#import "TPConstant.h"
 #import "TPUser.h"
 
 #endif

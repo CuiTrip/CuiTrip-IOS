@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPMyServiceListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "myServiceListModel",
+          "class": "TPMyServiceListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPMyServiceListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPMyServiceListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./MyService/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPMyServiceListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./MyService/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPMyServiceListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPMyServiceListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./MyService/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPMyServiceListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./MyService/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPMyServiceListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPMyServiceListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./MyService/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPMyServiceListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPMyServiceListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./MyService/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPMyServiceListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./MyService/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPMyServiceConfig",
+    "proj": "TP",
+    "package_name": "MyService",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./MyService/config/"
+  }
+}

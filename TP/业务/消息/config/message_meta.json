@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPMessageListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "messageListModel",
+          "class": "TPMessageListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPMessageListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPMessageListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./Message/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPMessageListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./Message/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPMessageListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPMessageListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Message/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPMessageListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./Message/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPMessageListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPMessageListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./Message/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPMessageListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPMessageListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./Message/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPMessageListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./Message/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPMessageConfig",
+    "proj": "TP",
+    "package_name": "Message",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Message/config/"
+  }
+}

@@ -8,7 +8,7 @@
 
 #import "TPRootViewController.h"
 #import "TPTabBarViewController.h"
-#import "TPLoginViewController.h"
+#import "TPPortalViewController.h"
 
 @interface TPRootViewController ()
 
@@ -122,15 +122,14 @@
     }
     else
     {
-        TPLoginViewController* vc1 = [[UIStoryboard storyboardWithName:@"BXLoginViewController"
-                                                                bundle:NULL] instantiateViewControllerWithIdentifier:@"bxlogin"];
-        UINavigationController* loginNav = [[UINavigationController alloc]initWithRootViewController:vc1];
+        TPPortalViewController* vc1 =  [TPPortalViewController new];
+        UINavigationController* portalNav = [[UINavigationController alloc]initWithRootViewController:vc1];
         
         TPTabBarViewController* vc2 = [TPTabBarViewController new];
         
-        UINavigationController* tabNav = [[UINavigationController alloc]initWithRootViewController:vc2];
+        //UINavigationController* tabNav = [[UINavigationController alloc]initWithRootViewController:vc2];
         
-        self.viewControllers = @[loginNav,tabNav];
+        self.viewControllers = @[portalNav,vc2];
         
         
     }
