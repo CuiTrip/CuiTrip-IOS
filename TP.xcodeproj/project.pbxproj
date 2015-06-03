@@ -115,6 +115,8 @@
 		459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */; };
 		459BAD011B1F1ABF00739C7E /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD001B1F1ABF00739C7E /* mazu.png */; };
 		459BAD071B1F331F00739C7E /* TPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD061B1F331F00739C7E /* TPUtils.m */; };
+		459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */; };
+		459BAD0D1B1F4C0E00739C7E /* TPDDCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -339,6 +341,10 @@
 		459BAD001B1F1ABF00739C7E /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
 		459BAD051B1F331F00739C7E /* TPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUtils.h; sourceTree = "<group>"; };
 		459BAD061B1F331F00739C7E /* TPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUtils.m; sourceTree = "<group>"; };
+		459BAD081B1F42D200739C7E /* TPDiscoveryDetailContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailContentViewController.h; sourceTree = "<group>"; };
+		459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailContentViewController.m; sourceTree = "<group>"; };
+		459BAD0B1B1F4C0E00739C7E /* TPDDCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCellContainerView.h; sourceTree = "<group>"; };
+		459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCellContainerView.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1100,6 +1106,8 @@
 				459BACFB1B1EEF3900739C7E /* TPDDTripCellContainerView.h */,
 				459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */,
 				459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */,
+				459BAD0B1B1F4C0E00739C7E /* TPDDCellContainerView.h */,
+				459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1118,6 +1126,8 @@
 			children = (
 				459BACBD1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.h */,
 				459BACBE1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m */,
+				459BAD081B1F42D200739C7E /* TPDiscoveryDetailContentViewController.h */,
+				459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1368,6 +1378,7 @@
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
 				45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */,
 				45028AC71B1C753300417606 /* ETContainerViewController.m in Sources */,
+				459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */,
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
@@ -1433,6 +1444,7 @@
 				45028B4C1B1C7D2D00417606 /* TPMessageListModel.m in Sources */,
 				45028AAA1B1B535E00417606 /* VZListViewDataSource.m in Sources */,
 				459B24981B176A1C009BB189 /* main.m in Sources */,
+				459BAD0D1B1F4C0E00739C7E /* TPDDCellContainerView.m in Sources */,
 				459B24931B176A1C009BB189 /* AppDelegate.m in Sources */,
 				45028AF71B1C7C1C00417606 /* TPDiscoveryListItem.m in Sources */,
 			);

@@ -29,8 +29,18 @@
        
         
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDInfoCell" owner:self options:nil];
-        self.containerView = (TPDDInfoCellContainerView *)[nib objectAtIndex:0]; // or if it exists, (MCQView *)[nib objectAtIndex:0];
+        self.containerView = (TPDDInfoCellContainerView *)[nib objectAtIndex:0];
         
+        
+        __weak typeof(self) weakSelf = self;
+        self.containerView.callback = ^(NSString* type, id item)
+        {
+            if ([weakSelf.delegate respondsToSelector:@selector(onCellComponentClickedAtIndex:Bundle:)]) {
+                
+                [weakSelf.delegate onCellComponentClickedAtIndex:weakSelf.indexPath Bundle:@{@"type":type,@"data":item?:[NSNull null]}];
+            }
+        
+        };
         [self.contentView addSubview:self.containerView];
         
     }

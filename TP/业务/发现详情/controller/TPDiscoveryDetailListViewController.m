@@ -14,7 +14,7 @@
 #import "TPDiscoveryDetailListModel.h" 
 #import "TPDiscoveryDetailListViewDataSource.h"
 #import "TPDiscoveryDetailListViewDelegate.h"
-
+#import "TPDiscoveryDetailContentViewController.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -161,7 +161,6 @@
     [btn setTitle:@"联系预定" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
-    [btn addTarget:self action:@selector(onPreserveClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableFooterView = btn;
 }
 
@@ -220,7 +219,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
 
-  //todo:... 
+  //todo:...
+    NSString* type = bundle[@"type"];
+    
+    //服务详情
+    if ([type isEqualToString:@"gotoServiceDetail"]) {
+        
+        TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
+        vc.title = @"旅程描述";
+        vc.titleString = @"台湾妈祖神庙参观";
+        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 
 }
 

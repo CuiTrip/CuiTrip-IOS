@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPDDCellContainerView.h"
 
-@interface TPDDProfileCellContainerView : UIView
+@interface TPDDProfileCellContainerView : TPDDCellContainerView
 
-@property(nonatomic,strong) id item;
+
 
 @end
 

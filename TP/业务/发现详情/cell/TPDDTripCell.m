@@ -28,6 +28,15 @@
         
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDTripCell" owner:self options:nil];
         self.containerView = (TPDDTripCellContainerView *)[nib objectAtIndex:0];
+        __weak typeof(self) weakSelf = self;
+        self.containerView.callback = ^(NSString* type, id item)
+        {
+            if ([weakSelf.delegate respondsToSelector:@selector(onCellComponentClickedAtIndex:Bundle:)]) {
+                
+                [weakSelf.delegate onCellComponentClickedAtIndex:weakSelf.indexPath Bundle:@{@"type":type,@"data":item}];
+            }
+            
+        };
         [self.contentView addSubview:self.containerView];
         
     }

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPDDCellContainerView.h"
 
-@interface TPDDCommentCellContainerView : UIView
+@interface TPDDCommentCellContainerView : TPDDCellContainerView
 
 @end

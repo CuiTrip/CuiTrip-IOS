@@ -27,6 +27,16 @@
     self.viewDetailBtn.layer.cornerRadius = 5.0f;
     self.viewDetailBtn.layer.borderColor = [TPTheme themeColor].CGColor;
     self.viewDetailBtn.layer.borderWidth = 1.0f;
+    
+    [self.viewDetailBtn addTarget:self action:@selector(onBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)onBtnClicked:(id)sender
+{
+    __weak typeof(self) weakSelf = self;
+    if (self.callback) {
+        self.callback(@"gotoServiceDetail",weakSelf.item);
+    }
 }
 
 @end

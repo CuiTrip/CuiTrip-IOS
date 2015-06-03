@@ -38,7 +38,7 @@
 
 - (void)setItem:(TPDDProfileItem* )item
 {
-    _item = item;
+    [super setItem:item];
     
 }
 
