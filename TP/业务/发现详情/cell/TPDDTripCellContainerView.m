@@ -8,6 +8,17 @@
 
 #import "TPDDTripCellContainerView.h"
 
+@interface TPDDTripCellContainerView()
+@property (weak, nonatomic) IBOutlet UILabel *viewDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tripLength;
+@property (weak, nonatomic) IBOutlet UILabel *tripTime;
+@property (weak, nonatomic) IBOutlet UILabel *tripMemberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tripFeeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *licenceLabel;
+
+
+@end
+
 @implementation TPDDTripCellContainerView
 
 /*

@@ -8,14 +8,27 @@
 
 #import "TPDDCommentCellContainerView.h"
 
+@interface TPDDCommentCellContainerView()
+
+@property (weak, nonatomic) IBOutlet UILabel *commentNumLabel;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
+
+@property (weak, nonatomic) IBOutlet UIButton *viewMoreBtn;
+
+
+
+@end
+
 @implementation TPDDCommentCellContainerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.viewMoreBtn.layer.cornerRadius = 5.0f;
+    self.viewMoreBtn.layer.borderColor = [TPTheme themeColor].CGColor;
+    self.viewMoreBtn.layer.borderWidth = 1.0f;
+    self.viewMoreBtn.clipsToBounds = true;
 }
-*/
 
 @end

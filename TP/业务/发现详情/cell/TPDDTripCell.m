@@ -36,7 +36,7 @@
 
 + (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
 {
-    return 280;
+    return 320;
 }
 
 - (void)layoutSubviews
@@ -44,7 +44,7 @@
     [super layoutSubviews];
     
     self.containerView.vzWidth  = self.vzWidth;
-    self.containerView.vzHeight = 280;
+    self.containerView.vzHeight = 320;
   
   
 }

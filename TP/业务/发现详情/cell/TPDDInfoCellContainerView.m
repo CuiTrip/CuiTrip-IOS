@@ -8,14 +8,25 @@
 
 #import "TPDDInfoCellContainerView.h"
 
+@interface TPDDInfoCellContainerView()
+
+@property (weak, nonatomic) IBOutlet UILabel *infoNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoAddressLabel;
+@property (weak, nonatomic) IBOutlet UIView *startView;
+@property (weak, nonatomic) IBOutlet UITextView *infoContentLabel;
+@property (weak, nonatomic) IBOutlet UIButton *viewDetailBtn;
+
+@end
+
 @implementation TPDDInfoCellContainerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.viewDetailBtn.layer.cornerRadius = 5.0f;
+    self.viewDetailBtn.layer.borderColor = [TPTheme themeColor].CGColor;
+    self.viewDetailBtn.layer.borderWidth = 1.0f;
 }
-*/
 
 @end

@@ -15,6 +15,43 @@
 #import "TPDiscoveryDetailListViewDataSource.h"
 #import "TPDiscoveryDetailListViewDelegate.h"
 
+
+@interface TPDiscoveryDetailListViewHeaderView:UIView
+
+@property(nonatomic,strong) UIImageView* imageView;
+@property(nonatomic,strong) UILabel* moneyLabel;
+
+@end
+
+@implementation TPDiscoveryDetailListViewHeaderView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        
+//        self.imageView = [TPUIKit imageView];
+//        self.imageView.vzWidth = frame.size.width;
+//        self.imageView.vzHeight = frame.size.height;
+//        self.imageView.image = __image(@"mazu.png");
+//        [self addSubview:self.imageView];
+//        
+//        
+        self.moneyLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:18.0f]];
+        self.moneyLabel.vzOrigin = (CGPoint){0,230};
+        self.moneyLabel.vzWidth = 124;
+        self.moneyLabel.vzHeight= 35;
+        self.moneyLabel.text = @"   RMB 8888";
+        self.moneyLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+        [self addSubview:self.moneyLabel];
+    }
+    return self;
+}
+
+@end
+
 @interface TPDiscoveryDetailListViewController()
 
 @property(nonatomic,strong)UIImageView* parallexView;
@@ -69,13 +106,22 @@
 - (void)loadView
 {
     [super loadView];
+    
     self.navigationController.navigationBarHidden = true;
     self.tabBarController.tabBar.hidden  =  true;
+//    
+    UIImageView* imageView = [TPUIKit imageView];
+    imageView.vzWidth = self.view.frame.size.width;
+    imageView.vzHeight = 400;
+    imageView.image = __image(@"mazu.png");
+    [self.view addSubview:imageView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -104,7 +150,7 @@
     
     
     //header view
-    UIView* headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 135)];
+    TPDiscoveryDetailListViewHeaderView* headerView = [[TPDiscoveryDetailListViewHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 270)];
     headerView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = headerView;
     

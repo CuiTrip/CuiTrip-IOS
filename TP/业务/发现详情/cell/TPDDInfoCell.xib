@@ -14,6 +14,7 @@
                     <rect key="frame" x="105" y="188" width="110" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" title="查看详情">
+                        <color key="titleColor" red="0.0" green="0.80000000000000004" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -28,7 +29,7 @@
                     <rect key="frame" x="0.0" y="55" width="320" height="12"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" id="SNf-x4-dyv">
@@ -39,7 +40,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="看过阿德考四六级罚款了交电费卡拉的减肥；可垃圾地方啊啊离开家地方可垃圾的分类卡积分的" id="ZfN-FX-GOf">
                     <rect key="frame" x="20" y="124" width="280" height="60"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -50,6 +51,13 @@
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="infoAddressLabel" destination="Tix-jS-idr" id="oxb-yp-88f"/>
+                <outlet property="infoContentLabel" destination="ZfN-FX-GOf" id="lyS-HJ-iNs"/>
+                <outlet property="infoNameLabel" destination="xiB-yq-836" id="K9o-Vo-F2e"/>
+                <outlet property="startView" destination="SNf-x4-dyv" id="nuN-PV-8bE"/>
+                <outlet property="viewDetailBtn" destination="HF0-qa-SBT" id="GXQ-ZM-AVp"/>
+            </connections>
             <point key="canvasLocation" x="375" y="147"/>
         </view>
     </objects>

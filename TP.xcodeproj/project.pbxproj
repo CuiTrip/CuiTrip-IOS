@@ -114,6 +114,7 @@
 		459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */; };
 		459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */; };
 		459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */; };
+		459BAD011B1F1ABF00739C7E /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD001B1F1ABF00739C7E /* mazu.png */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -336,6 +337,7 @@
 		459BACFB1B1EEF3900739C7E /* TPDDTripCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripCellContainerView.h; sourceTree = "<group>"; };
 		459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCellContainerView.m; sourceTree = "<group>"; };
 		459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDTripCell.xib; sourceTree = "<group>"; };
+		459BAD001B1F1ABF00739C7E /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1163,6 +1165,7 @@
 		459BACCB1B1DF62A00739C7E /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				459BAD001B1F1ABF00739C7E /* mazu.png */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -1274,6 +1277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45156E711B1D758100A67BDB /* trip_nav_1_s@2x.png in Resources */,
+				459BAD011B1F1ABF00739C7E /* mazu.png in Resources */,
 				45028B661B1C7F1300417606 /* myservice_meta.json in Resources */,
 				45156E731B1D758100A67BDB /* trip_nav_2_s@2x.png in Resources */,
 				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,

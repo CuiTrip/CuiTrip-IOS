@@ -20,15 +20,16 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="终于看到了练习曲中的哪个场景，很真实，这才是针对孩子呢过的台湾，非常难忘，非长难忘。" id="PA5-Ay-kNQ">
                     <rect key="frame" x="20" y="49" width="280" height="72"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iru-1Z-gpv">
-                    <rect key="frame" x="120" y="133" width="80" height="44"/>
+                    <rect key="frame" x="112" y="133" width="110" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" title="查看所有">
+                        <color key="titleColor" red="0.0" green="0.80000000000000004" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -39,6 +40,11 @@
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="commentNumLabel" destination="wlQ-QT-Tge" id="Mlb-xX-hBa"/>
+                <outlet property="commentTextView" destination="PA5-Ay-kNQ" id="j9T-wo-suo"/>
+                <outlet property="viewMoreBtn" destination="iru-1Z-gpv" id="A3T-k1-Pf0"/>
+            </connections>
             <point key="canvasLocation" x="390" y="26.5"/>
         </view>
     </objects>

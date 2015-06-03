@@ -10,4 +10,7 @@
 
 @interface TPDDProfileCellContainerView : UIView
 
+@property(nonatomic,strong) id item;
+
 @end
+
