@@ -79,9 +79,9 @@
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
+    self.tableView.separatorStyle = NO;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -101,6 +101,22 @@
 
     //6,Load Data
     //[self load];
+    
+    
+    //header view
+    UIView* headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 135)];
+    headerView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableHeaderView = headerView;
+    
+    
+    //footer view
+    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 44)];
+    btn.backgroundColor = [TPTheme themeColor];
+    [btn setTitle:@"联系预定" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
+    [btn addTarget:self action:@selector(onPreserveClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.tableFooterView = btn;
 }
 
 - (void)viewWillAppear:(BOOL)animated

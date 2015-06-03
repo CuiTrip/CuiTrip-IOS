@@ -10,9 +10,11 @@
 
 
 #import "TPDDTripCell.h"
-
+#import "TPDDTripCellContainerView.h"
 
 @interface TPDDTripCell()
+
+@property(nonatomic,strong)TPDDTripCellContainerView* containerView;
 
 @end
 
@@ -24,8 +26,9 @@
     
     if (self) {
         
-        //todo: add some UI code
-    
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDTripCell" owner:self options:nil];
+        self.containerView = (TPDDTripCellContainerView *)[nib objectAtIndex:0];
+        [self.contentView addSubview:self.containerView];
         
     }
     return self;
@@ -33,12 +36,15 @@
 
 + (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 280;
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    self.containerView.vzWidth  = self.vzWidth;
+    self.containerView.vzHeight = 280;
   
   
 }

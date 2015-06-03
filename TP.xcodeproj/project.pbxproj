@@ -108,6 +108,12 @@
 		459BACEB1B1DFBE800739C7E /* TPDDTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACE71B1DFBE800739C7E /* TPDDTripItem.m */; };
 		459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACEC1B1DFC2D00739C7E /* TPDDInfoCell.xib */; };
 		459BACF01B1DFF5600739C7E /* TPDDInfoCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACEF1B1DFF5600739C7E /* TPDDInfoCellContainerView.m */; };
+		459BACF21B1EC92A00739C7E /* TPDDProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACF11B1EC92A00739C7E /* TPDDProfileCell.xib */; };
+		459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACF41B1EC94E00739C7E /* TPDDProfileCellContainerView.m */; };
+		459BACF81B1EECEC00739C7E /* TPDDCommentCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACF71B1EECEC00739C7E /* TPDDCommentCellContainerView.m */; };
+		459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */; };
+		459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */; };
+		459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -321,6 +327,15 @@
 		459BACEC1B1DFC2D00739C7E /* TPDDInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDInfoCell.xib; sourceTree = "<group>"; };
 		459BACEE1B1DFF5600739C7E /* TPDDInfoCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoCellContainerView.h; sourceTree = "<group>"; };
 		459BACEF1B1DFF5600739C7E /* TPDDInfoCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoCellContainerView.m; sourceTree = "<group>"; };
+		459BACF11B1EC92A00739C7E /* TPDDProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDProfileCell.xib; sourceTree = "<group>"; };
+		459BACF31B1EC94E00739C7E /* TPDDProfileCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileCellContainerView.h; sourceTree = "<group>"; };
+		459BACF41B1EC94E00739C7E /* TPDDProfileCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileCellContainerView.m; sourceTree = "<group>"; };
+		459BACF61B1EECEC00739C7E /* TPDDCommentCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentCellContainerView.h; sourceTree = "<group>"; };
+		459BACF71B1EECEC00739C7E /* TPDDCommentCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentCellContainerView.m; sourceTree = "<group>"; };
+		459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDCommentCell.xib; sourceTree = "<group>"; };
+		459BACFB1B1EEF3900739C7E /* TPDDTripCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripCellContainerView.h; sourceTree = "<group>"; };
+		459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCellContainerView.m; sourceTree = "<group>"; };
+		459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDTripCell.xib; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1067,11 +1082,20 @@
 				459BACD71B1DF9F000739C7E /* TPDDInfoCell.m */,
 				459BACD81B1DF9F000739C7E /* TPDDProfileCell.h */,
 				459BACD91B1DF9F000739C7E /* TPDDProfileCell.m */,
+				459BACF11B1EC92A00739C7E /* TPDDProfileCell.xib */,
 				459BACDA1B1DF9F000739C7E /* TPDDTripCell.h */,
 				459BACDB1B1DF9F000739C7E /* TPDDTripCell.m */,
 				459BACEC1B1DFC2D00739C7E /* TPDDInfoCell.xib */,
 				459BACEE1B1DFF5600739C7E /* TPDDInfoCellContainerView.h */,
 				459BACEF1B1DFF5600739C7E /* TPDDInfoCellContainerView.m */,
+				459BACF31B1EC94E00739C7E /* TPDDProfileCellContainerView.h */,
+				459BACF41B1EC94E00739C7E /* TPDDProfileCellContainerView.m */,
+				459BACF61B1EECEC00739C7E /* TPDDCommentCellContainerView.h */,
+				459BACF71B1EECEC00739C7E /* TPDDCommentCellContainerView.m */,
+				459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */,
+				459BACFB1B1EEF3900739C7E /* TPDDTripCellContainerView.h */,
+				459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */,
+				459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1261,8 +1285,10 @@
 				45156E771B1D758100A67BDB /* trip_nav_4_s@2x.png in Resources */,
 				45156E751B1D758100A67BDB /* trip_nav_3_s@2x.png in Resources */,
 				45028B471B1C7D2D00417606 /* message_meta.json in Resources */,
+				459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
 				45156E701B1D758100A67BDB /* trip_nav_1@2x.png in Resources */,
+				459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */,
 				459BACB31B1DF3D900739C7E /* taiwan.png in Resources */,
 				459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */,
 				45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */,
@@ -1270,6 +1296,7 @@
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				45156E721B1D758100A67BDB /* trip_nav_2@2x.png in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
+				459BACF21B1EC92A00739C7E /* TPDDProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1369,9 +1396,12 @@
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
 				45028B671B1C7F1300417606 /* TPMyServiceListViewController.m in Sources */,
 				45028B691B1C7F1300417606 /* TPMyServiceListViewDelegate.m in Sources */,
+				459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */,
+				459BACF81B1EECEC00739C7E /* TPDDCommentCellContainerView.m in Sources */,
 				459BACF01B1DFF5600739C7E /* TPDDInfoCellContainerView.m in Sources */,
 				45028AF21B1C7C1C00417606 /* TPDiscoveryListCell.m in Sources */,
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
+				459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */,
 				45028B461B1C7D2D00417606 /* TPMessageListCell.m in Sources */,
 				45028B481B1C7D2D00417606 /* TPMessageListViewController.m in Sources */,
 				459BACEA1B1DFBE800739C7E /* TPDDProfileItem.m in Sources */,

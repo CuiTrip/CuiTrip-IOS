@@ -10,9 +10,11 @@
 
 
 #import "TPDDCommentCell.h"
-
+#import "TPDDProfileCellContainerView.h"
 
 @interface TPDDCommentCell()
+
+@property(nonatomic,strong)TPDDProfileCellContainerView* containerView;
 
 @end
 
@@ -25,6 +27,11 @@
     if (self) {
         
         //todo: add some UI code
+        //todo: add some UI code
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDCommentCell" owner:self options:nil];
+        self.containerView = (TPDDProfileCellContainerView *)[nib objectAtIndex:0];
+        [self.contentView addSubview:self.containerView];
+        
         
         
     
@@ -35,12 +42,15 @@
 
 + (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 185;
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    self.containerView.vzHeight=  185;
+    self.containerView.vzWidth = self.vzWidth;
   
   
 }

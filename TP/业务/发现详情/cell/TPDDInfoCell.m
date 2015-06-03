@@ -26,7 +26,12 @@
     
     if (self) {
         
-        self.backgroundColor = [UIColor redColor];
+       
+        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDInfoCell" owner:self options:nil];
+        self.containerView = (TPDDInfoCellContainerView *)[nib objectAtIndex:0]; // or if it exists, (MCQView *)[nib objectAtIndex:0];
+        
+        [self.contentView addSubview:self.containerView];
         
     }
     return self;
@@ -40,6 +45,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    self.containerView.vzWidth = self.vzWidth;
+    self.containerView.vzHeight = self.vzHeight;
   
   
 }
