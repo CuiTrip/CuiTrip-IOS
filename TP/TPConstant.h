@@ -15,6 +15,13 @@
 #define kTPWidthWithMargin(x)  (kTPScreenWidth - x*2)
 #define kTPHeightWithMargin(y) (kTPScreenHeight - y*2)
 
+#define kTPLoginSuccess @"kTPLoginSuccess"
+#define kTPLoginFailure @"kTPLoginFailure"
+
+
+
+#define __observeNotify(x,y)   [[NSNotificationCenter defaultCenter] addObserver:self selector:x name:y object:nil]
+#define __removeNotifyObserver [[NSNotificationCenter defaultCenter] removeObserver:self]
 
 #define __image(x) [UIImage imageNamed:(x)]
 #define __url(x) [NSURL URLWithString:(x)]

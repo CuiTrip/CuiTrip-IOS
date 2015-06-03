@@ -74,7 +74,6 @@
 		45028B6A1B1C7F1300417606 /* TPMyServiceListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B5F1B1C7F1300417606 /* TPMyServiceListItem.m */; };
 		45028B6B1B1C7F1300417606 /* TPMyServiceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B621B1C7F1300417606 /* TPMyServiceListModel.m */; };
 		45028B711B1C838100417606 /* UIView+VZEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B701B1C838100417606 /* UIView+VZEX.m */; };
-		45028B781B1C920C00417606 /* TPLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45028B771B1C920C00417606 /* TPLoginViewController.storyboard */; };
 		45156E701B1D758100A67BDB /* trip_nav_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45156E681B1D758100A67BDB /* trip_nav_1@2x.png */; };
 		45156E711B1D758100A67BDB /* trip_nav_1_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45156E691B1D758100A67BDB /* trip_nav_1_s@2x.png */; };
 		45156E721B1D758100A67BDB /* trip_nav_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45156E6A1B1D758100A67BDB /* trip_nav_2@2x.png */; };
@@ -115,6 +114,7 @@
 		459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */; };
 		459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */; };
 		459BAD011B1F1ABF00739C7E /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD001B1F1ABF00739C7E /* mazu.png */; };
+		459BAD071B1F331F00739C7E /* TPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD061B1F331F00739C7E /* TPUtils.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -272,7 +272,6 @@
 		45028B701B1C838100417606 /* UIView+VZEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VZEX.m"; sourceTree = "<group>"; };
 		45028B721B1C841D00417606 /* VizzleEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VizzleEx.h; sourceTree = "<group>"; };
 		45028B731B1C85DA00417606 /* TPConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstant.h; sourceTree = "<group>"; };
-		45028B771B1C920C00417606 /* TPLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPLoginViewController.storyboard; sourceTree = "<group>"; };
 		45156E681B1D758100A67BDB /* trip_nav_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_nav_1@2x.png"; sourceTree = "<group>"; };
 		45156E691B1D758100A67BDB /* trip_nav_1_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_nav_1_s@2x.png"; sourceTree = "<group>"; };
 		45156E6A1B1D758100A67BDB /* trip_nav_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_nav_2@2x.png"; sourceTree = "<group>"; };
@@ -338,6 +337,8 @@
 		459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCellContainerView.m; sourceTree = "<group>"; };
 		459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDTripCell.xib; sourceTree = "<group>"; };
 		459BAD001B1F1ABF00739C7E /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
+		459BAD051B1F331F00739C7E /* TPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUtils.h; sourceTree = "<group>"; };
+		459BAD061B1F331F00739C7E /* TPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUtils.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -521,7 +522,6 @@
 				45028B6C1B1C81B700417606 /* TPLoginHeader.h */,
 				45028AD41B1C797C00417606 /* TPLoginViewController.h */,
 				45028AD51B1C797C00417606 /* TPLoginViewController.m */,
-				45028B771B1C920C00417606 /* TPLoginViewController.storyboard */,
 			);
 			path = "登录注册";
 			sourceTree = "<group>";
@@ -972,6 +972,8 @@
 				45156E791B1D7B9B00A67BDB /* TPTheme.m */,
 				459BACAB1B1DD78A00739C7E /* TPUIKit.h */,
 				459BACAC1B1DD78A00739C7E /* TPUIKit.m */,
+				459BAD051B1F331F00739C7E /* TPUtils.h */,
+				459BAD061B1F331F00739C7E /* TPUtils.m */,
 			);
 			path = "工具";
 			sourceTree = "<group>";
@@ -1281,7 +1283,6 @@
 				45028B661B1C7F1300417606 /* myservice_meta.json in Resources */,
 				45156E731B1D758100A67BDB /* trip_nav_2_s@2x.png in Resources */,
 				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,
-				45028B781B1C920C00417606 /* TPLoginViewController.storyboard in Resources */,
 				45156E761B1D758100A67BDB /* trip_nav_4@2x.png in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
 				45156E741B1D758100A67BDB /* trip_nav_3@2x.png in Resources */,
@@ -1398,6 +1399,7 @@
 				45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */,
 				45028B4B1B1C7D2D00417606 /* TPMessageListItem.m in Sources */,
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
+				459BAD071B1F331F00739C7E /* TPUtils.m in Sources */,
 				45028B671B1C7F1300417606 /* TPMyServiceListViewController.m in Sources */,
 				45028B691B1C7F1300417606 /* TPMyServiceListViewDelegate.m in Sources */,
 				459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */,

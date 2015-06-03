@@ -56,7 +56,7 @@
     
     UIViewController* messages      = [TPMessageListViewController new];
     UIViewController* trip          = [TPTripListViewController new];
-    UIViewController* me            = [TPMessageListViewController new];
+    UIViewController* me            = [TPMeViewController new];
     
     
     UIViewController* first = nil;
@@ -90,6 +90,7 @@
     }
     
 }
+
 
 
 @end

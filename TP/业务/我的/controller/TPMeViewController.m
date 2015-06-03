@@ -57,6 +57,24 @@
 {
     [super viewDidLoad];
     //todo..
+    
+    void(^loadModel)(void) = ^{
+        
+    
+    
+    
+    };
+    
+    if (![TPUser isLogined]) {
+        
+        [TPLoginManager showLoginViewControllerWithCompletion:^{
+           
+            loadModel();
+            
+        }];
+    }
+    
+    loadModel();
 }
 
 - (void)viewWillAppear:(BOOL)animated

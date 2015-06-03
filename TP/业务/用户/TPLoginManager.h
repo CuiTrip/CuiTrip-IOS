@@ -10,6 +10,9 @@
 
 @interface TPLoginManager : NSObject
 
+
 + (void)autoLogin;
+
++ (void)showLoginViewControllerWithCompletion:(void(^)(void))completion;
 
 @end

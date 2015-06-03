@@ -13,5 +13,8 @@
 #import "TPUser.h"
 #import "TPTheme.h"
 #import "TPUIKit.h"
+#import "TPUtils.h"
+#import "TPLoginManager.h"
+
 
 #endif
