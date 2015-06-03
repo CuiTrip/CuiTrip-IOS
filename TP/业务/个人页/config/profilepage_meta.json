@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPProfilePageListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "profilePageListModel",
+          "class": "TPProfilePageListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPProfilePageListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPProfilePageListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./ProfilePage/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPProfilePageListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./ProfilePage/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPProfilePageListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPProfilePageListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./ProfilePage/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPProfilePageListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./ProfilePage/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPProfilePageListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPProfilePageListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./ProfilePage/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPProfilePageListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPProfilePageListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./ProfilePage/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPProfilePageListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./ProfilePage/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPProfilePageConfig",
+    "proj": "TP",
+    "package_name": "ProfilePage",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./ProfilePage/config/"
+  }
+}

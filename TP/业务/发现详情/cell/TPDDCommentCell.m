@@ -10,11 +10,11 @@
 
 
 #import "TPDDCommentCell.h"
-#import "TPDDProfileCellContainerView.h"
+#import "TPDDCommentCellContainerView.h"
 
 @interface TPDDCommentCell()
 
-@property(nonatomic,strong)TPDDProfileCellContainerView* containerView;
+@property(nonatomic,strong)TPDDCommentCellContainerView* containerView;
 
 @end
 
@@ -29,15 +29,11 @@
         //todo: add some UI code
         //todo: add some UI code
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDCommentCell" owner:self options:nil];
-        self.containerView = (TPDDProfileCellContainerView *)[nib objectAtIndex:0];
+        self.containerView = (TPDDCommentCellContainerView *)[nib objectAtIndex:0];
         __weak typeof(self) weakSelf = self;
         self.containerView.callback = ^(NSString* type, id item)
         {
-            if ([weakSelf.delegate respondsToSelector:@selector(onCellComponentClickedAtIndex:Bundle:)]) {
-                
-                [weakSelf.delegate onCellComponentClickedAtIndex:weakSelf.indexPath Bundle:@{@"type":type,@"data":item}];
-            }
-            
+             [weakSelf.delegate onCellComponentClickedAtIndex:weakSelf.indexPath Bundle:@{@"type":type,@"data":item?:[NSNull null]}];
         };
         
         [self.contentView addSubview:self.containerView];

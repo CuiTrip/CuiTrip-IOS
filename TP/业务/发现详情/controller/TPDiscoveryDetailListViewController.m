@@ -10,11 +10,13 @@
 
 
 #import "TPDiscoveryDetailListViewController.h"
- 
-#import "TPDiscoveryDetailListModel.h" 
+#import "TPCommentListViewController.h"
+#import "TPDiscoveryDetailListModel.h"
 #import "TPDiscoveryDetailListViewDataSource.h"
 #import "TPDiscoveryDetailListViewDelegate.h"
 #import "TPDiscoveryDetailContentViewController.h"
+#import "TPDatePickerViewController.h"
+#import "TPProfilePageListViewController.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -120,7 +122,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     
     //1,config your tableview
@@ -231,7 +232,35 @@
         vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
+    else if ([type isEqualToString:@"gotoComment"])
+    {
+        TPCommentListViewController* vc = [TPCommentListViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }
+    else if([type isEqualToString:@"gotoDatePicker"])
+    {
+        TPDatePickerViewController* vc = [TPDatePickerViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([type isEqualToString:@"gotoFee"])
+    {
+        TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
+        vc.title = @"台湾妈祖神庙参观";
+        vc.titleString = @"费用说明";
+        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        [self.navigationController pushViewController:vc animated:YES];
+ 
+    }
+    else if ([type isEqualToString:@"gotoLicence"])
+    {
+        TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
+        vc.title = @"脆饼旅行";
+        vc.titleString = @"脆饼公约";
+        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }
 
 }
 

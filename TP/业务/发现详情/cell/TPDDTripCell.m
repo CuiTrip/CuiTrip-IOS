@@ -33,7 +33,7 @@
         {
             if ([weakSelf.delegate respondsToSelector:@selector(onCellComponentClickedAtIndex:Bundle:)]) {
                 
-                [weakSelf.delegate onCellComponentClickedAtIndex:weakSelf.indexPath Bundle:@{@"type":type,@"data":item}];
+                [weakSelf.delegate onCellComponentClickedAtIndex:weakSelf.indexPath Bundle:@{@"type":type,@"data":item?:[NSNull null]}];
             }
             
         };

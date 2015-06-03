@@ -21,12 +21,39 @@
 
 @implementation TPDDTripCellContainerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib
+{
+    self.tripFeeLabel.userInteractionEnabled=true;
+    self.tripFeeLabel.tag = 100;
+    [self.tripFeeLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onLabelTapped:)]];
+    
+    self.licenceLabel.userInteractionEnabled = true;
+    self.licenceLabel.tag = 101;
+    [self.licenceLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onLabelTapped:)]];
+    
+    self.viewDateLabel.userInteractionEnabled = true;
+    self.viewDateLabel.tag = 102;
+    [self.viewDateLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onLabelTapped:)]];
 }
-*/
+
+- (void)onLabelTapped:(UITapGestureRecognizer* )gesture
+{
+    NSInteger tag = gesture.view.tag;
+    
+    if (tag == 100) {
+        
+        self.callback(@"gotoFee",self.item);
+    }
+    
+    if (tag == 101) {
+        
+        self.callback(@"gotoLicence",self.item);
+    }
+    
+    if (tag == 102) {
+        
+        self.callback(@"gotoDatePicker",self.item);
+    }
+}
 
 @end

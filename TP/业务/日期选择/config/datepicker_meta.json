@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPDatePickerViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "datePickerModel",
+          "class": "TPDatePickerModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./DatePicker/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPDatePickerModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./DatePicker/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPDatePickerModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPDatePickerModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./DatePicker/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPDatePickerItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./DatePicker/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPDatePickerSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./DatePicker/view/",
+      "namespace": "T_View",
+      "itemclass": "TPDatePickerItem"
+    }
+  ],
+  "config": {
+    "class": "TPDatePickerConfig",
+    "proj": "TP",
+    "package_name": "DatePicker",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./DatePicker/config/"
+  }
+}

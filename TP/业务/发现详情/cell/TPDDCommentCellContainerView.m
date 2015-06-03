@@ -29,6 +29,15 @@
     self.viewMoreBtn.layer.borderColor = [TPTheme themeColor].CGColor;
     self.viewMoreBtn.layer.borderWidth = 1.0f;
     self.viewMoreBtn.clipsToBounds = true;
+    [self.viewMoreBtn addTarget:self action:@selector(onBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)onBtnClicked:(id)sender
+{
+    __weak typeof(self) weakSelf = self;
+    if (self.callback) {
+        self.callback(@"gotoComment",weakSelf.item);
+    }
 }
 
 @end

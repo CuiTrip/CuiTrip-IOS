@@ -22,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
+    self.view.backgroundColor = HEXCOLOR(0xfffaf1);
     
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.view.vzWidth, 18)];
     self.titleLabel.textColor = HEXCOLOR(0x4a4a4a);
@@ -33,6 +34,7 @@
     self.textView = [[UITextView alloc]initWithFrame:CGRectMake(30, self.titleLabel.vzBottom+20, self.view.vzWidth-60, self.view.vzHeight-self.titleLabel.vzBottom - 50)];
     self.textView.editable = false;
     self.textView.textColor = HEXCOLOR(0x9b9b9b);
+    self.textView.backgroundColor = [UIColor clearColor];
     self.textView.font = [UIFont systemFontOfSize:14.0f];
 
     

@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPCommentListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "commentListModel",
+          "class": "TPCommentListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPCommentListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPCommentListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./Comment/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPCommentListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./Comment/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPCommentListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPCommentListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Comment/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPCommentListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./Comment/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPCommentListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPCommentListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./Comment/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPCommentListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPCommentListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./Comment/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPCommentListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./Comment/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPCommentConfig",
+    "proj": "TP",
+    "package_name": "Comment",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Comment/config/"
+  }
+}
