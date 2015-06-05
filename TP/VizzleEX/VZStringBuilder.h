@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-
-bool vz_isCoreTextAttribute(NSString* coretextAttribute );
-
 @interface VZStringBuilder : NSObject
+
++ (float) heightForString:(NSString *)myString  Font:(UIFont *)myFont Width:(float)myWidth;
+
+@end
+
+
+@interface VZStringBuilder(CoreText)
+
++ (BOOL)isCoreTextAttribute:(NSString* )attribute;
+
++ (NSDictionary* )transformCoreTextAttributes:(NSDictionary* )coreTextAttributes;
+
++ (NSAttributedString* )cleanCoreTextAttributes:(NSAttributedString* )attributedString;
 
 @end

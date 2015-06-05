@@ -10,6 +10,7 @@
 
 
 #import "TPCommentListItem.h"
+#import "VZStringBuilder.h"
 
 @interface TPCommentListItem()
 
@@ -22,6 +23,7 @@
     [super autoKVCBinding:dictionary];
     
     //todo...
+    self.contentHeight = [VZStringBuilder heightForString:self.content Font:ft(14) Width:kTPScreenWidth-24];
 }
 
 @end

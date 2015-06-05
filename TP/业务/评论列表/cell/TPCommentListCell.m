@@ -31,16 +31,15 @@
         
         //todo: add some UI code
         self.contentLabel = [TPUIKit label:[TPTheme blackColor] Font:ft(14.0f)];
-        self.contentLabel.text = @"aksdljflkajsdf";
+        self.contentLabel.numberOfLines = 0;
+        self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
         [self.contentView addSubview:self.contentLabel];
         
         self.icon = [TPUIKit roundImageView:CGSizeMake(30, 30) Border:[UIColor whiteColor]];
         [self.contentView addSubview:self.icon];
         
         self.nameLabel = [TPUIKit label:[TPTheme blackColor] Font:ft(12)];
-        self.nameLabel.text = @"Jayson";
         [self.contentView addSubview:self.nameLabel];
-        
         
         self.locationLabel = [TPUIKit label:[TPTheme grayColor] Font:ft(10)];
         self.locationLabel.text = @"New York";
@@ -53,7 +52,7 @@
 {
     [super setItem:item];
     
-    [self.icon sd_setImageWithURL:__url(item.avatarUrl) placeholderImage:nil];
+    [self.icon sd_setImageWithURL:__url(item.avatarUrl) placeholderImage:__image(@"girl.jpg")];
     [self.contentLabel setText:item.content];
     [self.nameLabel setText:item.userName];
     [self.locationLabel setText:item.userLocation];
@@ -64,12 +63,16 @@
 {
     [super layoutSubviews];
   
-    self.contentLabel.vzOrigin = (CGPoint){12,30};
+    self.contentLabel.vzOrigin = (CGPoint){12,15};
     self.contentLabel.vzWidth = self.vzWidth - 24;
     self.contentLabel.vzHeight = ((TPCommentListItem* )self.item).contentHeight;
     self.icon.vzOrigin = (CGPoint){12,self.contentLabel.vzBottom+12};
     self.nameLabel.vzOrigin = (CGPoint){self.icon.vzRight+12,self.contentLabel.vzBottom+12};
-    self.locationLabel.vzOrigin = (CGPoint){self.icon.vzRight+12,self.nameLabel.vzBottom+12};
+    self.nameLabel.vzWidth = self.vzWidth-self.icon.vzRight-24;
+    self.nameLabel.vzHeight = 12;
+    self.locationLabel.vzOrigin = (CGPoint){self.icon.vzRight+12,self.nameLabel.vzBottom+5};
+    self.locationLabel.vzWidth = self.vzWidth-self.icon.vzRight-24;
+    self.locationLabel.vzHeight = 10;
     
 }
 @end
