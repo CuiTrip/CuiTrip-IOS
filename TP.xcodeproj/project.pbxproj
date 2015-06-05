@@ -136,6 +136,23 @@
 		459BAD631B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD561B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m */; };
 		459BAD641B1F5D7E00739C7E /* TPProfilePageListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD591B1F5D7E00739C7E /* TPProfilePageListItem.m */; };
 		459BAD651B1F5D7E00739C7E /* TPProfilePageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD5C1B1F5D7E00739C7E /* TPProfilePageListModel.m */; };
+		459BAD681B1F5EBA00739C7E /* trip_left_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD661B1F5EBA00739C7E /* trip_left_w@2x.png */; };
+		459BAD691B1F5EBA00739C7E /* trip_share_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD671B1F5EBA00739C7E /* trip_share_w@2x.png */; };
+		459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD6B1B1FE79100739C7E /* VZStringBuilder.m */; };
+		459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAE9F1B207F4D00739C7E /* TBCityCalendarMonthView.m */; };
+		459BAEA31B207F4D00739C7E /* TBCityGraphic.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAEA11B207F4D00739C7E /* TBCityGraphic.m */; };
+		459BAEA61B21561A00739C7E /* TPStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAEA51B21561A00739C7E /* TPStarView.m */; };
+		459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEA71B21791800739C7E /* star_gray@2x.png */; };
+		459BAEAA1B21791900739C7E /* star_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEA81B21791900739C7E /* star_highlight@2x.png */; };
+		459BAEB01B218F2300739C7E /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEAC1B218F2300739C7E /* SMS_SDKLocalizable.strings */; };
+		459BAEB11B218F2300739C7E /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEAE1B218F2300739C7E /* SMS_SDK.framework */; };
+		459BAEB31B219C3300739C7E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB21B219C3300739C7E /* Security.framework */; };
+		459BAEB51B219C4C00739C7E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB41B219C4C00739C7E /* AddressBook.framework */; };
+		459BAEB71B219C5100739C7E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB61B219C5100739C7E /* AddressBookUI.framework */; };
+		459BAEB91B219C5500739C7E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB81B219C5500739C7E /* MessageUI.framework */; };
+		459BAEBB1B219C7100739C7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEBA1B219C7100739C7E /* libz.dylib */; };
+		459BAEBD1B219C8E00739C7E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEBC1B219C8E00739C7E /* libicucore.dylib */; };
+		459BAEC01B219E6B00739C7E /* TPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAEBF1B219E6B00739C7E /* TPRegisterViewController.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -402,6 +419,29 @@
 		459BAD591B1F5D7E00739C7E /* TPProfilePageListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfilePageListItem.m; sourceTree = "<group>"; };
 		459BAD5B1B1F5D7E00739C7E /* TPProfilePageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProfilePageListModel.h; sourceTree = "<group>"; };
 		459BAD5C1B1F5D7E00739C7E /* TPProfilePageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfilePageListModel.m; sourceTree = "<group>"; };
+		459BAD661B1F5EBA00739C7E /* trip_left_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_left_w@2x.png"; sourceTree = "<group>"; };
+		459BAD671B1F5EBA00739C7E /* trip_share_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_share_w@2x.png"; sourceTree = "<group>"; };
+		459BAD6A1B1FE79100739C7E /* VZStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZStringBuilder.h; sourceTree = "<group>"; };
+		459BAD6B1B1FE79100739C7E /* VZStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZStringBuilder.m; sourceTree = "<group>"; };
+		459BAE9E1B207F4D00739C7E /* TBCityCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityCalendarMonthView.h; sourceTree = "<group>"; };
+		459BAE9F1B207F4D00739C7E /* TBCityCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityCalendarMonthView.m; sourceTree = "<group>"; };
+		459BAEA01B207F4D00739C7E /* TBCityGraphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityGraphic.h; sourceTree = "<group>"; };
+		459BAEA11B207F4D00739C7E /* TBCityGraphic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityGraphic.m; sourceTree = "<group>"; };
+		459BAEA41B21561A00739C7E /* TPStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPStarView.h; sourceTree = "<group>"; };
+		459BAEA51B21561A00739C7E /* TPStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPStarView.m; sourceTree = "<group>"; };
+		459BAEA71B21791800739C7E /* star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_gray@2x.png"; sourceTree = "<group>"; };
+		459BAEA81B21791900739C7E /* star_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlight@2x.png"; sourceTree = "<group>"; };
+		459BAEAD1B218F2300739C7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		459BAEAE1B218F2300739C7E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		459BAEAF1B218F2300739C7E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		459BAEB21B219C3300739C7E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		459BAEB41B219C4C00739C7E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		459BAEB61B219C5100739C7E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		459BAEB81B219C5500739C7E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		459BAEBA1B219C7100739C7E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		459BAEBC1B219C8E00739C7E /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		459BAEBE1B219E6B00739C7E /* TPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPRegisterViewController.h; sourceTree = "<group>"; };
+		459BAEBF1B219E6B00739C7E /* TPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPRegisterViewController.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -411,7 +451,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459BAEBD1B219C8E00739C7E /* libicucore.dylib in Frameworks */,
+				459BAEBB1B219C7100739C7E /* libz.dylib in Frameworks */,
+				459BAEB91B219C5500739C7E /* MessageUI.framework in Frameworks */,
+				459BAEB71B219C5100739C7E /* AddressBookUI.framework in Frameworks */,
+				459BAEB51B219C4C00739C7E /* AddressBook.framework in Frameworks */,
+				459BAEB31B219C3300739C7E /* Security.framework in Frameworks */,
 				F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */,
+				459BAEB11B218F2300739C7E /* SMS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +635,8 @@
 				45028B6C1B1C81B700417606 /* TPLoginHeader.h */,
 				45028AD41B1C797C00417606 /* TPLoginViewController.h */,
 				45028AD51B1C797C00417606 /* TPLoginViewController.m */,
+				459BAEBE1B219E6B00739C7E /* TPRegisterViewController.h */,
+				459BAEBF1B219E6B00739C7E /* TPRegisterViewController.m */,
 			);
 			path = "登录注册";
 			sourceTree = "<group>";
@@ -1050,6 +1099,8 @@
 				45028B6F1B1C838100417606 /* UIView+VZEX.h */,
 				45028B701B1C838100417606 /* UIView+VZEX.m */,
 				45028B721B1C841D00417606 /* VizzleEx.h */,
+				459BAD6A1B1FE79100739C7E /* VZStringBuilder.h */,
+				459BAD6B1B1FE79100739C7E /* VZStringBuilder.m */,
 			);
 			path = VizzleEX;
 			sourceTree = "<group>";
@@ -1110,6 +1161,7 @@
 		459B24851B176A1C009BB189 /* TP */ = {
 			isa = PBXGroup;
 			children = (
+				459BAEAB1B218F2300739C7E /* SMS_SDK */,
 				45028A671B1B535E00417606 /* Vizzle */,
 				45028B6E1B1C835800417606 /* VizzleEX */,
 				45028B6D1B1C824A00417606 /* 工具 */,
@@ -1237,6 +1289,10 @@
 		459BACCB1B1DF62A00739C7E /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				459BAEA71B21791800739C7E /* star_gray@2x.png */,
+				459BAEA81B21791900739C7E /* star_highlight@2x.png */,
+				459BAD661B1F5EBA00739C7E /* trip_left_w@2x.png */,
+				459BAD671B1F5EBA00739C7E /* trip_share_w@2x.png */,
 				459BAD001B1F1ABF00739C7E /* mazu.png */,
 			);
 			path = resource;
@@ -1245,6 +1301,8 @@
 		459BACCC1B1DF62A00739C7E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				459BAEA41B21561A00739C7E /* TPStarView.h */,
+				459BAEA51B21561A00739C7E /* TPStarView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1409,6 +1467,10 @@
 		459BAD3E1B1F5BA600739C7E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				459BAE9E1B207F4D00739C7E /* TBCityCalendarMonthView.h */,
+				459BAE9F1B207F4D00739C7E /* TBCityCalendarMonthView.m */,
+				459BAEA01B207F4D00739C7E /* TBCityGraphic.h */,
+				459BAEA11B207F4D00739C7E /* TBCityGraphic.m */,
 				459BAD3F1B1F5BA600739C7E /* TPDatePickerSubView.h */,
 				459BAD401B1F5BA600739C7E /* TPDatePickerSubView.m */,
 			);
@@ -1508,9 +1570,25 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		459BAEAB1B218F2300739C7E /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				459BAEAC1B218F2300739C7E /* SMS_SDKLocalizable.strings */,
+				459BAEAE1B218F2300739C7E /* SMS_SDK.framework */,
+			);
+			name = SMS_SDK;
+			path = "三方/SMS_SDK";
+			sourceTree = "<group>";
+		};
 		9FFED9F51BE90EBDBF1336EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				459BAEBC1B219C8E00739C7E /* libicucore.dylib */,
+				459BAEBA1B219C7100739C7E /* libz.dylib */,
+				459BAEB81B219C5500739C7E /* MessageUI.framework */,
+				459BAEB61B219C5100739C7E /* AddressBookUI.framework */,
+				459BAEB41B219C4C00739C7E /* AddressBook.framework */,
+				459BAEB21B219C3300739C7E /* Security.framework */,
 				05280B7AED6003BF1F5B44F3 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -1590,6 +1668,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4547815C1B14234F00B4A24D;
 			productRefGroup = 454781661B14234F00B4A24D /* Products */;
@@ -1615,14 +1694,17 @@
 				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,
 				45156E761B1D758100A67BDB /* trip_nav_4@2x.png in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
+				459BAEB01B218F2300739C7E /* SMS_SDKLocalizable.strings in Resources */,
 				45156E741B1D758100A67BDB /* trip_nav_3@2x.png in Resources */,
 				459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */,
+				459BAD681B1F5EBA00739C7E /* trip_left_w@2x.png in Resources */,
 				45156E771B1D758100A67BDB /* trip_nav_4_s@2x.png in Resources */,
 				45156E751B1D758100A67BDB /* trip_nav_3_s@2x.png in Resources */,
 				45028B471B1C7D2D00417606 /* message_meta.json in Resources */,
 				459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */,
 				459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
+				459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */,
 				45156E701B1D758100A67BDB /* trip_nav_1@2x.png in Resources */,
 				459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */,
 				459BACB31B1DF3D900739C7E /* taiwan.png in Resources */,
@@ -1630,9 +1712,11 @@
 				459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */,
 				45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */,
 				45028B3B1B1C7D2D00417606 /* trip_meta.json in Resources */,
+				459BAD691B1F5EBA00739C7E /* trip_share_w@2x.png in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				45156E721B1D758100A67BDB /* trip_nav_2@2x.png in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
+				459BAEAA1B21791900739C7E /* star_highlight@2x.png in Resources */,
 				459BACF21B1EC92A00739C7E /* TPDDProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1698,6 +1782,7 @@
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45028B3C1B1C7D2D00417606 /* TPTripListViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
+				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,
 				459BACDC1B1DF9F000739C7E /* TPDDCommentCell.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
 				45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */,
@@ -1708,6 +1793,7 @@
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
 				45028B3F1B1C7D2D00417606 /* TPTripListItem.m in Sources */,
+				459BAEC01B219E6B00739C7E /* TPRegisterViewController.m in Sources */,
 				459BACE91B1DFBE800739C7E /* TPDDInfoItem.m in Sources */,
 				459BACD31B1DF62A00739C7E /* TPDiscoveryDetailListModel.m in Sources */,
 				45028AD61B1C797C00417606 /* TPLoginViewController.m in Sources */,
@@ -1733,6 +1819,7 @@
 				45156E7A1B1D7B9B00A67BDB /* TPTheme.m in Sources */,
 				459BAD2A1B1F59D900739C7E /* TPCommentListViewDataSource.m in Sources */,
 				459BAD631B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m in Sources */,
+				459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */,
 				459BAD2D1B1F59D900739C7E /* TPCommentListModel.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
 				45028AF51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m in Sources */,
@@ -1754,6 +1841,7 @@
 				45028AF21B1C7C1C00417606 /* TPDiscoveryListCell.m in Sources */,
 				459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */,
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
+				459BAEA61B21561A00739C7E /* TPStarView.m in Sources */,
 				459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */,
 				45028B461B1C7D2D00417606 /* TPMessageListCell.m in Sources */,
 				45028B481B1C7D2D00417606 /* TPMessageListViewController.m in Sources */,
@@ -1785,6 +1873,7 @@
 				459BAD0D1B1F4C0E00739C7E /* TPDDCellContainerView.m in Sources */,
 				459B24931B176A1C009BB189 /* AppDelegate.m in Sources */,
 				45028AF71B1C7C1C00417606 /* TPDiscoveryListItem.m in Sources */,
+				459BAEA31B207F4D00739C7E /* TBCityGraphic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1813,6 +1902,15 @@
 				459B248A1B176A1C009BB189 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		459BAEAC1B218F2300739C7E /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				459BAEAD1B218F2300739C7E /* en */,
+				459BAEAF1B218F2300739C7E /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1907,6 +2005,10 @@
 			baseConfigurationReference = 550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TP/三方/SMS_SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TP.pch;
 				INFOPLIST_FILE = TP/Info.plist;
@@ -1920,6 +2022,10 @@
 			baseConfigurationReference = A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TP/三方/SMS_SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TP.pch;
 				INFOPLIST_FILE = TP/Info.plist;

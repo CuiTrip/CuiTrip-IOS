@@ -25,23 +25,20 @@
     return [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
 }
 
-+ (UIColor* )subTitleColor
++ (UIColor* )blackColor
 {
-    return [UIColor colorWithRed:155.0/255.0 green:155.0/255.0 blue:155.0/255.0 alpha:1];
+    return HEXCOLOR(0x4a4a4a);
+}
+
++ (UIColor* )grayColor
+{
+    return HEXCOLOR(0x9b9b9b);
 }
 
 + (UIColor* )bar
 {
     return [UIColor colorWithRed:255/255.0 green:107/255.0 blue:103/255.0 alpha:1];
 }
-
-
-+ (UIColor* )feedsBlue
-{
-    return [UIColor colorWithRed:78.0/255.0 green:100.0/255.0 blue:144.0/255.0 alpha:1.0];
-}
-
-
 
 + (void)config
 {

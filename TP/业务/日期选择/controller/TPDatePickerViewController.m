@@ -10,13 +10,15 @@
 
 
 #import "TPDatePickerViewController.h"
- 
 #import "TPDatePickerModel.h" 
+//#import <FSCalendar/FSCalendar.h>
+#import "TBCityCalendarMonthView.h"
+
 
 @interface TPDatePickerViewController()
 
- 
-@property(nonatomic,strong)TPDatePickerModel *datePickerModel; 
+@property(nonatomic,strong) TBCityCalendarMonthView* calendarView;
+@property(nonatomic,strong) TPDatePickerModel *datePickerModel;
 
 @end
 
@@ -51,12 +53,33 @@
     [super loadView];
     //todo..
     self.navigationController.navigationBarHidden = NO;
+    self.date = [NSDate date];
+    
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    calendar.firstWeekday = 1;
+    calendar.minimumDaysInFirstWeek = 7;
+    NSDateComponents* currentM = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:self.date];
+    
+    NSUInteger firstDay = currentM.day;
+    currentM.day = 1;
+    currentM = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:currentM.date];
+
+    self.calendarView = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 380)];
+    self.calendarView.firstWeekDay = currentM.weekday;
+    self.calendarView.currentDate = firstDay;
+    self.calendarView.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
+                                                                        inUnit:NSMonthCalendarUnit
+                                                                       forDate:currentM.date].length;
+
+
+    [self.view addSubview:self.calendarView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //todo..
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

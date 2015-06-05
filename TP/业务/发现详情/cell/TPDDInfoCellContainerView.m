@@ -7,14 +7,15 @@
 //
 
 #import "TPDDInfoCellContainerView.h"
+#import "TPStarView.h"
 
 @interface TPDDInfoCellContainerView()
 
 @property (weak, nonatomic) IBOutlet UILabel *infoNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoAddressLabel;
-@property (weak, nonatomic) IBOutlet UIView *startView;
 @property (weak, nonatomic) IBOutlet UITextView *infoContentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *viewDetailBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *grayStarView;
 
 @end
 
@@ -27,8 +28,9 @@
     self.viewDetailBtn.layer.cornerRadius = 5.0f;
     self.viewDetailBtn.layer.borderColor = [TPTheme themeColor].CGColor;
     self.viewDetailBtn.layer.borderWidth = 1.0f;
-    
     [self.viewDetailBtn addTarget:self action:@selector(onBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView* imgv = [TPStarView starViewWithCount:3.5];
+    [self.grayStarView addSubview:imgv];
 }
 
 - (void)onBtnClicked:(id)sender

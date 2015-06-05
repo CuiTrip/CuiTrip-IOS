@@ -163,6 +163,25 @@
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
     self.tableView.tableFooterView = btn;
+    
+    
+    UIButton* backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];
+    [backBtn setBackgroundImage:__image(@"trip_left_w.png") forState:UIControlStateNormal];
+    [[backBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+     subscribeNext:^(id x) {
+         [self.navigationController popViewControllerAnimated:true];
+     }];
+    [self.view addSubview:backBtn];
+    
+    UIButton* shareBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.vzWidth-44, 20, 44 , 44)];
+    [shareBtn setBackgroundImage:__image(@"trip_share_w.png") forState:UIControlStateNormal];
+    [[shareBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+       
+        //分享//
+    }];
+    [self.view addSubview:shareBtn];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

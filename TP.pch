@@ -19,6 +19,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Toast/UIView+Toast.h>
 #import <WCAlertView/WCAlertView.h>
+#import <SMS_SDK/SMS_SDK.h>
 #import "Vizzle.h"
 #import "VizzleEx.h"
 

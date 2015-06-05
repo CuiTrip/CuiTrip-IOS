@@ -14,8 +14,12 @@
 
 + (UIColor* )bgColor;
 
-+ (UIColor* )subTitleColor;
++ (UIColor* )blackColor;
+
++ (UIColor* )grayColor;
 
 + (UIColor* )themeColor;
+
+
 
 @end

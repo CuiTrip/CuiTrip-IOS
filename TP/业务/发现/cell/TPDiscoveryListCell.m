@@ -41,7 +41,7 @@
         self.poster = [TPUIKit imageView];
         self.icon   = [TPUIKit roundImageView:CGSizeMake(45,45 ) Border:[UIColor whiteColor]];
         self.posterNameLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:18.0f]];
-        self.userNameLabel   = [TPUIKit label:[TPTheme subTitleColor] Font:[UIFont systemFontOfSize:10.0f]];
+        self.userNameLabel   = [TPUIKit label:[TPTheme grayColor] Font:[UIFont systemFontOfSize:10.0f]];
 //
 //        
         [self.containerView addSubview:self.poster];

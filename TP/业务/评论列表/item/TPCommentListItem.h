@@ -13,6 +13,13 @@
 
 @interface TPCommentListItem : VZListItem
 
+@property(nonatomic,strong) NSString* content;
+@property(nonatomic,strong) NSString* userName;
+@property(nonatomic,strong) NSString* avatarUrl;
+@property(nonatomic,strong) NSString* userLocation;
+
+@property(nonatomic,assign) CGFloat contentHeight;
+
 
 @end
 

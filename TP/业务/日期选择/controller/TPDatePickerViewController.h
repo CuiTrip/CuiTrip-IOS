@@ -13,5 +13,7 @@
 
 @interface TPDatePickerViewController : VZViewController
 
+@property(nonatomic,strong) NSDate* date;
+
 @end
   
