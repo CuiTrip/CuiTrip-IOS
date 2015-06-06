@@ -47,6 +47,10 @@
 
 
     self.pwdTextField.secureTextEntry = YES;
+    
+    NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
+    self.contryLabel.text = localCode;
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -123,7 +127,7 @@
 }
 - (IBAction)onForgetPassword:(id)sender {
 
-    TPForgetPWDViewController* v = [TPForgetPWDViewController new];
+    TPForgetPWDViewController* v =  [[UIStoryboard storyboardWithName:@"TPForgetPWDViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpforgetpwd" ];
     [self.navigationController pushViewController:v animated:YES];
 }
 
@@ -131,7 +135,7 @@
 {
     NSLog(@"the area data：%@,%@", data.areaCode,data.countryName);
     
-    self.contryLabel.text=[NSString stringWithFormat:@"+%@",data.areaCode];
+    self.contryLabel.text=[NSString stringWithFormat:@"+%@ %@",data.areaCode,data.countryName];
 
 }
 

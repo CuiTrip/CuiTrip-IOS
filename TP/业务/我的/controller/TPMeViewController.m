@@ -60,12 +60,18 @@
     
     void(^loadModel)(void) = ^{
         
-        
+        [TPUIKit removeExceptionView:self.view];
         
         
     };
     
     if (![TPUser isLogined]) {
+        
+        [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
+           
+            loadModel();
+            
+        }];
         
         [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
             
@@ -73,9 +79,10 @@
             
         }];
     }
-    
-    loadModel();
-
+    else
+    {
+        loadModel();
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

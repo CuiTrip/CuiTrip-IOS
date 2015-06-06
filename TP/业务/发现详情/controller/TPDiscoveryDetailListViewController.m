@@ -162,6 +162,25 @@
     [btn setTitle:@"联系预定" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+       
+        [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
+           
+            [TPLoginManager hideLoginViewController];
+            
+            if (!error) {
+                
+                //跳转到预约
+                
+            }
+            else
+            {
+                TOAST(self, @"登录失败");
+            }
+            
+        }];
+        
+    }];
     self.tableView.tableFooterView = btn;
     
     

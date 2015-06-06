@@ -12,6 +12,10 @@
 
 + (UIViewController* )rootViewController;
 
++ (NSString* )defaultLocalCode;
+
++ (NSString* )defaultCountry;
+
 + (void)localCodesWithCompletion:(void(^)(NSArray* list))completion;
 
 @end

@@ -16,5 +16,13 @@
 
 + (UIImageView* )roundImageView:(CGSize)sz Border:(UIColor* )color;
 
++ (UIView* )defaultExceptionView:(NSString* )title SubTitle:(NSString* )subTitle btnTitle:(NSString* )btn Callback:(void(^)(void))c;
+
++ (void )showRequestErrorView:(UIView* )v retryCallback:(void(^)(void))c;
+
++ (void )showSessionErrorView:(UIView* )v loginSuccessCallback:(void(^)(void))c;
+
++ (void)removeExceptionView:(UIView* )v;
+
 
 @end

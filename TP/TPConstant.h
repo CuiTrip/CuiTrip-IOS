@@ -30,7 +30,7 @@
 
 #define SHOW_SPINNER(x)   [x.view makeToastActivity]
 #define HIDE_SPINNER(x)   [x.view hideToastActivity]
-#define TOAST(this,x)  [this.view makeToast:x duration:1.0f position:CSToastPositionCenter]
+#define TOAST(this,x)  [this.view makeToast:x duration:2.0f position:CSToastPositionCenter]
 #define TOAST_ERROR(this,x)  [this.view makeToast:[NSString stringWithFormat:@"%@",x.userInfo[NSLocalizedDescriptionKey]] duration:1.0f position:CSToastPositionCenter]
 
 #define __observeNotify(x,y)   [[NSNotificationCenter defaultCenter] addObserver:self selector:x name:y object:nil]

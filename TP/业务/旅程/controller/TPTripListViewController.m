@@ -77,30 +77,43 @@
 {
     [super viewDidLoad];
     
-    //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
+    if (![TPUser isLogined ]) {
+        
+        UIView* empty = [TPUIKit defaultExceptionView:@"您的旅程" SubTitle:@"如果您已经确认了旅程，将会在这里看到" btnTitle:@"来看看旅程推荐吧" Callback:^{
+           
+            [self.tabBarController setSelectedIndex:0];
+            
+        }];
+        [self.view addSubview:empty];
     
-    //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
-    self.needPullRefresh = NO;
+    }
+    else
+    {
+        //1,config your tableview
+        self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        self.tableView.backgroundColor = [UIColor whiteColor];
+        self.tableView.showsVerticalScrollIndicator = YES;
+        self.tableView.separatorStyle = YES;
+        
+        //2,set some properties:下拉刷新，自动翻页
+        self.needLoadMore = NO;
+        self.needPullRefresh = NO;
 
-    
-    //3，bind your delegate and datasource to tableview
-    self.dataSource = self.ds;
-    self.delegate = self.dl;
-    
+        
+        //3，bind your delegate and datasource to tableview
+        self.dataSource = self.ds;
+        self.delegate = self.dl;
+        
 
-    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    //self.keyModel = self.model;
-    
-    //5,REQUIRED:register model to parent view controller
-    //[self registerModel:self.keyModel];
+        //4,@REQUIRED:YOU MUST SET A KEY MODEL!
+        //self.keyModel = self.model;
+        
+        //5,REQUIRED:register model to parent view controller
+        //[self registerModel:self.keyModel];
 
-    //6,Load Data
-    //[self load];
+        //6,Load Data
+        //[self load];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

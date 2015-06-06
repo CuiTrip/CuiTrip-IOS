@@ -8,7 +8,29 @@
 
 #import "TPRegisterViewController.h"
 #import "SectionsViewController.h"
+#import "TPLicenceViewController.h"
 
+@interface NSTimer(block)
++(NSTimer* )scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void(^)())block userInfo:(id)userInfo repeats:(BOOL)repeat;
+@end
+
+@implementation NSTimer(block)
+
++ (NSTimer* )scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block userInfo:(id)userInfo repeats:(BOOL)repeat
+{
+    return [NSTimer scheduledTimerWithTimeInterval:ti target:self selector:@selector(onTimerFired:) userInfo:[block copy] repeats:repeat];
+}
+
++ (void)onTimerFired:(NSTimer* )timer
+{
+    void(^block)() = timer.userInfo;
+    
+    if (block) {
+        block();
+    }
+}
+
+@end
 
 @interface TPRegisterViewController ()<SecondViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *contryLabel;
@@ -21,6 +43,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (weak, nonatomic) IBOutlet UIButton *privacyBtn;
 
+@property(nonatomic,strong) NSString* areaCode;
+//side effect
+@property(nonatomic,assign) NSNumber* second;
+@property(nonatomic,strong) NSTimer* timer;
 @end
 
 @implementation TPRegisterViewController
@@ -30,12 +56,48 @@
     // Do any additional setup after loading the view.
     
     [self setTitle:@"注册"];
+    
+    self.areaCode = [TPUtils defaultLocalCode];
+    
+    __weak typeof(self) weakSelf = self;
+    [RACObserve(self, second) subscribeNext:^(NSNumber* x) {
+        
+        if (x.integerValue == 0) {
+            
+            [weakSelf.vCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+            [weakSelf.vCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            weakSelf.vCodeBtn.backgroundColor = [TPTheme themeColor];
+            weakSelf.vCodeBtn.userInteractionEnabled = true;
+        }
+        else
+        {
+            [weakSelf.vCodeBtn setTitle:[NSString stringWithFormat:@"重新获取(%@)",x] forState:UIControlStateNormal];
+            [weakSelf.vCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            weakSelf.vCodeBtn.backgroundColor = [UIColor grayColor];
+            weakSelf.vCodeBtn.userInteractionEnabled = NO;
+        }
+        
+    }];
+    
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeKeyboard)]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self closeKeyboard];
+    [self stopTimer];
 }
+
+- (void)dealloc
+{
+    [self stopTimer];
+}
+
+
 - (IBAction)selectCountry:(id)sender {
     
     SHOW_SPINNER(self);
@@ -53,17 +115,97 @@
 - (IBAction)onGetVCode:(id)sender {
     
     
+    [self startTimer];
+    self.areaCode = @"86";
+    [SMS_SDK getVerificationCodeBySMSWithPhone:self.phoneTextField.text zone:self.areaCode result:^(SMS_SDKError *error) {
+       
+        if (!error) {
+            
+        }
+        else
+        {
+            NSString* str = [NSString stringWithFormat:@"状态码：%zi ,错误描述：%@",error.errorCode,error.errorDescription];
+            TOAST(self , str);
+        }
+    }];
+    
 }
 - (IBAction)onHidePWD:(id)sender {
+    
+    self.pwdTextField.secureTextEntry = !self.pwdTextField.secureTextEntry;
 }
 - (IBAction)onConfirm:(id)sender {
+    
+    
+    SHOW_SPINNER(self);
+    
+    NSString* vCode = self.vCodeTextField.text;
+    vCode = @"1460";
+    //先检验验证码，成功后再注册
+    [SMS_SDK commitVerifyCode:vCode result:^(enum SMS_ResponseState state) {
+        
+        HIDE_SPINNER(self);
+        if (1==state)
+        {
+            //do register
+            TOAST(self, @"验证码获取成功");
+        }
+        else if(0==state)
+        {
+            NSLog(@"验证失败");
+            TOAST(self, @"验证码无效,请重新获取");
+        }
+    }];
 }
 - (IBAction)onPrivacy:(id)sender {
+
+    TPLicenceViewController* v = [TPLicenceViewController new];
+    [self.navigationController pushViewController:v animated:true];
 }
 
 - (void)setSecondData:(CountryAndAreaCode *)data
 {
+    self.contryLabel.text=[NSString stringWithFormat:@"+%@ %@",data.areaCode,data.countryName];
+}
+
+#define kDefaultTimeoutSeconds 10
+static unsigned int g_seconds = kDefaultTimeoutSeconds;
+- (void)startTimer
+{
+    [self.timer invalidate];
+    _timer = nil;
     
+    if (!_timer) {
+        
+        __weak typeof(self) weakSelf = self;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^{
+            
+            g_seconds--;
+            weakSelf.second = @(g_seconds);
+            
+            if (g_seconds == 0) {
+                g_seconds = kDefaultTimeoutSeconds;
+                [weakSelf stopTimer];
+            }
+            
+        } userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    }
+}
+-(void)stopTimer
+{
+    [self.timer invalidate];
+    _timer = nil;
+    
+}
+
+- (void)closeKeyboard
+{
+//    [self.phoneTextField resignFirstResponder];
+//    [self.vCodeTextField resignFirstResponder];
+//    [self.pwdTextField resignFirstResponder];
+//    [self.nickTextField resignFirstResponder];
+    [self.view endEditing:true];
 }
 
 @end

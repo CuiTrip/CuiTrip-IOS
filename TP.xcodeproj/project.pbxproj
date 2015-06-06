@@ -87,6 +87,8 @@
 		4509AB901B22F13100846032 /* TPForgetPWDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AB881B22F13100846032 /* TPForgetPWDModel.m */; };
 		4509AB911B22F13100846032 /* TPForgetPWDSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AB8C1B22F13100846032 /* TPForgetPWDSubView.m */; };
 		4509AB941B22F13D00846032 /* TPLicenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AB931B22F13D00846032 /* TPLicenceViewController.m */; };
+		4509AB961B23298A00846032 /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509AB951B23298A00846032 /* ExceptionView.xib */; };
+		4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AB971B23304F00846032 /* TPForgetPWDViewController.storyboard */; };
 		45156E7A1B1D7B9B00A67BDB /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45156E791B1D7B9B00A67BDB /* TPTheme.m */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
@@ -356,6 +358,8 @@
 		4509AB8C1B22F13100846032 /* TPForgetPWDSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPForgetPWDSubView.m; sourceTree = "<group>"; };
 		4509AB921B22F13D00846032 /* TPLicenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLicenceViewController.h; sourceTree = "<group>"; };
 		4509AB931B22F13D00846032 /* TPLicenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLicenceViewController.m; sourceTree = "<group>"; };
+		4509AB951B23298A00846032 /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
+		4509AB971B23304F00846032 /* TPForgetPWDViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPForgetPWDViewController.storyboard; sourceTree = "<group>"; };
 		45156E781B1D7B9B00A67BDB /* TPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTheme.h; sourceTree = "<group>"; };
 		45156E791B1D7B9B00A67BDB /* TPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTheme.m; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1132,6 +1136,7 @@
 				459BACAC1B1DD78A00739C7E /* TPUIKit.m */,
 				459BAD051B1F331F00739C7E /* TPUtils.h */,
 				459BAD061B1F331F00739C7E /* TPUtils.m */,
+				4509AB951B23298A00846032 /* ExceptionView.xib */,
 			);
 			path = "工具";
 			sourceTree = "<group>";
@@ -1241,6 +1246,7 @@
 			children = (
 				4509AB811B22F13100846032 /* TPForgetPWDViewController.h */,
 				4509AB821B22F13100846032 /* TPForgetPWDViewController.m */,
+				4509AB971B23304F00846032 /* TPForgetPWDViewController.storyboard */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1880,6 +1886,7 @@
 				459BAEB01B218F2300739C7E /* SMS_SDKLocalizable.strings in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
+				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
 				459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */,
 				459BAEEE1B21E58700739C7E /* trip_display_yes@2x.png in Resources */,
 				459BAEF51B21E58700739C7E /* trip_nav_m_A@2x.png in Resources */,
@@ -1908,6 +1915,7 @@
 				45028B3B1B1C7D2D00417606 /* trip_meta.json in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
+				4509AB961B23298A00846032 /* ExceptionView.xib in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
 				459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */,
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
@@ -2220,6 +2228,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TP.pch;
 				INFOPLIST_FILE = TP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -2237,6 +2246,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TP.pch;
 				INFOPLIST_FILE = TP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
