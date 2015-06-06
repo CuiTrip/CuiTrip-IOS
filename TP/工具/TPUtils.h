@@ -12,4 +12,6 @@
 
 + (UIViewController* )rootViewController;
 
++ (void)localCodesWithCompletion:(void(^)(NSArray* list))completion;
+
 @end

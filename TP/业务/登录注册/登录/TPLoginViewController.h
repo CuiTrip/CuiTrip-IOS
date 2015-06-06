@@ -6,8 +6,10 @@
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
-#import "VZViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface TPLoginViewController : VZViewController
+
+@property(nonatomic,copy) void(^loginResult)(NSError* err);
 
 @end

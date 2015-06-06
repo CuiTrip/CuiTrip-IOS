@@ -77,6 +77,7 @@
 {
     [super viewDidLoad];
     
+    
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView.backgroundColor = [UIColor whiteColor];
@@ -107,7 +108,7 @@
 {
     [super viewWillAppear:animated];
     
-    //todo..
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

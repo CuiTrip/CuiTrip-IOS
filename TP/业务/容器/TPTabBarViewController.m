@@ -37,28 +37,25 @@
 //    UIImage *tabbarBackground = [[UIImage imageNamed:@"tabbar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //    [[UITabBar appearance] setBackgroundImage:tabbarBackground];
 
-    UITabBarItem* a = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  selectedImage:[[UIImage imageNamed:@"trip_nav_1_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
+    UITabBarItem* a = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_r.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  selectedImage:[[UIImage imageNamed:@"trip_nav_r_A.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     a.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
     a.titlePositionAdjustment = UIOffsetMake(0, 12.0);
 
-    UITabBarItem* b = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_2_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UITabBarItem* b = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_m.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_m_A.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     b.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
     b.titlePositionAdjustment = UIOffsetMake(0, 12.0);
     
-    UITabBarItem* c = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_3.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_3_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UITabBarItem* c = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_j.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_j_A.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     c.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
     c.titlePositionAdjustment = UIOffsetMake(0, 12.0);
     
-    UITabBarItem* d = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_4.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_4_s.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UITabBarItem* d = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_p.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trip_nav_p_A.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     d.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
     d.titlePositionAdjustment = UIOffsetMake(0, 12.0);
     
     UIViewController* messages      = [TPMessageListViewController new];
     UIViewController* trip          = [TPTripListViewController new];
     UIViewController* me            = [TPMeViewController new];
-    
-    
     UIViewController* first = nil;
     
     if ([TPUser type] == kCustomer) {
@@ -75,7 +72,6 @@
     UINavigationController* firstNav = [[UINavigationController alloc]initWithRootViewController:first];
     firstNav.tabBarItem = a;
     
-    
     UINavigationController* secondNav = [[UINavigationController alloc]initWithRootViewController:messages];
     secondNav.tabBarItem = b;
     
@@ -88,6 +84,28 @@
     if (first) {
         [self setViewControllers:@[firstNav,secondNav,thirdNav,forthNav]];
     }
+    
+    //resize imageviews
+//    [self.tabBar.subviews enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger idx, BOOL *stop) {
+//       
+//        if ([obj isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+//            
+//            [obj.subviews enumerateObjectsUsingBlock:^(UIView*  sub, NSUInteger idx, BOOL *stop1) {
+//                
+//                if ([sub isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+//                    
+//                    UIImageView* imageV = (UIImageView* )sub;
+//                    imageV.backgroundColor = [UIColor redColor];
+//                    imageV.bounds = CGRectMake(0, 0, 60, 60);
+//                    *stop1 = true;
+//                    
+//                    
+//                }
+//                
+//            }];
+//        }
+//        
+//    }];
     
 }
 

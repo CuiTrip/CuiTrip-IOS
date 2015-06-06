@@ -1,26 +1,24 @@
   
 //
-//  TPMeViewController.m
+//  TPLicenceViewController.m
 //  TP
 //
-//  Created by moxin on 2015-06-01 19:41:46 +0800.
+//  Created by moxin on 2015-06-06 17:11:27 +0800.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
 
 
-#import "TPMeViewController.h"
- 
-#import "TPMeModel.h" 
+#import "TPLicenceViewController.h"
 
-@interface TPMeViewController()
 
- 
-@property(nonatomic,strong)TPMeModel *meModel; 
+@interface TPLicenceViewController()
+
+@property(nonatomic,strong) UITextView* licence;
 
 @end
 
-@implementation TPMeViewController
+@implementation TPLicenceViewController
 
 
 //////////////////////////////////////////////////////////// 
@@ -31,16 +29,6 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - getters 
 
-   
-- (TPMeModel *)meModel
-{
-    if (!_meModel) {
-        _meModel = [TPMeModel new];
-        _meModel.key = @"__TPMeModel__";
-    }
-    return _meModel;
-}
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -50,32 +38,19 @@
 {
     [super loadView];
     //todo..
-    [self setTitle:@"我的"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //todo..
+    [self setTitle:@"协议"];
     
-    void(^loadModel)(void) = ^{
-        
-        
-        
-        
-    };
+    self.licence = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, self.view.vzHeight)];
+    self.licence.editable = NO;
+    [self.view addSubview:self.licence];
     
-    if (![TPUser isLogined]) {
-        
-        [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
-            
-            [TPLoginManager hideLoginViewController];
-            
-        }];
-    }
-    
-    loadModel();
-
+    self.licence.text = @"As a small change of pace, today's post is written by guest author Gwynne Raskind. My last post touched a bit on disassembling object files, and Gwynne wanted to dive deeply into just how to read the output in detail. Without further ado, I present her wonderful in-depth look at reading x86_64 assembly";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,8 +58,6 @@
     [super viewWillAppear:animated];
     
     //todo..
-    
-
 }
 
 - (void)viewDidAppear:(BOOL)animated

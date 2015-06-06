@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPForgetPWDViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "forgetPWDModel",
+          "class": "TPForgetPWDModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./ForgetPWD/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPForgetPWDModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./ForgetPWD/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPForgetPWDModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPForgetPWDModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./ForgetPWD/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPForgetPWDItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./ForgetPWD/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPForgetPWDSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./ForgetPWD/view/",
+      "namespace": "T_View",
+      "itemclass": "TPForgetPWDItem"
+    }
+  ],
+  "config": {
+    "class": "TPForgetPWDConfig",
+    "proj": "TP",
+    "package_name": "ForgetPWD",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./ForgetPWD/config/"
+  }
+}

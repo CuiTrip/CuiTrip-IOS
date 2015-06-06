@@ -25,7 +25,7 @@
     return self;
 }
 
-+ (void)showLoginViewControllerWithCompletion:(void (^)(void))completion
++ (void)showLoginViewControllerWithCompletion:(void (^)(NSError *))completion
 {
     if ([TPUser isLogined]) {
         return;
@@ -35,7 +35,8 @@
         
         void(^presentLoginVC)(void) = ^{
             
-            TPLoginViewController* loginVC = [TPLoginViewController new];
+            TPLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"TPLoginViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tplogin"];
+            loginVC.loginResult = completion;
             UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:loginVC];
              [[TPUtils rootViewController] presentViewController:nav animated:YES completion:nil];
         };
@@ -53,6 +54,21 @@
             presentLoginVC();
         }
     }
+}
+
++ (void)hideLoginViewController
+{
+    [[TPUtils rootViewController] dismissViewControllerAnimated:true completion:nil];
+}
+
++ (void)loginWithCompletion:(void(^)(NSError* error))completion
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (completion) {
+            completion(nil);
+        }
+    });
 }
 
 
