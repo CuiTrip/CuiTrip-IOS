@@ -69,43 +69,56 @@
 - (void)loadView
 {
     [super loadView];
+    [self.tabBarController hidesBottomBarWhenPushed];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
+    if (![TPUser isLogined ]) {
+        
+        [self showNoResult:nil];
+    }
+    else
+    {
+        //1,config your tableview
+        self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        self.tableView.backgroundColor = [UIColor whiteColor];
+        self.tableView.showsVerticalScrollIndicator = YES;
+        self.tableView.separatorStyle = YES;
+        
+        //2,set some properties:下拉刷新，自动翻页
+        self.needLoadMore = NO;
+        self.needPullRefresh = NO;
+        
+        
+        //3，bind your delegate and datasource to tableview
+        self.dataSource = self.ds;
+        self.delegate = self.dl;
+        
+        
+        //4,@REQUIRED:YOU MUST SET A KEY MODEL!
+        //self.keyModel = self.model;
+        
+        //5,REQUIRED:register model to parent view controller
+        //[self registerModel:self.keyModel];
+        
+        //6,Load Data
+        //[self load];
+    }
     
-    //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
-    self.needPullRefresh = NO;
+    
 
-    
-    //3，bind your delegate and datasource to tableview
-    self.dataSource = self.ds;
-    self.delegate = self.dl;
-    
-
-    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    //self.keyModel = self.model;
-    
-    //5,REQUIRED:register model to parent view controller
-    //[self registerModel:self.keyModel];
-
-    //6,Load Data
-    //[self load];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    self.tabBarController.tabBar.hidden = false;
     
-    //todo..
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -142,6 +155,38 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
+
+- (void)showNoResult:(VZHTTPListModel *)model
+{
+    [super showNoResult:model];
+    
+    [[self.view viewWithTag:100]removeFromSuperview];
+    
+    UIView* empty = [TPUIKit defaultExceptionView:@"您的发现" SubTitle:@"您有什么有趣的发现要告诉旅行者吗?" btnTitle:@"创建我的发现" Callback:^{
+        
+        if (![TPUser isLogined]) {
+            
+        
+            [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
+                
+                [TPLoginManager hideLoginViewController];
+                
+                //重新请求数据
+                [self load];
+            
+            }];
+        }
+        else
+        {
+            //重新请求数据
+            [self load];
+        }
+
+        
+    }];
+    empty.tag = 100;
+    [self.view addSubview:empty];
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

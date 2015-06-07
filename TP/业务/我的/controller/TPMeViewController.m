@@ -54,7 +54,8 @@
     //todo..
     [self setTitle:@"我的"];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onSetting) ];
+
+    self.tableView.tableFooterView = [TPUIKit emptyView];
     
 }
 
@@ -65,6 +66,7 @@
     
     void(^loadModel)(void) = ^{
         
+        [TPLoginManager hideLoginViewController];
         [TPUIKit removeExceptionView:self.view];
         
         
@@ -78,13 +80,13 @@
         
         [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
            
+            
             loadModel();
             
         }];
         
         [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
             
-            [TPLoginManager hideLoginViewController];
             
             loadModel();
             
@@ -159,21 +161,49 @@
 
 - (void)setupTableView
 {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onSetting) ];
+    
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPMeSubView" owner:self options:nil];
     self.headerView = (TPMeSubView *)[nib objectAtIndex:0];
     self.headerView.vzWidth = self.view.vzWidth;
     self.headerView.vzHeight = 350;
     self.tableView.tableHeaderView = self.headerView;
     
+    
+    TPUserType type = [TPUser type];
+    NSString* title = type == kCustomer? @"切换到发现者模式":@"切换到旅行者模式";
+    
     UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
     UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 50, 200, 44)];
-    [btn setTitle:@"切换到发现者模式" forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
     [btn setBackgroundColor:[TPTheme themeColor]];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         
-        //跳转到发现者
         
+        [WCAlertView showAlertWithTitle:@"" message:@"确定要切换身份吗?" customizationBlock:nil completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
+            
+            if (buttonIndex == 1) {
+                
+                //跳转到发现者
+                if(type == kCustomer)
+                {
+                    [TPUser changeUserType:kProvider];
+                    __notify(kTPNofityMessageSwitchIdentity);
+                }
+                else if (type == kProvider)
+                {
+                    [TPUser changeUserType:kCustomer];
+                    __notify(kTPNofityMessageSwitchIdentity);
+                }
+                else
+                {
+                }
+            }
+            
+        } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        
+
         
     }];
     [footerView addSubview:btn];

@@ -8,6 +8,12 @@
 
 #import "TPUser.h"
 
+@interface TPUser()
+
+@property(nonatomic,strong)TPUserItem* userItem;
+
+@end
+
 @implementation TPUser
 
 + (instancetype)sharedInstance
@@ -22,9 +28,28 @@
     return instance;
 }
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        
+        TPUserItem* userItem = [[TMCache sharedCache] objectForKey:kTPCacheKey_User];
+        if (userItem) {
+            self.userItem = userItem;
+        }
+        else
+        {
+            self.userItem = [TPUserItem new];
+            self.userItem.type = kCustomer;
+        }
+    }
+    return self;
+}
+
 + (TPUserType)type
 {
-    return kCustomer;
+    return [TPUser sharedInstance].userItem.type;
 }
 
 + (NSString* )avatar
@@ -49,13 +74,28 @@
 
 + (void)clearUserInfo
 {
-    
+    TPUser* instance = [TPUser sharedInstance];
+    instance -> _userItem = nil;
+    [[TMDiskCache sharedCache] removeObjectForKey:kTPCacheKey_User];
 }
 
 + (void)logout
 {
     [self clearUserInfo];
 
+}
+
++ (void)changeUserType:(TPUserType)type
+{
+    [TPUser sharedInstance].userItem.type = type;
+    [self synchronize];
+}
+
+
++ (void)synchronize
+{
+    //持久化
+    [[TMCache sharedCache] setObject:[TPUser sharedInstance].userItem forKey:kTPCacheKey_User];
 }
 
 

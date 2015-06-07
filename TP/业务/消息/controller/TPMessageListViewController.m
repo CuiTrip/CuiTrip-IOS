@@ -71,6 +71,8 @@
     [super loadView];
     
     [self setTitle:@"消息"];
+    [self.tabBarController hidesBottomBarWhenPushed];
+
 }
 
 - (void)viewDidLoad
@@ -107,7 +109,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    self.tabBarController.tabBar.hidden = NO;
 
 }
 

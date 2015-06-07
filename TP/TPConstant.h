@@ -9,9 +9,10 @@
 #ifndef TP_TPConstant_h
 #define TP_TPConstant_h
 
-#define appKey @"4d90f19ede24"
-#define appSecret @"a239033c4182defcd93eaabd054c25d6"
+#define appKey @"7dc26c72f524"
+#define appSecret @"d9ff9f18a74898d61821af51b29683e2"
 
+#define kTPCacheKey_User @"TP_USER"
 
 #define kTPScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kTPScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -19,8 +20,9 @@
 #define kTPWidthWithMargin(x)  (kTPScreenWidth - x*2)
 #define kTPHeightWithMargin(y) (kTPScreenHeight - y*2)
 
-#define kTPLoginSuccess @"kTPLoginSuccess"
-#define kTPLoginFailure @"kTPLoginFailure"
+#define kTPNofityMessageSwitchIdentity @"kTPNofityMessageSwitchIdentity"
+#define kTPNotifyMessageLoginSuccess @"kTPLoginSuccess"
+#define kTPNotifyMessageLoginFailure @"kTPLoginFailure"
 
 #define ft(x) [UIFont systemFontOfSize:(x)]
 
@@ -33,6 +35,7 @@
 #define TOAST(this,x)  [this.view makeToast:x duration:2.0f position:CSToastPositionCenter]
 #define TOAST_ERROR(this,x)  [this.view makeToast:[NSString stringWithFormat:@"%@",x.userInfo[NSLocalizedDescriptionKey]] duration:1.0f position:CSToastPositionCenter]
 
+#define __notify(x)  [[NSNotificationCenter defaultCenter]postNotificationName:x object:nil]
 #define __observeNotify(x,y)   [[NSNotificationCenter defaultCenter] addObserver:self selector:x name:y object:nil]
 #define __removeNotifyObserver [[NSNotificationCenter defaultCenter] removeObserver:self]
 

@@ -66,6 +66,11 @@
     return imageView;
 }
 
++ (UIView* )emptyView
+{
+    return [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
 + (UIView* )defaultExceptionView:(NSString* )title SubTitle:(NSString* )subTitle btnTitle:(NSString* )btn Callback:(void(^)(void))c
 {
     int w = kTPScreenWidth;

@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    __observeNotify(@selector(prepare),kTPNofityMessageSwitchIdentity);
+    
     [self prepare];
 }
 
@@ -33,9 +36,6 @@
 
 - (void)prepare
 {
-    
-//    UIImage *tabbarBackground = [[UIImage imageNamed:@"tabbar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    [[UITabBar appearance] setBackgroundImage:tabbarBackground];
 
     UITabBarItem* a = [[UITabBarItem alloc]initWithTitle:@"" image:[[UIImage imageNamed:@"trip_nav_r.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  selectedImage:[[UIImage imageNamed:@"trip_nav_r_A.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     a.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
@@ -84,6 +84,8 @@
     if (first) {
         [self setViewControllers:@[firstNav,secondNav,thirdNav,forthNav]];
     }
+    
+    [self setSelectedIndex:0];
     
     //resize imageviews
 //    [self.tabBar.subviews enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger idx, BOOL *stop) {

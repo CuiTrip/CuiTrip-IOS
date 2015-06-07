@@ -16,6 +16,8 @@
 
 + (UIImageView* )roundImageView:(CGSize)sz Border:(UIColor* )color;
 
++ (UIView* )emptyView;
+
 + (UIView* )defaultExceptionView:(NSString* )title SubTitle:(NSString* )subTitle btnTitle:(NSString* )btn Callback:(void(^)(void))c;
 
 + (void )showRequestErrorView:(UIView* )v retryCallback:(void(^)(void))c;

@@ -113,6 +113,9 @@
 		4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABF01B23E1DA00846032 /* TPSystemSettingsViewController.storyboard */; };
 		4509ABF41B23E2C300846032 /* TPAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABF31B23E2C300846032 /* TPAboutViewController.m */; };
 		4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABF51B23E55C00846032 /* TPAboutViewController.storyboard */; };
+		4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */; };
+		4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABFB1B240A9B00846032 /* TPUserItem.m */; };
+		4509ABFE1B245AAF00846032 /* TPDatePickerSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */; };
 		45156E7A1B1D7B9B00A67BDB /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45156E791B1D7B9B00A67BDB /* TPTheme.m */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
@@ -427,6 +430,11 @@
 		4509ABF21B23E2C300846032 /* TPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAboutViewController.h; sourceTree = "<group>"; };
 		4509ABF31B23E2C300846032 /* TPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAboutViewController.m; sourceTree = "<group>"; };
 		4509ABF51B23E55C00846032 /* TPAboutViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPAboutViewController.storyboard; sourceTree = "<group>"; };
+		4509ABF71B23E8C000846032 /* TBCityHUDPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityHUDPicker.h; sourceTree = "<group>"; };
+		4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityHUDPicker.m; sourceTree = "<group>"; };
+		4509ABFA1B240A9B00846032 /* TPUserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserItem.h; sourceTree = "<group>"; };
+		4509ABFB1B240A9B00846032 /* TPUserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserItem.m; sourceTree = "<group>"; };
+		4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDatePickerSelectionView.xib; sourceTree = "<group>"; };
 		45156E781B1D7B9B00A67BDB /* TPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTheme.h; sourceTree = "<group>"; };
 		45156E791B1D7B9B00A67BDB /* TPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTheme.m; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -754,6 +762,8 @@
 				45028AD01B1C764A00417606 /* TPUser.m */,
 				45028AD71B1C79CA00417606 /* TPLoginManager.h */,
 				45028AD81B1C79CA00417606 /* TPLoginManager.m */,
+				4509ABFA1B240A9B00846032 /* TPUserItem.h */,
+				4509ABFB1B240A9B00846032 /* TPUserItem.m */,
 			);
 			path = "用户";
 			sourceTree = "<group>";
@@ -1426,6 +1436,8 @@
 		4509ABA81B233C9200846032 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4509ABF71B23E8C000846032 /* TBCityHUDPicker.h */,
+				4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */,
 				4509ABA91B233C9200846032 /* TPReserveSubView.h */,
 				4509ABAA1B233C9200846032 /* TPReserveSubView.m */,
 			);
@@ -1922,6 +1934,7 @@
 			children = (
 				459BAD331B1F5BA600739C7E /* TPDatePickerViewController.h */,
 				459BAD341B1F5BA600739C7E /* TPDatePickerViewController.m */,
+				4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -2217,6 +2230,7 @@
 				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
 				459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */,
 				459BAEEE1B21E58700739C7E /* trip_display_yes@2x.png in Resources */,
+				4509ABFE1B245AAF00846032 /* TPDatePickerSelectionView.xib in Resources */,
 				459BAEF51B21E58700739C7E /* trip_nav_m_A@2x.png in Resources */,
 				4509AB7C1B22EA2300846032 /* Localizable.strings in Resources */,
 				45028B471B1C7D2D00417606 /* message_meta.json in Resources */,
@@ -2327,6 +2341,7 @@
 				45028AA91B1B535E00417606 /* VZListViewController.m in Sources */,
 				4509AB911B22F13100846032 /* TPForgetPWDSubView.m in Sources */,
 				45028AF41B1C7C1C00417606 /* TPDiscoveryListViewController.m in Sources */,
+				4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */,
 				459BAD2C1B1F59D900739C7E /* TPCommentListItem.m in Sources */,
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
@@ -2421,6 +2436,7 @@
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
 				45028B451B1C7D2D00417606 /* TPMeSubView.m in Sources */,
 				45028AAC1B1B535E00417606 /* VZViewController.m in Sources */,
+				4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */,
 				459BAD641B1F5D7E00739C7E /* TPProfilePageListItem.m in Sources */,
 				459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */,
 				459BAD461B1F5BA600739C7E /* TPDatePickerSubView.m in Sources */,

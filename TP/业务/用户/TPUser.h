@@ -7,19 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum
-{
-    kCustomer = 1,
-    kProvider = 2,
-    kUnknown = -1
-
-}TPUserType;
+#import "TPUserItem.h"
 
 @class TPUserItem;
 @interface TPUser : NSObject
 
-@property(nonatomic,strong,strong) TPUserItem* user;
+@property(nonatomic,strong) TPUserItem* user;
 
 + (instancetype)sharedInstance;
 
@@ -36,5 +29,9 @@ typedef enum
 + (void)clearUserInfo;
 
 + (void)logout;
+
++ (void)changeUserType:(TPUserType)type;
+
++ (void)synchronize;
 
 @end

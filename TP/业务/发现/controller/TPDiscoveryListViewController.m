@@ -73,14 +73,14 @@
     [self setTitle:@"发现"];
     
     self.view.backgroundColor = [TPTheme bgColor];
+    self.tabBarController.hidesBottomBarWhenPushed = true;
     
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.tabBarController.hidesBottomBarWhenPushed = true;
+
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);

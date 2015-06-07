@@ -71,6 +71,7 @@
     [super loadView];
     
     [self setTitle:@"旅程"];
+    [self.tabBarController setHidesBottomBarWhenPushed:true];
 }
 
 - (void)viewDidLoad
@@ -78,14 +79,8 @@
     [super viewDidLoad];
     
     if (![TPUser isLogined ]) {
-        
-        UIView* empty = [TPUIKit defaultExceptionView:@"您的旅程" SubTitle:@"如果您已经确认了旅程，将会在这里看到" btnTitle:@"来看看旅程推荐吧" Callback:^{
-           
-            [self.tabBarController setSelectedIndex:0];
-            
-        }];
-        [self.view addSubview:empty];
-    
+
+        [self showNoResult:nil];
     }
     else
     {
@@ -119,7 +114,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+        self.tabBarController.tabBar.hidden = NO;
     //todo..
 }
 
@@ -157,6 +152,35 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
+
+- (void)showNoResult:(VZHTTPListModel *)model
+{
+    [super showNoResult:model];
+    
+    [[self.view viewWithTag:100]removeFromSuperview];
+    
+    UIView* empty = nil;
+    if ([TPUser type] == kCustomer) {
+        
+        empty = [TPUIKit defaultExceptionView:@"您的旅程" SubTitle:@"如果您已经确认了旅程，将会在这里看到" btnTitle:@"来看看旅程推荐吧" Callback:^{
+            
+            [self.tabBarController setSelectedIndex:0];
+            
+        }];
+    }
+    if ([TPUser type] == kProvider) {
+        
+        empty = [TPUIKit defaultExceptionView:@"您创建的旅程" SubTitle:@"如果您已经创建了旅程，将会在这里看到" btnTitle:@"去创建旅程吧" Callback:^{
+            
+            [self.tabBarController setSelectedIndex:0];
+            
+        }];
+    }
+
+    empty.tag = 100;
+    [self.view addSubview:empty];
+    
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

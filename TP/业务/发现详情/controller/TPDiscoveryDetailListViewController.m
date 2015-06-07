@@ -109,8 +109,6 @@
 {
     [super loadView];
     
-    self.navigationController.navigationBarHidden = true;
-    self.tabBarController.tabBar.hidden  =  true;
 //    
     UIImageView* imageView = [TPUIKit imageView];
     imageView.vzWidth = self.view.frame.size.width;
@@ -171,6 +169,8 @@
             if (!error) {
                 
                 //跳转到预约
+                UIViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
+                [self.navigationController pushViewController:v animated:true];
                 
             }
             else
@@ -208,6 +208,8 @@
     [super viewWillAppear:animated];
     
     //todo..
+    self.navigationController.navigationBarHidden = true;
+    self.tabBarController.tabBar.hidden = true;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -220,8 +222,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    //todo..
 }
 
 - (void)viewDidDisappear:(BOOL)animated

@@ -111,7 +111,8 @@ typedef struct Tag
     float origin_y = 55;
     NSString* str = @"";
     CGRect smallRect = CGRectZero;
-    for (int i=1; i<=self.numberOfDays; i++) {
+    for (int i=1; i<=self.numberOfDays; i++)
+    {
         
         //第一行
         if (k/7 == 0 && i<= 7-self.firstWeekDay+1) {
@@ -126,29 +127,36 @@ typedef struct Tag
         
         str = [NSString stringWithFormat:@"%d",i];
         
-        NSLog(@"%d",i);
+      //  NSLog(@"%d",i);
  
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //预订日
         bool bCanReserve = false;
+        
+        if (i == self.currentDate) {
+        
+            //红字
+            [[TPTheme themeColor]set];
+            str = @"今天";
+            [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+            
+        }
+        
         if ( [self.reservedDates containsObject:@(i)]) {
             bCanReserve = true;
             //draw a circle
 //            drawSolidRoundCornerForRect(context, CGRectInset(smallRect, 0, 5), 22.5, HEXCOLOR(0xFA383A), nil);
-            
+            [[TPTheme themeColor]set];
+            [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
 
         }
         else
         {
+            bCanReserve = false;
+            
+            [[TPTheme grayColor] set];
+            [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
   
-            if (i == self.currentDate) {
-             
-                bCanReserve = YES;
-                //红字
-                [HEXCOLOR(0xFA383A) set];
-                str = @"今天";
-                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-            }
 //            else if(i == self.tomorrowDate)
 //            {
 //                //红字
@@ -165,21 +173,21 @@ typedef struct Tag
 //                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
 //
 //            }
-            else
-            {
-                //在预订范围内
-                if ( i >= self.highlightRange.location && i<self.highlightRange.location+self.highlightRange.length) {
-                    [HEXCOLOR(0x666666) set];
-                    bCanReserve = true;
-                }
-                else
-                {
-                    [HEXCOLOR(0xDDDDDD) set];
-                    bCanReserve = false;
-                }
-                
-                [str drawInRect:CGRectInset(smallRect, 10, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-            }
+//            else
+//            {
+//                //在预订范围内
+//                if ( i >= self.highlightRange.location && i<self.highlightRange.location+self.highlightRange.length) {
+//                    [HEXCOLOR(0x666666) set];
+//                    bCanReserve = true;
+//                }
+//                else
+//                {
+//                    [HEXCOLOR(0xDDDDDD) set];
+//                    bCanReserve = false;
+//                }
+//                
+//                [str drawInRect:CGRectInset(smallRect, 10, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+//            }
         }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -251,8 +259,8 @@ typedef struct Tag
     }
     else
     {
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"该时间段不能预订" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alert show];
+//        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"该时间段不能预订" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [alert show];
     }
 
 }
