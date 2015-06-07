@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPReserveViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "reserveModel",
+          "class": "TPReserveModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./Reserve/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPReserveModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./Reserve/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPReserveModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPReserveModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Reserve/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPReserveItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./Reserve/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPReserveSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./Reserve/view/",
+      "namespace": "T_View",
+      "itemclass": "TPReserveItem"
+    }
+  ],
+  "config": {
+    "class": "TPReserveConfig",
+    "proj": "TP",
+    "package_name": "Reserve",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Reserve/config/"
+  }
+}

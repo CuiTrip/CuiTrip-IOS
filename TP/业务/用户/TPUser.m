@@ -47,5 +47,16 @@
     return NO;
 }
 
++ (void)clearUserInfo
+{
+    
+}
+
++ (void)logout
+{
+    [self clearUserInfo];
+
+}
+
 
 @end

@@ -11,7 +11,7 @@
   
 #import "VZViewController.h"
 
-@interface TPMeViewController : VZViewController
+@interface TPMeViewController : UITableViewController
 
 @end
   

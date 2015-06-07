@@ -10,7 +10,6 @@
 
 @interface TPLoginManager : NSObject
 
-
 + (void)autoLogin;
 
 + (void)showLoginViewControllerWithCompletion:(void(^)(NSError* error))completion;
@@ -18,5 +17,8 @@
 + (void)hideLoginViewController;
 
 + (void)loginWithCompletion:(void(^)(NSError* error))completion;
+
++ (void)logout;
+
 
 @end

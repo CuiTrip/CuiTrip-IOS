@@ -55,7 +55,7 @@
     
     UIViewController* messages      = [TPMessageListViewController new];
     UIViewController* trip          = [TPTripListViewController new];
-    UIViewController* me            = [TPMeViewController new];
+    UIViewController* me            = [[UIStoryboard storyboardWithName:@"TPMeViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"me"];
     UIViewController* first = nil;
     
     if ([TPUser type] == kCustomer) {

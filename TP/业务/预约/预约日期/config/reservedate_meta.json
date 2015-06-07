@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPReserveDateViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "reserveDateModel",
+          "class": "TPReserveDateModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./ReserveDate/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPReserveDateModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./ReserveDate/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPReserveDateModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPReserveDateModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./ReserveDate/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPReserveDateItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./ReserveDate/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPReserveDateSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./ReserveDate/view/",
+      "namespace": "T_View",
+      "itemclass": "TPReserveDateItem"
+    }
+  ],
+  "config": {
+    "class": "TPReserveDateConfig",
+    "proj": "TP",
+    "package_name": "ReserveDate",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./ReserveDate/config/"
+  }
+}

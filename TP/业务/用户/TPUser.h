@@ -33,4 +33,8 @@ typedef enum
 
 + (BOOL)isLogined;
 
++ (void)clearUserInfo;
+
++ (void)logout;
+
 @end

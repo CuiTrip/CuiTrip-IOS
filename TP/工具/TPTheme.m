@@ -25,6 +25,11 @@
     return [UIColor colorWithRed:189.0/255.0 green:247/255.0 blue:251/255.0 alpha:1];
 }
 
++ (UIColor* )yellowColor
+{
+    return HEXCOLOR(0XFFFAF1);
+}
+
 + (UIColor* )blackColor
 {
     return HEXCOLOR(0x4a4a4a);

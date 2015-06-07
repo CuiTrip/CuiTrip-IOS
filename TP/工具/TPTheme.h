@@ -14,6 +14,8 @@
 
 + (UIColor* )bgColor;
 
++ (UIColor* )yellowColor;
+
 + (UIColor* )blackColor;
 
 + (UIColor* )grayColor;

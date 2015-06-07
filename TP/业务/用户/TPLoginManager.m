@@ -71,5 +71,9 @@
     });
 }
 
++ (void)logout
+{
+    [TPUser logout];
+}
 
 @end

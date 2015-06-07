@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPFeedbackViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "feedbackModel",
+          "class": "TPFeedbackModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./Feedback/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPFeedbackModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./Feedback/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPFeedbackModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPFeedbackModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Feedback/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPFeedbackItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./Feedback/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPFeedbackSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./Feedback/view/",
+      "namespace": "T_View",
+      "itemclass": "TPFeedbackItem"
+    }
+  ],
+  "config": {
+    "class": "TPFeedbackConfig",
+    "proj": "TP",
+    "package_name": "Feedback",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Feedback/config/"
+  }
+}
