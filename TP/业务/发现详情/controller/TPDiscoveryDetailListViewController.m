@@ -222,6 +222,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = false;
 }
 
 - (void)viewDidDisappear:(BOOL)animated

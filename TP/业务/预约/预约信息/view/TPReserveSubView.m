@@ -13,7 +13,11 @@
 #import "TPReserveItem.h"
 
 @interface TPReserveSubView()
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @end
 
 @implementation TPReserveSubView
@@ -35,6 +39,13 @@
 - (void)setItem:(TPReserveItem *)item
 {
   
+}
+- (IBAction)onConfirm:(id)sender {
+    
+    if (self.onConfirmCallback) {
+        self.onConfirmCallback();
+    }
+
 }
 
 - (void)layoutSubviews

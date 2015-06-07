@@ -12,6 +12,8 @@
 #import "TPReserveViewController.h"
 #import "TBCityHUDPicker.h"
 #import "TPReserveModel.h"
+#import "TPReserveSubView.h"
+
 
 @interface TPReserveViewController()<TBCityHUDPickerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
@@ -19,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *dateBtn;
 @property (weak, nonatomic) IBOutlet UILabel *feeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
-
+@property (nonatomic,strong) TPReserveSubView* confirmView;
  
 @property(nonatomic,strong)TPReserveModel *reserveModel; 
 
@@ -56,6 +58,7 @@
     [super loadView];
     //todo..
     [self setTitle:@"预约信息"];
+    self.navigationController.navigationBar.hidden = NO;
     
 }
 
@@ -63,6 +66,19 @@
 {
     [super viewDidLoad];
     //todo..
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPReserveSubView" owner:self options:nil];
+    self.confirmView = (TPReserveSubView *)[nib objectAtIndex:0];
+    self.confirmView.vzWidth = 300;
+    self.confirmView.vzHeight = 320;
+    self.confirmView.vzOrigin = CGPointMake((CGRectGetWidth(self.view.bounds)-300)/2, (CGRectGetHeight(self.view.bounds) - 320)/2);
+    
+    __weak typeof(self)weakSelf = self;
+    self.confirmView.onConfirmCallback = ^{
+        
+        [weakSelf.tabBarController setSelectedIndex:1];
+        [weakSelf.navigationController popToRootViewControllerAnimated:true];
+
+    };
     
 }
 
@@ -137,9 +153,13 @@
 
 - (IBAction)onConfirm:(id)sender {
     
+
+    UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
+    v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    [self.view addSubview:v];
     
-    
-    
+    [v addSubview:self.confirmView];
+   
 }
 
 - (IBAction)onDate:(id)sender {

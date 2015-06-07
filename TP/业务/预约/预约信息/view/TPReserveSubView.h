@@ -16,6 +16,7 @@
 @interface TPReserveSubView : UIView
 
 @property(nonatomic,strong) TPReserveItem *item;
+@property(nonatomic,copy) void(^onConfirmCallback)(void);
 
 @end
 

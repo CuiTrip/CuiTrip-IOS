@@ -46,13 +46,6 @@
 		45028AF61B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AE91B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m */; };
 		45028AF71B1C7C1C00417606 /* TPDiscoveryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AEC1B1C7C1C00417606 /* TPDiscoveryListItem.m */; };
 		45028AF81B1C7C1C00417606 /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AEF1B1C7C1C00417606 /* TPDiscoveryListModel.m */; };
-		45028B3A1B1C7D2D00417606 /* TPTripListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AFC1B1C7D2C00417606 /* TPTripListCell.m */; };
-		45028B3B1B1C7D2D00417606 /* trip_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45028AFF1B1C7D2C00417606 /* trip_meta.json */; };
-		45028B3C1B1C7D2D00417606 /* TPTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B021B1C7D2C00417606 /* TPTripListViewController.m */; };
-		45028B3D1B1C7D2D00417606 /* TPTripListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B051B1C7D2C00417606 /* TPTripListViewDataSource.m */; };
-		45028B3E1B1C7D2D00417606 /* TPTripListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B081B1C7D2C00417606 /* TPTripListViewDelegate.m */; };
-		45028B3F1B1C7D2D00417606 /* TPTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B0B1B1C7D2C00417606 /* TPTripListItem.m */; };
-		45028B401B1C7D2D00417606 /* TPTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B0E1B1C7D2C00417606 /* TPTripListModel.m */; };
 		45028B411B1C7D2D00417606 /* me_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45028B131B1C7D2C00417606 /* me_meta.json */; };
 		45028B421B1C7D2D00417606 /* TPMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B171B1C7D2C00417606 /* TPMeViewController.m */; };
 		45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B1A1B1C7D2C00417606 /* TPMeItem.m */; };
@@ -116,6 +109,20 @@
 		4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */; };
 		4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABFB1B240A9B00846032 /* TPUserItem.m */; };
 		4509ABFE1B245AAF00846032 /* TPDatePickerSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */; };
+		4509AC021B246FFD00846032 /* TPReserveSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC011B246FFD00846032 /* TPReserveSubView.xib */; };
+		4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC061B247E5100846032 /* TPTripListCell.m */; };
+		4509AC1D1B247E5200846032 /* trip_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC091B247E5100846032 /* trip_meta.json */; };
+		4509AC1E1B247E5200846032 /* TPTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC0C1B247E5100846032 /* TPTripListViewController.m */; };
+		4509AC1F1B247E5200846032 /* TPTripListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC0F1B247E5100846032 /* TPTripListViewDataSource.m */; };
+		4509AC201B247E5200846032 /* TPTripListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC121B247E5100846032 /* TPTripListViewDelegate.m */; };
+		4509AC211B247E5200846032 /* TPTripListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC151B247E5100846032 /* TPTripListItem.m */; };
+		4509AC221B247E5200846032 /* TPTripListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC181B247E5200846032 /* TPTripListModel.m */; };
+		4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC251B247EA600846032 /* tripdetail_meta.json */; };
+		4509AC341B247EA600846032 /* TPTripDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC281B247EA600846032 /* TPTripDetailViewController.m */; };
+		4509AC351B247EA600846032 /* TPTripDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC2B1B247EA600846032 /* TPTripDetailItem.m */; };
+		4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC2E1B247EA600846032 /* TPTripDetailModel.m */; };
+		4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC321B247EA600846032 /* TPTripDetailSubView.m */; };
+		4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */; };
 		45156E7A1B1D7B9B00A67BDB /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45156E791B1D7B9B00A67BDB /* TPTheme.m */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
@@ -304,20 +311,6 @@
 		45028AEC1B1C7C1C00417606 /* TPDiscoveryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListItem.m; sourceTree = "<group>"; };
 		45028AEE1B1C7C1C00417606 /* TPDiscoveryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListModel.h; sourceTree = "<group>"; };
 		45028AEF1B1C7C1C00417606 /* TPDiscoveryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListModel.m; sourceTree = "<group>"; };
-		45028AFB1B1C7D2C00417606 /* TPTripListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListCell.h; sourceTree = "<group>"; };
-		45028AFC1B1C7D2C00417606 /* TPTripListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListCell.m; sourceTree = "<group>"; };
-		45028AFE1B1C7D2C00417606 /* TPTripConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripConfig.h; sourceTree = "<group>"; };
-		45028AFF1B1C7D2C00417606 /* trip_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trip_meta.json; sourceTree = "<group>"; };
-		45028B011B1C7D2C00417606 /* TPTripListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListViewController.h; sourceTree = "<group>"; };
-		45028B021B1C7D2C00417606 /* TPTripListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListViewController.m; sourceTree = "<group>"; };
-		45028B041B1C7D2C00417606 /* TPTripListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListViewDataSource.h; sourceTree = "<group>"; };
-		45028B051B1C7D2C00417606 /* TPTripListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListViewDataSource.m; sourceTree = "<group>"; };
-		45028B071B1C7D2C00417606 /* TPTripListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListViewDelegate.h; sourceTree = "<group>"; };
-		45028B081B1C7D2C00417606 /* TPTripListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListViewDelegate.m; sourceTree = "<group>"; };
-		45028B0A1B1C7D2C00417606 /* TPTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListItem.h; sourceTree = "<group>"; };
-		45028B0B1B1C7D2C00417606 /* TPTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListItem.m; sourceTree = "<group>"; };
-		45028B0D1B1C7D2C00417606 /* TPTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListModel.h; sourceTree = "<group>"; };
-		45028B0E1B1C7D2C00417606 /* TPTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListModel.m; sourceTree = "<group>"; };
 		45028B131B1C7D2C00417606 /* me_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = me_meta.json; sourceTree = "<group>"; };
 		45028B141B1C7D2C00417606 /* TPMeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeConfig.h; sourceTree = "<group>"; };
 		45028B161B1C7D2C00417606 /* TPMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeViewController.h; sourceTree = "<group>"; };
@@ -435,6 +428,32 @@
 		4509ABFA1B240A9B00846032 /* TPUserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserItem.h; sourceTree = "<group>"; };
 		4509ABFB1B240A9B00846032 /* TPUserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserItem.m; sourceTree = "<group>"; };
 		4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDatePickerSelectionView.xib; sourceTree = "<group>"; };
+		4509AC011B246FFD00846032 /* TPReserveSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPReserveSubView.xib; sourceTree = "<group>"; };
+		4509AC051B247E5100846032 /* TPTripListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListCell.h; sourceTree = "<group>"; };
+		4509AC061B247E5100846032 /* TPTripListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListCell.m; sourceTree = "<group>"; };
+		4509AC081B247E5100846032 /* TPTripConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripConfig.h; sourceTree = "<group>"; };
+		4509AC091B247E5100846032 /* trip_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trip_meta.json; sourceTree = "<group>"; };
+		4509AC0B1B247E5100846032 /* TPTripListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListViewController.h; sourceTree = "<group>"; };
+		4509AC0C1B247E5100846032 /* TPTripListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListViewController.m; sourceTree = "<group>"; };
+		4509AC0E1B247E5100846032 /* TPTripListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListViewDataSource.h; sourceTree = "<group>"; };
+		4509AC0F1B247E5100846032 /* TPTripListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListViewDataSource.m; sourceTree = "<group>"; };
+		4509AC111B247E5100846032 /* TPTripListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListViewDelegate.h; sourceTree = "<group>"; };
+		4509AC121B247E5100846032 /* TPTripListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListViewDelegate.m; sourceTree = "<group>"; };
+		4509AC141B247E5100846032 /* TPTripListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListItem.h; sourceTree = "<group>"; };
+		4509AC151B247E5100846032 /* TPTripListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListItem.m; sourceTree = "<group>"; };
+		4509AC171B247E5100846032 /* TPTripListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListModel.h; sourceTree = "<group>"; };
+		4509AC181B247E5200846032 /* TPTripListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListModel.m; sourceTree = "<group>"; };
+		4509AC241B247EA600846032 /* TPTripDetailConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailConfig.h; sourceTree = "<group>"; };
+		4509AC251B247EA600846032 /* tripdetail_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripdetail_meta.json; sourceTree = "<group>"; };
+		4509AC271B247EA600846032 /* TPTripDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailViewController.h; sourceTree = "<group>"; };
+		4509AC281B247EA600846032 /* TPTripDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailViewController.m; sourceTree = "<group>"; };
+		4509AC2A1B247EA600846032 /* TPTripDetailItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailItem.h; sourceTree = "<group>"; };
+		4509AC2B1B247EA600846032 /* TPTripDetailItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailItem.m; sourceTree = "<group>"; };
+		4509AC2D1B247EA600846032 /* TPTripDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailModel.h; sourceTree = "<group>"; };
+		4509AC2E1B247EA600846032 /* TPTripDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailModel.m; sourceTree = "<group>"; };
+		4509AC311B247EA600846032 /* TPTripDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailSubView.h; sourceTree = "<group>"; };
+		4509AC321B247EA600846032 /* TPTripDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailSubView.m; sourceTree = "<group>"; };
+		4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPTripDetailViewController.storyboard; sourceTree = "<group>"; };
 		45156E781B1D7B9B00A67BDB /* TPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTheme.h; sourceTree = "<group>"; };
 		45156E791B1D7B9B00A67BDB /* TPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTheme.m; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -866,94 +885,10 @@
 		45028AF91B1C7D2C00417606 /* 旅程 */ = {
 			isa = PBXGroup;
 			children = (
-				45028AFA1B1C7D2C00417606 /* cell */,
-				45028AFD1B1C7D2C00417606 /* config */,
-				45028B001B1C7D2C00417606 /* controller */,
-				45028B031B1C7D2C00417606 /* datasource */,
-				45028B061B1C7D2C00417606 /* delegate */,
-				45028B091B1C7D2C00417606 /* item */,
-				45028B0C1B1C7D2C00417606 /* model */,
-				45028B0F1B1C7D2C00417606 /* resource */,
-				45028B101B1C7D2C00417606 /* view */,
+				4509AC031B247E5100846032 /* 列表 */,
+				4509AC1B1B247E5200846032 /* 详情 */,
 			);
 			path = "旅程";
-			sourceTree = "<group>";
-		};
-		45028AFA1B1C7D2C00417606 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				45028AFB1B1C7D2C00417606 /* TPTripListCell.h */,
-				45028AFC1B1C7D2C00417606 /* TPTripListCell.m */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		45028AFD1B1C7D2C00417606 /* config */ = {
-			isa = PBXGroup;
-			children = (
-				45028AFE1B1C7D2C00417606 /* TPTripConfig.h */,
-				45028AFF1B1C7D2C00417606 /* trip_meta.json */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		45028B001B1C7D2C00417606 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				45028B011B1C7D2C00417606 /* TPTripListViewController.h */,
-				45028B021B1C7D2C00417606 /* TPTripListViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		45028B031B1C7D2C00417606 /* datasource */ = {
-			isa = PBXGroup;
-			children = (
-				45028B041B1C7D2C00417606 /* TPTripListViewDataSource.h */,
-				45028B051B1C7D2C00417606 /* TPTripListViewDataSource.m */,
-			);
-			path = datasource;
-			sourceTree = "<group>";
-		};
-		45028B061B1C7D2C00417606 /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				45028B071B1C7D2C00417606 /* TPTripListViewDelegate.h */,
-				45028B081B1C7D2C00417606 /* TPTripListViewDelegate.m */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
-		45028B091B1C7D2C00417606 /* item */ = {
-			isa = PBXGroup;
-			children = (
-				45028B0A1B1C7D2C00417606 /* TPTripListItem.h */,
-				45028B0B1B1C7D2C00417606 /* TPTripListItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		45028B0C1B1C7D2C00417606 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				45028B0D1B1C7D2C00417606 /* TPTripListModel.h */,
-				45028B0E1B1C7D2C00417606 /* TPTripListModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		45028B0F1B1C7D2C00417606 /* resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = resource;
-			sourceTree = "<group>";
-		};
-		45028B101B1C7D2C00417606 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		45028B111B1C7D2C00417606 /* 我的 */ = {
@@ -1436,6 +1371,7 @@
 		4509ABA81B233C9200846032 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4509AC011B246FFD00846032 /* TPReserveSubView.xib */,
 				4509ABF71B23E8C000846032 /* TBCityHUDPicker.h */,
 				4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */,
 				4509ABA91B233C9200846032 /* TPReserveSubView.h */,
@@ -1619,6 +1555,165 @@
 			children = (
 				4509ABE31B23DDF600846032 /* TPFeedbackSubView.h */,
 				4509ABE41B23DDF600846032 /* TPFeedbackSubView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4509AC031B247E5100846032 /* 列表 */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC041B247E5100846032 /* cell */,
+				4509AC071B247E5100846032 /* config */,
+				4509AC0A1B247E5100846032 /* controller */,
+				4509AC0D1B247E5100846032 /* datasource */,
+				4509AC101B247E5100846032 /* delegate */,
+				4509AC131B247E5100846032 /* item */,
+				4509AC161B247E5100846032 /* model */,
+				4509AC191B247E5200846032 /* resource */,
+				4509AC1A1B247E5200846032 /* view */,
+			);
+			path = "列表";
+			sourceTree = "<group>";
+		};
+		4509AC041B247E5100846032 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC051B247E5100846032 /* TPTripListCell.h */,
+				4509AC061B247E5100846032 /* TPTripListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		4509AC071B247E5100846032 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC081B247E5100846032 /* TPTripConfig.h */,
+				4509AC091B247E5100846032 /* trip_meta.json */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		4509AC0A1B247E5100846032 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC0B1B247E5100846032 /* TPTripListViewController.h */,
+				4509AC0C1B247E5100846032 /* TPTripListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4509AC0D1B247E5100846032 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC0E1B247E5100846032 /* TPTripListViewDataSource.h */,
+				4509AC0F1B247E5100846032 /* TPTripListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		4509AC101B247E5100846032 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC111B247E5100846032 /* TPTripListViewDelegate.h */,
+				4509AC121B247E5100846032 /* TPTripListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		4509AC131B247E5100846032 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC141B247E5100846032 /* TPTripListItem.h */,
+				4509AC151B247E5100846032 /* TPTripListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		4509AC161B247E5100846032 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC171B247E5100846032 /* TPTripListModel.h */,
+				4509AC181B247E5200846032 /* TPTripListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4509AC191B247E5200846032 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		4509AC1A1B247E5200846032 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4509AC1B1B247E5200846032 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC231B247EA600846032 /* config */,
+				4509AC261B247EA600846032 /* controller */,
+				4509AC291B247EA600846032 /* item */,
+				4509AC2C1B247EA600846032 /* model */,
+				4509AC2F1B247EA600846032 /* resource */,
+				4509AC301B247EA600846032 /* view */,
+			);
+			path = "详情";
+			sourceTree = "<group>";
+		};
+		4509AC231B247EA600846032 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC241B247EA600846032 /* TPTripDetailConfig.h */,
+				4509AC251B247EA600846032 /* tripdetail_meta.json */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		4509AC261B247EA600846032 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC271B247EA600846032 /* TPTripDetailViewController.h */,
+				4509AC281B247EA600846032 /* TPTripDetailViewController.m */,
+				4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4509AC291B247EA600846032 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC2A1B247EA600846032 /* TPTripDetailItem.h */,
+				4509AC2B1B247EA600846032 /* TPTripDetailItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		4509AC2C1B247EA600846032 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC2D1B247EA600846032 /* TPTripDetailModel.h */,
+				4509AC2E1B247EA600846032 /* TPTripDetailModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4509AC2F1B247EA600846032 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		4509AC301B247EA600846032 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4509AC311B247EA600846032 /* TPTripDetailSubView.h */,
+				4509AC321B247EA600846032 /* TPTripDetailSubView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2216,12 +2311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				459BAD601B1F5D7E00739C7E /* profilepage_meta.json in Resources */,
+				4509AC1D1B247E5200846032 /* trip_meta.json in Resources */,
 				459BAEFC1B21E58700739C7E /* trip_share_w@2x.png in Resources */,
 				459BAD011B1F1ABF00739C7E /* mazu.png in Resources */,
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
 				45028B661B1C7F1300417606 /* myservice_meta.json in Resources */,
 				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
+				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
 				459BAEB01B218F2300739C7E /* SMS_SDKLocalizable.strings in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
@@ -2246,6 +2343,7 @@
 				459BAEF91B21E58700739C7E /* trip_nav_r_A@2x.png in Resources */,
 				459BAEF21B21E58700739C7E /* trip_nav_j@2x.png in Resources */,
 				459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */,
+				4509AC021B246FFD00846032 /* TPReserveSubView.xib in Resources */,
 				4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */,
 				459BACB31B1DF3D900739C7E /* taiwan.png in Resources */,
 				4509ABE51B23DDF600846032 /* feedback_meta.json in Resources */,
@@ -2256,10 +2354,10 @@
 				459BAEEB1B21E58700739C7E /* trip_addPic_g@2x.png in Resources */,
 				459BAEF81B21E58700739C7E /* trip_nav_r@2x.png in Resources */,
 				4509AB8D1B22F13100846032 /* forgetpwd_meta.json in Resources */,
+				4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */,
 				459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */,
 				4509AB7A1B22EA1D00846032 /* country.plist in Resources */,
 				45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */,
-				45028B3B1B1C7D2D00417606 /* trip_meta.json in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
 				4509AB961B23298A00846032 /* ExceptionView.xib in Resources */,
@@ -2330,6 +2428,7 @@
 				4509ABE91B23DDF600846032 /* TPFeedbackSubView.m in Sources */,
 				45028B651B1C7F1300417606 /* TPMyServiceListCell.m in Sources */,
 				4509AB721B22E3E300846032 /* NSDictionary-DeepMutableCopy.m in Sources */,
+				4509AC351B247EA600846032 /* TPTripDetailItem.m in Sources */,
 				459BAD291B1F59D900739C7E /* TPCommentListViewController.m in Sources */,
 				459BACEB1B1DFBE800739C7E /* TPDDTripItem.m in Sources */,
 				4509ABEC1B23DF3600846032 /* TPHelpViewController.m in Sources */,
@@ -2345,13 +2444,13 @@
 				459BAD2C1B1F59D900739C7E /* TPCommentListItem.m in Sources */,
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
-				45028B3C1B1C7D2D00417606 /* TPTripListViewController.m in Sources */,
 				4509ABD21B23D59A00846032 /* TPProfileSettingsViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
 				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,
 				459BACDC1B1DF9F000739C7E /* TPDDCommentCell.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
 				45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */,
+				4509AC1F1B247E5200846032 /* TPTripListViewDataSource.m in Sources */,
 				45028AC71B1C753300417606 /* ETContainerViewController.m in Sources */,
 				4509AB731B22E3E300846032 /* SectionsViewController.m in Sources */,
 				459BAD611B1F5D7E00739C7E /* TPProfilePageListViewController.m in Sources */,
@@ -2359,13 +2458,11 @@
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
-				45028B3F1B1C7D2D00417606 /* TPTripListItem.m in Sources */,
 				459BACE91B1DFBE800739C7E /* TPDDInfoItem.m in Sources */,
 				459BACD31B1DF62A00739C7E /* TPDiscoveryDetailListModel.m in Sources */,
 				459BAD421B1F5BA600739C7E /* TPDatePickerViewController.m in Sources */,
 				45028AD11B1C764A00417606 /* TPUser.m in Sources */,
 				459BAD431B1F5BA600739C7E /* TPDatePickerItem.m in Sources */,
-				45028B3A1B1C7D2D00417606 /* TPTripListCell.m in Sources */,
 				45028AA81B1B535E00417606 /* VZAFRequest.m in Sources */,
 				45028AC11B1B535E00417606 /* VZListDefaultLoadingCell.m in Sources */,
 				45028AB61B1B535E00417606 /* VZHTTPNetworkAgent.m in Sources */,
@@ -2373,11 +2470,10 @@
 				45028ABC1B1B535E00417606 /* VZHTTPURLResponseCache.m in Sources */,
 				4509AB901B22F13100846032 /* TPForgetPWDModel.m in Sources */,
 				45028AD91B1C79CA00417606 /* TPLoginManager.m in Sources */,
+				4509AC201B247E5200846032 /* TPTripListViewDelegate.m in Sources */,
 				45028B711B1C838100417606 /* UIView+VZEX.m in Sources */,
-				45028B401B1C7D2D00417606 /* TPTripListModel.m in Sources */,
 				459BACDF1B1DF9F000739C7E /* TPDDTripCell.m in Sources */,
 				45028AB21B1B535E00417606 /* VZListItem.m in Sources */,
-				45028B3D1B1C7D2D00417606 /* TPTripListViewDataSource.m in Sources */,
 				4509ABC11B233C9200846032 /* TPReserveSubView.m in Sources */,
 				459BAD651B1F5D7E00739C7E /* TPProfilePageListModel.m in Sources */,
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
@@ -2400,6 +2496,7 @@
 				4509AB941B22F13D00846032 /* TPLicenceViewController.m in Sources */,
 				45028B4B1B1C7D2D00417606 /* TPMessageListItem.m in Sources */,
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
+				4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */,
 				459BAD071B1F331F00739C7E /* TPUtils.m in Sources */,
 				45028B671B1C7F1300417606 /* TPMyServiceListViewController.m in Sources */,
 				45028B691B1C7F1300417606 /* TPMyServiceListViewDelegate.m in Sources */,
@@ -2428,16 +2525,21 @@
 				45028AC21B1B535E00417606 /* VZListDefaultTextCell.m in Sources */,
 				45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */,
 				459BACCF1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m in Sources */,
+				4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */,
 				45028AAE1B1B535E00417606 /* VZHTTPModel.m in Sources */,
-				45028B3E1B1C7D2D00417606 /* TPTripListViewDelegate.m in Sources */,
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				4509ABEF1B23E1CA00846032 /* TPSystemSettingsViewController.m in Sources */,
+				4509AC1E1B247E5200846032 /* TPTripListViewController.m in Sources */,
 				4509ABC41B233C9200846032 /* TPReserveDateItem.m in Sources */,
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
 				45028B451B1C7D2D00417606 /* TPMeSubView.m in Sources */,
 				45028AAC1B1B535E00417606 /* VZViewController.m in Sources */,
 				4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */,
+				4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */,
 				459BAD641B1F5D7E00739C7E /* TPProfilePageListItem.m in Sources */,
+				4509AC221B247E5200846032 /* TPTripListModel.m in Sources */,
+				4509AC341B247EA600846032 /* TPTripDetailViewController.m in Sources */,
+				4509AC211B247E5200846032 /* TPTripListItem.m in Sources */,
 				459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */,
 				459BAD461B1F5BA600739C7E /* TPDatePickerSubView.m in Sources */,
 				45028B6B1B1C7F1300417606 /* TPMyServiceListModel.m in Sources */,

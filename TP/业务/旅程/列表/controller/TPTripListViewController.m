@@ -10,7 +10,6 @@
 
 
 #import "TPTripListViewController.h"
- 
 #import "TPTripListModel.h" 
 #import "TPTripListViewDataSource.h"
 #import "TPTripListViewDelegate.h"
@@ -78,28 +77,28 @@
 {
     [super viewDidLoad];
     
+    //1,config your tableview
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.showsVerticalScrollIndicator = YES;
+    self.tableView.separatorStyle = YES;
+    
+    //2,set some properties:下拉刷新，自动翻页
+    self.needLoadMore = NO;
+    self.needPullRefresh = NO;
+    
+    
+    //3，bind your delegate and datasource to tableview
+    self.dataSource = self.ds;
+    self.delegate = self.dl;
+    
     if (![TPUser isLogined ]) {
 
-        [self showNoResult:nil];
+       //[self showNoResult:nil];
+        [self.tableView reloadData];
     }
     else
     {
-        //1,config your tableview
-        self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        self.tableView.backgroundColor = [UIColor whiteColor];
-        self.tableView.showsVerticalScrollIndicator = YES;
-        self.tableView.separatorStyle = YES;
-        
-        //2,set some properties:下拉刷新，自动翻页
-        self.needLoadMore = NO;
-        self.needPullRefresh = NO;
-
-        
-        //3，bind your delegate and datasource to tableview
-        self.dataSource = self.ds;
-        self.delegate = self.dl;
-        
-
         //4,@REQUIRED:YOU MUST SET A KEY MODEL!
         //self.keyModel = self.model;
         
@@ -190,6 +189,8 @@
   
   //todo...
   
+    UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 

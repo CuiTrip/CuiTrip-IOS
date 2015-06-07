@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPTripDetailViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "tripDetailModel",
+          "class": "TPTripDetailModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./TripDetail/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPTripDetailModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./TripDetail/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPTripDetailModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPTripDetailModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./TripDetail/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPTripDetailItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./TripDetail/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPTripDetailSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./TripDetail/view/",
+      "namespace": "T_View",
+      "itemclass": "TPTripDetailItem"
+    }
+  ],
+  "config": {
+    "class": "TPTripDetailConfig",
+    "proj": "TP",
+    "package_name": "TripDetail",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./TripDetail/config/"
+  }
+}
