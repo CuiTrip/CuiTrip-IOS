@@ -213,6 +213,7 @@
 		459BAEFD1B21E58700739C7E /* trip_StarS_G@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE71B21E58700739C7E /* trip_StarS_G@x2.png */; };
 		459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */; };
 		459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */; };
+		45D6BA5F1B25EFB2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA5E1B25EFB2007DFC7A /* TPAPNS.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -596,6 +597,8 @@
 		459BAEE71B21E58700739C7E /* trip_StarS_G@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_G@x2.png"; sourceTree = "<group>"; };
 		459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y2@x2.png"; sourceTree = "<group>"; };
 		459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y@x2.png"; sourceTree = "<group>"; };
+		45D6BA5D1B25EFB2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
+		45D6BA5E1B25EFB2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1154,6 +1157,8 @@
 				459BAD051B1F331F00739C7E /* TPUtils.h */,
 				459BAD061B1F331F00739C7E /* TPUtils.m */,
 				4509AB951B23298A00846032 /* ExceptionView.xib */,
+				45D6BA5D1B25EFB2007DFC7A /* TPAPNS.h */,
+				45D6BA5E1B25EFB2007DFC7A /* TPAPNS.m */,
 			);
 			path = "工具";
 			sourceTree = "<group>";
@@ -2440,6 +2445,7 @@
 				45028AA91B1B535E00417606 /* VZListViewController.m in Sources */,
 				4509AB911B22F13100846032 /* TPForgetPWDSubView.m in Sources */,
 				45028AF41B1C7C1C00417606 /* TPDiscoveryListViewController.m in Sources */,
+				45D6BA5F1B25EFB2007DFC7A /* TPAPNS.m in Sources */,
 				4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */,
 				459BAD2C1B1F59D900739C7E /* TPCommentListItem.m in Sources */,
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
