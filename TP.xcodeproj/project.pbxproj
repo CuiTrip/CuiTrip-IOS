@@ -80,7 +80,6 @@
 		4509AB901B22F13100846032 /* TPForgetPWDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AB881B22F13100846032 /* TPForgetPWDModel.m */; };
 		4509AB911B22F13100846032 /* TPForgetPWDSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AB8C1B22F13100846032 /* TPForgetPWDSubView.m */; };
 		4509AB941B22F13D00846032 /* TPLicenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AB931B22F13D00846032 /* TPLicenceViewController.m */; };
-		4509AB961B23298A00846032 /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509AB951B23298A00846032 /* ExceptionView.xib */; };
 		4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AB971B23304F00846032 /* TPForgetPWDViewController.storyboard */; };
 		4509ABBD1B233C9200846032 /* reserve_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4509AB9C1B233C9200846032 /* reserve_meta.json */; };
 		4509ABBE1B233C9200846032 /* TPReserveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABA01B233C9200846032 /* TPReserveViewController.m */; };
@@ -123,14 +122,12 @@
 		4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC2E1B247EA600846032 /* TPTripDetailModel.m */; };
 		4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC321B247EA600846032 /* TPTripDetailSubView.m */; };
 		4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */; };
-		45156E7A1B1D7B9B00A67BDB /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45156E791B1D7B9B00A67BDB /* TPTheme.m */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
 		459B24961B176A1C009BB189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459B248D1B176A1C009BB189 /* Images.xcassets */; };
 		459B24971B176A1C009BB189 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459B248E1B176A1C009BB189 /* Info.plist */; };
 		459B24981B176A1C009BB189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B248F1B176A1C009BB189 /* main.m */; };
-		459BACAD1B1DD78A00739C7E /* TPUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACAC1B1DD78A00739C7E /* TPUIKit.m */; };
 		459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 459BACAF1B1DEA7C00739C7E /* girl.jpg */; };
 		459BACB31B1DF3D900739C7E /* taiwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BACB21B1DF3D900739C7E /* taiwan.png */; };
 		459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 459BACBA1B1DF62A00739C7E /* discoverydetail_meta.json */; };
@@ -155,7 +152,6 @@
 		459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */; };
 		459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */; };
 		459BAD011B1F1ABF00739C7E /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD001B1F1ABF00739C7E /* mazu.png */; };
-		459BAD071B1F331F00739C7E /* TPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD061B1F331F00739C7E /* TPUtils.m */; };
 		459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */; };
 		459BAD0D1B1F4C0E00739C7E /* TPDDCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */; };
 		459BAD271B1F59D900739C7E /* TPCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD111B1F59D900739C7E /* TPCommentListCell.m */; };
@@ -183,8 +179,6 @@
 		459BAEA61B21561A00739C7E /* TPStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAEA51B21561A00739C7E /* TPStarView.m */; };
 		459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEA71B21791800739C7E /* star_gray@2x.png */; };
 		459BAEAA1B21791900739C7E /* star_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEA81B21791900739C7E /* star_highlight@2x.png */; };
-		459BAEB01B218F2300739C7E /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEAC1B218F2300739C7E /* SMS_SDKLocalizable.strings */; };
-		459BAEB11B218F2300739C7E /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEAE1B218F2300739C7E /* SMS_SDK.framework */; };
 		459BAEB31B219C3300739C7E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB21B219C3300739C7E /* Security.framework */; };
 		459BAEB51B219C4C00739C7E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB41B219C4C00739C7E /* AddressBook.framework */; };
 		459BAEB71B219C5100739C7E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB61B219C5100739C7E /* AddressBookUI.framework */; };
@@ -213,7 +207,13 @@
 		459BAEFD1B21E58700739C7E /* trip_StarS_G@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE71B21E58700739C7E /* trip_StarS_G@x2.png */; };
 		459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */; };
 		459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */; };
-		45D6BA5F1B25EFB2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA5E1B25EFB2007DFC7A /* TPAPNS.m */; };
+		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
+		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
+		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
+		45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA681B2686C2007DFC7A /* TPUIKit.m */; };
+		45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA6A1B2686C2007DFC7A /* TPUtils.m */; };
+		45D6BA761B268794007DFC7A /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA721B268794007DFC7A /* SMS_SDKLocalizable.strings */; };
+		45D6BA771B268794007DFC7A /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D6BA741B268794007DFC7A /* SMS_SDK.framework */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -379,7 +379,6 @@
 		4509AB8C1B22F13100846032 /* TPForgetPWDSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPForgetPWDSubView.m; sourceTree = "<group>"; };
 		4509AB921B22F13D00846032 /* TPLicenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLicenceViewController.h; sourceTree = "<group>"; };
 		4509AB931B22F13D00846032 /* TPLicenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLicenceViewController.m; sourceTree = "<group>"; };
-		4509AB951B23298A00846032 /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
 		4509AB971B23304F00846032 /* TPForgetPWDViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPForgetPWDViewController.storyboard; sourceTree = "<group>"; };
 		4509AB9C1B233C9200846032 /* reserve_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reserve_meta.json; sourceTree = "<group>"; };
 		4509AB9D1B233C9200846032 /* TPReserveConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveConfig.h; sourceTree = "<group>"; };
@@ -455,8 +454,6 @@
 		4509AC311B247EA600846032 /* TPTripDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailSubView.h; sourceTree = "<group>"; };
 		4509AC321B247EA600846032 /* TPTripDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailSubView.m; sourceTree = "<group>"; };
 		4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPTripDetailViewController.storyboard; sourceTree = "<group>"; };
-		45156E781B1D7B9B00A67BDB /* TPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTheme.h; sourceTree = "<group>"; };
-		45156E791B1D7B9B00A67BDB /* TPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTheme.m; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -469,8 +466,6 @@
 		459B248F1B176A1C009BB189 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		459B25DB1B1819B2009BB189 /* TP.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TP.pch; path = ../TP.pch; sourceTree = "<group>"; };
 		459B267D1B1838E4009BB189 /* TPAssert.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = TPAssert.h; sourceTree = "<group>"; };
-		459BACAB1B1DD78A00739C7E /* TPUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUIKit.h; sourceTree = "<group>"; };
-		459BACAC1B1DD78A00739C7E /* TPUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUIKit.m; sourceTree = "<group>"; };
 		459BACAF1B1DEA7C00739C7E /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		459BACB21B1DF3D900739C7E /* taiwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taiwan.png; sourceTree = "<group>"; };
 		459BACBA1B1DF62A00739C7E /* discoverydetail_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discoverydetail_meta.json; sourceTree = "<group>"; };
@@ -512,8 +507,6 @@
 		459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCellContainerView.m; sourceTree = "<group>"; };
 		459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDTripCell.xib; sourceTree = "<group>"; };
 		459BAD001B1F1ABF00739C7E /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
-		459BAD051B1F331F00739C7E /* TPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUtils.h; sourceTree = "<group>"; };
-		459BAD061B1F331F00739C7E /* TPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUtils.m; sourceTree = "<group>"; };
 		459BAD081B1F42D200739C7E /* TPDiscoveryDetailContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailContentViewController.h; sourceTree = "<group>"; };
 		459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailContentViewController.m; sourceTree = "<group>"; };
 		459BAD0B1B1F4C0E00739C7E /* TPDDCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCellContainerView.h; sourceTree = "<group>"; };
@@ -566,9 +559,6 @@
 		459BAEA51B21561A00739C7E /* TPStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPStarView.m; sourceTree = "<group>"; };
 		459BAEA71B21791800739C7E /* star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_gray@2x.png"; sourceTree = "<group>"; };
 		459BAEA81B21791900739C7E /* star_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlight@2x.png"; sourceTree = "<group>"; };
-		459BAEAD1B218F2300739C7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
-		459BAEAE1B218F2300739C7E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
-		459BAEAF1B218F2300739C7E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		459BAEB21B219C3300739C7E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		459BAEB41B219C4C00739C7E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		459BAEB61B219C5100739C7E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -597,8 +587,18 @@
 		459BAEE71B21E58700739C7E /* trip_StarS_G@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_G@x2.png"; sourceTree = "<group>"; };
 		459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y2@x2.png"; sourceTree = "<group>"; };
 		459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y@x2.png"; sourceTree = "<group>"; };
-		45D6BA5D1B25EFB2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
-		45D6BA5E1B25EFB2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
+		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
+		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
+		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
+		45D6BA651B2686C2007DFC7A /* TPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTheme.h; sourceTree = "<group>"; };
+		45D6BA661B2686C2007DFC7A /* TPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTheme.m; sourceTree = "<group>"; };
+		45D6BA671B2686C2007DFC7A /* TPUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUIKit.h; sourceTree = "<group>"; };
+		45D6BA681B2686C2007DFC7A /* TPUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUIKit.m; sourceTree = "<group>"; };
+		45D6BA691B2686C2007DFC7A /* TPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUtils.h; sourceTree = "<group>"; };
+		45D6BA6A1B2686C2007DFC7A /* TPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUtils.m; sourceTree = "<group>"; };
+		45D6BA731B268794007DFC7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		45D6BA741B268794007DFC7A /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		45D6BA751B268794007DFC7A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -609,13 +609,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				459BAEBD1B219C8E00739C7E /* libicucore.dylib in Frameworks */,
+				45D6BA771B268794007DFC7A /* SMS_SDK.framework in Frameworks */,
 				459BAEBB1B219C7100739C7E /* libz.dylib in Frameworks */,
 				459BAEB91B219C5500739C7E /* MessageUI.framework in Frameworks */,
 				459BAEB71B219C5100739C7E /* AddressBookUI.framework in Frameworks */,
 				459BAEB51B219C4C00739C7E /* AddressBook.framework in Frameworks */,
 				459BAEB31B219C3300739C7E /* Security.framework in Frameworks */,
 				F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */,
-				459BAEB11B218F2300739C7E /* SMS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1150,15 +1150,8 @@
 		45028B6D1B1C824A00417606 /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
-				45156E781B1D7B9B00A67BDB /* TPTheme.h */,
-				45156E791B1D7B9B00A67BDB /* TPTheme.m */,
-				459BACAB1B1DD78A00739C7E /* TPUIKit.h */,
-				459BACAC1B1DD78A00739C7E /* TPUIKit.m */,
-				459BAD051B1F331F00739C7E /* TPUtils.h */,
-				459BAD061B1F331F00739C7E /* TPUtils.m */,
-				4509AB951B23298A00846032 /* ExceptionView.xib */,
-				45D6BA5D1B25EFB2007DFC7A /* TPAPNS.h */,
-				45D6BA5E1B25EFB2007DFC7A /* TPAPNS.m */,
+				45D6BA601B2686C2007DFC7A /* APNS */,
+				45D6BA631B2686C2007DFC7A /* UI */,
 			);
 			path = "工具";
 			sourceTree = "<group>";
@@ -1764,9 +1757,9 @@
 		459B24851B176A1C009BB189 /* TP */ = {
 			isa = PBXGroup;
 			children = (
+				45D6BA701B268794007DFC7A /* 三方 */,
 				4509AB781B22E9FE00846032 /* supports */,
 				459BAED31B21E58700739C7E /* 资源 */,
-				459BAEAB1B218F2300739C7E /* SMS_SDK */,
 				45028A671B1B535E00417606 /* Vizzle */,
 				45028B6E1B1C835800417606 /* VizzleEX */,
 				45028B6D1B1C824A00417606 /* 工具 */,
@@ -2170,16 +2163,6 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		459BAEAB1B218F2300739C7E /* SMS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				459BAEAC1B218F2300739C7E /* SMS_SDKLocalizable.strings */,
-				459BAEAE1B218F2300739C7E /* SMS_SDK.framework */,
-			);
-			name = SMS_SDK;
-			path = "三方/SMS_SDK";
-			sourceTree = "<group>";
-		};
 		459BAED31B21E58700739C7E /* 资源 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2207,6 +2190,46 @@
 				459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */,
 			);
 			path = "资源";
+			sourceTree = "<group>";
+		};
+		45D6BA601B2686C2007DFC7A /* APNS */ = {
+			isa = PBXGroup;
+			children = (
+				45D6BA611B2686C2007DFC7A /* TPAPNS.h */,
+				45D6BA621B2686C2007DFC7A /* TPAPNS.m */,
+			);
+			path = APNS;
+			sourceTree = "<group>";
+		};
+		45D6BA631B2686C2007DFC7A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				45D6BA641B2686C2007DFC7A /* ExceptionView.xib */,
+				45D6BA651B2686C2007DFC7A /* TPTheme.h */,
+				45D6BA661B2686C2007DFC7A /* TPTheme.m */,
+				45D6BA671B2686C2007DFC7A /* TPUIKit.h */,
+				45D6BA681B2686C2007DFC7A /* TPUIKit.m */,
+				45D6BA691B2686C2007DFC7A /* TPUtils.h */,
+				45D6BA6A1B2686C2007DFC7A /* TPUtils.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		45D6BA701B268794007DFC7A /* 三方 */ = {
+			isa = PBXGroup;
+			children = (
+				45D6BA711B268794007DFC7A /* SMS_SDK */,
+			);
+			path = "三方";
+			sourceTree = "<group>";
+		};
+		45D6BA711B268794007DFC7A /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				45D6BA721B268794007DFC7A /* SMS_SDKLocalizable.strings */,
+				45D6BA741B268794007DFC7A /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
 		9FFED9F51BE90EBDBF1336EA /* Frameworks */ = {
@@ -2324,9 +2347,9 @@
 				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
-				459BAEB01B218F2300739C7E /* SMS_SDKLocalizable.strings in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
+				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				4509ABC21B233C9200846032 /* reservedate_meta.json in Resources */,
 				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
 				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
@@ -2358,6 +2381,7 @@
 				459BAEF11B21E58700739C7E /* trip_makeovers_w@2x.png in Resources */,
 				459BAEEB1B21E58700739C7E /* trip_addPic_g@2x.png in Resources */,
 				459BAEF81B21E58700739C7E /* trip_nav_r@2x.png in Resources */,
+				45D6BA761B268794007DFC7A /* SMS_SDKLocalizable.strings in Resources */,
 				4509AB8D1B22F13100846032 /* forgetpwd_meta.json in Resources */,
 				4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */,
 				459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */,
@@ -2365,7 +2389,6 @@
 				45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
-				4509AB961B23298A00846032 /* ExceptionView.xib in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
 				459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */,
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
@@ -2441,17 +2464,16 @@
 				45028AB11B1B535E00417606 /* VZListDefaultTextItem.m in Sources */,
 				4509ABC61B233C9200846032 /* TPReserveDateSubView.m in Sources */,
 				4509ABE61B23DDF600846032 /* TPFeedbackViewController.m in Sources */,
-				459BACAD1B1DD78A00739C7E /* TPUIKit.m in Sources */,
 				45028AA91B1B535E00417606 /* VZListViewController.m in Sources */,
 				4509AB911B22F13100846032 /* TPForgetPWDSubView.m in Sources */,
 				45028AF41B1C7C1C00417606 /* TPDiscoveryListViewController.m in Sources */,
-				45D6BA5F1B25EFB2007DFC7A /* TPAPNS.m in Sources */,
 				4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */,
 				459BAD2C1B1F59D900739C7E /* TPCommentListItem.m in Sources */,
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
 				4509ABD21B23D59A00846032 /* TPProfileSettingsViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
+				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
 				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,
 				459BACDC1B1DF9F000739C7E /* TPDDCommentCell.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
@@ -2461,6 +2483,7 @@
 				4509AB731B22E3E300846032 /* SectionsViewController.m in Sources */,
 				459BAD611B1F5D7E00739C7E /* TPProfilePageListViewController.m in Sources */,
 				459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */,
+				45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */,
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
@@ -2485,9 +2508,9 @@
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
 				4509ABC31B233C9200846032 /* TPReserveDateViewController.m in Sources */,
+				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
-				45156E7A1B1D7B9B00A67BDB /* TPTheme.m in Sources */,
 				459BAD2A1B1F59D900739C7E /* TPCommentListViewDataSource.m in Sources */,
 				459BAD631B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m in Sources */,
 				459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */,
@@ -2503,7 +2526,6 @@
 				45028B4B1B1C7D2D00417606 /* TPMessageListItem.m in Sources */,
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
 				4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */,
-				459BAD071B1F331F00739C7E /* TPUtils.m in Sources */,
 				45028B671B1C7F1300417606 /* TPMyServiceListViewController.m in Sources */,
 				45028B691B1C7F1300417606 /* TPMyServiceListViewDelegate.m in Sources */,
 				459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */,
@@ -2538,6 +2560,7 @@
 				4509AC1E1B247E5200846032 /* TPTripListViewController.m in Sources */,
 				4509ABC41B233C9200846032 /* TPReserveDateItem.m in Sources */,
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
+				45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */,
 				45028B451B1C7D2D00417606 /* TPMeSubView.m in Sources */,
 				45028AAC1B1B535E00417606 /* VZViewController.m in Sources */,
 				4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */,
@@ -2594,11 +2617,11 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		459BAEAC1B218F2300739C7E /* SMS_SDKLocalizable.strings */ = {
+		45D6BA721B268794007DFC7A /* SMS_SDKLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				459BAEAD1B218F2300739C7E /* en */,
-				459BAEAF1B218F2300739C7E /* zh-Hans */,
+				45D6BA731B268794007DFC7A /* en */,
+				45D6BA751B268794007DFC7A /* zh-Hans */,
 			);
 			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";

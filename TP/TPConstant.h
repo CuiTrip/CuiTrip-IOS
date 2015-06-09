@@ -13,6 +13,7 @@
 #define appSecret @"d9ff9f18a74898d61821af51b29683e2"
 
 #define kTPCacheKey_User @"TP_USER"
+#define kTPCacheKey_APNS @"TPAPNS"
 
 #define kTPScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kTPScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -41,5 +42,13 @@
 
 #define __image(x) [UIImage imageNamed:(x)]
 #define __url(x) [NSURL URLWithString:(x)]
+
+#define IsStringValid(_str) (_str && [_str isKindOfClass:[NSString class]] && ([_str length] > 0))
+#define IsArrayValid(_array) (_array && [_array isKindOfClass:[NSArray class]] && ([_array count] > 0))
+#define IsDictionaryValid(__dic) (__dic && [__dic isKindOfClass:[NSDictionary class]] && ([__dic count] > 0))
+#define IsDelegateValid(__aDelegate, __aSelector)   (__aDelegate && [__aDelegate respondsToSelector:__aSelector])
+#define $(...) ((NSString *)[NSString stringWithFormat:__VA_ARGS__])
+
+#define vzBool(x,v) ([x isKindOfClass:[NSNumber class]] || [x isKindOfClass:[NSString class]])? [x boolValue]:v
 
 #endif
