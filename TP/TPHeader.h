@@ -15,6 +15,8 @@
 #import "TPUIKit.h"
 #import "TPUtils.h"
 #import "TPLoginManager.h"
+#import "TPAPNS.h"
+
 
 
 #endif

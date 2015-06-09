@@ -31,9 +31,27 @@
               withSecret:appSecret];
     
     return YES;
-
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [[TPAPNS sharedInstance] registerRemoteNotification];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //弹框:
+    
+    
+    //跳到消息
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [[TPAPNS sharedInstance] updateDeviceToken:deviceToken];
+}
 
 
 @end
