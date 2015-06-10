@@ -1,0 +1,98 @@
+{
+  "controller": [
+    {
+      "class": "TPChatListViewController",
+      "superclass": "VZListViewController",
+      "model": [
+        {
+          "name": "chatListModel",
+          "class": "TPChatListModel",
+          "superclass": "VZHTTPListModel"
+        }
+      ],
+      "datasource": {
+        "name": "ds",
+        "class": "TPChatListViewDataSource",
+        "superclass": "VZListViewDataSource"
+      },
+      "delegate": {
+        "name": "dl",
+        "class": "TPChatListViewDelegate",
+        "superclass": "VZListViewDelegate"
+      },
+      "tpath": "./template/vizzle/template_listviewcontroller.rb",
+      "namespace": "T_ListViewController",
+      "filepath": "./Chat/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPChatListModel",
+      "superclass": "VZHTTPListModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httplistmodel.rb",
+      "namespace": "T_HTTPListModel",
+      "filepath": "./Chat/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPChatListModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPChatListModel",
+      "modelsuperclass": "VZHTTPListModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Chat/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPChatListItem",
+      "superclass": "VZListItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_listItem.rb",
+      "namespace": "T_ListItem",
+      "filepath": "./Chat/item/"
+    }
+  ],
+  "cell": [
+    {
+      "class": "TPChatListCell",
+      "superclass": "VZListCell",
+      "itemclass": "TPChatListItem",
+      "height": "44",
+      "tpath": "./template/vizzle/template_listcell.rb",
+      "namespace": "T_ListCell",
+      "filepath": "./Chat/cell/"
+    }
+  ],
+  "datasource": [
+    {
+      "class": "TPChatListViewDataSource",
+      "superclass": "VZListViewDataSource",
+      "cellclass": "TPChatListCell",
+      "tpath": "./template/vizzle/template_listviewdatasource.rb",
+      "namespace": "T_ListViewDataSource",
+      "filepath": "./Chat/datasource/"
+    }
+  ],
+  "delegate": [
+    {
+      "class": "TPChatListViewDelegate",
+      "superclass": "VZListViewDelegate",
+      "tpath": "./template/vizzle/template_listviewdelegate.rb",
+      "namespace": "T_ListViewDelegate",
+      "filepath": "./Chat/delegate/"
+    }
+  ],
+  "config": {
+    "class": "TPChatConfig",
+    "proj": "TP",
+    "package_name": "Chat",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Chat/config/"
+  }
+}

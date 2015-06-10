@@ -51,13 +51,6 @@
 		45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B1A1B1C7D2C00417606 /* TPMeItem.m */; };
 		45028B441B1C7D2D00417606 /* TPMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B1D1B1C7D2C00417606 /* TPMeModel.m */; };
 		45028B451B1C7D2D00417606 /* TPMeSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B211B1C7D2C00417606 /* TPMeSubView.m */; };
-		45028B461B1C7D2D00417606 /* TPMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B251B1C7D2C00417606 /* TPMessageListCell.m */; };
-		45028B471B1C7D2D00417606 /* message_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45028B271B1C7D2C00417606 /* message_meta.json */; };
-		45028B481B1C7D2D00417606 /* TPMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B2B1B1C7D2C00417606 /* TPMessageListViewController.m */; };
-		45028B491B1C7D2D00417606 /* TPMessageListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B2E1B1C7D2C00417606 /* TPMessageListViewDataSource.m */; };
-		45028B4A1B1C7D2D00417606 /* TPMessageListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B311B1C7D2C00417606 /* TPMessageListViewDelegate.m */; };
-		45028B4B1B1C7D2D00417606 /* TPMessageListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B341B1C7D2D00417606 /* TPMessageListItem.m */; };
-		45028B4C1B1C7D2D00417606 /* TPMessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B371B1C7D2D00417606 /* TPMessageListModel.m */; };
 		45028B651B1C7F1300417606 /* TPMyServiceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B501B1C7F1300417606 /* TPMyServiceListCell.m */; };
 		45028B661B1C7F1300417606 /* myservice_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45028B521B1C7F1300417606 /* myservice_meta.json */; };
 		45028B671B1C7F1300417606 /* TPMyServiceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B561B1C7F1300417606 /* TPMyServiceListViewController.m */; };
@@ -214,6 +207,20 @@
 		45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA6A1B2686C2007DFC7A /* TPUtils.m */; };
 		45D6BA761B268794007DFC7A /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA721B268794007DFC7A /* SMS_SDKLocalizable.strings */; };
 		45D6BA771B268794007DFC7A /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D6BA741B268794007DFC7A /* SMS_SDK.framework */; };
+		45DD47361B28200200D2BB62 /* TPMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47091B28200100D2BB62 /* TPMessageListCell.m */; };
+		45DD47371B28200200D2BB62 /* message_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DD470B1B28200100D2BB62 /* message_meta.json */; };
+		45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD470F1B28200100D2BB62 /* TPMessageListViewController.m */; };
+		45DD47391B28200200D2BB62 /* TPMessageListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47121B28200200D2BB62 /* TPMessageListViewDataSource.m */; };
+		45DD473A1B28200200D2BB62 /* TPMessageListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47151B28200200D2BB62 /* TPMessageListViewDelegate.m */; };
+		45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47181B28200200D2BB62 /* TPMessageListItem.m */; };
+		45DD473C1B28200200D2BB62 /* TPMessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD471B1B28200200D2BB62 /* TPMessageListModel.m */; };
+		45DD473D1B28200200D2BB62 /* TPChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47211B28200200D2BB62 /* TPChatListCell.m */; };
+		45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DD47231B28200200D2BB62 /* chat_meta.json */; };
+		45DD473F1B28200200D2BB62 /* TPChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47271B28200200D2BB62 /* TPChatListViewController.m */; };
+		45DD47401B28200200D2BB62 /* TPChatListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD472A1B28200200D2BB62 /* TPChatListViewDataSource.m */; };
+		45DD47411B28200200D2BB62 /* TPChatListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD472D1B28200200D2BB62 /* TPChatListViewDelegate.m */; };
+		45DD47421B28200200D2BB62 /* TPChatListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47301B28200200D2BB62 /* TPChatListItem.m */; };
+		45DD47431B28200200D2BB62 /* TPChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47331B28200200D2BB62 /* TPChatListModel.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -322,20 +329,6 @@
 		45028B1D1B1C7D2C00417606 /* TPMeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeModel.m; sourceTree = "<group>"; };
 		45028B201B1C7D2C00417606 /* TPMeSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeSubView.h; sourceTree = "<group>"; };
 		45028B211B1C7D2C00417606 /* TPMeSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMeSubView.m; sourceTree = "<group>"; };
-		45028B241B1C7D2C00417606 /* TPMessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListCell.h; sourceTree = "<group>"; };
-		45028B251B1C7D2C00417606 /* TPMessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListCell.m; sourceTree = "<group>"; };
-		45028B271B1C7D2C00417606 /* message_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_meta.json; sourceTree = "<group>"; };
-		45028B281B1C7D2C00417606 /* TPMessageConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageConfig.h; sourceTree = "<group>"; };
-		45028B2A1B1C7D2C00417606 /* TPMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListViewController.h; sourceTree = "<group>"; };
-		45028B2B1B1C7D2C00417606 /* TPMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListViewController.m; sourceTree = "<group>"; };
-		45028B2D1B1C7D2C00417606 /* TPMessageListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListViewDataSource.h; sourceTree = "<group>"; };
-		45028B2E1B1C7D2C00417606 /* TPMessageListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListViewDataSource.m; sourceTree = "<group>"; };
-		45028B301B1C7D2C00417606 /* TPMessageListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListViewDelegate.h; sourceTree = "<group>"; };
-		45028B311B1C7D2C00417606 /* TPMessageListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListViewDelegate.m; sourceTree = "<group>"; };
-		45028B331B1C7D2D00417606 /* TPMessageListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListItem.h; sourceTree = "<group>"; };
-		45028B341B1C7D2D00417606 /* TPMessageListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListItem.m; sourceTree = "<group>"; };
-		45028B361B1C7D2D00417606 /* TPMessageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListModel.h; sourceTree = "<group>"; };
-		45028B371B1C7D2D00417606 /* TPMessageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListModel.m; sourceTree = "<group>"; };
 		45028B4F1B1C7F1300417606 /* TPMyServiceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMyServiceListCell.h; sourceTree = "<group>"; };
 		45028B501B1C7F1300417606 /* TPMyServiceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMyServiceListCell.m; sourceTree = "<group>"; };
 		45028B521B1C7F1300417606 /* myservice_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = myservice_meta.json; sourceTree = "<group>"; };
@@ -599,6 +592,34 @@
 		45D6BA731B268794007DFC7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		45D6BA741B268794007DFC7A /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		45D6BA751B268794007DFC7A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		45DD47081B28200100D2BB62 /* TPMessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListCell.h; sourceTree = "<group>"; };
+		45DD47091B28200100D2BB62 /* TPMessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListCell.m; sourceTree = "<group>"; };
+		45DD470B1B28200100D2BB62 /* message_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_meta.json; sourceTree = "<group>"; };
+		45DD470C1B28200100D2BB62 /* TPMessageConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageConfig.h; sourceTree = "<group>"; };
+		45DD470E1B28200100D2BB62 /* TPMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListViewController.h; sourceTree = "<group>"; };
+		45DD470F1B28200100D2BB62 /* TPMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListViewController.m; sourceTree = "<group>"; };
+		45DD47111B28200200D2BB62 /* TPMessageListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListViewDataSource.h; sourceTree = "<group>"; };
+		45DD47121B28200200D2BB62 /* TPMessageListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListViewDataSource.m; sourceTree = "<group>"; };
+		45DD47141B28200200D2BB62 /* TPMessageListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListViewDelegate.h; sourceTree = "<group>"; };
+		45DD47151B28200200D2BB62 /* TPMessageListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListViewDelegate.m; sourceTree = "<group>"; };
+		45DD47171B28200200D2BB62 /* TPMessageListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListItem.h; sourceTree = "<group>"; };
+		45DD47181B28200200D2BB62 /* TPMessageListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListItem.m; sourceTree = "<group>"; };
+		45DD471A1B28200200D2BB62 /* TPMessageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListModel.h; sourceTree = "<group>"; };
+		45DD471B1B28200200D2BB62 /* TPMessageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListModel.m; sourceTree = "<group>"; };
+		45DD47201B28200200D2BB62 /* TPChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListCell.h; sourceTree = "<group>"; };
+		45DD47211B28200200D2BB62 /* TPChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListCell.m; sourceTree = "<group>"; };
+		45DD47231B28200200D2BB62 /* chat_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chat_meta.json; sourceTree = "<group>"; };
+		45DD47241B28200200D2BB62 /* TPChatConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatConfig.h; sourceTree = "<group>"; };
+		45DD47261B28200200D2BB62 /* TPChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListViewController.h; sourceTree = "<group>"; };
+		45DD47271B28200200D2BB62 /* TPChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListViewController.m; sourceTree = "<group>"; };
+		45DD47291B28200200D2BB62 /* TPChatListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListViewDataSource.h; sourceTree = "<group>"; };
+		45DD472A1B28200200D2BB62 /* TPChatListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListViewDataSource.m; sourceTree = "<group>"; };
+		45DD472C1B28200200D2BB62 /* TPChatListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListViewDelegate.h; sourceTree = "<group>"; };
+		45DD472D1B28200200D2BB62 /* TPChatListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListViewDelegate.m; sourceTree = "<group>"; };
+		45DD472F1B28200200D2BB62 /* TPChatListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListItem.h; sourceTree = "<group>"; };
+		45DD47301B28200200D2BB62 /* TPChatListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListItem.m; sourceTree = "<group>"; };
+		45DD47321B28200200D2BB62 /* TPChatListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListModel.h; sourceTree = "<group>"; };
+		45DD47331B28200200D2BB62 /* TPChatListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListModel.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -964,94 +985,10 @@
 		45028B221B1C7D2C00417606 /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
-				45028B231B1C7D2C00417606 /* cell */,
-				45028B261B1C7D2C00417606 /* config */,
-				45028B291B1C7D2C00417606 /* controller */,
-				45028B2C1B1C7D2C00417606 /* datasource */,
-				45028B2F1B1C7D2C00417606 /* delegate */,
-				45028B321B1C7D2D00417606 /* item */,
-				45028B351B1C7D2D00417606 /* model */,
-				45028B381B1C7D2D00417606 /* resource */,
-				45028B391B1C7D2D00417606 /* view */,
+				45DD47061B28200100D2BB62 /* 列表 */,
+				45DD471E1B28200200D2BB62 /* 详情 */,
 			);
 			path = "消息";
-			sourceTree = "<group>";
-		};
-		45028B231B1C7D2C00417606 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				45028B241B1C7D2C00417606 /* TPMessageListCell.h */,
-				45028B251B1C7D2C00417606 /* TPMessageListCell.m */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		45028B261B1C7D2C00417606 /* config */ = {
-			isa = PBXGroup;
-			children = (
-				45028B271B1C7D2C00417606 /* message_meta.json */,
-				45028B281B1C7D2C00417606 /* TPMessageConfig.h */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		45028B291B1C7D2C00417606 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				45028B2A1B1C7D2C00417606 /* TPMessageListViewController.h */,
-				45028B2B1B1C7D2C00417606 /* TPMessageListViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		45028B2C1B1C7D2C00417606 /* datasource */ = {
-			isa = PBXGroup;
-			children = (
-				45028B2D1B1C7D2C00417606 /* TPMessageListViewDataSource.h */,
-				45028B2E1B1C7D2C00417606 /* TPMessageListViewDataSource.m */,
-			);
-			path = datasource;
-			sourceTree = "<group>";
-		};
-		45028B2F1B1C7D2C00417606 /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				45028B301B1C7D2C00417606 /* TPMessageListViewDelegate.h */,
-				45028B311B1C7D2C00417606 /* TPMessageListViewDelegate.m */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
-		45028B321B1C7D2D00417606 /* item */ = {
-			isa = PBXGroup;
-			children = (
-				45028B331B1C7D2D00417606 /* TPMessageListItem.h */,
-				45028B341B1C7D2D00417606 /* TPMessageListItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		45028B351B1C7D2D00417606 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				45028B361B1C7D2D00417606 /* TPMessageListModel.h */,
-				45028B371B1C7D2D00417606 /* TPMessageListModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		45028B381B1C7D2D00417606 /* resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = resource;
-			sourceTree = "<group>";
-		};
-		45028B391B1C7D2D00417606 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		45028B4D1B1C7F1300417606 /* 服务 */ = {
@@ -2232,6 +2169,192 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
+		45DD47061B28200100D2BB62 /* 列表 */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47071B28200100D2BB62 /* cell */,
+				45DD470A1B28200100D2BB62 /* config */,
+				45DD470D1B28200100D2BB62 /* controller */,
+				45DD47101B28200100D2BB62 /* datasource */,
+				45DD47131B28200200D2BB62 /* delegate */,
+				45DD47161B28200200D2BB62 /* item */,
+				45DD47191B28200200D2BB62 /* model */,
+				45DD471C1B28200200D2BB62 /* resource */,
+				45DD471D1B28200200D2BB62 /* view */,
+			);
+			path = "列表";
+			sourceTree = "<group>";
+		};
+		45DD47071B28200100D2BB62 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47081B28200100D2BB62 /* TPMessageListCell.h */,
+				45DD47091B28200100D2BB62 /* TPMessageListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		45DD470A1B28200100D2BB62 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				45DD470B1B28200100D2BB62 /* message_meta.json */,
+				45DD470C1B28200100D2BB62 /* TPMessageConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		45DD470D1B28200100D2BB62 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45DD470E1B28200100D2BB62 /* TPMessageListViewController.h */,
+				45DD470F1B28200100D2BB62 /* TPMessageListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45DD47101B28200100D2BB62 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47111B28200200D2BB62 /* TPMessageListViewDataSource.h */,
+				45DD47121B28200200D2BB62 /* TPMessageListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		45DD47131B28200200D2BB62 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47141B28200200D2BB62 /* TPMessageListViewDelegate.h */,
+				45DD47151B28200200D2BB62 /* TPMessageListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		45DD47161B28200200D2BB62 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47171B28200200D2BB62 /* TPMessageListItem.h */,
+				45DD47181B28200200D2BB62 /* TPMessageListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		45DD47191B28200200D2BB62 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				45DD471A1B28200200D2BB62 /* TPMessageListModel.h */,
+				45DD471B1B28200200D2BB62 /* TPMessageListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		45DD471C1B28200200D2BB62 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		45DD471D1B28200200D2BB62 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		45DD471E1B28200200D2BB62 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				45DD471F1B28200200D2BB62 /* cell */,
+				45DD47221B28200200D2BB62 /* config */,
+				45DD47251B28200200D2BB62 /* controller */,
+				45DD47281B28200200D2BB62 /* datasource */,
+				45DD472B1B28200200D2BB62 /* delegate */,
+				45DD472E1B28200200D2BB62 /* item */,
+				45DD47311B28200200D2BB62 /* model */,
+				45DD47341B28200200D2BB62 /* resource */,
+				45DD47351B28200200D2BB62 /* view */,
+			);
+			path = "详情";
+			sourceTree = "<group>";
+		};
+		45DD471F1B28200200D2BB62 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47201B28200200D2BB62 /* TPChatListCell.h */,
+				45DD47211B28200200D2BB62 /* TPChatListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		45DD47221B28200200D2BB62 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47231B28200200D2BB62 /* chat_meta.json */,
+				45DD47241B28200200D2BB62 /* TPChatConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		45DD47251B28200200D2BB62 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47261B28200200D2BB62 /* TPChatListViewController.h */,
+				45DD47271B28200200D2BB62 /* TPChatListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45DD47281B28200200D2BB62 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47291B28200200D2BB62 /* TPChatListViewDataSource.h */,
+				45DD472A1B28200200D2BB62 /* TPChatListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		45DD472B1B28200200D2BB62 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				45DD472C1B28200200D2BB62 /* TPChatListViewDelegate.h */,
+				45DD472D1B28200200D2BB62 /* TPChatListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		45DD472E1B28200200D2BB62 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				45DD472F1B28200200D2BB62 /* TPChatListItem.h */,
+				45DD47301B28200200D2BB62 /* TPChatListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		45DD47311B28200200D2BB62 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				45DD47321B28200200D2BB62 /* TPChatListModel.h */,
+				45DD47331B28200200D2BB62 /* TPChatListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		45DD47341B28200200D2BB62 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		45DD47351B28200200D2BB62 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		9FFED9F51BE90EBDBF1336EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2358,7 +2481,6 @@
 				4509ABFE1B245AAF00846032 /* TPDatePickerSelectionView.xib in Resources */,
 				459BAEF51B21E58700739C7E /* trip_nav_m_A@2x.png in Resources */,
 				4509AB7C1B22EA2300846032 /* Localizable.strings in Resources */,
-				45028B471B1C7D2D00417606 /* message_meta.json in Resources */,
 				459BAEF71B21E58700739C7E /* trip_nav_p_A@2x.png in Resources */,
 				4509AB771B22E3E300846032 /* TPLoginViewController.storyboard in Resources */,
 				459BAEF01B21E58700739C7E /* trip_left_w@2x.png in Resources */,
@@ -2367,7 +2489,9 @@
 				459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */,
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
+				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
 				459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */,
+				45DD47371B28200200D2BB62 /* message_meta.json in Resources */,
 				459BAEF91B21E58700739C7E /* trip_nav_r_A@2x.png in Resources */,
 				459BAEF21B21E58700739C7E /* trip_nav_j@2x.png in Resources */,
 				459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */,
@@ -2454,6 +2578,7 @@
 				45028ABF1B1B535E00417606 /* VZListCell.m in Sources */,
 				459BACD11B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.m in Sources */,
 				4509ABE91B23DDF600846032 /* TPFeedbackSubView.m in Sources */,
+				45DD47431B28200200D2BB62 /* TPChatListModel.m in Sources */,
 				45028B651B1C7F1300417606 /* TPMyServiceListCell.m in Sources */,
 				4509AB721B22E3E300846032 /* NSDictionary-DeepMutableCopy.m in Sources */,
 				4509AC351B247EA600846032 /* TPTripDetailItem.m in Sources */,
@@ -2470,10 +2595,12 @@
 				4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */,
 				459BAD2C1B1F59D900739C7E /* TPCommentListItem.m in Sources */,
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
+				45DD473A1B28200200D2BB62 /* TPMessageListViewDelegate.m in Sources */,
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
 				4509ABD21B23D59A00846032 /* TPProfileSettingsViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
 				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
+				45DD47401B28200200D2BB62 /* TPChatListViewDataSource.m in Sources */,
 				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,
 				459BACDC1B1DF9F000739C7E /* TPDDCommentCell.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
@@ -2487,6 +2614,7 @@
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
+				45DD47391B28200200D2BB62 /* TPMessageListViewDataSource.m in Sources */,
 				459BACE91B1DFBE800739C7E /* TPDDInfoItem.m in Sources */,
 				459BACD31B1DF62A00739C7E /* TPDiscoveryDetailListModel.m in Sources */,
 				459BAD421B1F5BA600739C7E /* TPDatePickerViewController.m in Sources */,
@@ -2495,7 +2623,6 @@
 				45028AA81B1B535E00417606 /* VZAFRequest.m in Sources */,
 				45028AC11B1B535E00417606 /* VZListDefaultLoadingCell.m in Sources */,
 				45028AB61B1B535E00417606 /* VZHTTPNetworkAgent.m in Sources */,
-				45028B4A1B1C7D2D00417606 /* TPMessageListViewDelegate.m in Sources */,
 				45028ABC1B1B535E00417606 /* VZHTTPURLResponseCache.m in Sources */,
 				4509AB901B22F13100846032 /* TPForgetPWDModel.m in Sources */,
 				45028AD91B1C79CA00417606 /* TPLoginManager.m in Sources */,
@@ -2504,26 +2631,28 @@
 				459BACDF1B1DF9F000739C7E /* TPDDTripCell.m in Sources */,
 				45028AB21B1B535E00417606 /* VZListItem.m in Sources */,
 				4509ABC11B233C9200846032 /* TPReserveSubView.m in Sources */,
+				45DD473F1B28200200D2BB62 /* TPChatListViewController.m in Sources */,
 				459BAD651B1F5D7E00739C7E /* TPProfilePageListModel.m in Sources */,
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
 				4509ABC31B233C9200846032 /* TPReserveDateViewController.m in Sources */,
 				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
+				45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
 				459BAD2A1B1F59D900739C7E /* TPCommentListViewDataSource.m in Sources */,
+				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,
 				459BAD631B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m in Sources */,
 				459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */,
 				459BAD2D1B1F59D900739C7E /* TPCommentListModel.m in Sources */,
+				45DD47411B28200200D2BB62 /* TPChatListViewDelegate.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
 				45028AF51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m in Sources */,
 				45028AB31B1B535E00417606 /* VZModel.m in Sources */,
 				4509ABC51B233C9200846032 /* TPReserveDateModel.m in Sources */,
-				45028B491B1C7D2D00417606 /* TPMessageListViewDataSource.m in Sources */,
 				459BACDD1B1DF9F000739C7E /* TPDDInfoCell.m in Sources */,
 				45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */,
 				4509AB941B22F13D00846032 /* TPLicenceViewController.m in Sources */,
-				45028B4B1B1C7D2D00417606 /* TPMessageListItem.m in Sources */,
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
 				4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */,
 				45028B671B1C7F1300417606 /* TPMyServiceListViewController.m in Sources */,
@@ -2540,8 +2669,6 @@
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
 				459BAEA61B21561A00739C7E /* TPStarView.m in Sources */,
 				459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */,
-				45028B461B1C7D2D00417606 /* TPMessageListCell.m in Sources */,
-				45028B481B1C7D2D00417606 /* TPMessageListViewController.m in Sources */,
 				459BACEA1B1DFBE800739C7E /* TPDDProfileItem.m in Sources */,
 				45028B441B1C7D2D00417606 /* TPMeModel.m in Sources */,
 				4509AB8F1B22F13100846032 /* TPForgetPWDItem.m in Sources */,
@@ -2550,6 +2677,8 @@
 				45028AF61B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m in Sources */,
 				45028AB01B1B535E00417606 /* VZItem.m in Sources */,
 				45028B421B1C7D2D00417606 /* TPMeViewController.m in Sources */,
+				45DD473D1B28200200D2BB62 /* TPChatListCell.m in Sources */,
+				45DD47421B28200200D2BB62 /* TPChatListItem.m in Sources */,
 				45028AC21B1B535E00417606 /* VZListDefaultTextCell.m in Sources */,
 				45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */,
 				459BACCF1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m in Sources */,
@@ -2575,10 +2704,11 @@
 				459BACD01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m in Sources */,
 				45028B6A1B1C7F1300417606 /* TPMyServiceListItem.m in Sources */,
 				459BACDE1B1DF9F000739C7E /* TPDDProfileCell.m in Sources */,
-				45028B4C1B1C7D2D00417606 /* TPMessageListModel.m in Sources */,
 				45028AAA1B1B535E00417606 /* VZListViewDataSource.m in Sources */,
 				4509AB761B22E3E300846032 /* TPLoginViewController.m in Sources */,
+				45DD473C1B28200200D2BB62 /* TPMessageListModel.m in Sources */,
 				4509ABBF1B233C9200846032 /* TPReserveItem.m in Sources */,
+				45DD47361B28200200D2BB62 /* TPMessageListCell.m in Sources */,
 				459B24981B176A1C009BB189 /* main.m in Sources */,
 				4509ABBE1B233C9200846032 /* TPReserveViewController.m in Sources */,
 				4509ABE71B23DDF600846032 /* TPFeedbackItem.m in Sources */,

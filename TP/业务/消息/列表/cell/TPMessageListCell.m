@@ -63,8 +63,8 @@
     [self.icon sd_setImageWithURL:__url(item.avatarURL) placeholderImage:__image(@"girl.jpg")];
     self.titleLabel.text = item.title;
     self.descLabel.text = item.desc;
-    self.badge.hidden = !item.hasNewMsg;
-  
+   // self.badge.hidden = !item.hasNewMsg;
+    self.badge.hidden = NO;
 }
 
 - (void)layoutSubviews
@@ -83,7 +83,7 @@
     self.descLabel.vzWidth = self.titleLabel.vzWidth;
     self.descLabel.vzHeight = 12;
     
-    self.badge.vzOrigin = CGPointMake(self.vzWidth-70, kTPHeightWithMargin(10));
+    self.badge.vzOrigin = CGPointMake(self.vzWidth-70, (self.vzHeight-10)/2);
     self.badge.vzWidth = 10;
     self.badge.vzHeight = 10;
   
