@@ -11,6 +11,8 @@
 
 #import "TPMessageListViewDataSource.h"
 #import "TPMessageListCell.h"
+#import "TPMessageListItem.h"
+
 
 @interface TPMessageListViewDataSource()
 
@@ -34,13 +36,20 @@
 
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
 //@optional:
-//- (TBCitySBTableViewItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
+- (TPMessageListItem *)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
 
-    //default:
-    //return [super itemForCellAtIndexPath:indexPath]; 
+    NSDictionary* dict = @{@"avatarURL":@"",@"title":@"台湾区看妈祖表演",@"desc":@"谢谢，我也很高兴为您服务!"};
+    TPMessageListItem* item = [TPMessageListItem new];
+    [item autoKVCBinding:dict];
+    return item;
 
-//}
+}
 
 
 @end  

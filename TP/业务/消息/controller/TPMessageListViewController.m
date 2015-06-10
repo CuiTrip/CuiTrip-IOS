@@ -104,6 +104,7 @@
 
     //6,Load Data
     //[self load];
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated

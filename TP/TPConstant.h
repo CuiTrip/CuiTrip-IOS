@@ -18,8 +18,8 @@
 #define kTPScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kTPScreenHeight [UIScreen mainScreen].bounds.size.height
 
-#define kTPWidthWithMargin(x)  (kTPScreenWidth - x*2)
-#define kTPHeightWithMargin(y) (kTPScreenHeight - y*2)
+#define kTPWidthWithMargin(x)  (kTPScreenWidth - x)/2
+#define kTPHeightWithMargin(y) (kTPScreenHeight - y)/2
 
 #define kTPNofityMessageSwitchIdentity @"kTPNofityMessageSwitchIdentity"
 #define kTPNotifyMessageLoginSuccess @"kTPLoginSuccess"
