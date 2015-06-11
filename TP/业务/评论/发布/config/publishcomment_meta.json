@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPPublishCommentViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "publishCommentModel",
+          "class": "TPPublishCommentModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./PublishComment/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPPublishCommentModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./PublishComment/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPPublishCommentModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPPublishCommentModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./PublishComment/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPPublishCommentItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./PublishComment/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPPublishCommentSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./PublishComment/view/",
+      "namespace": "T_View",
+      "itemclass": "TPPublishCommentItem"
+    }
+  ],
+  "config": {
+    "class": "TPPublishCommentConfig",
+    "proj": "TP",
+    "package_name": "PublishComment",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./PublishComment/config/"
+  }
+}

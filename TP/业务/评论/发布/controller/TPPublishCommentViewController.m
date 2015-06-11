@@ -1,38 +1,31 @@
   
 //
-//  TPTripDetailViewController.m
+//  TPPublishCommentViewController.m
 //  TP
 //
-//  Created by moxin on 2015-06-07 21:28:19 +0800.
+//  Created by moxin on 2015-06-11 19:56:48 +0800.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
 
 
-#import "TPTripDetailViewController.h"
 #import "TPPublishCommentViewController.h"
-#import "TPTripDetailModel.h" 
+ 
+#import "TPPublishCommentModel.h" 
 
-@interface TPTripDetailViewController()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@interface TPPublishCommentViewController()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarIcon;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
  
-@property (weak, nonatomic) IBOutlet UILabel *tripDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tripNumberLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *tripFeeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tripStatusLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *actionBtn;
-
-@property(nonatomic,strong)TPTripDetailModel *tripDetailModel; 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property(nonatomic,strong)TPPublishCommentModel *publishCommentModel; 
 
 @end
 
-@implementation TPTripDetailViewController
+@implementation TPPublishCommentViewController
 
 
 //////////////////////////////////////////////////////////// 
@@ -44,13 +37,13 @@
 #pragma mark - getters 
 
    
-- (TPTripDetailModel *)tripDetailModel
+- (TPPublishCommentModel *)publishCommentModel
 {
-    if (!_tripDetailModel) {
-        _tripDetailModel = [TPTripDetailModel new];
-        _tripDetailModel.key = @"__TPTripDetailModel__";
+    if (!_publishCommentModel) {
+        _publishCommentModel = [TPPublishCommentModel new];
+        _publishCommentModel.key = @"__TPPublishCommentModel__";
     }
-    return _tripDetailModel;
+    return _publishCommentModel;
 }
 
 
@@ -136,11 +129,7 @@
     //todo:
     [super showError:error withModel:model];
 }
-- (IBAction)onAction:(id)sender {
-    
-    TPPublishCommentViewController* vc = [[UIStoryboard storyboardWithName:@"TPPublishCommentViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppublishcomment"];
-    [self.navigationController pushViewController:vc animated:true];
-    
+- (IBAction)publishCommnet:(id)sender {
 }
 
 @end
