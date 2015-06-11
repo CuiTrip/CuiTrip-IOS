@@ -85,7 +85,20 @@
         }
         
         if (!error) {
-            [weakSelf requestDidFinish:responseObj];
+            
+            NSString* code = responseObj[@"code"];
+            
+            if (code.intValue == 0) {
+            
+                NSDictionary* result = responseObj[@"result"];
+                [weakSelf requestDidFinish:result];
+            }
+            else
+            {
+                NSError* error = [NSError errorWithDomain:@"" code:code.intValue userInfo:@{NSLocalizedDescriptionKey:responseObj[@"msg"]}];
+                [weakSelf requestDidFailWithError:error];
+            }
+
         }
         else
             [weakSelf requestDidFailWithError:error];

@@ -9,6 +9,7 @@
 #import "TPLoginManager.h"
 #import "TPLoginViewController.h"
 
+
 @implementation TPLoginManager
 
 
@@ -23,6 +24,11 @@
         
     }
     return self;
+}
+
++ (void)autoLogin
+{
+
 }
 
 + (void)showLoginViewControllerWithCompletion:(void (^)(NSError *))completion
@@ -63,6 +69,26 @@
 
 + (void)loginWithCompletion:(void(^)(NSError* error))completion
 {
+    
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:@"" params:@{} completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+       
+        if (!error)
+        {
+            [TPUser update:responseObj];
+            
+            if (completion) {
+                completion(nil);
+            }
+        }
+        else
+        {
+            if (completion) {
+                completion(error);
+            }
+        }
+    }];
+    
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         //test

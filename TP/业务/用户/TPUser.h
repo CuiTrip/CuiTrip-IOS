@@ -32,6 +32,8 @@
 
 + (void)changeUserType:(TPUserType)type;
 
++ (void)update:(NSDictionary* )info;
+
 + (void)synchronize;
 
 @end

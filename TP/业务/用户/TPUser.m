@@ -54,22 +54,22 @@
 
 + (NSString* )avatar
 {
-    return nil;
+    return [TPUser sharedInstance].userItem.headPic;
 }
 
 + (NSString* )userNick
 {
-    return nil;
+    return [TPUser sharedInstance].userItem.nick;
 }
 
 + (NSString* )userName
 {
-    return nil;
+    return [TPUser sharedInstance].userItem.realName;
 }
 
 + (BOOL)isLogined
 {
-    return NO;
+    return [TPUser sharedInstance].userItem.token.length > 0;
 }
 
 + (void)clearUserInfo
@@ -82,7 +82,6 @@
 + (void)logout
 {
     [self clearUserInfo];
-
 }
 
 + (void)changeUserType:(TPUserType)type
@@ -91,6 +90,13 @@
     [self synchronize];
 }
 
++ (void)update:(NSDictionary* )info
+{
+    TPUserItem* item = [TPUserItem new] ;
+    [item autoKVCBinding:info];
+    [TPUser sharedInstance].userItem = item;
+    [self synchronize];
+}
 
 + (void)synchronize
 {

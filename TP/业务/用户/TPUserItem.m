@@ -8,6 +8,23 @@
 
 #import "TPUserItem.h"
 
+/**
+ "uid ": "1 ", //用户id
+ "mobile": "13711112222", //手机
+ "countryCode": "86", // 国家代码
+ "headPic": "http: //alicdn.aliyun.com/pic1.jpg", //头像
+ "realName": "test1", // 姓名
+ "nick": "爱微寻", // 昵称
+ "gender": 1, // 性别: 1男 2女 3未知
+ "country": "中国", // 国家
+ "city": "杭州", // 所在城市
+ "language": "普通话， 英语", // 语言
+ "career": "老师", // 职业
+ "interests": "旅游", // 爱好
+ "sign": "世界那么大， 我想去看看", // 签名
+ " token": "hapt2t852afa04u022854" // 登录凭证
+ */
+
 @implementation TPUserItem
 
 - (void)autoKVCBinding:(NSDictionary *)dictionary
@@ -25,13 +42,20 @@
         
         self.type = [[aDecoder decodeObjectForKey:@"type"] integerValue];;
         self.uid = [aDecoder decodeObjectForKey:@"uid"];
-        self.avatar = [aDecoder decodeObjectForKey:@"avatar"];
-        self.username = [aDecoder decodeObjectForKey:@"username"];
-        self.password = [aDecoder decodeObjectForKey:@"password"];
-        self.nickname = [aDecoder decodeObjectForKey:@"nickname"];
+        self.headPic = [aDecoder decodeObjectForKey:@"headPic"];
+        self.realName = [aDecoder decodeObjectForKey:@"username"];
+        self.nick = [aDecoder decodeObjectForKey:@"nickname"];
         self.mobile = [aDecoder decodeObjectForKey:@"mobile"];
-        self.accesstoken = [aDecoder decodeObjectForKey:@"accesstoken"];
-
+        self.token = [aDecoder decodeObjectForKey:@"accesstoken"];
+        self.country = [aDecoder decodeObjectForKey:@"country"];
+        self.countryCode = [aDecoder decodeObjectForKey:@"countryCode"];
+        self.language = [aDecoder decodeObjectForKey:@"language"];
+        self.career = [aDecoder decodeObjectForKey:@"career"];
+        self.interests = [aDecoder decodeObjectForKey:@"interests"];
+        self.sign = [aDecoder decodeObjectForKey:@"sign"];
+        self.token = [aDecoder decodeObjectForKey:@"token"];
+        self.gender = [aDecoder decodeObjectForKey:@"gender"];
+        
     }
     return self;
 }
@@ -42,13 +66,20 @@
     
     [aCoder encodeObject:@(self.type) forKey:@"type"];
     [aCoder encodeObject:self.uid forKey:@"uid"];
-    [aCoder encodeObject:self.avatar forKey:@"avatar"];
-    [aCoder encodeObject:self.username forKey:@"username"];
-    [aCoder encodeObject:self.password forKey:@"password"];
-    [aCoder encodeObject:self.nickname forKey:@"nickname"];
+    [aCoder encodeObject:self.headPic forKey:@"avatar"];
+    [aCoder encodeObject:self.realName forKey:@"username"];
+    [aCoder encodeObject:self.nick forKey:@"nickname"];
     [aCoder encodeObject:self.mobile forKey:@"mobile"];
-    [aCoder encodeObject:self.accesstoken forKey:@"accesstoken"];
-;
+    [aCoder encodeObject:self.token forKey:@"accesstoken"];
+    [aCoder encodeObject:self.countryCode forKey:@"countryCode"];
+    [aCoder encodeObject:self.country forKey:@"country"];
+    [aCoder encodeObject:self.language forKey:@"language"];
+    [aCoder encodeObject:self.career forKey:@"career"];
+    [aCoder encodeObject:self.token forKey:@"token"];
+    [aCoder encodeObject:self.gender forKey:@"gender"];
+    [aCoder encodeObject:self.sign forKey:@"sign"];
+    [aCoder encodeObject:self.interests forKey:@"interests"];
+    
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -56,12 +87,18 @@
     TPUserItem* item = [super copyWithZone:zone];
     item.type = self.type;
     item.uid = self.uid;
-    item.avatar = self.avatar;
-    item.username = self.username;
-    item.password = self.password;
-    item.nickname = self.nickname;
+    item.headPic = self.headPic;
+    item.nick = self.nick;
+    item.realName = self.realName;
+    item.country = self.country;
+    item.countryCode = self.countryCode;
+    item.language = self.language;
+    item.career= self.career;
+    item.gender = self.gender;
+    item.sign = self.sign;
+    item.interests = self.interests;
     item.mobile = self.mobile;
-    item.accesstoken = self.accesstoken;
+    item.token = self.token;
     
     return item;
 }
