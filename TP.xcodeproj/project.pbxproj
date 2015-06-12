@@ -219,6 +219,9 @@
 		45D0C7DD1B29E0F900F31BF5 /* TPPSFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7DC1B29E0F900F31BF5 /* TPPSFeeViewController.m */; };
 		45D0C7DF1B29E10600F31BF5 /* TPPSLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7DE1B29E10600F31BF5 /* TPPSLocationViewController.storyboard */; };
 		45D0C7E11B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7E01B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard */; };
+		45D0C7E31B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7E21B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard */; };
+		45D0C7E51B2B40A700F31BF5 /* TPPSTitleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7E41B2B40A700F31BF5 /* TPPSTitleViewController.storyboard */; };
+		45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7E61B2B411C00F31BF5 /* TPPSMoreViewController.storyboard */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -634,6 +637,9 @@
 		45D0C7DC1B29E0F900F31BF5 /* TPPSFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSFeeViewController.m; sourceTree = "<group>"; };
 		45D0C7DE1B29E10600F31BF5 /* TPPSLocationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSLocationViewController.storyboard; sourceTree = "<group>"; };
 		45D0C7E01B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSDescriptionViewController.storyboard; sourceTree = "<group>"; };
+		45D0C7E21B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSPicsViewController.storyboard; sourceTree = "<group>"; };
+		45D0C7E41B2B40A700F31BF5 /* TPPSTitleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSTitleViewController.storyboard; sourceTree = "<group>"; };
+		45D0C7E61B2B411C00F31BF5 /* TPPSMoreViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSMoreViewController.storyboard; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -2350,6 +2356,9 @@
 				45D0C7DC1B29E0F900F31BF5 /* TPPSFeeViewController.m */,
 				45D0C7DE1B29E10600F31BF5 /* TPPSLocationViewController.storyboard */,
 				45D0C7E01B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard */,
+				45D0C7E21B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard */,
+				45D0C7E41B2B40A700F31BF5 /* TPPSTitleViewController.storyboard */,
+				45D0C7E61B2B411C00F31BF5 /* TPPSMoreViewController.storyboard */,
 			);
 			path = "发布流程";
 			sourceTree = "<group>";
@@ -2707,6 +2716,7 @@
 				4509AB7C1B22EA2300846032 /* Localizable.strings in Resources */,
 				459BAEF71B21E58700739C7E /* trip_nav_p_A@2x.png in Resources */,
 				4509AB771B22E3E300846032 /* TPLoginViewController.storyboard in Resources */,
+				45D0C7E51B2B40A700F31BF5 /* TPPSTitleViewController.storyboard in Resources */,
 				459BAEF01B21E58700739C7E /* trip_left_w@2x.png in Resources */,
 				459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */,
 				4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */,
@@ -2714,7 +2724,9 @@
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				45D0C7B01B29BED800F31BF5 /* myservice_meta.json in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
+				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
+				45D0C7E31B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard in Resources */,
 				45D0C7E11B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard in Resources */,
 				459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */,
 				45DD47371B28200200D2BB62 /* message_meta.json in Resources */,
