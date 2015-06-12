@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPPubilshServiceViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "pubilshServiceModel",
+          "class": "TPPubilshServiceModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./PubilshService/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPPubilshServiceModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./PubilshService/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPPubilshServiceModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPPubilshServiceModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./PubilshService/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPPubilshServiceItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./PubilshService/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPPubilshServiceSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./PubilshService/view/",
+      "namespace": "T_View",
+      "itemclass": "TPPubilshServiceItem"
+    }
+  ],
+  "config": {
+    "class": "TPPubilshServiceConfig",
+    "proj": "TP",
+    "package_name": "PubilshService",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./PubilshService/config/"
+  }
+}

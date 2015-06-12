@@ -17,17 +17,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
- 
 @property (weak, nonatomic) IBOutlet UILabel *tripDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tripNumberLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *tripFeeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tripStatusLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *actionBtn;
-
 @property(nonatomic,strong)TPTripDetailModel *tripDetailModel; 
 
 @end

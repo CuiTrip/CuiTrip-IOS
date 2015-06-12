@@ -10,11 +10,11 @@
 
 
 #import "TPMyServiceListViewController.h"
- 
-#import "TPMyServiceListModel.h" 
+#import <objc/runtime.h>
+#import "TPMyServiceListModel.h"
 #import "TPMyServiceListViewDataSource.h"
 #import "TPMyServiceListViewDelegate.h"
-
+#import "TPPubilshServiceViewController.h"
 @interface TPMyServiceListViewController()
 
  
@@ -79,10 +79,12 @@
     
     if (![TPUser isLogined ]) {
         
-        [self showNoResult:nil];
+        [self showEmpty:nil];
     }
     else
     {
+        [self setRightBarButtonItem];
+        
         //1,config your tableview
         self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         self.tableView.backgroundColor = [UIColor whiteColor];
@@ -156,9 +158,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
+
 - (void)showNoResult:(VZHTTPListModel *)model
 {
     [super showNoResult:model];
+
+    [self showEmpty:model];
+}
+
+
+- (void)showModel:(VZModel *)model
+{
+    [super showModel:model];
+
+}
+
+- (void)showEmpty:(VZHTTPListModel *)model
+{
+    [super showEmpty:model];
     
     [[self.view viewWithTag:100]removeFromSuperview];
     
@@ -181,6 +198,13 @@
             //重新请求数据
             [self load];
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            
+            [self publish];
+            
+        });
 
         
     }];
@@ -213,7 +237,21 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
+- (void)setRightBarButtonItem
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightItemClicked:)];
+    
+}
+- (void)onRightItemClicked:(id)sender
+{
+    [self publish];
+    
+}
 
+- (void)publish
+{
+    [self.navigationController pushViewController:[TPPubilshServiceViewController new] animated:YES];
+}
 
 @end
  

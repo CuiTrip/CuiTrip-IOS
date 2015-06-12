@@ -69,29 +69,33 @@
 
 + (void)loginWithCompletion:(void(^)(NSError* error))completion
 {
-    
-    [[VZHTTPNetworkAgent sharedInstance] HTTP:@"" params:@{} completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
-       
-        if (!error)
-        {
-            [TPUser update:responseObj];
-            
-            if (completion) {
-                completion(nil);
-            }
-        }
-        else
-        {
-            if (completion) {
-                completion(error);
-            }
-        }
-    }];
+//    
+//    [[VZHTTPNetworkAgent sharedInstance] HTTP:@"" params:@{} completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+//       
+//        if (!error)
+//        {
+//            [TPUser update:responseObj];
+//            
+//            if (completion) {
+//                completion(nil);
+//            }
+//        }
+//        else
+//        {
+//            if (completion) {
+//                completion(error);
+//            }
+//        }
+//    }];
     
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         //test
+        TPUserType oldUserType = [TPUser type];
+        NSDictionary* dict = @{@"token":@"12"};
+        [TPUser update:dict];
+        [TPUser changeUserType:oldUserType];
         
         if (completion) {
             completion(nil);

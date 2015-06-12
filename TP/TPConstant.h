@@ -43,6 +43,9 @@
 #define __image(x) [UIImage imageNamed:(x)]
 #define __url(x) [NSURL URLWithString:(x)]
 
+#define __story(x,y) \
+    [[UIStoryboard storyboardWithName:x bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:y];
+
 #define IsStringValid(_str) (_str && [_str isKindOfClass:[NSString class]] && ([_str length] > 0))
 #define IsArrayValid(_array) (_array && [_array isKindOfClass:[NSArray class]] && ([_array count] > 0))
 #define IsDictionaryValid(__dic) (__dic && [__dic isKindOfClass:[NSDictionary class]] && ([__dic count] > 0))
