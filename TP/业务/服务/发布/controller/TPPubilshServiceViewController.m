@@ -68,6 +68,8 @@
     [super loadView];
     //todo..
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"下一步" style:0 target:self action:@selector(onNext)];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onBack)];
 }
 
 - (void)viewDidLoad
@@ -146,11 +148,23 @@
 
 - (void)onNext
 {
-    [self setSelectedIndex:++self.selectedIndex animated:YES];
+    NSUInteger oldIndex = self.selectedIndex;
+    
+    if (oldIndex < self.viewControllers.count )
+        [self setSelectedIndex:++oldIndex animated:YES];
 }
-/**
- index did change
- */
+
+- (void)onBack
+{
+    NSUInteger oldIndex = self.selectedIndex;
+    
+    if (oldIndex == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+        [self setSelectedIndex:--oldIndex animated:YES];
+}
+
 - (void)selectedIndexDidChange
 {
     NSString* title = @"";
@@ -166,6 +180,32 @@
     }
     
     self.title =title;
+}
+
+- (void)transitionAnimationBegin
+{
+    CGRect rect = self.contentContainerView.bounds;
+    if (self.oldSelectedIndex < self.selectedIndex)
+        rect.origin.x = rect.size.width;
+    else
+        rect.origin.x = -rect.size.width;
+    
+    self.toViewController.view.frame = rect;
+}
+- (void)transitionAnimationProceeding
+{
+    CGRect rect = self.fromViewController.view.frame;
+    if (self.oldSelectedIndex < self.selectedIndex)
+        rect.origin.x = -rect.size.width;
+    else
+        rect.origin.x = rect.size.width;
+    
+    self.fromViewController.view.frame = rect;
+    self.toViewController.view.frame = self.contentContainerView.bounds;
+}
+- (void)transitionAnimationEnd
+{
+    
 }
 
 @end
