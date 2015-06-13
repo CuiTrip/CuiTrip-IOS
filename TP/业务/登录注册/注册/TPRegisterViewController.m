@@ -138,24 +138,43 @@
     
     
     SHOW_SPINNER(self);
-    
-    NSString* vCode = self.vCodeTextField.text;
-    vCode = @"1460";
-    //先检验验证码，成功后再注册
-    [SMS_SDK commitVerifyCode:vCode result:^(enum SMS_ResponseState state) {
-        
-        HIDE_SPINNER(self);
-        if (1==state)
-        {
-            //do register
-            TOAST(self, @"验证码获取成功");
-        }
-        else if(0==state)
-        {
-            NSLog(@"验证失败");
-            TOAST(self, @"验证码无效,请重新获取");
-        }
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_DEBUG_1_ stringByAppendingString:@"/register"]
+                                requestConfig:config
+                               responseConfig:vz_defaultHTTPResponseConfig()
+                                       params:@{@"mobile":self.phoneTextField.text,
+                                                @"newPasswd":self.pwdTextField.text,
+                                                @"countryCode":self.areaCode.length == 0 ?@"86":self.areaCode,
+                                                @"vcode":self.vCodeTextField.text,
+                                                @"nick":self.nickTextField.text
+                                                }
+                            completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+                                
+                                
+                                HIDE_SPINNER(self);
+                                
+                                if (!error) {
+                                    
+                                    if ([responseObj[@"code"] integerValue] == 0) {
+                                        
+                                        TOAST(self, @"注册成功");
+                                        
+                                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                            
+                                            [self.navigationController popViewControllerAnimated:true];
+                                        });
+                                    
+                                    }
+                                }
+                                else
+                                {
+                                    HIDE_SPINNER(self);
+                                    TOAST_ERROR(self, error);
+                                }
+       
     }];
+    
 }
 - (IBAction)onPrivacy:(id)sender {
 

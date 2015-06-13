@@ -28,8 +28,17 @@
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         
-        //退出登录
-        [TPLoginManager logout];
+    
+        [WCAlertView showAlertWithTitle:@"" message:@"确定要退出登录吗?" customizationBlock:^(WCAlertView *alertView) {
+            
+        } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
+            
+            if (buttonIndex == 1) {
+                [TPLoginManager logout];
+            }
+            
+        } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+  
         
     }];
     [footerView addSubview:btn];

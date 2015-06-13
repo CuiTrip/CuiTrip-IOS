@@ -12,11 +12,13 @@
 
 + (void)autoLogin;
 
-+ (void)showLoginViewControllerWithCompletion:(void(^)(NSError* error))completion;
++ (void)showLoginViewControllerWithCompletion:(void(^)(void))completion;
 
 + (void)hideLoginViewController;
 
 + (void)loginWithCompletion:(void(^)(NSError* error))completion;
+
++ (void)loginWithMobile:(NSString* )mobile Pwd:(NSString* )pwd ContryCode:(NSString* )contryCode Completion:(void (^)(NSError * err))completion;
 
 + (void)logout;
 

@@ -10,6 +10,6 @@
 
 @interface TPLoginViewController : VZViewController
 
-@property(nonatomic,copy) void(^loginResult)(NSError* err);
+@property(nonatomic,copy) void(^loginResult)(void);
 
 @end

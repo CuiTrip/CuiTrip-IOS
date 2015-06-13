@@ -236,13 +236,32 @@
     }
     
     NSString* query = nil;
+    NSString* httpMethod = [[aRequest HTTPMethod] uppercaseString];
     if (self.requestStringGenerator) {
         query = self.requestStringGenerator(aRequest,aParam,aError);
     }
     else
     {
-        //use default generator
-        query = [self queryStringFromParams:aParam WithEncoding:self.stringEncoding];
+        if ([httpMethod isEqualToString:@"POST"]) {
+            
+            NSError* jsonError=nil;
+            NSData* data = [NSJSONSerialization dataWithJSONObject:aParam options:NSJSONWritingPrettyPrinted error:&jsonError];
+            if (jsonError) {
+                
+                NSAssert(jsonError != nil, @"JSON Encoding Error");
+                return mutableRequest;
+            }
+            else
+            {
+                query = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            }
+            
+        }
+        else
+        {
+            //use default generator
+            query = [self queryStringFromParams:aParam WithEncoding:self.stringEncoding];
+        }
     }
     
     //add query string
@@ -268,10 +287,10 @@
     }
     else //post
     {
-        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(self.stringEncoding));
-        [aRequest setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
+        if (![aRequest valueForHTTPHeaderField:@"Content-Type"]) {
+            [aRequest setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+        }
         [aRequest setHTTPBody:[query dataUsingEncoding:self.stringEncoding]];
-        
     }
 }
 

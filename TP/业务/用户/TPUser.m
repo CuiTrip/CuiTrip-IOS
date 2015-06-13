@@ -57,6 +57,12 @@
     return [TPUser sharedInstance].userItem.headPic;
 }
 
++ (NSString* )uid
+{
+    return [TPUser sharedInstance].userItem.uid;
+}
+
+
 + (NSString* )userNick
 {
     return [TPUser sharedInstance].userItem.nick;
@@ -67,6 +73,21 @@
     return [TPUser sharedInstance].userItem.realName;
 }
 
++ (NSString* )mobile
+{
+    return [TPUser sharedInstance].userItem.mobile;
+}
+
++ (NSString* )pwd
+{
+    return [TPUser sharedInstance].userItem.pwd;
+}
+
++ (NSString* )token
+{
+    return [TPUser sharedInstance].userItem.token;
+}
+
 + (BOOL)isLogined
 {
     return [TPUser sharedInstance].userItem.token.length > 0;
@@ -75,8 +96,8 @@
 + (void)clearUserInfo
 {
     TPUser* instance = [TPUser sharedInstance];
-    instance -> _userItem = nil;
-    [[TMDiskCache sharedCache] removeObjectForKey:kTPCacheKey_User];
+    instance.userItem.token = @"";
+    [self synchronize];
 }
 
 + (void)logout
@@ -94,6 +115,7 @@
 {
     TPUserItem* item = [TPUserItem new] ;
     [item autoKVCBinding:info];
+    item.type = [TPUser sharedInstance].userItem.type;
     [TPUser sharedInstance].userItem = item;
     [self synchronize];
 }

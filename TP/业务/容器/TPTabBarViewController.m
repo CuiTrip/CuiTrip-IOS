@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     
     __observeNotify(@selector(prepare),kTPNofityMessageSwitchIdentity);
+    __observeNotify(@selector(prepare), kTPNotifyMessageLogout);
     
     [self prepare];
 }
@@ -67,7 +68,10 @@
         first = [TPMyServiceListViewController new];
     }
     else
-        first = nil;
+    {
+        [TPUser changeUserType:kCustomer];
+        first = [TPDiscoveryListViewController new];
+    }
     
     UINavigationController* firstNav = [[UINavigationController alloc]initWithRootViewController:first];
     firstNav.tabBarItem = a;
@@ -86,28 +90,6 @@
     }
     
     [self setSelectedIndex:0];
-    
-    //resize imageviews
-//    [self.tabBar.subviews enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger idx, BOOL *stop) {
-//       
-//        if ([obj isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-//            
-//            [obj.subviews enumerateObjectsUsingBlock:^(UIView*  sub, NSUInteger idx, BOOL *stop1) {
-//                
-//                if ([sub isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
-//                    
-//                    UIImageView* imageV = (UIImageView* )sub;
-//                    imageV.backgroundColor = [UIColor redColor];
-//                    imageV.bounds = CGRectMake(0, 0, 60, 60);
-//                    *stop1 = true;
-//                    
-//                    
-//                }
-//                
-//            }];
-//        }
-//        
-//    }];
     
 }
 

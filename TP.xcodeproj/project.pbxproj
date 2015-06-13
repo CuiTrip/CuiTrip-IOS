@@ -1021,7 +1021,6 @@
 		45028AF91B1C7D2C00417606 /* 旅程 */ = {
 			isa = PBXGroup;
 			children = (
-				45D0C8251B2BE90C00F31BF5 /* 行程安排 */,
 				4509AC031B247E5100846032 /* 列表 */,
 				4509AC1B1B247E5200846032 /* 详情 */,
 			);
@@ -1107,6 +1106,7 @@
 		45028B4D1B1C7F1300417606 /* 服务 */ = {
 			isa = PBXGroup;
 			children = (
+				45D0C85A1B2C378600F31BF5 /* 旅程安排 */,
 				45D0C7CB1B29E02B00F31BF5 /* 发布流程 */,
 				45D0C7961B29BED800F31BF5 /* 发布 */,
 				45D0C7971B29BED800F31BF5 /* 列表 */,
@@ -2479,11 +2479,11 @@
 			path = ETImageProcessing;
 			sourceTree = "<group>";
 		};
-		45D0C8251B2BE90C00F31BF5 /* 行程安排 */ = {
+		45D0C85A1B2C378600F31BF5 /* 旅程安排 */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "行程安排";
+			path = "旅程安排";
 			sourceTree = "<group>";
 		};
 		45D6BA601B2686C2007DFC7A /* APNS */ = {

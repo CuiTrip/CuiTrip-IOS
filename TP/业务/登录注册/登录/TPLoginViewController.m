@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPWDBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
-
+@property(nonatomic,strong) NSString* areaCode;
 
 
 @end
@@ -50,6 +50,8 @@
     
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
     self.contryLabel.text = localCode;
+    
+    self.areaCode = [TPUtils defaultCountry];
     
 }
 
@@ -91,30 +93,23 @@
     
     
     SHOW_SPINNER(self);
-    [TPLoginManager loginWithCompletion:^(NSError *error) {
+    [TPLoginManager loginWithMobile:self.nameTextField.text Pwd:self.pwdTextField.text ContryCode:self.areaCode Completion:^(NSError *error) {
         
         HIDE_SPINNER(self);
         
         if (!error) {
             
-        
+            [TPLoginManager hideLoginViewController];
             if (self.loginResult) {
-                self.loginResult(nil);
+                self.loginResult();
             }
         }
         else
         {
             TOAST_ERROR(self,error);
-            
-            if (self.loginResult) {
-                self.loginResult(error);
-            }
         }
         
     }];
-    
-    
-    
 }
 
 
@@ -135,8 +130,8 @@
 {
     NSLog(@"the area data：%@,%@", data.areaCode,data.countryName);
     
+    self.areaCode = data.areaCode;
     self.contryLabel.text=[NSString stringWithFormat:@"+%@ %@",data.areaCode,data.countryName];
-
 }
 
 - (void)closeKeyboard

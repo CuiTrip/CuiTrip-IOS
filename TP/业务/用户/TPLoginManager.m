@@ -31,7 +31,7 @@
 
 }
 
-+ (void)showLoginViewControllerWithCompletion:(void (^)(NSError *))completion
++ (void)showLoginViewControllerWithCompletion:(void (^)(void))completion
 {
     if ([TPUser isLogined]) {
         return;
@@ -69,43 +69,94 @@
 
 + (void)loginWithCompletion:(void(^)(NSError* error))completion
 {
-//    
-//    [[VZHTTPNetworkAgent sharedInstance] HTTP:@"" params:@{} completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
-//       
-//        if (!error)
-//        {
-//            [TPUser update:responseObj];
-//            
-//            if (completion) {
-//                completion(nil);
-//            }
-//        }
-//        else
-//        {
-//            if (completion) {
-//                completion(error);
-//            }
-//        }
-//    }];
-    
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        //test
-        TPUserType oldUserType = [TPUser type];
-        NSDictionary* dict = @{@"token":@"12"};
-        [TPUser update:dict];
-        [TPUser changeUserType:oldUserType];
-        
-        if (completion) {
-            completion(nil);
-        }
-    });
+    [self loginWithMobile:[TPUser mobile] Pwd:[TPUser pwd] ContryCode:[TPUtils defaultLocalCode] Completion:completion];
+}
+
++ (void)loginWithMobile:(NSString* )mobile Pwd:(NSString* )pwd ContryCode:(NSString* )contryCode Completion:(void (^)(NSError *))completion
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_DEBUG_1_ stringByAppendingString:@"/login"]
+                                requestConfig:config
+                               responseConfig:vz_defaultHTTPResponseConfig()
+                                       params:@{@"mobile":mobile?:@"",
+                                                @"passwd":pwd?:@"",
+                                                @"countryCode":contryCode?:@""}
+                            completionHandler:^(VZHTTPConnectionOperation *connection,
+                                                NSString *responseString, id responseObj,
+                                                NSError *error) {
+                                
+                                
+                                if (!error) {
+                                    
+                                    NSString* code = responseObj[@"code"];
+                                    
+                                    if ([code integerValue] == 0 ) {
+                                        
+                                        NSDictionary* result = responseObj[@"result"];
+                                        
+                                        if (IsDictionaryValid(result)) {
+                                            [TPUser update:result];
+                                        }
+                                        if (completion) {
+                                            completion(nil);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (completion) {
+                                            
+                                            NSError* err= [NSError errorWithDomain:@"" code:[code integerValue] userInfo:@{ NSLocalizedDescriptionKey:responseObj[@"msg"]}];
+                                            completion(err);
+                                        }
+                                    }
+                               
+                                    
+                                }
+                                else
+                                {
+                                    if (completion) {
+                                        completion(error);
+                                    }
+                                }
+                                
+                            }];
 }
 
 + (void)logout
 {
-    [TPUser logout];
+    
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_DEBUG_1_ stringByAppendingString:@"/logout"]
+                                requestConfig:config
+                               responseConfig:vz_defaultHTTPResponseConfig()
+                                       params:@{@"uid":[TPUser uid]?:@"",
+                                                @"token":[TPUser token]?:@""}
+                            completionHandler:^(VZHTTPConnectionOperation *connection,
+                                                NSString *responseString, id responseObj,
+                                                NSError *error) {
+                                
+                                
+                                if (!error) {
+                                    
+                                    NSString* code = responseObj[@"code"];
+                                    
+                                    if ([code integerValue] == 0 ) {
+                                        
+                                        [TPUser logout];
+                                        __notify(kTPNotifyMessageLogout);
+
+                                    }
+                                }
+                                else
+                                {
+                                    //noop..
+                                }
+                                
+                            }];
+    
+  
 }
 
 @end

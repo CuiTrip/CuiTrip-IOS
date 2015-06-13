@@ -85,11 +85,9 @@
             
         }];
         
-        [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
-            
-            
-            loadModel();
-            
+        [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+
+                loadModel();
         }];
     }
     else

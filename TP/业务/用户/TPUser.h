@@ -20,9 +20,17 @@
 
 + (NSString* )avatar;
 
++ (NSString* )uid;
+
 + (NSString* )userNick;
 
 + (NSString* )userName;
+
++ (NSString* )mobile;
+
++ (NSString* )pwd;
+
++ (NSString* )token;
 
 + (BOOL)isLogined;
 

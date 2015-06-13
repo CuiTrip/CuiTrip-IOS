@@ -102,10 +102,10 @@
         
         
         //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-        //self.keyModel = self.model;
+        self.keyModel = self.myServiceListModel;
         
         //5,REQUIRED:register model to parent view controller
-        //[self registerModel:self.keyModel];
+        [self registerModel:self.keyModel];
         
         //6,Load Data
         //[self load];
@@ -175,8 +175,7 @@
 
 - (void)showEmpty:(VZHTTPListModel *)model
 {
-    [super showEmpty:model];
-    
+
     [[self.view viewWithTag:100]removeFromSuperview];
     
     UIView* empty = [TPUIKit defaultExceptionView:@"您的发现" SubTitle:@"您有什么有趣的发现要告诉旅行者吗?" btnTitle:@"创建我的发现" Callback:^{
@@ -184,9 +183,9 @@
         if (![TPUser isLogined]) {
             
         
-            [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
+            [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
                 
-                [TPLoginManager hideLoginViewController];
+
                 
                 //重新请求数据
                 [self load];

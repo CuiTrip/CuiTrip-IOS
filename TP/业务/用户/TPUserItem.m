@@ -32,6 +32,7 @@
     [super autoKVCBinding:dictionary];
     
     //todo...
+    self.uid = [NSString stringWithFormat:@"%@",dictionary[@"uid"]];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -55,6 +56,7 @@
         self.sign = [aDecoder decodeObjectForKey:@"sign"];
         self.token = [aDecoder decodeObjectForKey:@"token"];
         self.gender = [aDecoder decodeObjectForKey:@"gender"];
+        self.pwd = [aDecoder decodeObjectForKey:@"pwd"];
         
     }
     return self;
@@ -79,6 +81,7 @@
     [aCoder encodeObject:self.gender forKey:@"gender"];
     [aCoder encodeObject:self.sign forKey:@"sign"];
     [aCoder encodeObject:self.interests forKey:@"interests"];
+    [aCoder encodeObject:self.pwd forKey:@"pwd"];
     
 }
 
@@ -99,6 +102,7 @@
     item.interests = self.interests;
     item.mobile = self.mobile;
     item.token = self.token;
+    item.pwd = self.pwd;
     
     return item;
 }

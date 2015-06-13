@@ -113,7 +113,7 @@
     [[v viewWithTag:999]removeFromSuperview];
      UIView*  sev = [self defaultExceptionView:@"您还没有登陆" SubTitle:@"请点击下面按钮登录" btnTitle:@"点击登录" Callback:^{
            
-            [TPLoginManager showLoginViewControllerWithCompletion:^(NSError *error) {
+            [TPLoginManager showLoginViewControllerWithCompletion:^() {
                
                 [self removeExceptionView:v];
                 
