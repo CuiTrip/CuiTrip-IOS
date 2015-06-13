@@ -17,10 +17,10 @@
 #import "TPDiscoveryDetailContentViewController.h"
 #import "TPDatePickerViewController.h"
 #import "TPProfilePageListViewController.h"
-
+#import "BXImageScrollView.h"
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
-@property(nonatomic,strong) UIImageView* imageView;
+@property(nonatomic,strong) BXImageScrollView* bannerView;
 @property(nonatomic,strong) UILabel* moneyLabel;
 
 @end
@@ -34,12 +34,10 @@
     if (self) {
         
         
-//        self.imageView = [TPUIKit imageView];
-//        self.imageView.vzWidth = frame.size.width;
-//        self.imageView.vzHeight = frame.size.height;
-//        self.imageView.image = __image(@"mazu.png");
-//        [self addSubview:self.imageView];
-//        
+        self.bannerView = [[BXImageScrollView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        self.bannerView.placeHolderImage = __image(@"mazu.png");
+        [self addSubview:self.bannerView];
+//
 //        
         self.moneyLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:18.0f]];
         self.moneyLabel.vzOrigin = (CGPoint){0,230};
@@ -56,7 +54,6 @@
 
 @interface TPDiscoveryDetailListViewController()
 
-@property(nonatomic,strong)UIImageView* parallexView;
 @property(nonatomic,strong)TPDiscoveryDetailListModel *discoveryDetailListModel; 
 @property(nonatomic,strong)TPDiscoveryDetailListViewDataSource *ds;
 @property(nonatomic,strong)TPDiscoveryDetailListViewDelegate *dl;
@@ -109,21 +106,28 @@
 {
     [super loadView];
     
+////    
+//    UIImageView* imageView = [TPUIKit imageView];
+//    imageView.vzWidth = self.view.frame.size.width;
+//    imageView.vzHeight = 400;
+//    imageView.image = __image(@"mazu.png");
+//    [self.view addSubview:imageView];
 //    
-    UIImageView* imageView = [TPUIKit imageView];
-    imageView.vzWidth = self.view.frame.size.width;
-    imageView.vzHeight = 400;
-    imageView.image = __image(@"mazu.png");
-    [self.view addSubview:imageView];
+    
+
+    
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+
+    
     
     //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView.frame = CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
@@ -153,6 +157,15 @@
     headerView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = headerView;
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSArray* list = @[@"http://www.collegedj.net/wp-content/uploads/2014/04/20071205_025051_redman2-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/50-cent-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/50-cent-suit-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/IMG_2297-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/MeekMill8-150x150.png"];
+        
+        headerView.bannerView.urls = list;
+        
+    });
+    
+    
     
     //footer view
     UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 44)];
@@ -162,6 +175,7 @@
     [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        
+        
         [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
 
          //跳转到预约
@@ -189,6 +203,8 @@
         //分享//
     }];
     [self.view addSubview:shareBtn];
+    
+    self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width, self.tableView.contentSize.height-64);
     
 }
 

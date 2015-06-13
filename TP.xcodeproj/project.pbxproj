@@ -243,6 +243,7 @@
 		45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C81C1B2BE06D00F31BF5 /* ETColorTool.m */; };
 		45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C81E1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m */; };
 		45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */; };
+		45D0C85D1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C85C1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -692,6 +693,8 @@
 		45D0C81E1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETImageMaskManagerCenter.m; sourceTree = "<group>"; };
 		45D0C81F1B2BE06D00F31BF5 /* ETImageTransformTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETImageTransformTool.h; sourceTree = "<group>"; };
 		45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETImageTransformTool.m; sourceTree = "<group>"; };
+		45D0C85B1B2C8CF400F31BF5 /* TPProfileUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProfileUpdateViewController.h; sourceTree = "<group>"; };
+		45D0C85C1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfileUpdateViewController.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -1433,6 +1436,8 @@
 			children = (
 				4509ABD01B23D59A00846032 /* TPProfileSettingsViewController.h */,
 				4509ABD11B23D59A00846032 /* TPProfileSettingsViewController.m */,
+				45D0C85B1B2C8CF400F31BF5 /* TPProfileUpdateViewController.h */,
+				45D0C85C1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m */,
 			);
 			path = "个人设置";
 			sourceTree = "<group>";
@@ -3039,6 +3044,7 @@
 				459BACDD1B1DF9F000739C7E /* TPDDInfoCell.m in Sources */,
 				45D0C7771B29AE8800F31BF5 /* TPCommentListViewController.m in Sources */,
 				45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */,
+				45D0C85D1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m in Sources */,
 				4509AB941B22F13D00846032 /* TPLicenceViewController.m in Sources */,
 				45D0C7F41B2BD37900F31BF5 /* TPPSComfirmViewController.m in Sources */,
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,

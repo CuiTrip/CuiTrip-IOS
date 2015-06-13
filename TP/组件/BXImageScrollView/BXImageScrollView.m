@@ -10,8 +10,9 @@
 
 @interface BXImageScrollView()<UIScrollViewDelegate>
 
+@property(nonatomic,strong) UIImageView* placeHolderImageView;
 @property(nonatomic,strong) UIScrollView* scrollView;
-@property(nonatomic,strong) UIPageControl* pageControl;
+@property(nonatomic,strong) UILabel* pageNumber;
 
 @end
 
@@ -25,38 +26,37 @@
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     int w = CGRectGetWidth(self.bounds);
-    int h = w;
-    int oriy = ( CGRectGetHeight(self.bounds) - h ) / 2;
+    int h = CGRectGetHeight(self.bounds);
+    int oriy = 0;
     for (int i=0; i<urls.count; i++) {
         
         UIImageView* imgv = [[UIImageView alloc]initWithFrame:CGRectMake(i*w, oriy, w, h)];
         imgv.contentMode = UIViewContentModeScaleAspectFill;
-        
-        __block UIActivityIndicatorView *activityIndicator;
-        [imgv sd_setImageWithURL:[NSURL URLWithString:urls[i]] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-            if (!activityIndicator)
-            {
-                [imgv addSubview:activityIndicator = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
-                activityIndicator.center = imgv.center;
-                [activityIndicator startAnimating];
-            }
-            
-        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            
-            [activityIndicator removeFromSuperview];
-            activityIndicator = nil;
-        }];
-    
-        
+        imgv.clipsToBounds = true;
         [self.scrollView addSubview:imgv];
+        [imgv sd_setImageWithURL:__url(urls[i]) placeholderImage:nil];
+
     }
+
     
-    self.pageControl.numberOfPages = urls.count;
-    if (self.selectedIndex) {
-        
-        [self.scrollView scrollRectToVisible:CGRectMake(self.selectedIndex*w, 0, w, CGRectGetHeight(self.bounds)) animated:NO];
-        self.pageControl.currentPage = self.selectedIndex;
+    if (urls.count > 1) {
+        self.pageNumber.hidden = NO;
+        self.pageNumber.text = [NSString stringWithFormat:@"1/%lu",urls.count];
+        self.scrollView.hidden = NO;
+        self.placeHolderImageView.hidden = true;
     }
+    else
+    {
+        self.pageNumber.hidden = true;
+        self.scrollView.hidden = true;
+        self.placeHolderImageView.hidden = NO;
+    }
+}
+
+- (void)setPlaceHolderImage:(UIImage *)placeHolderImage
+{
+    _placeHolderImage = placeHolderImage;
+    self.placeHolderImageView.image = placeHolderImage;
 }
 
 
@@ -68,19 +68,25 @@
         
         self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
         self.scrollView.delegate = self;
-        self.scrollView.backgroundColor = [UIColor blackColor];
+        self.scrollView.backgroundColor = [UIColor clearColor];
         self.scrollView.pagingEnabled = true;
         self.scrollView.bounces = true;
+        self.scrollView.hidden = true;
         [self addSubview:self.scrollView];
     
-        self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, frame.size.height - 80, frame.size.width, 30)];
-        self.pageControl.numberOfPages = 1;
-        self.pageControl.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.pageControl];
-    
+
+        self.placeHolderImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
+        self.placeHolderImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.placeHolderImageView.clipsToBounds = true;
+        [self addSubview:self.placeHolderImageView];
         
-    
-        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onSelfTapped:)]];
+        self.pageNumber = [TPUIKit label:[UIColor whiteColor] Font:bft(18)];
+        self.pageNumber.frame = CGRectMake(frame.size.width-100, frame.size.height-30, 80, 18);
+        self.pageNumber.textAlignment = NSTextAlignmentRight;
+        self.pageNumber.hidden = true;
+        [self addSubview:self.pageNumber];
+        
+        
     }
     return self;
 }
@@ -88,13 +94,11 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     int index = fabs(scrollView.contentOffset.x) / scrollView.frame.size.width;
-    self.pageControl.currentPage = index;
+    
+    NSString* txt = [NSString stringWithFormat:@"%d/%lu",index+1,(unsigned long)self.urls.count];
+    self.pageNumber.text = txt;
     
 }
 
-- (void)onSelfTapped:(id)sender
-{
-    [self removeFromSuperview];
-}
 
 @end

@@ -10,6 +10,7 @@
 
 @interface BXImageScrollView : UIView
 
+@property(nonatomic,strong)UIImage* placeHolderImage;
 @property(nonatomic,assign)NSUInteger selectedIndex;
 @property(nonatomic,strong)NSArray* urls;
 
