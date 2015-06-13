@@ -10,16 +10,16 @@
 
 
 #import "TPPublishCommentViewController.h"
- 
-#import "TPPublishCommentModel.h" 
+#import "O2OStarView.h"
+#import "TPPublishCommentModel.h"
 
-@interface TPPublishCommentViewController()
+@interface TPPublishCommentViewController()<O2OStarViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarIcon;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
- 
+@property (nonatomic,strong) O2OStarView* starView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property(nonatomic,strong)TPPublishCommentModel *publishCommentModel; 
 
@@ -55,6 +55,11 @@
 {
     [super loadView];
     //todo..
+    self.starView = [[O2OStarView alloc]initWithFrame:CGRectMake((self.view.vzWidth-190)/2, self.descLabel.vzBottom+10, 190, 32) viewType:ENUM_Big];
+    self.starView.delegate = self;
+    self.starView.backgroundColor = [UIColor clearColor];
+    self.starView.scorePercent = 10.0f;
+    [self.view addSubview:self.starView];
 }
 
 - (void)viewDidLoad
@@ -130,6 +135,10 @@
     [super showError:error withModel:model];
 }
 - (IBAction)publishCommnet:(id)sender {
+}
+- (void)starRateView:(O2OStarView *)starRateView scroePercentDidChange:(CGFloat)newScorePercent
+{
+
 }
 
 @end

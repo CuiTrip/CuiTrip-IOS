@@ -226,6 +226,23 @@
 		45D0C7EC1B2BCACE00F31BF5 /* TPPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7EB1B2BCACE00F31BF5 /* TPPSViewController.m */; };
 		45D0C7F41B2BD37900F31BF5 /* TPPSComfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7F31B2BD37900F31BF5 /* TPPSComfirmViewController.m */; };
 		45D0C7F61B2BD3A000F31BF5 /* TPPSConfirmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7F51B2BD3A000F31BF5 /* TPPSConfirmViewController.storyboard */; };
+		45D0C7F91B2BD93A00F31BF5 /* O2OStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7F81B2BD93A00F31BF5 /* O2OStarView.m */; };
+		45D0C7FB1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7FA1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png */; };
+		45D0C7FF1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7FC1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png */; };
+		45D0C8001B2BDA3F00F31BF5 /* o2o_gray_star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7FD1B2BDA3F00F31BF5 /* o2o_gray_star@3x.png */; };
+		45D0C8011B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7FE1B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png */; };
+		45D0C8091B2BDB9000F31BF5 /* O2OCommentImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8041B2BDB9000F31BF5 /* O2OCommentImageItem.m */; };
+		45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8061B2BDB9000F31BF5 /* O2OCommentImageListView.m */; };
+		45D0C80B1B2BDB9000F31BF5 /* O2OCommentImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8081B2BDB9000F31BF5 /* O2OCommentImageView.m */; };
+		45D0C8101B2BDC8900F31BF5 /* add_comment_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C80C1B2BDC8800F31BF5 /* add_comment_image@2x.png */; };
+		45D0C8111B2BDC8900F31BF5 /* add_comment_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C80D1B2BDC8800F31BF5 /* add_comment_image@3x.png */; };
+		45D0C8121B2BDC8900F31BF5 /* upload_image_failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C80E1B2BDC8900F31BF5 /* upload_image_failed@2x.png */; };
+		45D0C8131B2BDC8900F31BF5 /* upload_image_failed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C80F1B2BDC8900F31BF5 /* upload_image_failed@3x.png */; };
+		45D0C8151B2BDCAE00F31BF5 /* imgdefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C8141B2BDCAE00F31BF5 /* imgdefault.png */; };
+		45D0C8211B2BE06D00F31BF5 /* BXImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8191B2BE06D00F31BF5 /* BXImageScrollView.m */; };
+		45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C81C1B2BE06D00F31BF5 /* ETColorTool.m */; };
+		45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C81E1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m */; };
+		45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -650,6 +667,31 @@
 		45D0C7F21B2BD37900F31BF5 /* TPPSComfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSComfirmViewController.h; sourceTree = "<group>"; };
 		45D0C7F31B2BD37900F31BF5 /* TPPSComfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSComfirmViewController.m; sourceTree = "<group>"; };
 		45D0C7F51B2BD3A000F31BF5 /* TPPSConfirmViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSConfirmViewController.storyboard; sourceTree = "<group>"; };
+		45D0C7F71B2BD93A00F31BF5 /* O2OStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2OStarView.h; sourceTree = "<group>"; };
+		45D0C7F81B2BD93A00F31BF5 /* O2OStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2OStarView.m; sourceTree = "<group>"; };
+		45D0C7FA1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "o2o_yellow_star@3x.png"; sourceTree = "<group>"; };
+		45D0C7FC1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "o2o_gray_star@2x.png"; sourceTree = "<group>"; };
+		45D0C7FD1B2BDA3F00F31BF5 /* o2o_gray_star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "o2o_gray_star@3x.png"; sourceTree = "<group>"; };
+		45D0C7FE1B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "o2o_yellow_star@2x.png"; sourceTree = "<group>"; };
+		45D0C8031B2BDB9000F31BF5 /* O2OCommentImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2OCommentImageItem.h; sourceTree = "<group>"; };
+		45D0C8041B2BDB9000F31BF5 /* O2OCommentImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2OCommentImageItem.m; sourceTree = "<group>"; };
+		45D0C8051B2BDB9000F31BF5 /* O2OCommentImageListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2OCommentImageListView.h; sourceTree = "<group>"; };
+		45D0C8061B2BDB9000F31BF5 /* O2OCommentImageListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2OCommentImageListView.m; sourceTree = "<group>"; };
+		45D0C8071B2BDB9000F31BF5 /* O2OCommentImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2OCommentImageView.h; sourceTree = "<group>"; };
+		45D0C8081B2BDB9000F31BF5 /* O2OCommentImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2OCommentImageView.m; sourceTree = "<group>"; };
+		45D0C80C1B2BDC8800F31BF5 /* add_comment_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_comment_image@2x.png"; sourceTree = "<group>"; };
+		45D0C80D1B2BDC8800F31BF5 /* add_comment_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_comment_image@3x.png"; sourceTree = "<group>"; };
+		45D0C80E1B2BDC8900F31BF5 /* upload_image_failed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload_image_failed@2x.png"; sourceTree = "<group>"; };
+		45D0C80F1B2BDC8900F31BF5 /* upload_image_failed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload_image_failed@3x.png"; sourceTree = "<group>"; };
+		45D0C8141B2BDCAE00F31BF5 /* imgdefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgdefault.png; sourceTree = "<group>"; };
+		45D0C8181B2BE06D00F31BF5 /* BXImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXImageScrollView.h; sourceTree = "<group>"; };
+		45D0C8191B2BE06D00F31BF5 /* BXImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXImageScrollView.m; sourceTree = "<group>"; };
+		45D0C81B1B2BE06D00F31BF5 /* ETColorTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETColorTool.h; sourceTree = "<group>"; };
+		45D0C81C1B2BE06D00F31BF5 /* ETColorTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETColorTool.m; sourceTree = "<group>"; };
+		45D0C81D1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETImageMaskManagerCenter.h; sourceTree = "<group>"; };
+		45D0C81E1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETImageMaskManagerCenter.m; sourceTree = "<group>"; };
+		45D0C81F1B2BE06D00F31BF5 /* ETImageTransformTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETImageTransformTool.h; sourceTree = "<group>"; };
+		45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETImageTransformTool.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -979,6 +1021,7 @@
 		45028AF91B1C7D2C00417606 /* 旅程 */ = {
 			isa = PBXGroup;
 			children = (
+				45D0C8251B2BE90C00F31BF5 /* 行程安排 */,
 				4509AC031B247E5100846032 /* 列表 */,
 				4509AC1B1B247E5200846032 /* 详情 */,
 			);
@@ -1681,6 +1724,7 @@
 		459B24851B176A1C009BB189 /* TP */ = {
 			isa = PBXGroup;
 			children = (
+				45D0C8161B2BE06D00F31BF5 /* 组件 */,
 				45D6BA701B268794007DFC7A /* 三方 */,
 				4509AB781B22E9FE00846032 /* supports */,
 				459BAED31B21E58700739C7E /* 资源 */,
@@ -2185,6 +2229,12 @@
 		45D0C78B1B29AFD800F31BF5 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				45D0C7FC1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png */,
+				45D0C7FD1B2BDA3F00F31BF5 /* o2o_gray_star@3x.png */,
+				45D0C7FE1B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png */,
+				45D0C7FA1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png */,
+				45D0C7F71B2BD93A00F31BF5 /* O2OStarView.h */,
+				45D0C7F81B2BD93A00F31BF5 /* O2OStarView.m */,
 				45D0C78C1B29AFD800F31BF5 /* TPPublishCommentSubView.h */,
 				45D0C78D1B29AFD800F31BF5 /* TPPublishCommentSubView.m */,
 			);
@@ -2352,6 +2402,7 @@
 		45D0C7CB1B29E02B00F31BF5 /* 发布流程 */ = {
 			isa = PBXGroup;
 			children = (
+				45D0C8021B2BDB8400F31BF5 /* 图片上传 */,
 				45D0C7EA1B2BCACE00F31BF5 /* TPPSViewController.h */,
 				45D0C7EB1B2BCACE00F31BF5 /* TPPSViewController.m */,
 				45D0C7CC1B29E06700F31BF5 /* TPPSLocationViewController.h */,
@@ -2377,6 +2428,62 @@
 				45D0C7F51B2BD3A000F31BF5 /* TPPSConfirmViewController.storyboard */,
 			);
 			path = "发布流程";
+			sourceTree = "<group>";
+		};
+		45D0C8021B2BDB8400F31BF5 /* 图片上传 */ = {
+			isa = PBXGroup;
+			children = (
+				45D0C8141B2BDCAE00F31BF5 /* imgdefault.png */,
+				45D0C80C1B2BDC8800F31BF5 /* add_comment_image@2x.png */,
+				45D0C80D1B2BDC8800F31BF5 /* add_comment_image@3x.png */,
+				45D0C80E1B2BDC8900F31BF5 /* upload_image_failed@2x.png */,
+				45D0C80F1B2BDC8900F31BF5 /* upload_image_failed@3x.png */,
+				45D0C8031B2BDB9000F31BF5 /* O2OCommentImageItem.h */,
+				45D0C8041B2BDB9000F31BF5 /* O2OCommentImageItem.m */,
+				45D0C8051B2BDB9000F31BF5 /* O2OCommentImageListView.h */,
+				45D0C8061B2BDB9000F31BF5 /* O2OCommentImageListView.m */,
+				45D0C8071B2BDB9000F31BF5 /* O2OCommentImageView.h */,
+				45D0C8081B2BDB9000F31BF5 /* O2OCommentImageView.m */,
+			);
+			path = "图片上传";
+			sourceTree = "<group>";
+		};
+		45D0C8161B2BE06D00F31BF5 /* 组件 */ = {
+			isa = PBXGroup;
+			children = (
+				45D0C8171B2BE06D00F31BF5 /* BXImageScrollView */,
+				45D0C81A1B2BE06D00F31BF5 /* ETImageProcessing */,
+			);
+			path = "组件";
+			sourceTree = "<group>";
+		};
+		45D0C8171B2BE06D00F31BF5 /* BXImageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				45D0C8181B2BE06D00F31BF5 /* BXImageScrollView.h */,
+				45D0C8191B2BE06D00F31BF5 /* BXImageScrollView.m */,
+			);
+			path = BXImageScrollView;
+			sourceTree = "<group>";
+		};
+		45D0C81A1B2BE06D00F31BF5 /* ETImageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				45D0C81B1B2BE06D00F31BF5 /* ETColorTool.h */,
+				45D0C81C1B2BE06D00F31BF5 /* ETColorTool.m */,
+				45D0C81D1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.h */,
+				45D0C81E1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m */,
+				45D0C81F1B2BE06D00F31BF5 /* ETImageTransformTool.h */,
+				45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */,
+			);
+			path = ETImageProcessing;
+			sourceTree = "<group>";
+		};
+		45D0C8251B2BE90C00F31BF5 /* 行程安排 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "行程安排";
 			sourceTree = "<group>";
 		};
 		45D6BA601B2686C2007DFC7A /* APNS */ = {
@@ -2712,17 +2819,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				459BAD601B1F5D7E00739C7E /* profilepage_meta.json in Resources */,
+				45D0C8151B2BDCAE00F31BF5 /* imgdefault.png in Resources */,
 				4509AC1D1B247E5200846032 /* trip_meta.json in Resources */,
 				459BAEFC1B21E58700739C7E /* trip_share_w@2x.png in Resources */,
+				45D0C8111B2BDC8900F31BF5 /* add_comment_image@3x.png in Resources */,
 				459BAD011B1F1ABF00739C7E /* mazu.png in Resources */,
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
 				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
+				45D0C8011B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png in Resources */,
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
 				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				45D0C7E91B2BBEED00F31BF5 /* TPPSFeeViewController.storyboard in Resources */,
+				45D0C7FF1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png in Resources */,
 				4509ABC21B233C9200846032 /* reservedate_meta.json in Resources */,
 				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
 				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
@@ -2743,6 +2854,7 @@
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
 				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
+				45D0C8001B2BDA3F00F31BF5 /* o2o_gray_star@3x.png in Resources */,
 				45D0C7E31B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard in Resources */,
 				45D0C7E11B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard in Resources */,
 				459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */,
@@ -2752,12 +2864,15 @@
 				459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */,
 				4509AC021B246FFD00846032 /* TPReserveSubView.xib in Resources */,
 				45D0C7DF1B29E10600F31BF5 /* TPPSLocationViewController.storyboard in Resources */,
+				45D0C7FB1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png in Resources */,
 				4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */,
 				459BACB31B1DF3D900739C7E /* taiwan.png in Resources */,
 				4509ABE51B23DDF600846032 /* feedback_meta.json in Resources */,
 				45D0C78E1B29AFD800F31BF5 /* publishcomment_meta.json in Resources */,
 				4509ABC81B233D0700846032 /* TPReserveViewController.storyboard in Resources */,
 				459BAEFD1B21E58700739C7E /* trip_StarS_G@x2.png in Resources */,
+				45D0C8121B2BDC8900F31BF5 /* upload_image_failed@2x.png in Resources */,
+				45D0C8101B2BDC8900F31BF5 /* add_comment_image@2x.png in Resources */,
 				459BAEF11B21E58700739C7E /* trip_makeovers_w@2x.png in Resources */,
 				459BAEEB1B21E58700739C7E /* trip_addPic_g@2x.png in Resources */,
 				459BAEF81B21E58700739C7E /* trip_nav_r@2x.png in Resources */,
@@ -2777,6 +2892,7 @@
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
 				4509ABBD1B233C9200846032 /* reserve_meta.json in Resources */,
 				459BAEEC1B21E58700739C7E /* trip_cuts_w@2x.png in Resources */,
+				45D0C8131B2BDC8900F31BF5 /* upload_image_failed@3x.png in Resources */,
 				459BAEED1B21E58700739C7E /* trip_display_no@2x.png in Resources */,
 				459BAEEA1B21E58700739C7E /* trip_add_w@2x.png in Resources */,
 				459BAEAA1B21791900739C7E /* star_highlight@2x.png in Resources */,
@@ -2899,12 +3015,14 @@
 				4509ABC11B233C9200846032 /* TPReserveSubView.m in Sources */,
 				45DD473F1B28200200D2BB62 /* TPChatListViewController.m in Sources */,
 				459BAD651B1F5D7E00739C7E /* TPProfilePageListModel.m in Sources */,
+				45D0C8211B2BE06D00F31BF5 /* BXImageScrollView.m in Sources */,
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
 				4509ABC31B233C9200846032 /* TPReserveDateViewController.m in Sources */,
 				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
 				45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
+				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
 				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,
 				45D0C7DA1B29E0EC00F31BF5 /* TPPSMoreViewController.m in Sources */,
@@ -2926,16 +3044,19 @@
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
 				4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */,
 				45D0C7791B29AE8800F31BF5 /* TPCommentListViewDelegate.m in Sources */,
+				45D0C80B1B2BDB9000F31BF5 /* O2OCommentImageView.m in Sources */,
 				459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */,
 				459BACF81B1EECEC00739C7E /* TPDDCommentCellContainerView.m in Sources */,
 				459BAD621B1F5D7E00739C7E /* TPProfilePageListViewDataSource.m in Sources */,
 				459BACF01B1DFF5600739C7E /* TPDDInfoCellContainerView.m in Sources */,
 				45D0C7EC1B2BCACE00F31BF5 /* TPPSViewController.m in Sources */,
+				45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */,
 				45028AF21B1C7C1C00417606 /* TPDiscoveryListCell.m in Sources */,
 				459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */,
 				45D0C7B21B29BED800F31BF5 /* TPMyServiceListViewDataSource.m in Sources */,
 				4509AB741B22E3E300846032 /* TPRegisterViewController.m in Sources */,
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
+				45D0C8091B2BDB9000F31BF5 /* O2OCommentImageItem.m in Sources */,
 				45D0C7C71B29DAA400F31BF5 /* TPPubilshServiceViewController.m in Sources */,
 				459BAEA61B21561A00739C7E /* TPStarView.m in Sources */,
 				459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */,
@@ -2946,10 +3067,12 @@
 				45028AF61B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m in Sources */,
 				45028AB01B1B535E00417606 /* VZItem.m in Sources */,
 				45028B421B1C7D2D00417606 /* TPMeViewController.m in Sources */,
+				45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */,
 				45DD473D1B28200200D2BB62 /* TPChatListCell.m in Sources */,
 				45DD47421B28200200D2BB62 /* TPChatListItem.m in Sources */,
 				45028AC21B1B535E00417606 /* VZListDefaultTextCell.m in Sources */,
 				45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */,
+				45D0C7F91B2BD93A00F31BF5 /* O2OStarView.m in Sources */,
 				45D0C7C81B29DAA400F31BF5 /* TPPubilshServiceItem.m in Sources */,
 				459BACCF1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m in Sources */,
 				4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */,
@@ -2971,6 +3094,7 @@
 				4509AC211B247E5200846032 /* TPTripListItem.m in Sources */,
 				459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */,
 				459BAD461B1F5BA600739C7E /* TPDatePickerSubView.m in Sources */,
+				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
 				459BACD01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m in Sources */,
 				459BACDE1B1DF9F000739C7E /* TPDDProfileCell.m in Sources */,
