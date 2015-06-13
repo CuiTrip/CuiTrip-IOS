@@ -47,6 +47,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="descLabel" destination="qhI-ms-8Nm" id="6rc-t7-rfL"/>
                         <outlet property="textField" destination="Aah-Wg-Sza" id="DbC-UP-Dc2"/>
                     </connections>
                 </viewController>

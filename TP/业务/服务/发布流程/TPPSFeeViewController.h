@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
-#import "VZViewController.h"
+#import "TPPSViewController.h"
 
-@interface TPPSFeeViewController : VZViewController
+@interface TPPSFeeViewController : TPPSViewController
 
 @end

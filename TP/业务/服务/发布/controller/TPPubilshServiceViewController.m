@@ -18,11 +18,24 @@
 #import "TPPSMoreViewController.h"
 #import "TPPSFeeViewController.h"
 #import "TPPSTitleViewController.h"
+#import "TPPSComfirmViewController.h"
+
 
 @interface TPPubilshServiceViewController()
 
- 
 @property(nonatomic,strong)TPPubilshServiceModel *pubilshServiceModel; 
+
+@property(nonatomic,strong) NSString* location;
+@property(nonatomic,strong) NSString* desc;
+@property(nonatomic,strong) NSArray* pics;
+@property(nonatomic,strong) NSString* titleStr;
+@property(nonatomic,strong) NSString* date;
+@property(nonatomic,strong) NSString* duration;
+@property(nonatomic,strong) NSString* num;
+@property(nonatomic,strong) NSString* meetWay;
+@property(nonatomic,strong) NSString* fee;
+
+
 
 @end
 
@@ -65,8 +78,14 @@
         TPPSTitleViewController* title = __story(@"TPPSTitleViewController", @"tppstitle");
         TPPSMoreViewController* more = __story(@"TPPSMoreViewController", @"tppsmore");
         TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
+        TPPSComfirmViewController* confirm = __story(@"TPPSConfirmViewController", @"tppsconfirm");
+        confirm.complete = ^{
         
-        self.viewControllers = @[loc,detail,pics,title,more,fee];
+            [self onComplete];
+        
+        };
+        
+        self.viewControllers = @[loc,detail,pics,title,more,fee,confirm];
         self.selectedIndex = 0;
     }
     return self;
@@ -176,6 +195,11 @@
         [self setSelectedIndex:--oldIndex animated:YES];
 }
 
+- (void)onComplete
+{
+    [self.navigationController popViewControllerAnimated:true];
+}
+
 - (void)selectedIndexDidChange
 {
 //    NSString* title = @"";
@@ -203,6 +227,19 @@
 //    }
 //    
 //    self.title =title;
+    
+    if (self.selectedIndex == [self.viewControllers count] - 2) {
+        //self.navigationItem.rightBarButtonItem = nil;
+         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onNext)];
+    }
+    else if (self.selectedIndex == [self.viewControllers count] -1)
+    {
+         self.navigationItem.rightBarButtonItem = nil;
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"下一步" style:0 target:self action:@selector(onNext)];
+    }
 }
 
 - (void)transitionAnimationBegin

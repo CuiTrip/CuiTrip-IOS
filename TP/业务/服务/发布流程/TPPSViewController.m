@@ -1,18 +1,18 @@
 //
-//  TPPSPicsViewController.m
+//  TPPSViewController.m
 //  TP
 //
-//  Created by moxin on 15/6/11.
+//  Created by moxin on 15/6/13.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
-#import "TPPSPicsViewController.h"
+#import "TPPSViewController.h"
 
-@interface TPPSPicsViewController ()
+@interface TPPSViewController ()
 
 @end
 
-@implementation TPPSPicsViewController
+@implementation TPPSViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,13 +26,13 @@
 
 - (void)onNext
 {
-    if (self.callback) {
-       // self.callback(self.textField.text,self.locationLabel.text,nil);
-    }
+
 }
+
 - (void)onBack
 {
-    
+
+
 }
 
 @end

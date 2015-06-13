@@ -10,6 +10,7 @@
 
 @interface TPPSFeeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 @end
 
@@ -18,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.descLabel.text = @"对于未越狱的iOS设备来说，由于强大的沙箱和授权机制，以及Apple自己掌控的App Store， 基本上杜绝了恶意软件的入侵。但除系统安全之外，我们还是面临很多的安全问题：网络安全、数据安全等，每一项涉及也非常广，安全是非常大的课题，本人并非专业的安全专家，只是从开发者的角度，分析我们常遇到的各项安全问题，并提出通常的解决方法，与各位交流。";
+    [self.descLabel sizeToFit];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,14 +30,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)onNext
+{
+    if (self.callback) {
+        self.callback(self.textField.text,nil);
+    }
 }
-*/
+
+- (void)onBack
+{
+
+
+}
+
 
 @end
