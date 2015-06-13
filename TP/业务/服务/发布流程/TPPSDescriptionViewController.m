@@ -9,6 +9,7 @@
 #import "TPPSDescriptionViewController.h"
 
 @interface TPPSDescriptionViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 

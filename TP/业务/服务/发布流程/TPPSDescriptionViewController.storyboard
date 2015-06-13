@@ -40,6 +40,9 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="6Sh-Pu-kIn" id="kTU-e9-AQA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jue-gx-YSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

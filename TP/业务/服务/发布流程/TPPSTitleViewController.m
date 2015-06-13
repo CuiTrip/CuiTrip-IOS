@@ -9,6 +9,7 @@
 #import "TPPSTitleViewController.h"
 
 @interface TPPSTitleViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 

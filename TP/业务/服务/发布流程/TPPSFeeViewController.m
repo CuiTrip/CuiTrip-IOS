@@ -9,6 +9,7 @@
 #import "TPPSFeeViewController.h"
 
 @interface TPPSFeeViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 

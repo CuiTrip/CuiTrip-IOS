@@ -9,6 +9,8 @@
 #import "TPPSLocationViewController.h"
 
 @interface TPPSLocationViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 

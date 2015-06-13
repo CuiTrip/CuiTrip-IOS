@@ -13,6 +13,11 @@
 #import "TPPubilshServiceModel.h" 
 #import "TPPSLocationViewController.h"
 #import "TPPSDescriptionViewController.h"
+#import "TPPSPicsViewController.h"
+#import "TPPSDescriptionViewController.h"
+#import "TPPSMoreViewController.h"
+#import "TPPSFeeViewController.h"
+#import "TPPSTitleViewController.h"
 
 @interface TPPubilshServiceViewController()
 
@@ -56,7 +61,12 @@
         //todo..
         TPPSLocationViewController* loc = __story(@"TPPSLocationViewController",@"tppslocation");
         TPPSDescriptionViewController* detail = __story(@"TPPSDescriptionViewController", @"tppsdescription");
-        self.viewControllers = @[loc,detail];
+        TPPSPicsViewController* pics = __story(@"TPPSPicsViewController", @"tppspics");
+        TPPSTitleViewController* title = __story(@"TPPSTitleViewController", @"tppstitle");
+        TPPSMoreViewController* more = __story(@"TPPSMoreViewController", @"tppsmore");
+        TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
+        
+        self.viewControllers = @[loc,detail,pics,title,more,fee];
         self.selectedIndex = 0;
     }
     return self;
@@ -76,6 +86,7 @@
 {
     [super viewDidLoad];
    
+    [self setTitle:@"添加发现"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -150,8 +161,8 @@
 {
     NSUInteger oldIndex = self.selectedIndex;
     
-    if (oldIndex < self.viewControllers.count )
-        [self setSelectedIndex:++oldIndex animated:YES];
+    if (++oldIndex < self.viewControllers.count )
+        [self setSelectedIndex:oldIndex animated:YES];
 }
 
 - (void)onBack
@@ -167,19 +178,31 @@
 
 - (void)selectedIndexDidChange
 {
-    NSString* title = @"";
-    switch (self.selectedIndex) {
-        case 0:
-            title = @"选择地点";
-            break;
-        case 1:
-            title = @"填写描述";
-            break;
-        default:
-            break;
-    }
-    
-    self.title =title;
+//    NSString* title = @"";
+//    switch (self.selectedIndex) {
+//        case 0:
+//            title = @"选择地点";
+//            break;
+//        case 1:
+//            title = @"填写描述";
+//            break;
+//        case 2:
+//            title =@"";
+//            break;
+//        case 3:
+//            title = @"";
+//            break;
+//        case 4:
+//            title = @"";
+//            break;
+//        case 5:
+//            title = @"";
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    self.title =title;
 }
 
 - (void)transitionAnimationBegin
