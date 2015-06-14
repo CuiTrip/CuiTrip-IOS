@@ -12,7 +12,7 @@
 #define appKey @"7dc26c72f524"
 #define appSecret @"d9ff9f18a74898d61821af51b29683e2"
 
-#define _API_DEBUG_1_ @"http://192.168.1.110:8080/baseservice/"
+#define _API_ @"http://192.168.1.110:8080/baseservice/"
 
 #define kTPCacheKey_User @"TP_USER"
 #define kTPCacheKey_APNS @"TPAPNS"

@@ -88,6 +88,36 @@
     return [TPUser sharedInstance].userItem.token;
 }
 
++ (NSString* )gender
+{
+    return [TPUser sharedInstance].userItem.gender;
+}
+
++ (NSString* )country
+{
+    return [TPUser sharedInstance].userItem.country;
+}
+
++ (NSString* )language
+{
+    return [TPUser sharedInstance].userItem.language;
+}
+
++ (NSString* )hobby
+{
+    return [TPUser sharedInstance].userItem.interests;
+}
+
++ (NSString* )career
+{
+    return [TPUser sharedInstance].userItem.career;
+}
+
++ (NSString* )sign
+{
+    return [TPUser sharedInstance].userItem.sign;
+}
+
 + (BOOL)isLogined
 {
     return [TPUser sharedInstance].userItem.token.length > 0;
@@ -109,6 +139,48 @@
 {
     [TPUser sharedInstance].userItem.type = type;
     [self synchronize];
+}
+
++ (void)updateUserProfile:(NSDictionary *)info withCompletion:(void (^)(NSError *))callback
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"modifyUserInfo"]
+                                requestConfig:config
+                               responseConfig:vz_defaultHTTPResponseConfig()
+                                       params:info
+                            completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+                                
+                                if (!error) {
+                                    NSInteger code = [responseObj[@"code"] integerValue];
+                                    
+                                    if (code == 0) {
+                                       // TOAST([UIScreen mainScreen], @"更新成功!");
+                                        NSDictionary* result = responseObj[@"result"];
+                                        [TPUser update:result];
+                                        
+                                        if (callback) {
+                                            callback(nil);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        NSError* err= [TPUtils errorForHTTP:responseObj];
+                                        if (callback) {
+                                            callback(err);
+                                        }
+                                        //TOAST_ERROR(self, err);
+                                    }
+                                }
+                                else
+                                {
+                                    //TOAST_ERROR(self, error);
+                                    if (callback) {
+                                        callback(error);
+                                    }
+                                }
+                                
+                            }];
 }
 
 + (void)update:(NSDictionary* )info

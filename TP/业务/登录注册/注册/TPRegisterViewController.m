@@ -140,7 +140,7 @@
     SHOW_SPINNER(self);
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.requestMethod = VZHTTPMethodPOST;
-    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_DEBUG_1_ stringByAppendingString:@"/register"]
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"/register"]
                                 requestConfig:config
                                responseConfig:vz_defaultHTTPResponseConfig()
                                        params:@{@"mobile":self.phoneTextField.text,

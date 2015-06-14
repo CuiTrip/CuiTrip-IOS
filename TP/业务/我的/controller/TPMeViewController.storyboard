@@ -32,7 +32,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="KbF-BF-jf7" kind="push" id="vRD-Ik-2Lp"/>
+                                            <segue destination="Qnb-Iz-fj4" kind="push" id="A87-mZ-GLL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="I9y-sM-syv" style="IBUITableViewCellStyleDefault" id="mC2-nE-lFz">
@@ -391,9 +391,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="name" id="36w-i1-H5k"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pvK-2P-hvo" detailTextLabel="9s4-tG-7Yy" style="IBUITableViewCellStyleValue1" id="Vpo-3l-VX5">
                                         <rect key="frame" x="0.0" y="148" width="320" height="44"/>
@@ -416,9 +413,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="nick" id="3PE-f2-rSG"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="SOB-6s-3Jf" detailTextLabel="gku-CE-jox" style="IBUITableViewCellStyleValue1" id="y9a-lV-lMg">
                                         <rect key="frame" x="0.0" y="192" width="320" height="44"/>
@@ -463,9 +457,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="location" id="yJG-Ia-hYi"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hkq-j6-78T" detailTextLabel="yvg-vc-lFV" style="IBUITableViewCellStyleValue1" id="AYS-YS-94O">
                                         <rect key="frame" x="0.0" y="280" width="320" height="44"/>
@@ -488,9 +479,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="language" id="Yre-gP-yvk"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="PFj-TO-OCP" detailTextLabel="viW-Iv-4P1" style="IBUITableViewCellStyleValue1" id="BO8-2b-oIK">
                                         <rect key="frame" x="0.0" y="324" width="320" height="44"/>
@@ -513,9 +501,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="career" id="NBB-Wx-BO3"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Y7M-ls-8mD" detailTextLabel="7v0-0W-XlC" style="IBUITableViewCellStyleValue1" id="j6W-Ik-d9u">
                                         <rect key="frame" x="0.0" y="368" width="320" height="44"/>
@@ -538,9 +523,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="hobby" id="U5M-78-II2"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FAu-ey-esU" detailTextLabel="Cw6-gJ-N6P" style="IBUITableViewCellStyleValue1" id="4Q9-pm-pE2">
                                         <rect key="frame" x="0.0" y="412" width="320" height="44"/>
@@ -563,9 +545,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zvl-D7-duv" kind="push" identifier="sign" id="2nQ-ay-juj"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -581,21 +560,20 @@
             </objects>
             <point key="canvasLocation" x="451" y="-360"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="JNF-JS-XW2">
+        <!--Profile Settings View Controller-->
+        <scene sceneID="KL4-cM-f6d">
             <objects>
-                <viewController id="zvl-D7-duv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NTI-E8-HlM">
+                <viewController id="Qnb-Iz-fj4" customClass="TPProfileSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SK6-eC-Llj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6sr-Mn-vEN"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationItem key="navigationItem" id="ofv-NS-eBB"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e1v-Ab-k7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uee-pQ-rDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="-360"/>
+            <point key="canvasLocation" x="800" y="-368"/>
         </scene>
     </scenes>
     <resources>
@@ -606,7 +584,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="2nQ-ay-juj"/>
-    </inferredMetricsTieBreakers>
 </document>

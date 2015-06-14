@@ -155,4 +155,19 @@ static NSArray* list = nil;
 
 }
 
++(NSError* )errorForHTTP:(NSDictionary* )dict;
+{
+    if (!dict) {
+        return nil;
+    }
+    else
+    {
+        NSInteger code = [dict[@"code"] integerValue];
+        NSString* msg = dict[@"msg"]?:@"";
+        NSError* err = [NSError errorWithDomain:@"" code:code userInfo:@{NSLocalizedDescriptionKey:msg}];
+        return err;
+    }
+    
+}
+
 @end

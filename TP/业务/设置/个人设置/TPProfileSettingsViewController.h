@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPProfileSettingsViewController : UITableViewController
+@interface TPProfileSettingsViewController : VZViewController
 
 @end

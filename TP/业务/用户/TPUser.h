@@ -9,11 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TPUserItem.h"
 
-@class TPUserItem;
 @interface TPUser : NSObject
-
-@property(nonatomic,strong) TPUserItem* user;
-
 + (instancetype)sharedInstance;
 
 + (TPUserType)type;
@@ -32,6 +28,18 @@
 
 + (NSString* )token;
 
++ (NSString* )gender;
+
++ (NSString* )country;
+
++ (NSString* )language;
+
++ (NSString* )hobby;
+
++ (NSString* )career;
+
++ (NSString* )sign;
+
 + (BOOL)isLogined;
 
 + (void)clearUserInfo;
@@ -39,6 +47,8 @@
 + (void)logout;
 
 + (void)changeUserType:(TPUserType)type;
+
++ (void)updateUserProfile:(NSDictionary* )info withCompletion:(void(^)(NSError* err))callback;
 
 + (void)update:(NSDictionary* )info;
 

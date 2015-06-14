@@ -15,6 +15,7 @@
 @class VZHTTPRequestGenerator;
 @class VZHTTPResponseParser;
 
+
 @interface VZHTTPNetworkAgent : NSObject
 @property (nonatomic, strong,readonly) NSThread* runloopThread;
 @property (nonatomic, strong,readonly) NSOperationQueue *operationQueue;

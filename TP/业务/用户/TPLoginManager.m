@@ -76,7 +76,7 @@
 {
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.requestMethod = VZHTTPMethodPOST;
-    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_DEBUG_1_ stringByAppendingString:@"/login"]
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"/login"]
                                 requestConfig:config
                                responseConfig:vz_defaultHTTPResponseConfig()
                                        params:@{@"mobile":mobile?:@"",
@@ -106,7 +106,7 @@
                                     {
                                         if (completion) {
                                             
-                                            NSError* err= [NSError errorWithDomain:@"" code:[code integerValue] userInfo:@{ NSLocalizedDescriptionKey:responseObj[@"msg"]}];
+                                            NSError* err= [TPUtils errorForHTTP:responseObj];
                                             completion(err);
                                         }
                                     }
@@ -128,7 +128,7 @@
     
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
     config.requestMethod = VZHTTPMethodPOST;
-    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_DEBUG_1_ stringByAppendingString:@"/logout"]
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"/logout"]
                                 requestConfig:config
                                responseConfig:vz_defaultHTTPResponseConfig()
                                        params:@{@"uid":[TPUser uid]?:@"",

@@ -10,4 +10,7 @@
 
 @interface TPProfileUpdateViewController : VZViewController
 
+@property(nonatomic,assign) BOOL longText;
+@property(nonatomic,strong) NSString* key;
+
 @end

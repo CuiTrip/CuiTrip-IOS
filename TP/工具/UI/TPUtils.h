@@ -16,6 +16,8 @@
 
 + (NSString* )defaultCountry;
 
++ (NSError* )errorForHTTP:(NSDictionary* )dict;
+
 + (void)localCodesWithCompletion:(void(^)(NSArray* list))completion;
 
 @end
