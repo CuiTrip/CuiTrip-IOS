@@ -59,11 +59,7 @@
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    return true;
 }
 
 @end

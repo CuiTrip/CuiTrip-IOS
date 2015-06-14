@@ -90,8 +90,11 @@
             
             if (code.intValue == 0) {
             
-                NSDictionary* result = responseObj[@"result"];
-                [weakSelf requestDidFinish:result];
+                NSDictionary* result = responseObj[@"result"]?:@{};
+                
+                NSDictionary* trueResult = [result isEqual:[NSNull null] ]? @{}:result;
+                
+                [weakSelf requestDidFinish:trueResult];
             }
             else
             {

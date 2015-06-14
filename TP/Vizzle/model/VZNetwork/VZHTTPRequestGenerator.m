@@ -159,22 +159,33 @@
 //add body params
 - (void)addQueryParams:(NSDictionary* )params EncodingType:(NSStringEncoding)encoding ToRequest:(NSMutableURLRequest* )request
 {
-    if (!params || !request) {
-        return;
-    }
-    
-    if (!encoding) {
-        encoding = NSUTF8StringEncoding;
-    }
     
     NSString* query = nil;
+    NSString* httpMethod = [[request HTTPMethod] uppercaseString];
     if (self.requestStringGenerator) {
         query = self.requestStringGenerator(request,params,nil);
     }
     else
     {
-        //use default generator
-        query = [self queryStringFromParams:params WithEncoding:encoding];
+        if ([httpMethod isEqualToString:@"POST"]) {
+            
+            NSError* jsonError=nil;
+            NSData* data = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&jsonError];
+            if (jsonError) {
+                
+                NSAssert(jsonError != nil, @"JSON Encoding Error");
+            }
+            else
+            {
+                query = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            }
+            
+        }
+        else
+        {
+            //use default generator
+            query = [self queryStringFromParams:params WithEncoding:self.stringEncoding];
+        }
     }
     
     //add query string
@@ -234,39 +245,12 @@
     if (!aParam) {
         return mutableRequest;
     }
-    
-    NSString* query = nil;
-    NSString* httpMethod = [[aRequest HTTPMethod] uppercaseString];
-    if (self.requestStringGenerator) {
-        query = self.requestStringGenerator(aRequest,aParam,aError);
-    }
     else
     {
-        if ([httpMethod isEqualToString:@"POST"]) {
-            
-            NSError* jsonError=nil;
-            NSData* data = [NSJSONSerialization dataWithJSONObject:aParam options:NSJSONWritingPrettyPrinted error:&jsonError];
-            if (jsonError) {
-                
-                NSAssert(jsonError != nil, @"JSON Encoding Error");
-                return mutableRequest;
-            }
-            else
-            {
-                query = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            }
-            
-        }
-        else
-        {
-            //use default generator
-            query = [self queryStringFromParams:aParam WithEncoding:self.stringEncoding];
-        }
+        [self addQueryParams:aParam EncodingType:self.stringEncoding ToRequest:mutableRequest];
+    
     }
-    
-    //add query string
-    [self addQueryString:query EncodingType:self.stringEncoding ToRequest:mutableRequest];
-    
+
     return mutableRequest;
     
 }

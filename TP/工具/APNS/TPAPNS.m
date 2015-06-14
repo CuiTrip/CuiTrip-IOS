@@ -87,8 +87,25 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
     
     NSString *deviceToken = [self deviceTokenStrWithData:tokenData];
     
-    //upload deviceToken
-
+    if (deviceToken.length > 0 && [TPUser uid].length > 0 && [TPUser token].length > 0) {
+        
+        //upload deviceToken
+        VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+        config.requestMethod = VZHTTPMethodPOST;
+        [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"upDevicetoken"]
+                                    requestConfig:config
+                                   responseConfig:vz_defaultHTTPResponseConfig()
+                                           params:@{@"client":@"iOS",
+                                                    @"uid":[TPUser uid],
+                                                    @"token":[TPUser token],
+                                                    @"deviceToken":deviceToken}
+                                completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+                                    
+                                    [self onReportDeviceToken:deviceToken success:error == nil];
+                                    
+                                }];
+   
+    }
 }
 
 - (void)onReportDeviceToken:(NSString *)deviceToken success:(BOOL)success
