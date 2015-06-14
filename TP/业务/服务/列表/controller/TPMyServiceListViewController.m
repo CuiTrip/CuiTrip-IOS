@@ -112,11 +112,11 @@
         self.keyModel = self.myServiceListModel;
         
         //5,REQUIRED:register model to parent view controller
-        //[self registerModel:self.keyModel];
+        [self registerModel:self.keyModel];
         
         //6,Load Data
-        //[self load];
-        [self.tableView reloadData];
+        [self load];
+        //[self.tableView reloadData];
         
         
     }

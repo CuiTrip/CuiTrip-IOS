@@ -83,7 +83,7 @@
     self.descLabel.vzWidth = self.titleLabel.vzWidth;
     self.descLabel.vzHeight = 12;
     
-    self.badge.vzOrigin = CGPointMake(self.vzWidth-70, (self.vzHeight-10)/2);
+    self.badge.vzOrigin = CGPointMake(45, 20);
     self.badge.vzWidth = 10;
     self.badge.vzHeight = 10;
   

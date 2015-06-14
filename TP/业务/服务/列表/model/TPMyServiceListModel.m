@@ -22,34 +22,26 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-    
-    return nil;
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@""};
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 
 - (NSString *)methodName {
     
-    //todo:
-    
-    
-    return nil;
+    return [_API_ stringByAppendingString:@"getServiceList"];
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
-  
-    //todo:
-  
-    
-    return nil;
+    NSMutableArray* list = [NSMutableArray new];
+    return list;
 }
 
 @end

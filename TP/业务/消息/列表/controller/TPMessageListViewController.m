@@ -85,7 +85,7 @@
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = YES;
-    
+    self.tableView.tableFooterView = [TPUIKit emptyView];
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
     self.needPullRefresh = NO;
@@ -110,14 +110,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+
 
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    self.tabBarController.tabBar.hidden = NO;
     //todo..
 }
 

@@ -82,6 +82,7 @@
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = YES;
+    self.tableView.tableFooterView = [TPUIKit emptyView];
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -93,35 +94,33 @@
     self.delegate = self.dl;
     
     if (![TPUser isLogined ]) {
+        
+        [self showEmpty:nil];
 
-       //[self showNoResult:nil];
         [self.tableView reloadData];
     }
     else
     {
         //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-        //self.keyModel = self.model;
+        self.keyModel = self.tripListModel;
         
         //5,REQUIRED:register model to parent view controller
-        //[self registerModel:self.keyModel];
+        [self registerModel:self.keyModel];
 
         //6,Load Data
-        //[self load];
+        [self load];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-        self.tabBarController.tabBar.hidden = NO;
-    //todo..
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    //todo..
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -152,10 +151,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
-- (void)showNoResult:(VZHTTPListModel *)model
+- (void)showEmpty:(VZModel *)model
 {
-    [super showNoResult:model];
-    
     [[self.view viewWithTag:100]removeFromSuperview];
     
     UIView* empty = nil;
@@ -175,10 +172,16 @@
             
         }];
     }
-
+    
     empty.tag = 100;
     [self.view addSubview:empty];
+}
+
+- (void)showNoResult:(VZHTTPListModel *)model
+{
+    [super showNoResult:model];
     
+    [self showEmpty:model];
 }
 
 
