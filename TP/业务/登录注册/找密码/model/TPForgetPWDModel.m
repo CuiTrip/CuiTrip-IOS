@@ -20,11 +20,20 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
+/**
+ 	mobile (String)： 用户手机号
+ 	countryCode (String) : 国家代码
+ 	vcode (String):  验证码
+ 	newPasswd (String)：新密码
+ 	rePasswd (String): 确认新密码
+ */
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    return @{@"mobile":self.mobile?:@"",
+             @"countryCode":self.countryCode?:@"",
+             @"vcode":self.vcode?:@"",
+             @"newPasswd":self.anewPasswd?:@"",
+             @"rePasswd":self.rePasswd?:@""};
 }
 
 - (NSDictionary* )headerParams{
@@ -38,7 +47,14 @@
    
     //todo:
    
-    return nil;
+    return [_API_ stringByAppendingString:@"resetPassword"];
+}
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 - (BOOL)parseResponse:(id)JSON

@@ -21,7 +21,15 @@
 
 @implementation TPMeSubView
 
-- (id)initWithFrame:(CGRect)frame 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.imageView.layer.cornerRadius = 0.5*self.imageView.vzWidth;
+    self.imageView.layer.masksToBounds = true;
+
+}
+
+- (id)initWithFrame:(CGRect)frame
 {
 
   self = [super initWithFrame:frame]; 

@@ -10,11 +10,18 @@
 
 
 #import "TPDiscoveryListModel.h"
+#import "TPDiscoveryListItem.h"
 
 @interface TPDiscoveryListModel()
 
 @end
 
+
+/**
+ 	uid(String): 用户id
+ 	token(String):  登录凭证
+ 	insiderId(String)：发现者id
+ */
 @implementation TPDiscoveryListModel
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,33 +30,38 @@
 - (NSDictionary *)dataParams {
     
     //todo:
-    
-    return nil;
+    return @{@"uid":[TPUser uid],@"token":[TPUser token],@"insiderId":[TPUser uid]};
 }
 
 - (NSDictionary* )headerParams{
-   
-    //todo:
-    
+
     return nil;
 }
 
 
 - (NSString *)methodName {
     
-    //todo:
-    
-    
-    return nil;
+    return [_API_ stringByAppendingString:@"getServiceList"];
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
   
+
+    self.totalCount = [JSON[@"num"] integerValue];
     //todo:
+    NSMutableArray* list = [NSMutableArray new];
+    NSArray* result = JSON[@""];
+    
+    for (NSDictionary* dict in result) {
+        
+        TPDiscoveryListItem* item =  [TPDiscoveryListItem new];
+        [item autoKVCBinding:dict];
+        [list addObject:item];
+    }
   
     
-    return nil;
+    return list;
 }
 
 @end

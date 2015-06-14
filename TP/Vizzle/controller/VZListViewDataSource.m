@@ -90,6 +90,20 @@
     return NO;
 }
 
+- (BOOL)removeItemAtIndexPath:(NSIndexPath *)index
+{
+    if (index.section >=0 && index.section < _itemsForSectionInternal.count) {
+        
+        NSMutableArray* list = _itemsForSectionInternal[@(index.section)];
+        [list removeObjectAtIndex:index.row];
+        return true;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
 - (NSArray *)itemsForSection:(int)section {
     if (section < [_itemsForSectionInternal count]) {
         return _itemsForSectionInternal[@(section)];

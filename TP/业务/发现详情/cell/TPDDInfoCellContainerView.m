@@ -9,6 +9,7 @@
 #import "TPDDInfoCellContainerView.h"
 #import "TPStarView.h"
 
+
 @interface TPDDInfoCellContainerView()
 
 @property (weak, nonatomic) IBOutlet UILabel *infoNameLabel;
@@ -29,8 +30,8 @@
     self.viewDetailBtn.layer.borderColor = [TPTheme themeColor].CGColor;
     self.viewDetailBtn.layer.borderWidth = 1.0f;
     [self.viewDetailBtn addTarget:self action:@selector(onBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    UIImageView* imgv = [TPStarView starViewWithCount:3.5];
-    [self.grayStarView addSubview:imgv];
+    [self setScore:0.0];
+
 }
 
 - (void)onBtnClicked:(id)sender
@@ -39,6 +40,13 @@
     if (self.callback) {
         self.callback(@"gotoServiceDetail",weakSelf.item);
     }
+}
+
+- (void)setScore:(CGFloat)score
+{
+    UIImageView* starView = [TPStarView starViewWithCount:score];
+    [self.grayStarView addSubview:starView];
+    
 }
 
 @end

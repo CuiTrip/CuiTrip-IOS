@@ -15,6 +15,9 @@
 #import "TPMyServiceListViewDataSource.h"
 #import "TPMyServiceListViewDelegate.h"
 #import "TPPubilshServiceViewController.h"
+#import "TPTripArrangementViewController.h"
+#import "TPMyServiceListItem.h"
+
 @interface TPMyServiceListViewController()
 
  
@@ -69,6 +72,8 @@
 - (void)loadView
 {
     [super loadView];
+    
+    [self setTitle:@"我的发现"];
     [self.tabBarController hidesBottomBarWhenPushed];
     
 }
@@ -90,10 +95,12 @@
         self.tableView.backgroundColor = [UIColor whiteColor];
         self.tableView.showsVerticalScrollIndicator = YES;
         self.tableView.separatorStyle = YES;
+        self.tableView.tableFooterView = [TPUIKit emptyView];
         
         //2,set some properties:下拉刷新，自动翻页
         self.needLoadMore = NO;
         self.needPullRefresh = NO;
+    
         
         
         //3，bind your delegate and datasource to tableview
@@ -105,10 +112,13 @@
         self.keyModel = self.myServiceListModel;
         
         //5,REQUIRED:register model to parent view controller
-        [self registerModel:self.keyModel];
+        //[self registerModel:self.keyModel];
         
         //6,Load Data
         //[self load];
+        [self.tableView reloadData];
+        
+        
     }
     
     
@@ -218,7 +228,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   //todo...
-  
+    TPMyServiceListItem* item = (TPMyServiceListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
+    if ([item.check_status integerValue] == 1 ) {
+        
+        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
+        [self.navigationController pushViewController:vc animated:true];
+
+    }
+
 }
 
 

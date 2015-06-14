@@ -59,6 +59,7 @@
  */
 - (NSArray *)itemsForSection:(int)section;
 
+
 /**
  *  清除datasource中section部分的object
  *
@@ -66,6 +67,7 @@
  *  @object  待清楚的object
  */
 - (BOOL)removeItem:(VZListItem* )item FromSection:(NSInteger)n; //删
+- (BOOL)removeItemAtIndexPath:(NSIndexPath* )index;
 /**
  *  清除datasource中的数据
  *

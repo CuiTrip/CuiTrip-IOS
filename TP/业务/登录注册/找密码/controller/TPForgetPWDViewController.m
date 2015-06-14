@@ -86,6 +86,7 @@
 - (void)loadView
 {
     [super loadView];
+    self.confirmBtn.hidden = true;
     //todo..
 }
 
@@ -93,10 +94,11 @@
 {
     [super viewDidLoad];
     //todo..
-    [self setTitle:@"找回密码"];
+    [self setTitle:@"设置密码"];
     
     self.areaCode = [TPUtils defaultLocalCode];
-    
+    NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
+    self.countryLabel.text = localCode;
     __weak typeof(self) weakSelf = self;
     [RACObserve(self, second) subscribeNext:^(NSNumber* x) {
         
@@ -119,6 +121,10 @@
     
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeKeyboard)]];
+    
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onConfirm:)];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -227,22 +233,31 @@
     SHOW_SPINNER(self);
     
     NSString* vCode = self.vCodeTextField.text;
-    vCode = @"1460";
-    //先检验验证码，成功后再注册
-    [SMS_SDK commitVerifyCode:vCode result:^(enum SMS_ResponseState state) {
-        
+    self.forgetPWDModel.vcode = vCode;
+    self.forgetPWDModel.countryCode = self.areaCode;
+    self.forgetPWDModel.mobile = self.phoneTextField.text;
+    self.forgetPWDModel.anewPasswd = self.pwdTextField.text;
+    self.forgetPWDModel.rePasswd = self.confirmPWDTextField.text;
+    
+    
+    SHOW_SPINNER(self);
+    [self.forgetPWDModel loadWithCompletion:^(VZModel *model, NSError *error) {
+       
         HIDE_SPINNER(self);
-        if (1==state)
-        {
-            //修改面吗
-            TOAST(self, @"验证码获取成功");
+        if (error) {
+            TOAST_ERROR(self, error);
         }
-        else if(0==state)
+        else
         {
-            NSLog(@"验证失败");
-            TOAST(self, @"验证码无效,请重新获取");
+            TOAST(self, @"修改成功!");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:true];
+            });
         }
+        
     }];
+    
+    
 }
 
 - (void)setSecondData:(CountryAndAreaCode *)data

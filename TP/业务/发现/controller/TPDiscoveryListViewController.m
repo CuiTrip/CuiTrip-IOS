@@ -70,8 +70,7 @@
 {
     [super loadView];
     
-    [self setTitle:@"发现"];
-    
+    [self setTitle:@"热门推荐"];
     self.view.backgroundColor = [TPTheme bgColor];
     self.tabBarController.hidesBottomBarWhenPushed = true;
     
@@ -101,21 +100,20 @@
     
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    //self.keyModel = self.model;
+    self.keyModel = self.discoveryListModel;
     
     //5,REQUIRED:register model to parent view controller
-    //[self registerModel:self.keyModel];
+    [self registerModel:self.keyModel];
 
     //6,Load Data
-    //[self load];
+    [self load];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    self.tabBarController.tabBar.hidden = NO;
-
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -123,6 +121,8 @@
     [super viewDidAppear:animated];
     
     //todo..
+    self.tabBarController.tabBar.hidden = NO;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -175,13 +175,20 @@
     [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        
-        
-        [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
-
-         //跳转到预约
+        void(^lamda)() = ^{//跳转到预约
             UIViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
             [self.navigationController pushViewController:v animated:true];
-        }];
+        };
+        
+        if ([TPUser isLogined]) {
+            lamda();
+        }
+        else
+        {
+            [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+                lamda();
+            }];
+        }
         
     }];
     self.tableView.tableFooterView = btn;

@@ -10,8 +10,20 @@
 
   
 #import "VZHTTPModel.h"
-
+/**
+ 	mobile (String)： 用户手机号
+ 	countryCode (String) : 国家代码
+ 	vcode (String):  验证码
+ 	newPasswd (String)：新密码
+ 	rePasswd (String): 确认新密码
+ */
 @interface TPForgetPWDModel : VZHTTPModel
+
+@property(nonatomic,strong) NSString* mobile;
+@property(nonatomic,strong) NSString* countryCode;
+@property(nonatomic,strong) NSString* vcode;
+@property(nonatomic,strong) NSString* anewPasswd;
+@property(nonatomic,strong) NSString* rePasswd;
 
 @end
 

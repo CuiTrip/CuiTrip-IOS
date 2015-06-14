@@ -62,10 +62,10 @@
 {
     [super setItem:item];
     
-    [self.poster sd_setImageWithURL:__url(item.cardImageUrl) placeholderImage:__image(@"taiwan.png")];
-    [self.icon sd_setImageWithURL:__url(item.avatarUrl) placeholderImage:__image(@"girl.jpg")];
+    [self.poster sd_setImageWithURL:__url(item.serviceBackPic) placeholderImage:__image(@"taiwan.png")];
+    [self.icon sd_setImageWithURL:__url(item.insiderHeadPic) placeholderImage:__image(@"girl.jpg")];
     self.userNameLabel.attributedText = item.attributedUserString;
-    self.posterNameLabel.text = item.cardName;
+    self.posterNameLabel.text = item.serviceName;
   
 }
 

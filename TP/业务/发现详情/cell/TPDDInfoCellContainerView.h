@@ -11,5 +11,6 @@
 
 @interface TPDDInfoCellContainerView : TPDDCellContainerView
 
+- (void)setScore:(CGFloat)score;
 
 @end
