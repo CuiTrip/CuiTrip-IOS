@@ -13,6 +13,9 @@
 #import "TPTripListModel.h" 
 #import "TPTripListViewDataSource.h"
 #import "TPTripListViewDelegate.h"
+#import "TPTripDetailViewController.h"
+#import "TPTripListItem.h"
+
 
 @interface TPTripListViewController()
 
@@ -193,8 +196,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   //todo...
+    TPTripListItem* item = (TPTripListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
   
-    UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+    TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+    if ([item.status isEqualToString:@"即将开始"]) {
+        vc.status = kWillBegin;
+    }
+    if ([item.status isEqualToString:@"已经结束"]) {
+        vc.status = kFinish;
+    }
     [self.navigationController pushViewController:vc animated:true];
 }
 

@@ -115,10 +115,6 @@
     }];
 }
 
-- (void)keyboardDidShow:(NSNotification*)notification
-{
-    NSLog(@"%s: %@", __FUNCTION__, notification.userInfo);
-}
 
 - (void)keyboardWillHide:(NSNotification*)notification
 {

@@ -53,6 +53,11 @@
     [super loadView];
     //todo..
     [self setTitle:@"预约旅程"];
+    self.textField.layer.cornerRadius = 5.0f;
+    self.textField.layer.masksToBounds = true;
+    self.textField.layer.borderWidth = 0.5;
+    self.textField.layer.borderColor = [TPTheme grayColor].CGColor;
+
 }
 
 - (void)viewDidLoad

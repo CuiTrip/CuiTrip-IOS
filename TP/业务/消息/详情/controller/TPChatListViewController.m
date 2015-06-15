@@ -14,6 +14,7 @@
 #import "TPChatListViewDataSource.h"
 #import "TPChatListViewDelegate.h"
 #import "TPGrowingTextView.h"
+#import "TPTripDetailViewController.h"
 
 @interface TPChatListHeaderView : UIView
 
@@ -153,7 +154,8 @@
         else
         {
             //去旅行详情
-            UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+            TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+            vc.status = kWillBegin;
             [weakSelf.navigationController pushViewController:vc animated:true];
             
         }

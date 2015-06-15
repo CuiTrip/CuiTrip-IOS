@@ -14,6 +14,7 @@
 #import "TPTripDetailModel.h" 
 
 @interface TPTripDetailViewController()
+@property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
@@ -56,13 +57,54 @@
 - (void)loadView
 {
     [super loadView];
+    
+    [self setTitle:@"旅程信息"];
+    
+    self.imageView.layer.cornerRadius = 0.5*self.imageView.vzWidth;
+    self.imageView.layer.masksToBounds = true;
+    self.imageView.clipsToBounds = true;
+    self.imageView.layer.borderWidth = 2.0f;
+    self.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
     //todo..
+    self.bkView.layer.borderColor = [TPTheme grayColor].CGColor;
+    self.bkView.layer.borderWidth = 0.5;
+    
+    self.actionBtn.layer.cornerRadius = 5.0f;
+    self.actionBtn.layer.masksToBounds = true;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //todo..
+    if([TPUser type] == kCustomer)
+    {
+        if (self.status == kWillBegin) {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = true;
+        }
+        else
+        {
+            self.tripStatusLabel.hidden = false;
+            self.tripStatusLabel.text = @"旅程已经结束";
+            self.actionBtn.hidden = false;
+            [self.actionBtn setTitle:@"去评价" forState:UIControlStateNormal];
+        }
+    }
+    else
+    {
+        if (self.status == kWillBegin) {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = false;
+            self.actionBtn.hidden = false;
+            self.actionBtn.vzTop -= 30;
+            [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
+        }
+        else
+        {
+
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

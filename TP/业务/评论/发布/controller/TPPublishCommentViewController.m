@@ -55,17 +55,29 @@
 {
     [super loadView];
     //todo..
+    
+//    self.titleLabel.superview.layer.borderWidth = 0.5;
+//    self.titleLabel.superview.layer.borderColor = [TPTheme grayColor].CGColor;
+//    
     self.starView = [[O2OStarView alloc]initWithFrame:CGRectMake((self.view.vzWidth-190)/2, self.descLabel.vzBottom+10, 190, 32) viewType:ENUM_Big];
     self.starView.delegate = self;
     self.starView.backgroundColor = [UIColor clearColor];
     self.starView.scorePercent = 10.0f;
     [self.view addSubview:self.starView];
+    
+    [self setTitle:@"评价"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //todo..
+    [self registerNotifications];
+}
+
+- (void)dealloc
+{
+    [self unregisterNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,10 +114,6 @@
     
 }
 
--(void)dealloc {
-    
-    //todo..
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
@@ -139,6 +147,53 @@
 - (void)starRateView:(O2OStarView *)starRateView scroePercentDidChange:(CGFloat)newScorePercent
 {
 
+}
+
+
+- (void)registerNotifications
+{
+    // all keyboard events
+    NSLog(@"Register keyboard notifications.");
+    
+    // register: post: UIKeyboardWillShowNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    // register: UIKeyboardWillHideNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification*)notification
+{
+    NSLog(@"%s: %@", __FUNCTION__, notification.userInfo);
+    
+    CGRect keyboardRectEnd = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat animDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:animDuration animations:^{
+        
+        self.view.frame  = CGRectMake(0, self.view.vzTop-CGRectGetHeight(keyboardRectEnd)/2-50, self.view.vzWidth, self.view.vzHeight);
+    }];
+}
+
+
+- (void)keyboardWillHide:(NSNotification*)notification
+{
+    NSLog(@"%s: %@", __FUNCTION__, notification.userInfo);
+    
+    CGRect keyboardRectEnd = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat animationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:animationDuration animations:^{
+        
+        //self.frame = rect;
+        self.view.frame  = CGRectMake(0,self.view.vzTop+CGRectGetHeight(keyboardRectEnd)/2-50, self.view.vzWidth, self.view.vzHeight);
+    }];
+    
+    
+}
+
+- (void)unregisterNotifications
+{
+    NSLog(@"Unregister keyboard notifications.");
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
