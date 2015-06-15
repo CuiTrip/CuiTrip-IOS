@@ -13,6 +13,7 @@
 #import "TPChatListModel.h" 
 #import "TPChatListViewDataSource.h"
 #import "TPChatListViewDelegate.h"
+#import "TPGrowingTextView.h"
 
 @interface TPChatListHeaderView : UIView
 
@@ -130,6 +131,7 @@
 {
     [super loadView];
     [self setTitle:@"消息详情"];
+    
 }
 
 - (void)viewDidLoad
@@ -176,11 +178,16 @@
 
     //6,Load Data
     //[self load];
+    
+    [TPGrowingTextView showInView:self.view];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = true;
     
     //todo..
 }
@@ -221,6 +228,8 @@
 #pragma mark - @override methods - VZViewController
 
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 
@@ -236,6 +245,19 @@
   //todo:... 
 
 }
+
+
+////////////////////////////////////////////////////////////
+#pragma mark - scrollview delegate method
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [super scrollViewDidScroll:scrollView];
+    
+    [TPGrowingTextView hideFromView:self.view];
+    
+}
+
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 

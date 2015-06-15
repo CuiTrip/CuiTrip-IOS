@@ -109,6 +109,7 @@
 		4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC321B247EA600846032 /* TPTripDetailSubView.m */; };
 		4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
+		456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
 		459B24961B176A1C009BB189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459B248D1B176A1C009BB189 /* Images.xcassets */; };
@@ -488,6 +489,8 @@
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454781841B14234F00B4A24D /* TPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTests.m; sourceTree = "<group>"; };
+		456C68DC1B2EB526003D4C20 /* TPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGrowingTextView.h; sourceTree = "<group>"; };
+		456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGrowingTextView.m; sourceTree = "<group>"; };
 		459B24871B176A1C009BB189 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		459B24881B176A1C009BB189 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		459B248A1B176A1C009BB189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -1747,6 +1750,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		456C68DB1B2EB516003D4C20 /* TPGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				456C68DC1B2EB526003D4C20 /* TPGrowingTextView.h */,
+				456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */,
+			);
+			path = TPGrowingTextView;
+			sourceTree = "<group>";
+		};
 		459B24851B176A1C009BB189 /* TP */ = {
 			isa = PBXGroup;
 			children = (
@@ -2477,6 +2489,7 @@
 		45D0C8161B2BE06D00F31BF5 /* 组件 */ = {
 			isa = PBXGroup;
 			children = (
+				456C68DB1B2EB516003D4C20 /* TPGrowingTextView */,
 				45D0C8171B2BE06D00F31BF5 /* BXImageScrollView */,
 				45D0C81A1B2BE06D00F31BF5 /* ETImageProcessing */,
 			);
@@ -3113,6 +3126,7 @@
 				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
 				45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
+				456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */,
 				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
 				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,

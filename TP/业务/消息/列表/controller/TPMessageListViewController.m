@@ -71,7 +71,7 @@
     [super loadView];
     
     [self setTitle:@"消息"];
-    [self.tabBarController hidesBottomBarWhenPushed];
+    [self hidesBottomBarWhenPushed];
 
 }
 
