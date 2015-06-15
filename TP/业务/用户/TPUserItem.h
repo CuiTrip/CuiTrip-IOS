@@ -53,6 +53,7 @@ typedef NS_ENUM(NSInteger, TPUserType)
 @property(nonatomic,strong)NSString* career;
 @property(nonatomic,strong)NSString* sign;
 @property(nonatomic,strong)NSString* pwd;
+@property(nonatomic,strong)NSString* city;
 
 
 

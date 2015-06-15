@@ -112,18 +112,22 @@
         
     }
     
+//    NSDictionary* dict = @{
+//                           @"uid":[TPUser uid]?:@"",
+//                           @"token":[TPUser token]?:@"",
+//                           @"realName":[TPUser userName]?:@"",
+//                           @"nick":[TPUser userNick]?:@"",
+//                           @"gener":[TPUser gender]?:@"",
+//                           @"city":[TPUser country]?:@"",
+//                           @"language":[TPUser language]?:@"",
+//                           @"career":[TPUser career]?:@"",
+//                           @"interests":[TPUser hobby]?:@"",
+//                           @"sign":[TPUser sign]?:@""
+//                            };
     NSDictionary* dict = @{
                            @"uid":[TPUser uid]?:@"",
                            @"token":[TPUser token]?:@"",
-                           @"realName":[TPUser userName]?:@"",
-                           @"nick":[TPUser userNick]?:@"",
-                           @"gener":[TPUser gender]?:@"",
-                           @"city":[TPUser country]?:@"",
-                           @"language":[TPUser language]?:@"",
-                           @"career":[TPUser career]?:@"",
-                           @"interests":[TPUser hobby]?:@"",
-                           @"sign":[TPUser sign]?:@""
-                            };
+                           };
     
     NSMutableDictionary* dictMutable = [dict mutableCopy];
     NSString* value = self.longText?self.textView.text:self.textField.text;

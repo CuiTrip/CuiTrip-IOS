@@ -98,6 +98,11 @@
     return [TPUser sharedInstance].userItem.country;
 }
 
++ (NSString* )city
+{
+    return [TPUser sharedInstance].userItem.city;
+}
+
 + (NSString* )language
 {
     return [TPUser sharedInstance].userItem.language;

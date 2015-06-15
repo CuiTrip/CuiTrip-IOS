@@ -10,7 +10,7 @@
 
 
 #import "TPMessageListViewController.h"
- 
+#import "TPChatListViewController.h"
 #import "TPMessageListModel.h" 
 #import "TPMessageListViewDataSource.h"
 #import "TPMessageListViewDelegate.h"
@@ -156,6 +156,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   //todo...
+    TPChatListViewController* vc = [TPChatListViewController new];
+    [self.navigationController pushViewController:vc animated:true];
   
 }
 

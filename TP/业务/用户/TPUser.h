@@ -32,6 +32,8 @@
 
 + (NSString* )country;
 
++ (NSString* )city;
+
 + (NSString* )language;
 
 + (NSString* )hobby;

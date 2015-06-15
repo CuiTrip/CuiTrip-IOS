@@ -28,8 +28,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-    
-        
+
         //todo: add some UI code
         self.icon = [TPUIKit roundImageView:CGSizeMake(36, 36) Border:[UIColor whiteColor]];
         [self.contentView addSubview:self.icon];

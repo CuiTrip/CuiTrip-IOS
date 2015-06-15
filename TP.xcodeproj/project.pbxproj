@@ -270,6 +270,8 @@
 		45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42F21B2D63AE001B4202 /* TPTripArrangementItem.m */; };
 		45EB42FD1B2D63AE001B4202 /* TPTripArrangementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42F51B2D63AE001B4202 /* TPTripArrangementModel.m */; };
 		45EB42FE1B2D63AE001B4202 /* TPTripArrangementSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42F91B2D63AE001B4202 /* TPTripArrangementSubView.m */; };
+		45EB43011B2DB56F001B4202 /* TPChatStatusListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB43001B2DB56F001B4202 /* TPChatStatusListCell.m */; };
+		45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB43031B2DB610001B4202 /* TPChatStatusListItem.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -750,6 +752,10 @@
 		45EB42F51B2D63AE001B4202 /* TPTripArrangementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripArrangementModel.m; sourceTree = "<group>"; };
 		45EB42F81B2D63AE001B4202 /* TPTripArrangementSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripArrangementSubView.h; sourceTree = "<group>"; };
 		45EB42F91B2D63AE001B4202 /* TPTripArrangementSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripArrangementSubView.m; sourceTree = "<group>"; };
+		45EB42FF1B2DB56F001B4202 /* TPChatStatusListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatStatusListCell.h; sourceTree = "<group>"; };
+		45EB43001B2DB56F001B4202 /* TPChatStatusListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatStatusListCell.m; sourceTree = "<group>"; };
+		45EB43021B2DB610001B4202 /* TPChatStatusListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatStatusListItem.h; sourceTree = "<group>"; };
+		45EB43031B2DB610001B4202 /* TPChatStatusListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatStatusListItem.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2666,6 +2672,8 @@
 			children = (
 				45DD47201B28200200D2BB62 /* TPChatListCell.h */,
 				45DD47211B28200200D2BB62 /* TPChatListCell.m */,
+				45EB42FF1B2DB56F001B4202 /* TPChatStatusListCell.h */,
+				45EB43001B2DB56F001B4202 /* TPChatStatusListCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -2709,6 +2717,8 @@
 		45DD472E1B28200200D2BB62 /* item */ = {
 			isa = PBXGroup;
 			children = (
+				45EB43021B2DB610001B4202 /* TPChatStatusListItem.h */,
+				45EB43031B2DB610001B4202 /* TPChatStatusListItem.m */,
 				45DD472F1B28200200D2BB62 /* TPChatListItem.h */,
 				45DD47301B28200200D2BB62 /* TPChatListItem.m */,
 			);
@@ -3111,6 +3121,7 @@
 				459BAD631B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m in Sources */,
 				459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */,
 				45DD47411B28200200D2BB62 /* TPChatListViewDelegate.m in Sources */,
+				45EB43011B2DB56F001B4202 /* TPChatStatusListCell.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
 				45028AF51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m in Sources */,
 				45028AB31B1B535E00417606 /* VZModel.m in Sources */,
@@ -3179,6 +3190,7 @@
 				459BAD461B1F5BA600739C7E /* TPDatePickerSubView.m in Sources */,
 				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
+				45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */,
 				459BACD01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m in Sources */,
 				459BACDE1B1DF9F000739C7E /* TPDDProfileCell.m in Sources */,
 				45D0C7D41B29E0BD00F31BF5 /* TPPSPicsViewController.m in Sources */,

@@ -1,0 +1,57 @@
+  
+//
+//  TPChatStatusListCell.m
+//  TP
+//
+//  Created by moxin on 2015-06-14 21:14:17 +0800.
+//  Copyright (c) 2015年 VizLab. All rights reserved.
+//
+
+
+
+#import "TPChatStatusListCell.h"
+#import "TPChatStatusListItem.h"
+
+@interface TPChatStatusListCell()
+@property(nonatomic,strong) UILabel* label;
+
+@end
+
+@implementation TPChatStatusListCell
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        
+        self.backgroundColor = [UIColor whiteColor];
+        self.label = [TPUIKit label:[TPTheme themeColor] Font:ft(12.0f)];
+        self.label.textAlignment = NSTextAlignmentCenter;
+        self.label.backgroundColor = [TPTheme yellowColor];
+        [self.contentView addSubview:self.label];
+    }
+    return self;
+}
+
++ (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
+{
+    return 40;
+}
+
+- (void)setItem:(TPChatStatusListItem *)item
+{
+    [super setItem:item];
+    self.label.text = item.status;
+
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+  
+    self.label.vzOrigin = CGPointMake(kTPWidthWithMargin(175), 10);
+    self.label.vzSize = CGSizeMake(175, 30);
+}
+@end
+  

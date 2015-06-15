@@ -57,6 +57,7 @@
         self.token = [aDecoder decodeObjectForKey:@"token"];
         self.gender = [aDecoder decodeObjectForKey:@"gender"];
         self.pwd = [aDecoder decodeObjectForKey:@"pwd"];
+        self.city = [aDecoder decodeObjectForKey:@"city"];
         
     }
     return self;
@@ -82,6 +83,7 @@
     [aCoder encodeObject:self.sign forKey:@"sign"];
     [aCoder encodeObject:self.interests forKey:@"interests"];
     [aCoder encodeObject:self.pwd forKey:@"pwd"];
+    [aCoder encodeObject:self.city forKey:@"city"];
     
 }
 
@@ -103,6 +105,7 @@
     item.mobile = self.mobile;
     item.token = self.token;
     item.pwd = self.pwd;
+    item.city = self.city;
     
     return item;
 }

@@ -10,7 +10,7 @@
 
 
 #import "TPChatListItem.h"
-
+#import "VZStringBuilder.h"
 @interface TPChatListItem()
 
 @end
@@ -21,7 +21,12 @@
 {
     [super autoKVCBinding:dictionary];
     
-    //todo...
+    CGFloat w = 0.7*kTPScreenWidth;
+    CGFloat contentHeight = [VZStringBuilder heightForString:self.content Font:ft(14) Width:w-20];
+    self.chatContentSize = CGSizeMake(w-20, contentHeight);
+    self.chatBKSize = CGSizeMake(w, contentHeight+10+30);
+    
+    
 }
 
 @end

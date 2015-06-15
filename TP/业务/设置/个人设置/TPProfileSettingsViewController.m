@@ -31,6 +31,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -125,8 +131,8 @@
         case 5:
         {
             cell.textLabel.text = @"地区";
-            cell.detailTextLabel.text = [TPUser country];
-            //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            cell.detailTextLabel.text = [TPUser city];
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case 6:

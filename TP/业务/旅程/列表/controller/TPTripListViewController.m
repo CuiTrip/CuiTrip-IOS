@@ -107,8 +107,10 @@
         //5,REQUIRED:register model to parent view controller
         [self registerModel:self.keyModel];
 
+        [self.tableView reloadData
+         ];
         //6,Load Data
-        [self load];
+       // [self load];
     }
 }
 

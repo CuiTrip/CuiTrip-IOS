@@ -10,14 +10,74 @@
 
 
 #import "TPChatListViewController.h"
- 
 #import "TPChatListModel.h" 
 #import "TPChatListViewDataSource.h"
 #import "TPChatListViewDelegate.h"
 
+@interface TPChatListHeaderView : UIView
+
+@property(nonatomic,assign)TPUserType type;
+@property(nonatomic,strong)UILabel* dateLabel;
+@property(nonatomic,strong)UIButton* actionBtn;
+@property(nonatomic,strong)void(^callback)(void);
+
+@end
+
+@implementation TPChatListHeaderView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        self.backgroundColor = [TPTheme blackColor];
+        self.dateLabel= [TPUIKit label:[UIColor whiteColor] Font:ft(18)];
+        self.dateLabel.vzOrigin = CGPointMake(11, (frame.size.height-18)/2);
+        self.dateLabel.vzSize = CGSizeMake(frame.size.width-100, 18);
+        [self addSubview:self.dateLabel];
+        
+        self.actionBtn = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width-90, (frame.size.height-30)/2, 60, 30)];
+        self.actionBtn.layer.cornerRadius = 8.0f;
+        self.actionBtn.layer.masksToBounds = true;
+        self.actionBtn.titleLabel.font = ft(14);
+        [self.actionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.actionBtn addTarget:self action:@selector(onAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.actionBtn];
+        
+    }
+    return self;
+}
+
+- (void)setType:(TPUserType)type
+{
+    _type = type;
+    
+    if (type == kCustomer) {
+        
+        self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
+        [self.actionBtn setTitle:@"付款" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.actionBtn.backgroundColor = HEXCOLOR(0x7ed321);
+        [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
+        
+    }
+}
+
+- (void)onAction:(id)sender
+{
+    if (self.callback) {
+        self.callback();
+    }
+}
+
+@end
+
 @interface TPChatListViewController()
 
- 
+@property(nonatomic,strong)TPChatListHeaderView* headerView;
 @property(nonatomic,strong)TPChatListModel *chatListModel; 
 @property(nonatomic,strong)TPChatListViewDataSource *ds;
 @property(nonatomic,strong)TPChatListViewDelegate *dl;
@@ -69,17 +129,33 @@
 - (void)loadView
 {
     [super loadView];
+    [self setTitle:@"消息详情"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 50)];
+    self.headerView.dateLabel.text = @"预约:2015年6月30日 / 3人";
+    self.headerView.type = [TPUser type];
+    self.headerView.callback = ^(){
+        
+        if ([TPUser type] == kCustomer) {
+            //去支付
+        }
+        else
+        {
+            //去旅行详情
+        }
+    };
+    
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
+    self.tableView.separatorStyle = NO;
+    self.tableView.tableHeaderView = self.headerView;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -90,6 +166,7 @@
     self.dataSource = self.ds;
     self.delegate = self.dl;
     
+    [self.tableView reloadData];
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
     //self.keyModel = self.model;

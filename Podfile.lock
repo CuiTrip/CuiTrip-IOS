@@ -9,6 +9,7 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
+  - SlackTextViewController (1.5.2)
   - TMCache (2.1.0)
   - Toast (2.4)
   - WCAlertView (1.0.1)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - ReactiveCocoa
   - SDWebImage
+  - SlackTextViewController
   - TMCache
   - Toast
   - WCAlertView
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SlackTextViewController: ab240cda4c7fe1f70f6c6cf64578f3fea495ce99
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
   WCAlertView: 36a1d087d0b3eb7f6ce3dae623fbb474f26f2beb
