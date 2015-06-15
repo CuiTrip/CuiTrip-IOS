@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPPayViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "payModel",
+          "class": "TPPayModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./Pay/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPPayModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./Pay/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPPayModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPPayModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./Pay/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPPayItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./Pay/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPPaySubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./Pay/view/",
+      "namespace": "T_View",
+      "itemclass": "TPPayItem"
+    }
+  ],
+  "config": {
+    "class": "TPPayConfig",
+    "proj": "TP",
+    "package_name": "Pay",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./Pay/config/"
+  }
+}

@@ -133,8 +133,32 @@
 }
 - (IBAction)onAction:(id)sender {
     
-    TPPublishCommentViewController* vc = [[UIStoryboard storyboardWithName:@"TPPublishCommentViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppublishcomment"];
-    [self.navigationController pushViewController:vc animated:true];
+    if ([TPUser type] == kCustomer) {
+        
+        if (self.status == kFinish) {
+            //完成去评价
+            
+            TPPublishCommentViewController* vc = [[UIStoryboard storyboardWithName:@"TPPublishCommentViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppublishcomment"];
+            [self.navigationController pushViewController:vc animated:true];
+            
+        }
+        else
+        {
+        
+            
+        }
+    }
+    else{
+     
+        if (self.status == kFinish) {
+            
+            //去确认行程
+            
+        }
+        
+        
+    }
+
     
 }
 

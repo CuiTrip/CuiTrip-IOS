@@ -141,14 +141,21 @@
     self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 50)];
     self.headerView.dateLabel.text = @"预约:2015年6月30日 / 3人";
     self.headerView.type = [TPUser type];
+    
+    __weak typeof(self) weakSelf = self;
     self.headerView.callback = ^(){
         
         if ([TPUser type] == kCustomer) {
             //去支付
+            UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+            [weakSelf.navigationController pushViewController:vc animated:true];
         }
         else
         {
             //去旅行详情
+            UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+            [weakSelf.navigationController pushViewController:vc animated:true];
+            
         }
     };
     

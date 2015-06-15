@@ -11,7 +11,15 @@
   
 #import "VZViewController.h"
 
+typedef enum
+{
+    kWillBegin = 0,
+    kFinish = 1
+}TripStatus;
+
 @interface TPTripDetailViewController : VZViewController
+@property(nonatomic,assign)TripStatus status;
+
 
 @end
   

@@ -110,6 +110,12 @@
 		4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */; };
+		456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 456C68E01B2ED35A003D4C20 /* pay_meta.json */; };
+		456C68F01B2ED35A003D4C20 /* TPPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68E41B2ED35A003D4C20 /* TPPayViewController.m */; };
+		456C68F11B2ED35A003D4C20 /* TPPayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68E71B2ED35A003D4C20 /* TPPayItem.m */; };
+		456C68F21B2ED35A003D4C20 /* TPPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68EA1B2ED35A003D4C20 /* TPPayModel.m */; };
+		456C68F31B2ED35A003D4C20 /* TPPaySubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68EE1B2ED35A003D4C20 /* TPPaySubView.m */; };
+		456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
 		459B24961B176A1C009BB189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459B248D1B176A1C009BB189 /* Images.xcassets */; };
@@ -491,6 +497,17 @@
 		454781841B14234F00B4A24D /* TPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTests.m; sourceTree = "<group>"; };
 		456C68DC1B2EB526003D4C20 /* TPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGrowingTextView.h; sourceTree = "<group>"; };
 		456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGrowingTextView.m; sourceTree = "<group>"; };
+		456C68E01B2ED35A003D4C20 /* pay_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pay_meta.json; sourceTree = "<group>"; };
+		456C68E11B2ED35A003D4C20 /* TPPayConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPayConfig.h; sourceTree = "<group>"; };
+		456C68E31B2ED35A003D4C20 /* TPPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPayViewController.h; sourceTree = "<group>"; };
+		456C68E41B2ED35A003D4C20 /* TPPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPayViewController.m; sourceTree = "<group>"; };
+		456C68E61B2ED35A003D4C20 /* TPPayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPayItem.h; sourceTree = "<group>"; };
+		456C68E71B2ED35A003D4C20 /* TPPayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPayItem.m; sourceTree = "<group>"; };
+		456C68E91B2ED35A003D4C20 /* TPPayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPayModel.h; sourceTree = "<group>"; };
+		456C68EA1B2ED35A003D4C20 /* TPPayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPayModel.m; sourceTree = "<group>"; };
+		456C68ED1B2ED35A003D4C20 /* TPPaySubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPaySubView.h; sourceTree = "<group>"; };
+		456C68EE1B2ED35A003D4C20 /* TPPaySubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPaySubView.m; sourceTree = "<group>"; };
+		456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayViewController.storyboard; sourceTree = "<group>"; };
 		459B24871B176A1C009BB189 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		459B24881B176A1C009BB189 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		459B248A1B176A1C009BB189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -1440,6 +1457,12 @@
 		4509ABBC1B233C9200846032 /* 支付 */ = {
 			isa = PBXGroup;
 			children = (
+				456C68DF1B2ED35A003D4C20 /* config */,
+				456C68E21B2ED35A003D4C20 /* controller */,
+				456C68E51B2ED35A003D4C20 /* item */,
+				456C68E81B2ED35A003D4C20 /* model */,
+				456C68EB1B2ED35A003D4C20 /* resource */,
+				456C68EC1B2ED35A003D4C20 /* view */,
 			);
 			path = "支付";
 			sourceTree = "<group>";
@@ -1757,6 +1780,59 @@
 				456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */,
 			);
 			path = TPGrowingTextView;
+			sourceTree = "<group>";
+		};
+		456C68DF1B2ED35A003D4C20 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				456C68E01B2ED35A003D4C20 /* pay_meta.json */,
+				456C68E11B2ED35A003D4C20 /* TPPayConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		456C68E21B2ED35A003D4C20 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				456C68E31B2ED35A003D4C20 /* TPPayViewController.h */,
+				456C68E41B2ED35A003D4C20 /* TPPayViewController.m */,
+				456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		456C68E51B2ED35A003D4C20 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				456C68E61B2ED35A003D4C20 /* TPPayItem.h */,
+				456C68E71B2ED35A003D4C20 /* TPPayItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		456C68E81B2ED35A003D4C20 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				456C68E91B2ED35A003D4C20 /* TPPayModel.h */,
+				456C68EA1B2ED35A003D4C20 /* TPPayModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		456C68EB1B2ED35A003D4C20 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		456C68EC1B2ED35A003D4C20 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				456C68ED1B2ED35A003D4C20 /* TPPaySubView.h */,
+				456C68EE1B2ED35A003D4C20 /* TPPaySubView.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		459B24851B176A1C009BB189 /* TP */ = {
@@ -2951,6 +3027,7 @@
 				459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */,
 				4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */,
 				459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */,
+				456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */,
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				45D0C7B01B29BED800F31BF5 /* myservice_meta.json in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
@@ -2970,6 +3047,7 @@
 				4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */,
 				459BACB31B1DF3D900739C7E /* taiwan.png in Resources */,
 				4509ABE51B23DDF600846032 /* feedback_meta.json in Resources */,
+				456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */,
 				45D0C78E1B29AFD800F31BF5 /* publishcomment_meta.json in Resources */,
 				4509ABC81B233D0700846032 /* TPReserveViewController.storyboard in Resources */,
 				459BAEFD1B21E58700739C7E /* trip_StarS_G@x2.png in Resources */,
@@ -3093,6 +3171,7 @@
 				459BAD611B1F5D7E00739C7E /* TPProfilePageListViewController.m in Sources */,
 				459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */,
 				45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */,
+				456C68F31B2ED35A003D4C20 /* TPPaySubView.m in Sources */,
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
@@ -3149,6 +3228,7 @@
 				4509AB941B22F13D00846032 /* TPLicenceViewController.m in Sources */,
 				45D0C7F41B2BD37900F31BF5 /* TPPSComfirmViewController.m in Sources */,
 				45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */,
+				456C68F21B2ED35A003D4C20 /* TPPayModel.m in Sources */,
 				4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */,
 				45D0C7791B29AE8800F31BF5 /* TPCommentListViewDelegate.m in Sources */,
 				45D0C80B1B2BDB9000F31BF5 /* O2OCommentImageView.m in Sources */,
@@ -3184,6 +3264,7 @@
 				45D0C7C81B29DAA400F31BF5 /* TPPubilshServiceItem.m in Sources */,
 				459BACCF1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m in Sources */,
 				4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */,
+				456C68F11B2ED35A003D4C20 /* TPPayItem.m in Sources */,
 				45028AAE1B1B535E00417606 /* VZHTTPModel.m in Sources */,
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				4509ABEF1B23E1CA00846032 /* TPSystemSettingsViewController.m in Sources */,
@@ -3198,6 +3279,7 @@
 				459BAD641B1F5D7E00739C7E /* TPProfilePageListItem.m in Sources */,
 				45D0C7931B29AFD800F31BF5 /* TPPublishCommentSubView.m in Sources */,
 				4509AC221B247E5200846032 /* TPTripListModel.m in Sources */,
+				456C68F01B2ED35A003D4C20 /* TPPayViewController.m in Sources */,
 				4509AC341B247EA600846032 /* TPTripDetailViewController.m in Sources */,
 				4509AC211B247E5200846032 /* TPTripListItem.m in Sources */,
 				459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */,

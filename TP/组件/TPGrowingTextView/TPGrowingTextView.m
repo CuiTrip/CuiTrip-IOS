@@ -16,6 +16,10 @@
 
 
 @implementation TPGrowingTextView
+{
+    CGPoint _oriPt;
+    CGSize  _oriSize;
+}
 
 + (void)showInView:(UIView* )view
 {
@@ -46,6 +50,9 @@
     
     if (self) {
         
+        _oriPt = frame.origin;
+        _oriSize = frame.size;
+        
         CGRect bounds = CGRectMake(0, 0, frame.size.width, frame.size.height);
         self.textView = [[UITextView alloc]initWithFrame:CGRectInset(bounds, 16, 8)];
         self.textView.backgroundColor = [UIColor whiteColor];
@@ -72,19 +79,12 @@
     NSLog(@"%@",change);
     
     CGSize sz = [change[NSKeyValueChangeNewKey] CGSizeValue];
-    
-    if (sz.height > 30) {
-        
-        int delta = sz.height - 30;
-//        self.vzTop = self.vzHeight
-//        self.textView.vzTop += sz.height - 30;
-//        self.textView.vzHeight += sz.height -30;
-    }
-    else
-    {
-//        self.textView.vzTop -= sz.height - 30;
-//        self.textView.vzHeight -= sz.height - 30;
-    }
+
+    int delta = sz.height - 30;
+    self.vzTop      = _oriPt.y - delta;
+    self.vzHeight   = _oriSize.height + delta;
+    self.textView.vzHeight = (_oriSize.height - 16) + delta;
+
 }
 
 - (void)registerNotifications
