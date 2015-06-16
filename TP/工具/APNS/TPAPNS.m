@@ -50,6 +50,18 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
     return instance;
 }
 
+- (void)setup:(NSDictionary* )lauchOption
+{
+    //友盟
+    [UMessage startWithAppkey:um_appKey launchOptions:lauchOption];
+    
+}
+
+- (void)tearDown
+{
+
+}
+
 - (void)registerRemoteNotification
 {
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8) {

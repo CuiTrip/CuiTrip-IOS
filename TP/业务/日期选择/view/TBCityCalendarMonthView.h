@@ -23,11 +23,7 @@
 //delegate
 @property(nonatomic,weak) id<TBCityCalendarMonthViewDelegate> delegate;
 
-/**
- 当前月份：
- formatt:xxx年xxx月
- */
-@property(nonatomic,strong) NSString* title;
+@property(nonatomic,assign) BOOL canEdit;
 /**
  天数
  */
@@ -41,21 +37,12 @@
  */
 @property(nonatomic,assign) NSInteger currentDate;
 /**
- 明天的日期
+ 可预订日期
  */
-@property(nonatomic,assign) NSInteger tomorrowDate;
+@property(nonatomic,strong) NSArray* availableDates;
 /**
- 后天
- */
-@property(nonatomic,assign) NSInteger afterTomorrowDate;
-/**
- 预订日期
+ 已预订日期
  */
 @property(nonatomic,strong) NSArray* reservedDates;
-@property(nonatomic,strong) NSArray* availableDate;
-/**
- 高亮范围
- */
-@property(nonatomic,assign) NSRange highlightRange;
 
 @end

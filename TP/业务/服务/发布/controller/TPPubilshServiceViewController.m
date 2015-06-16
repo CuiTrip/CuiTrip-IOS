@@ -73,10 +73,54 @@
         
         //todo..
         TPPSLocationViewController* loc = __story(@"TPPSLocationViewController",@"tppslocation");
+        loc.callback = ^(NSString* location,...){self.location = location;};
+        
         TPPSDescriptionViewController* detail = __story(@"TPPSDescriptionViewController", @"tppsdescription");
+        detail.callback = ^(NSString* desc,...){ self.desc = desc;};
+        
         TPPSPicsViewController* pics = __story(@"TPPSPicsViewController", @"tppspics");
+        pics.callback = ^(NSArray* pics,...){self.pics = pics;};
+        
         TPPSTitleViewController* title = __story(@"TPPSTitleViewController", @"tppstitle");
+        title.callback = ^(NSString* title,...){self.titleStr =title;};
+        
+        
+        // self.callback(self.date,self.duration,self.number,self.meet,nil);
         TPPSMoreViewController* more = __story(@"TPPSMoreViewController", @"tppsmore");
+        more.callback = ^(NSString* date,...){
+            
+            va_list ap;
+            va_start(ap, date);
+            
+            id arg = date;
+            self.date = date;
+            int argIndex = 1;
+            do
+            {
+                arg = va_arg(ap, id);
+                
+                NSLog(@"%@",arg);
+                
+                if (argIndex == 1) {
+                    self.duration = arg;
+                }
+                
+                if (argIndex == 2) {
+                    self.num = arg;
+                }
+                
+                if (argIndex == 3) {
+                    self.meetWay = arg;
+                }
+
+                argIndex ++;
+                
+                
+            }
+            while (arg != nil);
+        
+        };
+        
         TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
         TPPSComfirmViewController* confirm = __story(@"TPPSConfirmViewController", @"tppsconfirm");
         confirm.complete = ^{
@@ -180,6 +224,9 @@
 {
     NSUInteger oldIndex = self.selectedIndex;
     
+    TPPSViewController* v = (TPPSViewController* )self.selectedViewController;
+    [v onNext];
+    
     if (++oldIndex < self.viewControllers.count )
         [self setSelectedIndex:oldIndex animated:YES];
 }
@@ -188,6 +235,9 @@
 {
     NSUInteger oldIndex = self.selectedIndex;
     
+    TPPSViewController* v = (TPPSViewController* )self.selectedViewController;
+    [v onBack];
+    
     if (oldIndex == 0) {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -195,9 +245,52 @@
         [self setSelectedIndex:--oldIndex animated:YES];
 }
 
+
+/**
+ 	uid(String): 发现者id
+ 	token(String):  登录凭证
+ 	name(String) : 服务名称
+ 	address(String) : 服务者所在地
+ 	desc(String) : 服务描述
+ 	pic(String) : 服务图片
+ 	price(String) : 服务费用
+ 	maxbuyerNum(String) : 最多接待人数
+ 	serviceTme(String) : 服务时长
+ 	bestTime(String) : 最佳时间段
+ 	meetingWay(String) : 见面方式
+ */
+
 - (void)onComplete
 {
-    [self.navigationController popViewControllerAnimated:true];
+    SHOW_SPINNER(self);
+    
+    self.pubilshServiceModel.name = self.titleStr;
+    self.pubilshServiceModel.address = self.location;
+    self.pubilshServiceModel.desc = self.desc;
+    //self.pubilshServiceModel.pic = self.pics;
+    self.pubilshServiceModel.price = self.fee;
+    self.pubilshServiceModel.maxbuyerNum = self.num;
+    self.pubilshServiceModel.serviceTme = self.date;
+    self.pubilshServiceModel.bestTime = self.duration;
+    self.pubilshServiceModel.meetingWay = self.meetWay;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.pubilshServiceModel loadWithCompletion:^(VZModel *model, NSError *error) {
+       
+        HIDE_SPINNER(weakSelf);
+        if (!error) {
+            TOAST(weakSelf, @"发布成功!");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [weakSelf.navigationController popViewControllerAnimated:true];
+                
+            });
+        }
+        else
+            TOAST_ERROR(weakSelf, error);
+
+    }];
 }
 
 - (void)selectedIndexDidChange

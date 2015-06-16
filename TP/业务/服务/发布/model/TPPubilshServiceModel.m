@@ -11,6 +11,21 @@
 
 #import "TPPubilshServiceModel.h"
 
+/**
+ 	uid(String): 发现者id
+ 	token(String):  登录凭证
+ 	name(String) : 服务名称
+ 	address(String) : 服务者所在地
+ 	desc(String) : 服务描述
+ 	pic(String) : 服务图片
+ 	price(String) : 服务费用
+ 	maxbuyerNum(String) : 最多接待人数
+ 	serviceTme(String) : 服务时长
+ 	bestTime(String) : 最佳时间段
+ 	meetingWay(String) : 见面方式
+ */
+
+
 @interface TPPubilshServiceModel()
 
 @end
@@ -22,32 +37,36 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    return @{
+             @"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@"",
+             @"name":self.name?:@"",
+             @"address":self.address?:@"",
+             @"desc":self.desc?:@"",
+             @"pic":self.pic?:@"",
+             @"price":self.price?:@"",
+             @"maxbuyerNum":self.maxbuyerNum?:@"",
+             @"bestTime":self.bestTime?:@"",
+             @"meetingWay":self.meetingWay?:@""
+             };
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 - (NSString *)methodName {
-   
-    //todo:
-   
-    return nil;
+    
+    return [_API_ stringByAppendingString:@"commitServiceInfo"];
 }
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    return true;
 }
 
 @end

@@ -16,9 +16,9 @@
 
 
 @interface TPDatePickerSelectionView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
-@property (weak, nonatomic) IBOutlet UIButton *leftBtn;
+@property (strong, nonatomic)  UILabel *dateLabel;
+@property (strong, nonatomic)  UIButton *rightBtn;
+@property (strong, nonatomic)  UIButton *leftBtn;
 
 @property(nonatomic,copy) void(^leftCallback)(void);
 @property(nonatomic,copy) void(^rightCallback)(void);
@@ -26,6 +26,33 @@
 @end
 
 @implementation TPDatePickerSelectionView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        self.dateLabel = [TPUIKit label:[UIColor whiteColor] Font:ft(16)];
+        self.dateLabel.vzOrigin = CGPointMake((frame.size.width-140)/2, (frame.size.height-16)/2);
+        self.dateLabel.vzSize = CGSizeMake(140, 16);
+        self.dateLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.dateLabel];
+        
+        self.leftBtn = [[UIButton alloc]initWithFrame:CGRectMake((frame.size.width-140)/2-50, (frame.size.height-30)/2, 30, 30)];
+        [self.leftBtn setImage:__image(@"trip_left3.png") forState:UIControlStateNormal];
+        [self.leftBtn addTarget:self action:@selector(onLeft:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.leftBtn];
+        
+        
+        self.rightBtn = [[UIButton alloc]initWithFrame:CGRectMake((frame.size.width-140)/2+140+20, (frame.size.height-30)/2, 30, 30)];
+        [self.rightBtn setImage:__image(@"trip_right3.png") forState:UIControlStateNormal];
+        [self.rightBtn addTarget:self action:@selector(onRight:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.rightBtn];
+        
+    }
+    return self;
+}
 
 - (IBAction)onLeft:(id)sender {
     
@@ -91,14 +118,10 @@
     
     [self.view setBackgroundColor:[TPTheme yellowColor]];
     
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDatePickerSelectionView" owner:self options:nil];
-    self.selectionView = (TPDatePickerSelectionView *)[nib objectAtIndex:0];
+    self.selectionView = [[TPDatePickerSelectionView alloc]initWithFrame:CGRectMake(0, 20, self.view.vzWidth, 40)];
+    self.selectionView.dateLabel.text = @"2015年6月30日";
     self.selectionView.backgroundColor = [TPTheme themeColor];
-    self.selectionView.vzOrigin = CGPointMake(0, 20);
-    self.selectionView.vzWidth = self.view.vzWidth;
-    self.selectionView.vzHeight = 40;
     [self.view addSubview:self.selectionView];
-    
     
     __weak typeof(self) weakSelf = self;
     self.selectionView.rightCallback = ^{
@@ -150,6 +173,8 @@
 
 
     TBCityCalendarMonthView* calendarView1 = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 380)];
+    
+    calendarView1.canEdit = self.type == kSelection?true:false;
     calendarView1.tag = 0;
     calendarView1.delegate = self;
     calendarView1.firstWeekDay = currentM.weekday;
@@ -157,12 +182,15 @@
     calendarView1.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
                                                                         inUnit:NSMonthCalendarUnit
                                                                        forDate:currentM.date].length;
-    calendarView1.reservedDates = @[@(12),@(13),@(20),@(25)];
+    calendarView1.availableDates = @[@(12),@(13),@(20),@(25)];
+    calendarView1.reservedDates = @[@(1),@(5),@(6),@(10),@(11),@(22)];
     [self.scrollView addSubview:calendarView1];
 
 
 
     TBCityCalendarMonthView* calendarView2 = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(self.scrollView.vzWidth, 0, self.view.vzWidth, 380)];
+    
+    calendarView2.canEdit = self.type==kSelection?true:false;
     calendarView2.tag = 1;
     calendarView2.delegate = self;
     calendarView2.firstWeekDay = currentM.weekday;
@@ -170,9 +198,17 @@
     calendarView2.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
                                                                     inUnit:NSMonthCalendarUnit
                                                                    forDate:currentM.date].length;
-    calendarView1.reservedDates = @[@(24),@(19),@(2),@(4),@(8)];
+    calendarView2.availableDates = @[@(24),@(19),@(2),@(4),@(8)];
     [self.scrollView addSubview:calendarView2];
-
+    
+    
+    
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDatePickerCalenderFooterView" owner:self options:nil];
+    UIView* v =(UIView *)[nib objectAtIndex:0];
+    v.backgroundColor = [UIColor clearColor];
+    v.vzOrigin = CGPointMake(0, self.scrollView.vzBottom);
+    v.vzSize = CGSizeMake(self.view.vzWidth, 20);
+    [self.view addSubview:v];
 }
 
 

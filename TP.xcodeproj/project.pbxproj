@@ -93,7 +93,7 @@
 		4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABF51B23E55C00846032 /* TPAboutViewController.storyboard */; };
 		4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */; };
 		4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABFB1B240A9B00846032 /* TPUserItem.m */; };
-		4509ABFE1B245AAF00846032 /* TPDatePickerSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */; };
+		4509ABFE1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABFD1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib */; };
 		4509AC021B246FFD00846032 /* TPReserveSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC011B246FFD00846032 /* TPReserveSubView.xib */; };
 		4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC061B247E5100846032 /* TPTripListCell.m */; };
 		4509AC1D1B247E5200846032 /* trip_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC091B247E5100846032 /* trip_meta.json */; };
@@ -108,6 +108,8 @@
 		4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC2E1B247EA600846032 /* TPTripDetailModel.m */; };
 		4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509AC321B247EA600846032 /* TPTripDetailSubView.m */; };
 		4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */; };
+		45109A1F1B3079460074DCB6 /* trip_left3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45109A1D1B3079460074DCB6 /* trip_left3@2x.png */; };
+		45109A201B3079460074DCB6 /* trip_right3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45109A1E1B3079460074DCB6 /* trip_right3@2x.png */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */; };
 		456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 456C68E01B2ED35A003D4C20 /* pay_meta.json */; };
@@ -151,7 +153,7 @@
 		459BAD421B1F5BA600739C7E /* TPDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD341B1F5BA600739C7E /* TPDatePickerViewController.m */; };
 		459BAD431B1F5BA600739C7E /* TPDatePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD371B1F5BA600739C7E /* TPDatePickerItem.m */; };
 		459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD3A1B1F5BA600739C7E /* TPDatePickerModel.m */; };
-		459BAD461B1F5BA600739C7E /* TPDatePickerSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD401B1F5BA600739C7E /* TPDatePickerSubView.m */; };
+		459BAD461B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD401B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m */; };
 		459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD4A1B1F5D7E00739C7E /* TPProfilePageListCell.m */; };
 		459BAD601B1F5D7E00739C7E /* profilepage_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD4C1B1F5D7E00739C7E /* profilepage_meta.json */; };
 		459BAD611B1F5D7E00739C7E /* TPProfilePageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD501B1F5D7E00739C7E /* TPProfilePageListViewController.m */; };
@@ -465,7 +467,7 @@
 		4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityHUDPicker.m; sourceTree = "<group>"; };
 		4509ABFA1B240A9B00846032 /* TPUserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserItem.h; sourceTree = "<group>"; };
 		4509ABFB1B240A9B00846032 /* TPUserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPUserItem.m; sourceTree = "<group>"; };
-		4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDatePickerSelectionView.xib; sourceTree = "<group>"; };
+		4509ABFD1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDatePickerCalenderFooterView.xib; sourceTree = "<group>"; };
 		4509AC011B246FFD00846032 /* TPReserveSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPReserveSubView.xib; sourceTree = "<group>"; };
 		4509AC051B247E5100846032 /* TPTripListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripListCell.h; sourceTree = "<group>"; };
 		4509AC061B247E5100846032 /* TPTripListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripListCell.m; sourceTree = "<group>"; };
@@ -492,6 +494,8 @@
 		4509AC311B247EA600846032 /* TPTripDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripDetailSubView.h; sourceTree = "<group>"; };
 		4509AC321B247EA600846032 /* TPTripDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailSubView.m; sourceTree = "<group>"; };
 		4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPTripDetailViewController.storyboard; sourceTree = "<group>"; };
+		45109A1D1B3079460074DCB6 /* trip_left3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_left3@2x.png"; sourceTree = "<group>"; };
+		45109A1E1B3079460074DCB6 /* trip_right3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_right3@2x.png"; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -570,8 +574,8 @@
 		459BAD371B1F5BA600739C7E /* TPDatePickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDatePickerItem.m; sourceTree = "<group>"; };
 		459BAD391B1F5BA600739C7E /* TPDatePickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerModel.h; sourceTree = "<group>"; };
 		459BAD3A1B1F5BA600739C7E /* TPDatePickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDatePickerModel.m; sourceTree = "<group>"; };
-		459BAD3F1B1F5BA600739C7E /* TPDatePickerSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerSubView.h; sourceTree = "<group>"; };
-		459BAD401B1F5BA600739C7E /* TPDatePickerSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDatePickerSubView.m; sourceTree = "<group>"; };
+		459BAD3F1B1F5BA600739C7E /* TPDatePickerCalenderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerCalenderFooterView.h; sourceTree = "<group>"; };
+		459BAD401B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDatePickerCalenderFooterView.m; sourceTree = "<group>"; };
 		459BAD491B1F5D7E00739C7E /* TPProfilePageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProfilePageListCell.h; sourceTree = "<group>"; };
 		459BAD4A1B1F5D7E00739C7E /* TPProfilePageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfilePageListCell.m; sourceTree = "<group>"; };
 		459BAD4C1B1F5D7E00739C7E /* profilepage_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profilepage_meta.json; sourceTree = "<group>"; };
@@ -2012,7 +2016,7 @@
 			children = (
 				459BAD331B1F5BA600739C7E /* TPDatePickerViewController.h */,
 				459BAD341B1F5BA600739C7E /* TPDatePickerViewController.m */,
-				4509ABFD1B245AAF00846032 /* TPDatePickerSelectionView.xib */,
+				4509ABFD1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -2038,6 +2042,8 @@
 		459BAD3B1B1F5BA600739C7E /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				45109A1D1B3079460074DCB6 /* trip_left3@2x.png */,
+				45109A1E1B3079460074DCB6 /* trip_right3@2x.png */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -2049,8 +2055,8 @@
 				459BAE9F1B207F4D00739C7E /* TBCityCalendarMonthView.m */,
 				459BAEA01B207F4D00739C7E /* TBCityGraphic.h */,
 				459BAEA11B207F4D00739C7E /* TBCityGraphic.m */,
-				459BAD3F1B1F5BA600739C7E /* TPDatePickerSubView.h */,
-				459BAD401B1F5BA600739C7E /* TPDatePickerSubView.m */,
+				459BAD3F1B1F5BA600739C7E /* TPDatePickerCalenderFooterView.h */,
+				459BAD401B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3031,7 +3037,7 @@
 				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
 				459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */,
 				459BAEEE1B21E58700739C7E /* trip_display_yes@2x.png in Resources */,
-				4509ABFE1B245AAF00846032 /* TPDatePickerSelectionView.xib in Resources */,
+				4509ABFE1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib in Resources */,
 				459BAEF51B21E58700739C7E /* trip_nav_m_A@2x.png in Resources */,
 				4509AB7C1B22EA2300846032 /* Localizable.strings in Resources */,
 				459BAEF71B21E58700739C7E /* trip_nav_p_A@2x.png in Resources */,
@@ -3077,7 +3083,9 @@
 				45D0C7951B29B03A00F31BF5 /* TPPublishCommentViewController.storyboard in Resources */,
 				459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */,
 				4509AB7A1B22EA1D00846032 /* country.plist in Resources */,
+				45109A1F1B3079460074DCB6 /* trip_left3@2x.png in Resources */,
 				45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */,
+				45109A201B3079460074DCB6 /* trip_right3@2x.png in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
@@ -3297,7 +3305,7 @@
 				4509AC341B247EA600846032 /* TPTripDetailViewController.m in Sources */,
 				4509AC211B247E5200846032 /* TPTripListItem.m in Sources */,
 				459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */,
-				459BAD461B1F5BA600739C7E /* TPDatePickerSubView.m in Sources */,
+				459BAD461B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m in Sources */,
 				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
 				45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */,

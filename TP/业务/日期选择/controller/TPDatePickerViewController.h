@@ -11,9 +11,19 @@
   
 #import "VZViewController.h"
 
+
+typedef enum
+{
+    kCheckOnly = 1,
+    kSelection = 2
+
+}DatePickerType;
+
 @interface TPDatePickerViewController : VZViewController
 
+@property(nonatomic,assign) DatePickerType type;
 @property(nonatomic,strong) NSDate* date;
+@property(nonatomic,strong) NSArray* reservedDates;
 
 @end
   

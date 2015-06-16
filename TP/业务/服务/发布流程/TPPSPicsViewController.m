@@ -45,7 +45,11 @@ const int kMaxImageCount = 9;
     NSArray* items = self.galleryView.imageItems;
     NSMutableArray* list = [NSMutableArray new];
     for (O2OCommentImageItem* item in items) {
-        [list addObject:item.base64String];
+        
+        if (item.base64String) {
+            [list addObject:item.base64String];
+        }
+
     }
     
     if (self.callback) {

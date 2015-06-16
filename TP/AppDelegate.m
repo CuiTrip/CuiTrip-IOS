@@ -26,10 +26,14 @@
     [self.window makeKeyAndVisible];
     [TPTheme config];
     
+    //SMS
+    [SMS_SDK registerApp:sms_appKey
+              withSecret:sms_appSecret];
     
-    [SMS_SDK registerApp:appKey
-              withSecret:appSecret];
+    //注册APNS
+    [[TPAPNS sharedInstance] setup:launchOptions];
     
+ 
     return YES;
 }
 

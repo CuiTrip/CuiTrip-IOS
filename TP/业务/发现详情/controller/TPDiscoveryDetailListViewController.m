@@ -292,6 +292,7 @@
     else if([type isEqualToString:@"gotoDatePicker"])
     {
         TPDatePickerViewController* vc = [TPDatePickerViewController new];
+        vc.type = kCheckOnly;
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([type isEqualToString:@"gotoFee"])

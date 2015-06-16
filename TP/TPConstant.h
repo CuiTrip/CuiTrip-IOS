@@ -9,10 +9,13 @@
 #ifndef TP_TPConstant_h
 #define TP_TPConstant_h
 
-#define appKey @"7dc26c72f524"
-#define appSecret @"d9ff9f18a74898d61821af51b29683e2"
+#define sms_appKey @"7dc26c72f524"
+#define sms_appSecret @"d9ff9f18a74898d61821af51b29683e2"
 
-#define _API_ @"http://192.168.1.110:8080/baseservice/"
+#define um_appKey @"557fbf7b67e58e5a4f003a31"
+#define um_appSecret @""
+
+#define _API_ @"http://58.96.175.29:8080/baseservice/"
 
 #define kTPCacheKey_User @"TP_USER"
 #define kTPCacheKey_APNS @"TPAPNS"

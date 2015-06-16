@@ -91,6 +91,7 @@
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         
         TPDatePickerViewController* vc = [TPDatePickerViewController new];
+        vc.type = kSelection;
         [self.navigationController pushViewController:vc animated:true];
         
     }];

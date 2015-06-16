@@ -9,14 +9,13 @@
 
 
 
-#import "TPDatePickerSubView.h"
-#import "TPDatePickerItem.h"
+#import "TPDatePickerCalenderFooterView.h"
 
-@interface TPDatePickerSubView()
+@interface TPDatePickerCalenderFooterView()
 
 @end
 
-@implementation TPDatePickerSubView
+@implementation TPDatePickerCalenderFooterView
 
 - (id)initWithFrame:(CGRect)frame 
 {
@@ -32,10 +31,6 @@
   return self;
 }
 
-- (void)setItem:(TPDatePickerItem *)item
-{
-  
-}
 
 - (void)layoutSubviews
 {

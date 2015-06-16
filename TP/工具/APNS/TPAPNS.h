@@ -15,9 +15,9 @@
 @property (nonatomic, assign, readonly) UIRemoteNotificationType remoteNotificationType;
 
 + (instancetype)sharedInstance;
-/**
- *	@brief	注册remote notification，请在appDelete的becomeActive方法中调用此方法进行注册。
- */
+
+- (void)setup:(NSDictionary* )lauchOption;
+- (void)tearDown;
 - (void)registerRemoteNotification;
 - (void)updateDeviceToken:(NSData *)tokenData;
 

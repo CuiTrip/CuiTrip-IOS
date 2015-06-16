@@ -76,21 +76,25 @@
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"a"])  {
         //[self.dateBtn setTitle:str forState:UIControlStateNormal];
         self.duration = str;
+        [self.durationBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"b"]) {
         //[self.numBtn setTitle:str forState:UIControlStateNormal];
         self.date = str;
+        [self.dateBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"c"]) {
         //[self.numBtn setTitle:str forState:UIControlStateNormal];
         self.number = str;
+        [self.numberBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"d"]) {
         //[self.numBtn setTitle:str forState:UIControlStateNormal];
         self.meet = str;
+        [self.meetBtn setTitle:str forState:UIControlStateNormal];
     }
     
 }

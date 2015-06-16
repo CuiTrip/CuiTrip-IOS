@@ -9,13 +9,10 @@
 
 
   
-@class TPDatePickerItem;
 
 #import <UIKit/UIKit.h>
 
-@interface TPDatePickerSubView : UIView
-
-@property(nonatomic,strong) TPDatePickerItem *item;
+@interface TPDatePickerCalenderFooterView : UIView
 
 @end
 

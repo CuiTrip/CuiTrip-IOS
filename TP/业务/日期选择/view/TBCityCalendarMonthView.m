@@ -18,15 +18,18 @@ typedef struct Tag
     float h;
     float ori_x;
     float ori_y;
+    bool hasBeenSelected;
 
 }TagInfo;
 
 @implementation TBCityCalendarMonthView
 {
     NSInteger _selectedDate;
-    
+    BOOL _hasBeenLayout;
     //用来判断点击
     NSMutableArray* _list;
+    //记录点击的日期
+    NSMutableDictionary* _touchedTags;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -35,6 +38,7 @@ typedef struct Tag
     if (self) {
         // Initialization cod
         _list = [NSMutableArray new];
+        _touchedTags = [NSMutableDictionary new];
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
@@ -53,18 +57,13 @@ typedef struct Tag
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    //draw title
-    CGSize size = [self.title sizeWithFont:[UIFont systemFontOfSize:16.0f]];
-    [HEXCOLOR(0x3D4245) set];
-    [self.title drawInRect:CGRectMake((rect.size.width-size.width)/2, 12, size.width, size.height) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-    
     //draw week days
     [HEXCOLOR(0x666666)set];
     NSString* weekStr = @"";
     CGRect weekRect = CGRectZero;
     for (int i=0; i<7; i++) {
         
-        weekRect = CGRectMake(i*kTPScreenWidth/7, 12+size.height, kTPScreenWidth/7, 55);
+        weekRect = CGRectMake(i*kTPScreenWidth/7, 12, kTPScreenWidth/7, 55);
         if (i == 0) {
             weekStr  = @"日";
         }
@@ -90,7 +89,7 @@ typedef struct Tag
     }
     
     //draw red seperater line
-    drawSingleLine(context,(CGPoint){0,55},(CGPoint){rect.size.width,55} ,HEXCOLOR(0xFA383A), 0.5f);
+    drawSingleLine(context,(CGPoint){0,55},(CGPoint){rect.size.width,55} ,[TPTheme themeColor], 0.5f);
     
     //draw gray seperater lines
     for (int i = 0; i<8; i++) {
@@ -105,7 +104,6 @@ typedef struct Tag
     }
     
     //绘制日期
-    [HEXCOLOR(0xDDDDDD) set];
     int k=0;
     float origin_x = (self.firstWeekDay-1)*kTPScreenWidth/7;
     float origin_y = 55;
@@ -127,13 +125,11 @@ typedef struct Tag
         
         str = [NSString stringWithFormat:@"%d",i];
         
-      //  NSLog(@"%d",i);
- 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //预订日
         bool bCanReserve = false;
         
-        if (i == self.currentDate) {
+        if (i == self.currentDate)
+        {
         
             //红字
             [[TPTheme themeColor]set];
@@ -142,10 +138,31 @@ typedef struct Tag
             
         }
         
-        if ( [self.reservedDates containsObject:@(i)]) {
+        if ( [self.availableDates containsObject:@(i)])
+        {
+           
             bCanReserve = true;
-            //draw a circle
-//            drawSolidRoundCornerForRect(context, CGRectInset(smallRect, 0, 5), 22.5, HEXCOLOR(0xFA383A), nil);
+            
+            if (_hasBeenLayout) {
+                
+                if ([[_touchedTags allKeys] containsObject:@(i)]) {
+                    
+                    NSValue* val = _touchedTags[@(i)];
+                    TagInfo t ;
+                    [val getValue:&t];
+                    if (t.hasBeenSelected) {
+                        //画背景
+                        [HEXCOLOR(0xdddddd) set];
+                        
+                    }
+                    else
+                    {
+                        [self.backgroundColor set];
+                    }
+                    UIRectFill(CGRectMake(t.ori_x+0.5, t.ori_y+0.5, t.w-1, t.h-1));
+                    
+                }
+            }
             [[TPTheme themeColor]set];
             [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
 
@@ -154,50 +171,36 @@ typedef struct Tag
         {
             bCanReserve = false;
             
-            [[TPTheme grayColor] set];
-            [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-  
-//            else if(i == self.tomorrowDate)
-//            {
-//                //红字
-//                [HEXCOLOR(0xFA383A) set];
-//                str = @"明天";
-//                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-//
-//            }
-//            else if (i == self.afterTomorrowDate)
-//            {
-//                //红字
-//                [HEXCOLOR(0xFA383A) set];
-//                str = @"后天";
-//                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-//
-//            }
-//            else
-//            {
-//                //在预订范围内
-//                if ( i >= self.highlightRange.location && i<self.highlightRange.location+self.highlightRange.length) {
-//                    [HEXCOLOR(0x666666) set];
-//                    bCanReserve = true;
-//                }
-//                else
-//                {
-//                    [HEXCOLOR(0xDDDDDD) set];
-//                    bCanReserve = false;
-//                }
-//                
-//                [str drawInRect:CGRectInset(smallRect, 10, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-//            }
+            //改天已被预定
+            if ([self.reservedDates containsObject:@(i)]) {
+                
+                //画背景
+                [HEXCOLOR(0xdddddd) set];
+                UIRectFill(CGRectInset(smallRect, 5, 5));
+                
+                [[UIColor whiteColor] set];
+                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+            }
+            else
+            {
+                [HEXCOLOR(0xdddddd) set];
+                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+            }
         }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
 
-        //set tag info
-        TagInfo t = {bCanReserve,i,kTPScreenWidth/7,55,smallRect.origin.x,smallRect.origin.y};
+
+        TagInfo t = {bCanReserve,i,kTPScreenWidth/7,55,smallRect.origin.x,smallRect.origin.y,0};
         NSValue* value = [[NSValue alloc]initWithBytes:&t objCType:@encode(struct Tag)];
-        [_list addObject:value];
+        if (!_hasBeenLayout) {
+            [_list addObject:value];
+        }
+
         
         k++;
     }
+    
+    _hasBeenLayout = true;
     
 }
 
@@ -205,6 +208,10 @@ typedef struct Tag
 {
     [super touchesBegan:touches withEvent:event];
     
+    if (!self.canEdit) {
+     
+        return;
+    }    
     UITouch* touch = [[event allTouches] anyObject];
     
     CGPoint locationPt = [touch locationInView:self];
@@ -212,25 +219,29 @@ typedef struct Tag
     float  touchPtY = locationPt.y;
     
     if (touchPtY <= 55) {
-        
-        NSLog(@"1");
         return;
-        
     }
     else
     {
         CGRect rect;
+        int mutableIndex = 0;
+        NSValue* mutableValue = nil;
         for (int i=0; i<_list.count; i++) {
             
+            TagInfo t;
             NSValue* val = _list[i];
-            
-            TagInfo t ;
             [val getValue:&t];
             rect = (CGRect){t.ori_x,t.ori_y,t.w,t.h};
             if (CGRectContainsPoint(rect,locationPt) )
             {
                 if (t.b) {
                     _selectedDate = t.date;
+                    t.hasBeenSelected = !t.hasBeenSelected;
+                    
+                    mutableIndex = i;
+                    mutableValue = [[NSValue alloc]initWithBytes:&t objCType:@encode(struct Tag)];
+                    _touchedTags[@(t.date)] = mutableValue;
+                    [self setNeedsDisplay];
                 }
                 else
                 {
@@ -238,10 +249,15 @@ typedef struct Tag
                     _selectedDate = -1;
               
                 }
-               
                 break;
             }
         }
+        
+        if (mutableValue) {
+            [_list replaceObjectAtIndex:mutableIndex withObject:mutableValue];
+        }
+        
+        
     }
 
 }
