@@ -16,6 +16,7 @@
 #import "TPUtils.h"
 #import "TPLoginManager.h"
 #import "TPAPNS.h"
+#import "UMessage.h"
 
 
 

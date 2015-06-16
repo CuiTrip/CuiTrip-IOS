@@ -193,6 +193,7 @@
 		459BAEFD1B21E58700739C7E /* trip_StarS_G@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE71B21E58700739C7E /* trip_StarS_G@x2.png */; };
 		459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */; };
 		459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */; };
+		45A4EDA11B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */; };
 		45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C75E1B29AE8800F31BF5 /* TPCommentListCell.m */; };
 		45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7601B29AE8800F31BF5 /* comment_meta.json */; };
 		45D0C7771B29AE8800F31BF5 /* TPCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7641B29AE8800F31BF5 /* TPCommentListViewController.m */; };
@@ -623,6 +624,8 @@
 		459BAEE71B21E58700739C7E /* trip_StarS_G@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_G@x2.png"; sourceTree = "<group>"; };
 		459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y2@x2.png"; sourceTree = "<group>"; };
 		459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y@x2.png"; sourceTree = "<group>"; };
+		45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
+		45A4EDA01B2FE8E0004AAAA3 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		45D0C75D1B29AE8800F31BF5 /* TPCommentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCommentListCell.h; sourceTree = "<group>"; };
 		45D0C75E1B29AE8800F31BF5 /* TPCommentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCommentListCell.m; sourceTree = "<group>"; };
 		45D0C7601B29AE8800F31BF5 /* comment_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comment_meta.json; sourceTree = "<group>"; };
@@ -791,6 +794,7 @@
 				459BAEB91B219C5500739C7E /* MessageUI.framework in Frameworks */,
 				459BAEB71B219C5100739C7E /* AddressBookUI.framework in Frameworks */,
 				459BAEB51B219C4C00739C7E /* AddressBook.framework in Frameworks */,
+				45A4EDA11B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				459BAEB31B219C3300739C7E /* Security.framework in Frameworks */,
 				F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */,
 			);
@@ -2173,6 +2177,15 @@
 			path = "资源";
 			sourceTree = "<group>";
 		};
+		45A4ED9E1B2FE8E0004AAAA3 /* UMessage_Sdk_1.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */,
+				45A4EDA01B2FE8E0004AAAA3 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.1.0;
+			sourceTree = "<group>";
+		};
 		45D0C75A1B29AE8800F31BF5 /* 评论 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2633,6 +2646,7 @@
 		45D6BA701B268794007DFC7A /* 三方 */ = {
 			isa = PBXGroup;
 			children = (
+				45A4ED9E1B2FE8E0004AAAA3 /* UMessage_Sdk_1.1.0 */,
 				45D6BA711B268794007DFC7A /* SMS_SDK */,
 			);
 			path = "三方";
@@ -3449,6 +3463,10 @@
 				INFOPLIST_FILE = TP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TP/三方/UMessage_Sdk_1.1.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3467,6 +3485,10 @@
 				INFOPLIST_FILE = TP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TP/三方/UMessage_Sdk_1.1.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
