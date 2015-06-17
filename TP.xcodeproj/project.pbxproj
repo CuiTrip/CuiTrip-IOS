@@ -196,6 +196,7 @@
 		459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */; };
 		459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */; };
 		45A4EDA11B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */; };
+		45CF82A11B311908001250ED /* TPDiscoveryDetailListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CF82A01B311908001250ED /* TPDiscoveryDetailListItem.m */; };
 		45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C75E1B29AE8800F31BF5 /* TPCommentListCell.m */; };
 		45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7601B29AE8800F31BF5 /* comment_meta.json */; };
 		45D0C7771B29AE8800F31BF5 /* TPCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7641B29AE8800F31BF5 /* TPCommentListViewController.m */; };
@@ -630,6 +631,8 @@
 		459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y@x2.png"; sourceTree = "<group>"; };
 		45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		45A4EDA01B2FE8E0004AAAA3 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		45CF82A01B311908001250ED /* TPDiscoveryDetailListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListItem.m; sourceTree = "<group>"; };
+		45CF82A21B31190F001250ED /* TPDiscoveryDetailListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListItem.h; sourceTree = "<group>"; };
 		45D0C75D1B29AE8800F31BF5 /* TPCommentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCommentListCell.h; sourceTree = "<group>"; };
 		45D0C75E1B29AE8800F31BF5 /* TPCommentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCommentListCell.m; sourceTree = "<group>"; };
 		45D0C7601B29AE8800F31BF5 /* comment_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comment_meta.json; sourceTree = "<group>"; };
@@ -1949,6 +1952,8 @@
 		459BACC51B1DF62A00739C7E /* item */ = {
 			isa = PBXGroup;
 			children = (
+				45CF82A21B31190F001250ED /* TPDiscoveryDetailListItem.h */,
+				45CF82A01B311908001250ED /* TPDiscoveryDetailListItem.m */,
 				459BACE01B1DFBE800739C7E /* TPDDCommentItem.h */,
 				459BACE11B1DFBE800739C7E /* TPDDCommentItem.m */,
 				459BACE21B1DFBE800739C7E /* TPDDInfoItem.h */,
@@ -3262,6 +3267,7 @@
 				45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */,
 				45028AF21B1C7C1C00417606 /* TPDiscoveryListCell.m in Sources */,
 				45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */,
+				45CF82A11B311908001250ED /* TPDiscoveryDetailListItem.m in Sources */,
 				459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */,
 				45D0C7B21B29BED800F31BF5 /* TPMyServiceListViewDataSource.m in Sources */,
 				4509AB741B22E3E300846032 /* TPRegisterViewController.m in Sources */,

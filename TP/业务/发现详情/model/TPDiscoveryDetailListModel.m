@@ -10,6 +10,12 @@
 
 
 #import "TPDiscoveryDetailListModel.h"
+#import "TPDiscoveryDetailListItem.h"
+#import "TPDDInfoItem.h"
+#import "TPDDProfileItem.h"
+#import "TPDDCommentItem.h"
+#import "TPDDTripItem.h"
+
 
 @interface TPDiscoveryDetailListModel()
 
@@ -22,34 +28,42 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-    
-    return nil;
-}
+    return @{@"sid":self.sid?:@""};
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
 }
-
 
 - (NSString *)methodName {
     
-    //todo:
-    
-    
-    return nil;
+    return [_API_ stringByAppendingString:@"getServiceInfo"];
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
   
-    //todo:
-  
+    TPDiscoveryDetailListItem* item = [TPDiscoveryDetailListItem new];
+    [item autoKVCBinding:JSON];
     
-    return nil;
+    NSMutableArray* list = [NSMutableArray new];
+    
+    TPDDInfoItem* info = [TPDDInfoItem new];
+    info.name = item.name;
+    info.address = item.address;
+    info.desc = item.descpt;
+    info.score = item.score;
+    [list addObject:item];
+    
+    TPDDProfileItem* profileItem = [TPDDProfileItem new];
+//    profileItem.insiderName = item.
+//    profileItem.avatar = i
+    TPDDCommentItem* commentItem = [TPDDCommentItem new];
+    
+    TPDDTripItem* tripItem = [TPDDTripItem new];
+    tripItem.tripTimeLength = item.serviceTime;
+    tripItem.tripTime = item.bestTime;
+    tripItem.tripPeopleNum = item.maxbuyerNum;
+    
+    
+    return list;
 }
 
 @end

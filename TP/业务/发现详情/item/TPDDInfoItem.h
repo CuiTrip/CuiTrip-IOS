@@ -13,6 +13,10 @@
 
 @interface TPDDInfoItem : VZListItem
 
+@property(nonatomic,strong)NSString* name;
+@property(nonatomic,strong)NSString* address;
+@property(nonatomic,strong)NSString* desc;
+@property(nonatomic,strong)NSString* score;
 
 @end
 

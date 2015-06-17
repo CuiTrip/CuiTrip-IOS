@@ -17,7 +17,7 @@
 #import "TPDiscoveryDetailContentViewController.h"
 @interface TPTripArrangementViewController()
 
-@property(nonatomic,strong)BXImageScrollView* bannerView;
+@property(nonatomic,strong) BXImageScrollView* bannerView;
 @property(nonatomic,strong) UIScrollView* scrollView;
 @property(nonatomic,strong) TPDDInfoCellContainerView* infoView;
 @property(nonatomic,strong) TPTripArrangementModel *tripArrangementModel; 

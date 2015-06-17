@@ -13,5 +13,7 @@
 
 @interface TPDiscoveryDetailListModel : VZHTTPListModel
 
+@property(nonatomic,strong) NSString* sid;
+
 @end
 

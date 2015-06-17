@@ -143,13 +143,14 @@
     
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    //self.keyModel = self.model;
+//    self.discoveryDetailListModel
+    self.keyModel = self.discoveryDetailListModel;
     
     //5,REQUIRED:register model to parent view controller
-    //[self registerModel:self.keyModel];
+    [self registerModel:self.keyModel];
 
     //6,Load Data
-    //[self load];
+    [self load];
     
     
     //header view

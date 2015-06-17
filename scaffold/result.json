@@ -1,9 +1,33 @@
 {
-            "serviceNo": "1", //列表中旅程序号
-            "sid": "231", //服务ID
-            "serviceName": "阿亮带你看妈祖绕境", //旅程名称  
-            "address": "台湾彰化县", //旅程所在地
-            "insiderHeadPic": "http://alicdn.aliyun.com/pic1.jpg", //发现者头像
-            "insiderNickName": "阿亮" // 发现者昵称
+		"sid": "8",
+        "name": "阿亮带你看妈祖绕境",
+        "status": "0",
+        "checkStatus": "0",
+        "type": "1",
+        "address": "彰化县",
+        "lat": "",
+        "lng": "",
+        "proc": "0",
+        "city": "",
+        "insiderId": "1",
+        "score": "0",
+        "descpt": "阿亮带你看妈祖绕境",
+        "pic": "[\"http://alicdn.aliyun.com/pic2.jpg\",\"http://alicdn.aliyun.com/pic2.jpg\",\"http://alicdn.aliyun.com/pic2.jpg\",\"http://alicdn.aliyun.com/pic2.jpg\"]",//pic字段为Jsonarray数组
+        "backPic": "http://alicdn.aliyun.com/pic2.jpg",
+        "tag": "",
+        "moneyType": "",
+        "price": "300",
+        "priceDesc": "",
+        "maxbuyerNum": "5",
+        "serviceTime": "3h",
+        "bestTime": "9:00~11:00",
+        "enableDate": "0",
+        "meetingWay": "2",
+        "extInfo": "",
+        "isDeleted": "0",
+        "gmtCreated": "1434466501000",
+        "gmtModified": "1434466501000",
+        "country": ""
 
-    }
+
+}

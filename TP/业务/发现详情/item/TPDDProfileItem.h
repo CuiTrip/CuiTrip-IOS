@@ -13,6 +13,14 @@
 
 @interface TPDDProfileItem : VZListItem
 
+@property(nonatomic,strong)NSString* avatar;
+@property(nonatomic,strong)NSString* insiderName;
+@property(nonatomic,strong)NSString* insiderSign;
+@property(nonatomic,strong)NSString* career;
+@property(nonatomic,strong)NSString* hobby;
+@property(nonatomic,strong)NSString* language;
+@property(nonatomic,strong)NSString* registerTime;
+@property(nonatomic,strong)NSString* status;
 
 @end
 

@@ -30,9 +30,6 @@
     [super awakeFromNib];
     
     self.avatarIcon.image = __image(@"girl.jpg");
-    self.avatarIcon.layer.cornerRadius = 0.5 * self.avatarIcon.vzHeight;
-    self.avatarIcon.layer.masksToBounds = true;
-    
 
 }
 

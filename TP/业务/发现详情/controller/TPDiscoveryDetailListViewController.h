@@ -13,5 +13,7 @@
 
 @interface TPDiscoveryDetailListViewController : VZListViewController
 
+@property(nonatomic,strong)NSString* sid;
+
 @end
   
