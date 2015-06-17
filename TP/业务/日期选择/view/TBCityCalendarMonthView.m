@@ -138,7 +138,7 @@ typedef struct Tag
             
         }
         
-        if ( [self.availableDates containsObject:@(i)])
+        if ( self.availableDates == nil ||  [self.availableDates containsObject:@(i)])
         {
            
             bCanReserve = true;
@@ -171,21 +171,21 @@ typedef struct Tag
         {
             bCanReserve = false;
             
-            //改天已被预定
-            if ([self.reservedDates containsObject:@(i)]) {
-                
-                //画背景
+//            //改天已被预定
+//            if ([self.reservedDates containsObject:@(i)]) {
+//                
+//                //画背景
+//                [HEXCOLOR(0xdddddd) set];
+//                UIRectFill(CGRectInset(smallRect, 5, 5));
+//                
+//                [[UIColor whiteColor] set];
+//                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+//            }
+//            else
+//            {
                 [HEXCOLOR(0xdddddd) set];
-                UIRectFill(CGRectInset(smallRect, 5, 5));
-                
-                [[UIColor whiteColor] set];
                 [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-            }
-            else
-            {
-                [HEXCOLOR(0xdddddd) set];
-                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-            }
+//            }
         }
         
 

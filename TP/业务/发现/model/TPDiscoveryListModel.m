@@ -30,7 +30,7 @@
 - (NSDictionary *)dataParams {
     
     //todo:
-    return @{@"uid":[TPUser uid],@"token":[TPUser token],@"insiderId":[TPUser uid]};
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"insiderId":[TPUser uid]?:@""};
 }
 
 - (NSDictionary* )headerParams{

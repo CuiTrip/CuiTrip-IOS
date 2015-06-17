@@ -37,12 +37,8 @@
  */
 @property(nonatomic,assign) NSInteger currentDate;
 /**
- 可预订日期
+ 可预订日期, nil => all
  */
 @property(nonatomic,strong) NSArray* availableDates;
-/**
- 已预订日期
- */
-@property(nonatomic,strong) NSArray* reservedDates;
 
 @end

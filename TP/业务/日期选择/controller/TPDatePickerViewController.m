@@ -77,6 +77,7 @@
 @property(nonatomic,strong) TPDatePickerModel *datePickerModel;
 
 
+
 @end
 
 @implementation TPDatePickerViewController
@@ -117,6 +118,8 @@
     if (!self.date) {
         self.date = [NSDate date];
     }
+    
+    
     
     [self.view setBackgroundColor:[TPTheme yellowColor]];
     
@@ -239,7 +242,6 @@
     {
         NSCalendar* calendar = [NSCalendar currentCalendar];
         NSDateComponents* oldComponent = self.currentComponent;
-        NSUInteger firstDay = oldComponent.day;
         oldComponent.day = 1;
         oldComponent.month ++;
         NSDateComponents* newCurrentM = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:oldComponent.date];
@@ -249,9 +251,10 @@
         TBCityCalendarMonthView* calendarView = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, self.selectionView.vzBottom, self.view.vzWidth, 380)];
         
         calendarView.canEdit = self.type == kSelection?true:false;
-        calendarView.tag = 0;
+        calendarView.tag = oldComponent.month;
         calendarView.delegate = self;
         calendarView.firstWeekDay = newCurrentM.weekday;
+        calendarView.availableDates = self.type == kSelection?nil:[self availableDaysInMonth:newCurrentM.month];
         calendarView.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
                                                                        inUnit:NSMonthCalendarUnit
                                                                       forDate:newCurrentM.date].length;
@@ -282,8 +285,9 @@
         
         TBCityCalendarMonthView* calendarView = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, self.selectionView.vzBottom, self.view.vzWidth, 380)];
         
+        calendarView.availableDates = self.type == kSelection?nil:[self availableDaysInMonth:oldComponent.month];
         calendarView.canEdit = self.type == kSelection?true:false;
-        calendarView.tag = 0;
+        calendarView.tag = oldComponent.month;
         calendarView.delegate = self;
         calendarView.firstWeekDay = newCurrentM.weekday;
         calendarView.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
@@ -300,6 +304,7 @@
 
 - (void)onMonthView:(UIView*)v DateSelected:(NSInteger)date
 {
+    
     
 }
 
@@ -321,21 +326,41 @@
     
     TBCityCalendarMonthView* calendarView = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, self.selectionView.vzBottom, self.view.vzWidth, 380)];
     
+    calendarView.availableDates = self.type == kSelection?nil:[self availableDaysInMonth:newCurrentM.month];
     calendarView.canEdit = self.type == kSelection?true:false;
-    calendarView.tag = 0;
+    calendarView.tag = oldComponent.month;
     calendarView.delegate = self;
     calendarView.firstWeekDay = newCurrentM.weekday;
     calendarView.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
                                                                     inUnit:NSMonthCalendarUnit
                                                                    forDate:newCurrentM.date].length;
 
-    calendarView.availableDates =self.availableDates;
-    calendarView.reservedDates = self.reservedDates;
     self.calendarView = calendarView;
     [self.view addSubview:calendarView];
 }
 
 
+- (NSArray* )availableDaysInMonth:(NSInteger)month
+{
+    if (!self.availableDates) {
+        return nil;
+    }
+    else
+    {
+        NSMutableArray* list = [NSMutableArray new];
+        for(NSDate* date in self.availableDates)
+        {
+            NSCalendar* calendar = [NSCalendar currentCalendar];
+            NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
+
+            if(month == component.month)
+            {
+                [list addObject:@(component.day)];
+            }
+        }
+        return [list copy];
+    }
+}
 
 
 
