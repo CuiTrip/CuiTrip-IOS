@@ -12,6 +12,7 @@
 #import "TPDatePickerViewController.h"
 #import "TPDatePickerModel.h"
 #import "TBCityCalendarMonthView.h"
+#import "TPGetServiceEnableDateModel.h"
 
 @interface TPDatePickerSelectionView : UIView
 @property (strong, nonatomic)  UILabel *dateLabel;
@@ -69,12 +70,12 @@
 
 @end
 
-@interface TPDatePickerViewController()<TBCityCalendarMonthViewDelegate,UIScrollViewDelegate>
+@interface TPDatePickerViewController()<TBCityCalendarMonthViewDelegate>
 
 @property(nonatomic,strong) NSDateComponents* currentComponent;
 @property(nonatomic,strong) TPDatePickerSelectionView* selectionView;
 @property(nonatomic,strong) TBCityCalendarMonthView* calendarView;
-@property(nonatomic,strong) TPDatePickerModel *datePickerModel;
+@property(nonatomic,strong) TPGetServiceEnableDateModel* availableDatesModel;
 
 
 
@@ -90,16 +91,6 @@
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - getters 
-
-   
-- (TPDatePickerModel *)datePickerModel
-{
-    if (!_datePickerModel) {
-        _datePickerModel = [TPDatePickerModel new];
-        _datePickerModel.key = @"__TPDatePickerModel__";
-    }
-    return _datePickerModel;
-}
 
 
 
@@ -118,14 +109,13 @@
     if (!self.date) {
         self.date = [NSDate date];
     }
-    
-    
-    
+
     [self.view setBackgroundColor:[TPTheme yellowColor]];
     
     self.selectionView = [[TPDatePickerSelectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 40)];
-    self.selectionView.dateLabel.text = [TPUtils dateFormatString:self.date];
+    self.selectionView.dateLabel.text = @"";
     self.selectionView.backgroundColor = [TPTheme themeColor];
+    self.selectionView.hidden = true;
     [self.view addSubview:self.selectionView];
     
     __weak typeof(self) weakSelf = self;
@@ -140,15 +130,6 @@
     
     };
 
-    [self layoutCalender];
-
-    
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDatePickerCalenderFooterView" owner:self options:nil];
-    UIView* v =(UIView *)[nib objectAtIndex:0];
-    v.backgroundColor = [UIColor clearColor];
-    v.vzOrigin = CGPointMake(0, self.calendarView.vzBottom);
-    v.vzSize = CGSizeMake(self.view.vzWidth, 20);
-    [self.view addSubview:v];
 }
 
 
@@ -158,6 +139,55 @@
 {
     [super viewDidLoad];
     //todo..
+    
+    if (self.type == kCheckOnly) {
+        
+        self.availableDatesModel = [TPGetServiceEnableDateModel new];
+        self.availableDatesModel.sid = self.sid;
+        __weak typeof(self) weakSelf = self;
+        
+        SHOW_SPINNER(self);
+        [self.availableDatesModel loadWithCompletion:^(VZModel *model, NSError *error) {
+           
+            TPGetServiceEnableDateModel* dateModel = (TPGetServiceEnableDateModel* )model;
+            NSArray* availableList = dateModel.availableDates;
+        
+            HIDE_SPINNER(self);
+            weakSelf.selectionView.hidden = NO;
+            if (!error) {
+                
+                if (availableList.count > 0) {
+                    
+                    NSDate* date = availableList[0];
+                    weakSelf.date = date;
+                    weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:date];
+                    [weakSelf layoutCalender];
+                }
+                else
+                {
+                    weakSelf.date = [NSDate date];
+                    weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:weakSelf.date];
+                    [weakSelf layoutCalender];
+
+                }
+            }
+            else
+            {
+                weakSelf.date = [NSDate date];
+                weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:weakSelf.date];
+                [weakSelf layoutCalender];
+            }
+        }];
+        
+    }
+    else
+    {
+        self.date = [NSDate date];
+        self.selectionView.dateLabel.text = [TPUtils monthDateFormatString:self.date];
+        self.selectionView.hidden = NO;
+        [self layoutCalender];
+    
+    }
     
 }
 
@@ -304,7 +334,28 @@
 
 - (void)onMonthView:(UIView*)v DateSelected:(NSInteger)date
 {
+    NSInteger year = self.currentComponent.year;
+    NSInteger month = v.tag;
+    NSInteger day = date;
     
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    calendar.firstWeekday = 1;
+    calendar.minimumDaysInFirstWeek = 7;
+    NSDateComponents* component = [NSDateComponents new];
+    component.year = year;
+    component.month = month;
+    component.day = day;
+    component.hour = 0;
+    component.minute = 0;
+    component.second = 0;
+    component.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+
+    
+    NSDate* ret = [calendar dateFromComponents:component];
+    if(self.callback)
+    {
+        self.callback(ret);
+    }
     
 }
 
@@ -337,18 +388,27 @@
 
     self.calendarView = calendarView;
     [self.view addSubview:calendarView];
+    
+    
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDatePickerCalenderFooterView" owner:self options:nil];
+    UIView* v =(UIView *)[nib objectAtIndex:0];
+    v.backgroundColor = [UIColor clearColor];
+    v.vzOrigin = CGPointMake(0, self.calendarView.vzBottom);
+    v.vzSize = CGSizeMake(self.view.vzWidth, 20);
+    [self.view addSubview:v];
 }
 
 
 - (NSArray* )availableDaysInMonth:(NSInteger)month
 {
-    if (!self.availableDates) {
+    NSArray* availableDates = self.availableDatesModel.availableDates;
+    if (!availableDates) {
         return nil;
     }
     else
     {
         NSMutableArray* list = [NSMutableArray new];
-        for(NSDate* date in self.availableDates)
+        for(NSDate* date in availableDates)
         {
             NSCalendar* calendar = [NSCalendar currentCalendar];
             NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];

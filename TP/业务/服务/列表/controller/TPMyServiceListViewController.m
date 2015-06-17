@@ -129,14 +129,14 @@
 {
     [super viewWillAppear:animated];
 
-    self.tabBarController.tabBar.hidden = false;
+
     
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    self.tabBarController.tabBar.hidden = false;
     //todo..
 }
 
@@ -232,6 +232,7 @@
     if ([item.check_status integerValue] == 1 ) {
         
         TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
+        vc.sid = item.sid;
         [self.navigationController pushViewController:vc animated:true];
 
     }

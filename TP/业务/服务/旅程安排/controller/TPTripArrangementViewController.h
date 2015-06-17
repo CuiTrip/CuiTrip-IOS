@@ -13,5 +13,7 @@
 
 @interface TPTripArrangementViewController : VZViewController
 
+@property(nonatomic,strong)NSString* sid;
+
 @end
   

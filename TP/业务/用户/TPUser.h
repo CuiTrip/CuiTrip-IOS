@@ -50,6 +50,8 @@
 
 + (void)changeUserType:(TPUserType)type;
 
++ (void)changeAvatar:(NSString* )avatar;
+
 + (void)updateUserProfile:(NSDictionary* )info withCompletion:(void(^)(NSError* err))callback;
 
 + (void)update:(NSDictionary* )info;

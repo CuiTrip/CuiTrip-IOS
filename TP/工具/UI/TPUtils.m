@@ -170,17 +170,63 @@ static NSArray* list = nil;
     
 }
 
-+ (NSString* )dateFormatString:(NSDate* )date
++ (NSString* )monthDateFormatString:(NSDate* )date
 {
     NSCalendar* calendar = [NSCalendar currentCalendar];
     calendar.firstWeekday = 1;
     calendar.minimumDaysInFirstWeek = 7;
     NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
     
-    NSString* str = [[NSString alloc]initWithFormat:@"%ld年%ld月%ld日",component.year,component.month,component.day];
+    NSString* str = [[NSString alloc]initWithFormat:@"%ld年%ld月",component.year,component.month];
     
     
     return str;
 }
+
++ (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"upPic"]
+                                requestConfig:config
+                               responseConfig:vz_defaultHTTPResponseConfig()
+                                       params:@{@"uid":[TPUser uid]?:@"",@"token":[TPUser token],@"picBase64":base64?:@"",@"picName":@"file"}
+                            completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+                                
+                                if (!error) {
+                                    NSInteger code = [responseObj[@"code"] integerValue];
+                                    
+                                    if (code == 0) {
+                                        // TOAST([UIScreen mainScreen], @"更新成功!");
+                                        NSDictionary* result = responseObj[@"result"];
+                                        NSString* picURL = result[@"picurl"];
+                                        
+                                        if (callback) {
+                                            callback(picURL,nil);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        NSError* err= [TPUtils errorForHTTP:responseObj];
+                                        if (callback) {
+                                            callback(nil,err);
+                                        }
+                                        //TOAST_ERROR(self, err);
+                                    }
+                                }
+                                else
+                                {
+                                    //TOAST_ERROR(self, error);
+                                    if (callback) {
+                                        callback(nil,error);
+                                    }
+                                }
+                                
+                            }];
+
+    
+}
+
+
 
 @end

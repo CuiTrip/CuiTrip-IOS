@@ -20,6 +20,8 @@
 
 + (void)localCodesWithCompletion:(void(^)(NSArray* list))completion;
 
-+ (NSString* )dateFormatString:(NSDate* )date;
++ (NSString* )monthDateFormatString:(NSDate* )date;
+
++ (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback;
 
 @end

@@ -146,6 +146,12 @@
     [self synchronize];
 }
 
++ (void)changeAvatar:(NSString* )avatar
+{
+    [TPUser sharedInstance].userItem.headPic = avatar;
+    [self synchronize];
+}
+
 + (void)updateUserProfile:(NSDictionary *)info withCompletion:(void (^)(NSError *))callback
 {
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();

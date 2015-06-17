@@ -13,5 +13,7 @@
 
 @interface TPTripArrangementModel : VZHTTPModel
 
+@property(nonatomic,strong)NSString* sid;
+
 @end
 

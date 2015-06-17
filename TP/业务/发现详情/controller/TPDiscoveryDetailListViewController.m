@@ -18,6 +18,8 @@
 #import "TPDatePickerViewController.h"
 #import "TPProfilePageListViewController.h"
 #import "BXImageScrollView.h"
+
+
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
 @property(nonatomic,strong) BXImageScrollView* bannerView;

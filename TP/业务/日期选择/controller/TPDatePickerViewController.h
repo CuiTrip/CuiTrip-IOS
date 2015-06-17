@@ -21,11 +21,11 @@ typedef enum
 
 @interface TPDatePickerViewController : VZViewController
 
+@property(nonatomic,copy) void(^callback)(NSDate* date);
 @property(nonatomic,assign) DatePickerType type;
 @property(nonatomic,strong) NSDate* date;
+@property(nonatomic,strong) NSString* sid;
 
-@property(nonatomic,strong) NSArray* availableDates;
-@property(nonatomic,strong) NSArray* reservedDates;
 
 @end
   

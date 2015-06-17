@@ -94,6 +94,7 @@
             icon.vzOrigin = CGPointMake(cell.vzWidth-30, 5);
             icon.vzSize = CGSizeMake(50, 50);
             icon.image = __image(@"girl.jpg");
+            [icon sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
             icon.tag = 100;
             [cell.contentView addSubview:icon];
             cell.textLabel.text = @"修改头像";
@@ -362,24 +363,32 @@
 
 - (void)uploadPics:(NSString* )base64
 {
-    NSDictionary* dict = @{
-                           @"uid":[TPUser uid]?:@"",
-                           @"token":[TPUser token]?:@"",
-                           @"realName":[TPUser userName]?:@"",
-                           @"nick":[TPUser userNick]?:@"",
-                           @"gener":[TPUser gender]?:@"",
-                           @"city":[TPUser country]?:@"",
-                           @"language":[TPUser language]?:@"",
-                           @"career":[TPUser career]?:@"",
-                           @"interests":[TPUser hobby]?:@"",
-                           @"sign":[TPUser sign]?:@""
-                           };
+    //SHOW_SPINNER(self);
+    [TPUtils uploadImage:base64 WithCompletion:^(NSString *url, NSError *err) {
     
-    NSMutableDictionary* dictMutable = [dict mutableCopy];
-    dictMutable[@"avatar"] = base64;
+        if (!err) {
+            
+            NSDictionary* dict = @{
+                                   @"uid":[TPUser uid]?:@"",
+                                   @"token":[TPUser token]?:@"",
+                                   @"headPic":url?:@""
+                                       };
+            
+            [TPUser updateUserProfile:[dict copy] withCompletion:^(NSError *error) {
+                
+                if (!error) {
+                    [TPUser changeAvatar:url];
+                }
+            }];
+            
+        }
+        else
+        {
+            //TOAST_ERROR(self, err);
+        }
+        
+    }];
     
-    // SHOW_SPINNER(self);
-    [TPUser updateUserProfile:[dictMutable copy] withCompletion:nil];
 }
 
 

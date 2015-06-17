@@ -255,6 +255,7 @@
 		45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C81E1B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m */; };
 		45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */; };
 		45D0C85D1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C85C1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m */; };
+		45D48BA41B31C23E00B5801F /* TPGetServiceEnableDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48BA31B31C23E00B5801F /* TPGetServiceEnableDateModel.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -732,6 +733,8 @@
 		45D0C8201B2BE06D00F31BF5 /* ETImageTransformTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETImageTransformTool.m; sourceTree = "<group>"; };
 		45D0C85B1B2C8CF400F31BF5 /* TPProfileUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProfileUpdateViewController.h; sourceTree = "<group>"; };
 		45D0C85C1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProfileUpdateViewController.m; sourceTree = "<group>"; };
+		45D48BA21B31C23E00B5801F /* TPGetServiceEnableDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGetServiceEnableDateModel.h; sourceTree = "<group>"; };
+		45D48BA31B31C23E00B5801F /* TPGetServiceEnableDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGetServiceEnableDateModel.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -2038,6 +2041,8 @@
 		459BAD381B1F5BA600739C7E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				45D48BA21B31C23E00B5801F /* TPGetServiceEnableDateModel.h */,
+				45D48BA31B31C23E00B5801F /* TPGetServiceEnableDateModel.m */,
 				459BAD391B1F5BA600739C7E /* TPDatePickerModel.h */,
 				459BAD3A1B1F5BA600739C7E /* TPDatePickerModel.m */,
 			);
@@ -3185,6 +3190,7 @@
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
 				4509ABD21B23D59A00846032 /* TPProfileSettingsViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
+				45D48BA41B31C23E00B5801F /* TPGetServiceEnableDateModel.m in Sources */,
 				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
 				45DD47401B28200200D2BB62 /* TPChatListViewDataSource.m in Sources */,
 				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,

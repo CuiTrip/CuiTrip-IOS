@@ -69,7 +69,7 @@
     
     [aCoder encodeObject:@(self.type) forKey:@"type"];
     [aCoder encodeObject:self.uid forKey:@"uid"];
-    [aCoder encodeObject:self.headPic forKey:@"avatar"];
+    [aCoder encodeObject:self.headPic forKey:@"headPic"];
     [aCoder encodeObject:self.realName forKey:@"username"];
     [aCoder encodeObject:self.nick forKey:@"nickname"];
     [aCoder encodeObject:self.mobile forKey:@"mobile"];
