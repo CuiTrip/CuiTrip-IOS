@@ -20,4 +20,6 @@
 
 + (void)localCodesWithCompletion:(void(^)(NSArray* list))completion;
 
++ (NSString* )dateFormatString:(NSDate* )date;
+
 @end

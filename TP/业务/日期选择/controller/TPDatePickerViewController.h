@@ -23,6 +23,8 @@ typedef enum
 
 @property(nonatomic,assign) DatePickerType type;
 @property(nonatomic,strong) NSDate* date;
+
+@property(nonatomic,strong) NSArray* availableDates;
 @property(nonatomic,strong) NSArray* reservedDates;
 
 @end

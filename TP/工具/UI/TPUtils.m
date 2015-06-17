@@ -170,4 +170,17 @@ static NSArray* list = nil;
     
 }
 
++ (NSString* )dateFormatString:(NSDate* )date
+{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    calendar.firstWeekday = 1;
+    calendar.minimumDaysInFirstWeek = 7;
+    NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
+    
+    NSString* str = [[NSString alloc]initWithFormat:@"%ld年%ld月%ld日",component.year,component.month,component.day];
+    
+    
+    return str;
+}
+
 @end
