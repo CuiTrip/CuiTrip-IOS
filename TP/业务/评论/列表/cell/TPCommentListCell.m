@@ -52,10 +52,10 @@
 {
     [super setItem:item];
     
-    [self.icon sd_setImageWithURL:__url(item.avatarUrl) placeholderImage:__image(@"girl.jpg")];
+    [self.icon sd_setImageWithURL:__url(item.insiderHeadPic) placeholderImage:__image(@"girl.jpg")];
     [self.contentLabel setText:item.content];
-    [self.nameLabel setText:item.userName];
-    [self.locationLabel setText:item.userLocation];
+    [self.nameLabel setText:item.insiderNickName];
+    [self.locationLabel setText:item.insiderLocation];
   
 }
 

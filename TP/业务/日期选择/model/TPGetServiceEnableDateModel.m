@@ -25,7 +25,17 @@
     return @{@"sid":self.sid?:@""};
 }
 
+- (NSString *)methodName {
+    
+    return [_API_ stringByAppendingString:@"getServiceEnableDate"];
+}
 
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+}
 
 - (BOOL)parseResponse:(id)JSON
 {

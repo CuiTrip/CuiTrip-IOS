@@ -76,7 +76,7 @@
 @property(nonatomic,strong) TPDatePickerSelectionView* selectionView;
 @property(nonatomic,strong) TBCityCalendarMonthView* calendarView;
 @property(nonatomic,strong) TPGetServiceEnableDateModel* availableDatesModel;
-
+@property(nonatomic,strong) NSMutableArray* callbackResults;
 
 
 @end
@@ -103,6 +103,7 @@
     
     //todo..
     self.navigationController.navigationBarHidden = NO;
+    self.callbackResults = [NSMutableArray new];
     
     [self setTitle:@"选择时间"];
     
@@ -182,6 +183,8 @@
     }
     else
     {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(onConfirm)];
+        
         self.date = [NSDate date];
         self.selectionView.dateLabel.text = [TPUtils monthDateFormatString:self.date];
         self.selectionView.hidden = NO;
@@ -259,6 +262,16 @@
     [super showError:error withModel:model];
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - barbutton
+
+- (void)onConfirm
+{
+    if (self.callback) {
+        self.callback([self.callbackResults copy]);
+    }
+    [self.navigationController popViewControllerAnimated:true];
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - callback methods
@@ -293,7 +306,7 @@
         self.calendarView = calendarView;
         [self.view addSubview:self.calendarView];
         
-        self.selectionView.dateLabel.text = [NSString stringWithFormat:@"%ld年%ld月%ld日",newCurrentM.year,newCurrentM.month,newCurrentM.day];
+        self.selectionView.dateLabel.text = [NSString stringWithFormat:@"%ld年%ld月",newCurrentM.year,newCurrentM.month];
     }
 }
 
@@ -328,7 +341,7 @@
         self.calendarView = calendarView;
         [self.view addSubview:self.calendarView];
         
-        self.selectionView.dateLabel.text = [NSString stringWithFormat:@"%ld年%ld月%ld日",newCurrentM.year,newCurrentM.month,newCurrentM.day];
+        self.selectionView.dateLabel.text = [NSString stringWithFormat:@"%ld年%ld月",newCurrentM.year,newCurrentM.month];
     }
 }
 
@@ -352,11 +365,18 @@
 
     
     NSDate* ret = [calendar dateFromComponents:component];
-    if(self.callback)
-    {
-        self.callback(ret);
-    }
     
+    for (NSDate* date in self.callbackResults) {
+        
+        if ([date compare:ret] == NSOrderedSame) {
+            
+            
+        }
+        else
+        {
+            
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

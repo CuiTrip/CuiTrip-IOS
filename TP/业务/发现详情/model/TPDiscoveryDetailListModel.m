@@ -37,6 +37,13 @@
     return [_API_ stringByAppendingString:@"getServiceInfo"];
 }
 
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+}
+
 - (NSMutableArray* )responseObjects:(id)JSON
 {
   

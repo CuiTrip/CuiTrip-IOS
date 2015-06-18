@@ -12,6 +12,6 @@
 #import "VZHTTPListModel.h"
 
 @interface TPCommentListModel : VZHTTPListModel
-
+@property(nonatomic,strong)NSString* sid;
 @end
 

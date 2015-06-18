@@ -1,33 +1,11 @@
 {
-		"sid": "8",
-        "name": "阿亮带你看妈祖绕境",
-        "status": "0",
-        "checkStatus": "0",
-        "type": "1",
-        "address": "彰化县",
-        "lat": "",
-        "lng": "",
-        "proc": "0",
-        "city": "",
-        "insiderId": "1",
-        "score": "0",
-        "descpt": "阿亮带你看妈祖绕境",
-        "pic": "[\"http://alicdn.aliyun.com/pic2.jpg\",\"http://alicdn.aliyun.com/pic2.jpg\",\"http://alicdn.aliyun.com/pic2.jpg\",\"http://alicdn.aliyun.com/pic2.jpg\"]",//pic字段为Jsonarray数组
-        "backPic": "http://alicdn.aliyun.com/pic2.jpg",
-        "tag": "",
-        "moneyType": "",
-        "price": "300",
-        "priceDesc": "",
-        "maxbuyerNum": "5",
-        "serviceTime": "3h",
-        "bestTime": "9:00~11:00",
-        "enableDate": "0",
-        "meetingWay": "2",
-        "extInfo": "",
-        "isDeleted": "0",
-        "gmtCreated": "1434466501000",
-        "gmtModified": "1434466501000",
-        "country": ""
+            "No": "1", //列表中旅程序号
+            "cid": "231", //订单ID
+            "travellerId": "25", //旅行者id
+            "insiderHeadPic": "http://alicdn.aliyun.com/pic1.jpg", //发现者头像
+            "insiderNickName": "阿亮", // 发现者昵称
+            "gmtCreated": "2015-08-09", //评论日期
+            "content": "终于看到了《练习曲》中的那个场景，很真实，这才是真正的台湾，"
 
-
+	
 }
