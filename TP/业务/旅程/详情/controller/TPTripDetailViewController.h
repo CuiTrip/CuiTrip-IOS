@@ -19,6 +19,7 @@ typedef enum
 
 @interface TPTripDetailViewController : VZViewController
 @property(nonatomic,assign)TripStatus status;
+@property(nonatomic,strong)NSString* oid;
 
 
 @end

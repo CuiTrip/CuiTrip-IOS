@@ -65,12 +65,12 @@
 {
     [super setItem:item];
     
-    [self.icon sd_setImageWithURL:__url(item.imageURL) placeholderImage:__image(@"mazu.png")];
+    [self.icon sd_setImageWithURL:__url(item.servicePIC) placeholderImage:__image(@"mazu.png")];
     self.statusLabel.text = item.status;
-    self.dateLabel.text = item.dateString;
-    self.titleLabel.text = item.title;
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.name,item.location];
-    self.moneyLabel.text = [NSString stringWithFormat:@"RMB: %@",item.money];
+    self.dateLabel.text = item.serviceDate;
+    self.titleLabel.text = item.serviceName;
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.insiderNickName,item.serviceAddress];
+    self.moneyLabel.text = [NSString stringWithFormat:@"RMB: %@",item.serviceFee];
   
 }
 

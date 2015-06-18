@@ -11,9 +11,12 @@
 
 #import "TPTripDetailViewController.h"
 #import "TPPublishCommentViewController.h"
+#import "TPConfirmTripOrderModel.h"
+#import "TPCancelTripOrderModel.h"
 #import "TPTripDetailModel.h" 
 
 @interface TPTripDetailViewController()
+
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -24,7 +27,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *tripFeeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tripStatusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *actionBtn;
-@property(nonatomic,strong)TPTripDetailModel *tripDetailModel; 
+
+@property(nonatomic,strong)TPTripDetailModel *tripDetailModel;
+@property(nonatomic,strong)TPConfirmTripOrderModel* confirmTripOrderModel;
+@property(nonatomic,strong)TPCancelTripOrderModel* cancelTripOrderModel;
 
 @end
 
@@ -49,6 +55,22 @@
     return _tripDetailModel;
 }
 
+
+- (TPConfirmTripOrderModel* )confirmTripOrderModel
+{
+    if (!_confirmTripOrderModel) {
+        _confirmTripOrderModel = [TPConfirmTripOrderModel new];
+    }
+    return _confirmTripOrderModel;
+}
+
+- (TPCancelTripOrderModel* )cancelTripOrderModel
+{
+    if (!_cancelTripOrderModel) {
+        _cancelTripOrderModel = [TPCancelTripOrderModel new];
+    }
+    return _cancelTripOrderModel;
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -81,7 +103,8 @@
     {
         if (self.status == kWillBegin) {
             self.tripStatusLabel.hidden = true;
-            self.actionBtn.hidden = true;
+            self.actionBtn.hidden = false;
+            [self.actionBtn setTitle:@"取消旅程" forState:UIControlStateNormal];
         }
         else
         {
@@ -153,6 +176,15 @@
 {
     //todo:
     [super showModel:model];
+    
+    self.titleLabel.text = self.tripDetailModel.serviceName;
+    [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"girl.jpg")];
+    self.nameLabel.text = self.tripDetailModel.insiderNickName;
+    self.descLabel.text = self.tripDetailModel.insiderSign;
+    self.tripDateLabel.text = self.tripDetailModel.serviceDate;
+    self.tripNumberLabel.text = self.tripDetailModel.buyerNum;
+    self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
+
 }
 
 - (void)showEmpty:(VZModel *)model
@@ -172,6 +204,7 @@
 {
     //todo:
     [super showError:error withModel:model];
+    
 }
 - (IBAction)onAction:(id)sender {
     
@@ -186,7 +219,25 @@
         }
         else
         {
-        
+            //取消旅程
+            self.cancelTripOrderModel.oid = self.oid;
+            
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf;
+            [self.cancelTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+               
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"取消成功");
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+            }];
             
         }
     }
@@ -195,6 +246,27 @@
         if (self.status == kFinish) {
             
             //去确认行程
+            self.confirmTripOrderModel.oid = self.oid;
+            
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf;
+            [self.confirmTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"确认成功");
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+                
+                
+            }];
+            
             
         }
         

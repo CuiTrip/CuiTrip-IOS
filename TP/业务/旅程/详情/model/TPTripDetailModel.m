@@ -22,32 +22,49 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"oid":self.oid?:@""};
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
-}
 
 - (NSString *)methodName {
    
-    //todo:
-   
-    return nil;
+    return [_API_ stringByAppendingPathComponent:@"getOrderInfo"];
 }
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+}
+
+/**
+ "oid": "231 ", //订单ID
+ "status": "已结束", //旅程状态
+ "insiderId": "25", //发现者id
+ "insiderHeadPic": "http://alicdn.aliyun.com/pic1.jpg", //发现者头像
+ "insiderNickName": "阿亮", // 发现者昵称
+ "serviceDate": "2015-08-09", //服务日期
+ "buyerNum": "4人",      //服务人数
+ "orderPrice": "免费体验"
+ */
 
 - (BOOL)parseResponse:(id)JSON
 {
     //todo:
-  
+    _insiderHeadPic = JSON[@"insiderHeadPic"];
+    _insiderNickName = JSON[@"insiderNickName"];
 
-
-    return NO;
+    _buyerNum = JSON[@"buyerNum"];
+    _orderPrice = JSON[@"orderPrice"];
+    _serviceName = JSON[@"serviceName"];
+    _insiderSign = JSON[@"insiderSign"];
+    
+    NSString* timestamp = JSON[@"serviceDate"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];
+    _serviceDate = [TPUtils fullDateFormatString:date];
+    
+    return true;
 }
 
 @end

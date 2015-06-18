@@ -145,7 +145,7 @@
                         <outlet property="bkView" destination="o9l-Sk-NQp" id="eY9-MF-cdp"/>
                         <outlet property="descLabel" destination="ACq-Tg-fut" id="zsZ-yK-yPL"/>
                         <outlet property="imageView" destination="Cxf-08-gNB" id="4M5-EU-KsY"/>
-                        <outlet property="nameLabel" destination="ACq-Tg-fut" id="GwI-w6-AXH"/>
+                        <outlet property="nameLabel" destination="q7L-D5-3Yq" id="6XH-Bq-fzX"/>
                         <outlet property="titleLabel" destination="Um2-vk-uHV" id="Skm-NV-Up0"/>
                         <outlet property="tripDateLabel" destination="v2k-Ak-m6B" id="HfX-CD-MXQ"/>
                         <outlet property="tripFeeLabel" destination="HGz-7e-ezj" id="PKS-s6-0Cr"/>

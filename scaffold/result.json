@@ -1,11 +1,13 @@
 {
-            "No": "1", //列表中旅程序号
-            "cid": "231", //订单ID
-            "travellerId": "25", //旅行者id
+	  "serviceNo": "1", //列表中旅程序号
+            "oid": "231", //订单ID
+            "status": "已结束", //旅程状态
+            "sid": "231", //服务ID
+            "serviceName": "阿亮带你看妈祖绕境", //旅程名称  
+            "serviceAddress": "台湾彰化县", //旅程所在地
+            "servicePIC": "http://alicdn.aliyun.com/pic1.jpg", //服务主图
+            "insiderId": "25", //发现者id
             "insiderHeadPic": "http://alicdn.aliyun.com/pic1.jpg", //发现者头像
-            "insiderNickName": "阿亮", // 发现者昵称
-            "gmtCreated": "2015-08-09", //评论日期
-            "content": "终于看到了《练习曲》中的那个场景，很真实，这才是真正的台湾，"
+            "insiderNickName": "阿亮" // 发现者昵称
 
-	
 }

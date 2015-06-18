@@ -110,10 +110,9 @@
         //5,REQUIRED:register model to parent view controller
         [self registerModel:self.keyModel];
 
-        [self.tableView reloadData
-         ];
+//        [self.tableView reloadData];
         //6,Load Data
-       // [self load];
+        [self load];
     }
 }
 
@@ -201,9 +200,11 @@
     TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
     if ([item.status isEqualToString:@"即将开始"]) {
         vc.status = kWillBegin;
+        vc.oid = item.oid;
     }
-    if ([item.status isEqualToString:@"已经结束"]) {
+    if ([item.status isEqualToString:@"已结束"]) {
         vc.status = kFinish;
+        vc.oid = item.oid;
     }
     [self.navigationController pushViewController:vc animated:true];
 }

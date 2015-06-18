@@ -10,6 +10,7 @@
 
 
 #import "TPTripListModel.h"
+#import "TPTripListItem.h"
 
 @interface TPTripListModel()
 
@@ -22,34 +23,37 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
+    NSString* userType = [TPUser type] == kCustomer?@"1":@"2";
     
-    return nil;
-}
-
-- (NSDictionary* )headerParams{
-   
-    //todo:
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"userType":userType};
     
-    return nil;
 }
-
 
 - (NSString *)methodName {
     
-    //todo:
-    
-    
-    return nil;
+    return [_API_ stringByAppendingString:@"getOrderList"];
+}
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
-  
-    //todo:
-  
+    NSMutableArray* ret = [NSMutableArray new];
     
-    return nil;
+    NSArray* list = JSON;
+    
+    for (NSDictionary* dict in list) {
+        
+        TPTripListItem* item = [TPTripListItem new];
+        [item autoKVCBinding:dict];
+        [ret addObject:item];
+    }
+    return ret;
 }
 
 @end

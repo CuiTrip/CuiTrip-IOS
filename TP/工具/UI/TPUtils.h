@@ -22,6 +22,9 @@
 
 + (NSString* )monthDateFormatString:(NSDate* )date;
 
++ (NSString* )fullDateFormatString:(NSDate* )date;
+
+
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback;
 
 @end
