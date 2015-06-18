@@ -30,12 +30,23 @@
     [super awakeFromNib];
     
     self.avatarIcon.image = __image(@"girl.jpg");
+    self.avatarIcon.layer.cornerRadius = 0.5*self.avatarIcon.vzWidth;
+    self.avatarIcon.layer.masksToBounds = true;
 
 }
 
 - (void)setItem:(TPDDProfileItem* )item
 {
     [super setItem:item];
+    
+    [self.avatarIcon sd_setImageWithURL:__url(item.avatar) placeholderImage:__image(@"girl.jpg")];
+    self.userNameLabel.text = item.insiderName;
+    self.userDescLabel.text = item.insiderSign;
+    self.registerDateLabel.text = item.registerTime;
+    self.identifierLabel.text = item.status;
+    self.professionalLabel.text = item.career;
+    self.hobbiesLabel.text = item.hobby;
+    self.languageLabel.text = item.language;
     
 }
 

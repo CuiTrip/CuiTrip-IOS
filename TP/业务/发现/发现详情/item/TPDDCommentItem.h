@@ -13,6 +13,8 @@
 
 @interface TPDDCommentItem : VZListItem
 
+@property(nonatomic,strong)NSString* comment;
+@property(nonatomic,strong)NSString* commentNum;
 
 @end
 

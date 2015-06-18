@@ -8,7 +8,7 @@
 
 #import "TPDDInfoCellContainerView.h"
 #import "TPStarView.h"
-
+#import "TPDDInfoItem.h"
 
 @interface TPDDInfoCellContainerView()
 
@@ -40,6 +40,16 @@
     if (self.callback) {
         self.callback(@"gotoServiceDetail",weakSelf.item);
     }
+}
+
+- (void)setItem:(TPDDInfoItem *)item
+{
+    [super setItem:item];
+    
+    self.infoNameLabel.text = item.name;
+    self.infoAddressLabel.text=  item.address;
+    self.infoContentLabel.text = item.desc;
+    [self setScore:[item.score floatValue]];
 }
 
 - (void)setScore:(CGFloat)score

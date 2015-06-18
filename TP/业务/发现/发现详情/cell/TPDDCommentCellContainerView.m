@@ -7,6 +7,7 @@
 //
 
 #import "TPDDCommentCellContainerView.h"
+#import "TPDDCommentItem.h"
 
 @interface TPDDCommentCellContainerView()
 
@@ -40,4 +41,13 @@
     }
 }
 
+
+- (void)setItem:(TPDDCommentItem* )item
+{
+    [super setItem:item];
+    
+    self.commentNumLabel.text = item.commentNum;
+    self.commentTextView.text = item.comment;
+
+}
 @end

@@ -62,9 +62,10 @@
 {
     [super setItem:item];
     
-    [self.poster sd_setImageWithURL:__url(item.serviceBackPic) placeholderImage:__image(@"taiwan.png")];
-    [self.icon sd_setImageWithURL:__url(item.insiderHeadPic) placeholderImage:__image(@"girl.jpg")];
-    self.userNameLabel.attributedText = item.attributedUserString;
+    [self.poster sd_setImageWithURL:__url(item.servicePicUrl) placeholderImage:__image(@"taiwan.png")];
+    [self.icon sd_setImageWithURL:__url(item.headPic) placeholderImage:__image(@"girl.jpg")];
+    //self.userNameLabel.attributedText = item.attributedUserString;
+    self.userNameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.userNick,item.serviceAddress];
     self.posterNameLabel.text = item.serviceName;
   
 }

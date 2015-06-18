@@ -39,13 +39,6 @@
 		45028ACD1B1C75BB00417606 /* TPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028ACC1B1C75BB00417606 /* TPTabBarViewController.m */; };
 		45028AD11B1C764A00417606 /* TPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AD01B1C764A00417606 /* TPUser.m */; };
 		45028AD91B1C79CA00417606 /* TPLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AD81B1C79CA00417606 /* TPLoginManager.m */; };
-		45028AF21B1C7C1C00417606 /* TPDiscoveryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028ADD1B1C7C1C00417606 /* TPDiscoveryListCell.m */; };
-		45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45028ADF1B1C7C1C00417606 /* discovery_meta.json */; };
-		45028AF41B1C7C1C00417606 /* TPDiscoveryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AE31B1C7C1C00417606 /* TPDiscoveryListViewController.m */; };
-		45028AF51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AE61B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m */; };
-		45028AF61B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AE91B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m */; };
-		45028AF71B1C7C1C00417606 /* TPDiscoveryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AEC1B1C7C1C00417606 /* TPDiscoveryListItem.m */; };
-		45028AF81B1C7C1C00417606 /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028AEF1B1C7C1C00417606 /* TPDiscoveryListModel.m */; };
 		45028B411B1C7D2D00417606 /* me_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45028B131B1C7D2C00417606 /* me_meta.json */; };
 		45028B421B1C7D2D00417606 /* TPMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B171B1C7D2C00417606 /* TPMeViewController.m */; };
 		45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45028B1A1B1C7D2C00417606 /* TPMeItem.m */; };
@@ -123,32 +116,6 @@
 		459B24961B176A1C009BB189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459B248D1B176A1C009BB189 /* Images.xcassets */; };
 		459B24971B176A1C009BB189 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459B248E1B176A1C009BB189 /* Info.plist */; };
 		459B24981B176A1C009BB189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B248F1B176A1C009BB189 /* main.m */; };
-		459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 459BACAF1B1DEA7C00739C7E /* girl.jpg */; };
-		459BACB31B1DF3D900739C7E /* taiwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BACB21B1DF3D900739C7E /* taiwan.png */; };
-		459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 459BACBA1B1DF62A00739C7E /* discoverydetail_meta.json */; };
-		459BACCF1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACBE1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m */; };
-		459BACD01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACC11B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m */; };
-		459BACD11B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACC41B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.m */; };
-		459BACD31B1DF62A00739C7E /* TPDiscoveryDetailListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACCA1B1DF62A00739C7E /* TPDiscoveryDetailListModel.m */; };
-		459BACDC1B1DF9F000739C7E /* TPDDCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACD51B1DF9F000739C7E /* TPDDCommentCell.m */; };
-		459BACDD1B1DF9F000739C7E /* TPDDInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACD71B1DF9F000739C7E /* TPDDInfoCell.m */; };
-		459BACDE1B1DF9F000739C7E /* TPDDProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACD91B1DF9F000739C7E /* TPDDProfileCell.m */; };
-		459BACDF1B1DF9F000739C7E /* TPDDTripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACDB1B1DF9F000739C7E /* TPDDTripCell.m */; };
-		459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACE11B1DFBE800739C7E /* TPDDCommentItem.m */; };
-		459BACE91B1DFBE800739C7E /* TPDDInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACE31B1DFBE800739C7E /* TPDDInfoItem.m */; };
-		459BACEA1B1DFBE800739C7E /* TPDDProfileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACE51B1DFBE800739C7E /* TPDDProfileItem.m */; };
-		459BACEB1B1DFBE800739C7E /* TPDDTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACE71B1DFBE800739C7E /* TPDDTripItem.m */; };
-		459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACEC1B1DFC2D00739C7E /* TPDDInfoCell.xib */; };
-		459BACF01B1DFF5600739C7E /* TPDDInfoCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACEF1B1DFF5600739C7E /* TPDDInfoCellContainerView.m */; };
-		459BACF21B1EC92A00739C7E /* TPDDProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACF11B1EC92A00739C7E /* TPDDProfileCell.xib */; };
-		459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACF41B1EC94E00739C7E /* TPDDProfileCellContainerView.m */; };
-		459BACF81B1EECEC00739C7E /* TPDDCommentCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACF71B1EECEC00739C7E /* TPDDCommentCellContainerView.m */; };
-		459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */; };
-		459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */; };
-		459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */; };
-		459BAD011B1F1ABF00739C7E /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD001B1F1ABF00739C7E /* mazu.png */; };
-		459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */; };
-		459BAD0D1B1F4C0E00739C7E /* TPDDCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */; };
 		459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD301B1F5BA600739C7E /* datepicker_meta.json */; };
 		459BAD421B1F5BA600739C7E /* TPDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD341B1F5BA600739C7E /* TPDatePickerViewController.m */; };
 		459BAD431B1F5BA600739C7E /* TPDatePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD371B1F5BA600739C7E /* TPDatePickerItem.m */; };
@@ -164,9 +131,6 @@
 		459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD6B1B1FE79100739C7E /* VZStringBuilder.m */; };
 		459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAE9F1B207F4D00739C7E /* TBCityCalendarMonthView.m */; };
 		459BAEA31B207F4D00739C7E /* TBCityGraphic.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAEA11B207F4D00739C7E /* TBCityGraphic.m */; };
-		459BAEA61B21561A00739C7E /* TPStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAEA51B21561A00739C7E /* TPStarView.m */; };
-		459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEA71B21791800739C7E /* star_gray@2x.png */; };
-		459BAEAA1B21791900739C7E /* star_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEA81B21791900739C7E /* star_highlight@2x.png */; };
 		459BAEB31B219C3300739C7E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB21B219C3300739C7E /* Security.framework */; };
 		459BAEB51B219C4C00739C7E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB41B219C4C00739C7E /* AddressBook.framework */; };
 		459BAEB71B219C5100739C7E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BAEB61B219C5100739C7E /* AddressBookUI.framework */; };
@@ -196,7 +160,6 @@
 		459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE81B21E58700739C7E /* trip_StarS_Y2@x2.png */; };
 		459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */; };
 		45A4EDA11B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */; };
-		45CF82A11B311908001250ED /* TPDiscoveryDetailListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CF82A01B311908001250ED /* TPDiscoveryDetailListItem.m */; };
 		45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C75E1B29AE8800F31BF5 /* TPCommentListCell.m */; };
 		45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D0C7601B29AE8800F31BF5 /* comment_meta.json */; };
 		45D0C7771B29AE8800F31BF5 /* TPCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D0C7641B29AE8800F31BF5 /* TPCommentListViewController.m */; };
@@ -273,6 +236,43 @@
 		45D48BE71B32AF3500B5801F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D48BCA1B32AF3500B5801F /* libWeChatSDK.a */; };
 		45D48BF51B32AF6600B5801F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D48BF41B32AF6600B5801F /* libsqlite3.dylib */; };
 		45D48BF71B32AF7A00B5801F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D48BF61B32AF7A00B5801F /* libc++.dylib */; };
+		45D48C4D1B32EEBE00B5801F /* TPDDCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48BFB1B32EEBD00B5801F /* TPDDCellContainerView.m */; };
+		45D48C4E1B32EEBE00B5801F /* TPDDCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48BFD1B32EEBD00B5801F /* TPDDCommentCell.m */; };
+		45D48C4F1B32EEBE00B5801F /* TPDDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D48BFE1B32EEBD00B5801F /* TPDDCommentCell.xib */; };
+		45D48C501B32EEBE00B5801F /* TPDDCommentCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C001B32EEBD00B5801F /* TPDDCommentCellContainerView.m */; };
+		45D48C511B32EEBE00B5801F /* TPDDInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C021B32EEBD00B5801F /* TPDDInfoCell.m */; };
+		45D48C521B32EEBE00B5801F /* TPDDInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C031B32EEBD00B5801F /* TPDDInfoCell.xib */; };
+		45D48C531B32EEBE00B5801F /* TPDDInfoCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C051B32EEBD00B5801F /* TPDDInfoCellContainerView.m */; };
+		45D48C541B32EEBE00B5801F /* TPDDProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C071B32EEBD00B5801F /* TPDDProfileCell.m */; };
+		45D48C551B32EEBE00B5801F /* TPDDProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C081B32EEBD00B5801F /* TPDDProfileCell.xib */; };
+		45D48C561B32EEBE00B5801F /* TPDDProfileCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C0A1B32EEBD00B5801F /* TPDDProfileCellContainerView.m */; };
+		45D48C571B32EEBE00B5801F /* TPDDTripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C0C1B32EEBD00B5801F /* TPDDTripCell.m */; };
+		45D48C581B32EEBE00B5801F /* TPDDTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C0D1B32EEBD00B5801F /* TPDDTripCell.xib */; };
+		45D48C591B32EEBE00B5801F /* TPDDTripCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C0F1B32EEBD00B5801F /* TPDDTripCellContainerView.m */; };
+		45D48C5A1B32EEBE00B5801F /* discoverydetail_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C111B32EEBD00B5801F /* discoverydetail_meta.json */; };
+		45D48C5B1B32EEBE00B5801F /* TPDiscoveryDetailContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C151B32EEBD00B5801F /* TPDiscoveryDetailContentViewController.m */; };
+		45D48C5C1B32EEBE00B5801F /* TPDiscoveryDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C171B32EEBD00B5801F /* TPDiscoveryDetailListViewController.m */; };
+		45D48C5D1B32EEBE00B5801F /* TPDiscoveryDetailListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C1A1B32EEBD00B5801F /* TPDiscoveryDetailListViewDataSource.m */; };
+		45D48C5E1B32EEBE00B5801F /* TPDiscoveryDetailListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C1D1B32EEBD00B5801F /* TPDiscoveryDetailListViewDelegate.m */; };
+		45D48C5F1B32EEBE00B5801F /* TPDDCommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C201B32EEBD00B5801F /* TPDDCommentItem.m */; };
+		45D48C601B32EEBE00B5801F /* TPDDInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C221B32EEBD00B5801F /* TPDDInfoItem.m */; };
+		45D48C611B32EEBE00B5801F /* TPDDProfileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C241B32EEBD00B5801F /* TPDDProfileItem.m */; };
+		45D48C621B32EEBE00B5801F /* TPDDTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C261B32EEBD00B5801F /* TPDDTripItem.m */; };
+		45D48C631B32EEBE00B5801F /* TPDiscoveryDetailListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C281B32EEBD00B5801F /* TPDiscoveryDetailListItem.m */; };
+		45D48C641B32EEBE00B5801F /* TPDiscoveryDetailListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C2B1B32EEBD00B5801F /* TPDiscoveryDetailListModel.m */; };
+		45D48C651B32EEBE00B5801F /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C2D1B32EEBD00B5801F /* mazu.png */; };
+		45D48C661B32EEBE00B5801F /* star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C2E1B32EEBD00B5801F /* star_gray@2x.png */; };
+		45D48C671B32EEBE00B5801F /* star_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C2F1B32EEBD00B5801F /* star_highlight@2x.png */; };
+		45D48C681B32EEBE00B5801F /* TPStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C321B32EEBD00B5801F /* TPStarView.m */; };
+		45D48C691B32EEBE00B5801F /* TPDiscoveryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C361B32EEBD00B5801F /* TPDiscoveryListCell.m */; };
+		45D48C6A1B32EEBE00B5801F /* discovery_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C381B32EEBD00B5801F /* discovery_meta.json */; };
+		45D48C6B1B32EEBE00B5801F /* TPDiscoveryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C3C1B32EEBD00B5801F /* TPDiscoveryListViewController.m */; };
+		45D48C6C1B32EEBE00B5801F /* TPDiscoveryListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C3F1B32EEBD00B5801F /* TPDiscoveryListViewDataSource.m */; };
+		45D48C6D1B32EEBE00B5801F /* TPDiscoveryListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C421B32EEBD00B5801F /* TPDiscoveryListViewDelegate.m */; };
+		45D48C6E1B32EEBE00B5801F /* TPDiscoveryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C451B32EEBD00B5801F /* TPDiscoveryListItem.m */; };
+		45D48C6F1B32EEBE00B5801F /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */; };
+		45D48C701B32EEBE00B5801F /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C4A1B32EEBE00B5801F /* girl.jpg */; };
+		45D48C711B32EEBE00B5801F /* taiwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C4B1B32EEBE00B5801F /* taiwan.png */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -385,20 +385,6 @@
 		45028AD21B1C76E200417606 /* TPHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPHeader.h; sourceTree = "<group>"; };
 		45028AD71B1C79CA00417606 /* TPLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLoginManager.h; sourceTree = "<group>"; };
 		45028AD81B1C79CA00417606 /* TPLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLoginManager.m; sourceTree = "<group>"; };
-		45028ADC1B1C7C1C00417606 /* TPDiscoveryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListCell.h; sourceTree = "<group>"; };
-		45028ADD1B1C7C1C00417606 /* TPDiscoveryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListCell.m; sourceTree = "<group>"; };
-		45028ADF1B1C7C1C00417606 /* discovery_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discovery_meta.json; sourceTree = "<group>"; };
-		45028AE01B1C7C1C00417606 /* TPDiscoveryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryConfig.h; sourceTree = "<group>"; };
-		45028AE21B1C7C1C00417606 /* TPDiscoveryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListViewController.h; sourceTree = "<group>"; };
-		45028AE31B1C7C1C00417606 /* TPDiscoveryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListViewController.m; sourceTree = "<group>"; };
-		45028AE51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListViewDataSource.h; sourceTree = "<group>"; };
-		45028AE61B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListViewDataSource.m; sourceTree = "<group>"; };
-		45028AE81B1C7C1C00417606 /* TPDiscoveryListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListViewDelegate.h; sourceTree = "<group>"; };
-		45028AE91B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListViewDelegate.m; sourceTree = "<group>"; };
-		45028AEB1B1C7C1C00417606 /* TPDiscoveryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListItem.h; sourceTree = "<group>"; };
-		45028AEC1B1C7C1C00417606 /* TPDiscoveryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListItem.m; sourceTree = "<group>"; };
-		45028AEE1B1C7C1C00417606 /* TPDiscoveryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListModel.h; sourceTree = "<group>"; };
-		45028AEF1B1C7C1C00417606 /* TPDiscoveryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListModel.m; sourceTree = "<group>"; };
 		45028B131B1C7D2C00417606 /* me_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = me_meta.json; sourceTree = "<group>"; };
 		45028B141B1C7D2C00417606 /* TPMeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeConfig.h; sourceTree = "<group>"; };
 		45028B161B1C7D2C00417606 /* TPMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMeViewController.h; sourceTree = "<group>"; };
@@ -540,51 +526,6 @@
 		459B248F1B176A1C009BB189 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		459B25DB1B1819B2009BB189 /* TP.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TP.pch; path = ../TP.pch; sourceTree = "<group>"; };
 		459B267D1B1838E4009BB189 /* TPAssert.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = TPAssert.h; sourceTree = "<group>"; };
-		459BACAF1B1DEA7C00739C7E /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
-		459BACB21B1DF3D900739C7E /* taiwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taiwan.png; sourceTree = "<group>"; };
-		459BACBA1B1DF62A00739C7E /* discoverydetail_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discoverydetail_meta.json; sourceTree = "<group>"; };
-		459BACBB1B1DF62A00739C7E /* TPDiscoveryDetailConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailConfig.h; sourceTree = "<group>"; };
-		459BACBD1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListViewController.h; sourceTree = "<group>"; };
-		459BACBE1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListViewController.m; sourceTree = "<group>"; };
-		459BACC01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListViewDataSource.h; sourceTree = "<group>"; };
-		459BACC11B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListViewDataSource.m; sourceTree = "<group>"; };
-		459BACC31B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListViewDelegate.h; sourceTree = "<group>"; };
-		459BACC41B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListViewDelegate.m; sourceTree = "<group>"; };
-		459BACC91B1DF62A00739C7E /* TPDiscoveryDetailListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListModel.h; sourceTree = "<group>"; };
-		459BACCA1B1DF62A00739C7E /* TPDiscoveryDetailListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListModel.m; sourceTree = "<group>"; };
-		459BACD41B1DF9F000739C7E /* TPDDCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentCell.h; sourceTree = "<group>"; };
-		459BACD51B1DF9F000739C7E /* TPDDCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentCell.m; sourceTree = "<group>"; };
-		459BACD61B1DF9F000739C7E /* TPDDInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoCell.h; sourceTree = "<group>"; };
-		459BACD71B1DF9F000739C7E /* TPDDInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoCell.m; sourceTree = "<group>"; };
-		459BACD81B1DF9F000739C7E /* TPDDProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileCell.h; sourceTree = "<group>"; };
-		459BACD91B1DF9F000739C7E /* TPDDProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileCell.m; sourceTree = "<group>"; };
-		459BACDA1B1DF9F000739C7E /* TPDDTripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripCell.h; sourceTree = "<group>"; };
-		459BACDB1B1DF9F000739C7E /* TPDDTripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCell.m; sourceTree = "<group>"; };
-		459BACE01B1DFBE800739C7E /* TPDDCommentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentItem.h; sourceTree = "<group>"; };
-		459BACE11B1DFBE800739C7E /* TPDDCommentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentItem.m; sourceTree = "<group>"; };
-		459BACE21B1DFBE800739C7E /* TPDDInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoItem.h; sourceTree = "<group>"; };
-		459BACE31B1DFBE800739C7E /* TPDDInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoItem.m; sourceTree = "<group>"; };
-		459BACE41B1DFBE800739C7E /* TPDDProfileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileItem.h; sourceTree = "<group>"; };
-		459BACE51B1DFBE800739C7E /* TPDDProfileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileItem.m; sourceTree = "<group>"; };
-		459BACE61B1DFBE800739C7E /* TPDDTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripItem.h; sourceTree = "<group>"; };
-		459BACE71B1DFBE800739C7E /* TPDDTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripItem.m; sourceTree = "<group>"; };
-		459BACEC1B1DFC2D00739C7E /* TPDDInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDInfoCell.xib; sourceTree = "<group>"; };
-		459BACEE1B1DFF5600739C7E /* TPDDInfoCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoCellContainerView.h; sourceTree = "<group>"; };
-		459BACEF1B1DFF5600739C7E /* TPDDInfoCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoCellContainerView.m; sourceTree = "<group>"; };
-		459BACF11B1EC92A00739C7E /* TPDDProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDProfileCell.xib; sourceTree = "<group>"; };
-		459BACF31B1EC94E00739C7E /* TPDDProfileCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileCellContainerView.h; sourceTree = "<group>"; };
-		459BACF41B1EC94E00739C7E /* TPDDProfileCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileCellContainerView.m; sourceTree = "<group>"; };
-		459BACF61B1EECEC00739C7E /* TPDDCommentCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentCellContainerView.h; sourceTree = "<group>"; };
-		459BACF71B1EECEC00739C7E /* TPDDCommentCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentCellContainerView.m; sourceTree = "<group>"; };
-		459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDCommentCell.xib; sourceTree = "<group>"; };
-		459BACFB1B1EEF3900739C7E /* TPDDTripCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripCellContainerView.h; sourceTree = "<group>"; };
-		459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCellContainerView.m; sourceTree = "<group>"; };
-		459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDTripCell.xib; sourceTree = "<group>"; };
-		459BAD001B1F1ABF00739C7E /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
-		459BAD081B1F42D200739C7E /* TPDiscoveryDetailContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailContentViewController.h; sourceTree = "<group>"; };
-		459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailContentViewController.m; sourceTree = "<group>"; };
-		459BAD0B1B1F4C0E00739C7E /* TPDDCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCellContainerView.h; sourceTree = "<group>"; };
-		459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCellContainerView.m; sourceTree = "<group>"; };
 		459BAD301B1F5BA600739C7E /* datepicker_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datepicker_meta.json; sourceTree = "<group>"; };
 		459BAD311B1F5BA600739C7E /* TPDatePickerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerConfig.h; sourceTree = "<group>"; };
 		459BAD331B1F5BA600739C7E /* TPDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerViewController.h; sourceTree = "<group>"; };
@@ -615,10 +556,6 @@
 		459BAE9F1B207F4D00739C7E /* TBCityCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityCalendarMonthView.m; sourceTree = "<group>"; };
 		459BAEA01B207F4D00739C7E /* TBCityGraphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityGraphic.h; sourceTree = "<group>"; };
 		459BAEA11B207F4D00739C7E /* TBCityGraphic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityGraphic.m; sourceTree = "<group>"; };
-		459BAEA41B21561A00739C7E /* TPStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPStarView.h; sourceTree = "<group>"; };
-		459BAEA51B21561A00739C7E /* TPStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPStarView.m; sourceTree = "<group>"; };
-		459BAEA71B21791800739C7E /* star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_gray@2x.png"; sourceTree = "<group>"; };
-		459BAEA81B21791900739C7E /* star_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlight@2x.png"; sourceTree = "<group>"; };
 		459BAEB21B219C3300739C7E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		459BAEB41B219C4C00739C7E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		459BAEB61B219C5100739C7E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -649,8 +586,6 @@
 		459BAEE91B21E58700739C7E /* trip_StarS_Y@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_StarS_Y@x2.png"; sourceTree = "<group>"; };
 		45A4ED9F1B2FE8E0004AAAA3 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		45A4EDA01B2FE8E0004AAAA3 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
-		45CF82A01B311908001250ED /* TPDiscoveryDetailListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListItem.m; sourceTree = "<group>"; };
-		45CF82A21B31190F001250ED /* TPDiscoveryDetailListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListItem.h; sourceTree = "<group>"; };
 		45D0C75D1B29AE8800F31BF5 /* TPCommentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCommentListCell.h; sourceTree = "<group>"; };
 		45D0C75E1B29AE8800F31BF5 /* TPCommentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCommentListCell.m; sourceTree = "<group>"; };
 		45D0C7601B29AE8800F31BF5 /* comment_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comment_meta.json; sourceTree = "<group>"; };
@@ -786,6 +721,71 @@
 		45D48BCD1B32AF3500B5801F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		45D48BF41B32AF6600B5801F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		45D48BF61B32AF7A00B5801F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		45D48BFA1B32EEBD00B5801F /* TPDDCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCellContainerView.h; sourceTree = "<group>"; };
+		45D48BFB1B32EEBD00B5801F /* TPDDCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCellContainerView.m; sourceTree = "<group>"; };
+		45D48BFC1B32EEBD00B5801F /* TPDDCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentCell.h; sourceTree = "<group>"; };
+		45D48BFD1B32EEBD00B5801F /* TPDDCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentCell.m; sourceTree = "<group>"; };
+		45D48BFE1B32EEBD00B5801F /* TPDDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDCommentCell.xib; sourceTree = "<group>"; };
+		45D48BFF1B32EEBD00B5801F /* TPDDCommentCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentCellContainerView.h; sourceTree = "<group>"; };
+		45D48C001B32EEBD00B5801F /* TPDDCommentCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentCellContainerView.m; sourceTree = "<group>"; };
+		45D48C011B32EEBD00B5801F /* TPDDInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoCell.h; sourceTree = "<group>"; };
+		45D48C021B32EEBD00B5801F /* TPDDInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoCell.m; sourceTree = "<group>"; };
+		45D48C031B32EEBD00B5801F /* TPDDInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDInfoCell.xib; sourceTree = "<group>"; };
+		45D48C041B32EEBD00B5801F /* TPDDInfoCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoCellContainerView.h; sourceTree = "<group>"; };
+		45D48C051B32EEBD00B5801F /* TPDDInfoCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoCellContainerView.m; sourceTree = "<group>"; };
+		45D48C061B32EEBD00B5801F /* TPDDProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileCell.h; sourceTree = "<group>"; };
+		45D48C071B32EEBD00B5801F /* TPDDProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileCell.m; sourceTree = "<group>"; };
+		45D48C081B32EEBD00B5801F /* TPDDProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDProfileCell.xib; sourceTree = "<group>"; };
+		45D48C091B32EEBD00B5801F /* TPDDProfileCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileCellContainerView.h; sourceTree = "<group>"; };
+		45D48C0A1B32EEBD00B5801F /* TPDDProfileCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileCellContainerView.m; sourceTree = "<group>"; };
+		45D48C0B1B32EEBD00B5801F /* TPDDTripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripCell.h; sourceTree = "<group>"; };
+		45D48C0C1B32EEBD00B5801F /* TPDDTripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCell.m; sourceTree = "<group>"; };
+		45D48C0D1B32EEBD00B5801F /* TPDDTripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDDTripCell.xib; sourceTree = "<group>"; };
+		45D48C0E1B32EEBD00B5801F /* TPDDTripCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripCellContainerView.h; sourceTree = "<group>"; };
+		45D48C0F1B32EEBD00B5801F /* TPDDTripCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripCellContainerView.m; sourceTree = "<group>"; };
+		45D48C111B32EEBD00B5801F /* discoverydetail_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discoverydetail_meta.json; sourceTree = "<group>"; };
+		45D48C121B32EEBD00B5801F /* TPDiscoveryDetailConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailConfig.h; sourceTree = "<group>"; };
+		45D48C141B32EEBD00B5801F /* TPDiscoveryDetailContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailContentViewController.h; sourceTree = "<group>"; };
+		45D48C151B32EEBD00B5801F /* TPDiscoveryDetailContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailContentViewController.m; sourceTree = "<group>"; };
+		45D48C161B32EEBD00B5801F /* TPDiscoveryDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListViewController.h; sourceTree = "<group>"; };
+		45D48C171B32EEBD00B5801F /* TPDiscoveryDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListViewController.m; sourceTree = "<group>"; };
+		45D48C191B32EEBD00B5801F /* TPDiscoveryDetailListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListViewDataSource.h; sourceTree = "<group>"; };
+		45D48C1A1B32EEBD00B5801F /* TPDiscoveryDetailListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListViewDataSource.m; sourceTree = "<group>"; };
+		45D48C1C1B32EEBD00B5801F /* TPDiscoveryDetailListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListViewDelegate.h; sourceTree = "<group>"; };
+		45D48C1D1B32EEBD00B5801F /* TPDiscoveryDetailListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListViewDelegate.m; sourceTree = "<group>"; };
+		45D48C1F1B32EEBD00B5801F /* TPDDCommentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDCommentItem.h; sourceTree = "<group>"; };
+		45D48C201B32EEBD00B5801F /* TPDDCommentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDCommentItem.m; sourceTree = "<group>"; };
+		45D48C211B32EEBD00B5801F /* TPDDInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDInfoItem.h; sourceTree = "<group>"; };
+		45D48C221B32EEBD00B5801F /* TPDDInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDInfoItem.m; sourceTree = "<group>"; };
+		45D48C231B32EEBD00B5801F /* TPDDProfileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDProfileItem.h; sourceTree = "<group>"; };
+		45D48C241B32EEBD00B5801F /* TPDDProfileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDProfileItem.m; sourceTree = "<group>"; };
+		45D48C251B32EEBD00B5801F /* TPDDTripItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDDTripItem.h; sourceTree = "<group>"; };
+		45D48C261B32EEBD00B5801F /* TPDDTripItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDDTripItem.m; sourceTree = "<group>"; };
+		45D48C271B32EEBD00B5801F /* TPDiscoveryDetailListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListItem.h; sourceTree = "<group>"; };
+		45D48C281B32EEBD00B5801F /* TPDiscoveryDetailListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListItem.m; sourceTree = "<group>"; };
+		45D48C2A1B32EEBD00B5801F /* TPDiscoveryDetailListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListModel.h; sourceTree = "<group>"; };
+		45D48C2B1B32EEBD00B5801F /* TPDiscoveryDetailListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListModel.m; sourceTree = "<group>"; };
+		45D48C2D1B32EEBD00B5801F /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
+		45D48C2E1B32EEBD00B5801F /* star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_gray@2x.png"; sourceTree = "<group>"; };
+		45D48C2F1B32EEBD00B5801F /* star_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlight@2x.png"; sourceTree = "<group>"; };
+		45D48C311B32EEBD00B5801F /* TPStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPStarView.h; sourceTree = "<group>"; };
+		45D48C321B32EEBD00B5801F /* TPStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPStarView.m; sourceTree = "<group>"; };
+		45D48C351B32EEBD00B5801F /* TPDiscoveryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListCell.h; sourceTree = "<group>"; };
+		45D48C361B32EEBD00B5801F /* TPDiscoveryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListCell.m; sourceTree = "<group>"; };
+		45D48C381B32EEBD00B5801F /* discovery_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discovery_meta.json; sourceTree = "<group>"; };
+		45D48C391B32EEBD00B5801F /* TPDiscoveryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryConfig.h; sourceTree = "<group>"; };
+		45D48C3B1B32EEBD00B5801F /* TPDiscoveryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListViewController.h; sourceTree = "<group>"; };
+		45D48C3C1B32EEBD00B5801F /* TPDiscoveryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListViewController.m; sourceTree = "<group>"; };
+		45D48C3E1B32EEBD00B5801F /* TPDiscoveryListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListViewDataSource.h; sourceTree = "<group>"; };
+		45D48C3F1B32EEBD00B5801F /* TPDiscoveryListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListViewDataSource.m; sourceTree = "<group>"; };
+		45D48C411B32EEBD00B5801F /* TPDiscoveryListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListViewDelegate.h; sourceTree = "<group>"; };
+		45D48C421B32EEBD00B5801F /* TPDiscoveryListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListViewDelegate.m; sourceTree = "<group>"; };
+		45D48C441B32EEBD00B5801F /* TPDiscoveryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListItem.h; sourceTree = "<group>"; };
+		45D48C451B32EEBD00B5801F /* TPDiscoveryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListItem.m; sourceTree = "<group>"; };
+		45D48C471B32EEBE00B5801F /* TPDiscoveryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListModel.h; sourceTree = "<group>"; };
+		45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListModel.m; sourceTree = "<group>"; };
+		45D48C4A1B32EEBE00B5801F /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
+		45D48C4B1B32EEBE00B5801F /* taiwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taiwan.png; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -999,7 +999,6 @@
 				4509AB611B22E3E300846032 /* 登录注册 */,
 				459BAD471B1F5D7E00739C7E /* 个人页 */,
 				459BAD2E1B1F5BA600739C7E /* 日期选择 */,
-				459BACB51B1DF62A00739C7E /* 发现详情 */,
 				45028B4D1B1C7F1300417606 /* 服务 */,
 				45028AF91B1C7D2C00417606 /* 旅程 */,
 				45028B111B1C7D2C00417606 /* 我的 */,
@@ -1040,96 +1039,10 @@
 		45028ADA1B1C7C1C00417606 /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
-				45028ADB1B1C7C1C00417606 /* cell */,
-				45028ADE1B1C7C1C00417606 /* config */,
-				45028AE11B1C7C1C00417606 /* controller */,
-				45028AE41B1C7C1C00417606 /* datasource */,
-				45028AE71B1C7C1C00417606 /* delegate */,
-				45028AEA1B1C7C1C00417606 /* item */,
-				45028AED1B1C7C1C00417606 /* model */,
-				45028AF01B1C7C1C00417606 /* resource */,
-				45028AF11B1C7C1C00417606 /* view */,
+				45D48BF81B32EEBD00B5801F /* 发现详情 */,
+				45D48C331B32EEBD00B5801F /* 列表 */,
 			);
 			path = "发现";
-			sourceTree = "<group>";
-		};
-		45028ADB1B1C7C1C00417606 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				45028ADC1B1C7C1C00417606 /* TPDiscoveryListCell.h */,
-				45028ADD1B1C7C1C00417606 /* TPDiscoveryListCell.m */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		45028ADE1B1C7C1C00417606 /* config */ = {
-			isa = PBXGroup;
-			children = (
-				45028ADF1B1C7C1C00417606 /* discovery_meta.json */,
-				45028AE01B1C7C1C00417606 /* TPDiscoveryConfig.h */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		45028AE11B1C7C1C00417606 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				45028AE21B1C7C1C00417606 /* TPDiscoveryListViewController.h */,
-				45028AE31B1C7C1C00417606 /* TPDiscoveryListViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		45028AE41B1C7C1C00417606 /* datasource */ = {
-			isa = PBXGroup;
-			children = (
-				45028AE51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.h */,
-				45028AE61B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m */,
-			);
-			path = datasource;
-			sourceTree = "<group>";
-		};
-		45028AE71B1C7C1C00417606 /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				45028AE81B1C7C1C00417606 /* TPDiscoveryListViewDelegate.h */,
-				45028AE91B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
-		45028AEA1B1C7C1C00417606 /* item */ = {
-			isa = PBXGroup;
-			children = (
-				45028AEB1B1C7C1C00417606 /* TPDiscoveryListItem.h */,
-				45028AEC1B1C7C1C00417606 /* TPDiscoveryListItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		45028AED1B1C7C1C00417606 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				45028AEE1B1C7C1C00417606 /* TPDiscoveryListModel.h */,
-				45028AEF1B1C7C1C00417606 /* TPDiscoveryListModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		45028AF01B1C7C1C00417606 /* resource */ = {
-			isa = PBXGroup;
-			children = (
-				459BACB21B1DF3D900739C7E /* taiwan.png */,
-				459BACAF1B1DEA7C00739C7E /* girl.jpg */,
-			);
-			path = resource;
-			sourceTree = "<group>";
-		};
-		45028AF11B1C7C1C00417606 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		45028AF91B1C7D2C00417606 /* 旅程 */ = {
@@ -1929,134 +1842,6 @@
 			path = TP;
 			sourceTree = "<group>";
 		};
-		459BACB51B1DF62A00739C7E /* 发现详情 */ = {
-			isa = PBXGroup;
-			children = (
-				459BACB61B1DF62A00739C7E /* cell */,
-				459BACB91B1DF62A00739C7E /* config */,
-				459BACBC1B1DF62A00739C7E /* controller */,
-				459BACBF1B1DF62A00739C7E /* datasource */,
-				459BACC21B1DF62A00739C7E /* delegate */,
-				459BACC51B1DF62A00739C7E /* item */,
-				459BACC81B1DF62A00739C7E /* model */,
-				459BACCB1B1DF62A00739C7E /* resource */,
-				459BACCC1B1DF62A00739C7E /* view */,
-			);
-			path = "发现详情";
-			sourceTree = "<group>";
-		};
-		459BACB61B1DF62A00739C7E /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				459BACD41B1DF9F000739C7E /* TPDDCommentCell.h */,
-				459BACD51B1DF9F000739C7E /* TPDDCommentCell.m */,
-				459BACD61B1DF9F000739C7E /* TPDDInfoCell.h */,
-				459BACD71B1DF9F000739C7E /* TPDDInfoCell.m */,
-				459BACD81B1DF9F000739C7E /* TPDDProfileCell.h */,
-				459BACD91B1DF9F000739C7E /* TPDDProfileCell.m */,
-				459BACF11B1EC92A00739C7E /* TPDDProfileCell.xib */,
-				459BACDA1B1DF9F000739C7E /* TPDDTripCell.h */,
-				459BACDB1B1DF9F000739C7E /* TPDDTripCell.m */,
-				459BACEC1B1DFC2D00739C7E /* TPDDInfoCell.xib */,
-				459BACEE1B1DFF5600739C7E /* TPDDInfoCellContainerView.h */,
-				459BACEF1B1DFF5600739C7E /* TPDDInfoCellContainerView.m */,
-				459BACF31B1EC94E00739C7E /* TPDDProfileCellContainerView.h */,
-				459BACF41B1EC94E00739C7E /* TPDDProfileCellContainerView.m */,
-				459BACF61B1EECEC00739C7E /* TPDDCommentCellContainerView.h */,
-				459BACF71B1EECEC00739C7E /* TPDDCommentCellContainerView.m */,
-				459BACF91B1EECFF00739C7E /* TPDDCommentCell.xib */,
-				459BACFB1B1EEF3900739C7E /* TPDDTripCellContainerView.h */,
-				459BACFC1B1EEF3900739C7E /* TPDDTripCellContainerView.m */,
-				459BACFE1B1EEFAB00739C7E /* TPDDTripCell.xib */,
-				459BAD0B1B1F4C0E00739C7E /* TPDDCellContainerView.h */,
-				459BAD0C1B1F4C0E00739C7E /* TPDDCellContainerView.m */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		459BACB91B1DF62A00739C7E /* config */ = {
-			isa = PBXGroup;
-			children = (
-				459BACBA1B1DF62A00739C7E /* discoverydetail_meta.json */,
-				459BACBB1B1DF62A00739C7E /* TPDiscoveryDetailConfig.h */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		459BACBC1B1DF62A00739C7E /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				459BACBD1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.h */,
-				459BACBE1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m */,
-				459BAD081B1F42D200739C7E /* TPDiscoveryDetailContentViewController.h */,
-				459BAD091B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		459BACBF1B1DF62A00739C7E /* datasource */ = {
-			isa = PBXGroup;
-			children = (
-				459BACC01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.h */,
-				459BACC11B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m */,
-			);
-			path = datasource;
-			sourceTree = "<group>";
-		};
-		459BACC21B1DF62A00739C7E /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				459BACC31B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.h */,
-				459BACC41B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.m */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
-		459BACC51B1DF62A00739C7E /* item */ = {
-			isa = PBXGroup;
-			children = (
-				45CF82A21B31190F001250ED /* TPDiscoveryDetailListItem.h */,
-				45CF82A01B311908001250ED /* TPDiscoveryDetailListItem.m */,
-				459BACE01B1DFBE800739C7E /* TPDDCommentItem.h */,
-				459BACE11B1DFBE800739C7E /* TPDDCommentItem.m */,
-				459BACE21B1DFBE800739C7E /* TPDDInfoItem.h */,
-				459BACE31B1DFBE800739C7E /* TPDDInfoItem.m */,
-				459BACE41B1DFBE800739C7E /* TPDDProfileItem.h */,
-				459BACE51B1DFBE800739C7E /* TPDDProfileItem.m */,
-				459BACE61B1DFBE800739C7E /* TPDDTripItem.h */,
-				459BACE71B1DFBE800739C7E /* TPDDTripItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		459BACC81B1DF62A00739C7E /* model */ = {
-			isa = PBXGroup;
-			children = (
-				459BACC91B1DF62A00739C7E /* TPDiscoveryDetailListModel.h */,
-				459BACCA1B1DF62A00739C7E /* TPDiscoveryDetailListModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		459BACCB1B1DF62A00739C7E /* resource */ = {
-			isa = PBXGroup;
-			children = (
-				459BAEA71B21791800739C7E /* star_gray@2x.png */,
-				459BAEA81B21791900739C7E /* star_highlight@2x.png */,
-				459BAD001B1F1ABF00739C7E /* mazu.png */,
-			);
-			path = resource;
-			sourceTree = "<group>";
-		};
-		459BACCC1B1DF62A00739C7E /* view */ = {
-			isa = PBXGroup;
-			children = (
-				459BAEA41B21561A00739C7E /* TPStarView.h */,
-				459BAEA51B21561A00739C7E /* TPStarView.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		459BAD2E1B1F5BA600739C7E /* 日期选择 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2770,6 +2555,229 @@
 			path = Wechat;
 			sourceTree = "<group>";
 		};
+		45D48BF81B32EEBD00B5801F /* 发现详情 */ = {
+			isa = PBXGroup;
+			children = (
+				45D48BF91B32EEBD00B5801F /* cell */,
+				45D48C101B32EEBD00B5801F /* config */,
+				45D48C131B32EEBD00B5801F /* controller */,
+				45D48C181B32EEBD00B5801F /* datasource */,
+				45D48C1B1B32EEBD00B5801F /* delegate */,
+				45D48C1E1B32EEBD00B5801F /* item */,
+				45D48C291B32EEBD00B5801F /* model */,
+				45D48C2C1B32EEBD00B5801F /* resource */,
+				45D48C301B32EEBD00B5801F /* view */,
+			);
+			path = "发现详情";
+			sourceTree = "<group>";
+		};
+		45D48BF91B32EEBD00B5801F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				45D48BFA1B32EEBD00B5801F /* TPDDCellContainerView.h */,
+				45D48BFB1B32EEBD00B5801F /* TPDDCellContainerView.m */,
+				45D48BFC1B32EEBD00B5801F /* TPDDCommentCell.h */,
+				45D48BFD1B32EEBD00B5801F /* TPDDCommentCell.m */,
+				45D48BFE1B32EEBD00B5801F /* TPDDCommentCell.xib */,
+				45D48BFF1B32EEBD00B5801F /* TPDDCommentCellContainerView.h */,
+				45D48C001B32EEBD00B5801F /* TPDDCommentCellContainerView.m */,
+				45D48C011B32EEBD00B5801F /* TPDDInfoCell.h */,
+				45D48C021B32EEBD00B5801F /* TPDDInfoCell.m */,
+				45D48C031B32EEBD00B5801F /* TPDDInfoCell.xib */,
+				45D48C041B32EEBD00B5801F /* TPDDInfoCellContainerView.h */,
+				45D48C051B32EEBD00B5801F /* TPDDInfoCellContainerView.m */,
+				45D48C061B32EEBD00B5801F /* TPDDProfileCell.h */,
+				45D48C071B32EEBD00B5801F /* TPDDProfileCell.m */,
+				45D48C081B32EEBD00B5801F /* TPDDProfileCell.xib */,
+				45D48C091B32EEBD00B5801F /* TPDDProfileCellContainerView.h */,
+				45D48C0A1B32EEBD00B5801F /* TPDDProfileCellContainerView.m */,
+				45D48C0B1B32EEBD00B5801F /* TPDDTripCell.h */,
+				45D48C0C1B32EEBD00B5801F /* TPDDTripCell.m */,
+				45D48C0D1B32EEBD00B5801F /* TPDDTripCell.xib */,
+				45D48C0E1B32EEBD00B5801F /* TPDDTripCellContainerView.h */,
+				45D48C0F1B32EEBD00B5801F /* TPDDTripCellContainerView.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		45D48C101B32EEBD00B5801F /* config */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C111B32EEBD00B5801F /* discoverydetail_meta.json */,
+				45D48C121B32EEBD00B5801F /* TPDiscoveryDetailConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		45D48C131B32EEBD00B5801F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C141B32EEBD00B5801F /* TPDiscoveryDetailContentViewController.h */,
+				45D48C151B32EEBD00B5801F /* TPDiscoveryDetailContentViewController.m */,
+				45D48C161B32EEBD00B5801F /* TPDiscoveryDetailListViewController.h */,
+				45D48C171B32EEBD00B5801F /* TPDiscoveryDetailListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45D48C181B32EEBD00B5801F /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C191B32EEBD00B5801F /* TPDiscoveryDetailListViewDataSource.h */,
+				45D48C1A1B32EEBD00B5801F /* TPDiscoveryDetailListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		45D48C1B1B32EEBD00B5801F /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C1C1B32EEBD00B5801F /* TPDiscoveryDetailListViewDelegate.h */,
+				45D48C1D1B32EEBD00B5801F /* TPDiscoveryDetailListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		45D48C1E1B32EEBD00B5801F /* item */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C1F1B32EEBD00B5801F /* TPDDCommentItem.h */,
+				45D48C201B32EEBD00B5801F /* TPDDCommentItem.m */,
+				45D48C211B32EEBD00B5801F /* TPDDInfoItem.h */,
+				45D48C221B32EEBD00B5801F /* TPDDInfoItem.m */,
+				45D48C231B32EEBD00B5801F /* TPDDProfileItem.h */,
+				45D48C241B32EEBD00B5801F /* TPDDProfileItem.m */,
+				45D48C251B32EEBD00B5801F /* TPDDTripItem.h */,
+				45D48C261B32EEBD00B5801F /* TPDDTripItem.m */,
+				45D48C271B32EEBD00B5801F /* TPDiscoveryDetailListItem.h */,
+				45D48C281B32EEBD00B5801F /* TPDiscoveryDetailListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		45D48C291B32EEBD00B5801F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C2A1B32EEBD00B5801F /* TPDiscoveryDetailListModel.h */,
+				45D48C2B1B32EEBD00B5801F /* TPDiscoveryDetailListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		45D48C2C1B32EEBD00B5801F /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C2D1B32EEBD00B5801F /* mazu.png */,
+				45D48C2E1B32EEBD00B5801F /* star_gray@2x.png */,
+				45D48C2F1B32EEBD00B5801F /* star_highlight@2x.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		45D48C301B32EEBD00B5801F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C311B32EEBD00B5801F /* TPStarView.h */,
+				45D48C321B32EEBD00B5801F /* TPStarView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		45D48C331B32EEBD00B5801F /* 列表 */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C341B32EEBD00B5801F /* cell */,
+				45D48C371B32EEBD00B5801F /* config */,
+				45D48C3A1B32EEBD00B5801F /* controller */,
+				45D48C3D1B32EEBD00B5801F /* datasource */,
+				45D48C401B32EEBD00B5801F /* delegate */,
+				45D48C431B32EEBD00B5801F /* item */,
+				45D48C461B32EEBE00B5801F /* model */,
+				45D48C491B32EEBE00B5801F /* resource */,
+				45D48C4C1B32EEBE00B5801F /* view */,
+			);
+			path = "列表";
+			sourceTree = "<group>";
+		};
+		45D48C341B32EEBD00B5801F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C351B32EEBD00B5801F /* TPDiscoveryListCell.h */,
+				45D48C361B32EEBD00B5801F /* TPDiscoveryListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		45D48C371B32EEBD00B5801F /* config */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C381B32EEBD00B5801F /* discovery_meta.json */,
+				45D48C391B32EEBD00B5801F /* TPDiscoveryConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		45D48C3A1B32EEBD00B5801F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C3B1B32EEBD00B5801F /* TPDiscoveryListViewController.h */,
+				45D48C3C1B32EEBD00B5801F /* TPDiscoveryListViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45D48C3D1B32EEBD00B5801F /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C3E1B32EEBD00B5801F /* TPDiscoveryListViewDataSource.h */,
+				45D48C3F1B32EEBD00B5801F /* TPDiscoveryListViewDataSource.m */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		45D48C401B32EEBD00B5801F /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C411B32EEBD00B5801F /* TPDiscoveryListViewDelegate.h */,
+				45D48C421B32EEBD00B5801F /* TPDiscoveryListViewDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		45D48C431B32EEBD00B5801F /* item */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C441B32EEBD00B5801F /* TPDiscoveryListItem.h */,
+				45D48C451B32EEBD00B5801F /* TPDiscoveryListItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		45D48C461B32EEBE00B5801F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C471B32EEBE00B5801F /* TPDiscoveryListModel.h */,
+				45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		45D48C491B32EEBE00B5801F /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C4A1B32EEBE00B5801F /* girl.jpg */,
+				45D48C4B1B32EEBE00B5801F /* taiwan.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		45D48C4C1B32EEBE00B5801F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		45D6BA601B2686C2007DFC7A /* APNS */ = {
 			isa = PBXGroup;
 			children = (
@@ -3170,15 +3178,14 @@
 				4509AC1D1B247E5200846032 /* trip_meta.json in Resources */,
 				459BAEFC1B21E58700739C7E /* trip_share_w@2x.png in Resources */,
 				45D0C8111B2BDC8900F31BF5 /* add_comment_image@3x.png in Resources */,
-				459BAD011B1F1ABF00739C7E /* mazu.png in Resources */,
 				45EB42FA1B2D63AE001B4202 /* triparrangement_meta.json in Resources */,
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
-				459BACED1B1DFC2D00739C7E /* TPDDInfoCell.xib in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
 				45D0C8011B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png in Resources */,
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
+				45D48C5A1B32EEBE00B5801F /* discoverydetail_meta.json in Resources */,
 				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				45D0C7E91B2BBEED00F31BF5 /* TPPSFeeViewController.storyboard in Resources */,
 				45D0C7FF1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png in Resources */,
@@ -3187,10 +3194,13 @@
 				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
 				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
 				45D48BDE1B32AF3500B5801F /* UMSCommentInputController.xib in Resources */,
-				459BACB11B1DEA7C00739C7E /* girl.jpg in Resources */,
+				45D48C661B32EEBE00B5801F /* star_gray@2x.png in Resources */,
+				45D48C581B32EEBE00B5801F /* TPDDTripCell.xib in Resources */,
+				45D48C6A1B32EEBE00B5801F /* discovery_meta.json in Resources */,
 				459BAEEE1B21E58700739C7E /* trip_display_yes@2x.png in Resources */,
 				4509ABFE1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib in Resources */,
 				459BAEF51B21E58700739C7E /* trip_nav_m_A@2x.png in Resources */,
+				45D48C521B32EEBE00B5801F /* TPDDInfoCell.xib in Resources */,
 				45D48BE41B32AF3500B5801F /* UMSShareListController.xib in Resources */,
 				4509AB7C1B22EA2300846032 /* Localizable.strings in Resources */,
 				459BAEF71B21E58700739C7E /* trip_nav_p_A@2x.png in Resources */,
@@ -3199,29 +3209,28 @@
 				459BAEF01B21E58700739C7E /* trip_left_w@2x.png in Resources */,
 				459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */,
 				4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */,
-				459BACFF1B1EEFAB00739C7E /* TPDDTripCell.xib in Resources */,
 				45D48BE01B32AF3500B5801F /* UMShareEditViewController.xib in Resources */,
 				456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */,
+				45D48C671B32EEBE00B5801F /* star_highlight@2x.png in Resources */,
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				45D0C7B01B29BED800F31BF5 /* myservice_meta.json in Resources */,
 				45D48BDD1B32AF3500B5801F /* UMSCommentDetailController.xib in Resources */,
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
 				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
+				45D48C651B32EEBE00B5801F /* mazu.png in Resources */,
 				45D0C8001B2BDA3F00F31BF5 /* o2o_gray_star@3x.png in Resources */,
 				45D0C7E31B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard in Resources */,
 				45D0C7E11B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard in Resources */,
-				459BAEA91B21791900739C7E /* star_gray@2x.png in Resources */,
 				45DD47371B28200200D2BB62 /* message_meta.json in Resources */,
 				459BAEF91B21E58700739C7E /* trip_nav_r_A@2x.png in Resources */,
 				45D48BE31B32AF3500B5801F /* UMSnsAccountViewController.xib in Resources */,
 				459BAEF21B21E58700739C7E /* trip_nav_j@2x.png in Resources */,
-				459BACFA1B1EECFF00739C7E /* TPDDCommentCell.xib in Resources */,
 				4509AC021B246FFD00846032 /* TPReserveSubView.xib in Resources */,
 				45D0C7DF1B29E10600F31BF5 /* TPPSLocationViewController.storyboard in Resources */,
 				45D0C7FB1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png in Resources */,
 				4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */,
-				459BACB31B1DF3D900739C7E /* taiwan.png in Resources */,
+				45D48C701B32EEBE00B5801F /* girl.jpg in Resources */,
 				4509ABE51B23DDF600846032 /* feedback_meta.json in Resources */,
 				456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */,
 				45D0C78E1B29AFD800F31BF5 /* publishcomment_meta.json in Resources */,
@@ -3231,6 +3240,7 @@
 				45D0C8121B2BDC8900F31BF5 /* upload_image_failed@2x.png in Resources */,
 				45D0C8101B2BDC8900F31BF5 /* add_comment_image@2x.png in Resources */,
 				459BAEF11B21E58700739C7E /* trip_makeovers_w@2x.png in Resources */,
+				45D48C711B32EEBE00B5801F /* taiwan.png in Resources */,
 				459BAEEB1B21E58700739C7E /* trip_addPic_g@2x.png in Resources */,
 				459BAEF81B21E58700739C7E /* trip_nav_r@2x.png in Resources */,
 				45D6BA761B268794007DFC7A /* SMS_SDKLocalizable.strings in Resources */,
@@ -3239,14 +3249,13 @@
 				45D0C7C61B29DAA400F31BF5 /* pubilshservice_meta.json in Resources */,
 				4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */,
 				45D0C7951B29B03A00F31BF5 /* TPPublishCommentViewController.storyboard in Resources */,
-				459BACCE1B1DF62A00739C7E /* discoverydetail_meta.json in Resources */,
 				4509AB7A1B22EA1D00846032 /* country.plist in Resources */,
 				45109A1F1B3079460074DCB6 /* trip_left3@2x.png in Resources */,
-				45028AF31B1C7C1C00417606 /* discovery_meta.json in Resources */,
 				45109A201B3079460074DCB6 /* trip_right3@2x.png in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
+				45D48C4F1B32EEBE00B5801F /* TPDDCommentCell.xib in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
 				459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */,
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
@@ -3255,11 +3264,10 @@
 				45D0C8131B2BDC8900F31BF5 /* upload_image_failed@3x.png in Resources */,
 				459BAEED1B21E58700739C7E /* trip_display_no@2x.png in Resources */,
 				459BAEEA1B21E58700739C7E /* trip_add_w@2x.png in Resources */,
-				459BAEAA1B21791900739C7E /* star_highlight@2x.png in Resources */,
+				45D48C551B32EEBE00B5801F /* TPDDProfileCell.xib in Resources */,
 				45D0C7F61B2BD3A000F31BF5 /* TPPSConfirmViewController.storyboard in Resources */,
 				459BAEF61B21E58700739C7E /* trip_nav_p@2x.png in Resources */,
 				459BAEEF1B21E58700739C7E /* trip_left_g@2x.png in Resources */,
-				459BACF21B1EC92A00739C7E /* TPDDProfileCell.xib in Resources */,
 				459BAEFA1B21E58700739C7E /* trip_right_g@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3312,25 +3320,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				45028ABF1B1B535E00417606 /* VZListCell.m in Sources */,
-				459BACD11B1DF62A00739C7E /* TPDiscoveryDetailListViewDelegate.m in Sources */,
 				4509ABE91B23DDF600846032 /* TPFeedbackSubView.m in Sources */,
 				45EB42FD1B2D63AE001B4202 /* TPTripArrangementModel.m in Sources */,
 				45DD47431B28200200D2BB62 /* TPChatListModel.m in Sources */,
+				45D48C571B32EEBE00B5801F /* TPDDTripCell.m in Sources */,
 				45D0C7781B29AE8800F31BF5 /* TPCommentListViewDataSource.m in Sources */,
 				4509AB721B22E3E300846032 /* NSDictionary-DeepMutableCopy.m in Sources */,
 				4509AC351B247EA600846032 /* TPTripDetailItem.m in Sources */,
-				459BACEB1B1DFBE800739C7E /* TPDDTripItem.m in Sources */,
 				4509ABEC1B23DF3600846032 /* TPHelpViewController.m in Sources */,
 				45D0C7B41B29BED800F31BF5 /* TPMyServiceListItem.m in Sources */,
-				45028AF81B1C7C1C00417606 /* TPDiscoveryListModel.m in Sources */,
 				45028AB11B1B535E00417606 /* VZListDefaultTextItem.m in Sources */,
 				4509ABC61B233C9200846032 /* TPReserveDateSubView.m in Sources */,
+				45D48C5B1B32EEBE00B5801F /* TPDiscoveryDetailContentViewController.m in Sources */,
 				4509ABE61B23DDF600846032 /* TPFeedbackViewController.m in Sources */,
 				45EB42FB1B2D63AE001B4202 /* TPTripArrangementViewController.m in Sources */,
 				45D0C7901B29AFD800F31BF5 /* TPPublishCommentItem.m in Sources */,
 				45028AA91B1B535E00417606 /* VZListViewController.m in Sources */,
 				4509AB911B22F13100846032 /* TPForgetPWDSubView.m in Sources */,
-				45028AF41B1C7C1C00417606 /* TPDiscoveryListViewController.m in Sources */,
 				4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */,
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45DD473A1B28200200D2BB62 /* TPMessageListViewDelegate.m in Sources */,
@@ -3342,26 +3348,27 @@
 				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
 				45DD47401B28200200D2BB62 /* TPChatListViewDataSource.m in Sources */,
 				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,
-				459BACDC1B1DF9F000739C7E /* TPDDCommentCell.m in Sources */,
+				45D48C4D1B32EEBE00B5801F /* TPDDCellContainerView.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
 				45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */,
 				4509AC1F1B247E5200846032 /* TPTripListViewDataSource.m in Sources */,
 				45028AC71B1C753300417606 /* ETContainerViewController.m in Sources */,
 				45D0C77A1B29AE8800F31BF5 /* TPCommentListItem.m in Sources */,
+				45D48C541B32EEBE00B5801F /* TPDDProfileCell.m in Sources */,
+				45D48C611B32EEBE00B5801F /* TPDDProfileItem.m in Sources */,
 				4509AB731B22E3E300846032 /* SectionsViewController.m in Sources */,
+				45D48C6F1B32EEBE00B5801F /* TPDiscoveryListModel.m in Sources */,
 				459BAD611B1F5D7E00739C7E /* TPProfilePageListViewController.m in Sources */,
-				459BAD0A1B1F42D200739C7E /* TPDiscoveryDetailContentViewController.m in Sources */,
 				45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */,
 				456C68F31B2ED35A003D4C20 /* TPPaySubView.m in Sources */,
 				45028AB51B1B535E00417606 /* VZHTTPConnectionOperation.m in Sources */,
 				45028AAF1B1B535E00417606 /* VZHTTPRequest.m in Sources */,
 				45028ABD1B1B535E00417606 /* VZHTTPURLResponseDataCache.m in Sources */,
 				45DD47391B28200200D2BB62 /* TPMessageListViewDataSource.m in Sources */,
-				459BACE91B1DFBE800739C7E /* TPDDInfoItem.m in Sources */,
-				459BACD31B1DF62A00739C7E /* TPDiscoveryDetailListModel.m in Sources */,
 				45D0C7D11B29E08B00F31BF5 /* TPPSDescriptionViewController.m in Sources */,
 				459BAD421B1F5BA600739C7E /* TPDatePickerViewController.m in Sources */,
 				45028AD11B1C764A00417606 /* TPUser.m in Sources */,
+				45D48C621B32EEBE00B5801F /* TPDDTripItem.m in Sources */,
 				45D0C78F1B29AFD800F31BF5 /* TPPublishCommentViewController.m in Sources */,
 				459BAD431B1F5BA600739C7E /* TPDatePickerItem.m in Sources */,
 				45028AA81B1B535E00417606 /* VZAFRequest.m in Sources */,
@@ -3371,38 +3378,40 @@
 				45028ABC1B1B535E00417606 /* VZHTTPURLResponseCache.m in Sources */,
 				4509AB901B22F13100846032 /* TPForgetPWDModel.m in Sources */,
 				45028AD91B1C79CA00417606 /* TPLoginManager.m in Sources */,
+				45D48C641B32EEBE00B5801F /* TPDiscoveryDetailListModel.m in Sources */,
 				45D0C7B31B29BED800F31BF5 /* TPMyServiceListViewDelegate.m in Sources */,
 				4509AC201B247E5200846032 /* TPTripListViewDelegate.m in Sources */,
 				45028B711B1C838100417606 /* UIView+VZEX.m in Sources */,
-				459BACDF1B1DF9F000739C7E /* TPDDTripCell.m in Sources */,
 				45028AB21B1B535E00417606 /* VZListItem.m in Sources */,
 				4509ABC11B233C9200846032 /* TPReserveSubView.m in Sources */,
 				45DD473F1B28200200D2BB62 /* TPChatListViewController.m in Sources */,
 				459BAD651B1F5D7E00739C7E /* TPProfilePageListModel.m in Sources */,
 				45D0C8211B2BE06D00F31BF5 /* BXImageScrollView.m in Sources */,
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
+				45D48C6E1B32EEBE00B5801F /* TPDiscoveryListItem.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
 				4509ABC31B233C9200846032 /* TPReserveDateViewController.m in Sources */,
 				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
 				45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
+				45D48C6B1B32EEBE00B5801F /* TPDiscoveryListViewController.m in Sources */,
 				456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */,
 				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
 				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,
 				45D0C7DA1B29E0EC00F31BF5 /* TPPSMoreViewController.m in Sources */,
+				45D48C5C1B32EEBE00B5801F /* TPDiscoveryDetailListViewController.m in Sources */,
+				45D48C591B32EEBE00B5801F /* TPDDTripCellContainerView.m in Sources */,
 				45D0C7CE1B29E06700F31BF5 /* TPPSLocationViewController.m in Sources */,
 				459BAD631B1F5D7E00739C7E /* TPProfilePageListViewDelegate.m in Sources */,
 				459BAEA21B207F4D00739C7E /* TBCityCalendarMonthView.m in Sources */,
 				45DD47411B28200200D2BB62 /* TPChatListViewDelegate.m in Sources */,
 				45EB43011B2DB56F001B4202 /* TPChatStatusListCell.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
-				45028AF51B1C7C1C00417606 /* TPDiscoveryListViewDataSource.m in Sources */,
 				45028AB31B1B535E00417606 /* VZModel.m in Sources */,
 				4509ABC51B233C9200846032 /* TPReserveDateModel.m in Sources */,
 				45D0C7D71B29E0DE00F31BF5 /* TPPSTitleViewController.m in Sources */,
 				45D0C77B1B29AE8800F31BF5 /* TPCommentListModel.m in Sources */,
-				459BACDD1B1DF9F000739C7E /* TPDDInfoCell.m in Sources */,
 				45D0C7771B29AE8800F31BF5 /* TPCommentListViewController.m in Sources */,
 				45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */,
 				45D0C85D1B2C8CF400F31BF5 /* TPProfileUpdateViewController.m in Sources */,
@@ -3413,51 +3422,54 @@
 				4509AC361B247EA600846032 /* TPTripDetailModel.m in Sources */,
 				45D0C7791B29AE8800F31BF5 /* TPCommentListViewDelegate.m in Sources */,
 				45D0C80B1B2BDB9000F31BF5 /* O2OCommentImageView.m in Sources */,
-				459BACFD1B1EEF3900739C7E /* TPDDTripCellContainerView.m in Sources */,
-				459BACF81B1EECEC00739C7E /* TPDDCommentCellContainerView.m in Sources */,
 				459BAD621B1F5D7E00739C7E /* TPProfilePageListViewDataSource.m in Sources */,
-				459BACF01B1DFF5600739C7E /* TPDDInfoCellContainerView.m in Sources */,
 				45D0C7EC1B2BCACE00F31BF5 /* TPPSViewController.m in Sources */,
+				45D48C5E1B32EEBE00B5801F /* TPDiscoveryDetailListViewDelegate.m in Sources */,
 				45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */,
-				45028AF21B1C7C1C00417606 /* TPDiscoveryListCell.m in Sources */,
 				45D48BAA1B32898300B5801F /* TPCancelTripOrderModel.m in Sources */,
 				45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */,
-				45CF82A11B311908001250ED /* TPDiscoveryDetailListItem.m in Sources */,
+				45D48C511B32EEBE00B5801F /* TPDDInfoCell.m in Sources */,
 				459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */,
 				45D0C7B21B29BED800F31BF5 /* TPMyServiceListViewDataSource.m in Sources */,
 				4509AB741B22E3E300846032 /* TPRegisterViewController.m in Sources */,
+				45D48C501B32EEBE00B5801F /* TPDDCommentCellContainerView.m in Sources */,
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
 				45D0C8091B2BDB9000F31BF5 /* O2OCommentImageItem.m in Sources */,
 				45D0C7C71B29DAA400F31BF5 /* TPPubilshServiceViewController.m in Sources */,
-				459BAEA61B21561A00739C7E /* TPStarView.m in Sources */,
-				459BACF51B1EC94E00739C7E /* TPDDProfileCellContainerView.m in Sources */,
-				459BACEA1B1DFBE800739C7E /* TPDDProfileItem.m in Sources */,
 				45028B441B1C7D2D00417606 /* TPMeModel.m in Sources */,
 				4509AB8F1B22F13100846032 /* TPForgetPWDItem.m in Sources */,
 				4509ABF41B23E2C300846032 /* TPAboutViewController.m in Sources */,
-				45028AF61B1C7C1C00417606 /* TPDiscoveryListViewDelegate.m in Sources */,
+				45D48C531B32EEBE00B5801F /* TPDDInfoCellContainerView.m in Sources */,
 				45028AB01B1B535E00417606 /* VZItem.m in Sources */,
+				45D48C601B32EEBE00B5801F /* TPDDInfoItem.m in Sources */,
 				45028B421B1C7D2D00417606 /* TPMeViewController.m in Sources */,
 				45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */,
 				45DD473D1B28200200D2BB62 /* TPChatListCell.m in Sources */,
 				45DD47421B28200200D2BB62 /* TPChatListItem.m in Sources */,
 				45028AC21B1B535E00417606 /* VZListDefaultTextCell.m in Sources */,
+				45D48C561B32EEBE00B5801F /* TPDDProfileCellContainerView.m in Sources */,
+				45D48C6C1B32EEBE00B5801F /* TPDiscoveryListViewDataSource.m in Sources */,
 				45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */,
 				45D0C7F91B2BD93A00F31BF5 /* O2OStarView.m in Sources */,
+				45D48C681B32EEBE00B5801F /* TPStarView.m in Sources */,
 				45D0C7C81B29DAA400F31BF5 /* TPPubilshServiceItem.m in Sources */,
-				459BACCF1B1DF62A00739C7E /* TPDiscoveryDetailListViewController.m in Sources */,
 				4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */,
 				456C68F11B2ED35A003D4C20 /* TPPayItem.m in Sources */,
+				45D48C691B32EEBE00B5801F /* TPDiscoveryListCell.m in Sources */,
+				45D48C631B32EEBE00B5801F /* TPDiscoveryDetailListItem.m in Sources */,
 				45028AAE1B1B535E00417606 /* VZHTTPModel.m in Sources */,
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				4509ABEF1B23E1CA00846032 /* TPSystemSettingsViewController.m in Sources */,
 				4509AC1E1B247E5200846032 /* TPTripListViewController.m in Sources */,
 				4509ABC41B233C9200846032 /* TPReserveDateItem.m in Sources */,
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
+				45D48C6D1B32EEBE00B5801F /* TPDiscoveryListViewDelegate.m in Sources */,
+				45D48C4E1B32EEBE00B5801F /* TPDDCommentCell.m in Sources */,
 				45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */,
 				45028B451B1C7D2D00417606 /* TPMeSubView.m in Sources */,
 				45028AAC1B1B535E00417606 /* VZViewController.m in Sources */,
 				4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */,
+				45D48C5D1B32EEBE00B5801F /* TPDiscoveryDetailListViewDataSource.m in Sources */,
 				4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */,
 				459BAD641B1F5D7E00739C7E /* TPProfilePageListItem.m in Sources */,
 				45D0C7931B29AFD800F31BF5 /* TPPublishCommentSubView.m in Sources */,
@@ -3465,13 +3477,10 @@
 				456C68F01B2ED35A003D4C20 /* TPPayViewController.m in Sources */,
 				4509AC341B247EA600846032 /* TPTripDetailViewController.m in Sources */,
 				4509AC211B247E5200846032 /* TPTripListItem.m in Sources */,
-				459BACE81B1DFBE800739C7E /* TPDDCommentItem.m in Sources */,
 				459BAD461B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m in Sources */,
 				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
 				45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */,
-				459BACD01B1DF62A00739C7E /* TPDiscoveryDetailListViewDataSource.m in Sources */,
-				459BACDE1B1DF9F000739C7E /* TPDDProfileCell.m in Sources */,
 				45D0C7D41B29E0BD00F31BF5 /* TPPSPicsViewController.m in Sources */,
 				45028AAA1B1B535E00417606 /* VZListViewDataSource.m in Sources */,
 				4509AB761B22E3E300846032 /* TPLoginViewController.m in Sources */,
@@ -3486,11 +3495,10 @@
 				45D48BA71B32767300B5801F /* TPConfirmTripOrderModel.m in Sources */,
 				4509ABE71B23DDF600846032 /* TPFeedbackItem.m in Sources */,
 				45D0C7B51B29BED800F31BF5 /* TPMyServiceListModel.m in Sources */,
+				45D48C5F1B32EEBE00B5801F /* TPDDCommentItem.m in Sources */,
 				45D0C7911B29AFD800F31BF5 /* TPPublishCommentModel.m in Sources */,
-				459BAD0D1B1F4C0E00739C7E /* TPDDCellContainerView.m in Sources */,
 				4509ABE81B23DDF600846032 /* TPFeedbackModel.m in Sources */,
 				459B24931B176A1C009BB189 /* AppDelegate.m in Sources */,
-				45028AF71B1C7C1C00417606 /* TPDiscoveryListItem.m in Sources */,
 				459BAEA31B207F4D00739C7E /* TBCityGraphic.m in Sources */,
 				45EB42FE1B2D63AE001B4202 /* TPTripArrangementSubView.m in Sources */,
 			);

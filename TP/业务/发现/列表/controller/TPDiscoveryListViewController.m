@@ -153,13 +153,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
+- (void)showError:(NSError *)error withModel:(VZModel *)model
+{
+    [super showError:error withModel:model];
+    self.tableView.tableFooterView = [TPUIKit emptyView];
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  //todo...
+
     TPDiscoveryDetailListViewController* vc= [ TPDiscoveryDetailListViewController new ];
     [self.navigationController pushViewController:vc animated:YES];
   

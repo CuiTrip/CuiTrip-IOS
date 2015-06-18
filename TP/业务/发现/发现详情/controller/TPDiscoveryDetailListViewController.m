@@ -47,6 +47,11 @@
         self.moneyLabel.vzHeight= 35;
         self.moneyLabel.text = @"   RMB 8888";
         self.moneyLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+        
+        CAShapeLayer* layer = [CAShapeLayer new];
+        layer.path = [UIBezierPath bezierPathWithRoundedRect:self.moneyLabel.bounds byRoundingCorners:(UIRectCornerTopRight | UIRectCornerBottomRight) cornerRadii:CGSizeMake(17,17)].CGPath;
+        self.moneyLabel.layer.mask = layer;
+        
         [self addSubview:self.moneyLabel];
     }
     return self;
@@ -124,15 +129,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //self.extendedLayoutIncludesOpaqueBars = true;
     
     //1,config your tableview
-    self.tableView.frame = CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -194,7 +200,7 @@
         }
         
     }];
-    self.tableView.tableFooterView = btn;
+    self.tableView.tableFooterView = [TPUIKit emptyView];
     
     
     UIButton* backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];
@@ -267,7 +273,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
-
+- (void)showError:(NSError *)error withModel:(VZModel *)model
+{
+    [super showError:error withModel:model];
+    
+    self.tableView.tableFooterView = nil;
+    
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 

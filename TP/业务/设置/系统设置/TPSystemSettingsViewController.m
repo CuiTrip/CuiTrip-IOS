@@ -23,6 +23,8 @@
     
     UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
     UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 50, 200, 44)];
+    btn.layer.cornerRadius = 5.0f;
+    btn.layer.masksToBounds = true;
     [btn setTitle:@"退出登录" forState:UIControlStateNormal];
     [btn setBackgroundColor:[TPTheme themeColor]];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

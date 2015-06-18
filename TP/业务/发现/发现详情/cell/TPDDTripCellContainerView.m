@@ -7,6 +7,8 @@
 //
 
 #import "TPDDTripCellContainerView.h"
+#import "TPDDTripItem.h"
+
 
 @interface TPDDTripCellContainerView()
 @property (weak, nonatomic) IBOutlet UILabel *viewDateLabel;
@@ -54,6 +56,17 @@
         
         self.callback(@"gotoDatePicker",self.item);
     }
+}
+
+- (void)setItem:(TPDDTripItem* )item
+{
+    [super setItem:item];
+    
+    self.tripLength.text = item.tripTimeLength;
+    self.tripTime.text = item.tripTime;
+    self.tripMemberLabel.text = item.tripPeopleNum;
+    
+    
 }
 
 @end

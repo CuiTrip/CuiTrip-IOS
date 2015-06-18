@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "TPDDCellContainerView.h"
 
+@class TPDDInfoItem;
 @interface TPDDInfoCellContainerView : TPDDCellContainerView
 
 - (void)setScore:(CGFloat)score;
+
 
 @end

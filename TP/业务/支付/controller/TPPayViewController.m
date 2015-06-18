@@ -57,6 +57,11 @@
     self.textField.layer.masksToBounds = true;
     self.textField.layer.borderWidth = 0.5;
     self.textField.layer.borderColor = [TPTheme grayColor].CGColor;
+    self.textField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, self.textField.bounds.size.height)];
+    self.textField.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.confirmBtn.layer.cornerRadius = 5.0f;
+    self.confirmBtn.clipsToBounds = true;
 
 }
 
