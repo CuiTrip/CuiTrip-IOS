@@ -364,18 +364,43 @@
     component.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
 
     
-    NSDate* ret = [calendar dateFromComponents:component];
+    NSDate* d = [calendar dateFromComponents:component];
+    [self.callbackResults addObject:d];
+
+}
+
+- (void)onMonthView:(UIView *)v DateCancelSelected:(NSInteger)date
+{
+    NSInteger year = self.currentComponent.year;
+    NSInteger month = v.tag;
+    NSInteger day = date;
+    
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    calendar.firstWeekday = 1;
+    calendar.minimumDaysInFirstWeek = 7;
+    NSDateComponents* component = [NSDateComponents new];
+    component.year = year;
+    component.month = month;
+    component.day = day;
+    component.hour = 0;
+    component.minute = 0;
+    component.second = 0;
+    component.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    
+    
+    NSDate* d = [calendar dateFromComponents:component];
+    NSDate* foundResult = nil;
     
     for (NSDate* date in self.callbackResults) {
         
-        if ([date compare:ret] == NSOrderedSame) {
-            
-            
+        if ([date compare:d] == NSOrderedSame) {
+            foundResult = date;
+            break;
         }
-        else
-        {
-            
-        }
+    }
+    
+    if (foundResult) {
+        [self.callbackResults removeObject:foundResult];
     }
 }
 

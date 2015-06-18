@@ -14,6 +14,7 @@
 
 @optional
 - (void)onMonthView:(UIView*)v DateSelected:(NSInteger)date;
+- (void)onMonthView:(UIView *)v DateCancelSelected:(NSInteger)date;
 
 @end
 /**

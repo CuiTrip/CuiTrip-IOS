@@ -8,6 +8,7 @@
 
 #import "TPPSMoreViewController.h"
 #import "TBCityHUDPicker.h"
+#import "TPDatePickerViewController.h"
 
 @interface TPPSMoreViewController ()<TBCityHUDPickerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *durationBtn;
@@ -38,23 +39,24 @@
 
     if (sender.tag == 1) {
         
-        NSArray* list = @[@"1",@"2",@"3"];
+        NSArray* list = @[@"1小时",@"2小时",@"3小时",@"4小时",@"5小时",@"6小时",@"7小时",@"8小时",@"9小时",@"10小时",@"11小时",@"12小时"];
         [TBCityHUDPicker showPicker:list Title:@"请选择游玩时长" Tag:@"a" Delegate:self];
         
     }
     else if (sender.tag == 2)
     {
-        NSArray* list = @[@"1",@"2",@"3"];
+        NSArray* list = @[@"0点",@"1点",@"2点",@"3点",@"4点",@"5点",@"6点",@"7点",@"8点",@"9点",@"10点",@"11点",@"12点",@"13点",@"14点",@"15点",@"16点",@"17点",@"18点",@"19点",@"20点",@"21点",@"22点",@"23点"];
+        
         [TBCityHUDPicker showPicker:list Title:@"请选择游玩时段" Tag:@"b" Delegate:self];
     }
     else if (sender.tag == 3)
     {
-        NSArray* list = @[@"1",@"2",@"3"];
+        NSArray* list = @[@"1人",@"2人",@"3人"];
         [TBCityHUDPicker showPicker:list Title:@"请选择游玩人数" Tag:@"c" Delegate:self];
     }
     else if (sender.tag == 4)
     {
-        NSArray* list = @[@"1",@"2",@"3"];
+        NSArray* list = @[@"打车",@"打车",@"打车"];
         [TBCityHUDPicker showPicker:list Title:@"请选择见面方式" Tag:@"d" Delegate:self];
     }
 }

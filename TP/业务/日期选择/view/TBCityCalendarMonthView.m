@@ -25,6 +25,7 @@ typedef struct Tag
 @implementation TBCityCalendarMonthView
 {
     NSInteger _selectedDate;
+    NSInteger _cancelSelectedDate;
     BOOL _hasBeenLayout;
     //用来判断点击
     NSMutableArray* _list;
@@ -235,9 +236,18 @@ typedef struct Tag
             if (CGRectContainsPoint(rect,locationPt) )
             {
                 if (t.b) {
-                    _selectedDate = t.date;
+                 
                     t.hasBeenSelected = !t.hasBeenSelected;
                     
+                    if (t.hasBeenSelected) {
+                        _selectedDate = t.date;
+                        _cancelSelectedDate = -1;
+                    }
+                    else
+                    {
+                        _cancelSelectedDate = t.date;
+                        _selectedDate = -1;
+                    }
                     mutableIndex = i;
                     mutableValue = [[NSValue alloc]initWithBytes:&t objCType:@encode(struct Tag)];
                     _touchedTags[@(t.date)] = mutableValue;
@@ -247,7 +257,8 @@ typedef struct Tag
                 {
                     //不再预订范围
                     _selectedDate = -1;
-              
+                    _cancelSelectedDate = -1;
+                    
                 }
                 break;
             }
@@ -273,11 +284,16 @@ typedef struct Tag
             [self.delegate onMonthView:self DateSelected:_selectedDate];
         }
     }
-    else
-    {
-//        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"该时间段不能预订" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        [alert show];
+    
+    if (_cancelSelectedDate != -1) {
+        
+        if ([self.delegate respondsToSelector:@selector(onMonthView:DateCancelSelected:)]) {
+            [self.delegate onMonthView:self DateSelected:_cancelSelectedDate];
+        }
+        
     }
+
+
 
 }
 

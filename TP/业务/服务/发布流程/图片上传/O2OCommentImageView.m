@@ -75,7 +75,11 @@
         _uploadProgressView.backgroundColor = [UIColor blackColor];
         _uploadProgressView.alpha = 0.5;
         _uploadProgressView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
-        [self addSubview:_uploadProgressView];
+        UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake((self.vzWidth-20)/2, (self.vzHeight-20)/2, 20, 20)];
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+        [indicator startAnimating];
+        [_uploadProgressView addSubview:indicator];
+        //[self addSubview:_uploadProgressView];
     }
     
     return _uploadProgressView;
@@ -108,14 +112,28 @@
         self.item.isUploadError = NO;
     }
     
-    __weak typeof(self) weakSelf = self;
+
     self.item.uploadPercent = 0;
     self.item.isUploading = YES;
     self.item.isUploadError = NO;
     self.uploadProgressView.vzTop = 0;
     self.uploadProgressView.vzHeight = self.vzHeight;
-    
+    [self addSubview:self.uploadProgressView];
     [self.uploadErrorView removeFromSuperview];
+    
+    [TPUtils uploadImage:self.item.base64String WithCompletion:^(NSString *url, NSError *err) {
+        
+        [self.uploadProgressView removeFromSuperview];
+        if (!err) {
+            self.item.imageURL = url;
+        }
+        else
+        {
+            
+        }
+        
+    }];
+    
 //    [[APImageManager manager] uploadWithImage:self.image
 //                                     compress:ImageCompressQualityMid
 //                                     progress:^(double percentage, long long partialBytes, long long totalBytes) {

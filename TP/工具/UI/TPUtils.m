@@ -203,7 +203,7 @@ static NSArray* list = nil;
     [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"upPic"]
                                 requestConfig:config
                                responseConfig:vz_defaultHTTPResponseConfig()
-                                       params:@{@"uid":[TPUser uid]?:@"",@"token":[TPUser token],@"picBase64":base64?:@"",@"picName":@"file"}
+                                       params:@{@"uid":[TPUser uid]?:@"",@"token":[TPUser token],@"picBase64":base64?:@"",@"picName":[NSUUID UUID].UUIDString}
                             completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
                                 
                                 if (!error) {

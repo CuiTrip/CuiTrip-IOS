@@ -17,8 +17,9 @@ const int kMaxImageCount = 9;
 @interface TPPSPicsViewController ()<O2OCommentImageListViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property(nonatomic,strong) O2OCommentImageListView* galleryView;
-@property(nonatomic, strong) UIView *imgsBackView;
+@property(nonatomic,strong) UIView *imgsBackView;
 @property(nonatomic,strong) O2OCommentImageItem* tobeDeletedItem;
+@property(nonatomic,strong) NSMutableArray* pics;
 
 @end
 
@@ -27,6 +28,7 @@ const int kMaxImageCount = 9;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    _pics = [NSMutableArray new];
     _galleryView  = [[O2OCommentImageListView alloc] initWithFrame:CGRectMake(10, 60, self.view.vzWidth-30, 55)];
     _galleryView.enableAddImage = YES;
     _galleryView.delegate = self;
@@ -46,8 +48,8 @@ const int kMaxImageCount = 9;
     NSMutableArray* list = [NSMutableArray new];
     for (O2OCommentImageItem* item in items) {
         
-        if (item.base64String) {
-            [list addObject:item.base64String];
+        if (item.imageURL) {
+            [list addObject:item.imageURL];
         }
 
     }
@@ -170,21 +172,19 @@ const int kMaxImageCount = 9;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            UIImage* clippedImage = [image tranformScaleToSize:CGSizeMake(640, 640)];
+            UIImage* clippedImage = [image tranformScaleToSize:CGSizeMake(320, 320)];
             NSString* base64String = [self processImage:clippedImage];
             
             O2OCommentImageItem* photoItem = [O2OCommentImageItem new];
             photoItem.size = CGSizeMake(100, 100);
             photoItem.image = clippedImage;
-            photoItem.needAutoUpload = NO;
+            photoItem.needAutoUpload = YES;
             photoItem.base64String = base64String;
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self.view hideToastActivity];
-                
                 [_galleryView appendImage:photoItem];
-                
             });
             
         });
@@ -195,15 +195,7 @@ const int kMaxImageCount = 9;
 - (NSString* )processImage:(UIImage* )image
 {
     NSData* data = nil;
-//    if ([[AFNetworkReachabilityManager sharedManager] isReachableViaWiFi]) {
-//        
-//        data = UIImageJPEGRepresentation(image, 0.8);
-//    }
-//    else
-//    {
-        data = UIImageJPEGRepresentation(image, 0.5);
-//    }
-    
+    data = UIImageJPEGRepresentation(image, 0.5);
     return  [data base64Encoding];
 }
 
