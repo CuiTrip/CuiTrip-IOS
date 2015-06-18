@@ -3130,6 +3130,7 @@
 				TargetAttributes = {
 					454781641B14234F00B4A24D = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 448XX254EU;
 					};
 					4547817D1B14234F00B4A24D = {
 						CreatedOnToolsVersion = 6.3;
@@ -3632,6 +3633,7 @@
 			baseConfigurationReference = 550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TP/三方/SMS_SDK",
@@ -3656,6 +3658,7 @@
 			baseConfigurationReference = A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TP/三方/SMS_SDK",
