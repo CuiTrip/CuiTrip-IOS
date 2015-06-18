@@ -117,6 +117,7 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
 
 - (UIRemoteNotificationType)remoteNotificationType
 {
+    
     return [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
 }
 
@@ -128,7 +129,9 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
     if (!tokenData) {
         return;
     }
+    [UMessage registerDeviceToken:tokenData];
     
+    //同步到服务器
     NSString *deviceToken = [self deviceTokenStrWithData:tokenData];
     
     if (deviceToken.length > 0 && [TPUser uid].length > 0 && [TPUser token].length > 0) {

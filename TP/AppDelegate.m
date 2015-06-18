@@ -49,6 +49,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
+    [UMessage didReceiveRemoteNotification:userInfo];
     //弹框:
     
     
