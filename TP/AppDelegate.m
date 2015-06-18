@@ -30,6 +30,9 @@
     [SMS_SDK registerApp:sms_appKey
               withSecret:sms_appSecret];
     
+    //注册分享
+    [UMSocialData setAppKey:um_appKey];
+    
     //注册APNS
     [[TPAPNS sharedInstance] setup:launchOptions];
     

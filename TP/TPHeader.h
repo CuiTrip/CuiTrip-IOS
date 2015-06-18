@@ -17,6 +17,7 @@
 #import "TPLoginManager.h"
 #import "TPAPNS.h"
 #import "UMessage.h"
+#import "UMSocial.h"
 
 
 

@@ -54,7 +54,7 @@
 
 @end
 
-@interface TPDiscoveryDetailListViewController()
+@interface TPDiscoveryDetailListViewController()<UMSocialUIDelegate>
 
 @property(nonatomic,strong)TPDiscoveryDetailListModel *discoveryDetailListModel; 
 @property(nonatomic,strong)TPDiscoveryDetailListViewDataSource *ds;
@@ -211,6 +211,12 @@
     subscribeNext:^(id x) {
        
         //分享//
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:um_appKey
+                                          shareText:@"你要分享的文字"
+                                         shareImage:[UIImage imageNamed:@"girl.jpg"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
+                                           delegate:self];
     }];
     [self.view addSubview:shareBtn];
     
