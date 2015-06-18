@@ -31,8 +31,10 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.titleLabel];
     
-    self.textView = [[UITextView alloc]initWithFrame:CGRectMake(30, self.titleLabel.vzBottom+20, self.view.vzWidth-60, self.view.vzHeight-self.titleLabel.vzBottom - 50)];
+    self.textView = [[UITextView alloc]initWithFrame:CGRectMake(10, self.titleLabel.vzBottom+20, self.view.vzWidth-20, self.view.vzHeight-self.titleLabel.vzBottom - 50)];
     self.textView.editable = false;
+    self.textView.scrollEnabled = true;
+    self.textView.userInteractionEnabled = true;
     self.textView.textColor = HEXCOLOR(0x9b9b9b);
     self.textView.backgroundColor = [UIColor clearColor];
     self.textView.font = [UIFont systemFontOfSize:14.0f];
@@ -50,10 +52,6 @@
                           };
     
     self.textView.attributedText = [[NSAttributedString alloc] initWithString:string attributes:ats];
-    
-   // self.textView.text = self.content;
-
-    
     [self.view addSubview:self.textView];
     
 }

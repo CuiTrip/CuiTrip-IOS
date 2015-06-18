@@ -113,16 +113,6 @@
 {
     [super loadView];
     
-////    
-//    UIImageView* imageView = [TPUIKit imageView];
-//    imageView.vzWidth = self.view.frame.size.width;
-//    imageView.vzHeight = 400;
-//    imageView.image = __image(@"mazu.png");
-//    [self.view addSubview:imageView];
-//    
-    
-
-    
 
 }
 
@@ -225,25 +215,19 @@
                                            delegate:self];
     }];
     [self.view addSubview:shareBtn];
-    
-    self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width, self.tableView.contentSize.height-64);
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    //todo..
+
     self.navigationController.navigationBarHidden = true;
-    self.tabBarController.tabBar.hidden = true;
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    //todo..
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -269,6 +253,7 @@
     
     //todo..
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
