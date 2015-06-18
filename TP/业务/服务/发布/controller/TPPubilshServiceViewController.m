@@ -122,6 +122,13 @@
         };
         
         TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
+        fee.callback = ^(NSString* fee,...){
+        
+            self.fee = fee;
+        
+        };
+        
+        
         TPPSComfirmViewController* confirm = __story(@"TPPSConfirmViewController", @"tppsconfirm");
         confirm.complete = ^{
         
@@ -228,6 +235,7 @@
     [v onNext];
     
     if (++oldIndex < self.viewControllers.count )
+    
         [self setSelectedIndex:oldIndex animated:YES];
 }
 
@@ -328,6 +336,9 @@
     else if (self.selectedIndex == [self.viewControllers count] -1)
     {
          self.navigationItem.rightBarButtonItem = nil;
+        TPPSComfirmViewController* confirm = (TPPSComfirmViewController* )self.selectedViewController;
+        confirm.tripTitle = self.titleStr;
+        confirm.fee = self.fee;
     }
     else
     {

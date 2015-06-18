@@ -18,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textField.layer.cornerRadius = 5.0f;
+    self.textField.layer.borderColor = [TPTheme grayColor].CGColor;
+    self.textField.layer.borderWidth = kOnePixel;
+    self.textField.layer.masksToBounds = true;
+    self.textField.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, self.textField.vzHeight)];
+    self.textField.leftViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)didReceiveMemoryWarning {

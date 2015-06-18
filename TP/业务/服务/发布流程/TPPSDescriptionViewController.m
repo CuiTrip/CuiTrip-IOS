@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textView.layer.cornerRadius = 5.0f;
+    self.textView.layer.borderColor = [TPTheme grayColor].CGColor;
+    self.textView.layer.borderWidth = kOnePixel;
+    self.textView.layer.masksToBounds = true;
+    self.textView.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {

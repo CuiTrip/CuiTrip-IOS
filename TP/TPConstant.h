@@ -20,6 +20,8 @@
 #define kTPCacheKey_User @"TP_USER"
 #define kTPCacheKey_APNS @"TPAPNS"
 
+#define kOnePixel (1/[UIScreen mainScreen].scale)
+
 #define kTPScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kTPScreenHeight [UIScreen mainScreen].bounds.size.height
 

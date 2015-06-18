@@ -17,13 +17,22 @@
 
 @implementation TPPSComfirmViewController
 
+- (void)setTripTitle:(NSString *)tripTitle
+{
+    _tripTitle = tripTitle;
+    self.titleLabel.text = tripTitle;
+}
 
+- (void)setFee:(NSString *)fee
+{
+    _fee = fee;
+    self.feeLabel.text = fee;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.titleLabel.text = self.tripTitle;
-    self.feeLabel.text = self.fee;
+  
     [self setTitle:@"添加发现"];
 }
 
