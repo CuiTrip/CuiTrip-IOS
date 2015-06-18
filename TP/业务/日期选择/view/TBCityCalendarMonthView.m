@@ -288,7 +288,7 @@ typedef struct Tag
     if (_cancelSelectedDate != -1) {
         
         if ([self.delegate respondsToSelector:@selector(onMonthView:DateCancelSelected:)]) {
-            [self.delegate onMonthView:self DateSelected:_cancelSelectedDate];
+            [self.delegate onMonthView:self DateCancelSelected:_cancelSelectedDate];
         }
         
     }

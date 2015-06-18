@@ -13,6 +13,7 @@
 @interface TPPSMoreViewController ()<TBCityHUDPickerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *durationBtn;
 @property (weak, nonatomic) IBOutlet UIButton *dateBtn;
+@property (weak, nonatomic) IBOutlet UIButton *calendarBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *numberBtn;
 @property (weak, nonatomic) IBOutlet UIButton *meetBtn;
@@ -21,6 +22,7 @@
 @property(nonatomic,strong) NSString* duration;
 @property(nonatomic,strong) NSString* number;
 @property(nonatomic,strong) NSString* meet;
+@property(nonatomic,strong) NSArray* dates;
 
 @end
 
@@ -36,6 +38,21 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)onAction:(UIButton* )sender {
+    
+    if (sender.tag == 0) {
+        
+        TPDatePickerViewController* vc = [TPDatePickerViewController new];
+        vc.type = kSelection;
+        vc.date = [NSDate date];
+        vc.callback = ^(NSArray* list){
+            self.dates = list;
+            if (list.count > 0) {
+                [self.calendarBtn setTitle:[TPUtils fullDateFormatString:list[0]] forState:UIControlStateNormal];
+            }
+        };
+
+        [self.navigationController pushViewController:vc animated:true];
+    }
 
     if (sender.tag == 1) {
         
