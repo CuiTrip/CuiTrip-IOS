@@ -11,6 +11,8 @@
 
 #import "TPDDInfoCell.h"
 #import "TPDDInfoCellContainerView.h"
+#import "TPDDInfoItem.h"
+
 
 @interface TPDDInfoCell()
 
@@ -50,6 +52,13 @@
 + (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
 {
     return 240;
+}
+
+- (void)setItem:(TPDDInfoItem *)item
+{
+    [super setItem:item];
+    [self.containerView setItem:item];
+
 }
 
 - (void)layoutSubviews

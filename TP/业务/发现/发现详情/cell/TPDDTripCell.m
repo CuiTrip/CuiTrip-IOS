@@ -11,6 +11,8 @@
 
 #import "TPDDTripCell.h"
 #import "TPDDTripCellContainerView.h"
+#import "TPDDTripItem.h"
+
 
 @interface TPDDTripCell()
 
@@ -46,6 +48,12 @@
 + (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
 {
     return 320;
+}
+
+- (void)setItem:(TPDDTripItem *)item
+{
+    [super setItem:item];
+    [self.containerView setItem:item];
 }
 
 - (void)layoutSubviews

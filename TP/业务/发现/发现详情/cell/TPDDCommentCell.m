@@ -11,6 +11,8 @@
 
 #import "TPDDCommentCell.h"
 #import "TPDDCommentCellContainerView.h"
+#import "TPDDCommentItem.h"
+
 
 @interface TPDDCommentCell()
 
@@ -44,6 +46,13 @@
 + (CGFloat) tableView:(UITableView *)tableView variantRowHeightForItem:(id)item AtIndex:(NSIndexPath *)indexPath
 {
     return 185;
+}
+
+- (void)setItem:(TPDDCommentItem *)item
+{
+    [super setItem:item];
+    self.containerView.item = item;
+
 }
 
 - (void)layoutSubviews

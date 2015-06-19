@@ -11,6 +11,7 @@
 
 #import "TPDDProfileCell.h"
 #import "TPDDProfileCellContainerView.h"
+#import "TPDDProfileItem.h"
 
 @interface TPDDProfileCell()
 
@@ -48,6 +49,14 @@
 {
     return 400;
 }
+
+- (void)setItem:(TPDDProfileItem *)item
+{
+    [super setItem:item];
+    [self.containerView setItem:item];
+    
+}
+
 
 - (void)layoutSubviews
 {
