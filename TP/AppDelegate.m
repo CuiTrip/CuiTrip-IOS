@@ -42,6 +42,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+   // [TPLocationManager startLocation];
     [[TPAPNS sharedInstance] registerRemoteNotification];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     

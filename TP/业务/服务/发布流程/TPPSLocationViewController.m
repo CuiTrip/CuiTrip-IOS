@@ -35,7 +35,7 @@
 - (void)onNext
 {
     if (self.callback) {
-        self.callback(self.textField.text,self.locationLabel.text,nil);
+        self.callback(self.textField.text,nil,nil);
     }
 }
 - (void)onBack

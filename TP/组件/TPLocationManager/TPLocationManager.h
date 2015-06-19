@@ -10,10 +10,15 @@
 
 @interface TPLocationManager : NSObject
 
++ (instancetype)sharedInstance;
+
 + (CLLocationCoordinate2D)currentLocation;
 
 + (void)startLocation;
 
++ (void)startLocationWithCompletion:(void(^)(CLLocation* location))callback;
+
 + (void)stopLocation;
+
 
 @end

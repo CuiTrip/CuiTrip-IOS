@@ -13,9 +13,7 @@
 #import "TPMeItem.h"
 
 @interface TPMeSubView()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+
 
 @end
 
@@ -43,10 +41,7 @@
   return self;
 }
 
-- (void)setItem:(TPMeItem *)item
-{
-  
-}
+
 
 - (void)layoutSubviews
 {

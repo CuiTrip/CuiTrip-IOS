@@ -305,6 +305,7 @@
     else if ([type isEqualToString:@"gotoComment"])
     {
         TPCommentListViewController* vc = [TPCommentListViewController new];
+        vc.sid = self.sid;
         [self.navigationController pushViewController:vc animated:YES];
         
     }
@@ -312,6 +313,7 @@
     {
         TPDatePickerViewController* vc = [TPDatePickerViewController new];
         vc.type = kCheckOnly;
+        vc.sid=self.sid;
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([type isEqualToString:@"gotoFee"])

@@ -95,6 +95,7 @@
     
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
+    self.commentListModel.sid = self.sid;
     self.keyModel = self.commentListModel;
     
     //5,REQUIRED:register model to parent view controller

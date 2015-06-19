@@ -46,11 +46,17 @@
 {
     NSMutableArray* ret = [NSMutableArray new];
     
-    TPCommentListItem* item = [TPCommentListItem new];
-    [item autoKVCBinding:JSON];
-    item.itemHeight = 15+item.contentHeight+12+30+12;
-  
-    [ret addObject:item];
+    NSArray* comments = JSON;
+    
+    for (NSDictionary* dict in comments) {
+        
+        TPCommentListItem* item = [TPCommentListItem new];
+        [item autoKVCBinding:dict];
+        item.itemHeight = 15+item.contentHeight+12+30+12;
+        
+        [ret addObject:item];
+    }
+
     
     return ret;
 }

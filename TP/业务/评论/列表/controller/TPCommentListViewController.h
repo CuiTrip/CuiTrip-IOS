@@ -12,6 +12,6 @@
 #import "VZListViewController.h"
 
 @interface TPCommentListViewController : VZListViewController
-
+@property(nonatomic,strong)NSString* sid;
 @end
   

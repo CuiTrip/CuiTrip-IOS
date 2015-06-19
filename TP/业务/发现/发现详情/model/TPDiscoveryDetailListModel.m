@@ -56,7 +56,7 @@
     NSDictionary* serviceInfo = JSON[@"serviceInfo"];
     infoItem.name = serviceInfo[@"name"];
     infoItem.address = serviceInfo[@"address"];
-    infoItem.desc = serviceInfo[@"desc"];
+    infoItem.desc = serviceInfo[@"descpt"];
     infoItem.score = serviceInfo[@"score"];
     infoItem.pics = serviceInfo[@"pics"];
     self.tripInfoItem = infoItem;

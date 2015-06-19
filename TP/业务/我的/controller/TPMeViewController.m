@@ -165,14 +165,17 @@
     self.headerView = (TPMeSubView *)[nib objectAtIndex:0];
     self.headerView.vzWidth = self.view.vzWidth;
     self.headerView.vzHeight = 200;
+    [self.headerView.imageView sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
+    self.headerView.nameLabel.text = [TPUser userNick];
+    self.headerView.descLabel.text = [TPUser sign];
     self.tableView.tableHeaderView = self.headerView;
-    
+
     
     TPUserType type = [TPUser type];
     NSString* title = type == kCustomer? @"切换到发现者模式":@"切换到旅行者模式";
     
     UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
-    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 50, 200, 44)];
+    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 20, 200, 44)];
     btn.layer.cornerRadius  = 5.0;
     btn.layer.masksToBounds = true;
     [btn setTitle:title forState:UIControlStateNormal];

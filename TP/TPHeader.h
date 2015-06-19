@@ -15,10 +15,10 @@
 #import "TPUIKit.h"
 #import "TPUtils.h"
 #import "TPLoginManager.h"
+#import "TPLocationManager.h"
 #import "TPAPNS.h"
 #import "UMessage.h"
 #import "UMSocial.h"
-
 
 
 #endif

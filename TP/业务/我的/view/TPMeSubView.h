@@ -8,14 +8,14 @@
 //
 
 
-  
-@class TPMeItem;
 
 #import <UIKit/UIKit.h>
 
 @interface TPMeSubView : UIView
 
-@property(nonatomic,strong) TPMeItem *item;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 @end
 
