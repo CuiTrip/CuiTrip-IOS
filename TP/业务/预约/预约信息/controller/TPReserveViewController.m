@@ -13,7 +13,7 @@
 #import "TBCityHUDPicker.h"
 #import "TPReserveModel.h"
 #import "TPReserveSubView.h"
-
+#import "TPGetServiceEnableDateModel.h"
 
 @interface TPReserveViewController()<TBCityHUDPickerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
@@ -50,6 +50,7 @@
     }
     return _reserveModel;
 }
+
 
 
 

@@ -177,7 +177,7 @@
        
         void(^lamda)() = ^{//跳转到预约
             TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
-            //v.availableDates = self.discoveryDetailListModel.tripDetailItem.ava
+
             [self.navigationController pushViewController:v animated:true];
         };
         

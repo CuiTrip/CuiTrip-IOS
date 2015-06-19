@@ -74,7 +74,9 @@
     [list addObject:profileItem];
     
     TPDDCommentItem* commentItem = [TPDDCommentItem new];
-    
+    NSDictionary* commentInfo = JSON[@"reviewInfo"];
+    commentItem.comment = commentInfo[@"lastReview"][@"content"];
+    commentItem.commentNum = commentInfo[@"reviewNum"];
     self.tripCommentItem = commentItem;
     [list addObject:commentItem];
     
