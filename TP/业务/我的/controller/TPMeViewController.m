@@ -164,7 +164,7 @@
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPMeSubView" owner:self options:nil];
     self.headerView = (TPMeSubView *)[nib objectAtIndex:0];
     self.headerView.vzWidth = self.view.vzWidth;
-    self.headerView.vzHeight = 350;
+    self.headerView.vzHeight = 200;
     self.tableView.tableHeaderView = self.headerView;
     
     

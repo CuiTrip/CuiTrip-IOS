@@ -20,6 +20,9 @@
 #import "TPReserveViewController.h"
 #import "BXImageScrollView.h"
 #import "TPDDTripItem.h"
+#import "TPDDInfoItem.h"
+
+
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -38,7 +41,7 @@
         
         
         self.bannerView = [[BXImageScrollView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        self.bannerView.placeHolderImage = __image(@"mazu.png");
+        self.bannerView.placeHolderImage = __image(@"default_details.jpg");
         [self addSubview:self.bannerView];
 //
 //        
@@ -46,7 +49,7 @@
         self.moneyLabel.vzOrigin = (CGPoint){0,230};
         self.moneyLabel.vzWidth = 124;
         self.moneyLabel.vzHeight= 35;
-        self.moneyLabel.text = @"   RMB 8888";
+        self.moneyLabel.text = @"";
         self.moneyLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
         
         CAShapeLayer* layer = [CAShapeLayer new];
@@ -156,15 +159,7 @@
     TPDiscoveryDetailListViewHeaderView* headerView = [[TPDiscoveryDetailListViewHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 270)];
     headerView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = headerView;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        NSArray* list = @[@"http://www.collegedj.net/wp-content/uploads/2014/04/20071205_025051_redman2-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/50-cent-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/50-cent-suit-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/IMG_2297-150x150.jpg",@"http://www.collegedj.net/wp-content/uploads/2014/04/MeekMill8-150x150.png"];
-        
-        headerView.bannerView.urls = list;
-        
-    });
-    
+
     
     
     //footer view
@@ -177,7 +172,9 @@
        
         void(^lamda)() = ^{//跳转到预约
             TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
-
+            v.maxNum = [self.discoveryDetailListModel.tripDetailItem.tripPeopleNum integerValue];
+            v.fee = self.discoveryDetailListModel.tripDetailItem.tripFee;
+            v.sid = self.sid;
             [self.navigationController pushViewController:v animated:true];
         };
         
@@ -265,6 +262,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
+- (void)showModel:(TPDiscoveryDetailListModel *)model
+{
+    [super showModel:model];
+    TPDiscoveryDetailListViewHeaderView* headerView = (TPDiscoveryDetailListViewHeaderView* )self.tableView.tableHeaderView;
+    headerView.bannerView.urls = model.tripInfoItem.pics;
+    headerView.moneyLabel.text = model.tripDetailItem.tripFee;
+
+}
+
 - (void)showError:(NSError *)error withModel:(VZModel *)model
 {
     [super showError:error withModel:model];
@@ -292,8 +298,8 @@
         
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
         vc.title = @"旅程描述";
-        vc.titleString = @"台湾妈祖神庙参观";
-        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        vc.titleString = self.discoveryDetailListModel.tripInfoItem.name;
+        vc.content = self.discoveryDetailListModel.tripInfoItem.desc;
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([type isEqualToString:@"gotoComment"])
@@ -311,9 +317,9 @@
     else if ([type isEqualToString:@"gotoFee"])
     {
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
-        vc.title = @"台湾妈祖神庙参观";
+        vc.title = self.discoveryDetailListModel.tripInfoItem.name;
         vc.titleString = @"费用说明";
-        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        vc.content = @"";
         [self.navigationController pushViewController:vc animated:YES];
  
     }
@@ -322,7 +328,7 @@
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
         vc.title = @"脆饼旅行";
         vc.titleString = @"脆饼公约";
-        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        vc.content = @"";
         [self.navigationController pushViewController:vc animated:YES];
 
     }

@@ -65,7 +65,7 @@
 {
     [super setItem:item];
     
-    [self.icon sd_setImageWithURL:__url(item.servicePIC) placeholderImage:__image(@"mazu.png")];
+    [self.icon sd_setImageWithURL:__url(item.servicePIC) placeholderImage:__image(@"default_sys.jpg")];
     self.statusLabel.text = item.status;
     self.dateLabel.text = item.serviceDate;
     self.titleLabel.text = item.serviceName;

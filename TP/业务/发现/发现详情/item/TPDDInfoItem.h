@@ -17,7 +17,7 @@
 @property(nonatomic,strong)NSString* address;
 @property(nonatomic,strong)NSString* desc;
 @property(nonatomic,strong)NSString* score;
-
+@property(nonatomic,strong)NSArray* pics;
 @end
 
   

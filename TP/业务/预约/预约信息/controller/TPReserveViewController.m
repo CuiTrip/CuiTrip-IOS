@@ -24,6 +24,7 @@
 @property (nonatomic,strong) TPReserveSubView* confirmView;
  
 @property(nonatomic,strong)TPReserveModel *reserveModel; 
+@property(nonatomic,strong)TPGetServiceEnableDateModel* availabeDateModel;
 
 @end
 
@@ -51,7 +52,13 @@
     return _reserveModel;
 }
 
-
+- (TPGetServiceEnableDateModel* )availabeDateModel
+{
+    if (!_availabeDateModel) {
+        _availabeDateModel = [TPGetServiceEnableDateModel new];
+    }
+    return _availabeDateModel;
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -84,12 +91,25 @@
 
     };
     
-//    if (self.availableDates.count > 0) {
-//        
-//        for (NSString* date; <#condition#>; <#increment#>) {
-//            <#statements#>
-//        }
-//    }
+
+    SHOW_SPINNER(self);
+    self.availabeDateModel.sid = self.sid;
+    [self.availabeDateModel loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        
+        HIDE_SPINNER(weakSelf);
+      
+        if (!error) {
+            
+            TPGetServiceEnableDateModel* availableModel = (TPGetServiceEnableDateModel* )model;
+            weakSelf.availableDates = availableModel.availableDates;
+        }
+        else
+        {
+            TOAST_ERROR(weakSelf, error);
+        }
+        
+    }];
     
 }
 
@@ -133,54 +153,34 @@
     //todo..
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - @override methods
-
-- (void)showModel:(VZModel *)model
-{
-    //todo:
-    [super showModel:model];
-}
-
-- (void)showEmpty:(VZModel *)model
-{
-    //todo:
-    [super showEmpty:model];
-}
-
-
-- (void)showLoading:(VZModel*)model
-{
-    //todo:
-    [super showLoading:model];
-}
-
-- (void)showError:(NSError *)error withModel:(VZModel*)model
-{
-    //todo:
-    [super showError:error withModel:model];
-}
-
-
 - (IBAction)onConfirm:(id)sender {
     
+    if(_dateToDisplay.count == 0)
+    {
+        TOAST(self, @"请选择日期");
+    }
+    
 
+    
     UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
     v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     [self.view addSubview:v];
-    
+    //self.confirmView
     [v addSubview:self.confirmView];
    
 }
 
 - (IBAction)onDate:(id)sender {
-    
-    NSArray* list = @[@"2015年6月20日",@"2015年6月22日",@"2015年6月25日",@"2015年6月28日"];
-    [TBCityHUDPicker showPicker:list Title:@"请选择预订时间" Tag:@"1" Delegate:self];
+    [TBCityHUDPicker showPicker:self.availableDates Title:@"请选择预订时间" Tag:@"1" Delegate:self];
 }
 - (IBAction)onNum:(id)sender {
     
-    NSArray* list = @[@"3人",@"4人",@"5人",@"6人"];
+    NSMutableArray* list = [NSMutableArray new];
+    for (int i=0; i<self.maxNum; i++) {
+        
+        NSString* num = [[NSString alloc]initWithFormat:@"%d人",i+1];
+        [list addObject:num];
+    }    
     [TBCityHUDPicker showPicker:list Title:@"请选择人数" Tag:@"2" Delegate:self];
 }
 

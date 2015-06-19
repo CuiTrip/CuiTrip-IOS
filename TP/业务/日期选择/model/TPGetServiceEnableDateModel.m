@@ -27,7 +27,7 @@
 
 - (NSString *)methodName {
     
-    return [_API_ stringByAppendingString:@"getServiceEnableDate"];
+    return [_API_ stringByAppendingString:@"getServiceAvailableDate"];
 }
 
 - (VZHTTPRequestConfig)requestConfig

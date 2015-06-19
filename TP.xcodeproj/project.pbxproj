@@ -103,6 +103,10 @@
 		4509AC391B247EB500846032 /* TPTripDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */; };
 		45109A1F1B3079460074DCB6 /* trip_left3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45109A1D1B3079460074DCB6 /* trip_left3@2x.png */; };
 		45109A201B3079460074DCB6 /* trip_right3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45109A1E1B3079460074DCB6 /* trip_right3@2x.png */; };
+		4524FCAA1B34623400ED3D79 /* default_details@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA61B34623400ED3D79 /* default_details@2x.jpg */; };
+		4524FCAB1B34623500ED3D79 /* default_list@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA71B34623400ED3D79 /* default_list@2x.jpg */; };
+		4524FCAC1B34623500ED3D79 /* default_sys.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA81B34623400ED3D79 /* default_sys.jpg */; };
+		4524FCAD1B34623500ED3D79 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA91B34623400ED3D79 /* girl.jpg */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */; };
 		456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 456C68E01B2ED35A003D4C20 /* pay_meta.json */; };
@@ -260,7 +264,6 @@
 		45D48C621B32EEBE00B5801F /* TPDDTripItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C261B32EEBD00B5801F /* TPDDTripItem.m */; };
 		45D48C631B32EEBE00B5801F /* TPDiscoveryDetailListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C281B32EEBD00B5801F /* TPDiscoveryDetailListItem.m */; };
 		45D48C641B32EEBE00B5801F /* TPDiscoveryDetailListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C2B1B32EEBD00B5801F /* TPDiscoveryDetailListModel.m */; };
-		45D48C651B32EEBE00B5801F /* mazu.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C2D1B32EEBD00B5801F /* mazu.png */; };
 		45D48C661B32EEBE00B5801F /* star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C2E1B32EEBD00B5801F /* star_gray@2x.png */; };
 		45D48C671B32EEBE00B5801F /* star_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C2F1B32EEBD00B5801F /* star_highlight@2x.png */; };
 		45D48C681B32EEBE00B5801F /* TPStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C321B32EEBD00B5801F /* TPStarView.m */; };
@@ -271,8 +274,6 @@
 		45D48C6D1B32EEBE00B5801F /* TPDiscoveryListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C421B32EEBD00B5801F /* TPDiscoveryListViewDelegate.m */; };
 		45D48C6E1B32EEBE00B5801F /* TPDiscoveryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C451B32EEBD00B5801F /* TPDiscoveryListItem.m */; };
 		45D48C6F1B32EEBE00B5801F /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */; };
-		45D48C701B32EEBE00B5801F /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C4A1B32EEBE00B5801F /* girl.jpg */; };
-		45D48C711B32EEBE00B5801F /* taiwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C4B1B32EEBE00B5801F /* taiwan.png */; };
 		45D48C751B33092200B5801F /* TPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C741B33092200B5801F /* TPLocationManager.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
@@ -502,6 +503,10 @@
 		4509AC381B247EB500846032 /* TPTripDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPTripDetailViewController.storyboard; sourceTree = "<group>"; };
 		45109A1D1B3079460074DCB6 /* trip_left3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_left3@2x.png"; sourceTree = "<group>"; };
 		45109A1E1B3079460074DCB6 /* trip_right3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_right3@2x.png"; sourceTree = "<group>"; };
+		4524FCA61B34623400ED3D79 /* default_details@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default_details@2x.jpg"; sourceTree = "<group>"; };
+		4524FCA71B34623400ED3D79 /* default_list@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default_list@2x.jpg"; sourceTree = "<group>"; };
+		4524FCA81B34623400ED3D79 /* default_sys.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_sys.jpg; sourceTree = "<group>"; };
+		4524FCA91B34623400ED3D79 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -766,7 +771,6 @@
 		45D48C281B32EEBD00B5801F /* TPDiscoveryDetailListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListItem.m; sourceTree = "<group>"; };
 		45D48C2A1B32EEBD00B5801F /* TPDiscoveryDetailListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryDetailListModel.h; sourceTree = "<group>"; };
 		45D48C2B1B32EEBD00B5801F /* TPDiscoveryDetailListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryDetailListModel.m; sourceTree = "<group>"; };
-		45D48C2D1B32EEBD00B5801F /* mazu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazu.png; sourceTree = "<group>"; };
 		45D48C2E1B32EEBD00B5801F /* star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_gray@2x.png"; sourceTree = "<group>"; };
 		45D48C2F1B32EEBD00B5801F /* star_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlight@2x.png"; sourceTree = "<group>"; };
 		45D48C311B32EEBD00B5801F /* TPStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPStarView.h; sourceTree = "<group>"; };
@@ -785,8 +789,6 @@
 		45D48C451B32EEBD00B5801F /* TPDiscoveryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListItem.m; sourceTree = "<group>"; };
 		45D48C471B32EEBE00B5801F /* TPDiscoveryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListModel.h; sourceTree = "<group>"; };
 		45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListModel.m; sourceTree = "<group>"; };
-		45D48C4A1B32EEBE00B5801F /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
-		45D48C4B1B32EEBE00B5801F /* taiwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taiwan.png; sourceTree = "<group>"; };
 		45D48C731B33092200B5801F /* TPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLocationManager.h; sourceTree = "<group>"; };
 		45D48C741B33092200B5801F /* TPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLocationManager.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
@@ -2671,7 +2673,10 @@
 		45D48C2C1B32EEBD00B5801F /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				45D48C2D1B32EEBD00B5801F /* mazu.png */,
+				4524FCA61B34623400ED3D79 /* default_details@2x.jpg */,
+				4524FCA71B34623400ED3D79 /* default_list@2x.jpg */,
+				4524FCA81B34623400ED3D79 /* default_sys.jpg */,
+				4524FCA91B34623400ED3D79 /* girl.jpg */,
 				45D48C2E1B32EEBD00B5801F /* star_gray@2x.png */,
 				45D48C2F1B32EEBD00B5801F /* star_highlight@2x.png */,
 			);
@@ -2769,8 +2774,6 @@
 		45D48C491B32EEBE00B5801F /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				45D48C4A1B32EEBE00B5801F /* girl.jpg */,
-				45D48C4B1B32EEBE00B5801F /* taiwan.png */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -3194,7 +3197,9 @@
 				45EB42FA1B2D63AE001B4202 /* triparrangement_meta.json in Resources */,
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
+				4524FCAC1B34623500ED3D79 /* default_sys.jpg in Resources */,
 				45D0C8011B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png in Resources */,
+				4524FCAA1B34623400ED3D79 /* default_details@2x.jpg in Resources */,
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
@@ -3203,6 +3208,7 @@
 				45D0C7E91B2BBEED00F31BF5 /* TPPSFeeViewController.storyboard in Resources */,
 				45D0C7FF1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png in Resources */,
 				4509ABC21B233C9200846032 /* reservedate_meta.json in Resources */,
+				4524FCAB1B34623500ED3D79 /* default_list@2x.jpg in Resources */,
 				45D48BE51B32AF3500B5801F /* UMSocialSDKResourcesNew.bundle in Resources */,
 				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
 				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
@@ -3231,7 +3237,6 @@
 				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
 				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
-				45D48C651B32EEBE00B5801F /* mazu.png in Resources */,
 				45D0C8001B2BDA3F00F31BF5 /* o2o_gray_star@3x.png in Resources */,
 				45D0C7E31B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard in Resources */,
 				45D0C7E11B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard in Resources */,
@@ -3243,7 +3248,6 @@
 				45D0C7DF1B29E10600F31BF5 /* TPPSLocationViewController.storyboard in Resources */,
 				45D0C7FB1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png in Resources */,
 				4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */,
-				45D48C701B32EEBE00B5801F /* girl.jpg in Resources */,
 				4509ABE51B23DDF600846032 /* feedback_meta.json in Resources */,
 				456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */,
 				45D0C78E1B29AFD800F31BF5 /* publishcomment_meta.json in Resources */,
@@ -3253,7 +3257,6 @@
 				45D0C8121B2BDC8900F31BF5 /* upload_image_failed@2x.png in Resources */,
 				45D0C8101B2BDC8900F31BF5 /* add_comment_image@2x.png in Resources */,
 				459BAEF11B21E58700739C7E /* trip_makeovers_w@2x.png in Resources */,
-				45D48C711B32EEBE00B5801F /* taiwan.png in Resources */,
 				459BAEEB1B21E58700739C7E /* trip_addPic_g@2x.png in Resources */,
 				459BAEF81B21E58700739C7E /* trip_nav_r@2x.png in Resources */,
 				45D6BA761B268794007DFC7A /* SMS_SDKLocalizable.strings in Resources */,
@@ -3275,6 +3278,7 @@
 				4509ABBD1B233C9200846032 /* reserve_meta.json in Resources */,
 				459BAEEC1B21E58700739C7E /* trip_cuts_w@2x.png in Resources */,
 				45D0C8131B2BDC8900F31BF5 /* upload_image_failed@3x.png in Resources */,
+				4524FCAD1B34623500ED3D79 /* girl.jpg in Resources */,
 				459BAEED1B21E58700739C7E /* trip_display_no@2x.png in Resources */,
 				459BAEEA1B21E58700739C7E /* trip_add_w@2x.png in Resources */,
 				45D48C551B32EEBE00B5801F /* TPDDProfileCell.xib in Resources */,

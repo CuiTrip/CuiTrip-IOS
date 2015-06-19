@@ -61,7 +61,7 @@
     
     
     self.bannerView = [[BXImageScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth,270)];
-    self.bannerView.placeHolderImage = __image(@"mazu.png");
+    self.bannerView.placeHolderImage = __image(@"default_details.jpg");
     [self.scrollView addSubview:self.bannerView];
     
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDInfoCell" owner:self options:nil];

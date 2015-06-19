@@ -62,7 +62,7 @@
 {
     [super setItem:item];
     
-    [self.poster sd_setImageWithURL:__url(item.servicePicUrl) placeholderImage:__image(@"taiwan.png")];
+    [self.poster sd_setImageWithURL:__url(item.servicePicUrl) placeholderImage:__image(@"default_list.jpg")];
     [self.icon sd_setImageWithURL:__url(item.headPic) placeholderImage:__image(@"girl.jpg")];
     //self.userNameLabel.attributedText = item.attributedUserString;
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.userNick,item.serviceAddress];
