@@ -196,6 +196,11 @@ static NSArray* list = nil;
     return str;
 }
 
++ (NSString* )money:(NSString* )money WithType:(NSString* )type
+{
+    return [NSString stringWithFormat:@"%@ %@",type,money];
+}
+
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback
 {
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();

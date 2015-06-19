@@ -29,19 +29,21 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"insiderId":[TPUser uid]?:@""};
+    return @{@"country":@"TW"};
 }
 
-- (NSDictionary* )headerParams{
 
-    return nil;
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 
 - (NSString *)methodName {
     
-    return [_API_ stringByAppendingString:@"getServiceList"];
+    return [_API_ stringByAppendingString:@"getRecommendList"];
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
@@ -51,7 +53,7 @@
     self.totalCount = [JSON[@"num"] integerValue];
     //todo:
     NSMutableArray* list = [NSMutableArray new];
-    NSArray* result = JSON[@""];
+    NSArray* result = JSON[@"lists"];
     
     for (NSDictionary* dict in result) {
         

@@ -273,6 +273,7 @@
 		45D48C6F1B32EEBE00B5801F /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */; };
 		45D48C701B32EEBE00B5801F /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C4A1B32EEBE00B5801F /* girl.jpg */; };
 		45D48C711B32EEBE00B5801F /* taiwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D48C4B1B32EEBE00B5801F /* taiwan.png */; };
+		45D48C751B33092200B5801F /* TPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C741B33092200B5801F /* TPLocationManager.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -786,6 +787,8 @@
 		45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListModel.m; sourceTree = "<group>"; };
 		45D48C4A1B32EEBE00B5801F /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		45D48C4B1B32EEBE00B5801F /* taiwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taiwan.png; sourceTree = "<group>"; };
+		45D48C731B33092200B5801F /* TPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLocationManager.h; sourceTree = "<group>"; };
+		45D48C741B33092200B5801F /* TPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLocationManager.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -2439,6 +2442,7 @@
 		45D0C8161B2BE06D00F31BF5 /* 组件 */ = {
 			isa = PBXGroup;
 			children = (
+				45D48C721B33091400B5801F /* TPLocationManager */,
 				456C68DB1B2EB516003D4C20 /* TPGrowingTextView */,
 				45D0C8171B2BE06D00F31BF5 /* BXImageScrollView */,
 				45D0C81A1B2BE06D00F31BF5 /* ETImageProcessing */,
@@ -2776,6 +2780,15 @@
 			children = (
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		45D48C721B33091400B5801F /* TPLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				45D48C731B33092200B5801F /* TPLocationManager.h */,
+				45D48C741B33092200B5801F /* TPLocationManager.m */,
+			);
+			path = TPLocationManager;
 			sourceTree = "<group>";
 		};
 		45D6BA601B2686C2007DFC7A /* APNS */ = {
@@ -3486,6 +3499,7 @@
 				4509AB761B22E3E300846032 /* TPLoginViewController.m in Sources */,
 				45D0C7DD1B29E0F900F31BF5 /* TPPSFeeViewController.m in Sources */,
 				45DD473C1B28200200D2BB62 /* TPMessageListModel.m in Sources */,
+				45D48C751B33092200B5801F /* TPLocationManager.m in Sources */,
 				4509ABBF1B233C9200846032 /* TPReserveItem.m in Sources */,
 				45DD47361B28200200D2BB62 /* TPMessageListCell.m in Sources */,
 				459B24981B176A1C009BB189 /* main.m in Sources */,

@@ -24,6 +24,7 @@
 
 + (NSString* )fullDateFormatString:(NSDate* )date;
 
++ (NSString* )money:(NSString* )money WithType:(NSString* )type;
 
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback;
 

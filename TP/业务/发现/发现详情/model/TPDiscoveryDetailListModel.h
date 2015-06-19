@@ -11,9 +11,19 @@
   
 #import "VZHTTPListModel.h"
 
+@class TPDDInfoItem;
+@class TPDDProfileItem;
+@class TPDDCommentItem;
+@class TPDDTripItem;
+
 @interface TPDiscoveryDetailListModel : VZHTTPListModel
 
 @property(nonatomic,strong) NSString* sid;
+
+@property(nonatomic,strong)TPDDInfoItem* tripInfoItem;
+@property(nonatomic,strong)TPDDProfileItem* insiderProfileItem;
+@property(nonatomic,strong)TPDDCommentItem* tripCommentItem;
+@property(nonatomic,strong)TPDDTripItem* tripDetailItem;
 
 @end
 

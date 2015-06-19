@@ -14,6 +14,7 @@
 #import "TPDiscoveryListViewDataSource.h"
 #import "TPDiscoveryListViewDelegate.h"
 #import "TPDiscoveryDetailListViewController.h"
+#import "TPDiscoveryListItem.h"
 
 @interface TPDiscoveryListViewController()
 
@@ -72,8 +73,6 @@
     
     [self setTitle:@"热门推荐"];
     self.view.backgroundColor = [TPTheme bgColor];
-    self.tabBarController.hidesBottomBarWhenPushed = true;
-    
 }
 
 - (void)viewDidLoad
@@ -169,8 +168,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-
+    TPDiscoveryListItem* item = (TPDiscoveryListItem* )[self.ds itemForCellAtIndexPath:indexPath];
     TPDiscoveryDetailListViewController* vc= [ TPDiscoveryDetailListViewController new ];
+    vc.sid = item.sid;
     [self.navigationController pushViewController:vc animated:YES];
   
 }

@@ -28,6 +28,9 @@
 @end
 
 @implementation TPReserveViewController
+{
+    NSMutableArray* _dateToDisplay;
+}
 
 
 //////////////////////////////////////////////////////////// 
@@ -79,6 +82,13 @@
         [weakSelf.navigationController popToRootViewControllerAnimated:true];
 
     };
+    
+//    if (self.availableDates.count > 0) {
+//        
+//        for (NSString* date; <#condition#>; <#increment#>) {
+//            <#statements#>
+//        }
+//    }
     
 }
 

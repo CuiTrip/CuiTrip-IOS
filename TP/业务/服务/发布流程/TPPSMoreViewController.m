@@ -39,20 +39,20 @@
 }
 - (IBAction)onAction:(UIButton* )sender {
     
-    if (sender.tag == 0) {
-        
-        TPDatePickerViewController* vc = [TPDatePickerViewController new];
-        vc.type = kSelection;
-        vc.date = [NSDate date];
-        vc.callback = ^(NSArray* list){
-            self.dates = list;
-            if (list.count > 0) {
-                [self.calendarBtn setTitle:[TPUtils fullDateFormatString:list[0]] forState:UIControlStateNormal];
-            }
-        };
-
-        [self.navigationController pushViewController:vc animated:true];
-    }
+//    if (sender.tag == 0) {
+//        
+//        TPDatePickerViewController* vc = [TPDatePickerViewController new];
+//        vc.type = kSelection;
+//        vc.date = [NSDate date];
+//        vc.callback = ^(NSArray* list){
+//            self.dates = list;
+//            if (list.count > 0) {
+//                [self.calendarBtn setTitle:[TPUtils fullDateFormatString:list[0]] forState:UIControlStateNormal];
+//            }
+//        };
+//
+//        [self.navigationController pushViewController:vc animated:true];
+//    }
 
     if (sender.tag == 1) {
         
@@ -73,7 +73,7 @@
     }
     else if (sender.tag == 4)
     {
-        NSArray* list = @[@"打车",@"打车",@"打车"];
+        NSArray* list = @[@"约定点见面",@"开车接送"];
         [TBCityHUDPicker showPicker:list Title:@"请选择见面方式" Tag:@"d" Delegate:self];
     }
 }

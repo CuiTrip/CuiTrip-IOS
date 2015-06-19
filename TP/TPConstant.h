@@ -16,6 +16,7 @@
 #define um_appSecret @""
 
 #define _API_ @"http://58.96.175.29:8080/baseservice/"
+//#define _API_ @"http://192.168.1.110/baseservice/"
 
 #define kTPCacheKey_User @"TP_USER"
 #define kTPCacheKey_APNS @"TPAPNS"

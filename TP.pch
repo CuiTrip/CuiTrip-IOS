@@ -20,6 +20,7 @@
 #import <WCAlertView/WCAlertView.h>
 #import <TMCache/TMCache.h>
 #import <SMS_SDK/SMS_SDK.h>
+#import <INTULocationManager/INTULocationManager.h>
 #import "Vizzle.h"
 #import "VizzleEx.h"
 

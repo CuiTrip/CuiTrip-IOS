@@ -16,6 +16,7 @@
 @property(nonatomic,strong)NSString* tripTimeLength;
 @property(nonatomic,strong)NSString* tripTime;
 @property(nonatomic,strong)NSString* tripPeopleNum;
+@property(nonatomic,strong)NSString* tripFee;
 
 @end
 

@@ -17,8 +17,9 @@
 #import "TPDiscoveryDetailContentViewController.h"
 #import "TPDatePickerViewController.h"
 #import "TPProfilePageListViewController.h"
+#import "TPReserveViewController.h"
 #import "BXImageScrollView.h"
-
+#import "TPDDTripItem.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -141,7 +142,7 @@
     
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-//    self.discoveryDetailListModel
+    self.discoveryDetailListModel.sid = self.sid;
     self.keyModel = self.discoveryDetailListModel;
     
     //5,REQUIRED:register model to parent view controller
@@ -167,7 +168,7 @@
     
     
     //footer view
-    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.tableView.vzWidth, 44)];
+    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight-44, self.tableView.vzWidth, 44)];
     btn.backgroundColor = [TPTheme themeColor];
     [btn setTitle:@"联系预定" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -175,7 +176,8 @@
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        
         void(^lamda)() = ^{//跳转到预约
-            UIViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
+            TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
+            //v.availableDates = self.discoveryDetailListModel.tripDetailItem.ava
             [self.navigationController pushViewController:v animated:true];
         };
         
@@ -190,7 +192,12 @@
         }
         
     }];
-    self.tableView.tableFooterView = [TPUIKit emptyView];
+    
+    [self.view addSubview:btn];
+
+    UIView* footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds),44)];
+    footer.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = footer;
     
     
     UIButton* backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];

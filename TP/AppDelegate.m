@@ -44,6 +44,7 @@
 {
     [[TPAPNS sharedInstance] registerRemoteNotification];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
 }
 
 

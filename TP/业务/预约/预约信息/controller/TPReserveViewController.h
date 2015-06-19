@@ -13,5 +13,9 @@
 
 @interface TPReserveViewController : VZViewController
 
+@property(nonatomic,strong)NSArray* availableDates;
+@property(nonatomic,strong)NSArray* maxNum;
+@property(nonatomic,strong)NSString* free;
+
 @end
   

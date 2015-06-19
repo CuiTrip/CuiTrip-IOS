@@ -14,6 +14,12 @@
 #import "TPDDProfileCell.h"
 #import "TPDDCommentCell.h"
 #import "TPDDTripCell.h"
+#import "TPDDInfoItem.h"
+#import "TPDDProfileItem.h"
+#import "TPDDTripItem.h"
+#import "TPDDCommentItem.h"
+
+
 
 @interface TPDiscoveryDetailListViewDataSource()
 
@@ -23,57 +29,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
-    //default:
     return 1; 
 
 }
 
 - (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
 
-    //@REQUIRED:
-    switch (indexPath.row) {
-        case 0:
-        {
-            return [TPDDInfoCell class];
-            break;
-        }
-        case 1:
-        {
-            return [TPDDProfileCell class];
-            break;
-        }
-        case 2:
-        {
-            return [TPDDCommentCell class];
-            break;
-        }
-        case 3:
-        {
-            return [TPDDTripCell class];
-            break;
-        }
-            
-        default:
-        {
-            return [super cellClassForItem:item AtIndex:indexPath];
-            break;
-        }
+    if ([item isKindOfClass:[TPDDInfoItem class]]) {
+        return [TPDDInfoCell class];
     }
-
+    else if ([item isKindOfClass:[TPDDProfileItem class]])
+    {
+        return [TPDDProfileCell class];
+    }
+    else if ([item isKindOfClass:[TPDDCommentItem class]])
+    {
+        return [TPDDCommentCell class];
+    }
+    else if ([item isKindOfClass:[TPDDTripItem class]])
+    {
+        return [TPDDTripCell class];
+    }
+    else
+        return [super cellClassForItem:item AtIndex:indexPath];
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 4;
-}
-
-//@optional:
-//- (TBCitySBTableViewItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
-//
-//    default:
-//    return [super itemForCellAtIndexPath:indexPath]; 
-//
-//}
-
 
 @end  
