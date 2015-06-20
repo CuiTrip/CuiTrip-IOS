@@ -13,5 +13,7 @@
 
 @interface TPChatListViewController : VZListViewController
 
+@property(nonatomic,strong)NSString* orderId;
+
 @end
   

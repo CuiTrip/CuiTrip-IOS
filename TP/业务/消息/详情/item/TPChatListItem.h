@@ -15,11 +15,9 @@
 
 @property(nonatomic,strong)NSString* from;
 @property(nonatomic,strong)NSString* to;
-@property(nonatomic,strong)NSString* type;
 @property(nonatomic,strong)NSString* content;
-@property(nonatomic,strong)NSString* fromHeadPic;
-@property(strong,nonatomic)NSString* toHeadPic;
-@property(nonatomic,strong)NSString* timestamp;
+@property(strong,nonatomic)NSString* headPic;
+@property(nonatomic,strong)NSString* gmtCreated;
 
 @property(nonatomic,assign)CGSize chatBKSize;
 @property(nonatomic,assign)CGSize chatContentSize;

@@ -271,6 +271,7 @@
 		45D48C6E1B32EEBE00B5801F /* TPDiscoveryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C451B32EEBD00B5801F /* TPDiscoveryListItem.m */; };
 		45D48C6F1B32EEBE00B5801F /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */; };
 		45D48C751B33092200B5801F /* TPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C741B33092200B5801F /* TPLocationManager.m */; };
+		45D6A6631B35A32E002C9F05 /* TPSystemMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6A6621B35A32E002C9F05 /* TPSystemMessageListCell.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -778,6 +779,8 @@
 		45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDiscoveryListModel.m; sourceTree = "<group>"; };
 		45D48C731B33092200B5801F /* TPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLocationManager.h; sourceTree = "<group>"; };
 		45D48C741B33092200B5801F /* TPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLocationManager.m; sourceTree = "<group>"; };
+		45D6A6611B35A32E002C9F05 /* TPSystemMessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSystemMessageListCell.h; sourceTree = "<group>"; };
+		45D6A6621B35A32E002C9F05 /* TPSystemMessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSystemMessageListCell.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -2779,6 +2782,8 @@
 			children = (
 				45DD47081B28200100D2BB62 /* TPMessageListCell.h */,
 				45DD47091B28200100D2BB62 /* TPMessageListCell.m */,
+				45D6A6611B35A32E002C9F05 /* TPSystemMessageListCell.h */,
+				45D6A6621B35A32E002C9F05 /* TPSystemMessageListCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -3388,6 +3393,7 @@
 				45028ACA1B1C755700417606 /* TPRootViewController.m in Sources */,
 				45D0C7F91B2BD93A00F31BF5 /* O2OStarView.m in Sources */,
 				45D48C681B32EEBE00B5801F /* TPStarView.m in Sources */,
+				45D6A6631B35A32E002C9F05 /* TPSystemMessageListCell.m in Sources */,
 				45D0C7C81B29DAA400F31BF5 /* TPPubilshServiceItem.m in Sources */,
 				4509AC1C1B247E5200846032 /* TPTripListCell.m in Sources */,
 				456C68F11B2ED35A003D4C20 /* TPPayItem.m in Sources */,

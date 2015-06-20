@@ -64,6 +64,7 @@
     
     self.bannerView = [[BXImageScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth,270)];
     self.bannerView.placeHolderImage = __image(@"default_details.jpg");
+    self.bannerView.urls = self.pic?@[self.pic]:@[];
     [self.scrollView addSubview:self.bannerView];
     
     TPDDInfoItem* infoItem = [TPDDInfoItem new];

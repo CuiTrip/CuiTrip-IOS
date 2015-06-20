@@ -140,7 +140,7 @@
     [super viewDidLoad];
     
     self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 50)];
-    self.headerView.dateLabel.text = @"预约:2015年6月30日 / 3人";
+    self.headerView.dateLabel.text = @"";
     self.headerView.type = [TPUser type];
     
     __weak typeof(self) weakSelf = self;
@@ -180,13 +180,7 @@
     [self.tableView reloadData];
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    //self.keyModel = self.model;
-    
-    //5,REQUIRED:register model to parent view controller
-    //[self registerModel:self.keyModel];
-
-    //6,Load Data
-    //[self load];
+    self.keyModel = self.chatListModel;
     
     [TPGrowingTextView showInView:self.view];
     
@@ -198,7 +192,7 @@
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
     
-    //todo..
+    [self load];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -236,6 +230,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
+- (void)showModel:(VZModel *)model
+{
+    [super showModel:model];
+    
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[self.chatListModel.serviceDate doubleValue]];
+    NSString* dateString = [TPUtils fullDateFormatString:date];
+    self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",dateString,self.chatListModel.peopleNum];
+    
+}
 
 
 

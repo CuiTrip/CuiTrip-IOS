@@ -11,6 +11,7 @@
 @interface TPGrowingTextView()
 
 @property(nonatomic,strong)UITextView* textView;
+@property(nonatomic,assign)BOOL isShowingTextField;
 
 @end
 
@@ -40,7 +41,9 @@
 + (void)hideFromView:(UIView *)view
 {
     TPGrowingTextView* inputView = (TPGrowingTextView* )[view viewWithTag:176];
-    [inputView.textView resignFirstResponder];
+    if (inputView.isShowingTextField) {
+        [inputView.textView resignFirstResponder];
+    }
 }
 
 
@@ -96,7 +99,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     // register: UIKeyboardWillHideNotification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    // register: UIKeyboardWillHideNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    
+    // register: UIKeyboardWillHideNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 }
+
+
 
 - (void)keyboardWillShow:(NSNotification*)notification
 {
@@ -129,8 +140,16 @@
         //self.frame = rect;
         self.superview.frame  = CGRectMake(0,self.superview.vzTop+CGRectGetHeight(keyboardRectEnd), self.superview.vzWidth, self.superview.vzHeight);
     }];
-    
-    
+}
+
+- (void)keyboardDidShow:(NSNotification* )notification
+{
+    self.isShowingTextField = true;
+}
+
+- (void)keyboardDidHide:(NSNotification* )notification
+{
+    self.isShowingTextField = false;
 }
 
 - (void)unregisterNotifications

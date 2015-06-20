@@ -10,6 +10,16 @@
 
 
 #import "TPChatListModel.h"
+#import "TPChatStatusListItem.h"
+#import "TPChatListItem.h"
+
+/**
+ 	uid(String): 必选，用户id
+ 	token(String):  必选，登录凭证
+ 	orderId (String): 必选，订单id
+ 	size (String): 可选，每次返回的消息数，默认20
+ 	start(String): 可选，每次开始的请求点，默认0，start=（请求次数-1）*size
+ */
 
 @interface TPChatListModel()
 
@@ -17,39 +27,69 @@
 
 @implementation TPChatListModel
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
+
+
 - (NSDictionary *)dataParams {
     
-    //todo:
-    
-    return nil;
+    return @{@"orderId":self.orderId?:@"",
+             @"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@"",
+             @"size":@"20",
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex]};
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
-
 
 - (NSString *)methodName {
     
-    //todo:
-    
-    
-    return nil;
+    return [_API_ stringByAppendingString:@"getDialogList"];
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
-  
-    //todo:
-  
+    NSMutableArray* ret = [NSMutableArray new];
     
-    return nil;
+    self.orderStatus = JSON[@"orderStatus"];
+    self.serviceDate = JSON[@"serviceDate"];
+    self.peopleNum = JSON[@"peopleNum"];
+    
+    NSArray* list = JSON[@"dialog"];
+    
+    for(NSDictionary* info in list)
+    {
+        if([info[@"type"] integerValue] == 3)
+        {
+            TPChatStatusListItem* item = [TPChatStatusListItem new];
+            [item autoKVCBinding:info];
+            [ret addObject:item];
+        }
+        else if ([info[@"type"] integerValue] == 4)
+        {
+            TPChatListItem* item = [TPChatListItem new];
+            [item autoKVCBinding:info];
+            [ret addObject:item];
+        }
+        else
+        {
+            TPChatListItem* item = [TPChatListItem new];
+            [item autoKVCBinding:info];
+            [ret addObject:item];
+        }
+    
+    }
+    
+    return ret;
+
 }
 
 @end

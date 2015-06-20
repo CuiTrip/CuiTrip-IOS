@@ -1,44 +1,37 @@
-  
 //
-//  TPMessageListCell.m
+//  TPSystemMessageListCell.m
 //  TP
 //
-//  Created by moxin on 2015-06-01 19:41:08 +0800.
+//  Created by moxin on 15/6/20.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
-
-
-#import "TPMessageListCell.h"
+#import "TPSystemMessageListCell.h"
 #import "TPMessageListItem.h"
 
-@interface TPMessageListCell()
+@interface TPSystemMessageListCell()
 
-@property(nonatomic,strong) UILabel* titleLabel;
-@property(nonatomic,strong) UILabel* descLabel;
-@property(nonatomic,strong) UIImageView* icon;
 @property(nonatomic,strong) UIView* badge;
+@property(nonatomic,strong) UILabel* titleLabel;
+@property(nonatomic,strong) UIImageView* icon;
 
 @end
 
-@implementation TPMessageListCell
+@implementation TPSystemMessageListCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-
+        
         //todo: add some UI code
         self.icon = [TPUIKit roundImageView:CGSizeMake(36, 36) Border:[UIColor whiteColor]];
-        self.icon.image = __image(@"girl.jpg");
+        self.icon.image = __image(@"default.sys.jpg");
         [self.contentView addSubview:self.icon];
         
         self.titleLabel = [TPUIKit label:[TPTheme themeColor] Font:ft(16)];
         [self.contentView addSubview:self.titleLabel];
-        
-        self.descLabel = [TPUIKit label:[TPTheme grayColor] Font:ft(12)];
-        [self.contentView addSubview:self.descLabel];
         
         self.badge = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
         self.badge.backgroundColor = [UIColor redColor];
@@ -59,34 +52,27 @@
 - (void)setItem:(TPMessageListItem *)item
 {
     [super setItem:item];
-    
-    [self.icon sd_setImageWithURL:__url(item.headPic) placeholderImage:__image(@"girl.jpg")];
+
     self.titleLabel.text = item.topic;
-    self.descLabel.text = item.lastMsg;
-   // self.badge.hidden = !item.hasNewMsg;
     self.badge.hidden = NO;
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-  
+    
     self.icon.vzOrigin = CGPointMake(20, 20);
     self.icon.vzWidth = 36;
     self.icon.vzHeight = 36;
     
-    self.titleLabel.vzOrigin = CGPointMake(self.icon.vzRight+10, 20);
+    self.titleLabel.vzOrigin = CGPointMake(self.icon.vzRight+10, (self.vzHeight-16)/2);
     self.titleLabel.vzWidth = self.vzWidth - self.icon.vzRight - 20;
     self.titleLabel.vzHeight = 16;
-
-    self.descLabel.vzOrigin = CGPointMake(self.icon.vzRight + 10, self.titleLabel.vzBottom+10);
-    self.descLabel.vzWidth = self.titleLabel.vzWidth;
-    self.descLabel.vzHeight = 12;
     
     self.badge.vzOrigin = CGPointMake(45, 20);
     self.badge.vzWidth = 10;
     self.badge.vzHeight = 10;
-  
+    
 }
+
 @end
-  

@@ -10,7 +10,7 @@
 
 
 #import "TPMessageListModel.h"
-
+#import "TPMessageListItem.h"
 @interface TPMessageListModel()
 
 @end
@@ -22,34 +22,35 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-    
-    return nil;
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@""};
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 
 - (NSString *)methodName {
     
-    //todo:
-    
-    
-    return nil;
+    return [_API_ stringByAppendingString:@"getMessageList"];
 }
 
 - (NSMutableArray* )responseObjects:(id)JSON
 {
   
-    //todo:
-  
+    NSMutableArray* ret = [NSMutableArray new];
+    NSArray* list = JSON;
     
-    return nil;
+    for (NSDictionary* info in list) {
+
+        TPMessageListItem* item = [TPMessageListItem new];
+        [item autoKVCBinding:info];
+        [ret addObject:item];
+    }
+    return ret;
 }
 
 @end

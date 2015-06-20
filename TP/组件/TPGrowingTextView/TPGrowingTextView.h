@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TPGrowingTextView : UIView
+
+
 + (void)showInView:(UIView* )view;
 + (void)hideFromView:(UIView* )view;
 

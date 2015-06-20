@@ -34,12 +34,12 @@
         imgv.contentMode = UIViewContentModeScaleAspectFill;
         imgv.clipsToBounds = true;
         [self.scrollView addSubview:imgv];
-        [imgv sd_setImageWithURL:__url(urls[i]) placeholderImage:nil];
+        [imgv sd_setImageWithURL:__url(urls[i]) placeholderImage:__image(@"default_details.jpg")];
 
     }
 
     
-    if (urls.count > 1) {
+    if (urls.count >= 1) {
         self.pageNumber.hidden = NO;
         self.pageNumber.text = [NSString stringWithFormat:@"1/%lu",urls.count];
         self.scrollView.hidden = NO;

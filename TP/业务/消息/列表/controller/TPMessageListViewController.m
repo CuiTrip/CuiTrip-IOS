@@ -85,10 +85,10 @@
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = YES;
-    self.tableView.tableFooterView = [TPUIKit emptyView];
+    //self.tableView.tableFooterView = [TPUIKit emptyView];
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
-    self.needPullRefresh = NO;
+    self.needPullRefresh = true;
 
     
     //3，bind your delegate and datasource to tableview
@@ -97,21 +97,20 @@
     
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    //self.keyModel = self.model;
+    self.keyModel = self.messageListModel;
     
     //5,REQUIRED:register model to parent view controller
-    //[self registerModel:self.keyModel];
+    [self registerModel:self.keyModel];
 
     //6,Load Data
     //[self load];
-    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
-
+    [self load];
 }
 
 - (void)viewDidAppear:(BOOL)animated

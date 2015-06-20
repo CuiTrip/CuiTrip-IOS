@@ -42,7 +42,7 @@
 - (void)setItem:(TPChatStatusListItem *)item
 {
     [super setItem:item];
-    self.label.text = item.status;
+    self.label.text = item.content;
 
 }
 

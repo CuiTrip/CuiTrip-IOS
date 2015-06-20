@@ -11,6 +11,7 @@
 
 #import "TPMessageListViewDataSource.h"
 #import "TPMessageListCell.h"
+#import "TPSystemMessageListCell.h"
 #import "TPMessageListItem.h"
 
 
@@ -27,29 +28,21 @@
 
 }
 
-- (Class)cellClassForItem:(id)item AtIndex:(NSIndexPath *)indexPath{
+- (Class)cellClassForItem:(TPMessageListItem* )item AtIndex:(NSIndexPath *)indexPath{
 
-    //@REQUIRED:
+    if ([item.type isEqualToString:@"1"]) {
+        return [TPSystemMessageListCell class];
+    }
+    else if([item.type isEqualToString:@"2"])
+        return [TPMessageListCell class];
+    else
+        return [TPMessageListCell class];
     
-    return [TPMessageListCell class];
-    
-
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
 
-//@optional:
-- (TPMessageListItem *)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
 
-    NSDictionary* dict = @{@"avatarURL":@"",@"title":@"台湾区看妈祖表演",@"desc":@"谢谢，我也很高兴为您服务!"};
-    TPMessageListItem* item = [TPMessageListItem new];
-    [item autoKVCBinding:dict];
-    return item;
 
-}
 
 
 @end  

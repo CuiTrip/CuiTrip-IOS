@@ -65,9 +65,9 @@ const int kPaddingX = 10;
 {
     [super setItem:item];
   
-    [self.icon sd_setImageWithURL:__url(item.from) placeholderImage:__image(@"girl.jpg")];
+    [self.icon sd_setImageWithURL:__url(item.headPic) placeholderImage:__image(@"girl.jpg")];
     self.chatLabel.text = item.content;
-    self.timeLabel.text = item.timestamp;
+    self.timeLabel.text = item.gmtCreated;
     
     //自己发得
     if ([item.from isEqualToString:[TPUser uid]]) {

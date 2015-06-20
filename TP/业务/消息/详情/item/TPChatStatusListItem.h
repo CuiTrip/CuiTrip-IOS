@@ -13,7 +13,7 @@
 
 @interface TPChatStatusListItem : VZListItem
 
-@property(nonatomic,strong)NSString* status;
+@property(nonatomic,strong)NSString* content;
 
 @end
 

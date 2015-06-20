@@ -13,5 +13,10 @@
 
 @interface TPChatListModel : VZHTTPListModel
 
+@property(nonatomic,strong)NSString* orderId;
+@property(nonatomic,strong)NSString* serviceDate;
+@property(nonatomic,strong)NSString* peopleNum;
+@property(nonatomic,strong)NSString* orderStatus;
+
 @end
 
