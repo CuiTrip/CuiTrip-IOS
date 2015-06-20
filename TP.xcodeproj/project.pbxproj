@@ -272,6 +272,7 @@
 		45D48C6F1B32EEBE00B5801F /* TPDiscoveryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C481B32EEBE00B5801F /* TPDiscoveryListModel.m */; };
 		45D48C751B33092200B5801F /* TPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D48C741B33092200B5801F /* TPLocationManager.m */; };
 		45D6A6631B35A32E002C9F05 /* TPSystemMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6A6621B35A32E002C9F05 /* TPSystemMessageListCell.m */; };
+		45D6A6661B35BDC7002C9F05 /* TPSendChatMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6A6651B35BDC7002C9F05 /* TPSendChatMsgModel.m */; };
 		45D6BA6B1B2686C2007DFC7A /* TPAPNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA621B2686C2007DFC7A /* TPAPNS.m */; };
 		45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA641B2686C2007DFC7A /* ExceptionView.xib */; };
 		45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA661B2686C2007DFC7A /* TPTheme.m */; };
@@ -781,6 +782,8 @@
 		45D48C741B33092200B5801F /* TPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLocationManager.m; sourceTree = "<group>"; };
 		45D6A6611B35A32E002C9F05 /* TPSystemMessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSystemMessageListCell.h; sourceTree = "<group>"; };
 		45D6A6621B35A32E002C9F05 /* TPSystemMessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSystemMessageListCell.m; sourceTree = "<group>"; };
+		45D6A6641B35BDC7002C9F05 /* TPSendChatMsgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSendChatMsgModel.h; sourceTree = "<group>"; };
+		45D6A6651B35BDC7002C9F05 /* TPSendChatMsgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSendChatMsgModel.m; sourceTree = "<group>"; };
 		45D6BA611B2686C2007DFC7A /* TPAPNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAPNS.h; sourceTree = "<group>"; };
 		45D6BA621B2686C2007DFC7A /* TPAPNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAPNS.m; sourceTree = "<group>"; };
 		45D6BA641B2686C2007DFC7A /* ExceptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExceptionView.xib; sourceTree = "<group>"; };
@@ -2933,6 +2936,8 @@
 		45DD47311B28200200D2BB62 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				45D6A6641B35BDC7002C9F05 /* TPSendChatMsgModel.h */,
+				45D6A6651B35BDC7002C9F05 /* TPSendChatMsgModel.m */,
 				45DD47321B28200200D2BB62 /* TPChatListModel.h */,
 				45DD47331B28200200D2BB62 /* TPChatListModel.m */,
 			);
@@ -3285,6 +3290,7 @@
 				45DD473A1B28200200D2BB62 /* TPMessageListViewDelegate.m in Sources */,
 				45D0C7C91B29DAA400F31BF5 /* TPPubilshServiceModel.m in Sources */,
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
+				45D6A6661B35BDC7002C9F05 /* TPSendChatMsgModel.m in Sources */,
 				4509ABD21B23D59A00846032 /* TPProfileSettingsViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
 				45D48BA41B31C23E00B5801F /* TPGetServiceEnableDateModel.m in Sources */,

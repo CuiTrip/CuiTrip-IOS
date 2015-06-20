@@ -14,6 +14,7 @@
 #import "TPMessageListModel.h" 
 #import "TPMessageListViewDataSource.h"
 #import "TPMessageListViewDelegate.h"
+#import "TPMessageListItem.h"
 
 @interface TPMessageListViewController()
 
@@ -155,8 +156,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   //todo...
-    TPChatListViewController* vc = [TPChatListViewController new];
-    [self.navigationController pushViewController:vc animated:true];
+    TPMessageListItem* item = (TPMessageListItem* )[self.ds itemForCellAtIndexPath:indexPath];
+    
+    if ([item.type integerValue] == 1) {
+        
+    }
+    else
+    {
+        TPChatListViewController* vc = [TPChatListViewController new];
+        vc.orderId = item.orderId;
+        [self.navigationController pushViewController:vc animated:true];
+    }
+    
+
   
 }
 

@@ -39,11 +39,13 @@
 
 - (BOOL)parseResponse:(id)JSON
 {
+
     NSArray* ret = JSON[@"availableDate"];
     NSMutableArray* temp = [NSMutableArray new];
     for (NSString* timeStamp in ret) {
         
         NSTimeInterval t = [timeStamp doubleValue];
+        t /= 1000;
         NSDate* date = [NSDate dateWithTimeIntervalSince1970:t];
         [temp addObject:date];
     }

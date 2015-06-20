@@ -410,7 +410,6 @@
 
 - (void)layoutCalender
 {
-    self.date = [NSDate date];
     NSCalendar* calendar = [NSCalendar currentCalendar];
     calendar.firstWeekday = 1;
     calendar.minimumDaysInFirstWeek = 7;

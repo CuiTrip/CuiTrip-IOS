@@ -15,6 +15,8 @@
 #import "TPChatListViewDelegate.h"
 #import "TPGrowingTextView.h"
 #import "TPTripDetailViewController.h"
+#import "TPSendChatMsgModel.h"
+
 
 @interface TPChatListHeaderView : UIView
 
@@ -43,6 +45,7 @@
         self.actionBtn.layer.cornerRadius = 8.0f;
         self.actionBtn.layer.masksToBounds = true;
         self.actionBtn.titleLabel.font = ft(14);
+        self.actionBtn.hidden = true;
         [self.actionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.actionBtn addTarget:self action:@selector(onAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.actionBtn];
@@ -77,9 +80,10 @@
 
 @end
 
-@interface TPChatListViewController()
+@interface TPChatListViewController()<TPGrowingTextView>
 
 @property(nonatomic,strong)TPChatListHeaderView* headerView;
+@property(nonatomic,strong)TPSendChatMsgModel* sendTextModel;
 @property(nonatomic,strong)TPChatListModel *chatListModel; 
 @property(nonatomic,strong)TPChatListViewDataSource *ds;
 @property(nonatomic,strong)TPChatListViewDelegate *dl;
@@ -104,6 +108,14 @@
         _chatListModel.key = @"__TPChatListModel__";
     }
     return _chatListModel;
+}
+
+- (TPSendChatMsgModel* )sendTextModel
+{
+    if (!_sendTextModel) {
+        _sendTextModel = [TPSendChatMsgModel new];
+    }
+    return _sendTextModel;
 }
 
 
@@ -176,15 +188,12 @@
     //3，bind your delegate and datasource to tableview
     self.dataSource = self.ds;
     self.delegate = self.dl;
-    
-    [self.tableView reloadData];
 
     //4,@REQUIRED:YOU MUST SET A KEY MODEL!
     self.keyModel = self.chatListModel;
-    
-    [TPGrowingTextView showInView:self.view];
-    
-    
+    self.chatListModel.orderId = self.orderId;
+    [self registerModel:self.keyModel];
+    [self load];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -192,7 +201,7 @@
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
     
-    [self load];
+  
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -237,6 +246,13 @@
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[self.chatListModel.serviceDate doubleValue]];
     NSString* dateString = [TPUtils fullDateFormatString:date];
     self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",dateString,self.chatListModel.peopleNum];
+    self.headerView.actionBtn.hidden = NO;
+    
+    self.sendTextModel.orderId = self.orderId;
+    self.sendTextModel.send = [TPUser uid];
+    self.sendTextModel.receiver = self.chatListModel.receiverId;
+    [TPGrowingTextView showInView:self.view delegate:self];
+    
     
 }
 
@@ -279,6 +295,19 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
+
+- (void)textView:(UITextView* )view DidSendText:(NSString* )text
+{
+    self.sendTextModel.content = text;
+    [self.sendTextModel loadWithCompletion:^(VZModel *model, NSError *error) {
+       
+        if (!error) {
+            
+        }
+        
+    }];
+    
+}
 
 
 @end

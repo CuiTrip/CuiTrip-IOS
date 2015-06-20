@@ -198,7 +198,11 @@ static NSArray* list = nil;
 
 + (NSString* )money:(NSString* )money WithType:(NSString* )type
 {
-    return [NSString stringWithFormat:@"%@ %@",type,money];
+    NSString* moneyType = type;
+    if (moneyType.length == 0) {
+        moneyType = @"CNY";
+    }
+    return [NSString stringWithFormat:@"%@ %@",moneyType,money];
 }
 
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback

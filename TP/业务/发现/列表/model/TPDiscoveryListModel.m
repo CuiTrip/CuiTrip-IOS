@@ -29,7 +29,7 @@
 
 - (NSDictionary *)dataParams {
     
-    return @{@"country":@"TW",@"uid":[TPUser uid]?:@"",@"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex],@"size":@"10"};
+    return @{@"country":@"TW",@"uid":[TPUser uid]?:@"",@"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],@"size":@"10"};
 }
 
 - (NSInteger)pageSize

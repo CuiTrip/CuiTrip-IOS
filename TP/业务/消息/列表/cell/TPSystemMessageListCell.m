@@ -27,7 +27,7 @@
         
         //todo: add some UI code
         self.icon = [TPUIKit roundImageView:CGSizeMake(36, 36) Border:[UIColor whiteColor]];
-        self.icon.image = __image(@"default.sys.jpg");
+        self.icon.image = __image(@"default_sys.jpg");
         [self.contentView addSubview:self.icon];
         
         self.titleLabel = [TPUIKit label:[TPTheme themeColor] Font:ft(16)];
@@ -54,7 +54,7 @@
     [super setItem:item];
 
     self.titleLabel.text = item.topic;
-    self.badge.hidden = NO;
+    self.badge.hidden = !item.hasNewMsg;
 }
 
 - (void)layoutSubviews

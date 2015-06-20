@@ -8,10 +8,11 @@
 
 #import "TPGrowingTextView.h"
 
-@interface TPGrowingTextView()
+@interface TPGrowingTextView()<UITextViewDelegate>
 
 @property(nonatomic,strong)UITextView* textView;
 @property(nonatomic,assign)BOOL isShowingTextField;
+@property(nonatomic,weak) id<TPGrowingTextView> delegate;
 
 @end
 
@@ -22,12 +23,13 @@
     CGSize  _oriSize;
 }
 
-+ (void)showInView:(UIView* )view
++ (void)showInView:(UIView *)view delegate:(id<TPGrowingTextView>)delegate
 {
     if (![view viewWithTag:176]) {
         
         TPGrowingTextView* inputView = [[TPGrowingTextView alloc]initWithFrame:CGRectMake(0, view.vzHeight-108, kTPScreenWidth, 44)];
         inputView.backgroundColor = [TPTheme themeColor];
+        inputView.delegate = delegate;
         inputView.tag = 176;
         [view addSubview:inputView];
     }
@@ -46,6 +48,11 @@
     }
 }
 
++ (void)setHidden:(BOOL)h
+{
+    
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -62,6 +69,8 @@
         self.textView.layer.cornerRadius = 14.0f;
         self.textView.layer.masksToBounds= true;
         self.textView.textColor = [TPTheme blackColor];
+        self.textView.delegate = self;
+        self.textView.returnKeyType = UIReturnKeySend;
         self.textView.font = ft(14.0f);
         [self addSubview:self.textView];
         [self.textView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:NULL];
@@ -157,5 +166,12 @@
     NSLog(@"Unregister keyboard notifications.");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    if ([self.delegate respondsToSelector:@selector(textView:DidSendText:)]) {
+        [self.delegate textView:textView DidSendText:self.textView.text];
+    }
 }
 @end

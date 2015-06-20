@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.descLabel.text = @"对于未越狱的iOS设备来说，由于强大的沙箱和授权机制，以及Apple自己掌控的App Store， 基本上杜绝了恶意软件的入侵。但除系统安全之外，我们还是面临很多的安全问题：网络安全、数据安全等，每一项涉及也非常广，安全是非常大的课题，本人并非专业的安全专家，只是从开发者的角度，分析我们常遇到的各项安全问题，并提出通常的解决方法，与各位交流。";
+    self.descLabel.text = @"本费⽤为发现者的基本服务费⽤，不包含双⽅任何⻔门票、餐饮、公共交通费⽤。\n 发现者在旅程中产⽣的门票、餐饮、私家车费⽤，均由旅⾏者承担。\n其他可能产生的费用，双方自行沟通协调。";
     [self.descLabel sizeToFit];
     
     self.textField.layer.cornerRadius = 5.0f;

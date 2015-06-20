@@ -65,28 +65,37 @@
     
     TPDDProfileItem* profileItem = [TPDDProfileItem new];
     NSDictionary* userInfo = JSON[@"userInfo"];
-    profileItem.insiderName = userInfo[@"nick"];
-    profileItem.insiderSign = userInfo[@"sign"];
-    profileItem.avatar = userInfo[@"heapPic"];
-    profileItem.language = userInfo[@"language"];
-    profileItem.hobby = userInfo[@"interests"];
-    profileItem.registerTime = userInfo[@"gmtModified"];
-    profileItem.status = userInfo[@"status"];
-    self.insiderProfileItem = profileItem;
-    [list addObject:profileItem];
+    
+    if (userInfo) {
+        
+        profileItem.insiderName = userInfo[@"nick"];
+        profileItem.insiderSign = userInfo[@"sign"];
+        profileItem.avatar = userInfo[@"heapPic"];
+        profileItem.language = userInfo[@"language"];
+        profileItem.hobby = userInfo[@"interests"];
+        profileItem.registerTime = userInfo[@"gmtModified"];
+        profileItem.status = userInfo[@"status"];
+        self.insiderProfileItem = profileItem;
+        [list addObject:profileItem];
+    }
+
     
     TPDDCommentItem* commentItem = [TPDDCommentItem new];
     NSDictionary* commentInfo = JSON[@"reviewInfo"];
-    commentItem.comment = commentInfo[@"lastReview"][@"content"];
-    commentItem.commentNum = commentInfo[@"reviewNum"];
-    self.tripCommentItem = commentItem;
-    [list addObject:commentItem];
+    if (commentInfo) {
+        
+        commentItem.comment = commentInfo[@"lastReview"][@"content"];
+        commentItem.commentNum = commentInfo[@"reviewNum"];
+        self.tripCommentItem = commentItem;
+        [list addObject:commentItem];
+    }
+
     
     TPDDTripItem* tripItem = [TPDDTripItem new];
     tripItem.tripTimeLength = serviceInfo[@"serviceTime"];
     tripItem.tripPeopleNum = serviceInfo[@"maxbuyerNum"];
     tripItem.tripTime = serviceInfo[@"bestTime"];
-    tripItem.tripFee = [TPUtils money:serviceInfo[@"price"] WithType:serviceInfo[@"moneyType"]];
+    tripItem.tripFee = serviceInfo[@"price"];
     self.tripDetailItem = tripItem;
     [list addObject:tripItem];
     

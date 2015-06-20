@@ -40,7 +40,7 @@
              @"uid":[TPUser uid]?:@"",
              @"token":[TPUser token]?:@"",
              @"size":@"20",
-             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex]};
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]};
 }
 
 - (VZHTTPRequestConfig)requestConfig
@@ -62,6 +62,7 @@
     self.orderStatus = JSON[@"orderStatus"];
     self.serviceDate = JSON[@"serviceDate"];
     self.peopleNum = JSON[@"peopleNum"];
+    self.receiverId = JSON[@"receiverId"];
     
     NSArray* list = JSON[@"dialog"];
     

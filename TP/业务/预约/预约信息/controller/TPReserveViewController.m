@@ -22,15 +22,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *feeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (nonatomic,strong) TPReserveSubView* confirmView;
-@property(nonatomic,strong)NSArray* availableDates;
+@property(nonatomic,strong)NSArray* availableDatesString;
 @property(nonatomic,strong)TPReserveModel *reserveModel; 
 @property(nonatomic,strong)TPGetServiceEnableDateModel* availabeDateModel;
+@property(nonatomic,strong)NSString* selectedServiceDate;
+@property(nonatomic,strong)NSString* selectedMaxNum;
 
 @end
 
 @implementation TPReserveViewController
 {
-    NSMutableArray* _dateToDisplay;
 }
 
 
@@ -82,6 +83,7 @@
     self.confirmView.vzWidth = 300;
     self.confirmView.vzHeight = 320;
     self.confirmView.vzOrigin = CGPointMake((CGRectGetWidth(self.view.bounds)-300)/2, (CGRectGetHeight(self.view.bounds) - 320)/2);
+
     
     __weak typeof(self)weakSelf = self;
     self.confirmView.onConfirmCallback = ^{
@@ -90,6 +92,8 @@
         [weakSelf.navigationController popToRootViewControllerAnimated:true];
 
     };
+    
+    self.feeLabel.text = [TPUtils money:self.fee WithType:@""];
     
 
     SHOW_SPINNER(self);
@@ -102,7 +106,13 @@
         if (!error) {
             
             TPGetServiceEnableDateModel* availableModel = (TPGetServiceEnableDateModel* )model;
-            weakSelf.availableDates = availableModel.availableDates;
+            
+            NSMutableArray* list = [NSMutableArray new];
+            for (NSDate* date in availableModel.availableDates) {
+                NSString* s = [TPUtils fullDateFormatString:date];
+                [list addObject:s];
+            }
+            weakSelf.availableDatesString = [list copy];;
         }
         else
         {
@@ -154,20 +164,22 @@
 }
 
 - (IBAction)onConfirm:(id)sender {
-    
-    if(_dateToDisplay.count == 0)
-    {
-        TOAST(self, @"请选择日期");
+
+    if (self.selectedServiceDate.length == 0 || self.selectedMaxNum.length == 0) {
+        
+        TOAST(self, @"请选择日期或人数");
+        
+        return;
     }
     
     //下单
     self.reserveModel.sid = self.sid;
     self.reserveModel.insiderId = self.insiderId;
     self.reserveModel.serviceName = self.serviceName;
-    self.reserveModel.serviceDate = self.serviceDate;
-    self.reserveModel.buyerNum = [NSString stringWithFormat:@"%ld",(long)self.maxNum];
+    self.reserveModel.serviceDate = self.selectedServiceDate;
+    self.reserveModel.buyerNum = [NSString stringWithFormat:@"%ld",(long)self.selectedMaxNum];
     self.reserveModel.servicePrice = self.servicePrice;
-    self.reserveModel.moneyType = self.moneyType;
+    self.reserveModel.moneyType = @"CNY";
     
     SHOW_SPINNER(self);
     __weak typeof(self) weakSelf = self;
@@ -193,7 +205,7 @@
 }
 
 - (IBAction)onDate:(id)sender {
-    [TBCityHUDPicker showPicker:self.availableDates Title:@"请选择预订时间" Tag:@"1" Delegate:self];
+    [TBCityHUDPicker showPicker:self.availableDatesString Title:@"请选择预订时间" Tag:@"1" Delegate:self];
 }
 - (IBAction)onNum:(id)sender {
     
@@ -209,10 +221,20 @@
 - (void)onHUDPickerDidSelectedObject:(NSString*)str withIndex:(NSInteger)index
 {
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"1"])  {
+        
+        if (index < self.availabeDateModel.availableDates.count) {
+            NSDate* date  = self.availabeDateModel.availableDates[index];
+            long long t = [date timeIntervalSince1970]*1;
+            t *= 1000;
+            self.selectedServiceDate = [NSString stringWithFormat:@"%lld",t];
+        }
+        
         [self.dateBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"2"]) {
+        
+        self.selectedMaxNum = [str substringToIndex:str.length-1];
         [self.numBtn setTitle:str forState:UIControlStateNormal];
     }
     

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TPGrowingTextView <NSObject>
+
+- (void)textView:(UITextView* )view DidSendText:(NSString* )text;
+@end
+
 @interface TPGrowingTextView : UIView
 
-
-+ (void)showInView:(UIView* )view;
++ (void)showInView:(UIView* )view delegate:(id<TPGrowingTextView>)delegate;
 + (void)hideFromView:(UIView* )view;
 
 @end

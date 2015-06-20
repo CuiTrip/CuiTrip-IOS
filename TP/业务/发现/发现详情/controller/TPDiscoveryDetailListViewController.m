@@ -46,7 +46,7 @@
         [self addSubview:self.bannerView];
 //
 //        
-        self.moneyLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:18.0f]];
+        self.moneyLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:16.0f]];
         self.moneyLabel.vzOrigin = (CGPoint){0,230};
         self.moneyLabel.vzWidth = 124;
         self.moneyLabel.vzHeight= 35;
@@ -178,6 +178,7 @@
             v.sid = self.sid;
             v.insiderId = self.discoveryDetailListModel.tripInfoItem.insiderId;
             v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
+            v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
             //v.insiderId = self.discoveryDetailListModel.tripf
             [self.navigationController pushViewController:v animated:true];
         };
@@ -271,7 +272,7 @@
     [super showModel:model];
     TPDiscoveryDetailListViewHeaderView* headerView = (TPDiscoveryDetailListViewHeaderView* )self.tableView.tableHeaderView;
     headerView.bannerView.urls = model.tripInfoItem.pics;
-    headerView.moneyLabel.text = model.tripDetailItem.tripFee;
+    headerView.moneyLabel.text = [TPUtils money:model.tripDetailItem.tripFee WithType:@""];
 
 }
 
