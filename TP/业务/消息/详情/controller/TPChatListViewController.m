@@ -169,7 +169,7 @@
         {
             //去旅行详情
             TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
-            vc.status = kWillBegin;
+            vc.oid = weakSelf.chatListModel.orderId;
             [weakSelf.navigationController pushViewController:vc animated:true];
             
         }

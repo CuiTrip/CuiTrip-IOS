@@ -112,13 +112,15 @@
 
 //        [self.tableView reloadData];
         //6,Load Data
-        [self load];
+
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self load];
 }
 
 - (void)viewDidAppear:(BOOL)animated

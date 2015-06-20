@@ -235,7 +235,7 @@
     }
     else{
      
-        if (self.status == kFinish) {
+        if (self.status == kWillBegin) {
             
             //去确认行程
             self.confirmTripOrderModel.oid = self.oid;
