@@ -15,6 +15,8 @@
 #import "TPDDInfoCellContainerView.h"
 #import "TPDatePickerViewController.h"
 #import "TPDiscoveryDetailContentViewController.h"
+#import "TPDDInfoItem.h"
+
 @interface TPTripArrangementViewController()
 
 @property(nonatomic,strong) BXImageScrollView* bannerView;
@@ -64,18 +66,26 @@
     self.bannerView.placeHolderImage = __image(@"default_details.jpg");
     [self.scrollView addSubview:self.bannerView];
     
+    TPDDInfoItem* infoItem = [TPDDInfoItem new];
+    infoItem.name = self.tripTitle;
+    infoItem.desc = self.tripContent;
+    infoItem.pics = self.pic?@[self.pic]:nil;
+    infoItem.address = self.tripAddress;
+    infoItem.score = [NSString stringWithFormat:@"%.1f",self.tripScore];
+    
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDDInfoCell" owner:self options:nil];
     self.infoView = (TPDDInfoCellContainerView *)[nib objectAtIndex:0];
     self.infoView.vzOrigin = CGPointMake(0, 270);
-    self.infoView.vzSize = CGSizeMake(self.view.vzWidth, self.view.vzWidth*0.75);
+    self.infoView.vzSize = CGSizeMake(self.view.vzWidth, 200);
+    [self.infoView setItem:infoItem];
     
     __weak typeof(self)weakSelf = self;
     self.infoView.callback = ^(NSString* str,id item){
     
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
         vc.title = @"旅程描述";
-        vc.titleString = @"台湾妈祖神庙参观";
-        vc.content = @"通常使用 NSURLConnection 时，你会传入一个 Delegate，当调用了 [connection start] 后，这个 Delegate 就会不停收到事件回调。实际上，start 这个函数的内部会会获取 CurrentRunLoop，然后在其中的 DefaultMode 添加了4个 Source0 (即需要手动触发的Source)。CFMultiplexerSource 是负责各种 Delegate 回调的，CFHTTPCookieStorage 是处理各种 Cookie 的\n\n当开始网络传输时，我们可以看到 NSURLConnection 创建了两个新线程：com.apple.NSURLConnectionLoader 和 com.apple.CFSocket.private。其中 CFSocket 线程是处理底层 socket 连接的。NSURLConnectionLoader 这个线程内部会使用 RunLoop 来接收底层 socket 的事件，并通过之前添加的 Source0 通知到上层的 Delegate。";
+        vc.titleString = weakSelf.tripTitle;
+        vc.content = weakSelf.tripContent;
         [weakSelf.navigationController pushViewController:vc animated:YES];
 
     };
@@ -83,7 +93,7 @@
 
     
     //footer view
-    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.infoView.vzBottom, self.view.vzWidth, 44)];
+    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight - 44-64, self.view.vzWidth, 44)];
     btn.backgroundColor = [TPTheme themeColor];
     [btn setTitle:@"安排日程" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -92,13 +102,51 @@
         
         TPDatePickerViewController* vc = [TPDatePickerViewController new];
         vc.type = kSelection;
+        vc.callback = ^(NSArray* list) {
+            
+            NSMutableArray* dates = [NSMutableArray new];
+            for (NSDate* date in list) {
+                
+                long long t = [date timeIntervalSince1970]*1;
+                NSString* s = [NSString stringWithFormat:@"%lld",t];
+                [dates addObject:s];
+                
+            }
+            weakSelf.tripArrangementModel.availableDates = [dates copy];
+            weakSelf.tripArrangementModel.sid = weakSelf.sid;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                SHOW_SPINNER(weakSelf);
+                [weakSelf.tripArrangementModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                    
+                    HIDE_SPINNER(weakSelf);
+                    if (!error) {
+                        
+                        TOAST(weakSelf, @"安排成功!");
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [weakSelf.navigationController popViewControllerAnimated:true];
+                        });
+                    }
+                    else
+                    {
+                        TOAST_ERROR(weakSelf, error);
+                    }
+                    
+                }];
+            });
+        
+            
+        };
         [self.navigationController pushViewController:vc animated:true];
         
     }];
-    [self.scrollView addSubview:btn];
+    [self.view addSubview:btn];
     
     
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.vzWidth, self.bannerView.vzHeight+self.infoView.vzHeight+44+64);
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.vzWidth, self.bannerView.vzHeight+self.infoView.vzHeight+100);
 }
 
 - (void)viewDidLoad

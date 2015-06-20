@@ -21,6 +21,7 @@
 #import "BXImageScrollView.h"
 #import "TPDDTripItem.h"
 #import "TPDDInfoItem.h"
+#import "TPDDProfileItem.h"
 
 
 
@@ -175,6 +176,9 @@
             v.maxNum = [self.discoveryDetailListModel.tripDetailItem.tripPeopleNum integerValue];
             v.fee = self.discoveryDetailListModel.tripDetailItem.tripFee;
             v.sid = self.sid;
+            v.insiderId = self.discoveryDetailListModel.tripInfoItem.insiderId;
+            v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
+            //v.insiderId = self.discoveryDetailListModel.tripf
             [self.navigationController pushViewController:v animated:true];
         };
         

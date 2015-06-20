@@ -29,9 +29,13 @@
 
 - (NSDictionary *)dataParams {
     
-    return @{@"country":@"TW"};
+    return @{@"country":@"TW",@"uid":[TPUser uid]?:@"",@"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex],@"size":@"10"};
 }
 
+- (NSInteger)pageSize
+{
+    return 10;
+}
 
 - (VZHTTPRequestConfig)requestConfig
 {

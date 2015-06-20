@@ -35,82 +35,13 @@
 
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 4;
-}
-
-
-
-//@optional:
-- (TPMyServiceListItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
-
-    if(indexPath.row == 0)
-    {
-        TPMyServiceListItem* item = [TPMyServiceListItem new];
-        [item autoKVCBinding:@{
-                               @"sid": @"3",
-                               @"name": @"阿亮带你看妈祖绕境",
-                               @"check_status": @"0"
-                               }];
-        return item;
-    
-    }
-    else if (indexPath.row == 1)
-    {
-        TPMyServiceListItem* item = [TPMyServiceListItem new];
-        [item autoKVCBinding:@{
-                               @"sid": @"3",
-                               @"name": @"阿亮带你看妈祖绕境",
-                               @"check_status": @"1"
-                               }];
-        return item;
-    }
-    else if (indexPath.row == 2)
-    {
-        TPMyServiceListItem* item = [TPMyServiceListItem new];
-        [item autoKVCBinding:@{
-                               @"sid": @"3",
-                               @"name": @"阿亮带你看妈祖绕境",
-                               @"check_status": @"2"
-                               }];
-        return item;
-    
-    }
-    else if (indexPath.row == 2)
-    {
-        TPMyServiceListItem* item = [TPMyServiceListItem new];
-        [item autoKVCBinding:@{
-                               @"sid": @"3",
-                               @"name": @"阿亮带你看妈祖绕境",
-                               @"check_status": @"2"
-                               }];
-        return item;
-        
-    }
-    else if (indexPath.row == 3)
-    {
-        TPMyServiceListItem* item = [TPMyServiceListItem new];
-        [item autoKVCBinding:@{
-                               @"sid": @"3",
-                               @"name": @"阿亮带你看妈祖绕境",
-                               @"check_status": @"2"
-                               }];
-        return item;
-        
-    }
-    return nil;
-
-
-    
-}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TPMyServiceListItem* item = (TPMyServiceListItem* )[self itemForCellAtIndexPath:indexPath];
     
     //没通过的可以删除
-    if ([item.check_status integerValue] == 2) {
+    if ([item.checkStatus integerValue] == 2) {
         
         return YES;
     }

@@ -13,11 +13,13 @@
 
 @interface TPDDInfoItem : VZListItem
 
-@property(nonatomic,strong)NSString* name;
-@property(nonatomic,strong)NSString* address;
-@property(nonatomic,strong)NSString* desc;
-@property(nonatomic,strong)NSString* score;
+@property(nonatomic,strong)NSString* name; //service name
+@property(nonatomic,strong)NSString* address; //service address
+@property(nonatomic,strong)NSString* desc; //service desc
+@property(nonatomic,strong)NSString* score; //service score
 @property(nonatomic,strong)NSArray* pics;
+@property(nonatomic,strong)NSString* insiderId;
+
 @end
 
   

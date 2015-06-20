@@ -11,9 +11,16 @@
   
 #import "VZHTTPModel.h"
 
+/**
+ 	uid(String): 发现者id
+ 	token(String):  登录凭证
+ 	sid(String)：服务 id
+ 	availableDate(String[]) : 字段值(可约日期timestap数组)
+ */
 @interface TPTripArrangementModel : VZHTTPModel
 
 @property(nonatomic,strong)NSString* sid;
+@property(nonatomic,strong)NSArray* availableDates;
 
 @end
 

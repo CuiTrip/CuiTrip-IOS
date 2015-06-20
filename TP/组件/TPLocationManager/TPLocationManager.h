@@ -14,6 +14,12 @@
 
 + (CLLocationCoordinate2D)currentLocation;
 
++ (NSString* )locationCity;
+
++ (NSString* )locationCountry;
+
++ (NSString* )locationCountryCode;
+
 + (void)startLocation;
 
 + (void)startLocationWithCompletion:(void(^)(CLLocation* location))callback;

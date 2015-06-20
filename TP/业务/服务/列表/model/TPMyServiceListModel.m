@@ -10,6 +10,7 @@
 
 
 #import "TPMyServiceListModel.h"
+#import "TPMyServiceListItem.h"
 
 @interface TPMyServiceListModel()
 
@@ -41,6 +42,14 @@
 - (NSMutableArray* )responseObjects:(id)JSON
 {
     NSMutableArray* list = [NSMutableArray new];
+    
+    for (NSDictionary* info in JSON) {
+        
+        TPMyServiceListItem* item = [TPMyServiceListItem new];
+        [item autoKVCBinding:info];
+        [list addObject:item];
+    }
+    
     return list;
 }
 

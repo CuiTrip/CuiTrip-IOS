@@ -62,9 +62,9 @@
 {
     [super setItem:item];
     
-    self.tripLength.text = item.tripTimeLength;
+    self.tripLength.text = [item.tripTimeLength stringByAppendingString:@"小时"];
     self.tripTime.text = item.tripTime;
-    self.tripMemberLabel.text = item.tripPeopleNum;
+    self.tripMemberLabel.text = [item.tripPeopleNum stringByAppendingString:@"人"];
     
     
 }

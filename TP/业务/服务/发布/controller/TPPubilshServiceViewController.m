@@ -240,6 +240,7 @@
         if(oldIndex == self.viewControllers.count-1)
         {
             //noop...
+            [self onComplete];
         }
         else{
             [self setSelectedIndex:oldIndex animated:YES];
@@ -282,8 +283,7 @@
 
 - (void)onComplete
 {
-    [self onNext];
-    
+
     SHOW_SPINNER(self);
     
     self.pubilshServiceModel.name = self.titleStr;
@@ -301,11 +301,15 @@
        
         HIDE_SPINNER(weakSelf);
         if (!error) {
-            TOAST(weakSelf, @"发布成功!");
-            
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [weakSelf onNext];
+                [weakSelf.view makeToast:@"您的信息已经提交给脆饼旅行审核" duration:2.0 position:CSToastPositionCenter title:@"发布成功!"];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [weakSelf.navigationController popViewControllerAnimated:true];
+                });
                 
             });
         }
@@ -319,7 +323,7 @@
 {
     if (self.selectedIndex == [self.viewControllers count] - 2) {
         //self.navigationItem.rightBarButtonItem = nil;
-         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onComplete)];
+         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onNext)];
     }
     else if (self.selectedIndex == [self.viewControllers count] -1)
     {

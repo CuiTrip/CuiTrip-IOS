@@ -50,7 +50,7 @@
     [super setItem:item];
     self.titleLabel.text = item.name;
     
-    NSString* status = item.check_status;
+    NSString* status = item.checkStatus;
     if ([status integerValue] == 0) {
         self.statusLabel.text = @"正在审核中...";
         self.statusLabel.textColor = [TPTheme grayColor];
@@ -73,7 +73,7 @@
     [super layoutSubviews];
     
     self.titleLabel.vzOrigin = CGPointMake(12, 21);
-    self.titleLabel.vzSize = CGSizeMake(self.vzWidth-150, 14);
+    self.titleLabel.vzSize = CGSizeMake(self.vzWidth-150, 16);
     self.statusLabel.vzOrigin = CGPointMake(self.vzWidth-140, 21);
     self.statusLabel.vzSize = CGSizeMake(120, 12);
 

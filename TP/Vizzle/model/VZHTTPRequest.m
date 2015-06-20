@@ -71,6 +71,7 @@
 {
     [self requestDidStart];
     
+    
     __weak typeof(self) weakSelf = self;
     [_operation setCompletionHandler:^(VZHTTPConnectionOperation *op, NSString *responseString, id responseObj, NSError *error) {
        

@@ -8,11 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TPDDInfoCellContainerView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HF0-qa-SBT">
-                    <rect key="frame" x="105" y="188" width="110" height="44"/>
+                    <rect key="frame" x="105" y="164" width="110" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" title="查看详情">
                         <color key="titleColor" red="0.0" green="0.80000000000000004" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="内容" textAlignment="center" id="ZfN-FX-GOf">
-                    <rect key="frame" x="20" y="124" width="280" height="60"/>
+                    <rect key="frame" x="20" y="123" width="280" height="40"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -58,7 +58,7 @@
                 <outlet property="infoNameLabel" destination="xiB-yq-836" id="K9o-Vo-F2e"/>
                 <outlet property="viewDetailBtn" destination="HF0-qa-SBT" id="GXQ-ZM-AVp"/>
             </connections>
-            <point key="canvasLocation" x="375" y="147"/>
+            <point key="canvasLocation" x="375" y="127.5"/>
         </view>
     </objects>
     <resources>

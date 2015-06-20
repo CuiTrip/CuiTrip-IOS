@@ -46,7 +46,7 @@
 {
     [super setItem:item];
     
-    self.commentNumLabel.text = item.commentNum;
+    self.commentNumLabel.text = [NSString stringWithFormat:@"共%@条评论",item.commentNum];
     self.commentTextView.text = item.comment;
 
 }

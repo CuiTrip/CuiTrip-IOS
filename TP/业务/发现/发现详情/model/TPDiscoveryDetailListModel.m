@@ -59,6 +59,7 @@
     infoItem.desc = serviceInfo[@"descpt"];
     infoItem.score = serviceInfo[@"score"];
     infoItem.pics = serviceInfo[@"pics"];
+    infoItem.insiderId = serviceInfo[@"insiderId"];
     self.tripInfoItem = infoItem;
     [list addObject:infoItem];
     

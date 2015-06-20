@@ -87,8 +87,8 @@
     self.tableView.separatorStyle = NO;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
-    self.needPullRefresh = NO;
+    self.needLoadMore = true;
+    self.needPullRefresh = true;
 
     
     //3，bind your delegate and datasource to tableview

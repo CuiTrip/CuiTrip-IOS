@@ -20,34 +20,39 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
-- (NSDictionary *)dataParams {
+/**
+uid(String): 发现者id
+token(String):  登录凭证
+sid(String)：服务 id
+availableDate(String[]) : 字段值(可约日期timestap数组)
+ */
+- (NSDictionary *)dataParams
+{
     
-    //todo:
-      
-    return nil;
+    return @{@"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@"",
+             @"sid":self.sid?:@"",
+             @"availableDate":self.availableDates?:@[]};
+
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 - (NSString *)methodName {
-   
-    //todo:
-   
-    return nil;
+    
+    return [_API_ stringByAppendingString:@"modifyServiceInfo"];
 }
+
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    return YES;
 }
 
 @end

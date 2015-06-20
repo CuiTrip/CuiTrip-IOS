@@ -92,7 +92,7 @@
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
-    self.needPullRefresh = NO;
+    self.needPullRefresh = true;
 
     
     
@@ -224,10 +224,18 @@
   
   //todo...
     TPMyServiceListItem* item = (TPMyServiceListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
-    if ([item.check_status integerValue] == 1 ) {
+    if ([item.checkStatus integerValue] == 1 ) {
         
         TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
         vc.sid = item.sid;
+        vc.tripTitle = item.name;
+        vc.tripContent = item.descpt;
+        vc.tripAddress = item.address;
+        vc.tripScore = [item.score floatValue];
+        vc.pic = item.pic[0];
+        
+        
+        //vc.pic = item.pi
         [self.navigationController pushViewController:vc animated:true];
 
     }

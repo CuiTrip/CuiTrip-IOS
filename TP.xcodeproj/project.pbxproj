@@ -65,11 +65,6 @@
 		4509ABBF1B233C9200846032 /* TPReserveItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABA31B233C9200846032 /* TPReserveItem.m */; };
 		4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABA61B233C9200846032 /* TPReserveModel.m */; };
 		4509ABC11B233C9200846032 /* TPReserveSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABAA1B233C9200846032 /* TPReserveSubView.m */; };
-		4509ABC21B233C9200846032 /* reservedate_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABAD1B233C9200846032 /* reservedate_meta.json */; };
-		4509ABC31B233C9200846032 /* TPReserveDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABB11B233C9200846032 /* TPReserveDateViewController.m */; };
-		4509ABC41B233C9200846032 /* TPReserveDateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABB41B233C9200846032 /* TPReserveDateItem.m */; };
-		4509ABC51B233C9200846032 /* TPReserveDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABB71B233C9200846032 /* TPReserveDateModel.m */; };
-		4509ABC61B233C9200846032 /* TPReserveDateSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABBB1B233C9200846032 /* TPReserveDateSubView.m */; };
 		4509ABC81B233D0700846032 /* TPReserveViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABC71B233D0700846032 /* TPReserveViewController.storyboard */; };
 		4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABC91B234A8700846032 /* TPMeViewController.storyboard */; };
 		4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABCB1B234CD900846032 /* TPMeSubView.xib */; };
@@ -438,16 +433,6 @@
 		4509ABA61B233C9200846032 /* TPReserveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPReserveModel.m; sourceTree = "<group>"; };
 		4509ABA91B233C9200846032 /* TPReserveSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveSubView.h; sourceTree = "<group>"; };
 		4509ABAA1B233C9200846032 /* TPReserveSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPReserveSubView.m; sourceTree = "<group>"; };
-		4509ABAD1B233C9200846032 /* reservedate_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservedate_meta.json; sourceTree = "<group>"; };
-		4509ABAE1B233C9200846032 /* TPReserveDateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveDateConfig.h; sourceTree = "<group>"; };
-		4509ABB01B233C9200846032 /* TPReserveDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveDateViewController.h; sourceTree = "<group>"; };
-		4509ABB11B233C9200846032 /* TPReserveDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPReserveDateViewController.m; sourceTree = "<group>"; };
-		4509ABB31B233C9200846032 /* TPReserveDateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveDateItem.h; sourceTree = "<group>"; };
-		4509ABB41B233C9200846032 /* TPReserveDateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPReserveDateItem.m; sourceTree = "<group>"; };
-		4509ABB61B233C9200846032 /* TPReserveDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveDateModel.h; sourceTree = "<group>"; };
-		4509ABB71B233C9200846032 /* TPReserveDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPReserveDateModel.m; sourceTree = "<group>"; };
-		4509ABBA1B233C9200846032 /* TPReserveDateSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPReserveDateSubView.h; sourceTree = "<group>"; };
-		4509ABBB1B233C9200846032 /* TPReserveDateSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPReserveDateSubView.m; sourceTree = "<group>"; };
 		4509ABC71B233D0700846032 /* TPReserveViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPReserveViewController.storyboard; sourceTree = "<group>"; };
 		4509ABC91B234A8700846032 /* TPMeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPMeViewController.storyboard; sourceTree = "<group>"; };
 		4509ABCB1B234CD900846032 /* TPMeSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPMeSubView.xib; sourceTree = "<group>"; };
@@ -1306,7 +1291,6 @@
 			isa = PBXGroup;
 			children = (
 				4509AB9A1B233C9200846032 /* 预约信息 */,
-				4509ABAB1B233C9200846032 /* 预约日期 */,
 			);
 			path = "预约";
 			sourceTree = "<group>";
@@ -1376,71 +1360,6 @@
 				4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */,
 				4509ABA91B233C9200846032 /* TPReserveSubView.h */,
 				4509ABAA1B233C9200846032 /* TPReserveSubView.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		4509ABAB1B233C9200846032 /* 预约日期 */ = {
-			isa = PBXGroup;
-			children = (
-				4509ABAC1B233C9200846032 /* config */,
-				4509ABAF1B233C9200846032 /* controller */,
-				4509ABB21B233C9200846032 /* item */,
-				4509ABB51B233C9200846032 /* model */,
-				4509ABB81B233C9200846032 /* resource */,
-				4509ABB91B233C9200846032 /* view */,
-			);
-			path = "预约日期";
-			sourceTree = "<group>";
-		};
-		4509ABAC1B233C9200846032 /* config */ = {
-			isa = PBXGroup;
-			children = (
-				4509ABAD1B233C9200846032 /* reservedate_meta.json */,
-				4509ABAE1B233C9200846032 /* TPReserveDateConfig.h */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		4509ABAF1B233C9200846032 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				4509ABB01B233C9200846032 /* TPReserveDateViewController.h */,
-				4509ABB11B233C9200846032 /* TPReserveDateViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		4509ABB21B233C9200846032 /* item */ = {
-			isa = PBXGroup;
-			children = (
-				4509ABB31B233C9200846032 /* TPReserveDateItem.h */,
-				4509ABB41B233C9200846032 /* TPReserveDateItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		4509ABB51B233C9200846032 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				4509ABB61B233C9200846032 /* TPReserveDateModel.h */,
-				4509ABB71B233C9200846032 /* TPReserveDateModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		4509ABB81B233C9200846032 /* resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = resource;
-			sourceTree = "<group>";
-		};
-		4509ABB91B233C9200846032 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				4509ABBA1B233C9200846032 /* TPReserveDateSubView.h */,
-				4509ABBB1B233C9200846032 /* TPReserveDateSubView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3211,7 +3130,6 @@
 				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				45D0C7E91B2BBEED00F31BF5 /* TPPSFeeViewController.storyboard in Resources */,
 				45D0C7FF1B2BDA3F00F31BF5 /* o2o_gray_star@2x.png in Resources */,
-				4509ABC21B233C9200846032 /* reservedate_meta.json in Resources */,
 				4524FCAB1B34623500ED3D79 /* default_list@2x.jpg in Resources */,
 				45D48BE51B32AF3500B5801F /* UMSocialSDKResourcesNew.bundle in Resources */,
 				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
@@ -3351,7 +3269,6 @@
 				4509ABEC1B23DF3600846032 /* TPHelpViewController.m in Sources */,
 				45D0C7B41B29BED800F31BF5 /* TPMyServiceListItem.m in Sources */,
 				45028AB11B1B535E00417606 /* VZListDefaultTextItem.m in Sources */,
-				4509ABC61B233C9200846032 /* TPReserveDateSubView.m in Sources */,
 				45D48C5B1B32EEBE00B5801F /* TPDiscoveryDetailContentViewController.m in Sources */,
 				4509ABE61B23DDF600846032 /* TPFeedbackViewController.m in Sources */,
 				45EB42FB1B2D63AE001B4202 /* TPTripArrangementViewController.m in Sources */,
@@ -3411,7 +3328,6 @@
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
 				45D48C6E1B32EEBE00B5801F /* TPDiscoveryListItem.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
-				4509ABC31B233C9200846032 /* TPReserveDateViewController.m in Sources */,
 				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
 				45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */,
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
@@ -3430,7 +3346,6 @@
 				45EB43011B2DB56F001B4202 /* TPChatStatusListCell.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
 				45028AB31B1B535E00417606 /* VZModel.m in Sources */,
-				4509ABC51B233C9200846032 /* TPReserveDateModel.m in Sources */,
 				45D0C7D71B29E0DE00F31BF5 /* TPPSTitleViewController.m in Sources */,
 				45D0C77B1B29AE8800F31BF5 /* TPCommentListModel.m in Sources */,
 				45D0C7771B29AE8800F31BF5 /* TPCommentListViewController.m in Sources */,
@@ -3482,7 +3397,6 @@
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				4509ABEF1B23E1CA00846032 /* TPSystemSettingsViewController.m in Sources */,
 				4509AC1E1B247E5200846032 /* TPTripListViewController.m in Sources */,
-				4509ABC41B233C9200846032 /* TPReserveDateItem.m in Sources */,
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
 				45D48C6D1B32EEBE00B5801F /* TPDiscoveryListViewDelegate.m in Sources */,
 				45D48C4E1B32EEBE00B5801F /* TPDDCommentCell.m in Sources */,

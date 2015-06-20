@@ -278,6 +278,9 @@ numberOfRowsInComponent:(NSInteger)component
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
+    if (_dataSource.count == 0) {
+        return;
+    }
     _currentSelectedString = _dataSource[row];
     _currentSelectedIndex  = row;
 }
@@ -295,8 +298,11 @@ numberOfRowsInComponent:(NSInteger)component
 {
     [self hidePickerInternal];
     
+    if (_dataSource.count == 0) {
+        return;
+    }
     if (_currentSelectedString.length == 0) {
-        _currentSelectedString = _dataSource[0];
+        _currentSelectedString =  _dataSource[0];
     }
     if ([self.delegate respondsToSelector:@selector(onHUDPickerDidSelectedObject:withIndex:)]) {
         [self.delegate onHUDPickerDidSelectedObject:_currentSelectedString withIndex:_currentSelectedIndex];

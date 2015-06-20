@@ -11,7 +11,27 @@
   
 #import "VZHTTPModel.h"
 
+/**
+ 	token(String):  登录凭证
+ 	uid (String): 买家id
+ 	insiderId (String): 卖家id
+ 	sid (String): 服务id
+ 	serviceName (String): 服务名称
+ 	serviceDate (String): 预约日期， 1970后的毫秒数
+ 	buyerNum (String):  游玩人数
+ 	servicePrice (String): 服务原价
+ 	moneyType (String): 货币种类：如：人民币CNY
+ */
 @interface TPReserveModel : VZHTTPModel
+
+@property(nonatomic,strong)NSString* sid;
+@property(nonatomic,strong)NSString* insiderId;
+@property(nonatomic,strong)NSString* serviceName;
+@property(nonatomic,strong)NSString* buyerNum;
+@property(nonatomic,strong)NSString* servicePrice;
+@property(nonatomic,strong)NSString* serviceDate;
+@property(nonatomic,strong)NSString* moneyType;
+
 
 @end
 

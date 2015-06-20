@@ -22,32 +22,34 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    return  @{@"sid":self.sid?:@"",
+              @"token":[TPUser token]?:@"",
+              @"uid":[TPUser uid]?:@"",
+              @"insiderId":self.insiderId?:@"",
+              @"serviceName":self.serviceName?:@"",
+              @"serviceDate":self.serviceDate?:@"",
+              @"buyerNum":self.buyerNum?:@"",
+              @"servicePrice":self.servicePrice?:@"",
+              @"moneyType":self.moneyType?:@""};
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
-}
 
 - (NSString *)methodName {
    
-    //todo:
-   
-    return nil;
+    return [_API_ stringByAppendingString:@"createOrder"];
 }
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+}
+
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    return true;
 }
 
 @end

@@ -14,7 +14,11 @@
 @interface TPReserveViewController : VZViewController
 
 @property(nonatomic,strong)NSString* sid;
-@property(nonatomic,strong)NSArray* availableDates;
+@property(nonatomic,strong)NSString* insiderId;
+@property(nonatomic,strong)NSString* serviceName;
+@property(nonatomic,strong)NSString* serviceDate;
+@property(nonatomic,strong)NSString* servicePrice;
+@property(nonatomic,strong)NSString* moneyType;
 @property(nonatomic,assign)NSInteger maxNum;
 @property(nonatomic,strong)NSString* fee;
 

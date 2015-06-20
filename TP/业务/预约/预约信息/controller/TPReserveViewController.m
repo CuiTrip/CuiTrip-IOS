@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *feeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (nonatomic,strong) TPReserveSubView* confirmView;
- 
+@property(nonatomic,strong)NSArray* availableDates;
 @property(nonatomic,strong)TPReserveModel *reserveModel; 
 @property(nonatomic,strong)TPGetServiceEnableDateModel* availabeDateModel;
 
@@ -160,13 +160,35 @@
         TOAST(self, @"请选择日期");
     }
     
-
+    //下单
+    self.reserveModel.sid = self.sid;
+    self.reserveModel.insiderId = self.insiderId;
+    self.reserveModel.serviceName = self.serviceName;
+    self.reserveModel.serviceDate = self.serviceDate;
+    self.reserveModel.buyerNum = [NSString stringWithFormat:@"%ld",(long)self.maxNum];
+    self.reserveModel.servicePrice = self.servicePrice;
+    self.reserveModel.moneyType = self.moneyType;
     
-    UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
-    v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-    [self.view addSubview:v];
-    //self.confirmView
-    [v addSubview:self.confirmView];
+    SHOW_SPINNER(self);
+    __weak typeof(self) weakSelf = self;
+    [self.reserveModel loadWithCompletion:^(VZModel *model, NSError *error) {
+        
+        HIDE_SPINNER(weakSelf);
+        
+        if (!error) {
+            UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
+            v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+            [[[UIApplication sharedApplication].delegate window] addSubview:v];
+            //self.confirmView
+            [v addSubview:self.confirmView];
+        }
+        else
+        {
+            TOAST_ERROR(weakSelf, error);
+        }
+    }];
+    
+
    
 }
 
