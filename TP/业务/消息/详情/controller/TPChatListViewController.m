@@ -39,7 +39,7 @@
         self.dateLabel.vzSize = CGSizeMake(frame.size.width-100, 18);
         [self addSubview:self.dateLabel];
         
-        self.actionBtn = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width-90, (frame.size.height-30)/2, 60, 30)];
+        self.actionBtn = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width-70, (frame.size.height-30)/2, 60, 30)];
         self.actionBtn.layer.cornerRadius = 8.0f;
         self.actionBtn.layer.masksToBounds = true;
         self.actionBtn.titleLabel.font = ft(14);

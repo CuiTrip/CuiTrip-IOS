@@ -132,7 +132,7 @@
         TPPSComfirmViewController* confirm = __story(@"TPPSConfirmViewController", @"tppsconfirm");
         confirm.complete = ^{
         
-            [self onComplete];
+            [self.navigationController popViewControllerAnimated:true];
         
         };
         
@@ -163,6 +163,7 @@
 {
     [super viewWillAppear:animated];
     
+    self.tabBarController.tabBar.hidden = true;
     //todo..
 }
 
@@ -250,7 +251,9 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
     else
+    {
         [self setSelectedIndex:--oldIndex animated:YES];
+    }
 }
 
 
@@ -270,12 +273,14 @@
 
 - (void)onComplete
 {
+    [self onNext];
+    
     SHOW_SPINNER(self);
     
     self.pubilshServiceModel.name = self.titleStr;
     self.pubilshServiceModel.address = self.location;
-    self.pubilshServiceModel.desc = self.desc;
-    //self.pubilshServiceModel.pic = self.pics;
+    self.pubilshServiceModel.descpt = self.desc;
+    self.pubilshServiceModel.pic = self.pics;
     self.pubilshServiceModel.price = self.fee;
     self.pubilshServiceModel.maxbuyerNum = self.num;
     self.pubilshServiceModel.serviceTme = self.date;
@@ -291,7 +296,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [weakSelf.navigationController popViewControllerAnimated:true];
+                [weakSelf onNext];
                 
             });
         }
@@ -303,35 +308,9 @@
 
 - (void)selectedIndexDidChange
 {
-//    NSString* title = @"";
-//    switch (self.selectedIndex) {
-//        case 0:
-//            title = @"选择地点";
-//            break;
-//        case 1:
-//            title = @"填写描述";
-//            break;
-//        case 2:
-//            title =@"";
-//            break;
-//        case 3:
-//            title = @"";
-//            break;
-//        case 4:
-//            title = @"";
-//            break;
-//        case 5:
-//            title = @"";
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    self.title =title;
-    
     if (self.selectedIndex == [self.viewControllers count] - 2) {
         //self.navigationItem.rightBarButtonItem = nil;
-         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onNext)];
+         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onComplete)];
     }
     else if (self.selectedIndex == [self.viewControllers count] -1)
     {

@@ -17,12 +17,14 @@
  	name(String) : 服务名称
  	address(String) : 服务者所在地
  	desc(String) : 服务描述
- 	pic(String) : 服务图片
+ 	pic(String[]) : 服务图片(图片URL的json数组)
+ 	backPic(String) : 服务主图( 默认第一张)
  	price(String) : 服务费用
  	maxbuyerNum(String) : 最多接待人数
  	serviceTme(String) : 服务时长
  	bestTime(String) : 最佳时间段
  	meetingWay(String) : 见面方式
+  0：约定地点，1：接送
  */
 
 
@@ -42,12 +44,18 @@
              @"token":[TPUser token]?:@"",
              @"name":self.name?:@"",
              @"address":self.address?:@"",
-             @"desc":self.desc?:@"",
+             @"city":self.city?:@"",
+             @"descpt":self.descpt?:@"",
              @"pic":self.pic?:@"",
              @"price":self.price?:@"",
              @"maxbuyerNum":self.maxbuyerNum?:@"",
              @"bestTime":self.bestTime?:@"",
-             @"meetingWay":self.meetingWay?:@""
+             @"meetingWay":self.meetingWay?:@"",
+             @"serviceTme":self.serviceTme?:@"",
+             @"lat":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].latitude],
+             @"lng":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].longitude],
+             @"country":@"CN",
+             @"descpt":self.descpt?:@""
              };
 }
 

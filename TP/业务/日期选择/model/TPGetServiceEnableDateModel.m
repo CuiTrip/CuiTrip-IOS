@@ -39,7 +39,7 @@
 
 - (BOOL)parseResponse:(id)JSON
 {
-    NSArray* ret = JSON[@"enableDate"];
+    NSArray* ret = JSON[@"availableDate"];
     NSMutableArray* temp = [NSMutableArray new];
     for (NSString* timeStamp in ret) {
         

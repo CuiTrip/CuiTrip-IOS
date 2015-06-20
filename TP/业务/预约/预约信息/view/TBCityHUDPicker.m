@@ -295,6 +295,9 @@ numberOfRowsInComponent:(NSInteger)component
 {
     [self hidePickerInternal];
     
+    if (_currentSelectedString.length == 0) {
+        _currentSelectedString = _dataSource[0];
+    }
     if ([self.delegate respondsToSelector:@selector(onHUDPickerDidSelectedObject:withIndex:)]) {
         [self.delegate onHUDPickerDidSelectedObject:_currentSelectedString withIndex:_currentSelectedIndex];
     }

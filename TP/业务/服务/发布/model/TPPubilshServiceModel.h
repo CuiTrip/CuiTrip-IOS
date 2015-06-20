@@ -16,13 +16,16 @@
 
 @property(nonatomic,strong) NSString* name;
 @property(nonatomic,strong) NSString* address;
-@property(nonatomic,strong) NSString* desc;
-@property(nonatomic,strong) NSString* pic;
+@property(nonatomic,strong) NSString* city;
+@property(nonatomic,strong) NSArray* pic;
 @property(nonatomic,strong) NSString* price;
 @property(nonatomic,strong) NSString* maxbuyerNum;
 @property(nonatomic,strong) NSString* serviceTme;
 @property(nonatomic,strong) NSString* bestTime;
 @property(nonatomic,strong) NSString* meetingWay;
+@property(nonatomic,strong) NSString* lat;
+@property(nonatomic,strong) NSString* lng;
+@property(nonatomic,strong) NSString* descpt;
 
 @end
 

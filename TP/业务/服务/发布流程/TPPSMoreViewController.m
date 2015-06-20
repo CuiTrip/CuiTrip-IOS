@@ -38,21 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)onAction:(UIButton* )sender {
-    
-//    if (sender.tag == 0) {
-//        
-//        TPDatePickerViewController* vc = [TPDatePickerViewController new];
-//        vc.type = kSelection;
-//        vc.date = [NSDate date];
-//        vc.callback = ^(NSArray* list){
-//            self.dates = list;
-//            if (list.count > 0) {
-//                [self.calendarBtn setTitle:[TPUtils fullDateFormatString:list[0]] forState:UIControlStateNormal];
-//            }
-//        };
-//
-//        [self.navigationController pushViewController:vc animated:true];
-//    }
 
     if (sender.tag == 1) {
         
@@ -68,7 +53,7 @@
     }
     else if (sender.tag == 3)
     {
-        NSArray* list = @[@"1人",@"2人",@"3人"];
+        NSArray* list = @[@"1人",@"2人",@"3人",@"4人",@"5人",@"6人"];
         [TBCityHUDPicker showPicker:list Title:@"请选择游玩人数" Tag:@"c" Delegate:self];
     }
     else if (sender.tag == 4)
@@ -94,25 +79,30 @@
 {
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"a"])  {
         //[self.dateBtn setTitle:str forState:UIControlStateNormal];
-        self.duration = str;
+        self.duration = [str substringToIndex:str.length-2];
         [self.durationBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"b"]) {
         //[self.numBtn setTitle:str forState:UIControlStateNormal];
-        self.date = str;
+        self.date = [str substringToIndex:str.length-1];
         [self.dateBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"c"]) {
         //[self.numBtn setTitle:str forState:UIControlStateNormal];
-        self.number = str;
+        self.number = [str substringToIndex:str.length-1];
         [self.numberBtn setTitle:str forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"d"]) {
         //[self.numBtn setTitle:str forState:UIControlStateNormal];
-        self.meet = str;
+        if (index == 0) {
+            self.meet = @"0";
+        }
+        else
+            self.meet = @"1";
+
         [self.meetBtn setTitle:str forState:UIControlStateNormal];
     }
     
