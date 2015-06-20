@@ -34,38 +34,7 @@
     
 
 }
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return 2;
-//}
-//
-//
-//- (TPTripListItem*)itemForCellAtIndexPath:(NSIndexPath*)indexPath{
-//
-//
-//    if (indexPath.row == 0) {
-//        
-//        TPTripListItem* item = [TPTripListItem new];
-//        
-//        [item autoKVCBinding:@{@"imageURL":@"",@"status":@"已经结束",@"dateString":@"2015年6月5日",@"title":@"在台北看妈祖表演",@"name":@"真刚",@"location":@"台北",@"money":@"120"}];
-//        
-//        return item;
-//    }
-//    
-//    if (indexPath.row == 1) {
-//        
-//        TPTripListItem* item = [TPTripListItem new];
-//        
-//        [item autoKVCBinding:@{@"imageURL":@"",@"status":@"即将开始",@"dateString":@"2015年6月5日",@"title":@"在台北看妈祖表演",@"name":@"真刚",@"location":@"台北",@"money":@"120"}];
-//        
-//        
-//        return item;
-//    }
-//
-//    return nil;
-//
-//}
+
 
 
 @end  

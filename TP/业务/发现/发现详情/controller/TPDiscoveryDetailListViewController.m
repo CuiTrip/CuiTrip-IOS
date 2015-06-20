@@ -272,7 +272,7 @@
     [super showModel:model];
     TPDiscoveryDetailListViewHeaderView* headerView = (TPDiscoveryDetailListViewHeaderView* )self.tableView.tableHeaderView;
     headerView.bannerView.urls = model.tripInfoItem.pics;
-    headerView.moneyLabel.text = [TPUtils money:model.tripDetailItem.tripFee WithType:@""];
+    headerView.moneyLabel.text = [@" " stringByAppendingString:[TPUtils money:model.tripDetailItem.tripFee WithType:@""]];
 
 }
 
