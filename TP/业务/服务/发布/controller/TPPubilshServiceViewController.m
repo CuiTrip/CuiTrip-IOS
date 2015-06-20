@@ -236,8 +236,17 @@
     [v onNext];
     
     if (++oldIndex < self.viewControllers.count )
-    
-        [self setSelectedIndex:oldIndex animated:YES];
+    {
+        if(oldIndex == self.viewControllers.count-1)
+        {
+            //noop...
+        }
+        else{
+            [self setSelectedIndex:oldIndex animated:YES];
+        }
+
+    }
+
 }
 
 - (void)onBack

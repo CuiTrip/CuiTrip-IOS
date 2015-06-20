@@ -107,6 +107,7 @@
 		4524FCAB1B34623500ED3D79 /* default_list@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA71B34623400ED3D79 /* default_list@2x.jpg */; };
 		4524FCAC1B34623500ED3D79 /* default_sys.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA81B34623400ED3D79 /* default_sys.jpg */; };
 		4524FCAD1B34623500ED3D79 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA91B34623400ED3D79 /* girl.jpg */; };
+		4524FCAF1B35346E00ED3D79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4524FCAE1B35346E00ED3D79 /* MapKit.framework */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
 		456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */; };
 		456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 456C68E01B2ED35A003D4C20 /* pay_meta.json */; };
@@ -507,6 +508,7 @@
 		4524FCA71B34623400ED3D79 /* default_list@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default_list@2x.jpg"; sourceTree = "<group>"; };
 		4524FCA81B34623400ED3D79 /* default_sys.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_sys.jpg; sourceTree = "<group>"; };
 		4524FCA91B34623400ED3D79 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
+		4524FCAE1B35346E00ED3D79 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		454781651B14234F00B4A24D /* TP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -854,6 +856,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4524FCAF1B35346E00ED3D79 /* MapKit.framework in Frameworks */,
 				45D48BF71B32AF7A00B5801F /* libc++.dylib in Frameworks */,
 				45D48BF51B32AF6600B5801F /* libsqlite3.dylib in Frameworks */,
 				459BAEBD1B219C8E00739C7E /* libicucore.dylib in Frameworks */,
@@ -3081,6 +3084,7 @@
 		9FFED9F51BE90EBDBF1336EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4524FCAE1B35346E00ED3D79 /* MapKit.framework */,
 				45D48BF61B32AF7A00B5801F /* libc++.dylib */,
 				45D48BF41B32AF6600B5801F /* libsqlite3.dylib */,
 				459BAEBC1B219C8E00739C7E /* libicucore.dylib */,
