@@ -17,6 +17,7 @@
 #import "TPTripDetailViewController.h"
 #import "TPSendChatMsgModel.h"
 #import "TPPayViewController.h"
+#import "TPChatListItem.h"
 
 
 @interface TPChatListHeaderView : UIView
@@ -145,14 +146,14 @@
 {
     [super loadView];
     [self setTitle:@"消息详情"];
-    
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 50)];
+    self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 44)];
     self.headerView.dateLabel.text = @"";
     self.headerView.type = [TPUser type];
     
@@ -176,7 +177,7 @@
     };
     
     //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-50);
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
@@ -244,15 +245,9 @@
 - (void)showModel:(VZModel *)model
 {
     [super showModel:model];
-    
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[self.chatListModel.serviceDate doubleValue]];
-    NSString* dateString = [TPUtils fullDateFormatString:date];
-    self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",dateString,self.chatListModel.peopleNum];
+
+    self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
     self.headerView.actionBtn.hidden = NO;
-    
-    self.sendTextModel.orderId = self.orderId;
-    self.sendTextModel.send = [TPUser uid];
-    self.sendTextModel.receiver = self.chatListModel.receiverId;
     [TPGrowingTextView showInView:self.view delegate:self];
     
     
@@ -300,11 +295,33 @@
 
 - (void)textView:(UITextView* )view DidSendText:(NSString* )text
 {
+    __weak typeof(self)weakSelf = self;
+    self.sendTextModel.orderId = self.orderId;
+    self.sendTextModel.send = [TPUser uid];
     self.sendTextModel.content = text;
+    self.sendTextModel.receiver = self.receiverId;
     [self.sendTextModel loadWithCompletion:^(VZModel *model, NSError *error) {
        
         if (!error) {
             
+            TPChatListItem* item = [TPChatListItem new];
+            NSDictionary* dict = @{
+                                   @"from":[TPUser uid],
+                                   @"to":weakSelf.receiverId?:@"",
+                                   @"headPic":[TPUser avatar]?:@"",
+                                   @"content":text?:@"",
+                                   @"gmtCreated":[TPUtils fullDateFormatString:[NSDate date]]
+                                   };
+            [item autoKVCBinding:dict];
+            [weakSelf.ds addItem:item ForSection:0];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView reloadData];
+                [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.ds itemsForSection:0].count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+            });
+        }
+        else
+        {
+            TOAST_ERROR(weakSelf, error);
         }
         
     }];

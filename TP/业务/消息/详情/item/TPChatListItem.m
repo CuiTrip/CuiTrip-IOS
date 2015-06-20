@@ -25,6 +25,7 @@
     CGFloat contentHeight = [VZStringBuilder heightForString:self.content Font:ft(14) Width:w-20];
     self.chatContentSize = CGSizeMake(w-20, contentHeight);
     self.chatBKSize = CGSizeMake(w, contentHeight+10+30);
+    self.itemHeight = self.chatBKSize.height + 10;
     
     
 }

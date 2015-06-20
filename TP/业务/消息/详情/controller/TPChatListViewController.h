@@ -14,6 +14,7 @@
 @interface TPChatListViewController : VZListViewController
 
 @property(nonatomic,strong)NSString* orderId;
+@property(nonatomic,strong)NSString* receiverId;
 
 @end
   

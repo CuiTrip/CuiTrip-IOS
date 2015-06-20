@@ -27,7 +27,7 @@
 {
     if (![view viewWithTag:176]) {
         
-        TPGrowingTextView* inputView = [[TPGrowingTextView alloc]initWithFrame:CGRectMake(0, view.vzHeight-108, kTPScreenWidth, 44)];
+        TPGrowingTextView* inputView = [[TPGrowingTextView alloc]initWithFrame:CGRectMake(0, view.vzHeight-44, kTPScreenWidth, 44)];
         inputView.backgroundColor = [TPTheme themeColor];
         inputView.delegate = delegate;
         inputView.tag = 176;
@@ -168,10 +168,20 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)textViewDidChange:(UITextView *)textView
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if ([self.delegate respondsToSelector:@selector(textView:DidSendText:)]) {
-        [self.delegate textView:textView DidSendText:self.textView.text];
+    
+    if ([text isEqualToString:@"\n"]) {
+        
+        if ([self.delegate respondsToSelector:@selector(textView:DidSendText:)]) {
+            [self.delegate textView:textView DidSendText:textView.text];
+        }
+        textView.text = @"";
+        return NO;
     }
+    
+    return YES;
 }
+
+
 @end

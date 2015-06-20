@@ -168,8 +168,17 @@
     }
     else
     {
+        NSString* receiverId = @"";
+       
+        if ([TPUser type] == kCustomer) {
+            receiverId = item.insiderId;
+        }
+        else
+            receiverId = item.trallerId;
+        
         TPChatListViewController* vc = [TPChatListViewController new];
         vc.orderId = item.orderId;
+        vc.receiverId = receiverId;
         [self.navigationController pushViewController:vc animated:true];
     }
     

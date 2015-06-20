@@ -59,7 +59,7 @@
  */
 - (NSArray *)itemsForSection:(int)section;
 
-
+- (void)addItem:(VZListItem* )item ForSection:(NSInteger)n;
 /**
  *  清除datasource中section部分的object
  *

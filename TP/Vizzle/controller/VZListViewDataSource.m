@@ -77,6 +77,14 @@
     }
 }
 
+- (void)addItem:(VZListItem* )item ForSection:(NSInteger)n
+{
+    if (n >= 0 && n < _itemsForSectionInternal.count) {
+        NSMutableArray *array = [_itemsForSectionInternal objectForKey:@(n)];
+        [array addObject:item];
+    }    
+}
+
 - (BOOL)removeItem:(VZListItem*)object FromSection:(NSInteger)n {
     if (n >= 0 && n < _itemsForSectionInternal.count) {
         NSMutableArray *array = [_itemsForSectionInternal objectForKey:@(n)];
