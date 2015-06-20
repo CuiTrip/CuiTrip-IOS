@@ -74,7 +74,7 @@
     [super loadView];
     
     [self setTitle:@"我的发现"];
-    [self.tabBarController hidesBottomBarWhenPushed];
+
     
 }
 
@@ -158,6 +158,11 @@
 -(void)dealloc {
     
     //todo..
+}
+
+- (BOOL)hidesBottomBarWhenPushed
+{
+    return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

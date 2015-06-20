@@ -16,10 +16,10 @@
 @property(nonatomic,strong)NSString *No;
 @property(nonatomic,strong)NSString *cid;
 @property(nonatomic,strong)NSString *travellerId;
-@property(nonatomic,strong)NSString *insiderHeadPic;
-@property(nonatomic,strong)NSString *insiderNickName;
+@property(nonatomic,strong)NSString *headPic;
+@property(nonatomic,strong)NSString *nick;
 @property(nonatomic,strong)NSString* insiderLocation;
-@property(nonatomic,strong)NSString *gmtCreated;
+@property(nonatomic,strong)NSString *gmtModified;
 @property(nonatomic,strong)NSString *content;
 
 

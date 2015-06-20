@@ -73,7 +73,6 @@
     [super loadView];
     
     [self setTitle:@"旅程"];
-    [self.tabBarController setHidesBottomBarWhenPushed:true];
 }
 
 - (void)viewDidLoad
@@ -152,6 +151,11 @@
 -(void)dealloc {
     
     //todo..
+}
+
+- (BOOL)hidesBottomBarWhenPushed
+{
+    return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

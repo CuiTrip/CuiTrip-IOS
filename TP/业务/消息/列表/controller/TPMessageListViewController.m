@@ -72,8 +72,6 @@
     [super loadView];
     
     [self setTitle:@"消息"];
-    [self hidesBottomBarWhenPushed];
-
 }
 
 - (void)viewDidLoad
@@ -176,6 +174,7 @@
         else
             receiverId = item.trallerId;
         
+        item.hasNewMsg = NO;
         TPChatListViewController* vc = [TPChatListViewController new];
         vc.orderId = item.orderId;
         vc.receiverId = receiverId;

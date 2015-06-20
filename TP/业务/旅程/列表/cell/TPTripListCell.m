@@ -69,8 +69,8 @@
     self.statusLabel.text = item.statusContent;
     self.dateLabel.text = item.serviceDate;
     self.titleLabel.text = item.serviceName;
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.insiderNickName,item.serviceAddress];
-    self.moneyLabel.text = [TPUtils money:item.serviceFee WithType:@""];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.travellerName,item.serviceAddress];
+    self.moneyLabel.text = [TPUtils money:item.servicePrice WithType:@""];
   
 }
 

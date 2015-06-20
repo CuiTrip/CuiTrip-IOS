@@ -63,8 +63,8 @@
     [self.icon sd_setImageWithURL:__url(item.headPic) placeholderImage:__image(@"girl.jpg")];
     self.titleLabel.text = item.topic;
     self.descLabel.text = item.lastMsg;
-   // self.badge.hidden = !item.hasNewMsg;
-    self.badge.hidden = NO;
+    self.badge.hidden = !item.hasNewMsg;
+   // self.badge.hidden = NO;
 }
 
 - (void)layoutSubviews

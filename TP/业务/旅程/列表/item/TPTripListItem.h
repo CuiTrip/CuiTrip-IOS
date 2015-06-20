@@ -23,8 +23,8 @@
 @property(nonatomic,strong)NSString *servicePIC;
 @property(nonatomic,strong)NSString *insiderId;
 @property(nonatomic,strong)NSString *insiderHeadPic;
-@property(nonatomic,strong)NSString *insiderNickName;
-@property(nonatomic,strong)NSString *serviceFee;
+@property(nonatomic,strong)NSString *travellerName;
+@property(nonatomic,strong)NSString *servicePrice;
 @property(nonatomic,strong)NSString *serviceDate;
 @property(nonatomic,strong)NSString *orderPrice;
 
