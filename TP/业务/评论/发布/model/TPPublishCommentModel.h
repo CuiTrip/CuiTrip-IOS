@@ -13,5 +13,9 @@
 
 @interface TPPublishCommentModel : VZHTTPModel
 
+@property(nonatomic,strong)NSString* oid;
+@property(nonatomic,strong)NSString* content;
+@property(nonatomic,strong)NSString* score;
+
 @end
 

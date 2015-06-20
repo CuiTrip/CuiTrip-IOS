@@ -16,6 +16,7 @@
 #import "TPGrowingTextView.h"
 #import "TPTripDetailViewController.h"
 #import "TPSendChatMsgModel.h"
+#import "TPPayViewController.h"
 
 
 @interface TPChatListHeaderView : UIView
@@ -160,7 +161,8 @@
         
         if ([TPUser type] == kCustomer) {
             //去支付
-            UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+            TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+            vc.oid = weakSelf.orderId;
             [weakSelf.navigationController pushViewController:vc animated:true];
         }
         else

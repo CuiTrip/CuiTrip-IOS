@@ -177,7 +177,7 @@
     self.reserveModel.insiderId = self.insiderId;
     self.reserveModel.serviceName = self.serviceName;
     self.reserveModel.serviceDate = self.selectedServiceDate;
-    self.reserveModel.buyerNum = [NSString stringWithFormat:@"%ld",(long)self.selectedMaxNum];
+    self.reserveModel.buyerNum = self.selectedMaxNum;
     self.reserveModel.servicePrice = self.servicePrice;
     self.reserveModel.moneyType = @"CNY";
     
@@ -191,6 +191,8 @@
             UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
             v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
             [[[UIApplication sharedApplication].delegate window] addSubview:v];
+            self.confirmView.titleLabel.text = self.serviceName;
+            [self.confirmView.imageView sd_setImageWithURL:__url(self.pic) placeholderImage:__image(@"default_detail.jpg")];
             //self.confirmView
             [v addSubview:self.confirmView];
         }

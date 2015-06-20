@@ -66,11 +66,11 @@
     [super setItem:item];
     
     [self.icon sd_setImageWithURL:__url(item.servicePIC) placeholderImage:__image(@"default_sys.jpg")];
-    self.statusLabel.text = item.status;
+    self.statusLabel.text = item.statusContent;
     self.dateLabel.text = item.serviceDate;
     self.titleLabel.text = item.serviceName;
     self.nameLabel.text = [NSString stringWithFormat:@"%@ @%@",item.insiderNickName,item.serviceAddress];
-    self.moneyLabel.text = [NSString stringWithFormat:@"RMB: %@",item.serviceFee];
+    self.moneyLabel.text = [TPUtils money:item.serviceFee WithType:@""];
   
 }
 

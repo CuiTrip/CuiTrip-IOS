@@ -129,7 +129,7 @@
     //self.extendedLayoutIncludesOpaqueBars = true;
     
     //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
@@ -179,6 +179,7 @@
             v.insiderId = self.discoveryDetailListModel.tripInfoItem.insiderId;
             v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
             v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
+            v.pic = self.discoveryDetailListModel.tripInfoItem.pics[0];
             //v.insiderId = self.discoveryDetailListModel.tripf
             [self.navigationController pushViewController:v animated:true];
         };
@@ -237,6 +238,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = true;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -324,7 +326,7 @@
     else if ([type isEqualToString:@"gotoFee"])
     {
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
-        vc.title = self.discoveryDetailListModel.tripInfoItem.name;
+        vc.title = @"费用说明";
         vc.titleString = @"费用说明";
         vc.content = @"";
         [self.navigationController pushViewController:vc animated:YES];

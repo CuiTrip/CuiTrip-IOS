@@ -138,6 +138,29 @@
     [super showError:error withModel:model];
 }
 - (IBAction)onAction:(id)sender {
+    
+    SHOW_SPINNER(self);
+    self.payModel.orderId = self.oid;
+    self.payModel.inviteCode = self.textField.text;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.payModel loadWithCompletion:^(VZModel *model, NSError *error) {
+       
+        HIDE_SPINNER(weakSelf);
+        
+        if (!error) {
+            
+            TOAST(weakSelf, @"支付成功!");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.navigationController popToRootViewControllerAnimated:true];
+            });
+        }
+        else
+        {
+            TOAST_ERROR(weakSelf, error);
+        }
+        
+    }];
 }
 
 @end

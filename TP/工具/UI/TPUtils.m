@@ -202,7 +202,7 @@ static NSArray* list = nil;
     if (moneyType.length == 0) {
         moneyType = @"CNY";
     }
-    return [NSString stringWithFormat:@"%@ %@",moneyType,money];
+    return [NSString stringWithFormat:@"%@ %@元",moneyType,money];
 }
 
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback

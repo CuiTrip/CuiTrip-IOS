@@ -59,6 +59,8 @@
     _orderPrice = JSON[@"orderPrice"];
     _serviceName = JSON[@"serviceName"];
     _insiderSign = JSON[@"insiderSign"];
+    _status = JSON[@"status"];
+    _statusContent = JSON[@"statusContent"];
     
     NSString* timestamp = JSON[@"serviceDate"];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];

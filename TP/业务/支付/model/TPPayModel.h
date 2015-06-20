@@ -13,5 +13,8 @@
 
 @interface TPPayModel : VZHTTPModel
 
+@property(nonatomic,strong)NSString* inviteCode;
+@property(nonatomic,strong)NSString* orderId;
+
 @end
 

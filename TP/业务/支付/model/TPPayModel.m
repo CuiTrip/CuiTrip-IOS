@@ -22,33 +22,33 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    return @{
+             @"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@"",
+             @"orderId":self.orderId?:@"",
+             @"inviteCode":self.inviteCode?:@""
+             };
+    
+    
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
-}
 
 - (NSString *)methodName {
-   
-    //todo:
-   
-    return nil;
+    
+    return [_API_ stringByAppendingString:@"payOrder"];
 }
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+}
+
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    return true;
 }
-
 @end
 

@@ -15,13 +15,11 @@
 
 @interface TPPublishCommentViewController()<O2OStarViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarIcon;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (nonatomic,strong) O2OStarView* starView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property(nonatomic,strong)TPPublishCommentModel *publishCommentModel; 
+@property(nonatomic,strong)TPPublishCommentModel *publishCommentModel;
+@property(nonatomic,assign) CGFloat score;
+@property(nonatomic,strong) NSString* content;
 
 @end
 
@@ -59,7 +57,7 @@
 //    self.titleLabel.superview.layer.borderWidth = 0.5;
 //    self.titleLabel.superview.layer.borderColor = [TPTheme grayColor].CGColor;
 //    
-    self.starView = [[O2OStarView alloc]initWithFrame:CGRectMake((self.view.vzWidth-190)/2, self.descLabel.vzBottom+10, 190, 32) viewType:ENUM_Big];
+    self.starView = [[O2OStarView alloc]initWithFrame:CGRectMake((self.view.vzWidth-190)/2, 40, 190, 32) viewType:ENUM_Big];
     self.starView.delegate = self;
     self.starView.backgroundColor = [UIColor clearColor];
     self.starView.scorePercent = 10.0f;
@@ -143,10 +141,36 @@
     [super showError:error withModel:model];
 }
 - (IBAction)publishCommnet:(id)sender {
+    
+    self.publishCommentModel.oid = self.oid;
+    self.publishCommentModel.content = self.textView.text;
+    self.publishCommentModel.score = [NSString stringWithFormat:@"%.1f",self.score];
+    
+    SHOW_SPINNER(self);
+    __weak typeof(self) weakSelf = self;
+    [self.publishCommentModel loadWithCompletion:^(VZModel *model, NSError *error) {
+       
+        HIDE_SPINNER(weakSelf);
+        
+        if (!error) {
+            
+            TOAST(weakSelf, @"发表成功!");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.navigationController popViewControllerAnimated:true];
+            });
+        }
+        else
+        {
+            TOAST_ERROR(weakSelf, error);
+        }
+    }];
+    
+    
+    
 }
 - (void)starRateView:(O2OStarView *)starRateView scroePercentDidChange:(CGFloat)newScorePercent
 {
-
+    self.score = newScorePercent;
 }
 
 

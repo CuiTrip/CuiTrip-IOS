@@ -89,7 +89,7 @@
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
-    self.needPullRefresh = NO;
+    self.needPullRefresh = true;
     
     
     //3，bind your delegate and datasource to tableview
@@ -198,14 +198,8 @@
     TPTripListItem* item = (TPTripListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
   
     TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
-    if ([item.status isEqualToString:@"即将开始"]) {
-        vc.status = kWillBegin;
-        vc.oid = item.oid;
-    }
-    if ([item.status isEqualToString:@"已结束"]) {
-        vc.status = kFinish;
-        vc.oid = item.oid;
-    }
+    vc.oid = item.oid;
+    
     [self.navigationController pushViewController:vc animated:true];
 }
 

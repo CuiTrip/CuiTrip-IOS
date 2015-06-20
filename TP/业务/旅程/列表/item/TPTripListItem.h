@@ -16,6 +16,7 @@
 @property(nonatomic,strong)NSString *serviceNo;
 @property(nonatomic,strong)NSString *oid;
 @property(nonatomic,strong)NSString *status;
+@property(nonatomic,strong)NSString *statusContent;
 @property(nonatomic,strong)NSString *sid;
 @property(nonatomic,strong)NSString *serviceName;
 @property(nonatomic,strong)NSString *serviceAddress;

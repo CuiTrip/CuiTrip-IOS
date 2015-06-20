@@ -14,7 +14,8 @@
 typedef enum
 {
     kWillBegin = 0,
-    kFinish = 1
+    kIsOn = 1,
+    kFinish = 2
 }TripStatus;
 
 @interface TPTripDetailViewController : VZViewController

@@ -41,8 +41,8 @@
 #define HEXCOLOR(rgbValue) HEXCOLORA(rgbValue, 1.0)
 
 
-#define SHOW_SPINNER(x)   [x.view makeToastActivity]
-#define HIDE_SPINNER(x)   [x.view hideToastActivity]
+#define SHOW_SPINNER(x)    dispatch_async(dispatch_get_main_queue(), ^{[x.view makeToastActivity];})
+#define HIDE_SPINNER(x)    dispatch_async(dispatch_get_main_queue(), ^{[x.view hideToastActivity];})
 #define TOAST(this,x)  [this.view makeToast:x duration:2.0f position:CSToastPositionCenter]
 #define TOAST_ERROR(this,x)  [this.view makeToast:[NSString stringWithFormat:@"%@",x.userInfo[NSLocalizedDescriptionKey]] duration:1.0f position:CSToastPositionCenter]
 

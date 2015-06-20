@@ -13,5 +13,7 @@
 
 @interface TPPublishCommentViewController : VZViewController
 
+@property(nonatomic,strong)NSString* oid;
+
 @end
   

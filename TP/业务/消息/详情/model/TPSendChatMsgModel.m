@@ -37,7 +37,7 @@
 
 - (NSString *)methodName {
     
-    return [_API_ stringByAppendingString:@""];
+    return [_API_ stringByAppendingString:@"putDialog"];
 }
 
 - (VZHTTPRequestConfig)requestConfig

@@ -102,8 +102,7 @@
 {
     [super viewWillAppear:animated];
     
-    //todo..
-    self.tabBarController.tabBar.hidden = false;
+
     
 
 }
@@ -111,16 +110,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    //todo..
+    self.tabBarController.tabBar.hidden = false;
 
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    //todo..
-    self.tabBarController.tabBar.hidden = true;
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -140,6 +138,12 @@
     
     //todo..
 }
+
+-(BOOL)hidesBottomBarWhenPushed
+{
+    return YES;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods

@@ -80,9 +80,9 @@
             [item autoKVCBinding:info];
             [ret addObject:item];
         }
-        else
+        else if([info[@"type"] integerValue] == 2)
         {
-            TPChatListItem* item = [TPChatListItem new];
+            TPChatStatusListItem* item = [TPChatStatusListItem new];
             [item autoKVCBinding:info];
             [ret addObject:item];
         }

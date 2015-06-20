@@ -8,6 +8,13 @@
 //
 
 
+/**
+uid(String): 用户id
+token(String):  登录凭证
+oid(String) : 订单id
+serviceScore(int): 订单打分（默认5分）
+content(String) : 评论内容
+ */
 
 #import "TPPublishCommentModel.h"
 
@@ -22,33 +29,33 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    return @{@"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@"",
+             @"oid":self.oid?:@"",
+             @"serviceScore":self.score?:@"",
+             @"content":self.content?:@""};
 }
 
-- (NSDictionary* )headerParams{
-   
-    //todo:
-    
-    return nil;
-}
+
 
 - (NSString *)methodName {
    
-    //todo:
-   
-    return nil;
+    return [_API_ stringByAppendingString:@"submitReview"];
 }
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
+}
+
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    return true;
 }
+
 
 @end
 

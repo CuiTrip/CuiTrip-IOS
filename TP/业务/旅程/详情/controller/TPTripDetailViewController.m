@@ -93,41 +93,19 @@
     
     self.actionBtn.layer.cornerRadius = 5.0f;
     self.actionBtn.layer.masksToBounds = true;
+    
+    self.tripStatusLabel.hidden = true;
+    self.actionBtn.hidden = true;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //todo..
-    if([TPUser type] == kCustomer)
-    {
-        if (self.status == kWillBegin) {
-            self.tripStatusLabel.hidden = true;
-            self.actionBtn.hidden = false;
-            [self.actionBtn setTitle:@"取消旅程" forState:UIControlStateNormal];
-        }
-        else
-        {
-            self.tripStatusLabel.hidden = false;
-            self.tripStatusLabel.text = @"旅程已经结束";
-            self.actionBtn.hidden = false;
-            [self.actionBtn setTitle:@"去评价" forState:UIControlStateNormal];
-        }
-    }
-    else
-    {
-        if (self.status == kWillBegin) {
-            self.tripStatusLabel.hidden = true;
-            self.actionBtn.hidden = false;
-            self.actionBtn.hidden = false;
-            self.actionBtn.vzTop -= 30;
-            [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
-        }
-        else
-        {
-
-        }
-    }
+    
+    
+    self.tripDetailModel.oid = self.oid;
+    [self registerModel:self.tripDetailModel];
+    [self load];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -182,9 +160,22 @@
     self.nameLabel.text = self.tripDetailModel.insiderNickName;
     self.descLabel.text = self.tripDetailModel.insiderSign;
     self.tripDateLabel.text = self.tripDetailModel.serviceDate;
-    self.tripNumberLabel.text = self.tripDetailModel.buyerNum;
-    self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
+    self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
+    self.tripFeeLabel.text = [TPUtils money:self.tripDetailModel.orderPrice WithType:@""];
 
+    if ([self.tripDetailModel.status integerValue] == 3)
+    {
+        self.status = kWillBegin;
+    }
+    else if ([self.tripDetailModel.status integerValue] == 4)
+    {
+        self.status = kIsOn;
+    }
+    else if ([self.tripDetailModel.status integerValue] == 5)
+    {
+        self.status = kFinish;
+    }
+    [self refreshStatus];
 }
 
 - (void)showEmpty:(VZModel *)model
@@ -214,6 +205,7 @@
             //完成去评价
             
             TPPublishCommentViewController* vc = [[UIStoryboard storyboardWithName:@"TPPublishCommentViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppublishcomment"];
+            vc.oid = self.oid;
             [self.navigationController pushViewController:vc animated:true];
             
         }
@@ -223,13 +215,13 @@
             self.cancelTripOrderModel.oid = self.oid;
             
             SHOW_SPINNER(self);
-            __weak typeof(self) weakSelf;
+            __weak typeof(self) weakSelf = self;;
             [self.cancelTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
                
                 HIDE_SPINNER(weakSelf);
                 if (!error) {
                     TOAST(weakSelf, @"取消成功");
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [weakSelf.navigationController popViewControllerAnimated:true];
                     });
                 }
@@ -249,7 +241,7 @@
             self.confirmTripOrderModel.oid = self.oid;
             
             SHOW_SPINNER(self);
-            __weak typeof(self) weakSelf;
+            __weak typeof(self) weakSelf = self;;
             [self.confirmTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
                 
                 HIDE_SPINNER(weakSelf);
@@ -274,6 +266,44 @@
     }
 
     
+}
+
+- (void)refreshStatus
+{
+    if([TPUser type] == kCustomer)
+    {
+        if (self.status == kWillBegin) {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = false;
+            [self.actionBtn setTitle:@"取消旅程" forState:UIControlStateNormal];
+        }
+        else if(self.status == kIsOn)
+        {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = true;
+        }
+        else
+        {
+            self.tripStatusLabel.hidden = false;
+            self.tripStatusLabel.text = @"旅程已经结束";
+            self.actionBtn.hidden = false;
+            [self.actionBtn setTitle:@"去评价" forState:UIControlStateNormal];
+        }
+    }
+    else
+    {
+        if (self.status == kWillBegin) {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = false;
+            self.actionBtn.hidden = false;
+            self.actionBtn.vzTop -= 30;
+            [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
+        }
+        else
+        {
+            
+        }
+    }
 }
 
 @end
