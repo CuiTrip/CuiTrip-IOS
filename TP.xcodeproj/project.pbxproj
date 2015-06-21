@@ -294,6 +294,11 @@
 		45DD47411B28200200D2BB62 /* TPChatListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD472D1B28200200D2BB62 /* TPChatListViewDelegate.m */; };
 		45DD47421B28200200D2BB62 /* TPChatListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47301B28200200D2BB62 /* TPChatListItem.m */; };
 		45DD47431B28200200D2BB62 /* TPChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47331B28200200D2BB62 /* TPChatListModel.m */; };
+		45EB315A1B3662D1003A97AE /* trip_display_no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31581B3662D1003A97AE /* trip_display_no@2x.png */; };
+		45EB315B1B3662D1003A97AE /* trip_display_yes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31591B3662D1003A97AE /* trip_display_yes@2x.png */; };
+		45EB315D1B3664C3003A97AE /* agree.txt in Resources */ = {isa = PBXBuildFile; fileRef = 45EB315C1B3664C3003A97AE /* agree.txt */; };
+		45EB31601B3668EE003A97AE /* VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB315F1B3668EE003A97AE /* VZChannel.m */; };
+		45EB31631B366916003A97AE /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB31621B366916003A97AE /* NSObject+VZChannel.m */; };
 		45EB42FA1B2D63AE001B4202 /* triparrangement_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EB42EC1B2D63AE001B4202 /* triparrangement_meta.json */; };
 		45EB42FB1B2D63AE001B4202 /* TPTripArrangementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42EF1B2D63AE001B4202 /* TPTripArrangementViewController.m */; };
 		45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42F21B2D63AE001B4202 /* TPTripArrangementItem.m */; };
@@ -824,6 +829,13 @@
 		45DD47301B28200200D2BB62 /* TPChatListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListItem.m; sourceTree = "<group>"; };
 		45DD47321B28200200D2BB62 /* TPChatListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListModel.h; sourceTree = "<group>"; };
 		45DD47331B28200200D2BB62 /* TPChatListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListModel.m; sourceTree = "<group>"; };
+		45EB31581B3662D1003A97AE /* trip_display_no@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_display_no@2x.png"; sourceTree = "<group>"; };
+		45EB31591B3662D1003A97AE /* trip_display_yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_display_yes@2x.png"; sourceTree = "<group>"; };
+		45EB315C1B3664C3003A97AE /* agree.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agree.txt; sourceTree = "<group>"; };
+		45EB315E1B3668EE003A97AE /* VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZChannel.h; sourceTree = "<group>"; };
+		45EB315F1B3668EE003A97AE /* VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZChannel.m; sourceTree = "<group>"; };
+		45EB31611B366916003A97AE /* NSObject+VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZChannel.h"; sourceTree = "<group>"; };
+		45EB31621B366916003A97AE /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
 		45EB42EB1B2D63AE001B4202 /* TPTripArrangementConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripArrangementConfig.h; sourceTree = "<group>"; };
 		45EB42EC1B2D63AE001B4202 /* triparrangement_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triparrangement_meta.json; sourceTree = "<group>"; };
 		45EB42EE1B2D63AE001B4202 /* TPTripArrangementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripArrangementViewController.h; sourceTree = "<group>"; };
@@ -1152,6 +1164,10 @@
 		45028B6E1B1C835800417606 /* VizzleEX */ = {
 			isa = PBXGroup;
 			children = (
+				45EB31611B366916003A97AE /* NSObject+VZChannel.h */,
+				45EB31621B366916003A97AE /* NSObject+VZChannel.m */,
+				45EB315E1B3668EE003A97AE /* VZChannel.h */,
+				45EB315F1B3668EE003A97AE /* VZChannel.m */,
 				45028B6F1B1C838100417606 /* UIView+VZEX.h */,
 				45028B701B1C838100417606 /* UIView+VZEX.m */,
 				45028B721B1C841D00417606 /* VizzleEx.h */,
@@ -1164,6 +1180,7 @@
 		4509AB611B22E3E300846032 /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
+				45EB31571B3662D1003A97AE /* resource */,
 				4509AB621B22E3E300846032 /* SMS */,
 				4509AB671B22E3E300846032 /* TPLoginHeader.h */,
 				4509AB681B22E3E300846032 /* 找密码 */,
@@ -2958,6 +2975,16 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		45EB31571B3662D1003A97AE /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				45EB315C1B3664C3003A97AE /* agree.txt */,
+				45EB31581B3662D1003A97AE /* trip_display_no@2x.png */,
+				45EB31591B3662D1003A97AE /* trip_display_yes@2x.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		45EB42EA1B2D63AE001B4202 /* config */ = {
 			isa = PBXGroup;
 			children = (
@@ -3136,6 +3163,7 @@
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
+				45EB315D1B3664C3003A97AE /* agree.txt in Resources */,
 				45D48C5A1B32EEBE00B5801F /* discoverydetail_meta.json in Resources */,
 				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				45D0C7E91B2BBEED00F31BF5 /* TPPSFeeViewController.storyboard in Resources */,
@@ -3160,6 +3188,7 @@
 				459BAEF01B21E58700739C7E /* trip_left_w@2x.png in Resources */,
 				459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */,
 				4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */,
+				45EB315A1B3662D1003A97AE /* trip_display_no@2x.png in Resources */,
 				45D48BE01B32AF3500B5801F /* UMShareEditViewController.xib in Resources */,
 				456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */,
 				45D48C671B32EEBE00B5801F /* star_highlight@2x.png in Resources */,
@@ -3175,6 +3204,7 @@
 				45DD47371B28200200D2BB62 /* message_meta.json in Resources */,
 				459BAEF91B21E58700739C7E /* trip_nav_r_A@2x.png in Resources */,
 				45D48BE31B32AF3500B5801F /* UMSnsAccountViewController.xib in Resources */,
+				45EB315B1B3662D1003A97AE /* trip_display_yes@2x.png in Resources */,
 				459BAEF21B21E58700739C7E /* trip_nav_j@2x.png in Resources */,
 				4509AC021B246FFD00846032 /* TPReserveSubView.xib in Resources */,
 				45D0C7DF1B29E10600F31BF5 /* TPPSLocationViewController.storyboard in Resources */,
@@ -3289,6 +3319,7 @@
 				45028AB41B1B535E00417606 /* NSString+VZHTTPNetworkUtil.m in Sources */,
 				45DD473A1B28200200D2BB62 /* TPMessageListViewDelegate.m in Sources */,
 				45D0C7C91B29DAA400F31BF5 /* TPPubilshServiceModel.m in Sources */,
+				45EB31601B3668EE003A97AE /* VZChannel.m in Sources */,
 				4509AB8E1B22F13100846032 /* TPForgetPWDViewController.m in Sources */,
 				45D6A6661B35BDC7002C9F05 /* TPSendChatMsgModel.m in Sources */,
 				4509ABD21B23D59A00846032 /* TPProfileSettingsViewController.m in Sources */,
@@ -3436,6 +3467,7 @@
 				45D48C751B33092200B5801F /* TPLocationManager.m in Sources */,
 				4509ABBF1B233C9200846032 /* TPReserveItem.m in Sources */,
 				45DD47361B28200200D2BB62 /* TPMessageListCell.m in Sources */,
+				45EB31631B366916003A97AE /* NSObject+VZChannel.m in Sources */,
 				459B24981B176A1C009BB189 /* main.m in Sources */,
 				4509ABBE1B233C9200846032 /* TPReserveViewController.m in Sources */,
 				45D0C7AF1B29BED800F31BF5 /* TPMyServiceListCell.m in Sources */,

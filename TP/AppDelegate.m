@@ -10,6 +10,8 @@
 #import "TPRootViewController.h"
 #import "TPTabBarViewController.h"
 #import "TPDiscoveryListViewController.h"
+#import "TPMessageListItem.h"
+
 @interface AppDelegate ()
 
 @end
@@ -52,10 +54,7 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [UMessage didReceiveRemoteNotification:userInfo];
-    //弹框:
     
-    
-    //跳到消息
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken

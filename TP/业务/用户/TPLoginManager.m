@@ -145,6 +145,7 @@
                                     if ([code integerValue] == 0 ) {
                                         
                                         [TPUser logout];
+                                        [[TPAPNS sharedInstance] tearDown];;
                                         __notify(kTPNotifyMessageLogout);
 
                                     }

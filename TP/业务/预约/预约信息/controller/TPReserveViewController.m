@@ -88,6 +88,7 @@
     __weak typeof(self)weakSelf = self;
     self.confirmView.onConfirmCallback = ^{
         
+        [[[[UIApplication sharedApplication].delegate window] viewWithTag:996]removeFromSuperview];
         [weakSelf.tabBarController setSelectedIndex:1];
         [weakSelf.navigationController popToRootViewControllerAnimated:true];
 
@@ -190,10 +191,10 @@
         if (!error) {
             UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
             v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+            v.tag = 996;
             [[[UIApplication sharedApplication].delegate window] addSubview:v];
             self.confirmView.titleLabel.text = self.serviceName;
-            [self.confirmView.imageView sd_setImageWithURL:__url(self.pic) placeholderImage:__image(@"default_detail.jpg")];
-            //self.confirmView
+            [self.confirmView.imageView sd_setImageWithURL:__url(self.pic) placeholderImage:__image(@"default_details.jpg")];
             [v addSubview:self.confirmView];
         }
         else

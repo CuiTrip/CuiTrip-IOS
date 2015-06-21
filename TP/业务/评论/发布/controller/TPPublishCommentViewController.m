@@ -57,7 +57,7 @@
 //    self.titleLabel.superview.layer.borderWidth = 0.5;
 //    self.titleLabel.superview.layer.borderColor = [TPTheme grayColor].CGColor;
 //    
-    self.starView = [[O2OStarView alloc]initWithFrame:CGRectMake((self.view.vzWidth-190)/2, 40, 190, 32) viewType:ENUM_Big];
+    self.starView = [[O2OStarView alloc]initWithFrame:CGRectMake((self.view.vzWidth-190)/2, 20, 190, 32) viewType:ENUM_Big];
     self.starView.delegate = self;
     self.starView.backgroundColor = [UIColor clearColor];
     self.starView.scorePercent = 10.0f;
@@ -180,9 +180,9 @@
     NSLog(@"Register keyboard notifications.");
     
     // register: post: UIKeyboardWillShowNotification
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     // register: UIKeyboardWillHideNotification
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification*)notification

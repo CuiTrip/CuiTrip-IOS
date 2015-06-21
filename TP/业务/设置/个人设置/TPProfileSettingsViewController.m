@@ -93,7 +93,7 @@
             UIImageView* icon = [UIImageView new];
             icon.layer.cornerRadius = 0.5*40;
             icon.layer.masksToBounds = true;
-            icon.vzOrigin = CGPointMake(cell.contentView.vzWidth-60, 10);
+            icon.vzOrigin = CGPointMake(self.view.vzWidth-80, 10);
             icon.vzSize = CGSizeMake(40, 40);
             icon.image = __image(@"girl.jpg");
             [icon sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];

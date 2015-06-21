@@ -58,7 +58,7 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
 
 - (void)tearDown
 {
-
+    [UMessage unregisterForRemoteNotifications];
 }
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -103,6 +103,11 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
      |UIRemoteNotificationTypeAlert];
     
 #endif
+    
+}
+
+- (void)receiveRemoteNotification:(NSDictionary *)message
+{
     
 }
 

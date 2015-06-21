@@ -80,7 +80,7 @@
     
     
     //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = YES;
@@ -101,15 +101,34 @@
     //5,REQUIRED:register model to parent view controller
     [self registerModel:self.keyModel];
 
-    //6,Load Data
-    //[self load];
+
+    if (![TPUser isLogined]) {
+        
+        [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
+            
+            [self load];
+            
+        }];
+        
+        [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+            
+            [self load];
+        }];
+    }
+    else
+    {
+        //[self load];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
-    [self load];
+    if ([TPUser isLogined]) {
+        [self load];
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -53,12 +53,12 @@
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.text            = text;
     titleLabel.font            = [UIFont systemFontOfSize:14];
-    titleLabel.textColor       = [UIColor grayColor];
+    titleLabel.textColor       = [UIColor lightGrayColor];
     titleLabel.textAlignment   = NSTextAlignmentCenter;
     
     
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicator.color                    = [UIColor redColor];
+    activityIndicator.color                    = [UIColor lightGrayColor];
     [activityIndicator startAnimating];
     
     if ([text isEqualToString:@""] || !text) {

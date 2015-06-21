@@ -50,7 +50,11 @@
     self.licence.editable = NO;
     [self.view addSubview:self.licence];
     
-    self.licence.text = @"As a small change of pace, today's post is written by guest author Gwynne Raskind. My last post touched a bit on disassembling object files, and Gwynne wanted to dive deeply into just how to read the output in detail. Without further ado, I present her wonderful in-depth look at reading x86_64 assembly";
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"agree" ofType:@"txt"];
+    //NSData *data = [NSData dataWithContentsOfFile:path];
+    
+    NSString* agreement = [[NSString alloc]initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    self.licence.text = agreement;
 }
 
 - (void)viewWillAppear:(BOOL)animated

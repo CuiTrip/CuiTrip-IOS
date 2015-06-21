@@ -19,6 +19,7 @@
 - (void)setup:(NSDictionary* )lauchOption;
 - (void)tearDown;
 - (void)registerRemoteNotification;
+- (void)receiveRemoteNotification:(NSDictionary* )message;
 - (void)updateDeviceToken:(NSData *)tokenData;
 
 @end
