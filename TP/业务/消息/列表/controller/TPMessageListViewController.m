@@ -117,24 +117,25 @@
     }
     else
     {
-        //[self load];
+        [self load];
     }
+    
+    [self registerChannelMsg];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-    if ([TPUser isLogined]) {
-        [self load];
-    }
+    self.tabBarController.tabBar.hidden = NO;
 
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+   
     //todo..
 }
 
@@ -185,15 +186,16 @@
     }
     else
     {
+        item.hasNewMsg = NO;
+        [self.tableView reloadData];
+        
         NSString* receiverId = @"";
-       
+        
         if ([TPUser type] == kCustomer) {
             receiverId = item.insiderId;
         }
         else
             receiverId = item.trallerId;
-        
-        item.hasNewMsg = NO;
         TPChatListViewController* vc = [TPChatListViewController new];
         vc.orderId = item.orderId;
         vc.receiverId = receiverId;
@@ -220,6 +222,14 @@
 #pragma mark - private callback method 
 
 
+- (void)registerChannelMsg
+{
+    __weak typeof(self) weakSelf = self;
+    [self vz_listOnChannel:kChannelNewMessage withNotificationBlock:^(id obj, id data) {
+        [weakSelf load];
+    }];
+
+}
 
 @end
  

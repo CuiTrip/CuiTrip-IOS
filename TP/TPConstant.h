@@ -64,4 +64,9 @@
 
 #define vzBool(x,v) ([x isKindOfClass:[NSNumber class]] || [x isKindOfClass:[NSString class]])? [x boolValue]:v
 
+#define kChannelNewMessage  @"kChannelNewMessage"
+#define kChannelNewOrder    @"kChannelNewOrder"
+#define kChannelNewService  @"kChannelNewService"
+
+
 #endif

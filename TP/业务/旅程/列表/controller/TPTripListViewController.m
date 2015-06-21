@@ -112,18 +112,19 @@
          [self load];
 
     }
+    [self registerChannelMsg];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
- 
+     self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -222,7 +223,14 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
-
+- (void)registerChannelMsg
+{
+    __weak typeof(self) weakSelf = self;
+    [self vz_listOnChannel:kChannelNewOrder withNotificationBlock:^(id obj, id data) {
+        [weakSelf load];
+    }];
+    
+}
 
 @end
  

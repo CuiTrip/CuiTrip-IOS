@@ -221,6 +221,9 @@
                 HIDE_SPINNER(weakSelf);
                 if (!error) {
                     TOAST(weakSelf, @"取消成功");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [weakSelf.navigationController popViewControllerAnimated:true];
                     });
@@ -247,6 +250,9 @@
                 HIDE_SPINNER(weakSelf);
                 if (!error) {
                     TOAST(weakSelf, @"确认成功");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [weakSelf.navigationController popViewControllerAnimated:true];
                     });

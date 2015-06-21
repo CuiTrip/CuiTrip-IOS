@@ -118,12 +118,14 @@
         [self load];
     }
     
+    [self registerChannelMsg];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    self.tabBarController.tabBar.hidden = NO;
 
     
 }
@@ -131,7 +133,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = false;
+   // self.tabBarController.tabBar.hidden = false;
     //todo..
 }
 
@@ -269,13 +271,16 @@
 }
 - (void)onRightItemClicked:(id)sender
 {
-    [self publish];
-    
+    [self.navigationController pushViewController:[TPPubilshServiceViewController new] animated:YES];
 }
 
-- (void)publish
+- (void)registerChannelMsg
 {
-    [self.navigationController pushViewController:[TPPubilshServiceViewController new] animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [self vz_listOnChannel:kChannelNewService withNotificationBlock:^(id obj, id data) {
+        [weakSelf load];
+    }];
+    
 }
 
 @end

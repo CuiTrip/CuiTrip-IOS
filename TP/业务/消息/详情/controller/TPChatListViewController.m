@@ -248,7 +248,10 @@
 
     self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
     self.headerView.actionBtn.hidden = NO;
+    
+    [self scrollToBottom:NO];
     [TPGrowingTextView showInView:self.view delegate:self];
+    
     
     
 }
@@ -316,7 +319,8 @@
             [weakSelf.ds addItem:item ForSection:0];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.tableView reloadData];
-                [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.ds itemsForSection:0].count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+                [weakSelf scrollToBottom:NO];
+                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
             });
         }
         else
@@ -326,6 +330,11 @@
         
     }];
     
+}
+
+- (void)scrollToBottom:(BOOL)animated
+{
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.tableView.vzWidth, CGFLOAT_MAX) animated:animated];
 }
 
 
