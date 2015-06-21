@@ -283,6 +283,7 @@
 
 - (void)onComplete
 {
+    [self.view endEditing:true];
 
     SHOW_SPINNER(self);
     

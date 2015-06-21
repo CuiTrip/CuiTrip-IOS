@@ -13,13 +13,17 @@
 
 typedef enum
 {
-    kWillBegin = 0,
-    kIsOn = 1,
-    kFinish = 2
-}TripStatus;
+    kOrderCreated = 0,
+    kOrderConfirmed = 1,
+    kOrderComplted = 2,
+    kOrderClosed = 3,
+    kOrderPaied = 4,
+    kOrderUnknown = -1
+    
+}TripOrderStatus;
 
 @interface TPTripDetailViewController : VZViewController
-@property(nonatomic,assign)TripStatus status;
+
 @property(nonatomic,strong)NSString* oid;
 
 

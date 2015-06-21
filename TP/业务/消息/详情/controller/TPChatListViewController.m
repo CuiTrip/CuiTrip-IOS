@@ -332,6 +332,16 @@
     
 }
 
+- (void)textViewDidShow
+{
+    //todo
+//    self.tableView.vzOrigin = 
+}
+- (void)textViewDidHid
+{
+    self.tableView.vzOrigin = CGPointMake(0, 0);
+}
+
 - (void)scrollToBottom:(BOOL)animated
 {
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.tableView.vzWidth, CGFLOAT_MAX) animated:animated];

@@ -142,6 +142,7 @@
 }
 - (IBAction)publishCommnet:(id)sender {
     
+    [self.view endEditing:true];
     self.publishCommentModel.oid = self.oid;
     self.publishCommentModel.content = self.textView.text;
     self.publishCommentModel.score = [NSString stringWithFormat:@"%.1f",self.score];

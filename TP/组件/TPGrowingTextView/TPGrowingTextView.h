@@ -11,6 +11,8 @@
 @protocol TPGrowingTextView <NSObject>
 
 - (void)textView:(UITextView* )view DidSendText:(NSString* )text;
+- (void)textViewDidShow;
+- (void)textViewDidHid;
 @end
 
 @interface TPGrowingTextView : UIView

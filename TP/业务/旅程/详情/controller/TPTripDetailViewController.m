@@ -32,6 +32,8 @@
 @property(nonatomic,strong)TPConfirmTripOrderModel* confirmTripOrderModel;
 @property(nonatomic,strong)TPCancelTripOrderModel* cancelTripOrderModel;
 
+@property(nonatomic,assign)TripOrderStatus status;
+
 @end
 
 @implementation TPTripDetailViewController
@@ -163,18 +165,29 @@
     self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
     self.tripFeeLabel.text = [TPUtils money:self.tripDetailModel.orderPrice WithType:@""];
 
-    if ([self.tripDetailModel.status integerValue] == 3)
+    if ([self.tripDetailModel.status integerValue] == 1)
     {
-        self.status = kWillBegin;
+        self.status = kOrderCreated;
     }
-    else if ([self.tripDetailModel.status integerValue] == 4)
+    else if ([self.tripDetailModel.status integerValue] == 2)
     {
-        self.status = kIsOn;
+        self.status = kOrderConfirmed;
     }
     else if ([self.tripDetailModel.status integerValue] == 5)
     {
-        self.status = kFinish;
+        self.status = kOrderComplted;
     }
+    else if ([self.tripDetailModel.status integerValue] == 7)
+    {
+        self.status = kOrderClosed;
+    }
+    else if ([self.tripDetailModel.status integerValue] == 8)
+    {
+        self.status = kOrderPaied;
+    }
+    else
+        self.status = kOrderUnknown;
+    
     [self refreshStatus];
 }
 
@@ -201,7 +214,7 @@
     
     if ([TPUser type] == kCustomer) {
         
-        if (self.status == kFinish) {
+        if (self.status == kOrderComplted) {
             //完成去评价
             
             TPPublishCommentViewController* vc = [[UIStoryboard storyboardWithName:@"TPPublishCommentViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppublishcomment"];
@@ -238,7 +251,7 @@
     }
     else{
      
-        if (self.status == kWillBegin) {
+        if (self.status == kOrderCreated) {
             
             //去确认行程
             self.confirmTripOrderModel.oid = self.oid;
@@ -278,27 +291,27 @@
 {
     if([TPUser type] == kCustomer)
     {
-        if (self.status == kWillBegin) {
+        if (self.status == kOrderCreated) {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"取消旅程" forState:UIControlStateNormal];
         }
-        else if(self.status == kIsOn)
-        {
-            self.tripStatusLabel.hidden = true;
-            self.actionBtn.hidden = true;
-        }
-        else
+        else if(self.status == kOrderComplted)
         {
             self.tripStatusLabel.hidden = false;
             self.tripStatusLabel.text = @"旅程已经结束";
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"去评价" forState:UIControlStateNormal];
         }
+        else
+        {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = true;
+        }
     }
     else
     {
-        if (self.status == kWillBegin) {
+        if (self.status == kOrderCreated) {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             self.actionBtn.hidden = false;
