@@ -53,6 +53,7 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
 {
     //友盟
     [UMessage startWithAppkey:um_appKey launchOptions:lauchOption];
+    [UMessage setAutoAlert:false];
     
 }
 

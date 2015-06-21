@@ -135,6 +135,7 @@
     [self synchronize];
 }
 
+
 + (void)logout
 {
     [self clearUserInfo];
