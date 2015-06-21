@@ -113,7 +113,6 @@
 		456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
-		459B24961B176A1C009BB189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459B248D1B176A1C009BB189 /* Images.xcassets */; };
 		459B24971B176A1C009BB189 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459B248E1B176A1C009BB189 /* Info.plist */; };
 		459B24981B176A1C009BB189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B248F1B176A1C009BB189 /* main.m */; };
 		459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD301B1F5BA600739C7E /* datepicker_meta.json */; };
@@ -300,6 +299,7 @@
 		45EB31601B3668EE003A97AE /* VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB315F1B3668EE003A97AE /* VZChannel.m */; };
 		45EB31631B366916003A97AE /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB31621B366916003A97AE /* NSObject+VZChannel.m */; };
 		45EB31651B36D88B003A97AE /* about@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31641B36D88B003A97AE /* about@2x.jpg */; };
+		45EB31671B36F369003A97AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31661B36F369003A97AE /* Images.xcassets */; };
 		45EB42FA1B2D63AE001B4202 /* triparrangement_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EB42EC1B2D63AE001B4202 /* triparrangement_meta.json */; };
 		45EB42FB1B2D63AE001B4202 /* TPTripArrangementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42EF1B2D63AE001B4202 /* TPTripArrangementViewController.m */; };
 		45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42F21B2D63AE001B4202 /* TPTripArrangementItem.m */; };
@@ -522,7 +522,6 @@
 		459B24871B176A1C009BB189 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		459B24881B176A1C009BB189 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		459B248A1B176A1C009BB189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		459B248D1B176A1C009BB189 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		459B248E1B176A1C009BB189 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459B248F1B176A1C009BB189 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		459B25DB1B1819B2009BB189 /* TP.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TP.pch; path = ../TP.pch; sourceTree = "<group>"; };
@@ -838,6 +837,7 @@
 		45EB31611B366916003A97AE /* NSObject+VZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+VZChannel.h"; sourceTree = "<group>"; };
 		45EB31621B366916003A97AE /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
 		45EB31641B36D88B003A97AE /* about@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "about@2x.jpg"; sourceTree = "<group>"; };
+		45EB31661B36F369003A97AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45EB42EB1B2D63AE001B4202 /* TPTripArrangementConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripArrangementConfig.h; sourceTree = "<group>"; };
 		45EB42EC1B2D63AE001B4202 /* triparrangement_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triparrangement_meta.json; sourceTree = "<group>"; };
 		45EB42EE1B2D63AE001B4202 /* TPTripArrangementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripArrangementViewController.h; sourceTree = "<group>"; };
@@ -1249,10 +1249,10 @@
 		4509AB781B22E9FE00846032 /* supports */ = {
 			isa = PBXGroup;
 			children = (
+				45EB31661B36F369003A97AE /* Images.xcassets */,
 				4509AB7B1B22EA2300846032 /* Localizable.strings */,
 				4509AB791B22EA1D00846032 /* country.plist */,
 				459B24891B176A1C009BB189 /* LaunchScreen.xib */,
-				459B248D1B176A1C009BB189 /* Images.xcassets */,
 				459B248E1B176A1C009BB189 /* Info.plist */,
 				459B248F1B176A1C009BB189 /* main.m */,
 			);
@@ -3195,10 +3195,10 @@
 				45D48BE01B32AF3500B5801F /* UMShareEditViewController.xib in Resources */,
 				456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */,
 				45D48C671B32EEBE00B5801F /* star_highlight@2x.png in Resources */,
+				45EB31671B36F369003A97AE /* Images.xcassets in Resources */,
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				45D0C7B01B29BED800F31BF5 /* myservice_meta.json in Resources */,
 				45D48BDD1B32AF3500B5801F /* UMSCommentDetailController.xib in Resources */,
-				459B24961B176A1C009BB189 /* Images.xcassets in Resources */,
 				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
 				45D0C8001B2BDA3F00F31BF5 /* o2o_gray_star@3x.png in Resources */,
@@ -3625,6 +3625,7 @@
 			baseConfigurationReference = 550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3650,6 +3651,7 @@
 			baseConfigurationReference = A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
