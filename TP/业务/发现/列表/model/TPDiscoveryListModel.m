@@ -29,7 +29,12 @@
 
 - (NSDictionary *)dataParams {
     
-    return @{@"country":@"TW",@"uid":[TPUser uid]?:@"",@"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],@"size":@"10"};
+    return @{@"country":@"TW",
+             @"uid":[TPUser uid]?:@"",
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],
+             @"size":@"10",
+             @"lat":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].latitude],
+             @"lng":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].longitude]};
 }
 
 - (NSInteger)pageSize

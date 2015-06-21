@@ -349,6 +349,21 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
+-(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
+{
+    if (platformName == UMShareToWechatSession) {
+        
+        socialData.title = self.discoveryDetailListModel.tripInfoItem.name;
+        socialData.commentImage = __image(@"icon.png");
+        socialData.commentText = self.discoveryDetailListModel.tripInfoItem.desc;
+        
+        
+    }
+    if (platformName == UMShareToWechatTimeline) {
+        
+        
+    }
+}
 
 
 @end

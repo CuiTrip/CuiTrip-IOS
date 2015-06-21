@@ -161,6 +161,12 @@
 #pragma mark - @override methods - VZViewController
 
 
+- (void)showModel:(VZModel *)model
+{
+    [super showModel:model];
+    
+    [self checkAPNS];
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
 

@@ -91,8 +91,10 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
 
 - (void)receiveRemoteNotification:(NSDictionary *)message
 {
+    [UMessage didReceiveRemoteNotification:message];
+    
     NSString* messageId = message[@"messageId"];
-    NSString* messageType = message[@"type"];
+    NSString* messageType = message[@"messageType"];
     
     if (messageId.length > 0 && messageType.length > 0) {
         NSDictionary* pushMsg = @{@"id":messageId,@"type":messageType};
