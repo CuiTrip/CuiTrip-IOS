@@ -214,7 +214,6 @@
 - (IBAction)onVCode:(id)sender {
     
     [self startTimer];
-    self.areaCode = @"86";
     [SMS_SDK getVerificationCodeBySMSWithPhone:self.phoneTextField.text zone:self.areaCode result:^(SMS_SDKError *error) {
         
         if (!error) {

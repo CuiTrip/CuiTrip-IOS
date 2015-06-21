@@ -78,6 +78,9 @@
 
 - (void)onback
 {
+
+
+    
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
@@ -95,6 +98,7 @@
  */
 - (void)onConfirm
 {
+    [self.view endEditing:true];
     NSAssert(self.key!=nil, @"key is nil");
     
     if (self.longText) {
@@ -142,6 +146,9 @@
         if (!err) {
             
             TOAST(self, @"更新成功");
+            if (self.callback) {
+                self.callback();
+            }
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self onback];
             });

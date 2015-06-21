@@ -30,7 +30,7 @@
     [self.view addSubview:self.tableView];
     
     UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
-    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 50, 200, 44)];
+    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 20, 200, 44)];
     btn.layer.cornerRadius = 5.0f;
     btn.layer.masksToBounds = true;
     [btn setTitle:@"退出登录" forState:UIControlStateNormal];
@@ -61,8 +61,6 @@
 {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
-    [self.tableView reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,7 +138,7 @@
         {
             cell.textLabel.text = @"姓名";
             cell.detailTextLabel.text = [TPUser userName];
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case 3:
@@ -287,6 +285,7 @@
     vc.key = key;
     vc.title = title;
     vc.longText = isLongText;
+    vc.callback = ^{[self.tableView reloadData];};
     UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:vc];
     [self presentViewController:nav animated:true completion:nil];
     

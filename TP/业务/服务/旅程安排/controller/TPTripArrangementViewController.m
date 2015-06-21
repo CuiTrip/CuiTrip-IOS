@@ -144,10 +144,7 @@
         
     }];
     [self.view addSubview:btn];
-    
-    
-    
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.vzWidth, self.bannerView.vzHeight+self.infoView.vzHeight+100);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.vzWidth, self.bannerView.vzHeight+self.infoView.vzHeight+150);
 }
 
 - (void)viewDidLoad

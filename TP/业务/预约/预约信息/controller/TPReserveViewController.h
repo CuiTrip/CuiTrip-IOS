@@ -11,9 +11,19 @@
   
 #import "VZViewController.h"
 
+typedef enum
+{
+    kCreateOrder = 0,
+    kModifyOrder = 1
+
+}ReserveType;
+
 @interface TPReserveViewController : VZViewController
 
-@property(nonatomic,strong)NSString* sid;
+@property(nonatomic,assign)ReserveType type;
+
+@property(nonatomic,strong)NSString* oid;//orderId,修改订单用
+@property(nonatomic,strong)NSString* sid;//serviceId,创建订单
 @property(nonatomic,strong)NSString* insiderId;
 @property(nonatomic,strong)NSString* serviceName;
 @property(nonatomic,strong)NSString* serviceDate;

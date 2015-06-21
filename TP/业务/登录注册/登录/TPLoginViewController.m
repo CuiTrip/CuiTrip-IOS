@@ -56,7 +56,7 @@
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
     self.contryLabel.text = localCode;
     
-    self.areaCode = [TPUtils defaultCountry];
+    self.areaCode = [TPUtils defaultLocalCode];
     
 }
 

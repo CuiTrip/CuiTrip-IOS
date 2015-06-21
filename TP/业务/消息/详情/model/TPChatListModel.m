@@ -63,6 +63,8 @@
     self.serviceDate = JSON[@"serviceDate"];
     self.peopleNum = JSON[@"peopleNum"];
     self.receiverId = JSON[@"receiverId"];
+    self.serviceName = JSON[@"serviceName"];
+    self.servicePrice = JSON[@"servicePrice"];
     
     NSArray* list = JSON[@"dialog"];
     

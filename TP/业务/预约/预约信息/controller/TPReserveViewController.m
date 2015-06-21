@@ -132,37 +132,13 @@
     //todo..
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    //todo..
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    //todo..
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    
-    //todo..
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    
-}
 
 -(void)dealloc {
     
     //todo..
 }
+
+
 
 - (IBAction)onConfirm:(id)sender {
 
@@ -173,7 +149,19 @@
         return;
     }
     
+    
     //下单
+    if (self.type == kCreateOrder) {
+        self.reserveModel.type = 0;
+    }
+    else if(self.type == kModifyOrder)
+    {
+        self.reserveModel.type = 1;
+        self.reserveModel.oid = self.oid;
+    }
+    else
+        return;
+    
     self.reserveModel.sid = self.sid;
     self.reserveModel.insiderId = self.insiderId;
     self.reserveModel.serviceName = self.serviceName;
@@ -189,13 +177,28 @@
         HIDE_SPINNER(weakSelf);
         
         if (!error) {
-            UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
-            v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-            v.tag = 996;
-            [[[UIApplication sharedApplication].delegate window] addSubview:v];
-            self.confirmView.titleLabel.text = self.serviceName;
-            [self.confirmView.imageView sd_setImageWithURL:__url(self.pic) placeholderImage:__image(@"default_details.jpg")];
-            [v addSubview:self.confirmView];
+            
+            if(weakSelf.type == kCreateOrder)
+            {
+                UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
+                v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+                v.tag = 996;
+                [[[UIApplication sharedApplication].delegate window] addSubview:v];
+                weakSelf.confirmView.titleLabel.text = weakSelf.serviceName;
+                [weakSelf.confirmView.imageView sd_setImageWithURL:__url(weakSelf.pic) placeholderImage:__image(@"default_details.jpg")];
+                [v addSubview:weakSelf.confirmView];
+            }
+            else
+            {
+                TOAST(weakSelf,@"修改成功!");
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [weakSelf.tabBarController setSelectedIndex:2];
+                    [weakSelf.navigationController popToRootViewControllerAnimated:true];
+                });
+            }
+            
+      
         }
         else
         {

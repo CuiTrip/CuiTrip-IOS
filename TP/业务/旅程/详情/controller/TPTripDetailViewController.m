@@ -152,8 +152,26 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
+- (void)showLoading:(VZModel *)model
+{
+    [super showLoading:model];
+    
+    SHOW_SPINNER(self);
+}
+
+- (void)showError:(NSError *)error withModel:(VZModel *)model
+{
+    [super showError:error withModel:model];
+    
+    HIDE_SPINNER(self);
+    
+    TOAST_ERROR(self, error);
+}
+
 - (void)showModel:(VZModel *)model
 {
+    
+    HIDE_SPINNER(self);
     //todo:
     [super showModel:model];
     
@@ -191,25 +209,8 @@
     [self refreshStatus];
 }
 
-- (void)showEmpty:(VZModel *)model
-{
-    //todo:
-    [super showEmpty:model];
-}
 
 
-- (void)showLoading:(VZModel*)model
-{
-    //todo:
-    [super showLoading:model];
-}
-
-- (void)showError:(NSError *)error withModel:(VZModel*)model
-{
-    //todo:
-    [super showError:error withModel:model];
-    
-}
 - (IBAction)onAction:(id)sender {
     
     if ([TPUser type] == kCustomer) {

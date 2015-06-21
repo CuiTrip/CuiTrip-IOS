@@ -24,6 +24,8 @@
  */
 @interface TPReserveModel : VZHTTPModel
 
+@property(nonatomic,assign)NSInteger type; //0.创建订单，1，修改订单
+@property(nonatomic,strong)NSString* oid;
 @property(nonatomic,strong)NSString* sid;
 @property(nonatomic,strong)NSString* insiderId;
 @property(nonatomic,strong)NSString* serviceName;

@@ -22,7 +22,9 @@
 
 - (NSDictionary *)dataParams {
     
-    return  @{@"sid":self.sid?:@"",
+    return  @{
+              @"oid":self.oid?:@"",
+              @"sid":self.sid?:@"",
               @"token":[TPUser token]?:@"",
               @"uid":[TPUser uid]?:@"",
               @"insiderId":self.insiderId?:@"",
@@ -36,7 +38,10 @@
 
 - (NSString *)methodName {
    
-    return [_API_ stringByAppendingString:@"createOrder"];
+    if (self.type == 0)
+        return [_API_ stringByAppendingString:@"createOrder"];
+    else
+        return [_API_ stringByAppendingString:@"modifyOrder"];
 }
 
 - (VZHTTPRequestConfig)requestConfig

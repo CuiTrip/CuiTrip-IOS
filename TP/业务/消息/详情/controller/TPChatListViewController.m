@@ -18,14 +18,14 @@
 #import "TPSendChatMsgModel.h"
 #import "TPPayViewController.h"
 #import "TPChatListItem.h"
-
+#import "TPReserveViewController.h"
 
 @interface TPChatListHeaderView : UIView
 
-@property(nonatomic,assign)TPUserType type;
+@property(nonatomic,strong)NSString* orderStatus;
 @property(nonatomic,strong)UILabel* dateLabel;
 @property(nonatomic,strong)UIButton* actionBtn;
-@property(nonatomic,strong)void(^callback)(void);
+@property(nonatomic,strong)void(^callback)(NSString* orderStatus);
 
 @end
 
@@ -56,27 +56,45 @@
     return self;
 }
 
-- (void)setType:(TPUserType)type
+
+- (void)setOrderStatus:(NSString *)orderStatus
 {
-    _type = type;
+    _orderStatus = orderStatus;
     
-    if (type == kCustomer) {
-        
-        self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
-        [self.actionBtn setTitle:@"付款" forState:UIControlStateNormal];
+    if ([orderStatus integerValue] == 1)
+    {
+        if ([TPUser type] == kCustomer) {
+            
+            self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
+            [self.actionBtn setTitle:@"修改" forState:UIControlStateNormal];
+        }
+        else
+        {
+            self.actionBtn.backgroundColor = HEXCOLOR(0x7ed321);
+            [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
+            
+        }
+    }
+    else if ([orderStatus integerValue] == 2)
+    {
+        if ([TPUser type] == kCustomer) {
+            
+            self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
+            [self.actionBtn setTitle:@"付款" forState:UIControlStateNormal];
+        }
+        else
+            self.actionBtn.hidden = true;
     }
     else
     {
-        self.actionBtn.backgroundColor = HEXCOLOR(0x7ed321);
-        [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
-        
+        self.actionBtn.hidden = true;
     }
 }
 
 - (void)onAction:(id)sender
 {
     if (self.callback) {
-        self.callback();
+        self.callback(self.orderStatus);
     }
 }
 
@@ -153,29 +171,6 @@
 {
     [super viewDidLoad];
     
-    self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 44)];
-    self.headerView.dateLabel.text = @"";
-    self.headerView.type = [TPUser type];
-    
-    __weak typeof(self) weakSelf = self;
-    self.headerView.callback = ^(){
-        
-        if ([TPUser type] == kCustomer) {
-            //去支付
-            TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
-            vc.oid = weakSelf.orderId;
-            [weakSelf.navigationController pushViewController:vc animated:true];
-        }
-        else
-        {
-            //去旅行详情
-            TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
-            vc.oid = weakSelf.chatListModel.orderId;
-            [weakSelf.navigationController pushViewController:vc animated:true];
-            
-        }
-    };
-    
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-50);
     self.tableView.backgroundColor = [UIColor whiteColor];
@@ -242,17 +237,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController
 
+
+
 - (void)showModel:(VZModel *)model
 {
     [super showModel:model];
 
-    self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
-    self.headerView.actionBtn.hidden = NO;
-    
+    [self layoutHeaderView];
     [self scrollToBottom:NO];
     [TPGrowingTextView showInView:self.view delegate:self];
-    
-    
     
 }
 
@@ -345,6 +338,58 @@
 - (void)scrollToBottom:(BOOL)animated
 {
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.tableView.vzWidth, CGFLOAT_MAX) animated:animated];
+}
+
+- (void)layoutHeaderView
+{
+    self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 44)];
+    self.headerView.dateLabel.text = @"";
+    self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
+    self.headerView.actionBtn.hidden = NO;
+    
+    __weak typeof(self) weakSelf = self;
+    self.headerView.callback = ^(NSString* orderStatus){
+        
+        if ([orderStatus integerValue] == 1)
+        {
+            if ([TPUser type] == kCustomer) {
+                
+                //去修改
+                TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
+                v.type=kModifyOrder;
+                v.maxNum = [weakSelf.chatListModel.peopleNum integerValue];
+                v.oid = weakSelf.orderId;
+                v.insiderId = weakSelf.chatListModel.receiverId;
+                v.servicePrice = weakSelf.chatListModel.servicePrice;
+                v.serviceName = weakSelf.chatListModel.serviceName;
+                [weakSelf.navigationController pushViewController:v animated:true];
+            }
+            else
+            {
+                //去旅行详情
+                TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+                vc.oid = weakSelf.chatListModel.orderId;
+                [weakSelf.navigationController pushViewController:vc animated:true];
+                
+            }
+        }
+        else if ([orderStatus integerValue] == 2)
+        {
+            if ([TPUser type] == kCustomer) {
+                
+                //去支付
+                TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+                vc.oid = weakSelf.orderId;
+                [weakSelf.navigationController pushViewController:vc animated:true];
+            }
+           
+        }
+        else
+        {
+        }
+    };
+    
+    self.tableView.tableHeaderView = self.headerView;
 }
 
 

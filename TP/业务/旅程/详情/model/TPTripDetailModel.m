@@ -52,19 +52,15 @@
 - (BOOL)parseResponse:(id)JSON
 {
     //todo:
-    _insiderHeadPic = JSON[@"insiderHeadPic"];
-    _insiderNickName = JSON[@"insiderNickName"];
-
+    _insiderHeadPic = JSON[@"headPic"];
+    _insiderNickName = JSON[@"userNick"];
     _buyerNum = JSON[@"buyerNum"];
     _orderPrice = JSON[@"orderPrice"];
     _serviceName = JSON[@"serviceName"];
     _insiderSign = JSON[@"insiderSign"];
     _status = JSON[@"status"];
     _statusContent = JSON[@"statusContent"];
-    
-    NSString* timestamp = JSON[@"serviceDate"];
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];
-    _serviceDate = [TPUtils fullDateFormatString:date];
+    _serviceDate = JSON[@"serviceDate"];
     
     return true;
 }

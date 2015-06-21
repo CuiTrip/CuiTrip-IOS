@@ -15,6 +15,8 @@
 
 @property(nonatomic,strong)NSString* orderId;
 @property(nonatomic,strong)NSString* serviceDate;
+@property(nonatomic,strong)NSString* serviceName;
+@property(nonatomic,strong)NSString* servicePrice;
 @property(nonatomic,strong)NSString* peopleNum;
 @property(nonatomic,strong)NSString* orderStatus;
 @property(nonatomic,strong)NSString* receiverId;
