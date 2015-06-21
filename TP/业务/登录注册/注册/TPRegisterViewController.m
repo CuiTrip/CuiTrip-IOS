@@ -59,6 +59,10 @@
     
     self.areaCode = [TPUtils defaultLocalCode];
     
+    NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
+    self.contryLabel.text = localCode;
+    
+    
     __weak typeof(self) weakSelf = self;
     [RACObserve(self, second) subscribeNext:^(NSNumber* x) {
         

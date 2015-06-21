@@ -86,7 +86,7 @@
 - (void)loadView
 {
     [super loadView];
-    self.confirmBtn.hidden = true;
+    //self.confirmBtn.hidden = true;
     //todo..
 }
 
@@ -94,7 +94,7 @@
 {
     [super viewDidLoad];
     //todo..
-    [self setTitle:@"设置密码"];
+    [self setTitle:@"重置密码"];
     
     self.areaCode = [TPUtils defaultLocalCode];
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
@@ -123,7 +123,7 @@
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeKeyboard)]];
     
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onConfirm:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:0 target:self action:@selector(onConfirm:)];
     
 }
 

@@ -160,10 +160,30 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1) {
+        
+        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPForgetPWDViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpforgetpwd"];
+        [self.navigationController pushViewController:vc animated:true];
+        
+        
+    }
+    else if(indexPath.row == 2)
+    {
+        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPAboutViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpabout"];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+    else
+    {
+        //打分
+    }
+}
+
 
 - (void)setupTableView
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onSetting) ];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(onSetting) ];
     
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPMeSubView" owner:self options:nil];
     self.headerView = (TPMeSubView *)[nib objectAtIndex:0];
@@ -214,6 +234,7 @@
         
     }];
     [footerView addSubview:btn];
+
     self.tableView.tableFooterView = footerView;
 }
 

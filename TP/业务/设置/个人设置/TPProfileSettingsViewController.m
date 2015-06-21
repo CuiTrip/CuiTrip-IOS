@@ -29,6 +29,32 @@
     self.tableView.tableFooterView = [TPUIKit emptyView];
     [self.view addSubview:self.tableView];
     
+    UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
+    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake((self.view.vzWidth-200)/2, 50, 200, 44)];
+    btn.layer.cornerRadius = 5.0f;
+    btn.layer.masksToBounds = true;
+    [btn setTitle:@"退出登录" forState:UIControlStateNormal];
+    [btn setBackgroundColor:[TPTheme themeColor]];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        
+        [WCAlertView showAlertWithTitle:@"" message:@"确定要退出登录吗?" customizationBlock:^(WCAlertView *alertView) {
+            
+        } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
+            
+            if (buttonIndex == 1) {
+                [TPLoginManager logout];
+            }
+            
+        } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        
+        
+    }];
+    [footerView addSubview:btn];
+    self.tableView.tableFooterView = footerView;
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
