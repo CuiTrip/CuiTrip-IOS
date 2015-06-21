@@ -58,7 +58,7 @@
     infoItem.address = serviceInfo[@"address"];
     infoItem.desc = serviceInfo[@"descpt"];
     infoItem.score = serviceInfo[@"score"];
-    infoItem.pics = serviceInfo[@"pics"];
+    infoItem.pics = serviceInfo[@"pic"];
     infoItem.insiderId = serviceInfo[@"insiderId"];
     self.tripInfoItem = infoItem;
     [list addObject:infoItem];
@@ -70,7 +70,7 @@
         
         profileItem.insiderName = userInfo[@"nick"];
         profileItem.insiderSign = userInfo[@"sign"];
-        profileItem.avatar = userInfo[@"heapPic"];
+        profileItem.avatar = userInfo[@"headPic"];
         profileItem.language = userInfo[@"language"];
         profileItem.hobby = userInfo[@"interests"];
         profileItem.registerTime = userInfo[@"gmtModified"];

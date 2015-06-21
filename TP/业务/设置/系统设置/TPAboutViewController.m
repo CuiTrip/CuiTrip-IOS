@@ -9,6 +9,7 @@
 #import "TPAboutViewController.h"
 
 @interface TPAboutViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *aboutPic;
 
 @end
 
@@ -18,6 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setTitle:@"关于脆饼"];
+    
+    self.aboutPic.vzHeight = self.view.vzWidth;
+    self.aboutPic.vzOrigin = (CGPoint){0,kTPHeightWithMargin(self.aboutPic.vzHeight)};
+    self.aboutPic.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didReceiveMemoryWarning {

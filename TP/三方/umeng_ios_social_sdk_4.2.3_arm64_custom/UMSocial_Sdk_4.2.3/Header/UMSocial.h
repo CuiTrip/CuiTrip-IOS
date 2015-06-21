@@ -16,3 +16,4 @@
 #import "UMSocialBar.h"                         //社会化操作栏
 #import "UMSocialConfig.h"                      //sdk配置类
 #import "UMSocialSnsData.h"                     //区分不同平台设置不同分享内容
+#import "UMSocialWechatHandler.h"

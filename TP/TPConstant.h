@@ -34,6 +34,8 @@
 #define kTPNotifyMessageLoginSuccess @"kTPLoginSuccess"
 #define kTPNotifyMessageLoginFailure @"kTPLoginFailure"
 
+#define kTPPushMessageKey @"kTPPushMessageKey"
+
 #define ft(x) [UIFont systemFontOfSize:(x)]
 #define bft(x) [UIFont boldSystemFontOfSize:(x)]
 

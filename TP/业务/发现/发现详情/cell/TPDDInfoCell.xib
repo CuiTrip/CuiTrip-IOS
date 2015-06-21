@@ -33,17 +33,17 @@
                     <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="内容" textAlignment="center" id="ZfN-FX-GOf">
-                    <rect key="frame" x="20" y="123" width="280" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_gray.png" id="N7G-KZ-H61">
                     <rect key="frame" x="95" y="80" width="130" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CzX-Jt-RJc">
+                    <rect key="frame" x="20" y="112" width="280" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -54,11 +54,11 @@
             <connections>
                 <outlet property="grayStarView" destination="N7G-KZ-H61" id="dBC-gH-9yf"/>
                 <outlet property="infoAddressLabel" destination="Tix-jS-idr" id="oxb-yp-88f"/>
-                <outlet property="infoContentLabel" destination="ZfN-FX-GOf" id="lyS-HJ-iNs"/>
+                <outlet property="infoContentLabel" destination="CzX-Jt-RJc" id="A9H-lU-b6J"/>
                 <outlet property="infoNameLabel" destination="xiB-yq-836" id="K9o-Vo-F2e"/>
                 <outlet property="viewDetailBtn" destination="HF0-qa-SBT" id="GXQ-ZM-AVp"/>
             </connections>
-            <point key="canvasLocation" x="375" y="127.5"/>
+            <point key="canvasLocation" x="447" y="119"/>
         </view>
     </objects>
     <resources>

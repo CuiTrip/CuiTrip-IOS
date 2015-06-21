@@ -21,5 +21,7 @@
 - (void)registerRemoteNotification;
 - (void)receiveRemoteNotification:(NSDictionary* )message;
 - (void)updateDeviceToken:(NSData *)tokenData;
+- (void)removeLocalMessage;
+- (NSDictionary* )localAPNSMessage;
 
 @end

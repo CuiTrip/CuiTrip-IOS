@@ -34,7 +34,8 @@
     
     //注册分享
     [UMSocialData setAppKey:um_appKey];
-    
+    [UMSocialWechatHandler setWXAppId:@"wx2af152cb604683bf" appSecret:@"7bcb01993ed6b20c3cdfecd71fae7af5" url:nil];
+ 
     //注册APNS
     [[TPAPNS sharedInstance] setup:launchOptions];
     

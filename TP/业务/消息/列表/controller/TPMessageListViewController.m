@@ -117,8 +117,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-
+    
+    [self checkAPNS];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -174,8 +174,13 @@
     }
     else
     {
-        item.hasNewMsg = NO;
-        [self.tableView reloadData];
+        if (item.hasNewMsg) {
+            
+            item.hasNewMsg = NO;
+            [[TPAPNS sharedInstance] removeLocalMessage];
+            [self.tableView reloadData];
+        }
+
         
         NSString* receiverId = @"";
         
@@ -254,6 +259,30 @@
     //setupUI
     [self setupTableView];
     [self load];
+}
+
+-(void)checkAPNS
+{
+    if ([TPUser isLogined]) {
+        
+        NSDictionary* localPushMsg = [[TPAPNS sharedInstance] localAPNSMessage];
+        
+        if (!localPushMsg) {
+            return;
+        }
+        
+        NSString* orderId = localPushMsg[@"id"];
+        for (int i=0; i<[self.ds itemsForSection:0].count; i++) {
+            
+            TPMessageListItem* item = (TPMessageListItem* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            if ([item.orderId isEqualToString:orderId]) {
+                item.hasNewMsg = true;
+                break;
+            }
+        }
+        
+        [self.tableView reloadData];
+    }
 }
 
 @end

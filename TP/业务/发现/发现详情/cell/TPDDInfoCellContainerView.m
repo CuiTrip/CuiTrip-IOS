@@ -14,9 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *infoNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoAddressLabel;
-@property (weak, nonatomic) IBOutlet UITextView *infoContentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *viewDetailBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *grayStarView;
+@property (weak, nonatomic) IBOutlet UILabel *infoContentLabel;
 
 @end
 

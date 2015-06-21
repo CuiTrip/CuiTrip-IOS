@@ -22,6 +22,7 @@
 
 @interface TPMessageListItem : VZListItem
 
+@property(nonatomic,strong) NSString* messageId;
 @property(nonatomic,strong) NSString* type;
 @property(nonatomic,strong) NSString* topic;
 @property(nonatomic,strong) NSString* headPic;
