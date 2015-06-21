@@ -191,7 +191,7 @@
     self.contryLabel.text=[NSString stringWithFormat:@"+%@ %@",data.areaCode,data.countryName];
 }
 
-#define kDefaultTimeoutSeconds 10
+#define kDefaultTimeoutSeconds 30
 static unsigned int g_seconds = kDefaultTimeoutSeconds;
 - (void)startTimer
 {

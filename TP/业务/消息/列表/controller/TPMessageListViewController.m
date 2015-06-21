@@ -79,48 +79,39 @@
     [super viewDidLoad];
     
     
-    //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
-    //self.tableView.tableFooterView = [TPUIKit emptyView];
-    //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
-    self.needPullRefresh = true;
-
+    void(^loadModel)(void) = ^{
+        
+        [TPLoginManager hideLoginViewController];
+        [TPUIKit removeExceptionView:self.view];
+        
+        
+        //setupUI
+        [self setupTableView];
+        
+        
+    };
     
-    //3，bind your delegate and datasource to tableview
-    self.dataSource = self.ds;
-    self.delegate = self.dl;
     
-
-    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    self.keyModel = self.messageListModel;
-    
-    //5,REQUIRED:register model to parent view controller
-    [self registerModel:self.keyModel];
-
 
     if (![TPUser isLogined]) {
         
         [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
             
-            [self load];
+            loadModel();
             
         }];
         
         [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
             
-            [self load];
+                loadModel();
         }];
     }
     else
     {
-        [self load];
+             loadModel();
     }
     
-    [self registerChannelMsg];
+    //[self registerChannelMsg];
     
     
 }
@@ -128,15 +119,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+
 
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-   
-    //todo..
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -221,6 +211,32 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
+- (void)setupTableView
+{
+    //1,config your tableview
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.showsVerticalScrollIndicator = YES;
+    self.tableView.separatorStyle = YES;
+    //self.tableView.tableFooterView = [TPUIKit emptyView];
+    //2,set some properties:下拉刷新，自动翻页
+    self.needLoadMore = NO;
+    self.needPullRefresh = true;
+    
+    
+    //3，bind your delegate and datasource to tableview
+    self.dataSource = self.ds;
+    self.delegate = self.dl;
+    
+    
+    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
+    self.keyModel = self.messageListModel;
+    
+    //5,REQUIRED:register model to parent view controller
+    [self registerModel:self.keyModel];
+    
+    [self registerChannelMsg];
+}
 
 - (void)registerChannelMsg
 {

@@ -101,17 +101,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-
-    
 
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //todo..
-    self.tabBarController.tabBar.hidden = false;
+    self.tabBarController.tabBar.hidden = NO;
+   
 
 }
 
