@@ -78,6 +78,9 @@
 {
     [super viewDidLoad];
     
+    __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
+    
+    [self registerChannelMsg];
     
     void(^loadModel)(void) = ^{
         
@@ -91,8 +94,6 @@
         
     };
     
-    
-
     if (![TPUser isLogined]) {
         
         [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
@@ -103,17 +104,14 @@
         
         [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
             
-                loadModel();
+            loadModel();
         }];
     }
     else
     {
-             loadModel();
+        loadModel();
     }
-    
-    //[self registerChannelMsg];
-    
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -234,18 +232,29 @@
     
     //5,REQUIRED:register model to parent view controller
     [self registerModel:self.keyModel];
-    
-    [self registerChannelMsg];
+
 }
 
 - (void)registerChannelMsg
 {
     __weak typeof(self) weakSelf = self;
     [self vz_listOnChannel:kChannelNewMessage withNotificationBlock:^(id obj, id data) {
-        [weakSelf load];
+        if ([TPUser isLogined]) {
+            [weakSelf load];
+        }
     }];
 
 }
 
+- (void)onLoginSuccess
+{
+    [TPLoginManager hideLoginViewController];
+    [TPUIKit removeExceptionView:self.view];
+    
+    //setupUI
+    [self setupTableView];
+    [self load];
+}
+
 @end
- 
+

@@ -62,8 +62,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //todo..
+
     
+    __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
+
     void(^loadModel)(void) = ^{
         
         [TPLoginManager hideLoginViewController];
@@ -101,7 +103,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
+    if ([TPUser isLogined]) {
+     
+        [self.headerView.imageView sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
+        self.headerView.nameLabel.text = [TPUser userNick];
+        self.headerView.descLabel.text = [TPUser sign];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -242,5 +250,15 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
+- (void)onLoginSuccess
+{
+    [TPLoginManager hideLoginViewController];
+    [TPUIKit removeExceptionView:self.view];
+    
+    
+    //setupUI
+    [self setupTableView];
+}
 @end
- 
+

@@ -30,7 +30,6 @@ typedef enum
 @property(nonatomic,strong)NSString* servicePrice;
 @property(nonatomic,strong)NSString* moneyType;
 @property(nonatomic,assign)NSInteger maxNum;
-@property(nonatomic,strong)NSString* fee;
 @property(nonatomic,strong)NSString* pic;
 
 @end

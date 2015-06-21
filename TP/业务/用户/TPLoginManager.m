@@ -8,7 +8,7 @@
 
 #import "TPLoginManager.h"
 #import "TPLoginViewController.h"
-
+#import "TPAPNS.h"
 
 @implementation TPLoginManager
 
@@ -33,33 +33,29 @@
 
 + (void)showLoginViewControllerWithCompletion:(void (^)(void))completion
 {
-    if ([TPUser isLogined]) {
-        return;
+
+        
+    void(^presentLoginVC)(void) = ^{
+        
+        TPLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"TPLoginViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tplogin"];
+        loginVC.loginResult = completion;
+        UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:loginVC];
+         [[TPUtils rootViewController] presentViewController:nav animated:YES completion:nil];
+    };
+    
+    
+    
+    if ([[TPUtils rootViewController] presentingViewController]) {
+        
+        [[TPUtils rootViewController] dismissViewControllerAnimated:YES completion:^{
+            presentLoginVC();
+        }];
     }
     else
     {
-        
-        void(^presentLoginVC)(void) = ^{
-            
-            TPLoginViewController* loginVC = [[UIStoryboard storyboardWithName:@"TPLoginViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tplogin"];
-            loginVC.loginResult = completion;
-            UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:loginVC];
-             [[TPUtils rootViewController] presentViewController:nav animated:YES completion:nil];
-        };
-        
-        
-        
-        if ([[TPUtils rootViewController] presentingViewController]) {
-            
-            [[TPUtils rootViewController] dismissViewControllerAnimated:YES completion:^{
-                presentLoginVC();
-            }];
-        }
-        else
-        {
-            presentLoginVC();
-        }
+        presentLoginVC();
     }
+    
 }
 
 + (void)hideLoginViewController
@@ -93,14 +89,20 @@
                                     
                                     if ([code integerValue] == 0 ) {
                                         
+                                        __notify(kTPNotifyMessageLoginSuccess);
+                                        
                                         NSDictionary* result = responseObj[@"result"];
                                         
                                         if (IsDictionaryValid(result)) {
                                             [TPUser update:result];
                                         }
+                                        
                                         if (completion) {
                                             completion(nil);
                                         }
+                                        
+                                        //register APNS
+                                        [[TPAPNS sharedInstance] registerRemoteNotification];
                                     }
                                     else
                                     {

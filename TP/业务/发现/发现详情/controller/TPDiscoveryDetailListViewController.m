@@ -22,7 +22,7 @@
 #import "TPDDTripItem.h"
 #import "TPDDInfoItem.h"
 #import "TPDDProfileItem.h"
-
+#import "TPLicenceViewController.h"
 
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
@@ -174,7 +174,7 @@
         void(^lamda)() = ^{//跳转到预约
             TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
             v.maxNum = [self.discoveryDetailListModel.tripDetailItem.tripPeopleNum integerValue];
-            v.fee = self.discoveryDetailListModel.tripDetailItem.tripFee;
+            v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
             v.sid = self.sid;
             v.insiderId = self.discoveryDetailListModel.tripInfoItem.insiderId;
             v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
@@ -328,16 +328,13 @@
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
         vc.title = @"费用说明";
         vc.titleString = @"费用说明";
-        vc.content = @"";
+        vc.content = @"1,本费⽤为发现者的基本服务费⽤，不包含双⽅任何⻔门票、餐饮、公共交通费⽤。\n\n2,发现者在旅程中产⽣的门票、餐饮、私家车费⽤，均由旅⾏者承担。\n\n3,其他可能产生的费用，双方自行沟通协调。";
         [self.navigationController pushViewController:vc animated:YES];
  
     }
     else if ([type isEqualToString:@"gotoLicence"])
     {
-        TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
-        vc.title = @"脆饼旅行";
-        vc.titleString = @"脆饼公约";
-        vc.content = @"";
+        TPLicenceViewController* vc = [TPLicenceViewController new];
         [self.navigationController pushViewController:vc animated:YES];
 
     }

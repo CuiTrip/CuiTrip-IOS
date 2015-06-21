@@ -49,8 +49,6 @@
     self.infoNameLabel.text = item.name;
     self.infoAddressLabel.text=  item.address;
     self.infoContentLabel.text = item.desc;
-    self.infoContentLabel.backgroundColor = [UIColor clearColor];
-//    self.infoContentLabel.textAlignment = NSTextAlignmentCenter;
     [self setScore:[item.score floatValue]];
 }
 

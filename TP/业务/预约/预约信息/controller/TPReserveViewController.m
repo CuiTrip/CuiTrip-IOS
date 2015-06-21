@@ -94,7 +94,7 @@
 
     };
     
-    self.feeLabel.text = [TPUtils money:self.fee WithType:@""];
+    self.feeLabel.text = [TPUtils money:self.servicePrice WithType:@""];
     
 
     SHOW_SPINNER(self);
@@ -177,6 +177,8 @@
         HIDE_SPINNER(weakSelf);
         
         if (!error) {
+            
+            [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
             
             if(weakSelf.type == kCreateOrder)
             {

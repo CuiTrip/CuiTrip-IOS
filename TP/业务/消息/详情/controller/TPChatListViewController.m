@@ -343,10 +343,9 @@
 - (void)layoutHeaderView
 {
     self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 44)];
-    self.headerView.dateLabel.text = @"";
     self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
     self.headerView.actionBtn.hidden = NO;
-    
+    self.headerView.orderStatus = self.chatListModel.orderStatus;
     __weak typeof(self) weakSelf = self;
     self.headerView.callback = ^(NSString* orderStatus){
         
@@ -357,6 +356,7 @@
                 //去修改
                 TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
                 v.type=kModifyOrder;
+                v.sid = weakSelf.chatListModel.serviceId;
                 v.maxNum = [weakSelf.chatListModel.peopleNum integerValue];
                 v.oid = weakSelf.orderId;
                 v.insiderId = weakSelf.chatListModel.receiverId;

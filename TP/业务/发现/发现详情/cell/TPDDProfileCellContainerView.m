@@ -43,10 +43,10 @@
     self.userNameLabel.text = item.insiderName;
     self.userDescLabel.text = item.insiderSign;
     self.registerDateLabel.text = item.registerTime;
-    self.identifierLabel.text = item.status;
-    self.professionalLabel.text = item.career;
-    self.hobbiesLabel.text = item.hobby;
-    self.languageLabel.text = item.language;
+    self.identifierLabel.text = [item.status integerValue] == 0 ? @"已认证":@"未认证";
+    self.professionalLabel.text = item.career.length == 0?@"暂无":item.career;
+    self.hobbiesLabel.text = item.hobby.length == 0?@"暂无":item.hobby;
+    self.languageLabel.text = item.language == 0?@"暂无":item.language;
     
 }
 
