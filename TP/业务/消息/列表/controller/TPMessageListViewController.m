@@ -83,10 +83,10 @@
         
         [TPLoginManager hideLoginViewController];
         [TPUIKit removeExceptionView:self.view];
-        
-        
+    
         //setupUI
         [self setupTableView];
+        [self load];
         
         
     };

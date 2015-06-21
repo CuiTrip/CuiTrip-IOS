@@ -302,7 +302,6 @@
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             self.actionBtn.hidden = false;
-            self.actionBtn.vzTop -= 30;
             [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
         }
         else

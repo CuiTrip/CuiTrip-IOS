@@ -48,20 +48,11 @@
     }
 }
 
-+ (void)setHidden:(BOOL)h
-{
-    
-}
-
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     
     if (self) {
-        
-        _oriPt = frame.origin;
-        _oriSize = frame.size;
         
         CGRect bounds = CGRectMake(0, 0, frame.size.width, frame.size.height);
         self.textView = [[UITextView alloc]initWithFrame:CGRectInset(bounds, 16, 8)];
@@ -88,7 +79,9 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"%@",change);
+    if (self.textView.text.length == 0) {
+        return;
+    }
     
     CGSize sz = [change[NSKeyValueChangeNewKey] CGSizeValue];
 
@@ -109,57 +102,49 @@
     // register: UIKeyboardWillHideNotification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    // register: UIKeyboardWillHideNotification
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
-    
-    // register: UIKeyboardWillHideNotification
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 }
 
 
 
 - (void)keyboardWillShow:(NSNotification*)notification
 {
-    NSLog(@"%s: %@", __FUNCTION__, notification.userInfo);
-    
     CGRect keyboardRectEnd = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    NSLog(@"keyboardRectEnd: %@", NSStringFromCGRect(keyboardRectEnd));
     keyboardRectEnd = [self.superview convertRect:keyboardRectEnd fromView:[UIApplication sharedApplication].keyWindow];
-    NSLog(@"keyboardRectEnd: %@", NSStringFromCGRect(keyboardRectEnd));
     CGFloat animDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     [UIView animateWithDuration:animDuration animations:^{
-        
-        //CGRect rect = CGRectMake(0, keyboardRectEnd.origin.y - self.vzHeight, self.vzWidth ,self.vzHeight );
-        //self.frame = rect;
-        self.superview.frame  = CGRectMake(0, self.superview.vzTop-CGRectGetHeight(keyboardRectEnd), self.superview.vzWidth, self.superview.vzHeight);
+
+        self.frame = CGRectMake(0, keyboardRectEnd.origin.y - self.vzHeight, self.vzWidth, self.vzHeight);
+//        self.superview.frame  = CGRectMake(0, self.superview.vzTop-CGRectGetHeight(keyboardRectEnd), self.superview.vzWidth, self.superview.vzHeight);
+    }completion:^(BOOL finished) {
+
+        self.isShowingTextField = true;
+        _oriPt = self.vzOrigin;
+        _oriSize = self.vzSize;
     }];
 }
 
 
 - (void)keyboardWillHide:(NSNotification*)notification
 {
-    NSLog(@"%s: %@", __FUNCTION__, notification.userInfo);
-    
     CGRect keyboardRectEnd = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    NSLog(@"keyboardRectEnd: %@", NSStringFromCGRect(keyboardRectEnd));
     keyboardRectEnd = [self.superview convertRect:keyboardRectEnd fromView:[UIApplication sharedApplication].keyWindow];
     CGFloat animationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     [UIView animateWithDuration:animationDuration animations:^{
-        
-        //self.frame = rect;
-        self.superview.frame  = CGRectMake(0,self.superview.vzTop+CGRectGetHeight(keyboardRectEnd), self.superview.vzWidth, self.superview.vzHeight);
+
+        //self.frame = CGRectMake(0, self.vzOrigin.y+keyboardRectEnd.size.height, self.vzWidth, self.vzHeight);
+        self.frame = CGRectMake(0, self.superview.vzHeight-44, kTPScreenWidth, 44);
+//        self.superview.frame  = CGRectMake(0,self.superview.vzTop+CGRectGetHeight(keyboardRectEnd), self.superview.vzWidth, self.superview.vzHeight);
+    }completion:^(BOOL finished) {
+        self.isShowingTextField = false;
+        _oriPt = self.vzOrigin;
+        _oriSize = self.vzSize;
     }];
 }
 
-- (void)keyboardDidShow:(NSNotification* )notification
-{
-    self.isShowingTextField = true;
-}
 
-- (void)keyboardDidHide:(NSNotification* )notification
-{
-    self.isShowingTextField = false;
-}
+
+
+
 
 - (void)unregisterNotifications
 {
