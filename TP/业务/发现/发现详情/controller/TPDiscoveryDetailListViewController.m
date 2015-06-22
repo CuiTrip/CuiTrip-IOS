@@ -328,7 +328,7 @@
         TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
         vc.title = @"费用说明";
         vc.titleString = @"费用说明";
-        vc.content = @"1,本费⽤为发现者的基本服务费⽤，不包含双⽅任何⻔门票、餐饮、公共交通费⽤。\n\n2,发现者在旅程中产⽣的门票、餐饮、私家车费⽤，均由旅⾏者承担。\n\n3,其他可能产生的费用，双方自行沟通协调。";
+        vc.content = @"1. 本费⽤为发现者的基本服务费⽤，不包含双⽅任何⻔门票、餐饮、公共交通费⽤。\n\n2. 发现者在旅程中产⽣的门票、餐饮、私家车费⽤，均由旅⾏者承担。\n\n3. 其他可能产生的费用，双方自行沟通协调。";
         [self.navigationController pushViewController:vc animated:YES];
  
     }

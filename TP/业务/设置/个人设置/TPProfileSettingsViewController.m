@@ -123,7 +123,7 @@
             [icon sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
             icon.tag = 100;
             [cell.contentView addSubview:icon];
-            cell.textLabel.text = @"修改头像";
+            cell.textLabel.text = @"设置头像";
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
@@ -137,14 +137,21 @@
         case 2:
         {
             cell.textLabel.text = @"姓名";
-            cell.detailTextLabel.text = [TPUser userName];
-            //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
+            if ([TPUser userName].length > 0) {
+                cell.detailTextLabel.text = [TPUser userName];
+            }
+            else
+            {
+                cell.detailTextLabel.text = @"未设置";
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
         case 3:
         {
             cell.textLabel.text = @"昵称";
-            cell.detailTextLabel.text = [TPUser userNick];
+            cell.detailTextLabel.text = [TPUser userNick].length > 0 ? [TPUser userNick]:@"未设置";
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
@@ -227,51 +234,59 @@
             return;
       
         }
+        case 1:
+        {
+            return;
+        }
         case 2:
         {
-            title = @"修改姓名";
+            title = @"设置姓名";
             key = @"realName";
             break;
         }
         
         case 3:
         {
-            title = @"修改昵称";
+            title = @"设置昵称";
             key = @"nick";
             break;
+        }
+        case 4:
+        {
+            return;
         }
             
         case 5:
         {
-            title = @"修改地区";
+            title = @"设置地区";
             key = @"city";
             break;
         }
             
         case 6:
         {
-            title = @"修改职业";
+            title = @"设置职业";
             key = @"career";
             break;
         }
             
         case 7:
         {
-            title = @"修改爱好";
+            title = @"设置爱好";
             key = @"interests";
             break;
         }
             
         case 8:
         {
-            title = @"修改语言";
+            title = @"设置语言";
             key = @"language";
             break;
         }
             
         case 9:
         {
-            title = @"修改签名";
+            title = @"设置签名";
             key = @"sign";
             isLongText = true;
             break;

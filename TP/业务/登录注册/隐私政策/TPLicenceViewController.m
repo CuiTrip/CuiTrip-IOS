@@ -44,7 +44,7 @@
 {
     [super viewDidLoad];
     //todo..
-    [self setTitle:@"协议"];
+    [self setTitle:@"脆饼公约"];
     
     self.licence = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, self.view.vzHeight)];
     self.licence.editable = NO;
