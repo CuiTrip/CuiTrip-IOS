@@ -96,6 +96,7 @@
     //todo..
     [self setTitle:@"重置密码"];
     
+    self.pwdTextField.secureTextEntry = YES;
     self.areaCode = [TPUtils defaultLocalCode];
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
     self.countryLabel.text = localCode;
