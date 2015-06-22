@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong) UITextField* textField;
 @property(nonatomic,strong) UITextView* textView;
+@property(nonatomic,strong) UILabel* hintLabel;
 
 @end
 
@@ -23,6 +24,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [TPTheme yellowColor];
+    self.hintLabel = [TPUIKit label:[TPTheme themeColor] Font:ft(12.0f)];
+    [self.view addSubview:self.hintLabel];
     
     if (!self.longText) {
         
@@ -41,6 +44,14 @@
         
         [self.textField becomeFirstResponder];
         [self.view addSubview:self.textField];
+        
+        if (self.hintText.length > 0) {
+            
+            self.hintLabel.vzOrigin = CGPointMake(self.textField.vzLeft, self.textField.vzBottom+20);
+            self.hintLabel.vzSize = CGSizeMake(self.textField.vzWidth, 13);
+            self.hintLabel.text = self.hintText;
+        }
+
     }
     else
     {
@@ -54,6 +65,13 @@
         self.textView.layer.masksToBounds = true;
         [self.textView becomeFirstResponder];
         [self.view addSubview:self.textView];
+        
+        if (self.hintText.length > 0) {
+            
+            self.textView.vzOrigin = CGPointMake(self.textField.vzLeft, self.textField.vzBottom+20);
+            self.textView.vzSize = CGSizeMake(self.textField.vzWidth, 13);
+            self.textView.text = self.hintText;
+        }
     
     }
  

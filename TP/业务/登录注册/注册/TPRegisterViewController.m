@@ -186,6 +186,7 @@
 
 - (void)setSecondData:(CountryAndAreaCode *)data
 {
+    self.areaCode = data.areaCode;
     self.contryLabel.text=[NSString stringWithFormat:@"+%@ %@",data.areaCode,data.countryName];
 }
 

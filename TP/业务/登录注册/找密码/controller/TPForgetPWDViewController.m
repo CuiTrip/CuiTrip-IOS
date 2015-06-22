@@ -262,6 +262,7 @@
 
 - (void)setSecondData:(CountryAndAreaCode *)data
 {
+    self.areaCode = data.areaCode;
     self.countryLabel.text=[NSString stringWithFormat:@"+%@ %@",data.areaCode,data.countryName];
 }
 

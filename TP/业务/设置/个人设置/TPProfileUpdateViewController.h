@@ -13,5 +13,6 @@
 @property(nonatomic,copy) void(^callback)(void);
 @property(nonatomic,assign) BOOL longText;
 @property(nonatomic,strong) NSString* key;
+@property(nonatomic,strong) NSString* hintText;
 
 @end

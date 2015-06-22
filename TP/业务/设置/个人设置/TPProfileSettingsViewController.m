@@ -158,44 +158,63 @@
         case 4:
         {
             cell.textLabel.text = @"性别";
-            cell.detailTextLabel.text = [TPUser gender];
-            //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* text = [TPUser gender];
+            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            if (text.length == 0) {
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
+
             break;
         }
         case 5:
         {
             cell.textLabel.text = @"地区";
-            cell.detailTextLabel.text = [TPUser city];
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* text = [TPUser city];
+            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            if (text.length == 0) {
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
         case 6:
         {
             cell.textLabel.text = @"职业";
-            cell.detailTextLabel.text = [TPUser career];
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* text = [TPUser career];
+            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            if (text.length == 0) {
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
         case 7:
         {
             cell.textLabel.text = @"爱好";
-            cell.detailTextLabel.text = [TPUser hobby];
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* text = [TPUser hobby];
+            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            if (text.length == 0) {
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
         case 8:
         {
             cell.textLabel.text = @"语言";
-            cell.detailTextLabel.text = [TPUser language];
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* text = [TPUser language];
+            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            if (text.length == 0) {
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
       
         }
         case 9:
         {
             cell.textLabel.text = @"签名";
-            cell.detailTextLabel.text = [TPUser sign];
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* text = [TPUser sign];
+            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            if (text.length == 0) {
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
             
@@ -224,6 +243,7 @@
 {
     NSString* title = @"";
     NSString* key = @"";
+    NSString* hintString = @"";
     BOOL isLongText = NO;
     
     switch (indexPath.row) {
@@ -242,6 +262,7 @@
         {
             title = @"设置姓名";
             key = @"realName";
+            hintString = @"请填写真实姓名，设定后不可修改";
             break;
         }
         
@@ -249,6 +270,7 @@
         {
             title = @"设置昵称";
             key = @"nick";
+            hintString = @"昵称30天只能修改一次";
             break;
         }
         case 4:
@@ -299,6 +321,7 @@
     TPProfileUpdateViewController* vc = [TPProfileUpdateViewController new];
     vc.key = key;
     vc.title = title;
+    vc.hintText = hintString;
     vc.longText = isLongText;
     vc.callback = ^{[self.tableView reloadData];};
     UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:vc];
