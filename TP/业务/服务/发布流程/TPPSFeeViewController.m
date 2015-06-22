@@ -39,6 +39,10 @@
 
 - (void)onNext
 {
+    if (self.textField.text == 0) {
+        TOAST(self, @"请输入价格");
+        return;
+    }
     if (self.callback) {
         self.callback(self.textField.text,nil);
     }

@@ -44,14 +44,31 @@ const int kMaxImageCount = 9;
 
 - (void)onNext
 {
+    BOOL isPicUploading = false;
+    
     NSArray* items = self.galleryView.imageItems;
     NSMutableArray* list = [NSMutableArray new];
     for (O2OCommentImageItem* item in items) {
+        
+        if (item.isUploading) {
+            isPicUploading = true;
+            break;
+        }
         
         if (item.imageURL) {
             [list addObject:item.imageURL];
         }
 
+    }
+    
+    if (isPicUploading) {
+        TOAST(self, @"请等待图片上传完毕");
+        return;
+    }
+    
+    if (list.count == 0) {
+        TOAST(self, @"请上传图片");
+        return;
     }
     
     if (self.callback) {

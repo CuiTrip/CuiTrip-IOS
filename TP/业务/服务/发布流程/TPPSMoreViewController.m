@@ -49,7 +49,7 @@
     {
         NSArray* list = @[@"0点",@"1点",@"2点",@"3点",@"4点",@"5点",@"6点",@"7点",@"8点",@"9点",@"10点",@"11点",@"12点",@"13点",@"14点",@"15点",@"16点",@"17点",@"18点",@"19点",@"20点",@"21点",@"22点",@"23点"];
         
-        [TBCityHUDPicker showPicker:list Title:@"请选择游玩时段" Tag:@"b" Delegate:self];
+        [TBCityHUDPicker showPicker:list Title:@"请选择游玩开始时间" Tag:@"b" Delegate:self];
     }
     else if (sender.tag == 3)
     {
@@ -65,6 +65,15 @@
 
 - (void)onNext
 {
+    if (self.date.length ==0 ||
+        self.duration.length == 0 ||
+        self.number.length == 0 ||
+        self.meet.length == 0
+        ) {
+        TOAST(self, @"请输完善所有信息");
+        return;
+    }
+    
     if (self.callback) {
         self.callback(self.date,self.duration,self.number,self.meet,nil);
     }

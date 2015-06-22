@@ -33,6 +33,11 @@
 
 - (void)onNext
 {
+    if (self.textField.text == 0) {
+        TOAST(self, @"请输入名称");
+        return;
+    }
+    
     if (self.callback) {
         self.callback(self.textField.text,nil);
     }

@@ -32,6 +32,10 @@
 
 - (void)onNext
 {
+    if (self.textView.text == 0) {
+        TOAST(self, @"请输入描述文字");
+        return;
+    }
     if (self.callback) {
         self.callback(self.textView.text,nil);
     }
