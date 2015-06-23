@@ -23,6 +23,7 @@
 @interface TPChatListHeaderView : UIView
 
 @property(nonatomic,strong)NSString* orderStatus;
+@property(nonatomic,strong)NSString* insiderId;
 @property(nonatomic,strong)UILabel* dateLabel;
 @property(nonatomic,strong)UIButton* actionBtn;
 @property(nonatomic,strong)void(^callback)(NSString* orderStatus);
@@ -67,12 +68,21 @@
             
             self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
             [self.actionBtn setTitle:@"修改" forState:UIControlStateNormal];
+            self.actionBtn.hidden = false;
         }
         else
         {
             self.actionBtn.backgroundColor = HEXCOLOR(0x7ed321);
-            [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
             
+            if ([[TPUser uid] isEqualToString:self.insiderId]) {
+                
+                [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
+                self.actionBtn.hidden = false;
+            }
+            else
+            {
+                self.actionBtn.hidden = true;
+            }
         }
     }
     else if ([orderStatus integerValue] == 2)
@@ -346,6 +356,7 @@
     self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
     self.headerView.actionBtn.hidden = NO;
     self.headerView.orderStatus = self.chatListModel.orderStatus;
+    self.headerView.insiderId = self.chatListModel.insiderId;
     __weak typeof(self) weakSelf = self;
     self.headerView.callback = ^(NSString* orderStatus){
         
@@ -359,7 +370,7 @@
                 v.sid = weakSelf.chatListModel.serviceId;
                 v.maxNum = [weakSelf.chatListModel.peopleNum integerValue];
                 v.oid = weakSelf.orderId;
-                v.insiderId = weakSelf.chatListModel.receiverId;
+                v.insiderId = weakSelf.chatListModel.insiderId;
                 v.servicePrice = weakSelf.chatListModel.servicePrice;
                 v.serviceName = weakSelf.chatListModel.serviceName;
                 [weakSelf.navigationController pushViewController:v animated:true];

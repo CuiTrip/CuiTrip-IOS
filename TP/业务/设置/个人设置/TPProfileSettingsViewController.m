@@ -9,8 +9,9 @@
 #import "TPProfileSettingsViewController.h"
 #import "TPProfileUpdateViewController.h"
 #import "ETImageTransformTool.h"
+#import "TBCityHUDPicker.h"
 
-@interface TPProfileSettingsViewController ()<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface TPProfileSettingsViewController ()<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TBCityHUDPickerDelegate>
 
 @property(nonatomic,strong) UITableView* tableView;
 
@@ -26,7 +27,7 @@
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.tableFooterView = [TPUIKit emptyView];
+//    self.tableView.tableFooterView = [TPUIKit emptyView];
     [self.view addSubview:self.tableView];
     
     UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
@@ -114,6 +115,7 @@
     switch (indexPath.row) {
         case 0:
         {
+            [[cell.contentView viewWithTag:100] removeFromSuperview];
             UIImageView* icon = [UIImageView new];
             icon.layer.cornerRadius = 0.5*40;
             icon.layer.masksToBounds = true;
@@ -159,8 +161,8 @@
         {
             cell.textLabel.text = @"性别";
             NSString* text = [TPUser gender];
-            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
-            if (text.length == 0) {
+            cell.detailTextLabel.text = [text isEqualToString:@"0"]?@"未设置":text;
+            if ([text integerValue] == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }
 
@@ -171,9 +173,8 @@
             cell.textLabel.text = @"地区";
             NSString* text = [TPUser city];
             cell.detailTextLabel.text = text.length == 0?@"未设置":text;
-            if (text.length == 0) {
-                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            }
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
             break;
         }
         case 6:
@@ -181,9 +182,8 @@
             cell.textLabel.text = @"职业";
             NSString* text = [TPUser career];
             cell.detailTextLabel.text = text.length == 0?@"未设置":text;
-            if (text.length == 0) {
-                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            }
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
             break;
         }
         case 7:
@@ -191,9 +191,8 @@
             cell.textLabel.text = @"爱好";
             NSString* text = [TPUser hobby];
             cell.detailTextLabel.text = text.length == 0?@"未设置":text;
-            if (text.length == 0) {
-                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            }
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
             break;
         }
         case 8:
@@ -201,9 +200,8 @@
             cell.textLabel.text = @"语言";
             NSString* text = [TPUser language];
             cell.detailTextLabel.text = text.length == 0?@"未设置":text;
-            if (text.length == 0) {
-                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            }
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
             break;
       
         }
@@ -212,9 +210,8 @@
             cell.textLabel.text = @"签名";
             NSString* text = [TPUser sign];
             cell.detailTextLabel.text = text.length == 0?@"未设置":text;
-            if (text.length == 0) {
-                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            }
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
             break;
         }
             
@@ -256,6 +253,7 @@
         }
         case 1:
         {
+            
             return;
         }
         case 2:
@@ -275,6 +273,10 @@
         }
         case 4:
         {
+//            title = @"设置性别";
+//            key = @"gender";
+//            hintString = @"请填写真实性别，设定后不可修改";
+            [self modifyGender];
             return;
         }
             
@@ -325,7 +327,11 @@
     vc.longText = isLongText;
     vc.callback = ^{[self.tableView reloadData];};
     UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    [self presentViewController:nav animated:true completion:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:nav animated:true completion:nil];
+    });
+
+    //[self presentModalViewController:nav animated:true];
     
 }
 
@@ -454,6 +460,46 @@
         
     }];
     
+}
+
+- (void)modifyGender
+{
+    [TBCityHUDPicker showPicker:@[@"男",@"女"] Title:@"请选择性别" Tag:@"1" Delegate:self];
+}
+
+- (void)onHUDPickerDidSelectedObject:(NSString *)str withIndex:(NSInteger)index
+{
+    NSDictionary* dict = @{};
+    
+    if ([str isEqualToString:@"男"]) {
+        
+       dict = @{
+          @"uid":[TPUser uid]?:@"",
+          @"token":[TPUser token]?:@"",
+          @"gender":@"1"
+          };
+    }
+    else
+    {
+        dict = @{
+          @"uid":[TPUser uid]?:@"",
+          @"token":[TPUser token]?:@"",
+          @"gender":@"2"
+          };
+    }
+    
+    SHOW_SPINNER(self);
+    [TPUser updateUserProfile:[dict copy] withCompletion:^(NSError *error) {
+        
+        HIDE_SPINNER(self);
+        
+        if (!error) {
+            TOAST(self, @"更新成功!");
+        }
+        else
+            TOAST_ERROR(self,error);
+    }];
+
 }
 
 

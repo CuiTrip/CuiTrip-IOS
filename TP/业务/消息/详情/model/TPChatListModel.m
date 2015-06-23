@@ -62,7 +62,7 @@
     self.orderStatus = JSON[@"orderStatus"];
     self.serviceDate = JSON[@"serviceDate"];
     self.peopleNum = JSON[@"peopleNum"];
-    self.receiverId = JSON[@"receiverId"];
+    self.insiderId = JSON[@"insiderId"];
     self.serviceName = JSON[@"serviceName"];
     self.servicePrice = JSON[@"servicePrice"];
     self.serviceId = JSON[@"sid"];

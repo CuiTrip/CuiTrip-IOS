@@ -22,7 +22,7 @@
 @property(nonatomic,strong)NSString* servicePrice;
 @property(nonatomic,strong)NSString* peopleNum;
 @property(nonatomic,strong)NSString* orderStatus;
-@property(nonatomic,strong)NSString* receiverId;
+@property(nonatomic,strong)NSString* insiderId;
 
 @end
 
