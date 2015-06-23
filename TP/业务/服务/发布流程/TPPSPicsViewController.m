@@ -42,13 +42,15 @@ const int kMaxImageCount = 9;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)onNext
+- (BOOL)onNext
 {
     BOOL isPicUploading = false;
     
     NSArray* items = self.galleryView.imageItems;
     NSMutableArray* list = [NSMutableArray new];
-    for (O2OCommentImageItem* item in items) {
+    
+    for (O2OCommentImageItem* item in items)
+    {
         
         if (item.isUploading) {
             isPicUploading = true;
@@ -61,20 +63,28 @@ const int kMaxImageCount = 9;
 
     }
     
-    if (isPicUploading) {
+    if (isPicUploading)
+    {
         TOAST(self, @"请等待图片上传完毕");
-        return;
+        return NO;
     }
-    
-    if (list.count == 0) {
+    else if (list.count == 0)
+    {
         TOAST(self, @"请上传图片");
-        return;
+        return NO;
     }
     
-    if (self.callback) {
-        self.callback([list copy],nil);
+    else
+    {
+        if(self.callback)
+        {
+            self.callback([list copy],nil);
+        }
+        return YES;
     }
+
 }
+
 - (void)onBack
 {
     

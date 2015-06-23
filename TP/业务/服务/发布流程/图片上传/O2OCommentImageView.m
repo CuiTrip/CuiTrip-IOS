@@ -124,12 +124,15 @@
     [TPUtils uploadImage:self.item.base64String WithCompletion:^(NSString *url, NSError *err) {
         
         [self.uploadProgressView removeFromSuperview];
+        self.item.isUploading = NO;
+        
         if (!err) {
             self.item.imageURL = url;
+            self.item.isUploadError= NO;
         }
         else
         {
-            
+            self.item.isUploadError = true;
         }
         
     }];

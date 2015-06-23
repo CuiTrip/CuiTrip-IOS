@@ -24,9 +24,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)onNext
+- (BOOL)onNext
 {
-
+    return YES;
 }
 
 - (void)onBack

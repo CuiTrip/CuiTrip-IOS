@@ -12,7 +12,7 @@
 
 @property(nonatomic,copy)void(^callback)(id arg1,...);
 
-- (void)onNext;
+- (BOOL)onNext;
 - (void)onBack;
 
 @end

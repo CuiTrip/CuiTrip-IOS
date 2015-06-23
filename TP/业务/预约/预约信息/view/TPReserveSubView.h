@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property(nonatomic,copy) void(^onConfirmCallback)(void);
 
 @end

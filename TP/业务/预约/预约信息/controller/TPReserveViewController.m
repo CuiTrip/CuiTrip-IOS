@@ -84,6 +84,11 @@
     self.confirmView.vzHeight = 320;
     self.confirmView.vzOrigin = CGPointMake((CGRectGetWidth(self.view.bounds)-300)/2, (CGRectGetHeight(self.view.bounds) - 320)/2);
 
+    if(self.type == kCreateOrder)
+       [self.confirmView.confirmBtn setTitle:@"提交预约" forState:UIControlStateNormal];
+    else
+        [self.confirmView.confirmBtn setTitle:@"确认修改" forState:UIControlStateNormal];
+    
     
     __weak typeof(self)weakSelf = self;
     self.confirmView.onConfirmCallback = ^{
@@ -95,7 +100,6 @@
     };
     
     self.feeLabel.text = [TPUtils money:self.servicePrice WithType:@""];
-    
 
     SHOW_SPINNER(self);
     self.availabeDateModel.sid = self.sid;
@@ -128,8 +132,7 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
-    
-    //todo..
+
 }
 
 
@@ -163,6 +166,7 @@
         return;
     
     self.reserveModel.sid = self.sid;
+    self.reserveModel.oid = self.oid;
     self.reserveModel.insiderId = self.insiderId;
     self.reserveModel.serviceName = self.serviceName;
     self.reserveModel.serviceDate = self.selectedServiceDate;

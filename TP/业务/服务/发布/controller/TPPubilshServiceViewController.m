@@ -233,21 +233,23 @@
     NSUInteger oldIndex = self.selectedIndex;
     
     TPPSViewController* v = (TPPSViewController* )self.selectedViewController;
-    [v onNext];
+    BOOL ret = [v onNext];
     
-    if (++oldIndex < self.viewControllers.count )
-    {
-        if(oldIndex == self.viewControllers.count-1)
+    if (ret) {
+        
+        if (++oldIndex < self.viewControllers.count )
         {
-            //noop...
-            [self onComplete];
+            if(oldIndex == self.viewControllers.count-1)
+            {
+                //noop...
+                [self onComplete];
+            }
+            else{
+                [self setSelectedIndex:oldIndex animated:YES];
+            }
+            
         }
-        else{
-            [self setSelectedIndex:oldIndex animated:YES];
-        }
-
     }
-
 }
 
 - (void)onBack

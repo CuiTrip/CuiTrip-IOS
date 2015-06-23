@@ -63,7 +63,7 @@
     }
 }
 
-- (void)onNext
+- (BOOL)onNext
 {
     if (self.date.length ==0 ||
         self.duration.length == 0 ||
@@ -71,13 +71,17 @@
         self.meet.length == 0
         ) {
         TOAST(self, @"请输完善所有信息");
-        return;
+        return NO;
     }
     
-    if (self.callback) {
-        self.callback(self.date,self.duration,self.number,self.meet,nil);
+    else
+    {
+        if (self.callback) {
+            self.callback(self.date,self.duration,self.number,self.meet,nil);
+        }
+        return YES;
+        
     }
-
 }
 - (void)onBack
 {

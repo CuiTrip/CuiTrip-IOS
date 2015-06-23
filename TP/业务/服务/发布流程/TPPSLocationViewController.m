@@ -32,15 +32,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)onNext
+- (BOOL)onNext
 {
-    if (self.textField.text == 0) {
+    if (self.textField.text.length == 0) {
         TOAST(self, @"请输入地点");
-        return;
+        return NO;
     }
-    
-    if (self.callback) {
-        self.callback(self.textField.text,nil,nil);
+    else
+    {
+        if (self.callback) {
+            self.callback(self.textField.text,nil,nil);
+        }
+        return YES;
     }
 }
 - (void)onBack

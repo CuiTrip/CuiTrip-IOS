@@ -108,7 +108,7 @@
             NSMutableArray* dates = [NSMutableArray new];
             for (NSDate* date in list) {
                 
-                long long t = [date timeIntervalSince1970]*1;
+                long long t = [date timeIntervalSince1970]*1000;
                 NSString* s = [NSString stringWithFormat:@"%lld",t];
                 [dates addObject:s];
                 

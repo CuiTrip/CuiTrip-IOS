@@ -156,7 +156,7 @@
     [cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:16.0f]];
     [cancelBtn addTarget:self action:@selector(onCacnelBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton* comfirmBtn = [[UIButton alloc]initWithFrame:CGRectMake(275, 13, 35, 18)];
+    UIButton* comfirmBtn = [[UIButton alloc]initWithFrame:CGRectMake(kTPScreenWidth-20-35, 13, 35, 18)];
     comfirmBtn.backgroundColor = [UIColor clearColor];
     [comfirmBtn setTitleColor:HEXCOLOR(0xFA383A) forState:UIControlStateNormal];
     [comfirmBtn setTitle:@"完成" forState:UIControlStateNormal];

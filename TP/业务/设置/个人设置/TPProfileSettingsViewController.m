@@ -159,7 +159,7 @@
         {
             cell.textLabel.text = @"性别";
             NSString* text = [TPUser gender];
-            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
             if (text.length == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -170,7 +170,7 @@
         {
             cell.textLabel.text = @"地区";
             NSString* text = [TPUser city];
-            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
             if (text.length == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -180,7 +180,7 @@
         {
             cell.textLabel.text = @"职业";
             NSString* text = [TPUser career];
-            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
             if (text.length == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -190,7 +190,7 @@
         {
             cell.textLabel.text = @"爱好";
             NSString* text = [TPUser hobby];
-            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
             if (text.length == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -200,7 +200,7 @@
         {
             cell.textLabel.text = @"语言";
             NSString* text = [TPUser language];
-            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
             if (text.length == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -211,7 +211,7 @@
         {
             cell.textLabel.text = @"签名";
             NSString* text = [TPUser sign];
-            cell.detailTextLabel.text = text.length == 0?text:@"未设置";
+            cell.detailTextLabel.text = text.length == 0?@"未设置":text;
             if (text.length == 0) {
                 cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             }

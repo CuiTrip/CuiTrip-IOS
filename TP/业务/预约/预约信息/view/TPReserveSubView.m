@@ -13,7 +13,7 @@
 #import "TPReserveItem.h"
 
 @interface TPReserveSubView()
-@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
+
 
 @end
 

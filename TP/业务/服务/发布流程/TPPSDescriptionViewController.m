@@ -30,14 +30,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)onNext
+- (BOOL)onNext
 {
-    if (self.textView.text == 0) {
+    if (self.textView.text.length == 0) {
         TOAST(self, @"请输入描述文字");
-        return;
+        return NO;
     }
-    if (self.callback) {
-        self.callback(self.textView.text,nil);
+    
+    else if (self.textView.text.length >= 500) {
+        TOAST(self, @"亲，最多只能输入500个字哦~");
+        return NO;
+    }
+    else
+    {
+        if (self.callback) {
+            self.callback(self.textView.text,nil);
+        }
+        return YES;
     }
 }
 - (void)onBack
