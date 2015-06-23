@@ -23,11 +23,14 @@
 #import <INTULocationManager/INTULocationManager.h>
 #import "Vizzle.h"
 #import "VizzleEx.h"
-
-//file header
 #import "TPHeader.h"
 
+#if DEBUG
+
 #endif
+#import <VZInspector/VZInspector.h>
+#endif
+
 
 #ifdef __cplusplus
 #include "TPAssert.h"

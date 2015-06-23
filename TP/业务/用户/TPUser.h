@@ -42,6 +42,8 @@
 
 + (NSString* )sign;
 
++ (NSString* )debugInfo;
+
 + (BOOL)isLogined;
 
 + (void)clearUserInfo;

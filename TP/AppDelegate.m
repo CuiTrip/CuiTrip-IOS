@@ -52,6 +52,19 @@
         }
     }
     
+#if DEBUG
+    [VZInspector setClassPrefixName:@"TP"];
+    [VZInspector setShouldHandleCrash:true];
+    [VZInspector setShouldHookNetworkRequest:true];
+    [VZInspector setObserveCallback:^NSString *{
+       
+        return [TPUser debugInfo];
+        
+    }];
+    [VZInspector showOnStatusBar];
+    
+#endif
+    
  
     return YES;
 }

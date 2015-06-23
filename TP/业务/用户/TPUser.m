@@ -123,6 +123,12 @@
     return [TPUser sharedInstance].userItem.sign;
 }
 
+
++ (NSString* )debugInfo
+{
+    return [TPUser sharedInstance].userItem.description;
+}
+
 + (BOOL)isLogined
 {
     return [TPUser sharedInstance].userItem.token.length > 0;
