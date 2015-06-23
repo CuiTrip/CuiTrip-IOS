@@ -82,43 +82,42 @@
 {
     [super viewDidLoad];
     
-   
-    //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
-    self.tableView.tableFooterView = [TPUIKit emptyView];
     
-    //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
-    self.needPullRefresh = true;
-
+    [self registerChannelMsg];
+    
+    __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     
     
-    //3，bind your delegate and datasource to tableview
-    self.dataSource = self.ds;
-    self.delegate = self.dl;
-    
-    
-    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    self.keyModel = self.myServiceListModel;
-    
-    //5,REQUIRED:register model to parent view controller
-    [self registerModel:self.keyModel];
-    
-    if (![TPUser isLogined ]) {
+    void(^loadModel)(void) = ^{
         
-        [self showEmpty:nil];
+        [TPLoginManager hideLoginViewController];
+        [TPUIKit removeExceptionView:self.view];
+        
+        //setupUI
+        [self setupTableView];
+        [self load];
+        
+        
+    };
+    
+    if (![TPUser isLogined]) {
+        
+        [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
+            
+            loadModel();
+            
+        }];
+//        
+//        [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+//            
+//            loadModel();
+//        }];
     }
     else
     {
-        [self setRightBarButtonItem];
-        //6,Load Data
-        [self load];
+        loadModel();
     }
-    
-    [self registerChannelMsg];
+
     
 }
 
@@ -260,6 +259,32 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
+- (void)setupTableView
+{
+    //1,config your tableview
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.showsVerticalScrollIndicator = YES;
+    self.tableView.separatorStyle = YES;
+    //self.tableView.tableFooterView = [TPUIKit emptyView];
+    //2,set some properties:下拉刷新，自动翻页
+    self.needLoadMore = NO;
+    self.needPullRefresh = true;
+    
+    
+    //3，bind your delegate and datasource to tableview
+    self.dataSource = self.ds;
+    self.delegate = self.dl;
+    
+    
+    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
+    self.keyModel = self.myServiceListModel;
+    
+    //5,REQUIRED:register model to parent view controller
+    [self registerModel:self.keyModel];
+    
+}
+
 - (void)setRightBarButtonItem
 {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightItemClicked:)];
@@ -277,6 +302,15 @@
         [weakSelf load];
     }];
     
+}
+- (void)onLoginSuccess
+{
+    [TPLoginManager hideLoginViewController];
+    [TPUIKit removeExceptionView:self.view];
+    
+    //setupUI
+    [self setupTableView];
+    [self load];
 }
 
 @end

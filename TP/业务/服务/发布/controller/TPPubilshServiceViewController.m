@@ -310,7 +310,7 @@
                 [weakSelf.view makeToast:@"您的信息已经提交给脆饼旅行审核" duration:2.0 position:CSToastPositionCenter title:@"发布成功!"];
                 
                 //通知列表刷新
-                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                [weakSelf vz_postToChannel:kChannelNewService withObject:nil Data:nil];
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     
