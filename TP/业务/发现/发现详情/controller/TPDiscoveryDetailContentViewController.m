@@ -10,8 +10,9 @@
 
 @interface TPDiscoveryDetailContentViewController ()
 
+@property(nonatomic,strong) UIScrollView* scrollView;
 @property(nonatomic,strong) UILabel* titleLabel;
-@property(nonatomic,strong) UITextView* textView;
+@property(nonatomic,strong) UILabel* textLabel;
 
 @end
 
@@ -24,26 +25,24 @@
     self.navigationController.navigationBarHidden = NO;
     self.view.backgroundColor = HEXCOLOR(0xfffaf1);
     
-    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.view.vzWidth, 18)];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, self.view.vzHeight)];
+    [self.view addSubview:self.scrollView];
+    
+    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.view.vzWidth-40, 18)];
     self.titleLabel.textColor = HEXCOLOR(0x4a4a4a);
     self.titleLabel.font = [UIFont systemFontOfSize:18.0f];
     self.titleLabel.text = self.titleString;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:self.titleLabel];
+    self.titleLabel.numberOfLines = 1;
+    [self.scrollView addSubview:self.titleLabel];
     
-    self.textView = [[UITextView alloc]initWithFrame:CGRectMake(10, self.titleLabel.vzBottom+20, self.view.vzWidth-20, self.view.vzHeight-self.titleLabel.vzBottom - 50)];
-    self.textView.editable = false;
-    self.textView.scrollEnabled = true;
-    self.textView.userInteractionEnabled = true;
-    self.textView.textColor = HEXCOLOR(0x9b9b9b);
-    self.textView.backgroundColor = [UIColor clearColor];
-    self.textView.font = [UIFont systemFontOfSize:14.0f];
-
+    self.textLabel = [TPUIKit label:HEXCOLOR(0x9b9b9b) Font:ft(14.0f)];
+    self.textLabel.numberOfLines = 0;
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineHeightMultiple = 20.0f;
-    paragraphStyle.maximumLineHeight = 20.0f;
-    paragraphStyle.minimumLineHeight = 20.0f;
+    paragraphStyle.lineHeightMultiple = 16.0f;
+    paragraphStyle.maximumLineHeight = 16.0f;
+    paragraphStyle.minimumLineHeight = 16.0f;
     
     NSString *string = self.content;
     NSDictionary *ats = @{
@@ -51,8 +50,12 @@
                           NSParagraphStyleAttributeName : paragraphStyle,
                           };
     
-    self.textView.attributedText = [[NSAttributedString alloc] initWithString:string attributes:ats];
-    [self.view addSubview:self.textView];
+    self.textLabel.attributedText = [[NSAttributedString alloc] initWithString:string attributes:ats];
+    CGSize sz = [self.textLabel sizeThatFits:CGSizeMake(self.view.vzWidth-40, CGFLOAT_MAX)];
+    self.textLabel.vzOrigin = CGPointMake(20, self.titleLabel.vzBottom+20);
+    self.textLabel.vzSize = CGSizeMake(sz.width, sz.height);
+    self.scrollView.contentSize = CGSizeMake(self.view.vzWidth, self.textLabel.vzBottom+100);
+    [self.scrollView addSubview:self.textLabel];
     
 }
 

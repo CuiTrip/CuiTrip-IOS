@@ -355,8 +355,8 @@
     self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 44)];
     self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
     self.headerView.actionBtn.hidden = NO;
-    self.headerView.orderStatus = self.chatListModel.orderStatus;
     self.headerView.insiderId = self.chatListModel.insiderId;
+    self.headerView.orderStatus = self.chatListModel.orderStatus;
     __weak typeof(self) weakSelf = self;
     self.headerView.callback = ^(NSString* orderStatus){
         

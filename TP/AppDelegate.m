@@ -34,7 +34,8 @@
     
     //注册分享
     [UMSocialData setAppKey:um_appKey];
-    [UMSocialWechatHandler setWXAppId:@"wx2af152cb604683bf" appSecret:@"7bcb01993ed6b20c3cdfecd71fae7af5" url:nil];
+    [UMSocialWechatHandler setWXAppId:@"wx2af152cb604683bf" appSecret:@"7bcb01993ed6b20c3cdfecd71fae7af5" url:@"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd"];
+    
 //    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd";
 //    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd";
 

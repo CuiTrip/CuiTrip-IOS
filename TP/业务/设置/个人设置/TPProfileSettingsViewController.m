@@ -495,6 +495,7 @@
         
         if (!error) {
             TOAST(self, @"更新成功!");
+            [self.tableView reloadData];
         }
         else
             TOAST_ERROR(self,error);

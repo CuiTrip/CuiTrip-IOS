@@ -219,8 +219,8 @@
         //分享//
         [UMSocialSnsService presentSnsIconSheetView:self
                                              appKey:um_appKey
-                                          shareText:@"你要分享的文字"
-                                         shareImage:[UIImage imageNamed:@"girl.jpg"]
+                                          shareText:self.discoveryDetailListModel.tripInfoItem.desc
+                                         shareImage:__image(@"icon.png")
                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
                                            delegate:self];
     }];
@@ -349,21 +349,21 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
--(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
-{
-    if (platformName == UMShareToWechatSession) {
-        
-        socialData.title = self.discoveryDetailListModel.tripInfoItem.name;
-        socialData.commentImage = __image(@"icon.png");
-        socialData.commentText = self.discoveryDetailListModel.tripInfoItem.desc;
-        
-        
-    }
-    if (platformName == UMShareToWechatTimeline) {
-        
-        
-    }
-}
+//-(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
+//{
+//    if (platformName == UMShareToWechatSession) {
+//        
+//        socialData.title = self.discoveryDetailListModel.tripInfoItem.name;
+//        socialData.commentImage = __image(@"icon.png");
+//        socialData.commentText = self.discoveryDetailListModel.tripInfoItem.desc;
+//        
+//        
+//    }
+//    if (platformName == UMShareToWechatTimeline) {
+//        
+//        
+//    }
+//}
 
 
 @end
