@@ -83,11 +83,14 @@
     self.confirmView.vzWidth = 300;
     self.confirmView.vzHeight = 320;
     self.confirmView.vzOrigin = CGPointMake((CGRectGetWidth(self.view.bounds)-300)/2, (CGRectGetHeight(self.view.bounds) - 320)/2);
+    self.confirmView.layer.cornerRadius  = 8.0f;
+    self.confirmView.layer.masksToBounds = true;
+    [self.confirmView.confirmBtn setTitle:@"前往消息查看" forState:UIControlStateNormal];
 
     if(self.type == kCreateOrder)
-       [self.confirmView.confirmBtn setTitle:@"提交预约" forState:UIControlStateNormal];
+       [self.confirmBtn setTitle:@"提交预约" forState:UIControlStateNormal];
     else
-        [self.confirmView.confirmBtn setTitle:@"确认修改" forState:UIControlStateNormal];
+        [self.confirmBtn setTitle:@"确认修改" forState:UIControlStateNormal];
     
     
     __weak typeof(self)weakSelf = self;

@@ -165,6 +165,8 @@
     
     //footer view
     UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight-44, self.tableView.vzWidth, 44)];
+    btn.tag = 101;
+    btn.hidden = true;
     btn.backgroundColor = [TPTheme themeColor];
     [btn setTitle:@"联系预定" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -275,6 +277,7 @@
     TPDiscoveryDetailListViewHeaderView* headerView = (TPDiscoveryDetailListViewHeaderView* )self.tableView.tableHeaderView;
     headerView.bannerView.urls = model.tripInfoItem.pics;
     headerView.moneyLabel.text = [@" " stringByAppendingString:[TPUtils money:model.tripDetailItem.tripFee WithType:@""]];
+    [self.view viewWithTag:101].hidden = false;
 
 }
 

@@ -55,7 +55,7 @@
     _insiderHeadPic = JSON[@"headPic"];
     _insiderNickName = JSON[@"userNick"];
     _buyerNum = JSON[@"buyerNum"];
-    _orderPrice = JSON[@"orderPrice"];
+    _orderPrice = JSON[@"servicePrice"];
     _serviceName = JSON[@"serviceName"];
     _insiderSign = JSON[@"insiderSign"];
     _status = JSON[@"status"];

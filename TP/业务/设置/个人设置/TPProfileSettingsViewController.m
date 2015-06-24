@@ -161,11 +161,13 @@
         {
             cell.textLabel.text = @"性别";
             NSString* text = [TPUser gender];
-            cell.detailTextLabel.text = [text isEqualToString:@"0"]?@"未设置":text;
-            if ([text integerValue] == 0) {
-                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            NSString* gener = @"男";
+            if ([text isEqualToString:@"2"]) {
+                gener = @"女";
             }
-
+            cell.detailTextLabel.text = gener;
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            
             break;
         }
         case 5:
