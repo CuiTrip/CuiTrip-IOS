@@ -75,6 +75,7 @@
         profileItem.hobby = userInfo[@"interests"];
         profileItem.registerTime = userInfo[@"gmtModified"];
         profileItem.status = userInfo[@"status"];
+        profileItem.career = userInfo[@"career"];
         self.insiderProfileItem = profileItem;
         [list addObject:profileItem];
     }
