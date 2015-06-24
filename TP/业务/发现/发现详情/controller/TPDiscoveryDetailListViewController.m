@@ -352,21 +352,21 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
-//-(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
-//{
-//    if (platformName == UMShareToWechatSession) {
-//        
-//        socialData.title = self.discoveryDetailListModel.tripInfoItem.name;
-//        socialData.commentImage = __image(@"icon.png");
-//        socialData.commentText = self.discoveryDetailListModel.tripInfoItem.desc;
-//        
-//        
-//    }
-//    if (platformName == UMShareToWechatTimeline) {
-//        
-//        
-//    }
-//}
+-(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
+{
+    if (platformName == UMShareToWechatSession) {
+        
+        [UMSocialData defaultData].extConfig.wechatSessionData.title = self.discoveryDetailListModel.tripInfoItem.name;
+        [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd";
+   
+        
+    }
+    if (platformName == UMShareToWechatTimeline) {
+        
+        [UMSocialData defaultData].extConfig.wechatTimelineData.title = self.discoveryDetailListModel.tripInfoItem.name;
+        [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd";
+    }
+}
 
 
 @end

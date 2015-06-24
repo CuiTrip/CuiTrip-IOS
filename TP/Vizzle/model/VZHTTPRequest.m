@@ -99,13 +99,27 @@
             }
             else
             {
+     
                 NSError* error = [NSError errorWithDomain:@"" code:code.intValue userInfo:@{NSLocalizedDescriptionKey:responseObj[@"msg"]}];
                 [weakSelf requestDidFailWithError:error];
+                
+                //token失效
+                if ([code integerValue] == 1) {
+                    
+                    [[[UIApplication sharedApplication].delegate  window]makeToast:@"您的登录已经过期，请重新登录" duration:2.0f position:CSToastPositionCenter];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                         __notify(kTPNotifyMessageTokenInvalid);
+                    });
+                   
+                }
             }
 
         }
         else
+        {
             [weakSelf requestDidFailWithError:error];
+        }
     }];
     
     [[VZHTTPNetworkAgent sharedInstance].operationQueue addOperation:_operation];

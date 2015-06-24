@@ -33,6 +33,7 @@
 #define kTPNotifyMessageLogout @"kTPNotifyMessageLogout"
 #define kTPNotifyMessageLoginSuccess @"kTPLoginSuccess"
 #define kTPNotifyMessageLoginFailure @"kTPLoginFailure"
+#define kTPNotifyMessageTokenInvalid @"kTPNotifyMessageTokenInvalid"
 
 #define kTPPushMessageKey @"kTPPushMessageKey"
 

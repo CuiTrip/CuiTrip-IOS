@@ -25,6 +25,7 @@
     
     __observeNotify(@selector(prepare),kTPNofityMessageSwitchIdentity);
     __observeNotify(@selector(prepare), kTPNotifyMessageLogout);
+    __observeNotify(@selector(tokenInvalid), kTPNotifyMessageTokenInvalid);
     
     [self prepare];
 }
@@ -93,6 +94,11 @@
     
 }
 
+- (void)tokenInvalid
+{
+    [TPUser logout];
+    [self prepare];
+}
 
 
 @end

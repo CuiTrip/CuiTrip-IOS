@@ -396,14 +396,14 @@
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
         }
-        else if(self.status == kOrderDidBegin)
+        else if(self.status == kOrderPaied)
         {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"开始旅程" forState:UIControlStateNormal];
         }
-        else if(self.status == kOrderComplted)
+        else if(self.status == kOrderDidBegin)
         {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
