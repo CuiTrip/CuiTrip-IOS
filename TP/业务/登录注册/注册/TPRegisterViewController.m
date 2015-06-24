@@ -58,6 +58,7 @@
     [self setTitle:@"注册"];
     
     self.areaCode = [TPUtils defaultLocalCode];
+    self.pwdTextField.secureTextEntry = true;
     
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
     self.contryLabel.text = localCode;
@@ -138,6 +139,7 @@
 }
 - (IBAction)onConfirm:(id)sender {
     
+    [self.view endEditing:true];
     
     SHOW_SPINNER(self);
     VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();

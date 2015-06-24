@@ -131,6 +131,8 @@
     [super viewDidAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
 
+    [self setRightBarButtonItem];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -287,7 +289,12 @@
 
 - (void)setRightBarButtonItem
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightItemClicked:)];
+    if ([TPUser isLogined]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightItemClicked:)];
+    }
+    else
+        self.navigationItem.rightBarButtonItem = nil;
+
     
 }
 - (void)onRightItemClicked:(id)sender

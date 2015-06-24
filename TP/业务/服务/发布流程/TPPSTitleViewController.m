@@ -37,6 +37,11 @@
         TOAST(self, @"请输入名称");
         return NO;
     }
+    else if (self.textField.text.length >= 20)
+    {
+        TOAST(self, @"亲，最多只能输入20个字哦~");
+        return NO;
+    }
     else
     {
         if (self.callback) {
