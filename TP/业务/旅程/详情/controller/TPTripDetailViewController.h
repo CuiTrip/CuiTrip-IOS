@@ -14,10 +14,12 @@
 typedef enum
 {
     kOrderCreated = 0,
-    kOrderConfirmed = 1,
-    kOrderComplted = 2,
-    kOrderClosed = 3,
-    kOrderPaied = 4,
+    kOrderConfirmed,
+    kOrderWillBegin,
+    kOrderDidBegin,
+    kOrderComplted,
+    kOrderClosed,
+    kOrderPaied,
     kOrderUnknown = -1
     
 }TripOrderStatus;

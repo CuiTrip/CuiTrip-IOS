@@ -230,6 +230,14 @@
 }
 - (IBAction)onConfirm:(id)sender {
     
+    
+    [self.view endEditing:true];
+   
+    if (self.vCodeTextField.text.length==0) {
+        TOAST(self, @"请输入验证码");
+        return;
+    }
+    
     SHOW_SPINNER(self);
     
     NSString* vCode = self.vCodeTextField.text;

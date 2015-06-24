@@ -152,6 +152,9 @@
             
             TOAST(weakSelf, @"支付成功!");
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
                 [weakSelf.navigationController popToRootViewControllerAnimated:true];
             });
         }

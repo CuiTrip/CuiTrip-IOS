@@ -14,6 +14,9 @@
 #import "TPConfirmTripOrderModel.h"
 #import "TPCancelTripOrderModel.h"
 #import "TPTripDetailModel.h" 
+#import "TPBeginTripOrderModel.h"
+#import "TPEndTripOrderModel.h"
+
 
 @interface TPTripDetailViewController()
 
@@ -31,6 +34,8 @@
 @property(nonatomic,strong)TPTripDetailModel *tripDetailModel;
 @property(nonatomic,strong)TPConfirmTripOrderModel* confirmTripOrderModel;
 @property(nonatomic,strong)TPCancelTripOrderModel* cancelTripOrderModel;
+@property(nonatomic,strong)TPBeginTripOrderModel* beginTripOrderModel;
+@property(nonatomic,strong)TPEndTripOrderModel* endTripOrderModel;
 
 @property(nonatomic,assign)TripOrderStatus status;
 
@@ -72,6 +77,22 @@
         _cancelTripOrderModel = [TPCancelTripOrderModel new];
     }
     return _cancelTripOrderModel;
+}
+
+- (TPBeginTripOrderModel* )beginTripOrderModel
+{
+    if (!_beginTripOrderModel) {
+        _beginTripOrderModel = [TPBeginTripOrderModel new];
+    }
+    return _beginTripOrderModel;
+}
+
+- (TPEndTripOrderModel* )endTripOrderModel
+{
+    if (!_endTripOrderModel) {
+        _endTripOrderModel = [TPEndTripOrderModel new];
+    }
+    return _endTripOrderModel;
 }
 
 
@@ -191,6 +212,10 @@
     {
         self.status = kOrderConfirmed;
     }
+    else if([self.tripDetailModel.status integerValue] == 4)
+    {
+        self.status = kOrderDidBegin;
+    }
     else if ([self.tripDetailModel.status integerValue] == 5)
     {
         self.status = kOrderComplted;
@@ -281,6 +306,59 @@
             
             
         }
+        else if(self.status == kOrderDidBegin)
+        {
+            //开始旅程
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf = self;
+            self.beginTripOrderModel.oid = self.oid;
+            [self.beginTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"旅行已开始");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+                
+                
+            }];
+            
+        }
+        else if (self.status == kOrderComplted)
+        {
+            //结束旅程
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf = self;
+            self.endTripOrderModel.oid = self.oid;
+            [self.endTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"旅程已结束");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+                
+                
+            }];
+        }
         
         
     }
@@ -318,9 +396,24 @@
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
         }
+        else if(self.status == kOrderDidBegin)
+        {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = false;
+            self.actionBtn.hidden = false;
+            [self.actionBtn setTitle:@"开始旅程" forState:UIControlStateNormal];
+        }
+        else if(self.status == kOrderComplted)
+        {
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = false;
+            self.actionBtn.hidden = false;
+            [self.actionBtn setTitle:@"结束旅程" forState:UIControlStateNormal];
+        }
         else
         {
-            
+            self.tripStatusLabel.hidden = true;
+            self.actionBtn.hidden = true;
         }
     }
 }

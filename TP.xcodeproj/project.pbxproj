@@ -293,6 +293,8 @@
 		45DD47411B28200200D2BB62 /* TPChatListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD472D1B28200200D2BB62 /* TPChatListViewDelegate.m */; };
 		45DD47421B28200200D2BB62 /* TPChatListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47301B28200200D2BB62 /* TPChatListItem.m */; };
 		45DD47431B28200200D2BB62 /* TPChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47331B28200200D2BB62 /* TPChatListModel.m */; };
+		45DD4D201B3A95ED008833D1 /* TPBeginTripOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD4D1F1B3A95ED008833D1 /* TPBeginTripOrderModel.m */; };
+		45DD4D261B3A961C008833D1 /* TPEndTripOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD4D251B3A961C008833D1 /* TPEndTripOrderModel.m */; };
 		45EB315A1B3662D1003A97AE /* trip_display_no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31581B3662D1003A97AE /* trip_display_no@2x.png */; };
 		45EB315B1B3662D1003A97AE /* trip_display_yes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31591B3662D1003A97AE /* trip_display_yes@2x.png */; };
 		45EB315D1B3664C3003A97AE /* agree.txt in Resources */ = {isa = PBXBuildFile; fileRef = 45EB315C1B3664C3003A97AE /* agree.txt */; };
@@ -829,6 +831,10 @@
 		45DD47301B28200200D2BB62 /* TPChatListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListItem.m; sourceTree = "<group>"; };
 		45DD47321B28200200D2BB62 /* TPChatListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatListModel.h; sourceTree = "<group>"; };
 		45DD47331B28200200D2BB62 /* TPChatListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatListModel.m; sourceTree = "<group>"; };
+		45DD4D1E1B3A95ED008833D1 /* TPBeginTripOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBeginTripOrderModel.h; sourceTree = "<group>"; };
+		45DD4D1F1B3A95ED008833D1 /* TPBeginTripOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBeginTripOrderModel.m; sourceTree = "<group>"; };
+		45DD4D241B3A961C008833D1 /* TPEndTripOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPEndTripOrderModel.h; sourceTree = "<group>"; };
+		45DD4D251B3A961C008833D1 /* TPEndTripOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPEndTripOrderModel.m; sourceTree = "<group>"; };
 		45EB31581B3662D1003A97AE /* trip_display_no@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_display_no@2x.png"; sourceTree = "<group>"; };
 		45EB31591B3662D1003A97AE /* trip_display_yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_display_yes@2x.png"; sourceTree = "<group>"; };
 		45EB315C1B3664C3003A97AE /* agree.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agree.txt; sourceTree = "<group>"; };
@@ -1655,6 +1661,10 @@
 				45D48BA61B32767300B5801F /* TPConfirmTripOrderModel.m */,
 				4509AC2D1B247EA600846032 /* TPTripDetailModel.h */,
 				4509AC2E1B247EA600846032 /* TPTripDetailModel.m */,
+				45DD4D1E1B3A95ED008833D1 /* TPBeginTripOrderModel.h */,
+				45DD4D1F1B3A95ED008833D1 /* TPBeginTripOrderModel.m */,
+				45DD4D241B3A961C008833D1 /* TPEndTripOrderModel.h */,
+				45DD4D251B3A961C008833D1 /* TPEndTripOrderModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3381,6 +3391,7 @@
 				456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */,
 				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
+				45DD4D201B3A95ED008833D1 /* TPBeginTripOrderModel.m in Sources */,
 				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,
 				45D0C7DA1B29E0EC00F31BF5 /* TPPSMoreViewController.m in Sources */,
 				45D48C5C1B32EEBE00B5801F /* TPDiscoveryDetailListViewController.m in Sources */,
@@ -3475,6 +3486,7 @@
 				459B24981B176A1C009BB189 /* main.m in Sources */,
 				4509ABBE1B233C9200846032 /* TPReserveViewController.m in Sources */,
 				45D0C7AF1B29BED800F31BF5 /* TPMyServiceListCell.m in Sources */,
+				45DD4D261B3A961C008833D1 /* TPEndTripOrderModel.m in Sources */,
 				45D0C7CA1B29DAA400F31BF5 /* TPPubilshServiceSubView.m in Sources */,
 				45D48BA71B32767300B5801F /* TPConfirmTripOrderModel.m in Sources */,
 				4509ABE71B23DDF600846032 /* TPFeedbackItem.m in Sources */,
