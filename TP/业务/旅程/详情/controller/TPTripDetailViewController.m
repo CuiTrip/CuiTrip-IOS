@@ -306,7 +306,7 @@
             
             
         }
-        else if(self.status == kOrderDidBegin)
+        else if(self.status == kOrderPaied)
         {
             //开始旅程
             SHOW_SPINNER(self);
@@ -333,7 +333,7 @@
             }];
             
         }
-        else if (self.status == kOrderComplted)
+        else if (self.status == kOrderDidBegin)
         {
             //结束旅程
             SHOW_SPINNER(self);

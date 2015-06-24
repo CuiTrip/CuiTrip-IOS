@@ -153,8 +153,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    
-    //todo..
+        self.tabBarController.tabBar.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {

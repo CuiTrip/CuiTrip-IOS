@@ -23,11 +23,19 @@
     self.aboutPic.vzHeight = self.view.vzWidth;
     self.aboutPic.vzOrigin = (CGPoint){0,kTPHeightWithMargin(self.aboutPic.vzHeight)};
     self.aboutPic.contentMode = UIViewContentModeScaleAspectFit;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = true;
 }
 
 /*
