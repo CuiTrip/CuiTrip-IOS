@@ -23,7 +23,7 @@
 #import "TPDDInfoItem.h"
 #import "TPDDProfileItem.h"
 #import "TPLicenceViewController.h"
-
+#import "TPTripArrangementModel.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -66,6 +66,7 @@
 
 @interface TPDiscoveryDetailListViewController()<UMSocialUIDelegate>
 
+@property(nonatomic,strong)TPTripArrangementModel *tripArrangementModel;
 @property(nonatomic,strong)TPDiscoveryDetailListModel *discoveryDetailListModel; 
 @property(nonatomic,strong)TPDiscoveryDetailListViewDataSource *ds;
 @property(nonatomic,strong)TPDiscoveryDetailListViewDelegate *dl;
@@ -82,6 +83,15 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - getters 
 
+
+- (TPTripArrangementModel *)tripArrangementModel
+{
+    if (!_tripArrangementModel) {
+        _tripArrangementModel = [TPTripArrangementModel new];
+        _tripArrangementModel.key = @"__TPTripArrangementModel__";
+    }
+    return _tripArrangementModel;
+}
    
 - (TPDiscoveryDetailListModel *)discoveryDetailListModel
 {
@@ -164,42 +174,107 @@
     
     
     //footer view
-    UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight-44, self.tableView.vzWidth, 44)];
-    btn.tag = 101;
-    btn.hidden = true;
-    btn.backgroundColor = [TPTheme themeColor];
-    [btn setTitle:@"联系预定" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
-    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-       
-        void(^lamda)() = ^{//跳转到预约
-            TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
-            v.maxNum = [self.discoveryDetailListModel.tripDetailItem.tripPeopleNum integerValue];
-            v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
-            v.sid = self.sid;
-            v.insiderId = self.discoveryDetailListModel.tripInfoItem.insiderId;
-            v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
-            v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
-            v.pic = self.discoveryDetailListModel.tripInfoItem.pics[0];
-            v.moneyType = self.discoveryDetailListModel.tripInfoItem.moneyType;
-            //v.insiderId = self.discoveryDetailListModel.tripf
-            [self.navigationController pushViewController:v animated:true];
-        };
+    if (self.type == kDetail) {
         
-        if ([TPUser isLogined]) {
-            lamda();
-        }
-        else
-        {
-            [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+        UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight-44, self.tableView.vzWidth, 44)];
+        btn.tag = 101;
+        btn.hidden = true;
+        btn.backgroundColor = [TPTheme themeColor];
+        [btn setTitle:@"联系预定" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            
+            void(^lamda)() = ^{//跳转到预约
+                TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
+                v.maxNum = [self.discoveryDetailListModel.tripDetailItem.tripPeopleNum integerValue];
+                v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
+                v.sid = self.sid;
+                v.insiderId = self.discoveryDetailListModel.tripInfoItem.insiderId;
+                v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
+                v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
+                v.pic = self.discoveryDetailListModel.tripInfoItem.pics[0];
+                v.moneyType = self.discoveryDetailListModel.tripInfoItem.moneyType;
+                //v.insiderId = self.discoveryDetailListModel.tripf
+                [self.navigationController pushViewController:v animated:true];
+            };
+            
+            if ([TPUser isLogined]) {
                 lamda();
-            }];
-        }
+            }
+            else
+            {
+                [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+                    lamda();
+                }];
+            }
+            
+        }];
         
-    }];
-    
-    [self.view addSubview:btn];
+        [self.view addSubview:btn];
+    }
+    else
+    {
+        //footer view
+        UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight-44, self.tableView.vzWidth, 44)];
+        btn.backgroundColor = [TPTheme themeColor];
+        [btn setTitle:@"安排日程" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            
+            TPDatePickerViewController* vc = [TPDatePickerViewController new];
+            vc.type = kSelection;
+            vc.callback = ^(NSArray* list) {
+                
+                if (list.count == 0) {
+                    return ;
+                }
+                else
+                {
+                    NSMutableArray* dates = [NSMutableArray new];
+                    for (NSDate* date in list) {
+                        
+                        long long t = [date timeIntervalSince1970]*1000;
+                        NSString* s = [NSString stringWithFormat:@"%lld",t];
+                        [dates addObject:s];
+                        
+                    }
+                    self.tripArrangementModel.availableDates = [dates copy];
+                    self.tripArrangementModel.sid = self.sid;
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        
+                        SHOW_SPINNER(self);
+                        [self.tripArrangementModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                            
+                            HIDE_SPINNER(self);
+                            if (!error) {
+                                
+                                TOAST(self, @"安排成功!");
+                                
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    [self.navigationController popToRootViewControllerAnimated:true];
+                                });
+                            }
+                            else
+                            {
+                                TOAST_ERROR(self, error);
+                            }
+                            
+                        }];
+                    });
+                }
+   
+                
+                
+            };
+            [self.navigationController pushViewController:vc animated:true];
+            
+        }];
+        [self.view addSubview:btn];
+    }
+
 
     UIView* footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds),44)];
     footer.backgroundColor = [UIColor clearColor];

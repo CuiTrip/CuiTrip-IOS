@@ -17,6 +17,8 @@
 #import "TPPubilshServiceViewController.h"
 #import "TPTripArrangementViewController.h"
 #import "TPMyServiceListItem.h"
+#import "TPDiscoveryDetailListViewController.h"
+
 
 @interface TPMyServiceListViewController()
 
@@ -230,13 +232,18 @@
     TPMyServiceListItem* item = (TPMyServiceListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
     if ([item.checkStatus integerValue] == 1 ) {
         
-        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
+        
+        TPDiscoveryDetailListViewController* vc = [TPDiscoveryDetailListViewController new];
+        vc.type = kArrangeMent;
         vc.sid = item.sid;
-        vc.tripTitle = item.name;
-        vc.tripContent = item.descpt;
-        vc.tripAddress = item.address;
-        vc.tripScore = [item.score floatValue];
-        vc.pic = item.pic[0];
+        
+//        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
+//        vc.sid = item.sid;
+//        vc.tripTitle = item.name;
+//        vc.tripContent = item.descpt;
+//        vc.tripAddress = item.address;
+//        vc.tripScore = [item.score floatValue];
+//        vc.pic = item.pic[0];
         
         
         //vc.pic = item.pi

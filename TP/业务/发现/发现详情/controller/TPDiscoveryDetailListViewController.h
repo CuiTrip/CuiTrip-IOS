@@ -11,8 +11,16 @@
   
 #import "VZListViewController.h"
 
+typedef NS_ENUM(NSInteger, Type)
+{
+    kDetail= 0,
+    kArrangeMent = 1
+
+};
+
 @interface TPDiscoveryDetailListViewController : VZListViewController
 
+@property(nonatomic,assign)Type type;
 @property(nonatomic,strong)NSString* sid;
 
 @end
