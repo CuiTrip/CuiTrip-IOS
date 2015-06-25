@@ -118,6 +118,8 @@
                 
             }
             while (arg != nil);
+            
+            va_end(ap);
         
         };
         
