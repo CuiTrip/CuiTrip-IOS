@@ -22,7 +22,17 @@
 
 - (NSDictionary *)dataParams {
     
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@""};
+    TPUserType type = [TPUser type];
+    
+    NSString* changeType = @"";
+    if (type == kCustomer) {
+        changeType = @"0";
+    }
+    else
+    {
+        changeType = @"1";
+    }
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"changeType":changeType};
 }
 
 - (VZHTTPRequestConfig)requestConfig
