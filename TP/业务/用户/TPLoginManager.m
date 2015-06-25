@@ -89,7 +89,11 @@
                                     
                                     if ([code integerValue] == 0 ) {
                                         
+                                        //register APNS
+                                        //[[TPAPNS sharedInstance] registerRemoteNotification];
+                                        
                                         __notify(kTPNotifyMessageLoginSuccess);
+                                        
                                         
                                         NSDictionary* result = responseObj[@"result"];
                                         
@@ -101,8 +105,7 @@
                                             completion(nil);
                                         }
                                         
-                                        //register APNS
-                                        [[TPAPNS sharedInstance] registerRemoteNotification];
+        
                                     }
                                     else
                                     {
