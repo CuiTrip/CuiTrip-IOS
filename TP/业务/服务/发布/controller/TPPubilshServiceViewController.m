@@ -34,6 +34,7 @@
 @property(nonatomic,strong) NSString* num;
 @property(nonatomic,strong) NSString* meetWay;
 @property(nonatomic,strong) NSString* fee;
+@property(nonatomic,strong) NSString* moneyType;
 
 
 
@@ -124,9 +125,10 @@
         };
         
         TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
-        fee.callback = ^(NSString* fee,...){
+        fee.callback = ^(RACTuple* tuple,...){
         
-            self.fee = fee;
+            self.fee = tuple[0];
+            self.moneyType = tuple[1];
         
         };
         
@@ -300,6 +302,7 @@
     self.pubilshServiceModel.serviceTme = self.date;
     self.pubilshServiceModel.bestTime = self.duration;
     self.pubilshServiceModel.meetingWay = self.meetWay;
+    self.pubilshServiceModel.moneyType = self.moneyType;
     
     __weak typeof(self) weakSelf = self;
     [self.pubilshServiceModel loadWithCompletion:^(VZModel *model, NSError *error) {

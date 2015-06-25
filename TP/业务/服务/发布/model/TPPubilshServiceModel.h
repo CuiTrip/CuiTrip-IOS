@@ -26,6 +26,7 @@
 @property(nonatomic,strong) NSString* lat;
 @property(nonatomic,strong) NSString* lng;
 @property(nonatomic,strong) NSString* descpt;
+@property(nonatomic,strong) NSString* moneyType;
 
 @end
 

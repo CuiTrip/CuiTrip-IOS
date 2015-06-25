@@ -104,6 +104,7 @@
 		4524FCAD1B34623500ED3D79 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4524FCA91B34623400ED3D79 /* girl.jpg */; };
 		4524FCAF1B35346E00ED3D79 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4524FCAE1B35346E00ED3D79 /* MapKit.framework */; };
 		454781851B14234F00B4A24D /* TPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 454781841B14234F00B4A24D /* TPTests.m */; };
+		45681BF11B3C341200A2FF34 /* trip_down_g@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45681BF01B3C341200A2FF34 /* trip_down_g@2x.png */; };
 		456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */; };
 		456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 456C68E01B2ED35A003D4C20 /* pay_meta.json */; };
 		456C68F01B2ED35A003D4C20 /* TPPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68E41B2ED35A003D4C20 /* TPPayViewController.m */; };
@@ -508,6 +509,7 @@
 		4547817E1B14234F00B4A24D /* TPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454781831B14234F00B4A24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454781841B14234F00B4A24D /* TPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTests.m; sourceTree = "<group>"; };
+		45681BF01B3C341200A2FF34 /* trip_down_g@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_down_g@2x.png"; sourceTree = "<group>"; };
 		456C68DC1B2EB526003D4C20 /* TPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGrowingTextView.h; sourceTree = "<group>"; };
 		456C68DD1B2EB526003D4C20 /* TPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGrowingTextView.m; sourceTree = "<group>"; };
 		456C68E01B2ED35A003D4C20 /* pay_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pay_meta.json; sourceTree = "<group>"; };
@@ -2353,6 +2355,7 @@
 		45D0C7CB1B29E02B00F31BF5 /* 发布流程 */ = {
 			isa = PBXGroup;
 			children = (
+				45681BF01B3C341200A2FF34 /* trip_down_g@2x.png */,
 				45D0C8021B2BDB8400F31BF5 /* 图片上传 */,
 				45D0C7EA1B2BCACE00F31BF5 /* TPPSViewController.h */,
 				45D0C7EB1B2BCACE00F31BF5 /* TPPSViewController.m */,
@@ -3171,6 +3174,7 @@
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
 				45028B411B1C7D2D00417606 /* me_meta.json in Resources */,
 				4524FCAC1B34623500ED3D79 /* default_sys.jpg in Resources */,
+				45681BF11B3C341200A2FF34 /* trip_down_g@2x.png in Resources */,
 				45D0C8011B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png in Resources */,
 				4524FCAA1B34623400ED3D79 /* default_details@2x.jpg in Resources */,
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,

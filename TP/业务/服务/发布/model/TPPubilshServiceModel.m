@@ -55,7 +55,8 @@
              @"lat":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].latitude],
              @"lng":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].longitude],
              @"country":@"CN",
-             @"descpt":self.descpt?:@""
+             @"descpt":self.descpt?:@"",
+             @"moneyType":self.moneyType?:@""
              };
 }
 
