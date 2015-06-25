@@ -23,6 +23,7 @@
 @property(nonatomic,strong)NSString* peopleNum;
 @property(nonatomic,strong)NSString* orderStatus;
 @property(nonatomic,strong)NSString* insiderId;
+@property(nonatomic,strong)NSString* moneyType;
 
 @end
 

@@ -61,6 +61,7 @@
     _status = JSON[@"status"];
     _statusContent = JSON[@"statusContent"];
     _serviceDate = JSON[@"serviceDate"];
+    _moneyType = JSON[@"moneyType"];
     
     return true;
 }

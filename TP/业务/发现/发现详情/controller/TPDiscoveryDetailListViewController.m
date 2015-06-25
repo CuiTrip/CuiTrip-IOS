@@ -182,6 +182,7 @@
             v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
             v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
             v.pic = self.discoveryDetailListModel.tripInfoItem.pics[0];
+            v.moneyType = self.discoveryDetailListModel.tripInfoItem.moneyType;
             //v.insiderId = self.discoveryDetailListModel.tripf
             [self.navigationController pushViewController:v animated:true];
         };
@@ -276,7 +277,7 @@
     [super showModel:model];
     TPDiscoveryDetailListViewHeaderView* headerView = (TPDiscoveryDetailListViewHeaderView* )self.tableView.tableHeaderView;
     headerView.bannerView.urls = model.tripInfoItem.pics;
-    headerView.moneyLabel.text = [@" " stringByAppendingString:[TPUtils money:model.tripDetailItem.tripFee WithType:@""]];
+    headerView.moneyLabel.text = [@" " stringByAppendingString:[TPUtils money:model.tripDetailItem.tripFee WithType:model.tripInfoItem.moneyType]];
     [self.view viewWithTag:101].hidden = false;
 
 }

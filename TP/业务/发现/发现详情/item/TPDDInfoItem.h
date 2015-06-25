@@ -19,6 +19,7 @@
 @property(nonatomic,strong)NSString* score; //service score
 @property(nonatomic,strong)NSArray* pics;
 @property(nonatomic,strong)NSString* insiderId;
+@property(nonatomic,strong)NSString* moneyType;
 
 @end
 

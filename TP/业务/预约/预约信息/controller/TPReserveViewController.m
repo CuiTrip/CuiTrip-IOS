@@ -88,7 +88,7 @@
     [self.confirmView.confirmBtn setTitle:@"前往消息查看" forState:UIControlStateNormal];
 
     if(self.type == kCreateOrder)
-       [self.confirmBtn setTitle:@"提交预约" forState:UIControlStateNormal];
+        [self.confirmBtn setTitle:@"提交预约" forState:UIControlStateNormal];
     else
         [self.confirmBtn setTitle:@"确认修改" forState:UIControlStateNormal];
     
@@ -175,7 +175,7 @@
     self.reserveModel.serviceDate = self.selectedServiceDate;
     self.reserveModel.buyerNum = self.selectedMaxNum;
     self.reserveModel.servicePrice = self.servicePrice;
-    self.reserveModel.moneyType = @"CNY";
+    self.reserveModel.moneyType = self.moneyType;
     
     SHOW_SPINNER(self);
     __weak typeof(self) weakSelf = self;

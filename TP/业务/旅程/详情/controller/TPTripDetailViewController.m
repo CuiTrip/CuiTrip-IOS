@@ -202,7 +202,7 @@
     self.descLabel.text = self.tripDetailModel.insiderSign;
     self.tripDateLabel.text = self.tripDetailModel.serviceDate;
     self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
-    self.tripFeeLabel.text = [TPUtils money:self.tripDetailModel.orderPrice WithType:@""];
+    self.tripFeeLabel.text = [TPUtils money:self.tripDetailModel.orderPrice WithType:self.tripDetailModel.moneyType];
 
     if ([self.tripDetailModel.status integerValue] == 1)
     {

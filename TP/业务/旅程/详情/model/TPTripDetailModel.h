@@ -32,6 +32,7 @@
 @property(nonatomic,strong,readonly)NSString* orderPrice;
 @property(nonatomic,strong,readonly)NSString* status;
 @property(nonatomic,strong,readonly)NSString* statusContent;
+@property(nonatomic,strong,readonly)NSString* moneyType;
 
 @end
 

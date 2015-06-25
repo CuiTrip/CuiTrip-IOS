@@ -27,6 +27,7 @@
 @property(nonatomic,strong)NSString *servicePrice;
 @property(nonatomic,strong)NSString *serviceDate;
 @property(nonatomic,strong)NSString *orderPrice;
+@property(nonatomic,strong)NSString* moneyType;
 
 
 @end

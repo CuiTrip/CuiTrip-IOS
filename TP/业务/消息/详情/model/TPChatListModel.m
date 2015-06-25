@@ -66,6 +66,7 @@
     self.serviceName = JSON[@"serviceName"];
     self.servicePrice = JSON[@"servicePrice"];
     self.serviceId = JSON[@"sid"];
+    self.moneyType = JSON[@"moneyType"];
     
     NSArray* list = JSON[@"dialog"];
     

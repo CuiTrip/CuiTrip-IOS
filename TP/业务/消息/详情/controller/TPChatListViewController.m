@@ -373,6 +373,7 @@
                 v.insiderId = weakSelf.chatListModel.insiderId;
                 v.servicePrice = weakSelf.chatListModel.servicePrice;
                 v.serviceName = weakSelf.chatListModel.serviceName;
+                v.moneyType = weakSelf.chatListModel.moneyType;
                 [weakSelf.navigationController pushViewController:v animated:true];
             }
             else
