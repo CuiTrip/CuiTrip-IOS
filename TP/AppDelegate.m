@@ -21,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [NSThread sleepForTimeInterval:1.5];
+    
     TPTabBarViewController* rootViewController = [TPTabBarViewController new];
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [UIScreen mainScreen].bounds.size.height)];
     self.window.backgroundColor = [UIColor whiteColor];
