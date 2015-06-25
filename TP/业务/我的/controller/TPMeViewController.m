@@ -169,7 +169,7 @@
 {
     if (indexPath.row == 1) {
         
-        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPForgetPWDViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpforgetpwd"];
+        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPModifyPWDViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpmodifypwd"];
         [self.navigationController pushViewController:vc animated:true];
         
         

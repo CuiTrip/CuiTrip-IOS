@@ -236,8 +236,7 @@
         TOAST(self, @"请输入验证码");
         return;
     }
-    
-    SHOW_SPINNER(self);
+
     
     NSString* vCode = self.vCodeTextField.text;
     self.forgetPWDModel.vcode = vCode;

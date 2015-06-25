@@ -280,6 +280,12 @@
 		45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6BA6A1B2686C2007DFC7A /* TPUtils.m */; };
 		45D6BA761B268794007DFC7A /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45D6BA721B268794007DFC7A /* SMS_SDKLocalizable.strings */; };
 		45D6BA771B268794007DFC7A /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D6BA741B268794007DFC7A /* SMS_SDK.framework */; };
+		45DB44201B3C4D45007101EA /* modifypwd_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DB44111B3C4D45007101EA /* modifypwd_meta.json */; };
+		45DB44211B3C4D45007101EA /* TPModifyPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DB44151B3C4D45007101EA /* TPModifyPWDViewController.m */; };
+		45DB44221B3C4D45007101EA /* TPModifyPWDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DB44181B3C4D45007101EA /* TPModifyPWDItem.m */; };
+		45DB44231B3C4D45007101EA /* TPModifyPWDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DB441B1B3C4D45007101EA /* TPModifyPWDModel.m */; };
+		45DB44241B3C4D45007101EA /* TPModifyPWDSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DB441F1B3C4D45007101EA /* TPModifyPWDSubView.m */; };
+		45DB44261B3C4D59007101EA /* TPModifyPWDViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB44251B3C4D59007101EA /* TPModifyPWDViewController.storyboard */; };
 		45DD47361B28200200D2BB62 /* TPMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD47091B28200100D2BB62 /* TPMessageListCell.m */; };
 		45DD47371B28200200D2BB62 /* message_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DD470B1B28200100D2BB62 /* message_meta.json */; };
 		45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD470F1B28200100D2BB62 /* TPMessageListViewController.m */; };
@@ -805,6 +811,17 @@
 		45D6BA731B268794007DFC7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		45D6BA741B268794007DFC7A /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		45D6BA751B268794007DFC7A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		45DB44111B3C4D45007101EA /* modifypwd_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modifypwd_meta.json; sourceTree = "<group>"; };
+		45DB44121B3C4D45007101EA /* TPModifyPWDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPModifyPWDConfig.h; sourceTree = "<group>"; };
+		45DB44141B3C4D45007101EA /* TPModifyPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPModifyPWDViewController.h; sourceTree = "<group>"; };
+		45DB44151B3C4D45007101EA /* TPModifyPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPModifyPWDViewController.m; sourceTree = "<group>"; };
+		45DB44171B3C4D45007101EA /* TPModifyPWDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPModifyPWDItem.h; sourceTree = "<group>"; };
+		45DB44181B3C4D45007101EA /* TPModifyPWDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPModifyPWDItem.m; sourceTree = "<group>"; };
+		45DB441A1B3C4D45007101EA /* TPModifyPWDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPModifyPWDModel.h; sourceTree = "<group>"; };
+		45DB441B1B3C4D45007101EA /* TPModifyPWDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPModifyPWDModel.m; sourceTree = "<group>"; };
+		45DB441E1B3C4D45007101EA /* TPModifyPWDSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPModifyPWDSubView.h; sourceTree = "<group>"; };
+		45DB441F1B3C4D45007101EA /* TPModifyPWDSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPModifyPWDSubView.m; sourceTree = "<group>"; };
+		45DB44251B3C4D59007101EA /* TPModifyPWDViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPModifyPWDViewController.storyboard; sourceTree = "<group>"; };
 		45DD47081B28200100D2BB62 /* TPMessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMessageListCell.h; sourceTree = "<group>"; };
 		45DD47091B28200100D2BB62 /* TPMessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMessageListCell.m; sourceTree = "<group>"; };
 		45DD470B1B28200100D2BB62 /* message_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message_meta.json; sourceTree = "<group>"; };
@@ -1190,6 +1207,7 @@
 		4509AB611B22E3E300846032 /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
+				45DB440F1B3C4D45007101EA /* 修改密码 */,
 				45EB31571B3662D1003A97AE /* resource */,
 				4509AB621B22E3E300846032 /* SMS */,
 				4509AB671B22E3E300846032 /* TPLoginHeader.h */,
@@ -2797,6 +2815,72 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
+		45DB440F1B3C4D45007101EA /* 修改密码 */ = {
+			isa = PBXGroup;
+			children = (
+				45DB44101B3C4D45007101EA /* config */,
+				45DB44131B3C4D45007101EA /* controller */,
+				45DB44161B3C4D45007101EA /* item */,
+				45DB44191B3C4D45007101EA /* model */,
+				45DB441C1B3C4D45007101EA /* resource */,
+				45DB441D1B3C4D45007101EA /* view */,
+			);
+			path = "修改密码";
+			sourceTree = "<group>";
+		};
+		45DB44101B3C4D45007101EA /* config */ = {
+			isa = PBXGroup;
+			children = (
+				45DB44111B3C4D45007101EA /* modifypwd_meta.json */,
+				45DB44121B3C4D45007101EA /* TPModifyPWDConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		45DB44131B3C4D45007101EA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45DB44141B3C4D45007101EA /* TPModifyPWDViewController.h */,
+				45DB44151B3C4D45007101EA /* TPModifyPWDViewController.m */,
+				45DB44251B3C4D59007101EA /* TPModifyPWDViewController.storyboard */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45DB44161B3C4D45007101EA /* item */ = {
+			isa = PBXGroup;
+			children = (
+				45DB44171B3C4D45007101EA /* TPModifyPWDItem.h */,
+				45DB44181B3C4D45007101EA /* TPModifyPWDItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		45DB44191B3C4D45007101EA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				45DB441A1B3C4D45007101EA /* TPModifyPWDModel.h */,
+				45DB441B1B3C4D45007101EA /* TPModifyPWDModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		45DB441C1B3C4D45007101EA /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		45DB441D1B3C4D45007101EA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				45DB441E1B3C4D45007101EA /* TPModifyPWDSubView.h */,
+				45DB441F1B3C4D45007101EA /* TPModifyPWDSubView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		45DD47061B28200100D2BB62 /* 列表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3207,6 +3291,7 @@
 				4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */,
 				45EB315A1B3662D1003A97AE /* trip_display_no@2x.png in Resources */,
 				45D48BE01B32AF3500B5801F /* UMShareEditViewController.xib in Resources */,
+				45DB44201B3C4D45007101EA /* modifypwd_meta.json in Resources */,
 				456C68EF1B2ED35A003D4C20 /* pay_meta.json in Resources */,
 				45D48C671B32EEBE00B5801F /* star_highlight@2x.png in Resources */,
 				45EB31671B36F369003A97AE /* Images.xcassets in Resources */,
@@ -3250,6 +3335,7 @@
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
+				45DB44261B3C4D59007101EA /* TPModifyPWDViewController.storyboard in Resources */,
 				45EB31651B36D88B003A97AE /* about@2x.jpg in Resources */,
 				45D48C4F1B32EEBE00B5801F /* TPDDCommentCell.xib in Resources */,
 				459B24971B176A1C009BB189 /* Info.plist in Resources */,
@@ -3387,6 +3473,7 @@
 				45D0C8211B2BE06D00F31BF5 /* BXImageScrollView.m in Sources */,
 				4509ABC01B233C9200846032 /* TPReserveModel.m in Sources */,
 				45D48C6E1B32EEBE00B5801F /* TPDiscoveryListItem.m in Sources */,
+				45DB44241B3C4D45007101EA /* TPModifyPWDSubView.m in Sources */,
 				45028ABB1B1B535E00417606 /* VZHTTPURLConnectionOperation.m in Sources */,
 				45D6BA6F1B2686C2007DFC7A /* TPUtils.m in Sources */,
 				45DD473B1B28200200D2BB62 /* TPMessageListItem.m in Sources */,
@@ -3395,6 +3482,7 @@
 				456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */,
 				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
+				45DB44221B3C4D45007101EA /* TPModifyPWDItem.m in Sources */,
 				45DD4D201B3A95ED008833D1 /* TPBeginTripOrderModel.m in Sources */,
 				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,
 				45D0C7DA1B29E0EC00F31BF5 /* TPPSMoreViewController.m in Sources */,
@@ -3424,6 +3512,7 @@
 				45D48C5E1B32EEBE00B5801F /* TPDiscoveryDetailListViewDelegate.m in Sources */,
 				45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */,
 				45D48BAA1B32898300B5801F /* TPCancelTripOrderModel.m in Sources */,
+				45DB44211B3C4D45007101EA /* TPModifyPWDViewController.m in Sources */,
 				45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */,
 				45D48C511B32EEBE00B5801F /* TPDDInfoCell.m in Sources */,
 				459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */,
@@ -3475,6 +3564,7 @@
 				4509AC341B247EA600846032 /* TPTripDetailViewController.m in Sources */,
 				4509AC211B247E5200846032 /* TPTripListItem.m in Sources */,
 				459BAD461B1F5BA600739C7E /* TPDatePickerCalenderFooterView.m in Sources */,
+				45DB44231B3C4D45007101EA /* TPModifyPWDModel.m in Sources */,
 				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
 				45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */,

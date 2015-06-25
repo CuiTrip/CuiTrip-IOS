@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPModifyPWDViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "modifyPWDModel",
+          "class": "TPModifyPWDModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./ModifyPWD/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPModifyPWDModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./ModifyPWD/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPModifyPWDModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPModifyPWDModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./ModifyPWD/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPModifyPWDItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./ModifyPWD/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPModifyPWDSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./ModifyPWD/view/",
+      "namespace": "T_View",
+      "itemclass": "TPModifyPWDItem"
+    }
+  ],
+  "config": {
+    "class": "TPModifyPWDConfig",
+    "proj": "TP",
+    "package_name": "ModifyPWD",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./ModifyPWD/config/"
+  }
+}
