@@ -299,8 +299,8 @@
     self.pubilshServiceModel.pic = self.pics;
     self.pubilshServiceModel.price = self.fee;
     self.pubilshServiceModel.maxbuyerNum = self.num;
-    self.pubilshServiceModel.serviceTme = self.date;
-    self.pubilshServiceModel.bestTime = self.duration;
+    self.pubilshServiceModel.serviceTme = self.duration;
+    self.pubilshServiceModel.bestTime = self.date;
     self.pubilshServiceModel.meetingWay = self.meetWay;
     self.pubilshServiceModel.moneyType = self.moneyType;
     

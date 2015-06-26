@@ -25,12 +25,17 @@
 #import "VizzleEx.h"
 #import "TPHeader.h"
 
-#if DEBUG
-
 #endif
+
+#if DEBUG
 #import <VZInspector/VZInspector.h>
 #endif
 
+#ifdef __OPTIMIZE__
+# define NSLog(...) {}
+#else
+# define NSLog(...) NSLog(__VA_ARGS__)
+#endif
 
 #ifdef __cplusplus
 #include "TPAssert.h"

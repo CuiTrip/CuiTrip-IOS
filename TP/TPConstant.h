@@ -12,7 +12,7 @@
 #define sms_appKey @"7dc26c72f524"
 #define sms_appSecret @"d9ff9f18a74898d61821af51b29683e2"
 
-#define um_appKey @"5586c37967e58e3a36008487"
+#define um_appKey @"558d703c67e58e940b002e80"
 #define um_appSecret @""
 
 #define _API_ @"http://42.121.16.186:9999/baseservice/"

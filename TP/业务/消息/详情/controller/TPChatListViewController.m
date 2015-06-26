@@ -368,7 +368,7 @@
                 TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
                 v.type=kModifyOrder;
                 v.sid = weakSelf.chatListModel.serviceId;
-                v.maxNum = [weakSelf.chatListModel.peopleNum integerValue];
+                v.maxNum = 6;
                 v.oid = weakSelf.orderId;
                 v.insiderId = weakSelf.chatListModel.insiderId;
                 v.servicePrice = weakSelf.chatListModel.servicePrice;
