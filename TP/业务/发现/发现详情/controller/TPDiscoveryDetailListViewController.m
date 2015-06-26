@@ -224,6 +224,7 @@
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             
             TPDatePickerViewController* vc = [TPDatePickerViewController new];
+            vc.sid = self.sid;
             vc.type = kSelection;
             vc.callback = ^(NSArray* list) {
                 

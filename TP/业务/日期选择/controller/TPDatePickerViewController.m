@@ -141,57 +141,43 @@
     [super viewDidLoad];
     //todo..
     
-    if (self.type == kCheckOnly) {
+    self.availableDatesModel = [TPGetServiceEnableDateModel new];
+    self.availableDatesModel.sid = self.sid;
+    SHOW_SPINNER(self);
+    __weak typeof(self) weakSelf = self;
+    [self.availableDatesModel loadWithCompletion:^(VZModel *model, NSError *error) {
         
-        self.availableDatesModel = [TPGetServiceEnableDateModel new];
-        self.availableDatesModel.sid = self.sid;
-        __weak typeof(self) weakSelf = self;
+        TPGetServiceEnableDateModel* dateModel = (TPGetServiceEnableDateModel* )model;
+        NSArray* availableList = dateModel.availableDates;
         
-        SHOW_SPINNER(self);
-        [self.availableDatesModel loadWithCompletion:^(VZModel *model, NSError *error) {
-           
-            TPGetServiceEnableDateModel* dateModel = (TPGetServiceEnableDateModel* )model;
-            NSArray* availableList = dateModel.availableDates;
-        
-            HIDE_SPINNER(self);
-            weakSelf.selectionView.hidden = NO;
-            if (!error) {
+        HIDE_SPINNER(self);
+        weakSelf.selectionView.hidden = NO;
+        if (!error) {
+            
+            if (availableList.count > 0) {
                 
-                if (availableList.count > 0) {
-                    
-                    NSDate* date = availableList[0];
-                    weakSelf.date = date;
-                    weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:date];
-                    [weakSelf layoutCalender];
-                }
-                else
-                {
-                    weakSelf.date = [NSDate date];
-                    weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:weakSelf.date];
-                    [weakSelf layoutCalender];
-
-                }
+                NSDate* date = availableList[0];
+                weakSelf.date = date;
+                weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:date];
+                [weakSelf layoutCalender];
             }
             else
             {
                 weakSelf.date = [NSDate date];
                 weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:weakSelf.date];
                 [weakSelf layoutCalender];
+                
             }
-        }];
-        
-    }
-    else
-    {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(onConfirm)];
-        
-        self.date = [NSDate date];
-        self.selectionView.dateLabel.text = [TPUtils monthDateFormatString:self.date];
-        self.selectionView.hidden = NO;
-        [self layoutCalender];
+        }
+        else
+        {
+            weakSelf.date = [NSDate date];
+            weakSelf.selectionView.dateLabel.text = [TPUtils monthDateFormatString:weakSelf.date];
+            [weakSelf layoutCalender];
+        }
+    }];
     
-    }
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -297,7 +283,7 @@
         calendarView.tag = oldComponent.month;
         calendarView.delegate = self;
         calendarView.firstWeekDay = newCurrentM.weekday;
-        calendarView.availableDates = self.type == kSelection?nil:[self availableDaysInMonth:newCurrentM.month];
+        calendarView.availableDates = [self availableDaysInMonth:newCurrentM];
         calendarView.numberOfDays = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
                                                                        inUnit:NSMonthCalendarUnit
                                                                       forDate:newCurrentM.date].length;
@@ -328,7 +314,7 @@
         
         TBCityCalendarMonthView* calendarView = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, self.selectionView.vzBottom, self.view.vzWidth, 380)];
         
-        calendarView.availableDates = self.type == kSelection?nil:[self availableDaysInMonth:oldComponent.month];
+        calendarView.availableDates = [self availableDaysInMonth:oldComponent];
         calendarView.canEdit = self.type == kSelection?true:false;
         calendarView.tag = oldComponent.month;
         calendarView.delegate = self;
@@ -410,6 +396,8 @@
 
 - (void)layoutCalender
 {
+    [self updateRightBarbuttonItem];
+    
     NSCalendar* calendar = [NSCalendar currentCalendar];
     calendar.firstWeekday = 1;
     calendar.minimumDaysInFirstWeek = 7;
@@ -421,7 +409,7 @@
     
     TBCityCalendarMonthView* calendarView = [[TBCityCalendarMonthView alloc]initWithFrame:CGRectMake(0, self.selectionView.vzBottom, self.view.vzWidth, 380)];
     
-    calendarView.availableDates = self.type == kSelection?nil:[self availableDaysInMonth:newCurrentM.month];
+    calendarView.availableDates = [self availableDaysInMonth:newCurrentM];
     calendarView.canEdit = self.type == kSelection?true:false;
     calendarView.tag = oldComponent.month;
     calendarView.delegate = self;
@@ -440,11 +428,14 @@
     v.vzOrigin = CGPointMake(0, self.calendarView.vzBottom);
     v.vzSize = CGSizeMake(self.view.vzWidth, 20);
     [self.view addSubview:v];
+    
+    
 }
 
 
-- (NSArray* )availableDaysInMonth:(NSInteger)month
+- (NSArray* )availableDaysInMonth:(NSDateComponents *)component
 {
+    NSInteger month = component.month;
     NSArray* availableDates = self.availableDatesModel.availableDates;
     if (!availableDates) {
         return nil;
@@ -452,21 +443,60 @@
     else
     {
         NSMutableArray* list = [NSMutableArray new];
-        for(NSDate* date in availableDates)
-        {
-            NSCalendar* calendar = [NSCalendar currentCalendar];
-            NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
-
-            if(month == component.month)
+        
+        if (self.type == kCheckOnly) {
+            
+            for(NSDate* date in availableDates)
             {
-                [list addObject:@(component.day)];
+                NSCalendar* calendar = [NSCalendar currentCalendar];
+                NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
+                
+                if(month == component.month)
+                {
+                    [list addObject:@(component.day)];
+                }
             }
         }
+        else
+        {
+            NSMutableArray* availableDatesInNum = [NSMutableArray new];
+            
+            for(NSDate* date in availableDates)
+            {
+                NSCalendar* calendar = [NSCalendar currentCalendar];
+                NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
+                
+                if (month == component.month) {
+                                    [availableDatesInNum addObject:@(component.day)];
+                }
+
+            }
+            
+            NSInteger len = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
+                                                               inUnit:NSMonthCalendarUnit
+                                                              forDate:component.date].length;
+            
+            for (int i=1; i<=len; i++) {
+                
+                if (![availableDatesInNum containsObject:@(i)]) {
+                    [list addObject:@(i)];
+                }
+            }
+            
+        }
+        
         return [list copy];
     }
 }
 
-
+- (void)updateRightBarbuttonItem
+{
+    if (self.type == kSelection) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(onConfirm)];
+    }
+    else
+        self.navigationItem.rightBarButtonItem = nil;
+}
 
 @end
  
