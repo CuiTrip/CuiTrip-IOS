@@ -139,7 +139,7 @@ typedef struct Tag
             
         }
         
-        if ( self.availableDates == nil ||  [self.availableDates containsObject:@(i)])
+        if ( [self.availableDates containsObject:@(i)])
         {
            
             bCanReserve = true;
