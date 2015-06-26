@@ -437,11 +437,11 @@
 {
     NSInteger month = component.month;
     NSArray* availableDates = self.availableDatesModel.availableDates;
-    if (!availableDates) {
-        return nil;
-    }
-    else
-    {
+//    if (!availableDates) {
+//        return nil;
+//    }
+//    else
+//    {
         NSMutableArray* list = [NSMutableArray new];
         
         if (self.type == kCheckOnly) {
@@ -486,7 +486,7 @@
         }
         
         return [list copy];
-    }
+   // }
 }
 
 - (void)updateRightBarbuttonItem
