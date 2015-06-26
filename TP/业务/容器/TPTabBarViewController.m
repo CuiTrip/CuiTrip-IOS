@@ -70,7 +70,7 @@
     }
     else
     {
-        [TPUser changeUserType:kCustomer];
+        [TPUser changeUserType:kCustomer synchronizeToServer:NO];
         first = [TPDiscoveryListViewController new];
     }
     

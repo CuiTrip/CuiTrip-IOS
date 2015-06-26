@@ -50,7 +50,7 @@
 
 + (void)logout;
 
-+ (void)changeUserType:(TPUserType)type;
++ (void)changeUserType:(TPUserType)type synchronizeToServer:(BOOL)b;
 
 + (void)changeAvatar:(NSString* )avatar;
 

@@ -72,21 +72,20 @@
     
     for(NSDictionary* info in list)
     {
-        if([info[@"type"] integerValue] == 3)
+        NSInteger type = [info[@"type"] integerValue];
+        
+        //系统消息
+        if(type == 2 || type == 3 || type == 5 || type == 6)
         {
             TPChatStatusListItem* item = [TPChatStatusListItem new];
             [item autoKVCBinding:info];
             [ret addObject:item];
         }
-        else if ([info[@"type"] integerValue] == 4)
+        
+        //聊天消息
+        if (type == 4)
         {
             TPChatListItem* item = [TPChatListItem new];
-            [item autoKVCBinding:info];
-            [ret addObject:item];
-        }
-        else if([info[@"type"] integerValue] == 2)
-        {
-            TPChatStatusListItem* item = [TPChatStatusListItem new];
             [item autoKVCBinding:info];
             [ret addObject:item];
         }

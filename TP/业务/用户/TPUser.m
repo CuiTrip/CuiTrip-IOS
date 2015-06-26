@@ -147,10 +147,49 @@
     [self clearUserInfo];
 }
 
-+ (void)changeUserType:(TPUserType)type
++ (void)changeUserType:(TPUserType)type synchronizeToServer:(BOOL)b
 {
     [TPUser sharedInstance].userItem.type = type;
     [self synchronize];
+    
+    if (b) {
+        
+        NSString* userType = @"0";
+        if (type == kProvider) {
+            userType = @"1";
+        }
+        NSDictionary* info  = @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"type":userType};
+        VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+        config.requestMethod = VZHTTPMethodPOST;
+        [[VZHTTPNetworkAgent sharedInstance] HTTP:[_API_ stringByAppendingString:@"changeType"]
+                                    requestConfig:config
+                                   responseConfig:vz_defaultHTTPResponseConfig()
+                                           params:info
+                                completionHandler:^(VZHTTPConnectionOperation *connection, NSString *responseString, id responseObj, NSError *error) {
+                                    
+                                    if (!error) {
+                                        NSInteger code = [responseObj[@"code"] integerValue];
+                                        
+                                        if (code == 0) {
+                                            //成功
+                                        }
+                                        else
+                                        {
+                                            //失败
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //失败
+                                    }
+                                    
+                                }];
+    }
+}
+
++ (void)changeUserTypeToServer:(TPUserType)type
+{
+    
 }
 
 + (void)changeAvatar:(NSString* )avatar

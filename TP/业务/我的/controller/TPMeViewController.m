@@ -220,12 +220,12 @@
                 //跳转到发现者
                 if(type == kCustomer)
                 {
-                    [TPUser changeUserType:kProvider];
+                    [TPUser changeUserType:kProvider synchronizeToServer:true];
                     __notify(kTPNofityMessageSwitchIdentity);
                 }
                 else if (type == kProvider)
                 {
-                    [TPUser changeUserType:kCustomer];
+                    [TPUser changeUserType:kCustomer synchronizeToServer:true];
                     __notify(kTPNofityMessageSwitchIdentity);
                 }
                 else

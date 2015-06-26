@@ -139,6 +139,7 @@ static NSString * const kAPNSInfoKeyTokenReported = @"TokenReported";
     }
     [UMessage registerDeviceToken:tokenData];
     
+    [[TMCache sharedCache] setObject:tokenData forKey:kTPCacheKey_APNS_Token];
     //同步到服务器
     NSString *deviceToken = [self deviceTokenStrWithData:tokenData];
     

@@ -28,8 +28,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
-    [TPTheme config];
-    
+
     //SMS
     [SMS_SDK registerApp:sms_appKey
               withSecret:sms_appSecret];
@@ -69,6 +68,7 @@
     
 #endif
     
+    [TPTheme config];
  
     return YES;
 }

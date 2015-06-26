@@ -90,7 +90,9 @@
                                     if ([code integerValue] == 0 ) {
                                         
                                         //register APNS
-                                        //[[TPAPNS sharedInstance] registerRemoteNotification];
+                                        
+                                        NSData* token = [[TMCache sharedCache] objectForKey:kTPCacheKey_APNS_Token];
+                                        [[TPAPNS sharedInstance] updateDeviceToken:token];
                                         
                                         __notify(kTPNotifyMessageLoginSuccess);
                                         
