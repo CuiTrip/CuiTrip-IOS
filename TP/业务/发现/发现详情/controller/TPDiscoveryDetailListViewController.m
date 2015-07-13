@@ -228,11 +228,7 @@
             vc.type = kSelection;
             vc.callback = ^(NSArray* list) {
                 
-                if (list.count == 0) {
-                    return ;
-                }
-                else
-                {
+              
                     NSMutableArray* dates = [NSMutableArray new];
                     for (NSDate* date in list) {
                         
@@ -241,10 +237,11 @@
                         [dates addObject:s];
                         
                     }
-                    self.tripArrangementModel.availableDates = [dates copy];
+   
+                self.tripArrangementModel.availableDates = dates.count>0?[dates copy]:nil;
                     self.tripArrangementModel.sid = self.sid;
                     
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         
                         SHOW_SPINNER(self);
                         [self.tripArrangementModel loadWithCompletion:^(VZModel *model, NSError *error) {
@@ -253,10 +250,7 @@
                             if (!error) {
                                 
                                 TOAST(self, @"安排成功!");
-                                
-                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                    [self.navigationController popToRootViewControllerAnimated:true];
-                                });
+
                             }
                             else
                             {
@@ -265,7 +259,7 @@
                             
                         }];
                     });
-                }
+                
    
                 
                 
@@ -424,8 +418,10 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
 
-
-
+/**
+ * 分享到微信设置
+ *
+ */
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
@@ -434,14 +430,14 @@
     if (platformName == UMShareToWechatSession) {
         
         [UMSocialData defaultData].extConfig.wechatSessionData.title = self.discoveryDetailListModel.tripInfoItem.name;
-        [UMSocialData defaultData].extConfig.wechatSessionData.url = [NSString stringWithFormat:@"http://42.121.16.186/baseservice/shareTriping?serviceId=%@",self.sid];
+        [UMSocialData defaultData].extConfig.wechatSessionData.url = [NSString stringWithFormat:@"http://42.121.16.186/baseservice/shareTripping?serviceid=%@",self.sid];
    
         
     }
     if (platformName == UMShareToWechatTimeline) {
         
         [UMSocialData defaultData].extConfig.wechatTimelineData.title = self.discoveryDetailListModel.tripInfoItem.name;
-        [UMSocialData defaultData].extConfig.wechatTimelineData.url = [NSString stringWithFormat:@"http://42.121.16.186/baseservice/shareTriping?serviceId=%@",self.sid];
+        [UMSocialData defaultData].extConfig.wechatTimelineData.url = [NSString stringWithFormat:@"http://42.121.16.186/baseservice/shareTripping?serviceid=%@",self.sid];
     }
 }
 

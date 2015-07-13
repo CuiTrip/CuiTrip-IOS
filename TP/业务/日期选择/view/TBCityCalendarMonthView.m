@@ -110,6 +110,7 @@ typedef struct Tag
     float origin_y = 55;
     NSString* str = @"";
     CGRect smallRect = CGRectZero;
+    bool hasBeenSelecte = false;
     for (int i=1; i<=self.numberOfDays; i++)
     {
         
@@ -171,27 +172,57 @@ typedef struct Tag
         else
         {
             bCanReserve = false;
-            
-//            //改天已被预定
-//            if ([self.reservedDates containsObject:@(i)]) {
-//                
-//                //画背景
-//                [HEXCOLOR(0xdddddd) set];
-//                UIRectFill(CGRectInset(smallRect, 5, 5));
-//                
-//                [[UIColor whiteColor] set];
-//                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-//            }
-//            else
-//            {
+            if (self.canEdit) {
+                
+                //画背景
+                [HEXCOLOR(0xdddddd) set];
+                UIRectFill(CGRectInset(smallRect, 0.5, 0.5));
+                [[TPTheme themeColor]set];
+                [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+                bCanReserve = true;
+                hasBeenSelecte=true;
+                
+                if (_hasBeenLayout) {
+                    
+                    if ([[_touchedTags allKeys] containsObject:@(i)]) {
+                        
+                        NSValue* val = _touchedTags[@(i)];
+                        TagInfo t ;
+                        [val getValue:&t];
+                        if (t.hasBeenSelected) {
+                            //画背景
+                            [HEXCOLOR(0xdddddd) set];
+                            
+                        }
+                        else
+                        {
+                            [self.backgroundColor set];
+                            
+                        }
+                        UIRectFill(CGRectMake(t.ori_x, t.ori_y+0.5, t.w, t.h-1));
+                        [[TPTheme themeColor]set];
+                        [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+                        
+                    }
+                }
+                else
+                {
+                    [self.delegate onMonthView:self DateSelected:i];
+                
+                }
+
+            }
+            else
+            {
                 [HEXCOLOR(0xdddddd) set];
                 [str drawInRect:CGRectInset(smallRect, 5, 15) withFont:[UIFont systemFontOfSize:16.0f] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
-//            }
+            }
+
         }
         
 
 
-        TagInfo t = {bCanReserve,i,kTPScreenWidth/7,55,smallRect.origin.x,smallRect.origin.y,0};
+        TagInfo t = {bCanReserve,i,kTPScreenWidth/7,55,smallRect.origin.x,smallRect.origin.y,hasBeenSelecte};
         NSValue* value = [[NSValue alloc]initWithBytes:&t objCType:@encode(struct Tag)];
         if (!_hasBeenLayout) {
             [_list addObject:value];

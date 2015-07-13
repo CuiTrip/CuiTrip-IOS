@@ -1,7 +1,7 @@
 //
 //  TPDiscoveryDetailContentViewController.m
 //  TP
-//
+//  发现详情页，点击查看详情后的跳转页面，需要修改为图文混排详情页
 //  Created by moxin on 15/6/3.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
