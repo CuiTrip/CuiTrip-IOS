@@ -303,7 +303,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    [MobClick beginLogPageView:@"TPDiscoveryDetailListView"];
     self.navigationController.navigationBarHidden = true;
    
 }
@@ -311,6 +311,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [MobClick endLogPageView:@"TPDiscoveryDetailListView"];
     self.tabBarController.tabBar.hidden = true;
 }
 

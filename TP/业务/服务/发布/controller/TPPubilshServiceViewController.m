@@ -166,7 +166,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"TPPubilshServiceView"];
     self.tabBarController.tabBar.hidden = true;
     //todo..
 }
@@ -174,7 +174,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    [MobClick endLogPageView:@"TPPubilshServiceView"];
     //todo..
 }
 

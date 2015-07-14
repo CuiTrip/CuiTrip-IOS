@@ -64,14 +64,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"TPFeedbackView"];
     //todo..
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    [MobClick endLogPageView:@"TPFeedbackView"];
     //todo..
 }
 

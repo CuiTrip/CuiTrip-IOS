@@ -117,13 +117,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"TPMessageListView"];
     [self checkAPNS];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [MobClick endLogPageView:@"TPMessageListView"];
     self.tabBarController.tabBar.hidden = NO;
 }
 

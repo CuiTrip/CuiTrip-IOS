@@ -19,6 +19,7 @@
 #import "TPAPNS.h"
 #import "UMessage.h"
 #import "UMSocial.h"
+#import "MobClick.h"
 
 
 #endif

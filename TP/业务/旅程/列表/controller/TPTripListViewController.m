@@ -117,11 +117,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"TPTripListView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [MobClick endLogPageView:@"TPTripListView"];
     self.tabBarController.tabBar.hidden = NO;
 }
 

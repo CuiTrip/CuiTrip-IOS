@@ -12,6 +12,7 @@ PODS:
   - SDWebImage/Core (3.7.2)
   - TMCache (2.1.0)
   - Toast (2.4)
+  - UMengAnalytics-NO-IDFA (3.5.9)
   - VZInspector (0.0.6)
   - WCAlertView (1.0.1)
 
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - SDWebImage
   - TMCache
   - Toast
+  - UMengAnalytics-NO-IDFA
   - VZInspector
   - WCAlertView
 
@@ -30,7 +32,8 @@ SPEC CHECKSUMS:
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
+  UMengAnalytics-NO-IDFA: c5302a2246061c356641bb3056e89dfbdeb37424
   VZInspector: 76335cdc69b73d6bfd6c79f27d81ed547800dc3c
   WCAlertView: 36a1d087d0b3eb7f6ce3dae623fbb474f26f2beb
 
-COCOAPODS: 0.36.0
+COCOAPODS: 0.37.2

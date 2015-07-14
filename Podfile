@@ -6,3 +6,4 @@ pod 'SDWebImage'
 pod 'TMCache'
 pod 'INTULocationManager'
 pod 'VZInspector',:configurations => ['Debug']
+pod 'UMengAnalytics-NO-IDFA'

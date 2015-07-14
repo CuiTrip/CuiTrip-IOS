@@ -103,7 +103,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"TPMeView"];
     if ([TPUser isLogined]) {
      
         [self.headerView.imageView sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
@@ -115,6 +115,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [MobClick endLogPageView:@"TPMeView"];
     self.tabBarController.tabBar.hidden = NO;
    
 

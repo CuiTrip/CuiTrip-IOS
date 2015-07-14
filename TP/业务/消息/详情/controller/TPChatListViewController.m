@@ -207,6 +207,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"TPChatListView"];
     self.tabBarController.tabBar.hidden = true;
     
   
@@ -215,7 +216,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    [MobClick endLogPageView:@"TPChatListView"];
     //todo..
 }
 
