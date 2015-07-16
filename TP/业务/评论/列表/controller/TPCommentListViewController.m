@@ -115,14 +115,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [MobClick endLogPageView:@"TPCommentListView"];
     //todo..
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPCommentListView"];
+
     //todo..
 }
 

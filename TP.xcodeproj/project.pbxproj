@@ -111,7 +111,6 @@
 		456C68F11B2ED35A003D4C20 /* TPPayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68E71B2ED35A003D4C20 /* TPPayItem.m */; };
 		456C68F21B2ED35A003D4C20 /* TPPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68EA1B2ED35A003D4C20 /* TPPayModel.m */; };
 		456C68F31B2ED35A003D4C20 /* TPPaySubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68EE1B2ED35A003D4C20 /* TPPaySubView.m */; };
-		456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
 		459B24971B176A1C009BB189 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459B248E1B176A1C009BB189 /* Info.plist */; };
@@ -316,6 +315,11 @@
 		45EB42FE1B2D63AE001B4202 /* TPTripArrangementSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB42F91B2D63AE001B4202 /* TPTripArrangementSubView.m */; };
 		45EB43011B2DB56F001B4202 /* TPChatStatusListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB43001B2DB56F001B4202 /* TPChatStatusListCell.m */; };
 		45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB43031B2DB610001B4202 /* TPChatStatusListItem.m */; };
+		7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B121B56080100E36430 /* trip_alipay@2x.png */; };
+		7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B131B56080100E36430 /* trip_wpay@2x.png */; };
+		7B956B191B56131300E36430 /* TPPayOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B956B171B56131300E36430 /* TPPayOrderViewController.m */; };
+		7B956B1A1B56131300E36430 /* TPPayOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B181B56131300E36430 /* TPPayOrderViewController.storyboard */; };
+		7B956B1C1B5614D500E36430 /* TPPayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -528,7 +532,6 @@
 		456C68EA1B2ED35A003D4C20 /* TPPayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPayModel.m; sourceTree = "<group>"; };
 		456C68ED1B2ED35A003D4C20 /* TPPaySubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPaySubView.h; sourceTree = "<group>"; };
 		456C68EE1B2ED35A003D4C20 /* TPPaySubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPaySubView.m; sourceTree = "<group>"; };
-		456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayViewController.storyboard; sourceTree = "<group>"; };
 		459B24871B176A1C009BB189 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		459B24881B176A1C009BB189 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		459B248A1B176A1C009BB189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -878,6 +881,12 @@
 		45EB43021B2DB610001B4202 /* TPChatStatusListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChatStatusListItem.h; sourceTree = "<group>"; };
 		45EB43031B2DB610001B4202 /* TPChatStatusListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChatStatusListItem.m; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7B956B121B56080100E36430 /* trip_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_alipay@2x.png"; sourceTree = "<group>"; };
+		7B956B131B56080100E36430 /* trip_wpay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_wpay@2x.png"; sourceTree = "<group>"; };
+		7B956B161B56131300E36430 /* TPPayOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPayOrderViewController.h; sourceTree = "<group>"; };
+		7B956B171B56131300E36430 /* TPPayOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPayOrderViewController.m; sourceTree = "<group>"; };
+		7B956B181B56131300E36430 /* TPPayOrderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayOrderViewController.storyboard; sourceTree = "<group>"; };
+		7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayViewController.storyboard; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1764,9 +1773,12 @@
 		456C68E21B2ED35A003D4C20 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				7B956B161B56131300E36430 /* TPPayOrderViewController.h */,
+				7B956B171B56131300E36430 /* TPPayOrderViewController.m */,
+				7B956B181B56131300E36430 /* TPPayOrderViewController.storyboard */,
 				456C68E31B2ED35A003D4C20 /* TPPayViewController.h */,
 				456C68E41B2ED35A003D4C20 /* TPPayViewController.m */,
-				456C68F41B2ED3F4003D4C20 /* TPPayViewController.storyboard */,
+				7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1808,19 +1820,19 @@
 		459B24851B176A1C009BB189 /* TP */ = {
 			isa = PBXGroup;
 			children = (
-				45D0C8161B2BE06D00F31BF5 /* 组件 */,
-				45D6BA701B268794007DFC7A /* 三方 */,
-				4509AB781B22E9FE00846032 /* supports */,
-				459BAED31B21E58700739C7E /* 资源 */,
-				45028A671B1B535E00417606 /* Vizzle */,
-				45028B6E1B1C835800417606 /* VizzleEX */,
 				45028B6D1B1C824A00417606 /* 工具 */,
+				45D6BA701B268794007DFC7A /* 三方 */,
 				45028AC31B1C753300417606 /* 业务 */,
+				459BAED31B21E58700739C7E /* 资源 */,
+				45D0C8161B2BE06D00F31BF5 /* 组件 */,
 				459B24871B176A1C009BB189 /* AppDelegate.h */,
 				459B24881B176A1C009BB189 /* AppDelegate.m */,
+				4509AB781B22E9FE00846032 /* supports */,
 				459B267D1B1838E4009BB189 /* TPAssert.h */,
-				45028AD21B1C76E200417606 /* TPHeader.h */,
 				45028B731B1C85DA00417606 /* TPConstant.h */,
+				45028AD21B1C76E200417606 /* TPHeader.h */,
+				45028A671B1B535E00417606 /* Vizzle */,
+				45028B6E1B1C835800417606 /* VizzleEX */,
 			);
 			path = TP;
 			sourceTree = "<group>";
@@ -1995,6 +2007,8 @@
 		459BAED31B21E58700739C7E /* 资源 */ = {
 			isa = PBXGroup;
 			children = (
+				7B956B121B56080100E36430 /* trip_alipay@2x.png */,
+				7B956B131B56080100E36430 /* trip_wpay@2x.png */,
 				459BAED41B21E58700739C7E /* trip_add_w@2x.png */,
 				459BAED51B21E58700739C7E /* trip_addPic_g@2x.png */,
 				459BAED61B21E58700739C7E /* trip_cuts_w@2x.png */,
@@ -3265,6 +3279,7 @@
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
 				45EB315D1B3664C3003A97AE /* agree.txt in Resources */,
+				7B956B1C1B5614D500E36430 /* TPPayViewController.storyboard in Resources */,
 				45D48C5A1B32EEBE00B5801F /* discoverydetail_meta.json in Resources */,
 				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				45D0C7E91B2BBEED00F31BF5 /* TPPSFeeViewController.storyboard in Resources */,
@@ -3297,6 +3312,7 @@
 				45EB31671B36F369003A97AE /* Images.xcassets in Resources */,
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				45D0C7B01B29BED800F31BF5 /* myservice_meta.json in Resources */,
+				7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */,
 				45D48BDD1B32AF3500B5801F /* UMSCommentDetailController.xib in Resources */,
 				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
@@ -3304,6 +3320,7 @@
 				45D0C7E31B2A7DB400F31BF5 /* TPPSPicsViewController.storyboard in Resources */,
 				45D0C7E11B29E36C00F31BF5 /* TPPSDescriptionViewController.storyboard in Resources */,
 				45DD47371B28200200D2BB62 /* message_meta.json in Resources */,
+				7B956B1A1B56131300E36430 /* TPPayOrderViewController.storyboard in Resources */,
 				459BAEF91B21E58700739C7E /* trip_nav_r_A@2x.png in Resources */,
 				45D48BE31B32AF3500B5801F /* UMSnsAccountViewController.xib in Resources */,
 				45EB315B1B3662D1003A97AE /* trip_display_yes@2x.png in Resources */,
@@ -3313,7 +3330,6 @@
 				45D0C7FB1B2BDA3400F31BF5 /* o2o_yellow_star@3x.png in Resources */,
 				4509ABCC1B234CD900846032 /* TPMeSubView.xib in Resources */,
 				4509ABE51B23DDF600846032 /* feedback_meta.json in Resources */,
-				456C68F51B2ED3F4003D4C20 /* TPPayViewController.storyboard in Resources */,
 				45D0C78E1B29AFD800F31BF5 /* publishcomment_meta.json in Resources */,
 				45D48BE21B32AF3500B5801F /* UMSLoginViewController.xib in Resources */,
 				4509ABC81B233D0700846032 /* TPReserveViewController.storyboard in Resources */,
@@ -3334,6 +3350,7 @@
 				45109A201B3079460074DCB6 /* trip_right3@2x.png in Resources */,
 				459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */,
 				45D0C7761B29AE8800F31BF5 /* comment_meta.json in Resources */,
+				7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */,
 				459BAEF31B21E58700739C7E /* trip_nav_j_A@2x.png in Resources */,
 				45DB44261B3C4D59007101EA /* TPModifyPWDViewController.storyboard in Resources */,
 				45EB31651B36D88B003A97AE /* about@2x.jpg in Resources */,
@@ -3568,6 +3585,7 @@
 				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
 				45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */,
+				7B956B191B56131300E36430 /* TPPayOrderViewController.m in Sources */,
 				45D0C7D41B29E0BD00F31BF5 /* TPPSPicsViewController.m in Sources */,
 				45028AAA1B1B535E00417606 /* VZListViewDataSource.m in Sources */,
 				4509AB761B22E3E300846032 /* TPLoginViewController.m in Sources */,

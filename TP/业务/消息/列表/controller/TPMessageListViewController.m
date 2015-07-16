@@ -124,14 +124,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [MobClick endLogPageView:@"TPMessageListView"];
     self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPMessageListView"];
+
     //todo..
 }
 

@@ -88,14 +88,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [MobClick endLogPageView:@"TPPublishCommentView"];
     //todo..
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPPublishCommentView"];
+
     //todo..
 }
 

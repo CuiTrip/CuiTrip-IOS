@@ -216,14 +216,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [MobClick endLogPageView:@"TPChatListView"];
     //todo..
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPChatListView"];
+
     //todo..
 }
 
@@ -391,7 +391,7 @@
             if ([TPUser type] == kCustomer) {
                 
                 //去支付
-                TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+                TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayOrderViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppayorder"];
                 vc.oid = weakSelf.orderId;
                 [weakSelf.navigationController pushViewController:vc animated:true];
             }

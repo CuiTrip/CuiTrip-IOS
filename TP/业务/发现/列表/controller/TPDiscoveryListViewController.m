@@ -118,13 +118,13 @@
 {
     [super viewDidAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-    [MobClick endLogPageView:@"TPDiscoveryListView"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPDiscoveryListView"];
+
     //todo..
 }
 

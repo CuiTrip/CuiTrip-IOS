@@ -71,14 +71,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [MobClick endLogPageView:@"TPFeedbackView"];
     //todo..
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPFeedbackView"];
+
     //todo..
     [self.textView resignFirstResponder];
 }

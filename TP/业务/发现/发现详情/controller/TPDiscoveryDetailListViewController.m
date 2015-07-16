@@ -311,13 +311,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [MobClick endLogPageView:@"TPDiscoveryDetailListView"];
     self.tabBarController.tabBar.hidden = true;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"TPDiscoveryDetailListView"];
     self.navigationController.navigationBarHidden = false;
 }
 

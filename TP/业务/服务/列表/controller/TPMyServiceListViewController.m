@@ -133,7 +133,6 @@
 {
     [super viewDidAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-    [MobClick endLogPageView:@"TPMyServiceListView"];
     [self setRightBarButtonItem];
     
 }
@@ -141,7 +140,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPMyServiceListView"];
+
     //todo..
 }
 
