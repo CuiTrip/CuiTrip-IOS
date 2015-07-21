@@ -55,6 +55,7 @@
     [super loadView];
     //todo..
     [self setTitle:@"修改密码"];
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.pwdTextField.secureTextEntry = true;
     self.confirmPWDTextField.secureTextEntry = true;
 }

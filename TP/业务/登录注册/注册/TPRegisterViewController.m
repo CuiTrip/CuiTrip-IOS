@@ -59,6 +59,8 @@
     
     self.areaCode = [TPUtils defaultLocalCode];
     self.pwdTextField.secureTextEntry = true;
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.vCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
     
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
     self.contryLabel.text = localCode;

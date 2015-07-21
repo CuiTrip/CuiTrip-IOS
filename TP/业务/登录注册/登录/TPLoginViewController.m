@@ -47,7 +47,7 @@
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)]];
 
-
+    self.nameTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.pwdTextField.secureTextEntry = YES;
     
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];

@@ -12,11 +12,12 @@
 #import "TPChatListCell.h"
 #import "TPChatListItem.h"
 
-const int kPaddingY = 10;
-const int kPaddingX = 10;
+const int kPaddingY = 15;
+const int kPaddingX = 15;
 @interface TPChatListCell()
 
 @property(nonatomic,strong) UIImageView* icon;
+@property(nonatomic,strong) UIImageView* arrowIcon;
 @property(nonatomic,strong) UILabel* chatLabel;
 @property(nonatomic,strong) UIView* chatBK;
 @property(nonatomic,strong) UILabel* timeLabel;
@@ -32,7 +33,10 @@ const int kPaddingX = 10;
     if (self) {
         
         //todo: add some UI code
-        self.icon = [TPUIKit roundImageView:CGSizeMake(36, 36) Border:[UIColor clearColor]];
+        self.icon = [TPUIKit roundImageView:CGSizeMake(44, 44) Border:[UIColor clearColor]];
+        self.arrowIcon = [TPUIKit roundImageView:CGSizeMake(6, 12) Border:[UIColor clearColor]];
+        self.contentView.backgroundColor = HEXCOLOR(0xeeeeee);
+        [self.contentView addSubview:self.arrowIcon];
         [self.contentView addSubview:self.icon];
         
         self.chatBK = [[UIView alloc]initWithFrame:CGRectZero];
@@ -71,19 +75,17 @@ const int kPaddingX = 10;
     
     //自己发得
     if ([item.from isEqualToString:[TPUser uid]]) {
-        
-        self.chatBK.backgroundColor = HEXCOLOR(0xeeeeee);
+        [self.arrowIcon setImage:[UIImage imageNamed:@"trip_msg_green.png"] ];
+        self.chatBK.backgroundColor = [TPTheme blueColor];
         self.chatLabel.textColor = [UIColor blackColor];
         self.timeLabel.textColor = [TPTheme grayColor];
-        
-        
     }
     else
     {
-        self.chatBK.backgroundColor = HEXCOLOR(0x9b9b9b);
-        self.chatLabel.textColor = [UIColor whiteColor];
-        self.timeLabel.textColor = [UIColor whiteColor];
-        
+        [self.arrowIcon setImage:[UIImage imageNamed:@"trip_msg_white.png"]];
+        self.chatBK.backgroundColor = [UIColor whiteColor];
+        self.chatLabel.textColor = [UIColor blackColor];
+        self.timeLabel.textColor = [TPTheme grayColor];
     }
 }
 
@@ -95,9 +97,9 @@ const int kPaddingX = 10;
     
     //自己发得
     if ([item.from isEqualToString:[TPUser uid]]) {
-        
-        self.icon.vzOrigin = CGPointMake(kPaddingX, kPaddingY);
-        self.chatBK.vzOrigin = (CGPoint){self.icon.vzRight+5,kPaddingY};
+        self.icon.vzOrigin = CGPointMake(self.vzWidth-self.icon.vzWidth-kPaddingX, kPaddingY);
+        self.arrowIcon.vzOrigin = CGPointMake(self.icon.vzLeft-self.arrowIcon.vzWidth, kPaddingY+15);
+        self.chatBK.vzOrigin = (CGPoint){self.arrowIcon.vzLeft-item.chatBKSize.width+1,kPaddingY};
         self.chatBK.vzSize = item.chatBKSize;
         self.chatLabel.vzOrigin = (CGPoint){10,10};
         self.chatLabel.vzSize = item.chatContentSize;
@@ -107,14 +109,15 @@ const int kPaddingX = 10;
     }
     else
     {
-        self.icon.vzOrigin = CGPointMake(self.vzWidth-self.icon.vzWidth-kPaddingX, kPaddingY);
-        self.chatBK.vzOrigin = (CGPoint){self.vzWidth-item.chatBKSize.width-5-10-self.icon.vzWidth,kPaddingY};
+        self.icon.vzOrigin = CGPointMake(kPaddingX, kPaddingY);
+        self.arrowIcon.vzOrigin = CGPointMake(self.icon.vzRight, kPaddingY+15);
+        self.chatBK.vzOrigin = (CGPoint){self.arrowIcon.vzRight-1,kPaddingY};
         self.chatBK.vzSize = item.chatBKSize;
         self.chatLabel.vzOrigin = (CGPoint){10,10};
         self.chatLabel.vzSize = item.chatContentSize;
         self.timeLabel.vzOrigin = (CGPoint){10,self.chatLabel.vzBottom+5};
         self.timeLabel.vzSize = CGSizeMake(self.chatLabel.vzWidth, 12);
-    
+        
     }
   
   

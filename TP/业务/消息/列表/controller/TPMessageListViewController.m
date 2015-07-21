@@ -18,8 +18,7 @@
 
 @interface TPMessageListViewController()
 
- 
-@property(nonatomic,strong)TPMessageListModel *messageListModel; 
+@property(nonatomic,strong)TPMessageListModel *messageListModel;
 @property(nonatomic,strong)TPMessageListViewDataSource *ds;
 @property(nonatomic,strong)TPMessageListViewDelegate *dl;
 
@@ -41,6 +40,7 @@
     if (!_messageListModel) {
         _messageListModel = [TPMessageListModel new];
         _messageListModel.key = @"__TPMessageListModel__";
+        _messageListModel.userType = [TPUser type];
     }
     return _messageListModel;
 }
@@ -78,6 +78,35 @@
 {
     [super viewDidLoad];
     
+    
+    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"旅行者", @"发现者", nil]];
+    segment.segmentedControlStyle = UISegmentedControlStyleBar;
+    [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateSelected];
+    segment.frame = CGRectMake(((self.view.vzWidth-200)/2), 6, 200, 32);
+    segment.tintColor=[TPTheme themeColor];
+    [segment addTarget:self action:@selector(segmentChanged:) forControlEvents:UIControlEventValueChanged];
+    if ([TPUser type] == kCustomer) {   // 旅行者
+        [segment setSelectedSegmentIndex:0];
+    }
+    else
+    {
+        [segment setSelectedSegmentIndex:1];
+    }
+    self.tableView.showsHorizontalScrollIndicator = NO;
+
+    UIView *segmentView = [[UIView alloc] initWithFrame: CGRectMake(0, self.navigationItem.titleView.vzBottom, self.tableView.vzWidth, 44)];
+    segmentView.backgroundColor = [UIColor whiteColor];
+    [segmentView addSubview:segment];
+    
+    UIView *bottomBorder = [UIView new];
+    bottomBorder.backgroundColor = [TPTheme grayColor];
+    bottomBorder.frame = CGRectMake(0, segmentView.frame.size.height-0.5, segmentView.frame.size.width, 0.5);
+    [bottomBorder setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    [segmentView addSubview:bottomBorder];
+
+    self.tableView.tableHeaderView = segmentView;
+    [self.view addSubview:segmentView];     // 加上后不随tableview滑动
+//
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     
     [self registerChannelMsg];
@@ -97,13 +126,10 @@
     if (![TPUser isLogined]) {
         
         [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
-            
             loadModel();
-            
         }];
         
         [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
-            
             loadModel();
         }];
     }
@@ -162,6 +188,34 @@
 #pragma mark - @override methods - VZViewController
 
 
+
+- (void)segmentChanged:(UISegmentedControl*)sender
+{
+    void(^loadModel)(void) = ^{
+        [TPLoginManager hideLoginViewController];
+        [TPUIKit removeExceptionView:self.view];
+        
+        //setupUI
+        [self setupTableView];
+        [self load];
+    };
+    
+    if (sender.selectedSegmentIndex == 0) {
+        _messageListModel.userType = kCustomer;
+        
+        [self checkAPNS];
+        loadModel();
+        [self.tableView reloadData];
+    } else {
+        _messageListModel.userType = kProvider;
+        
+        [self checkAPNS];
+        loadModel();
+        [self.tableView reloadData];
+    }
+    
+}
+
 - (void)showModel:(VZModel *)model
 {
     [super showModel:model];
@@ -195,15 +249,15 @@
             receiverId = item.insiderId;
         }
         else
+        {
             receiverId = item.trallerId;
+        }
         TPChatListViewController* vc = [TPChatListViewController new];
         vc.orderId = item.orderId;
         vc.receiverId = receiverId;
         [self.navigationController pushViewController:vc animated:true];
     }
-    
 
-  
 }
 
 

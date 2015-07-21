@@ -196,6 +196,18 @@ static NSArray* list = nil;
     return str;
 }
 
++ (NSString* )timeFormatString:(NSDate* )date{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    calendar.firstWeekday = 1;
+    calendar.minimumDaysInFirstWeek = 7;
+    NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
+    
+    NSString* str = [[NSString alloc]initWithFormat:@"%ld:%ld",component.hour,component.minute];
+    
+    
+    return str;
+}
+
 + (NSString* )money:(NSString* )money WithType:(NSString* )type
 {
     NSString* moneyType = type;

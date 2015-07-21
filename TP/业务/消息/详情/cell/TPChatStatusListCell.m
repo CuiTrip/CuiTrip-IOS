@@ -25,10 +25,11 @@
     
     if (self) {
         
-        self.backgroundColor = [UIColor whiteColor];
-        self.label = [TPUIKit label:[TPTheme themeColor] Font:ft(12.0f)];
+        self.backgroundColor = HEXCOLOR(0xeeeeee);
+        self.label = [TPUIKit label:[TPTheme grayColor] Font:ft(13.0f)];
         self.label.textAlignment = NSTextAlignmentCenter;
-        self.label.backgroundColor = [TPTheme yellowColor];
+        self.label.backgroundColor = [UIColor whiteColor];
+        self.contentView.layer.cornerRadius = 5.0f;
         [self.contentView addSubview:self.label];
     }
     return self;

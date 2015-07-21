@@ -3,7 +3,7 @@
 //  TPPaySubView.m
 //  TP
 //
-//  Created by moxin on 2015-06-15 17:32:26 +0800.
+//  Created by wifigo on 2015-07-21 20:44:52 +0800.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
@@ -35,6 +35,15 @@
 - (void)setItem:(TPPayItem *)item
 {
   
+}
+
+- (IBAction)confirmBtn:(id)sender {
+    //    [self.tabBarController setSelectedIndex:2];
+    
+    if (self.onConfirmCallback) {
+        self.onConfirmCallback();
+    }
+    
 }
 
 - (void)layoutSubviews

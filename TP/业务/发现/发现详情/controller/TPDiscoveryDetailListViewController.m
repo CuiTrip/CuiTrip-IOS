@@ -66,6 +66,8 @@
 
 @interface TPDiscoveryDetailListViewController()<UMSocialUIDelegate>
 
+@property(nonatomic,strong) UIView* headerNavView;
+
 @property(nonatomic,strong)TPTripArrangementModel *tripArrangementModel;
 @property(nonatomic,strong)TPDiscoveryDetailListModel *discoveryDetailListModel; 
 @property(nonatomic,strong)TPDiscoveryDetailListViewDataSource *ds;
@@ -282,7 +284,7 @@
      subscribeNext:^(id x) {
          [self.navigationController popViewControllerAnimated:true];
      }];
-    [self.view addSubview:backBtn];
+//    [self.view addSubview:backBtn];
     
     UIButton* shareBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.vzWidth-44, 20, 44 , 44)];
     [shareBtn setBackgroundImage:__image(@"trip_share_w.png") forState:UIControlStateNormal];
@@ -297,7 +299,12 @@
                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
                                            delegate:self];
     }];
-    [self.view addSubview:shareBtn];
+//    [self.view addSubview:shareBtn];
+    _headerNavView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, self.view.vzWidth, 64)];
+    [_headerNavView addSubview:backBtn];
+    [_headerNavView addSubview:shareBtn];
+    [self.view addSubview:self.headerNavView];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -339,6 +346,20 @@
     //todo..
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    NSLog(@"offset---scroll:%f",self.tableView.contentOffset.y);
+
+    UIColor *color=[[UIColor blackColor] colorWithAlphaComponent:0.7];
+    CGFloat offset=scrollView.contentOffset.y;
+    if (offset<0) {
+        self.headerNavView.backgroundColor = [color colorWithAlphaComponent:0];
+    }else {
+        CGFloat alpha=1-((320-offset)/320);
+        CGFloat truealpha=alpha>0.7?0.7:alpha;
+        self.headerNavView.backgroundColor=[color colorWithAlphaComponent:truealpha];
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZViewController

@@ -40,6 +40,11 @@
     return HEXCOLOR(0x9b9b9b);
 }
 
++ (UIColor* )blueColor
+{
+    return HEXCOLOR(0xb8e986);
+}
+
 + (UIColor* )bar
 {
     return [UIColor colorWithRed:255/255.0 green:107/255.0 blue:103/255.0 alpha:1];

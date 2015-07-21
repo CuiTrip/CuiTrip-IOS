@@ -421,7 +421,6 @@
     self.calendarView = calendarView;
     [self.view addSubview:calendarView];
     
-    
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDatePickerCalenderFooterView" owner:self options:nil];
     UIView* v =(UIView *)[nib objectAtIndex:0];
     v.backgroundColor = [UIColor clearColor];

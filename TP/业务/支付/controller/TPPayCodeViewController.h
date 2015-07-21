@@ -11,7 +11,8 @@
   
 #import "VZViewController.h"
 
-@interface TPPayOrderViewController : VZViewController
+@interface TPPayCodeViewController : VZViewController
+
 @property(nonatomic,strong)NSString* oid;
 
 @end

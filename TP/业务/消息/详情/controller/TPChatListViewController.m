@@ -183,7 +183,7 @@
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-50);
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = HEXCOLOR(0xeeeeee);;
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
     self.tableView.tableHeaderView = self.headerView;
@@ -202,6 +202,46 @@
     self.chatListModel.orderId = self.orderId;
     [self registerModel:self.keyModel];
     [self load];
+    
+    
+    UIButton*rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,80,30)];
+//    [rightButton setImage:[UIImage imageNamed:@"search.png"]forState:UIControlStateNormal];
+    [rightButton setTitle:@"查看旅程" forState:UIControlStateNormal];//设置button的title
+    rightButton.titleLabel.font = [UIFont systemFontOfSize:16];//title字体大小
+    rightButton.titleLabel.textAlignment = NSTextAlignmentCenter;//设置title的字体居中
+    [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];//设置title在一般情况下为白色字体
+    [rightButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];//设置title在button被选中情况下为灰色字体
+//    [rightButton addTarget:self action:@selector(searchprogram)forControlEvents:UIControlEventTouchUpInside];
+    [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+     subscribeNext:^(id x) {
+                  
+         TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+         vc.oid = self.orderId;
+         [self.navigationController pushViewController:vc animated:true];
+         // 跳转旅程列表
+         /*[[[[UIApplication sharedApplication].delegate window] viewWithTag:996]removeFromSuperview];
+         [self.tabBarController setSelectedIndex:2];
+         [self.navigationController popToRootViewControllerAnimated:true];*/
+         
+     }];
+    UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
+
+    //单个手指双击屏幕事件注册
+    UITapGestureRecognizer *oneFingerTwoTaps =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps)];
+    // Set required taps and number of touches
+    [oneFingerTwoTaps setNumberOfTapsRequired:2];
+    [oneFingerTwoTaps setNumberOfTouchesRequired:1];
+    
+    // Add the gesture to the view
+    [[self view] addGestureRecognizer:oneFingerTwoTaps];
+}
+
+- (void)oneFingerTwoTaps
+{
+//    NSLog(@"Action: One finger, two taps");
+    [TPGrowingTextView hideFromView:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -391,7 +431,7 @@
             if ([TPUser type] == kCustomer) {
                 
                 //去支付
-                TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayOrderViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppayorder"];
+                TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
                 vc.oid = weakSelf.orderId;
                 [weakSelf.navigationController pushViewController:vc animated:true];
             }

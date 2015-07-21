@@ -14,7 +14,7 @@
 
 /**
  "type":"2",
- "headPic":"http://****",	// 头像
+ "headPic":"http://",	// 头像
  "topic":"阿亮带您环岛游",	//消息title
  "lastMsg":"好的，到时见",	// 上一条消息
  "orderId":"11111_22222",	// 订单号，根据订单号跳
@@ -26,6 +26,8 @@
 @property(nonatomic,strong) NSString* type;
 @property(nonatomic,strong) NSString* topic;
 @property(nonatomic,strong) NSString* headPic;
+@property(nonatomic,strong) NSString* nick;
+@property(nonatomic,strong) NSString* gmtCreated;
 @property(nonatomic,strong) NSString* lastMsg;
 @property(nonatomic,strong) NSString* orderId;
 @property(nonatomic,strong) NSString* trallerId;

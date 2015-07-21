@@ -22,6 +22,6 @@
 
 + (UIColor* )themeColor;
 
-
++ (UIColor* )blueColor;
 
 @end

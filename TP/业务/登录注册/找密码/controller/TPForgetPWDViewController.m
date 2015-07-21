@@ -86,6 +86,7 @@
 - (void)loadView
 {
     [super loadView];
+
     //self.confirmBtn.hidden = true;
     //todo..
 }
@@ -96,6 +97,11 @@
     //todo..
     [self setTitle:@"重置密码"];
     
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.vCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    
+    self.pwdTextField.keyboardType = UIKeyboardTypeDefault;
+    self.confirmPWDTextField.keyboardType = UIKeyboardTypeDefault;
     self.pwdTextField.secureTextEntry = YES;
     self.areaCode = [TPUtils defaultLocalCode];
     NSString* localCode = [NSString stringWithFormat:@"+%@ %@",[TPUtils defaultLocalCode],[TPUtils defaultCountry]];
@@ -221,7 +227,9 @@
         }
         else
         {
-            NSString* str = [NSString stringWithFormat:@"状态码：%zi ,错误描述：%@",error.errorCode,error.errorDescription];
+            
+            NSLog(@"onVCode error in %@: %@", self, error);
+            NSString* str = [NSString stringWithFormat:@"获取失败：%@",error.errorDescription];
             TOAST(self , str);
         }
     }];

@@ -136,4 +136,34 @@
     [[v viewWithTag:999] removeFromSuperview];
 }
 
+// convertViewToImage
++ (UIImage*)convertViewToImage:(UIView*)v{
+    
+    UIGraphicsBeginImageContext(v.bounds.size);
+    
+    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+// 模糊化图片
++ (UIImage *)blurryImage:(UIImage *)image
+           withBlurLevel:(CGFloat)blur {
+    CIContext *context = [CIContext contextWithOptions:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:kCIContextUseSoftwareRenderer]];//CPU渲染
+    //    CIContext *context = [CIContext context];
+    CIImage *inputImage = [CIImage imageWithCGImage:image.CGImage];
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"
+                                  keysAndValues:kCIInputImageKey, inputImage,
+                        @"inputRadius", @(blur),
+                        nil];
+    
+    CIImage *outputImage = filter.outputImage;
+    CGImageRef outImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    return [UIImage imageWithCGImage:outImage];
+    
+}
+
 @end

@@ -13,5 +13,7 @@
 
 @interface TPMessageListModel : VZHTTPListModel
 
+@property(nonatomic,assign)TPUserType userType;
+
 @end
 

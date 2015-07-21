@@ -13,6 +13,8 @@
 #import "TPMessageListItem.h"
 @interface TPMessageListModel()
 
+
+
 @end
 
 @implementation TPMessageListModel
@@ -22,17 +24,9 @@
 
 - (NSDictionary *)dataParams {
     
-    TPUserType type = [TPUser type];
-    
-    NSString* changeType = @"";
-    if (type == kCustomer) {
-        changeType = @"0";
-    }
-    else
-    {
-        changeType = @"1";
-    }
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"changeType":changeType};
+    NSString* type = (self.userType==kCustomer)?@"0":@"1";
+
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"userType":type};
 }
 
 - (VZHTTPRequestConfig)requestConfig
