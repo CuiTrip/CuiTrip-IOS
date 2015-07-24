@@ -11,6 +11,7 @@
 #import "TPTabBarViewController.h"
 #import "TPDiscoveryListViewController.h"
 #import "TPMessageListItem.h"
+#import "Pingpp.h"
 
 @interface AppDelegate ()
 
@@ -35,11 +36,12 @@
     
     //注册分享
     [UMSocialData setAppKey:um_appKey];
-    [UMSocialWechatHandler setWXAppId:@"wx2af152cb604683bf" appSecret:@"7bcb01993ed6b20c3cdfecd71fae7af5" url:@"http://www.cuitrip.com"];
-    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
+    [UMSocialWechatHandler setWXAppId:wx_appId appSecret:wx_appSecret url:@"http://www.cuitrip.com"];
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeOther;
+    [UMSocialData defaultData].extConfig.wechatSessionData.shareImage = __image(@"icon.png");
     
-//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd";
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://mp.weixin.qq.com/s?__biz=MzAxNzU2ODIyNg==&mid=206821731&idx=1&sn=9795e734df8a6e48014fb6069f494237#rd";
+//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://www.cuitrip.com";
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://www.cuitrip.com";
 
     
     //注册APNS
@@ -115,12 +117,28 @@
 {
     return  [UMSocialSnsService handleOpenURL:url];
 }
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation
+//{
+//    return  [UMSocialSnsService handleOpenURL:url];
+//}
+
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    return  [UMSocialSnsService handleOpenURL:url];
+         annotation:(id)annotation {
+    [Pingpp handleOpenURL:url
+           withCompletion:^(NSString *result, PingppError *error) {
+               if ([result isEqualToString:@"success"]) {
+                   // 支付成功
+               } else {
+                   // 支付失败或取消
+                   NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);
+               }
+           }];
+    return  YES;
 }
 
 

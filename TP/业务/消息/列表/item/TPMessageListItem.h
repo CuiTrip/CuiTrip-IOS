@@ -30,6 +30,7 @@
 @property(nonatomic,strong) NSString* gmtCreated;
 @property(nonatomic,strong) NSString* lastMsg;
 @property(nonatomic,strong) NSString* orderId;
+@property(nonatomic,strong) NSString* orderStatus;
 @property(nonatomic,strong) NSString* trallerId;
 @property(nonatomic,strong) NSString* insiderId;
 @property(nonatomic,assign) BOOL hasNewMsg;

@@ -14,7 +14,7 @@
 @interface TPPayViewController : VZViewController
 
 @property(nonatomic,strong)NSString* oid;
-
+@property(nonatomic, retain)NSString *channel;
 
 @end
   

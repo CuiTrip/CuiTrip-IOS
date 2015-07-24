@@ -17,7 +17,7 @@
 #import "TPMessageListItem.h"
 
 @interface TPMessageListViewController()
-
+@property(nonatomic,strong)UIView *segmentView;
 @property(nonatomic,strong)TPMessageListModel *messageListModel;
 @property(nonatomic,strong)TPMessageListViewDataSource *ds;
 @property(nonatomic,strong)TPMessageListViewDelegate *dl;
@@ -94,19 +94,24 @@
     }
     self.tableView.showsHorizontalScrollIndicator = NO;
 
-    UIView *segmentView = [[UIView alloc] initWithFrame: CGRectMake(0, self.navigationItem.titleView.vzBottom, self.tableView.vzWidth, 44)];
-    segmentView.backgroundColor = [UIColor whiteColor];
-    [segmentView addSubview:segment];
+    _segmentView = [[UIView alloc] initWithFrame: CGRectMake(0, self.navigationItem.titleView.vzBottom, self.tableView.vzWidth, 44)];
+    _segmentView.backgroundColor = [UIColor whiteColor];
+    [_segmentView addSubview:segment];
     
     UIView *bottomBorder = [UIView new];
     bottomBorder.backgroundColor = [TPTheme grayColor];
-    bottomBorder.frame = CGRectMake(0, segmentView.frame.size.height-0.5, segmentView.frame.size.width, 0.5);
+    bottomBorder.frame = CGRectMake(0, _segmentView.frame.size.height-0.5, _segmentView.frame.size.width, 0.5);
     [bottomBorder setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
-    [segmentView addSubview:bottomBorder];
+    [_segmentView addSubview:bottomBorder];
 
-    self.tableView.tableHeaderView = segmentView;
-    [self.view addSubview:segmentView];     // 加上后不随tableview滑动
-//
+    self.tableView.tableHeaderView = _segmentView;
+    [self.view addSubview:_segmentView];     // 加上后不随tableview滑动
+    
+    
+//    [[self navigationController] tabBarItem].badgeValue = @"";
+//    [self navigationController].tabBarController.tabBar
+    
+
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     
     [self registerChannelMsg];
@@ -202,16 +207,12 @@
     
     if (sender.selectedSegmentIndex == 0) {
         _messageListModel.userType = kCustomer;
-        
-        [self checkAPNS];
         loadModel();
-        [self.tableView reloadData];
+        [self hideBadgeOnView:self.segmentView inIndex:0];
     } else {
         _messageListModel.userType = kProvider;
-        
-        [self checkAPNS];
         loadModel();
-        [self.tableView reloadData];
+        [self hideBadgeOnView:self.segmentView inIndex:1];
     }
     
 }
@@ -255,6 +256,7 @@
         TPChatListViewController* vc = [TPChatListViewController new];
         vc.orderId = item.orderId;
         vc.receiverId = receiverId;
+        vc.orderStatus = item.orderStatus;
         [self.navigationController pushViewController:vc animated:true];
     }
 
@@ -336,8 +338,14 @@
         for (int i=0; i<[self.ds itemsForSection:0].count; i++) {
             
             TPMessageListItem* item = (TPMessageListItem* )[self.ds itemForCellAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+
             if ([item.orderId isEqualToString:orderId]) {
                 item.hasNewMsg = true;
+                if (self.messageListModel.userType == kCustomer) {
+                    [self showBadgeOnView:self.segmentView inIndex:0];
+                } else{
+                    [self showBadgeOnView:self.segmentView inIndex:1];
+                }
                 break;
             }
         }
@@ -345,6 +353,34 @@
         [self.tableView reloadData];
     }
 }
+
+
+- (void)showBadgeOnView:(UIView*)view inIndex:(int)index{
+    [self removeBadgeOnView:view inIndex:index];
+    UIView *badgeView = [[UIView alloc]init];
+    badgeView.tag = 888 + index;
+    badgeView.layer.cornerRadius = 5;
+    badgeView.backgroundColor = [UIColor redColor];
+    CGRect tabFrame = view.frame;
+    float percentX = (self.view.vzWidth-200)/2 - 5;
+    CGFloat x = ceilf(percentX + index*200);
+    CGFloat y = ceilf(0.1 * tabFrame.size.height);
+    badgeView.frame = CGRectMake(x, y, 10, 10);
+    [view addSubview:badgeView];
+}
+
+- (void)hideBadgeOnView:(UIView*)view inIndex:(int)index{
+    [self removeBadgeOnView:view inIndex:index];
+}
+
+- (void)removeBadgeOnView:(UIView*)view inIndex:(int)index{
+    for (UIView *subView in view.subviews) {
+        if (subView.tag == 888+index) {
+            [subView removeFromSuperview];
+        }
+    }
+}
+
 
 @end
 

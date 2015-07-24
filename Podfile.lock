@@ -1,5 +1,10 @@
 PODS:
   - INTULocationManager (3.0.3)
+  - Pingpp/Alipay (2.0.6):
+    - Pingpp/Core
+  - Pingpp/Core (2.0.6)
+  - Pingpp/Wx (2.0.6):
+    - Pingpp/Core
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -18,6 +23,8 @@ PODS:
 
 DEPENDENCIES:
   - INTULocationManager
+  - Pingpp/Alipay (~> 2.0.5)
+  - Pingpp/Wx (~> 2.0.5)
   - ReactiveCocoa
   - SDWebImage
   - TMCache
@@ -28,6 +35,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   INTULocationManager: e79327803a163f5fec28eb042bb124ed0c6e4876
+  Pingpp: c66e424847bc811c890f04b623bc96646eb86bd9
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed

@@ -29,7 +29,7 @@
         self.label = [TPUIKit label:[TPTheme grayColor] Font:ft(13.0f)];
         self.label.textAlignment = NSTextAlignmentCenter;
         self.label.backgroundColor = [UIColor whiteColor];
-        self.contentView.layer.cornerRadius = 5.0f;
+        self.label.layer.cornerRadius = 5.0f;
         [self.contentView addSubview:self.label];
     }
     return self;

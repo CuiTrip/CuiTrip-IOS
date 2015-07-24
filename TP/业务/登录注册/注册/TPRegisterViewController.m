@@ -179,6 +179,11 @@
                                         });
                                     
                                     }
+                                    else
+                                    {
+                                        HIDE_SPINNER(self);
+                                        TOAST(self, responseObj[@"msg"]);
+                                    }
                                 }
                                 else
                                 {

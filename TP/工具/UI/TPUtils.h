@@ -26,6 +26,18 @@
 
 + (NSString* )timeFormatString:(NSDate* )dateString;
 
++ (NSDate *)dateWithString:(NSString *)dateString forFormat:(NSString *)format;
+
++ (NSString *)stringWithDate:(NSDate *)date forFormat:(NSString *)format;
+
++ (NSString *)timeInfoWithDate:(NSDate *)date;
+
++ (NSString *)timeInfoWithDateString:(NSString *)dateString forFormat:(NSString *)format;
+
++ (NSString *)shortTimeInfoWithDate:(NSDate *)date;
+
++ (NSString *)shortTimeInfoWithDateString:(NSString *)dateString forFormat:(NSString *)format;
+
 + (NSString* )money:(NSString* )money WithType:(NSString* )type;
 
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback;

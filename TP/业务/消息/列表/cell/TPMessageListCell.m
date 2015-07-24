@@ -119,42 +119,20 @@
 
 - (NSString*)getTimeString:(NSString *)dateStr
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"]; // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    NSDate *date = [TPUtils dateWithString:dateStr forFormat:nil];
+    NSDate *curDate = [NSDate date];
     
-    NSTimeZone* timeZone = [NSTimeZone localTimeZone];
-    [formatter setTimeZone:timeZone];
+    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
     
-    NSDateFormatter *df=[[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd"];
-    [df setTimeZone:timeZone];
+    NSString* timeStr = [TPUtils stringWithDate:date forFormat:@"YYYY-MM-dd HH:mm"];
     
-    NSDate* date = [formatter dateFromString:dateStr]; //------------将字符串按formatter转成nsdate
-    
-    NSString* datenowStr1 = [df stringFromDate:[NSDate date]];//现在时间,你可以输出来看下是什么格式
-    NSString* datenowStr = [NSString stringWithFormat:@"%@ %@",datenowStr1,@" 00:00:00"];
-    NSDate* datenow = [formatter dateFromString:datenowStr];
-    
-    NSString* formateDate = [NSString new];
-    switch ([date compare:datenow]) {
-        case NSOrderedSame:
-            NSLog(@"same");
-            formateDate = [TPUtils timeFormatString:date];
-            break;
-        case NSOrderedAscending:
-            NSLog(@"dateday is earlier than now");
-            formateDate = [dateStr componentsSeparatedByString:@" "][0];
-            break;
-        case NSOrderedDescending:
-            NSLog(@"dateday is later than now");
-            formateDate = [TPUtils timeFormatString:date];
-            break;
-        default:
-            NSLog(@"Bad date");
-            formateDate = [dateStr componentsSeparatedByString:@" "][0];
-            break;
+    if (time < 3600 * 24) { // 小于一天，也就是今天
+        return [timeStr componentsSeparatedByString:@" "][1];
+    } else if (time < 3600 * 24 * 2) { // 昨天
+        return @"昨天";
+    } else {
+        return [timeStr componentsSeparatedByString:@" "][0];
     }
-    return formateDate;
 }
 
 @end

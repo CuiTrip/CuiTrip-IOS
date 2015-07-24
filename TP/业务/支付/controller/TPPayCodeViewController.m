@@ -52,7 +52,7 @@
 {
     [super loadView];
     //todo..
-    [self setTitle:@"预约旅程"];
+    [self setTitle:@"体验码支付"];
     self.textField.layer.cornerRadius = 5.0f;
     self.textField.layer.masksToBounds = true;
     self.textField.layer.borderWidth = 0.5;

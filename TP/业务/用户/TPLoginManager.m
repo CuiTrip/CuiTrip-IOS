@@ -148,13 +148,16 @@
                                 if (!error) {
                                     
                                     NSString* code = responseObj[@"code"];
-                                    
                                     if ([code integerValue] == 0 ) {
                                         
                                         [TPUser logout];
                                         [[TPAPNS sharedInstance] tearDown];;
                                         __notify(kTPNotifyMessageLogout);
 
+                                    }
+                                    else
+                                    {
+//                                        TOAST(this, err)
                                     }
                                 }
                                 else

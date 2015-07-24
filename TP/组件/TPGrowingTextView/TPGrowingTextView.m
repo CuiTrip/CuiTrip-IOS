@@ -27,8 +27,8 @@
 {
     if (![view viewWithTag:176]) {
         
-        TPGrowingTextView* inputView = [[TPGrowingTextView alloc]initWithFrame:CGRectMake(0, view.vzHeight-44, kTPScreenWidth, 44)];
-        inputView.backgroundColor = [TPTheme themeColor];
+        TPGrowingTextView* inputView = [[TPGrowingTextView alloc]initWithFrame:CGRectMake(0, view.vzHeight-54, kTPScreenWidth, 54)];
+        inputView.backgroundColor = HEXCOLOR(0xd8d8d8);
         inputView.delegate = delegate;
         inputView.tag = 176;
         [view addSubview:inputView];
@@ -55,14 +55,14 @@
     if (self) {
         
         CGRect bounds = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        self.textView = [[UITextView alloc]initWithFrame:CGRectInset(bounds, 16, 8)];
+        self.textView = [[UITextView alloc]initWithFrame:CGRectInset(bounds, 15, 9)];
         self.textView.backgroundColor = [UIColor whiteColor];
-        self.textView.layer.cornerRadius = 14.0f;
+        self.textView.layer.cornerRadius = 15.0f;
         self.textView.layer.masksToBounds= true;
         self.textView.textColor = [TPTheme blackColor];
         self.textView.delegate = self;
         self.textView.returnKeyType = UIReturnKeySend;
-        self.textView.font = ft(14.0f);
+        self.textView.font = ft(15.0f);
         [self addSubview:self.textView];
         [self.textView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:NULL];
         [self registerNotifications];
@@ -85,10 +85,10 @@
     
     CGSize sz = [change[NSKeyValueChangeNewKey] CGSizeValue];
 
-    int delta = sz.height - 30;
+    int delta = sz.height - 32;
     self.vzTop      = _oriPt.y - delta;
     self.vzHeight   = _oriSize.height + delta;
-    self.textView.vzHeight = (_oriSize.height - 16) + delta;
+    self.textView.vzHeight = (_oriSize.height - 19) + delta;
 
 }
 
@@ -132,7 +132,7 @@
     [UIView animateWithDuration:animationDuration animations:^{
 
         //self.frame = CGRectMake(0, self.vzOrigin.y+keyboardRectEnd.size.height, self.vzWidth, self.vzHeight);
-        self.frame = CGRectMake(0, self.superview.vzHeight-44, kTPScreenWidth, 44);
+        self.frame = CGRectMake(0, self.superview.vzHeight-54, kTPScreenWidth, 54);
 //        self.superview.frame  = CGRectMake(0,self.superview.vzTop+CGRectGetHeight(keyboardRectEnd), self.superview.vzWidth, self.superview.vzHeight);
     }completion:^(BOOL finished) {
         self.isShowingTextField = false;

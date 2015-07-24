@@ -113,7 +113,6 @@
 		456C68F31B2ED35A003D4C20 /* TPPaySubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456C68EE1B2ED35A003D4C20 /* TPPaySubView.m */; };
 		459B24931B176A1C009BB189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B24881B176A1C009BB189 /* AppDelegate.m */; };
 		459B24941B176A1C009BB189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459B24891B176A1C009BB189 /* LaunchScreen.xib */; };
-		459B24971B176A1C009BB189 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459B248E1B176A1C009BB189 /* Info.plist */; };
 		459B24981B176A1C009BB189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B248F1B176A1C009BB189 /* main.m */; };
 		459BAD411B1F5BA600739C7E /* datepicker_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 459BAD301B1F5BA600739C7E /* datepicker_meta.json */; };
 		459BAD421B1F5BA600739C7E /* TPDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459BAD341B1F5BA600739C7E /* TPDatePickerViewController.m */; };
@@ -3231,7 +3230,7 @@
 		4547815D1B14234F00B4A24D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = VizLab;
 				TargetAttributes = {
 					454781641B14234F00B4A24D = {
@@ -3364,7 +3363,6 @@
 				45DB44261B3C4D59007101EA /* TPModifyPWDViewController.storyboard in Resources */,
 				45EB31651B36D88B003A97AE /* about@2x.jpg in Resources */,
 				45D48C4F1B32EEBE00B5801F /* TPDDCommentCell.xib in Resources */,
-				459B24971B176A1C009BB189 /* Info.plist in Resources */,
 				459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */,
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
 				4509ABBD1B233C9200846032 /* reserve_meta.json in Resources */,

@@ -179,7 +179,6 @@ static NSArray* list = nil;
     
     NSString* str = [[NSString alloc]initWithFormat:@"%ld年%ld月",component.year,component.month];
     
-    
     return str;
 }
 
@@ -192,20 +191,149 @@ static NSArray* list = nil;
     
     NSString* str = [[NSString alloc]initWithFormat:@"%ld年%ld月%ld日",component.year,component.month,component.day];
     
+    return str;
+}
+
++ (NSString* )timeFormatString:(NSDate* )date
+{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    unsigned units  =  NSCalendarCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
+    NSDateComponents* component = [calendar components:units fromDate:date];
+    NSString* str = [[NSString alloc]initWithFormat:@"%ld:%ld",component.hour,component.minute];
     
     return str;
 }
 
-+ (NSString* )timeFormatString:(NSDate* )date{
++ (NSDate *)dateWithString:(NSString *)dateString forFormat:(NSString *)format
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];;
+    if (format == nil) {
+        format = @"YYYY-MM-dd HH:mm:ss";
+    }
+    [formatter setDateFormat:format];
+    NSTimeZone* timeZone = [NSTimeZone localTimeZone];
+    [formatter setTimeZone:timeZone];
+    
+    return [formatter dateFromString:dateString];
+}
+
++ (NSString *)stringWithDate:(NSDate *)date forFormat:(NSString *)format
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];;
+    if (format == nil) {
+        format = @"YYYY-MM-dd HH:mm:ss";
+    }
+    [formatter setDateFormat:format];
+    NSTimeZone* timeZone = [NSTimeZone localTimeZone];
+    [formatter setTimeZone:timeZone];
+    
+    return [formatter stringFromDate:date];
+}
+
++ (NSString *)timeInfoWithDateString:(NSString *)dateString forFormat:(NSString *)format
+{
+    return [self timeInfoWithDate:[self dateWithString:dateString forFormat:format]];
+}
+
++ (NSString *)timeInfoWithDate:(NSDate *)date
+{
+    NSDate *curDate = [NSDate date];
+    
+    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
+    
+    NSString* dateStr = [self stringWithDate:date forFormat:@"YYYY-MM-dd HH:mm"];
+    NSString* timeStr = [dateStr componentsSeparatedByString:@" "][1];
+    
+    if (time < 3600 * 24) { // 小于一天，也就是今天
+        return timeStr;
+    } else if (time < 3600 * 24 * 2) { // 昨天
+        return [NSString stringWithFormat:@"昨天 %@", timeStr];
+    } else {
+        return dateStr;
+    }
+
+}
+
++ (NSString *)shortTimeInfoWithDateString:(NSString *)dateString forFormat:(NSString *)format
+{
+    return [self shortTimeInfoWithDate:[self dateWithString:dateString forFormat:format]];
+}
+
++ (NSString *)shortTimeInfoWithDate:(NSDate *)date
+{
+    
     NSCalendar* calendar = [NSCalendar currentCalendar];
-    calendar.firstWeekday = 1;
-    calendar.minimumDaysInFirstWeek = 7;
-    NSDateComponents* component = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSCalendarCalendarUnit fromDate:date];
     
-    NSString* str = [[NSString alloc]initWithFormat:@"%ld:%ld",component.hour,component.minute];
+    unsigned units  = NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit| NSCalendarCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
+    
+//    NSDate *date = [formatter dateFromString:dateString];
+    NSDateComponents* dateCmp = [calendar components:units fromDate:date];
+    
+    NSDate *curDate = [NSDate date];
+    NSDateComponents* curDateCmp = [calendar components:units fromDate:curDate];
+    
+    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
     
     
-    return str;
+    int month = (int)(curDateCmp.month - dateCmp.month);
+    int year = (int)(curDateCmp.year - dateCmp.year);
+    int day = (int)(curDateCmp.day - dateCmp.day);
+    
+    NSTimeInterval retTime = 1.0;
+    if (time < 3600) { // 小于一小时
+        retTime = time / 60;
+        retTime = retTime <= 0.0 ? 1.0 : retTime;
+        return [NSString stringWithFormat:@"@%.0f分钟前", retTime];
+    } else if (time < 3600 * 24) { // 小于一天，也就是今天
+        retTime = time / 3600;
+        retTime = retTime <= 0.0 ? 1.0 : retTime;
+        return [NSString stringWithFormat:@"%.0f小时前", retTime];
+    } else if (time < 3600 * 24 * 2) {
+        return @"昨天";
+    }
+    // 第一个条件是同年，且相隔时间在一个月内
+    // 第二个条件是隔年，对于隔年，只能是去年12月与今年1月这种情况
+    else if ((abs(year) == 0 && abs(month) <= 1)
+             || (abs(year) == 1 && curDateCmp.month == 1 && dateCmp.month == 12))
+    {
+        int retDay = 0;
+        if (year == 0) { // 同年
+            if (month == 0) { // 同月
+                retDay = day;
+            }
+        }
+        
+        if (retDay <= 0) {
+            // 获取发布日期中，该月有多少天
+            NSRange range = [calendar rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
+            int totalDays = (int)range.length;
+            
+            // 当前天数 + （发布日期月中的总天数-发布日期月中发布日，即等于距离今天的天数）
+            retDay = (int)curDateCmp.day + (totalDays - (int)dateCmp.day);
+        }
+        
+        return [NSString stringWithFormat:@"%d天前", (abs)(retDay)];
+    }
+    else
+    {
+        if (abs(year) <= 1) {
+            if (year == 0) { // 同年
+                return [NSString stringWithFormat:@"%d个月前", abs(month)];
+            }
+            
+            // 隔年
+            int month = (int)curDateCmp.month;
+            int preMonth = (int)dateCmp.month;
+            if (month == 12 && preMonth == 12) {// 隔年，但同月，就作为满一年来计算
+                return @"1年前";
+            }
+            return [NSString stringWithFormat:@"%d个月前", (abs)(12 - preMonth + month)];
+        }
+        
+        return [NSString stringWithFormat:@"%d年前", abs(year)];
+    }
+    
+    return @"1小时前";
 }
 
 + (NSString* )money:(NSString* )money WithType:(NSString* )type

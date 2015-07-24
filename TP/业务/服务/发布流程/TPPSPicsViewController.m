@@ -198,8 +198,8 @@ const int kMaxImageCount = 9;
         [self.view makeToastActivity];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            UIImage* clippedImage = [image tranformScaleToSize:CGSizeMake(320, 320)];
+            // 设置图片高宽比，会影响图片质量
+            UIImage* clippedImage = [image tranformScaleToSize:CGSizeMake(800, 800)];
             NSString* base64String = [self processImage:clippedImage];
             
             O2OCommentImageItem* photoItem = [O2OCommentImageItem new];

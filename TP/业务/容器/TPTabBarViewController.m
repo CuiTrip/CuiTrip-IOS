@@ -91,13 +91,44 @@
     }
     
     [self setSelectedIndex:0];
-    
+
 }
 
 - (void)tokenInvalid
 {
     [TPUser logout];
     [self prepare];
+}
+
+- (void)setBadge
+{
+    self.tabBarController.selectedViewController.tabBarItem.badgeValue = @"2";
+}
+
+- (void)showBadgeOnItemIndex:(int)index{
+    [self removeBadgeOnItemIndex:index];
+    UIView *badgeView = [[UIView alloc]init];
+    badgeView.tag = 888 + index;
+    badgeView.layer.cornerRadius = 5;
+    badgeView.backgroundColor = [UIColor redColor];
+    CGRect tabFrame = self.tabBar.frame;
+    float percentX = (index +0.6) / 4;
+    CGFloat x = ceilf(percentX * tabFrame.size.width);
+    CGFloat y = ceilf(0.1 * tabFrame.size.height);
+    badgeView.frame = CGRectMake(x, y, 10, 10);
+    [self.tabBar addSubview:badgeView];
+}
+
+- (void)hideBadgeOnItemIndex:(int)index{
+    [self removeBadgeOnItemIndex:index];
+}
+
+- (void)removeBadgeOnItemIndex:(int)index{
+    for (UIView *subView in self.tabBar.subviews) {
+        if (subView.tag == 888+index) {
+            [subView removeFromSuperview];
+        }
+    }
 }
 
 

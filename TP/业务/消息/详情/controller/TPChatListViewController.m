@@ -117,6 +117,7 @@
 @property(nonatomic,strong)TPChatListModel *chatListModel; 
 @property(nonatomic,strong)TPChatListViewDataSource *ds;
 @property(nonatomic,strong)TPChatListViewDelegate *dl;
+@property(nonatomic,assign) BOOL canSendText;
 
 @end
 
@@ -175,6 +176,7 @@
     [super loadView];
     [self setTitle:@"消息详情"];
     self.view.backgroundColor = [UIColor clearColor];
+
 }
 
 - (void)viewDidLoad
@@ -182,8 +184,9 @@
     [super viewDidLoad];
     
     //1,config your tableview
+    self.view.backgroundColor = HEXCOLOR(0xeeeeee);
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-50);
-    self.tableView.backgroundColor = HEXCOLOR(0xeeeeee);;
+    self.tableView.backgroundColor = HEXCOLOR(0xeeeeee);
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
     self.tableView.tableHeaderView = self.headerView;
@@ -296,7 +299,9 @@
 
     [self layoutHeaderView];
     [self scrollToBottom:NO];
-    [TPGrowingTextView showInView:self.view delegate:self];
+//    if (self.canSendText) {
+        [TPGrowingTextView showInView:self.view delegate:self];
+//    }
     
 }
 
@@ -333,7 +338,32 @@
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
+//    kOrderReadyConfirm = 1,
+//    kOrderReadyPay = 2,
+//    kOrderReadyBegin = 3,
+//    kOrderGoing = 4,
+//    kOrderReadyComment = 5,
+//    kOrderFinished = 6,
+//    kOrderInvalid = 7,
+//    kOrderRefunding = 8,
+//    kOrderRefundFailed =9,
+//    kOrderUnknown = -1
 
+- (void)setOrderStatus:(NSString *)orderStatus
+{
+    _orderStatus = orderStatus;
+    self.canSendText = YES;
+    switch ([_orderStatus integerValue]) {
+        case kOrderFinished:
+            self.canSendText = NO;
+            break;
+        case kOrderInvalid:
+            self.canSendText = NO;
+            break;
+        default:
+            break;
+    }
+}
 
 
 //////////////////////////////////////////////////////////// 
@@ -343,6 +373,13 @@
 - (void)textView:(UITextView* )view DidSendText:(NSString* )text
 {
     __weak typeof(self)weakSelf = self;
+    self.orderStatus = self.headerView.orderStatus;
+    [self setOrderStatus:(NSString *)self.headerView.orderStatus];
+    
+    if (!self.canSendText) {
+        TOAST(weakSelf, @"订单已失效，如需联系，请重新预定旅程!");
+        return;
+    }
     self.sendTextModel.orderId = self.orderId;
     self.sendTextModel.send = [TPUser uid];
     self.sendTextModel.content = text;
@@ -398,10 +435,11 @@
     self.headerView.actionBtn.hidden = NO;
     self.headerView.insiderId = self.chatListModel.insiderId;
     self.headerView.orderStatus = self.chatListModel.orderStatus;
+
     __weak typeof(self) weakSelf = self;
     self.headerView.callback = ^(NSString* orderStatus){
         
-        if ([orderStatus integerValue] == 1)
+        if ([orderStatus integerValue] == kOrderReadyConfirm)
         {
             if ([TPUser type] == kCustomer) {
                 
@@ -426,7 +464,7 @@
                 
             }
         }
-        else if ([orderStatus integerValue] == 2)
+        else if ([orderStatus integerValue] == kOrderReadyPay)
         {
             if ([TPUser type] == kCustomer) {
                 

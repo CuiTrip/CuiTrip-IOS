@@ -207,27 +207,27 @@
 
     if ([self.tripDetailModel.status integerValue] == 1)
     {
-        self.status = kOrderCreated;
+        self.status = kOrderReadyConfirm;
     }
     else if ([self.tripDetailModel.status integerValue] == 2)
     {
-        self.status = kOrderConfirmed;
+        self.status = kOrderReadyPay;
+    }
+    else if ([self.tripDetailModel.status integerValue] == 3)
+    {
+        self.status = kOrderReadyBegin;
     }
     else if([self.tripDetailModel.status integerValue] == 4)
     {
-        self.status = kOrderDidBegin;
+        self.status = kOrderGoing;
     }
     else if ([self.tripDetailModel.status integerValue] == 5)
     {
-        self.status = kOrderComplted;
+        self.status = kOrderReadyComment;
     }
-    else if ([self.tripDetailModel.status integerValue] == 7)
+    else if ([self.tripDetailModel.status integerValue] == 6)
     {
-        self.status = kOrderClosed;
-    }
-    else if ([self.tripDetailModel.status integerValue] == 8)
-    {
-        self.status = kOrderPaied;
+        self.status = kOrderFinished;
     }
     else
         self.status = kOrderUnknown;
@@ -241,7 +241,7 @@
     
     if ([TPUser type] == kCustomer) {
         
-        if (self.status == kOrderComplted) {
+        if (self.status == kOrderReadyComment) {
             //完成去评价
             
             TPPublishCommentViewController* vc = [[UIStoryboard storyboardWithName:@"TPPublishCommentViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppublishcomment"];
@@ -278,7 +278,7 @@
     }
     else{
      
-        if (self.status == kOrderCreated) {
+        if (self.status == kOrderReadyConfirm) {
             
             //去确认行程
             self.confirmTripOrderModel.oid = self.oid;
@@ -307,7 +307,7 @@
             
             
         }
-        else if(self.status == kOrderPaied)
+        else if(self.status == kOrderReadyBegin)
         {
             //开始旅程
             SHOW_SPINNER(self);
@@ -334,7 +334,7 @@
             }];
             
         }
-        else if (self.status == kOrderDidBegin)
+        else if (self.status == kOrderReadyBegin)
         {
             //结束旅程
             SHOW_SPINNER(self);
@@ -371,12 +371,12 @@
 {
     if([TPUser type] == kCustomer)
     {
-        if (self.status == kOrderCreated) {
+        if (self.status == kOrderReadyConfirm) {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"取消旅程" forState:UIControlStateNormal];
         }
-        else if(self.status == kOrderComplted)
+        else if(self.status == kOrderReadyComment)
         {
             self.tripStatusLabel.hidden = false;
             self.tripStatusLabel.text = @"旅程已经结束";
@@ -391,20 +391,20 @@
     }
     else
     {
-        if (self.status == kOrderCreated) {
+        if (self.status == kOrderReadyConfirm) {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
         }
-        else if(self.status == kOrderPaied)
+        else if(self.status == kOrderReadyBegin)
         {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;
             self.actionBtn.hidden = false;
             [self.actionBtn setTitle:@"开始旅程" forState:UIControlStateNormal];
         }
-        else if(self.status == kOrderDidBegin)
+        else if(self.status == kOrderGoing             )
         {
             self.tripStatusLabel.hidden = true;
             self.actionBtn.hidden = false;

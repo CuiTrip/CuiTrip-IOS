@@ -17,7 +17,7 @@
  "serviceAddress": "台湾彰化县", //旅程所在地
  "headPic": "http://alicdn.aliyun.com/pic1.jpg", //发现者头像
  "userNick": "阿亮"， // 发现者昵称
- "servicePicUrl": "http://******"， // 发现者昵称
+ "servicePicUrl": "http://"， // 发现者昵称
  */
 @interface TPDiscoveryListItem : VZListItem
 

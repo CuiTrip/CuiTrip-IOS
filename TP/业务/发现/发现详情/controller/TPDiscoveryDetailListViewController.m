@@ -452,14 +452,14 @@
     if (platformName == UMShareToWechatSession) {
         
         [UMSocialData defaultData].extConfig.wechatSessionData.title = self.discoveryDetailListModel.tripInfoItem.name;
-        [UMSocialData defaultData].extConfig.wechatSessionData.url = [NSString stringWithFormat:@"http://42.121.16.186/baseservice/shareTripping?serviceid=%@",self.sid];
+        [UMSocialData defaultData].extConfig.wechatSessionData.url = [NSString stringWithFormat:@"http://www.cuitrip.com/mobile/serviceDetail.html?sid=%@",self.sid];
    
         
     }
     if (platformName == UMShareToWechatTimeline) {
         
         [UMSocialData defaultData].extConfig.wechatTimelineData.title = self.discoveryDetailListModel.tripInfoItem.name;
-        [UMSocialData defaultData].extConfig.wechatTimelineData.url = [NSString stringWithFormat:@"http://42.121.16.186/baseservice/shareTripping?serviceid=%@",self.sid];
+        [UMSocialData defaultData].extConfig.wechatTimelineData.url = [NSString stringWithFormat:@"http://www.cuitrip.com/mobile/serviceDetail.html?sid=%@",self.sid];
     }
 }
 

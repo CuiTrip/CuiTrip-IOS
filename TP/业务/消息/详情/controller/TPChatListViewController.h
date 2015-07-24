@@ -15,6 +15,8 @@
 
 @property(nonatomic,strong)NSString* orderId;
 @property(nonatomic,strong)NSString* receiverId;
+@property(nonatomic,strong)NSString* orderStatus;
+
 
 @end
   
