@@ -257,6 +257,7 @@
         vc.orderId = item.orderId;
         vc.receiverId = receiverId;
         vc.orderStatus = item.orderStatus;
+        vc.msgUserType = _messageListModel.userType;
         [self.navigationController pushViewController:vc animated:true];
     }
 

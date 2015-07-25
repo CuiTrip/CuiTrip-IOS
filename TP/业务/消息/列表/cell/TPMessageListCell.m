@@ -122,13 +122,19 @@
     NSDate *date = [TPUtils dateWithString:dateStr forFormat:nil];
     NSDate *curDate = [NSDate date];
     
+    NSString *strCurDate = [TPUtils stringWithDate:curDate forFormat:@"yyyy-MM-dd"];
+    NSDate *dateToday = [TPUtils dateWithString:strCurDate forFormat:@"yyyy-MM-dd"];
+    NSTimeInterval timeToday = [dateToday timeIntervalSince1970];   // 这个就是今天0点的那个秒点整数了
+    NSTimeInterval timeNow = [curDate timeIntervalSince1970];       // 现在的秒数
+    NSTimeInterval nowSec = timeNow - timeToday;    // 现在是今天的第多少秒
+    
     NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
     
     NSString* timeStr = [TPUtils stringWithDate:date forFormat:@"YYYY-MM-dd HH:mm"];
     
-    if (time < 3600 * 24) { // 小于一天，也就是今天
+    if (time < nowSec) { // 小于一天，也就是今天
         return [timeStr componentsSeparatedByString:@" "][1];
-    } else if (time < 3600 * 24 * 2) { // 昨天
+    } else if (time < (nowSec + 3600 * 24)) { // 昨天
         return @"昨天";
     } else {
         return [timeStr componentsSeparatedByString:@" "][0];

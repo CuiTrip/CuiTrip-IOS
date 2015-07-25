@@ -217,10 +217,15 @@
 //    [rightButton addTarget:self action:@selector(searchprogram)forControlEvents:UIControlEventTouchUpInside];
     [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(id x) {
-                  
-         TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
-         vc.oid = self.orderId;
-         [self.navigationController pushViewController:vc animated:true];
+         if (self.msgUserType == [TPUser type]) {
+             TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+             vc.oid = self.orderId;
+             [self.navigationController pushViewController:vc animated:true];
+         }
+         else
+         {
+             TOAST(self, @"请切换用户身份后查看该旅程信息");
+         }
          // 跳转旅程列表
          /*[[[[UIApplication sharedApplication].delegate window] viewWithTag:996]removeFromSuperview];
          [self.tabBarController setSelectedIndex:2];
@@ -229,6 +234,7 @@
      }];
     UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightItem;
+    
 
     //单个手指双击屏幕事件注册
     UITapGestureRecognizer *oneFingerTwoTaps =

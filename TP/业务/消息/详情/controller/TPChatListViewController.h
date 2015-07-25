@@ -16,7 +16,7 @@
 @property(nonatomic,strong)NSString* orderId;
 @property(nonatomic,strong)NSString* receiverId;
 @property(nonatomic,strong)NSString* orderStatus;
-
+@property(nonatomic,assign)TPUserType msgUserType;
 
 @end
   
