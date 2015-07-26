@@ -319,6 +319,7 @@
 		6B690B1C1B64DE5300A295ED /* trip_position@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B171B64DE5300A295ED /* trip_position@2x.png */; };
 		6B690B1D1B64DE5300A295ED /* trip_tel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B181B64DE5300A295ED /* trip_tel@2x.png */; };
 		6B690B1E1B64DE5300A295ED /* trip_weixin2wm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B191B64DE5300A295ED /* trip_weixin2wm@2x.png */; };
+		6B690B201B64ECB000A295ED /* trip_cal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B1F1B64ECB000A295ED /* trip_cal@2x.png */; };
 		7B0E84811B5E96AE0084C61E /* TPPayCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E847F1B5E96AE0084C61E /* TPPayCodeViewController.m */; };
 		7B0E84821B5E96AE0084C61E /* TPPayCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E84801B5E96AE0084C61E /* TPPayCodeViewController.storyboard */; };
 		7B0E84871B5E97440084C61E /* TPPayCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E84841B5E97440084C61E /* TPPayCodeModel.m */; };
@@ -897,6 +898,7 @@
 		6B690B171B64DE5300A295ED /* trip_position@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_position@2x.png"; sourceTree = "<group>"; };
 		6B690B181B64DE5300A295ED /* trip_tel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_tel@2x.png"; sourceTree = "<group>"; };
 		6B690B191B64DE5300A295ED /* trip_weixin2wm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_weixin2wm@2x.png"; sourceTree = "<group>"; };
+		6B690B1F1B64ECB000A295ED /* trip_cal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_cal@2x.png"; sourceTree = "<group>"; };
 		7B0E847E1B5E96AE0084C61E /* TPPayCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPayCodeViewController.h; sourceTree = "<group>"; };
 		7B0E847F1B5E96AE0084C61E /* TPPayCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPayCodeViewController.m; sourceTree = "<group>"; };
 		7B0E84801B5E96AE0084C61E /* TPPayCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayCodeViewController.storyboard; sourceTree = "<group>"; };
@@ -2049,6 +2051,7 @@
 		459BAED31B21E58700739C7E /* 资源 */ = {
 			isa = PBXGroup;
 			children = (
+				6B690B1F1B64ECB000A295ED /* trip_cal@2x.png */,
 				6B690B151B64DE5300A295ED /* trip_connect@2x.png */,
 				6B690B161B64DE5300A295ED /* trip_mail_blue@2x.png */,
 				6B690B171B64DE5300A295ED /* trip_position@2x.png */,
@@ -3366,6 +3369,7 @@
 				4509ABCA1B234A8700846032 /* TPMeViewController.storyboard in Resources */,
 				45D0C7B01B29BED800F31BF5 /* myservice_meta.json in Resources */,
 				7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */,
+				6B690B201B64ECB000A295ED /* trip_cal@2x.png in Resources */,
 				45D48BDD1B32AF3500B5801F /* UMSCommentDetailController.xib in Resources */,
 				45D0C7E71B2B411C00F31BF5 /* TPPSMoreViewController.storyboard in Resources */,
 				45DD473E1B28200200D2BB62 /* chat_meta.json in Resources */,
