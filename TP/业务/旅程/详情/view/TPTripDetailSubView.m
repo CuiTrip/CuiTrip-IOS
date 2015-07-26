@@ -24,7 +24,7 @@
 @property(nonatomic,strong) UIImageView* addressIcon;
 @property(nonatomic,strong) UILabel* addressLabel;
 @property (nonatomic,strong) O2OStarView* starView;
-@property (nonatomic,strong) UITextView *textView;
+@property (nonatomic,strong) UILabel *commentLabel;
 
 @end
 
@@ -84,6 +84,9 @@
         self.contactBtn.layer.borderColor = borderColorRef;
         [self addSubview:self.contactBtn];
         [self.contactBtn setTitle:@"联系他" forState:UIControlStateNormal];
+    }
+    if ([self.tripDetailModel.status intValue] == kOrderFinished) {
+        
     }
     //服务title
     self.titleLabel.text = tripDetailModel.serviceName;
