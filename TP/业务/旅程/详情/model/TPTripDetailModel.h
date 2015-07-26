@@ -39,6 +39,8 @@
 @property(nonatomic,strong,readonly)NSString* sid;
 @property(nonatomic,strong,readonly)NSString* userName;
 @property(nonatomic,strong,readonly)NSString* userAvatar;
+@property(nonatomic,strong,readonly)NSString* commentScore;
+@property(nonatomic,strong,readonly)NSString* comment;
 
 @end
 

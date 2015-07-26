@@ -195,7 +195,17 @@
     }
     else
     {
-        self.subView = [[TPTripDetailSubView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 362.5f)];
+        float height = 362.5f;
+        if ([self.tripDetailModel.status intValue] == kOrderFinished  && [TPUser type] == kProvider) {
+            if (self.tripDetailModel.comment != nil && ![self.tripDetailModel.comment isKindOfClass:[NSNull class]]) {
+                CGSize titleSize = [self.tripDetailModel.comment boundingRectWithSize:CGSizeMake(self.view.vzWidth - 60.0f, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13.0f]} context:nil].size;
+                height += titleSize.height;
+            }
+        }
+        if ([self.tripDetailModel.status intValue] == kOrderInvalid) {
+            height = 330.0f;
+        }
+        self.subView = [[TPTripDetailSubView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, height)];
         self.subView.tripDetailModel = self.tripDetailModel;
         self.tableView.tableHeaderView = self.subView;
     }

@@ -70,6 +70,8 @@
     _sid = JSON[@"sid"];
     _userName = JSON[@"userNick"];
     _userAvatar = JSON[@"headPic"];
+    _commentScore = JSON[@"commentScore"];
+    _comment = JSON[@"comment"];
     
     return true;
 }
