@@ -12,6 +12,7 @@
 #import "TPTripDetailSubView.h"
 #import "TPTripDetailItem.h"
 #import "O2OStarView.h"
+#import "TPChatListViewController.h"
 
 @interface TPTripDetailSubView()
 
@@ -81,8 +82,26 @@
         [self.contactBtn setTitleColor: [TPTheme themeColor] forState:UIControlStateNormal];
         CGColorRef borderColorRef = CGColorCreate(colorSpace,(CGFloat[]){36 / 255.0, 194 / 255.0, 213 / 255.0, 1});
         self.contactBtn.layer.borderColor = borderColorRef;
-        [self addSubview:self.contactBtn];
         [self.contactBtn setTitle:@"联系他" forState:UIControlStateNormal];
+        [[self.contactBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+         subscribeNext:^(id x) {
+             NSString* receiverId = @"";
+             if ([TPUser type] == kCustomer) {
+                 receiverId = _tripDetailModel.insiderId;
+             }
+             else
+             {
+                 receiverId = [TPUser uid];
+             }
+             TPChatListViewController* vc = [TPChatListViewController new];
+             vc.orderId = _tripDetailModel.oid;
+             vc.receiverId = receiverId;
+             vc.orderStatus = _tripDetailModel.status;
+             vc.msgUserType = [TPUser type];
+             
+             [self.inputViewController.navigationController pushViewController:vc animated:true];
+         }];
+        [self addSubview:self.contactBtn];
     }
     if ([self.tripDetailModel.status intValue] == kOrderFinished && [TPUser type] == kProvider) {
         //服务提供者nick
@@ -136,9 +155,12 @@
     }
     bottom += 30.0f;
     self.titleLabel.frame = CGRectMake(0.0f, bottom, self.frame.size.width, 18.0f);
-    
-    self.addressIcon.frame = CGRectMake((self.frame.size.width - 44.0f) / 2, self.titleLabel.vzBottom + 13.0f, 14.0f, 14.0f);
-    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, 30.0f, 10.0f);
+    CGSize size = CGSizeMake(200,10);
+    UIFont *font = [UIFont systemFontOfSize:13.0f];
+    //计算实际frame大小，并将label的frame变成实际大小
+    CGSize labelsize = [self.addressLabel.text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+    self.addressIcon.frame = CGRectMake((self.frame.size.width - labelsize.width - 14.0f) / 2, self.titleLabel.vzBottom + 13.0f, 14.0f, 14.0f);
+    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, labelsize.width, 10.0f);
 }
 
 

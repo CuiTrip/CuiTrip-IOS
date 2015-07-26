@@ -236,7 +236,6 @@
                                          shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
                                                 delegate:self];
          }];
-        //    [self.view addSubview:shareBtn];
         _headerNavView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, self.view.vzWidth, 64)];
         [_headerNavView addSubview:backBtn];
         [_headerNavView addSubview:shareBtn];

@@ -47,6 +47,11 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - setters 
 
+- (void)setTripDetailModel:(TPTripDetailModel *)tripDetailModel
+{
+    _tripDetailModel = tripDetailModel;
+}
+
 
 
 //////////////////////////////////////////////////////////// 
@@ -90,7 +95,7 @@
 {
     [super viewDidLoad];
     //todo..
-    self.payModel.oid = self.oid;
+    self.payModel.oid = self.tripDetailModel.oid;
     [self registerModel:self.payModel];
     [self load];
 }
@@ -142,13 +147,13 @@
     //todo:
     [super showModel:model];
     
-    self.titleLabel.text = self.payModel.serviceName;
-    [self.imageView sd_setImageWithURL:__url(self.payModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
-    self.tripDateLabel.text = self.payModel.serviceDate;
-    self.tripNumberLabel.text = [self.payModel.buyerNum stringByAppendingString:@"人"];
-    self.tripFeeLabel.text = self.payModel.orderPrice;
-    self.tripMoneyTypeLabel.text = ([self.payModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
-    self.tripCNYFeeLabel.text = self.payModel.orderPrice;
+    self.titleLabel.text = self.tripDetailModel.serviceName;
+    [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
+    self.tripDateLabel.text = self.tripDetailModel.serviceDate;
+    self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
+    self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
+    self.tripMoneyTypeLabel.text = ([self.tripDetailModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
+    self.tripCNYFeeLabel.text = self.tripDetailModel.orderPrice;
 }
 
 - (void)showEmpty:(VZModel *)model
@@ -194,8 +199,8 @@
     
     
     SHOW_SPINNER(self);
-    self.payModel.oid = self.oid;
-    //    self.payModel.inviteCode = self.textField.text;
+    self.payModel.oid = self.tripDetailModel.oid;
+
     
     [self.payModel loadWithCompletion:^(VZModel *model, NSError *error) {
         
@@ -242,7 +247,7 @@
 - (IBAction)wxpayAction:(id)sender {
     
     SHOW_SPINNER(self);
-    self.payModel.oid = self.oid;
+    self.payModel.oid = self.tripDetailModel.oid;
     
     __weak typeof(self) weakSelf = self;
 
@@ -306,7 +311,7 @@
 
 - (IBAction)codepayAction:(id)sender {
     TPPayCodeViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayCodeViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppaycode"];
-    vc.oid = self.oid;
+    vc.oid = self.tripDetailModel.oid;
     [self.navigationController pushViewController:vc animated:true];
     
 }

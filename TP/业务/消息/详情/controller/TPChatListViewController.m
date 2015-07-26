@@ -20,104 +20,13 @@
 #import "TPChatListItem.h"
 #import "TPReserveViewController.h"
 
-@interface TPChatListHeaderView : UIView
-
-@property(nonatomic,strong)NSString* orderStatus;
-@property(nonatomic,strong)NSString* insiderId;
-@property(nonatomic,strong)UILabel* dateLabel;
-@property(nonatomic,strong)UIButton* actionBtn;
-@property(nonatomic,strong)void(^callback)(NSString* orderStatus);
-
-@end
-
-@implementation TPChatListHeaderView
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        
-        self.backgroundColor = [TPTheme blackColor];
-        self.dateLabel= [TPUIKit label:[UIColor whiteColor] Font:ft(18)];
-        self.dateLabel.vzOrigin = CGPointMake(11, (frame.size.height-18)/2);
-        self.dateLabel.vzSize = CGSizeMake(frame.size.width-100, 18);
-        [self addSubview:self.dateLabel];
-        
-        self.actionBtn = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width-70, (frame.size.height-30)/2, 60, 30)];
-        self.actionBtn.layer.cornerRadius = 8.0f;
-        self.actionBtn.layer.masksToBounds = true;
-        self.actionBtn.titleLabel.font = ft(14);
-        self.actionBtn.hidden = true;
-        [self.actionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.actionBtn addTarget:self action:@selector(onAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.actionBtn];
-        
-    }
-    return self;
-}
-
-
-- (void)setOrderStatus:(NSString *)orderStatus
-{
-    _orderStatus = orderStatus;
-    
-    if ([orderStatus integerValue] == 1)
-    {
-        if ([TPUser type] == kCustomer) {
-            
-            self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
-            [self.actionBtn setTitle:@"修改" forState:UIControlStateNormal];
-            self.actionBtn.hidden = false;
-        }
-        else
-        {
-            self.actionBtn.backgroundColor = HEXCOLOR(0x7ed321);
-            
-            if ([[TPUser uid] isEqualToString:self.insiderId]) {
-                
-                [self.actionBtn setTitle:@"确认" forState:UIControlStateNormal];
-                self.actionBtn.hidden = false;
-            }
-            else
-            {
-                self.actionBtn.hidden = true;
-            }
-        }
-    }
-    else if ([orderStatus integerValue] == 2)
-    {
-        if ([TPUser type] == kCustomer) {
-            
-            self.actionBtn.backgroundColor = HEXCOLOR(0xff6600);
-            [self.actionBtn setTitle:@"付款" forState:UIControlStateNormal];
-        }
-        else
-            self.actionBtn.hidden = true;
-    }
-    else
-    {
-        self.actionBtn.hidden = true;
-    }
-}
-
-- (void)onAction:(id)sender
-{
-    if (self.callback) {
-        self.callback(self.orderStatus);
-    }
-}
-
-@end
-
 @interface TPChatListViewController()<TPGrowingTextView>
 
-@property(nonatomic,strong)TPChatListHeaderView* headerView;
 @property(nonatomic,strong)TPSendChatMsgModel* sendTextModel;
 @property(nonatomic,strong)TPChatListModel *chatListModel; 
 @property(nonatomic,strong)TPChatListViewDataSource *ds;
 @property(nonatomic,strong)TPChatListViewDelegate *dl;
-@property(nonatomic,assign) BOOL canSendText;
+@property(nonatomic,assign) BOOL canSendMsg;
 
 @end
 
@@ -189,7 +98,6 @@
     self.tableView.backgroundColor = HEXCOLOR(0xeeeeee);
     self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.separatorStyle = NO;
-    self.tableView.tableHeaderView = self.headerView;
     
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -218,7 +126,7 @@
     [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(id x) {
          if (self.msgUserType == [TPUser type]) {
-             TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+             TPTripDetailViewController* vc = [TPTripDetailViewController new];
              vc.oid = self.orderId;
              [self.navigationController pushViewController:vc animated:true];
          }
@@ -226,10 +134,6 @@
          {
              TOAST(self, @"请切换用户身份后查看该旅程信息");
          }
-         // 跳转旅程列表
-         /*[[[[UIApplication sharedApplication].delegate window] viewWithTag:996]removeFromSuperview];
-         [self.tabBarController setSelectedIndex:2];
-         [self.navigationController popToRootViewControllerAnimated:true];*/
          
      }];
     UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
@@ -303,11 +207,8 @@
 {
     [super showModel:model];
 
-    [self layoutHeaderView];
     [self scrollToBottom:NO];
-//    if (self.canSendText) {
-        [TPGrowingTextView showInView:self.view delegate:self];
-//    }
+    [TPGrowingTextView showInView:self.view delegate:self];
     
 }
 
@@ -355,16 +256,16 @@
 //    kOrderRefundFailed =9,
 //    kOrderUnknown = -1
 
-- (void)setOrderStatus:(NSString *)orderStatus
+- (void)initCanSendMsg:(NSString *)orderStatus
 {
     _orderStatus = orderStatus;
-    self.canSendText = YES;
+    self.canSendMsg = YES;
     switch ([_orderStatus integerValue]) {
         case kOrderFinished:
-            self.canSendText = NO;
+            self.canSendMsg = NO;
             break;
         case kOrderInvalid:
-            self.canSendText = NO;
+            self.canSendMsg = NO;
             break;
         default:
             break;
@@ -379,10 +280,9 @@
 - (void)textView:(UITextView* )view DidSendText:(NSString* )text
 {
     __weak typeof(self)weakSelf = self;
-    self.orderStatus = self.headerView.orderStatus;
-    [self setOrderStatus:(NSString *)self.headerView.orderStatus];
+    [self initCanSendMsg:(NSString *)self.orderStatus];
     
-    if (!self.canSendText) {
+    if (!self.canSendMsg) {
         TOAST(weakSelf, @"订单已失效，如需联系，请重新预定旅程!");
         return;
     }
@@ -422,7 +322,6 @@
 - (void)textViewDidShow
 {
     //todo
-//    self.tableView.vzOrigin = 
 }
 - (void)textViewDidHid
 {
@@ -433,62 +332,6 @@
 {
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.tableView.vzWidth, CGFLOAT_MAX) animated:animated];
 }
-
-- (void)layoutHeaderView
-{
-    self.headerView = [[TPChatListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 44)];
-    self.headerView.dateLabel.text = [NSString stringWithFormat:@"%@ / %@人",self.chatListModel.serviceDate,self.chatListModel.peopleNum];
-    self.headerView.actionBtn.hidden = NO;
-    self.headerView.insiderId = self.chatListModel.insiderId;
-    self.headerView.orderStatus = self.chatListModel.orderStatus;
-
-    __weak typeof(self) weakSelf = self;
-    self.headerView.callback = ^(NSString* orderStatus){
-        
-        if ([orderStatus integerValue] == kOrderReadyConfirm)
-        {
-            if ([TPUser type] == kCustomer) {
-                
-                //去修改
-                TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
-                v.type=kModifyOrder;
-                v.sid = weakSelf.chatListModel.serviceId;
-                v.maxNum = 6;
-                v.oid = weakSelf.orderId;
-                v.insiderId = weakSelf.chatListModel.insiderId;
-                v.servicePrice = weakSelf.chatListModel.servicePrice;
-                v.serviceName = weakSelf.chatListModel.serviceName;
-                v.moneyType = weakSelf.chatListModel.moneyType;
-                [weakSelf.navigationController pushViewController:v animated:true];
-            }
-            else
-            {
-                //去旅行详情
-                TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
-                vc.oid = weakSelf.chatListModel.orderId;
-                [weakSelf.navigationController pushViewController:vc animated:true];
-                
-            }
-        }
-        else if ([orderStatus integerValue] == kOrderReadyPay)
-        {
-            if ([TPUser type] == kCustomer) {
-                
-                //去支付
-                TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
-                vc.oid = weakSelf.orderId;
-                [weakSelf.navigationController pushViewController:vc animated:true];
-            }
-           
-        }
-        else
-        {
-        }
-    };
-    
-    self.tableView.tableHeaderView = self.headerView;
-}
-
 
 @end
  

@@ -71,7 +71,6 @@ const int kPaddingX = 15;
   
     [self.icon sd_setImageWithURL:__url(item.headPic) placeholderImage:__image(@"girl.jpg")];
     self.chatLabel.text = item.content;
-//    self.timeLabel.text = item.gmtCreated;
     self.timeLabel.text = [TPUtils timeInfoWithDateString:item.gmtCreated forFormat:nil];
     
     //自己发得

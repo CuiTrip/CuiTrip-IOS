@@ -20,8 +20,10 @@
 #import "TPPublishCommentViewController.h"
 #import "TPTripDetailModel.h"
 #import "TPConfirmTripOrderModel.h"
+#import "TPPayModel.h"
 #import "TPBeginTripOrderModel.h"
 #import "TPEndTripOrderModel.h"
+#import "TPPayViewController.h"
 
 
 @interface TPTripDetailViewController()
@@ -31,9 +33,10 @@
 @property(nonatomic,strong) TPCustomerInTripView* inTripView;
 
 @property(nonatomic,strong) TPTripDetailModel *tripDetailModel;
-@property(nonatomic,strong)TPConfirmTripOrderModel* confirmTripOrderModel;
-@property(nonatomic,strong)TPBeginTripOrderModel* beginTripOrderModel;
-@property(nonatomic,strong)TPEndTripOrderModel* endTripOrderModel;
+@property(nonatomic,strong) TPConfirmTripOrderModel* confirmTripOrderModel;
+@property(nonatomic,strong) TPPayModel *tripPayModel;
+@property(nonatomic,strong) TPBeginTripOrderModel* beginTripOrderModel;
+@property(nonatomic,strong) TPEndTripOrderModel* endTripOrderModel;
 
 
 @end
@@ -67,6 +70,13 @@
     return _confirmTripOrderModel;
 }
 
+- (TPPayModel* )tripPayModel
+{
+    if (!_tripPayModel) {
+        _tripPayModel = [TPPayModel new];
+    }
+    return _tripPayModel;
+}
 
 - (TPBeginTripOrderModel* )beginTripOrderModel
 {
@@ -445,12 +455,28 @@
             v.moneyType = self.tripDetailModel.moneyType;
             [self.navigationController pushViewController:v animated:true];
         }
-        
-        if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {
-            
+
+        if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {// 旅行者支付
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf = self;
+            self.tripPayModel.oid = self.oid;
+            [self.tripPayModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+//                    vc.oid = self.oid;
+                    vc.tripDetailModel = self.tripDetailModel;
+                    [self.navigationController pushViewController:vc animated:true];
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+            }];
         }
-        
-        if ([self.tripDetailModel.status intValue] == kOrderReadyComment) {
+
+        if ([self.tripDetailModel.status intValue] == kOrderReadyComment) { //旅行者评价
             TPPublishCommentViewController *vc = [TPPublishCommentViewController new];
             vc.tripDetailModel = self.tripDetailModel;
             [self.navigationController pushViewController:vc animated:true];

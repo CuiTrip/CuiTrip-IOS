@@ -107,8 +107,12 @@
     self.gradientLayer.frame = CGRectMake(0, self.bottomColorView.vzHeight - 1, self.vzWidth, 1);
     self.dateLabel.frame = CGRectMake(10, 10, 80, 10);
     
+    CGSize size = CGSizeMake(100,10);
+    UIFont *font = [UIFont systemFontOfSize:13.0f];
+    //计算实际frame大小，并将label的frame变成实际大小
+    CGSize labelsize = [self.addressLabel.text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
     self.addressIcon.frame = CGRectMake(self.dateLabel.vzRight + 10, 7, 14, 14);
-    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.frame.origin.y + 2, 30, 10);
+    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.frame.origin.y + 2, labelsize.width, 10);
     self.statusLabel.frame = CGRectMake(self.bottomColorView.vzWidth - 120, self.addressIcon.frame.origin.y + 2, 110, 10);
 }
 

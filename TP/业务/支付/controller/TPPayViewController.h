@@ -10,11 +10,13 @@
 
   
 #import "VZViewController.h"
+#import "TPTripDetailModel.h"
 
 @interface TPPayViewController : VZViewController
 
-@property(nonatomic,strong)NSString* oid;
+//@property(nonatomic,strong)NSString* oid;
 @property(nonatomic, retain)NSString *channel;
+@property (nonatomic,strong) TPTripDetailModel *tripDetailModel;
 
 @end
   
