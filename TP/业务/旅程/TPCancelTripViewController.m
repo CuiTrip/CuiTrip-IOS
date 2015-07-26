@@ -7,6 +7,8 @@
 //
 
 #import "TPCancelTripViewController.h"
+#import "TPCancelTripOrderModel.h"
+#import "TPTripCancelledViewController.h"
 
 
 @interface TPCancelTripViewController()
@@ -23,6 +25,8 @@
 @property(nonatomic,strong) UIButton* confirmBtn;
 
 @property(nonatomic,assign) float m_curKeyboardHeight;
+
+@property(nonatomic,strong)TPCancelTripOrderModel* cancelTripOrderModel;
 
 
 @end
@@ -79,7 +83,7 @@
 {
     [super viewDidDisappear:animated];
     //todo..
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +95,17 @@
 - (void)dealloc {
     
     //todo..
+}
+
+
+/////////////////////////////////
+#pragma mark - setter and getter
+- (TPCancelTripOrderModel* )cancelTripOrderModel
+{
+    if (!_cancelTripOrderModel) {
+        _cancelTripOrderModel = [TPCancelTripOrderModel new];
+    }
+    return _cancelTripOrderModel;
 }
 
 /////////////////////////////////
@@ -115,7 +130,7 @@
     [self.addressIcon setImage:__image(@"trip_position.png")];
     self.addressIcon.frame = CGRectMake((self.view.vzWidth - 44.0f) / 2, self.titleLabel.vzBottom + 10.0f, 14.0f, 14.0f);
     [self.scrollView addSubview:self.addressIcon];
-
+    
     self.addressLabel = [TPUIKit label:[UIColor colorWithRed:124 / 255.0f green:124 / 255.0f blue:124 / 255.0f alpha:1.0f] Font:[UIFont systemFontOfSize:13.0f]];
     self.addressLabel.text = self.tripDetailModel.serviceAdress;
     self.addressLabel.textAlignment = NSTextAlignmentCenter;
@@ -162,12 +177,12 @@
     self.tipLabel.textAlignment = NSTextAlignmentLeft;
     self.tipLabel.frame = CGRectMake(20.0f, self.reasonText.vzBottom + 15.0f, self.view.vzWidth - 40.0f, 50.0f);
     [self.scrollView addSubview:self.tipLabel];
-
+    
     self.confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.confirmBtn.backgroundColor = [UIColor colorWithRed:0 / 255.0f green:204 / 255.0f blue:221 / 255.0f alpha:1.0f];
     self.confirmBtn.frame = CGRectMake(15.0f, self.tipLabel.vzBottom + 10.0f, self.view.vzWidth - 30.0f, 44.0f);
     [self.confirmBtn addTarget:self action:@selector(confirm) forControlEvents:UIControlEventTouchUpInside];
-    [self.confirmBtn setTitle:@"确认修改" forState:UIControlStateNormal];
+    [self.confirmBtn setTitle:@"确认取消" forState:UIControlStateNormal];
     [self.confirmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.scrollView addSubview:self.confirmBtn];
     
@@ -192,33 +207,35 @@
 
 - (void)confirm
 {
+    //取消旅程
+    self.cancelTripOrderModel.oid = self.tripDetailModel.oid;
+    self.cancelTripOrderModel.reason = self.reasonText.text;
+    SHOW_SPINNER(self);
+    __weak typeof(self) weakSelf = self;;
+    [self.cancelTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+        HIDE_SPINNER(weakSelf);
+        if (!error) {
+            TOAST(weakSelf, @"取消成功");
+            //通知列表刷新
+            [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+            [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                TPTripCancelledViewController *vc = [TPTripCancelledViewController new];
+                vc.tripDetailModel = self.tripDetailModel;
+                [self.navigationController pushViewController:vc animated:true];
+            });
+        }
+        else
+        {
+            TOAST_ERROR(weakSelf, error);
+        }
+    }];
     
 }
 
 - (void)viewTapped
 {
     [self.reasonText resignFirstResponder];
-}
-
-//////////////////////////////////
-#pragma mark - private method
-
-- (CGFloat)keyboardEndingFrameHeight:(NSDictionary *)userInfo
-{
-    CGRect keyboardEndingUncorrectedFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGRect keyboardBeginUncorrectedFrame = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-
-            NSLog(@"1 : %f, %f, %f, %f", keyboardBeginUncorrectedFrame.origin.x, keyboardBeginUncorrectedFrame.origin.y, keyboardBeginUncorrectedFrame.size.width, keyboardBeginUncorrectedFrame.size.height);
-    
-    NSLog(@"2 : %f, %f, %f, %f", keyboardEndingUncorrectedFrame.origin.x, keyboardEndingUncorrectedFrame.origin.y, keyboardEndingUncorrectedFrame.size.width, keyboardEndingUncorrectedFrame.size.height);
-    
-
-    
-    
-//    CGRect keyboardEndingFrame = [self.view convertRect:keyboardEndingUncorrectedFrame fromView:nil];
-   
-    //return keyboardEndingFrame.size.height;
-    return keyboardEndingUncorrectedFrame.origin.y - keyboardBeginUncorrectedFrame.origin.y;
 }
 
 ///////////////////////////////////

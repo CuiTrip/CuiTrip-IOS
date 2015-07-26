@@ -68,6 +68,8 @@
     _travellerNickName = JSON[@"travellerName"];
     _oid = JSON[@"oid"];
     _sid = JSON[@"sid"];
+    _userName = JSON[@"userNick"];
+    _userAvatar = JSON[@"headPic"];
     
     return true;
 }

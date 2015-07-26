@@ -14,6 +14,7 @@
 @interface TPCancelTripOrderModel : VZHTTPModel
 
 @property(nonatomic,strong)NSString* oid;
+@property(nonatomic,strong)NSString* reason;
 
 @end
 

@@ -37,6 +37,8 @@
 @property(nonatomic,strong,readonly)NSString* moneyType;
 @property(nonatomic,strong,readonly)NSString* travellerNickName;
 @property(nonatomic,strong,readonly)NSString* sid;
+@property(nonatomic,strong,readonly)NSString* userName;
+@property(nonatomic,strong,readonly)NSString* userAvatar;
 
 @end
 

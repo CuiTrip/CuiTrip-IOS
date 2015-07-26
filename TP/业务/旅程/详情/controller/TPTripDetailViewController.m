@@ -10,7 +10,6 @@
 
 
 #import "TPTripDetailViewController.h"
-#import "TPTripDetailModel.h"
 #import "TPCustomerInTripView.h"
 #import "TPTripDetailSubView.h"
 #import "TPCustomerInTripView.h"
@@ -19,13 +18,22 @@
 #import "TPReserveViewController.h"
 #import "TPTripCancelledViewController.h"
 #import "TPPublishCommentViewController.h"
+#import "TPTripDetailModel.h"
+#import "TPConfirmTripOrderModel.h"
+#import "TPBeginTripOrderModel.h"
+#import "TPEndTripOrderModel.h"
+
 
 @interface TPTripDetailViewController()
 
 @property(nonatomic,strong) UITableView* tableView;
 @property(nonatomic,strong) TPTripDetailSubView* subView;
 @property(nonatomic,strong) TPCustomerInTripView* inTripView;
+
 @property(nonatomic,strong) TPTripDetailModel *tripDetailModel;
+@property(nonatomic,strong)TPConfirmTripOrderModel* confirmTripOrderModel;
+@property(nonatomic,strong)TPBeginTripOrderModel* beginTripOrderModel;
+@property(nonatomic,strong)TPEndTripOrderModel* endTripOrderModel;
 
 
 @end
@@ -49,6 +57,31 @@
         _tripDetailModel.key = @"__TPTripDetailModel__";
     }
     return _tripDetailModel;
+}
+
+- (TPConfirmTripOrderModel* )confirmTripOrderModel
+{
+    if (!_confirmTripOrderModel) {
+        _confirmTripOrderModel = [TPConfirmTripOrderModel new];
+    }
+    return _confirmTripOrderModel;
+}
+
+
+- (TPBeginTripOrderModel* )beginTripOrderModel
+{
+    if (!_beginTripOrderModel) {
+        _beginTripOrderModel = [TPBeginTripOrderModel new];
+    }
+    return _beginTripOrderModel;
+}
+
+- (TPEndTripOrderModel* )endTripOrderModel
+{
+    if (!_endTripOrderModel) {
+        _endTripOrderModel = [TPEndTripOrderModel new];
+    }
+    return _endTripOrderModel;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -155,7 +188,7 @@
 {
     if ([self.tripDetailModel.status intValue] == kOrderInTrip)
     {
-        self.inTripView = [[TPCustomerInTripView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.vzWidth, self.view.vzHeight)];
+        self.inTripView = [[TPCustomerInTripView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.vzWidth, self.view.vzHeight + ([TPUser type] == kProvider ? 64 : 20))];
         self.inTripView.model = self.tripDetailModel;
         self.tableView.tableHeaderView = self.inTripView;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"联系脆饼" style:UIBarButtonItemStylePlain target:self action:@selector(callTripping)];
@@ -178,26 +211,63 @@
     if ([self.tripDetailModel.status intValue] == kOrderReadyConfirm) {
         cell.backgroundView.backgroundColor = [TPTheme themeColor];
         cell.selectedBackgroundView.backgroundColor = [TPTheme themeColor];
-        textLabel.text = @"修改预约";
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        if ([TPUser type] == kCustomer) {
+            textLabel.text = @"修改预约";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        }
+        else if([TPUser type] == kProvider){
+            textLabel.text = @"确认预约";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        }
     }
     if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {
-        cell.backgroundView.backgroundColor = [TPTheme themeColor];
-        cell.selectedBackgroundView.backgroundColor = [TPTheme themeColor];
-        textLabel.text = @"立即支付";
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        if ([TPUser type] == kCustomer) {
+            cell.backgroundView.backgroundColor = [TPTheme themeColor];
+            cell.selectedBackgroundView.backgroundColor = [TPTheme themeColor];
+            textLabel.text = @"立即支付";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        }
+        else if([TPUser type] == kProvider){
+            cell.backgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
+            cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
+            textLabel.text = @"旅程待支付";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        }
     }
     if ([self.tripDetailModel.status intValue] == kOrderReadyBegin) {
-        cell.backgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
-        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
-        textLabel.text = @"旅程待开始";
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        if ([TPUser type] == kCustomer) {
+            cell.backgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
+            cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
+            textLabel.text = @"旅程待开始";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        }
+        else if([TPUser type] == kProvider){
+            cell.backgroundView.backgroundColor = [TPTheme themeColor];
+            cell.selectedBackgroundView.backgroundColor = [TPTheme themeColor];
+            textLabel.text = @"开始旅程";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消行程" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTrip)];
+        }
     }
-    if ([self.tripDetailModel.status intValue] == kOrderReadyComment) {
+    if ([self.tripDetailModel.status intValue] == kOrderInTrip) {
         cell.backgroundView.backgroundColor = [TPTheme themeColor];
         cell.selectedBackgroundView.backgroundColor = [TPTheme themeColor];
-        textLabel.text = @"评价";
+        textLabel.text = @"结束旅程";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"联系脆饼" style:UIBarButtonItemStylePlain target:self action:@selector(callTripping)];
+        
+    }
+    if ([self.tripDetailModel.status intValue] == kOrderReadyComment) {
+        if ([TPUser type] == kCustomer) {
+            cell.backgroundView.backgroundColor = [TPTheme themeColor];
+            cell.selectedBackgroundView.backgroundColor = [TPTheme themeColor];
+            textLabel.text = @"评价";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"联系脆饼" style:UIBarButtonItemStylePlain target:self action:@selector(callTripping)];
+        }
+        else if([TPUser type] == kProvider){
+            cell.backgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
+            cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
+            textLabel.text = @"已结束，待评价";
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"联系脆饼" style:UIBarButtonItemStylePlain target:self action:@selector(callTripping)];
+        }
     }
     if ([self.tripDetailModel.status intValue] == kOrderFinished) {
         cell.backgroundView.backgroundColor = [UIColor colorWithRed:216 / 255.0f green:216 / 255.0f blue:216 / 255.0f alpha:1.0f];
@@ -249,7 +319,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([self.tripDetailModel.status intValue] == kOrderInTrip) {
-        return 0;
+        if ([TPUser type] == kCustomer)
+        {
+            return 0;
+        }
+        else if([TPUser type] == kProvider)
+        {
+            return 1;
+        }
     }
     return 4;
 }
@@ -270,42 +347,56 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    
-    if (indexPath.row != 3) {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    
-    if (indexPath.row == 0)
-    {
-        cell.textLabel.text = @"预约日期";
-        cell.detailTextLabel.text = [TPUtils changeDateFormatString:self.tripDetailModel.serviceDate FromOldFmt:@"yyyy-MM-dd HH:mm:ss" ToNew:@"yyyy年M月d日"];
-    }
-    else if (indexPath.row == 1)
-    {
-        cell.textLabel.text = @"约定人数";
-        cell.detailTextLabel.text = self.tripDetailModel.buyerNum;
-    }
-    else if (indexPath.row == 2)
-    {
-        cell.textLabel.text = @"服务费用";
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", self.tripDetailModel.orderPrice, self.tripDetailModel.moneyType];
-    }
-    else if (indexPath.row == 3)
-    {
+    if ([self.tripDetailModel.status intValue] == kOrderInTrip && [TPUser type] == kProvider) {
         cell.backgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         [self cellWithStatus:cell];
     }
-    
+    else{
+        if (indexPath.row != 3) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        if (indexPath.row == 0)
+        {
+            cell.textLabel.text = @"预约日期";
+            cell.detailTextLabel.text = [TPUtils changeDateFormatString:self.tripDetailModel.serviceDate FromOldFmt:@"yyyy-MM-dd HH:mm:ss" ToNew:@"yyyy年M月d日"];
+        }
+        else if (indexPath.row == 1)
+        {
+            cell.textLabel.text = @"约定人数";
+            cell.detailTextLabel.text = self.tripDetailModel.buyerNum;
+        }
+        else if (indexPath.row == 2)
+        {
+            cell.textLabel.text = @"服务费用";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", self.tripDetailModel.orderPrice, self.tripDetailModel.moneyType];
+        }
+        else if (indexPath.row == 3)
+        {
+            cell.backgroundView = [[UIView alloc] initWithFrame:cell.frame];
+            cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+            [self cellWithStatus:cell];
+        }
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < 3) {
-        return;
+    if ([TPUser type] == kProvider) {
+        if ([self.tripDetailModel.status intValue] != kOrderInTrip) {
+            if (indexPath.row < 3) {
+                return;
+            }
+        }
+        [self actionWithStatus];
     }
-    [self actionWithStatus];
+    else{
+        if (indexPath.row < 3) {
+            return;
+        }
+        [self actionWithStatus];
+    }
 }
 
 
@@ -327,34 +418,111 @@
 
 - (void)actionWithStatus
 {
-    
-    if ([self.tripDetailModel.status intValue] != kOrderReadyConfirm && [self.tripDetailModel.status intValue] != kOrderReadyPay && [self.tripDetailModel.status intValue] != kOrderReadyComment) {
-        return;
+    if ([TPUser type] == kCustomer) {
+        if ([self.tripDetailModel.status intValue] != kOrderReadyConfirm && [self.tripDetailModel.status intValue] != kOrderReadyPay && [self.tripDetailModel.status intValue] != kOrderReadyComment) {
+            return;
+        }
+        if ([self.tripDetailModel.status intValue] == kOrderReadyConfirm) {
+            //去修改
+            TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
+            v.type = kModifyOrder;
+            v.sid = self.tripDetailModel.sid;
+            v.maxNum = 6;
+            v.oid = self.tripDetailModel.oid;
+            v.insiderId = self.tripDetailModel.insiderId;
+            v.servicePrice = self.tripDetailModel.orderPrice;
+            v.serviceName = self.tripDetailModel.serviceName;
+            v.moneyType = self.tripDetailModel.moneyType;
+            [self.navigationController pushViewController:v animated:true];
+        }
+        
+        if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {
+            
+        }
+        
+        if ([self.tripDetailModel.status intValue] == kOrderReadyComment) {
+            TPPublishCommentViewController *vc = [TPPublishCommentViewController new];
+            vc.tripDetailModel = self.tripDetailModel;
+            [self.navigationController pushViewController:vc animated:true];
+        }
     }
-    if ([self.tripDetailModel.status intValue] == kOrderReadyConfirm) {
-        //去修改
-        TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
-        v.type = kModifyOrder;
-        v.sid = self.tripDetailModel.sid;
-        v.maxNum = 6;
-        v.oid = self.tripDetailModel.oid;
-        v.insiderId = self.tripDetailModel.insiderId;
-        v.servicePrice = self.tripDetailModel.orderPrice;
-        v.serviceName = self.tripDetailModel.serviceName;
-        v.moneyType = self.tripDetailModel.moneyType;
-        [self.navigationController pushViewController:v animated:true];
-    }
-    
-    if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {
+    else if([TPUser type] == kProvider){
+        if ([self.tripDetailModel.status intValue] != kOrderReadyConfirm && [self.tripDetailModel.status intValue] != kOrderReadyBegin && [self.tripDetailModel.status intValue] != kOrderInTrip) {
+            return;
+        }
+        if ([self.tripDetailModel.status intValue] == kOrderReadyConfirm) {
+            //去确认行程
+            self.confirmTripOrderModel.oid = self.oid;
+            
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf = self;;
+            [self.confirmTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"确认成功");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+            }];
+            
+        }
+        if ([self.tripDetailModel.status intValue] == kOrderReadyBegin) {//开始旅程
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf = self;
+            self.beginTripOrderModel.oid = self.oid;
+            [self.beginTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"旅行已开始");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+            }];
+        }
+        if ([self.tripDetailModel.status intValue] == kOrderInTrip) {
+            //结束旅程
+            SHOW_SPINNER(self);
+            __weak typeof(self) weakSelf = self;
+            self.endTripOrderModel.oid = self.oid;
+            [self.endTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"旅程已结束");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+            }];
+            
+        }
         
     }
-    
-    if ([self.tripDetailModel.status intValue] == kOrderReadyComment) {
-        TPPublishCommentViewController *vc = [TPPublishCommentViewController new];
-        vc.tripDetailModel = self.tripDetailModel;
-        [self.navigationController pushViewController:vc animated:true];
-    }
-    
 }
 
 
@@ -372,7 +540,6 @@
     [self setupTableView];
     [self load];
 }
-
 
 
 

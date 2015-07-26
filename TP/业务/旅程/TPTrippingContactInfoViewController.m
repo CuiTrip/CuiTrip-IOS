@@ -9,7 +9,7 @@
 #import "TPTrippingContactInfoViewController.h"
 
 
-#define TELEPHONE_NUMBER    @"13758125363"
+#define TELEPHONE_NUMBER    @"8657186992999"
 
 @interface TPTrippingContactInfoViewController()
 
@@ -114,7 +114,7 @@
     self.emailLabel.text = @"service@cuitrip.com";
     self.emailLabel.textAlignment = NSTextAlignmentCenter;
     self.emailLabel.frame = CGRectMake(0.0f, self.emailIcon.vzBottom + 10.0f, self.view.vzWidth, 16.0f);
-
+    
     [self.view addSubview:self.QRCode];
     [self.view addSubview:self.tipLabel];
     [self.view addSubview:self.callBtn];
@@ -124,7 +124,7 @@
 
 /////////////////////////////
 
-#pragma mark - btn action 
+#pragma mark - btn action
 
 - (void)callTripping
 {

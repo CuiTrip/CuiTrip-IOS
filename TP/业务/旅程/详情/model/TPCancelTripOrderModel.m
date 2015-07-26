@@ -1,4 +1,4 @@
-  
+
 //
 //  TPCancelTripOrderModel.m
 //  TP
@@ -22,11 +22,11 @@
 
 - (NSDictionary *)dataParams {
     
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"oid":self.oid?:@""};
+    return @{@"uid" : [TPUser uid] ? : @"", @"token" : [TPUser token] ? : @"" , @"oid" : self.oid? : @"", @"reason":self.reason ? : @""};
 }
 
 - (NSString *)methodName {
-   
+    
     return [_API_ stringByAppendingString:@"cancelOrder"];
 }
 

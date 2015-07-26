@@ -230,7 +230,7 @@
             
             TOAST(weakSelf, @"发表成功!");
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakSelf.navigationController popViewControllerAnimated:true];
+                [weakSelf.navigationController popToRootViewControllerAnimated:true];
             });
         }
         else
@@ -263,15 +263,6 @@
 
 - (void)keyboardWillShow:(NSNotification*)notification
 {
-    NSLog(@"%s: %@", __FUNCTION__, notification.userInfo);
-    
-    //    CGRect keyboardRectEnd = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    //    CGFloat animDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    //    [UIView animateWithDuration:animDuration animations:^{
-    //
-    //        self.view.frame  = CGRectMake(0, self.view.vzTop-CGRectGetHeight(keyboardRectEnd)/2-50, self.view.vzWidth, self.view.vzHeight);
-    //    }];
-    
     if ([self.textView isFirstResponder] == NO) {
         return;
     }

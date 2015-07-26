@@ -122,7 +122,6 @@
     self.cancelLabel.frame = CGRectMake(0.0f, self.providerNameLabel.vzBottom + 30.0f, self.view.vzWidth, 24.0f);
     [self.view addSubview:self.cancelLabel];
     
-    
     self.tripListBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.tripListBtn.backgroundColor = [UIColor colorWithRed:0 / 255.0f green:204 / 255.0f blue:221 / 255.0f alpha:1.0f];
     self.tripListBtn.frame = CGRectMake(20.0f, self.cancelLabel.vzBottom + 30.0f, self.view.vzWidth - 40.0f, 44.0f);
@@ -132,10 +131,10 @@
     [self.view addSubview:self.tripListBtn];
     
     self.tripsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.tripsBtn.backgroundColor = [UIColor greenColor];
+    self.tripsBtn.backgroundColor = [UIColor colorWithRed:126 /255.f green:211 / 255.0f blue:33 / 255.0f alpha:1.0f];
     self.tripsBtn.frame = CGRectMake(20.0f, self.tripListBtn.vzBottom + 20.0f, self.view.vzWidth - 40.0f, 44.0f);
     [self.tripsBtn addTarget:self action:@selector(toTrips) forControlEvents:UIControlEventTouchUpInside];
-    [self.tripsBtn setTitle:@"返回旅程列表" forState:UIControlStateNormal];
+    [self.tripsBtn setTitle:@"查看其他推荐" forState:UIControlStateNormal];
     [self.tripsBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.tripsBtn];
 }

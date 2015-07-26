@@ -23,6 +23,7 @@
 @property(nonatomic,strong) UILabel* statusLabel;
 @property(nonatomic,strong) UILabel* tipLabel;
 @property(nonatomic,strong) CAGradientLayer* gradientLayer;
+@property(nonatomic,strong) UIButton* finishBtn;
 
 
 @end
@@ -67,7 +68,7 @@
     [self.poster sd_setImageWithURL:__url(self.model.servicePIC) placeholderImage:__image(@"default_list.jpg")];
     [self addSubview:self.poster];
     [self.poster.layer addSublayer:self.gradientLayer];
-
+    
     self.titleLabel.text = self.model.serviceName;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.titleLabel];
@@ -79,15 +80,33 @@
     self.addressLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.addressLabel];
     
-    [self.providerIcon sd_setImageWithURL:__url(self.model.insiderHeadPic) placeholderImage:__image(@"girl.jpg")];
-    [self.customerIcon sd_setImageWithURL:__url(self.model.insiderHeadPic) placeholderImage:__image(@"girl.jpg")];
+    
+    NSString *providerAvatar;
+    NSString *providerName;
+    NSString *customerAvatar;
+    NSString *customerName;
+    if ([TPUser type] == kProvider) {
+        providerAvatar = [TPUser avatar];
+        providerName = @"我";
+        customerAvatar = self.model.userAvatar;
+        customerName = self.model.userName;
+    }
+    else if([TPUser type] == kCustomer){
+        providerAvatar = self.model.userAvatar;
+        providerName = self.model.userName;
+        customerAvatar = [TPUser avatar];
+        customerName = @"我";
+    }
+    
+    [self.providerIcon sd_setImageWithURL:__url(providerAvatar) placeholderImage:__image(@"girl.jpg")];
+    [self.customerIcon sd_setImageWithURL:__url(customerAvatar) placeholderImage:__image(@"girl.jpg")];
     [self addSubview:self.providerIcon];
     [self addSubview:self.customerIcon];
     
-    self.providerNameLabel.text = self.model.insiderNickName;
+    self.providerNameLabel.text = providerName;
     self.providerNameLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.customerNameLabel.text = self.model.travellerNickName;
+    self.customerNameLabel.text = customerName;
     self.customerNameLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.providerNameLabel];
     [self addSubview:self.customerNameLabel];
@@ -126,7 +145,6 @@
     self.statusLabel.frame = CGRectMake(0.0f, self.providerNameLabel.vzBottom + 20.0f, self.poster.vzWidth, 20.0f);
     self.tipLabel.frame = CGRectMake(0.0f, self.statusLabel.vzBottom + 5.0f, self.poster.vzWidth, 10.0f);
 }
-
 
 @end
 
