@@ -1,4 +1,4 @@
-  
+
 //
 //  TPTripListItem.h
 //  TP
@@ -23,13 +23,16 @@
 @property(nonatomic,strong)NSString *servicePIC;
 @property(nonatomic,strong)NSString *insiderId;
 @property(nonatomic,strong)NSString *insiderHeadPic;
+@property(nonatomic,strong)NSString *insiderName;
 @property(nonatomic,strong)NSString *travellerName;
 @property(nonatomic,strong)NSString *servicePrice;
 @property(nonatomic,strong)NSString *serviceDate;
 @property(nonatomic,strong)NSString *orderPrice;
 @property(nonatomic,strong)NSString* moneyType;
+@property(nonatomic,strong)NSString *headPic;
+@property(nonatomic,strong)NSString *userNick;
 
 
 @end
 
-  
+

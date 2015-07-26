@@ -1,4 +1,4 @@
-  
+
 //
 //  TPTripListViewController.m
 //  TP
@@ -10,7 +10,7 @@
 
 
 #import "TPTripListViewController.h"
-#import "TPTripListModel.h" 
+#import "TPTripListModel.h"
 #import "TPTripListViewDataSource.h"
 #import "TPTripListViewDelegate.h"
 #import "TPTripDetailViewController.h"
@@ -19,8 +19,8 @@
 
 @interface TPTripListViewController()
 
- 
-@property(nonatomic,strong)TPTripListModel *tripListModel; 
+
+@property(nonatomic,strong)TPTripListModel *tripListModel;
 @property(nonatomic,strong)TPTripListViewDataSource *ds;
 @property(nonatomic,strong)TPTripListViewDelegate *dl;
 
@@ -28,15 +28,15 @@
 
 @implementation TPTripListViewController
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - setters 
+////////////////////////////////////////////////////////////
+#pragma mark - setters
 
 
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - getters 
+////////////////////////////////////////////////////////////
+#pragma mark - getters
 
-   
+
 - (TPTripListModel *)tripListModel
 {
     if (!_tripListModel) {
@@ -48,20 +48,20 @@
 
 
 - (TPTripListViewDataSource *)ds{
-
-  if (!_ds) {
-      _ds = [TPTripListViewDataSource new];
-   }
-   return _ds;
+    
+    if (!_ds) {
+        _ds = [TPTripListViewDataSource new];
+    }
+    return _ds;
 }
 
- 
-- (TPTripListViewDelegate *)dl{
 
-  if (!_dl) {
-      _dl = [TPTripListViewDelegate new];
-   }
-   return _dl;
+- (TPTripListViewDelegate *)dl{
+    
+    if (!_dl) {
+        _dl = [TPTripListViewDelegate new];
+    }
+    return _dl;
 }
 
 
@@ -117,7 +117,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MobClick beginLogPageView:@"TPTripListView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -129,8 +128,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"TPTripListView"];
-
+    
     //todo..
 }
 
@@ -198,30 +196,32 @@
 #pragma mark - @override methods - VZListViewController
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  //todo...
-    TPTripListItem* item = (TPTripListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
-  
-    TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
-    vc.oid = item.oid;
     
+    //todo...
+    TPTripListItem* item = (TPTripListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
+    
+    //    TPTripDetailViewController* vc = [[UIStoryboard storyboardWithName:@"TPTripDetailViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tptripdetail"];
+    
+    TPTripDetailViewController* vc = [TPTripDetailViewController new];
+    vc.oid = item.oid;
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
     [self.navigationController pushViewController:vc animated:true];
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
-
-  //todo:... 
-
+    
+    //todo:...
+    
 }
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - public method 
+////////////////////////////////////////////////////////////
+#pragma mark - public method
 
 
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - private callback method 
+////////////////////////////////////////////////////////////
+#pragma mark - private callback method
 
 - (void)setupTableView
 {
@@ -229,7 +229,6 @@
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
     //self.tableView.tableFooterView = [TPUIKit emptyView];
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
@@ -257,7 +256,7 @@
         if ([TPUser isLogined]) {
             [weakSelf load];
         }
-
+        
     }];
     
 }

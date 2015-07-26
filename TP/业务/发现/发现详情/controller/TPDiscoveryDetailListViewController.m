@@ -47,7 +47,7 @@
 //
 //        
         self.moneyLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:16.0f]];
-        self.moneyLabel.vzOrigin = (CGPoint){0,230};
+        self.moneyLabel.vzOrigin = (CGPoint){0, 230};
         self.moneyLabel.vzWidth = 124;
         self.moneyLabel.vzHeight= 35;
         self.moneyLabel.text = @"";
@@ -214,11 +214,38 @@
         }];
         
         [self.view addSubview:btn];
+        
+        UIButton* backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];
+        [backBtn setBackgroundImage:__image(@"trip_left_w.png") forState:UIControlStateNormal];
+        [[backBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+         subscribeNext:^(id x) {
+             [self.navigationController popViewControllerAnimated:true];
+         }];
+        //    [self.view addSubview:backBtn];
+        
+        UIButton* shareBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.vzWidth-44, 20, 44 , 44)];
+        [shareBtn setBackgroundImage:__image(@"trip_share_w.png") forState:UIControlStateNormal];
+        [[shareBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+         subscribeNext:^(id x) {
+             
+             //分享//
+             [UMSocialSnsService presentSnsIconSheetView:self
+                                                  appKey:um_appKey
+                                               shareText:self.discoveryDetailListModel.tripInfoItem.desc
+                                              shareImage:__image(@"icon.png")
+                                         shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
+                                                delegate:self];
+         }];
+        //    [self.view addSubview:shareBtn];
+        _headerNavView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, self.view.vzWidth, 64)];
+        [_headerNavView addSubview:backBtn];
+        [_headerNavView addSubview:shareBtn];
+
     }
     else
     {
         //footer view
-        UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight-44, self.tableView.vzWidth, 44)];
+        UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.vzHeight - 108, self.tableView.vzWidth, 44)];
         btn.backgroundColor = [TPTheme themeColor];
         [btn setTitle:@"安排日程" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -273,37 +300,12 @@
     }
 
 
-    UIView* footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds),44)];
+    UIView* footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44)];
     footer.backgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = footer;
     
     
-    UIButton* backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];
-    [backBtn setBackgroundImage:__image(@"trip_left_w.png") forState:UIControlStateNormal];
-    [[backBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
-     subscribeNext:^(id x) {
-         [self.navigationController popViewControllerAnimated:true];
-     }];
-//    [self.view addSubview:backBtn];
-    
-    UIButton* shareBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.vzWidth-44, 20, 44 , 44)];
-    [shareBtn setBackgroundImage:__image(@"trip_share_w.png") forState:UIControlStateNormal];
-    [[shareBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
-    subscribeNext:^(id x) {
-       
-        //分享//
-        [UMSocialSnsService presentSnsIconSheetView:self
-                                             appKey:um_appKey
-                                          shareText:self.discoveryDetailListModel.tripInfoItem.desc
-                                         shareImage:__image(@"icon.png")
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
-                                           delegate:self];
-    }];
-//    [self.view addSubview:shareBtn];
-    _headerNavView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, self.view.vzWidth, 64)];
-    [_headerNavView addSubview:backBtn];
-    [_headerNavView addSubview:shareBtn];
-    [self.view addSubview:self.headerNavView];
+        [self.view addSubview:self.headerNavView];
 
 }
 
@@ -311,7 +313,13 @@
 {
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"TPDiscoveryDetailListView"];
-    self.navigationController.navigationBarHidden = true;
+    if (self.type == kArrangeMent) {
+        self.navigationItem.title = @"发现";
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editService)];
+    }
+    else{
+        self.navigationController.navigationBarHidden = true;
+    }
    
 }
 
@@ -416,7 +424,7 @@
     {
         TPDatePickerViewController* vc = [TPDatePickerViewController new];
         vc.type = kCheckOnly;
-        vc.sid=self.sid;
+        vc.sid = self.sid;
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([type isEqualToString:@"gotoFee"])
@@ -439,6 +447,16 @@
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 
+
+
+////////////////////////////////////////////////////////////
+#pragma mark - private method
+
+- (void)editService{
+    NSLog(@"edit service, yeah!");
+}
+
+
 
 /**
  * 分享到微信设置

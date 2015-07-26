@@ -1,4 +1,4 @@
-  
+
 //
 //  TPTripDetailSubView.h
 //  TP
@@ -8,14 +8,13 @@
 //
 
 
-  
-@class TPTripDetailItem;
 
-#import <UIKit/UIKit.h>
+#import "TPTripDetailSubView.h"
+#import "TPTripDetailModel.h"
 
 @interface TPTripDetailSubView : UIView
 
-@property(nonatomic,strong) TPTripDetailItem *item;
+@property(nonatomic,strong)TPTripDetailModel* tripDetailModel;
 
 @end
 

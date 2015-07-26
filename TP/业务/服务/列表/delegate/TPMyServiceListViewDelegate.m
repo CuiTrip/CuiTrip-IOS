@@ -17,6 +17,21 @@
 
 @implementation TPMyServiceListViewDelegate
 
+//点击更新服务日期按钮触发
+- (void)editMyServiceCal
+{
+    NSLog(@"editMyServiceCal, yeah!");
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - uitableView delegate override
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
 
 
 @end

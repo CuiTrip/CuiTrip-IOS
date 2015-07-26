@@ -13,5 +13,7 @@
 
 @interface TPMyServiceListViewDelegate : VZListViewDelegate
 
+- (void)editMyServiceCal;
+
 @end
   

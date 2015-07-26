@@ -7,6 +7,8 @@
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
+//1.1版本后，TPMyServiceListViewController的cell改为TPMyServiceCell，本cell弃用
+//zhouli 2015.7.12
 
 
 #import "TPMyServiceListCell.h"

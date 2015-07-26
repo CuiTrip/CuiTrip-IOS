@@ -321,6 +321,11 @@
 		7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B121B56080100E36430 /* trip_alipay@2x.png */; };
 		7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B131B56080100E36430 /* trip_wpay@2x.png */; };
 		7B956B1C1B5614D500E36430 /* TPPayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */; };
+		7BA5D1EF1B64BE380088C706 /* TPCancelTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5D1EA1B64BE380088C706 /* TPCancelTripViewController.m */; };
+		7BA5D1F01B64BE380088C706 /* TPTripCancelledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5D1EC1B64BE380088C706 /* TPTripCancelledViewController.m */; };
+		7BA5D1F11B64BE380088C706 /* TPTrippingContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5D1EE1B64BE380088C706 /* TPTrippingContactInfoViewController.m */; };
+		7BA5D1F41B64C0620088C706 /* TPCustomerInTripView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5D1F31B64C0620088C706 /* TPCustomerInTripView.m */; };
+		7BA5D1F71B64C1B90088C706 /* TPMyServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA5D1F61B64C1B90088C706 /* TPMyServiceCell.m */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -891,6 +896,17 @@
 		7B956B121B56080100E36430 /* trip_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_alipay@2x.png"; sourceTree = "<group>"; };
 		7B956B131B56080100E36430 /* trip_wpay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_wpay@2x.png"; sourceTree = "<group>"; };
 		7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayViewController.storyboard; sourceTree = "<group>"; };
+		7BA5D1E81B64BE020088C706 /* TPBusinessConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPBusinessConstant.h; path = "旅程/TPBusinessConstant.h"; sourceTree = "<group>"; };
+		7BA5D1E91B64BE380088C706 /* TPCancelTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCancelTripViewController.h; sourceTree = "<group>"; };
+		7BA5D1EA1B64BE380088C706 /* TPCancelTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCancelTripViewController.m; sourceTree = "<group>"; };
+		7BA5D1EB1B64BE380088C706 /* TPTripCancelledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripCancelledViewController.h; sourceTree = "<group>"; };
+		7BA5D1EC1B64BE380088C706 /* TPTripCancelledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripCancelledViewController.m; sourceTree = "<group>"; };
+		7BA5D1ED1B64BE380088C706 /* TPTrippingContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTrippingContactInfoViewController.h; sourceTree = "<group>"; };
+		7BA5D1EE1B64BE380088C706 /* TPTrippingContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTrippingContactInfoViewController.m; sourceTree = "<group>"; };
+		7BA5D1F21B64C0620088C706 /* TPCustomerInTripView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCustomerInTripView.h; sourceTree = "<group>"; };
+		7BA5D1F31B64C0620088C706 /* TPCustomerInTripView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCustomerInTripView.m; sourceTree = "<group>"; };
+		7BA5D1F51B64C1B90088C706 /* TPMyServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMyServiceCell.h; sourceTree = "<group>"; };
+		7BA5D1F61B64C1B90088C706 /* TPMyServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMyServiceCell.m; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1043,6 +1059,7 @@
 		45028AC31B1C753300417606 /* 业务 */ = {
 			isa = PBXGroup;
 			children = (
+				7BA5D1E81B64BE020088C706 /* TPBusinessConstant.h */,
 				4509AB611B22E3E300846032 /* 登录注册 */,
 				45028ADA1B1C7C1C00417606 /* 发现 */,
 				45028B4D1B1C7F1300417606 /* 服务 */,
@@ -1099,6 +1116,12 @@
 		45028AF91B1C7D2C00417606 /* 旅程 */ = {
 			isa = PBXGroup;
 			children = (
+				7BA5D1E91B64BE380088C706 /* TPCancelTripViewController.h */,
+				7BA5D1EA1B64BE380088C706 /* TPCancelTripViewController.m */,
+				7BA5D1EB1B64BE380088C706 /* TPTripCancelledViewController.h */,
+				7BA5D1EC1B64BE380088C706 /* TPTripCancelledViewController.m */,
+				7BA5D1ED1B64BE380088C706 /* TPTrippingContactInfoViewController.h */,
+				7BA5D1EE1B64BE380088C706 /* TPTrippingContactInfoViewController.m */,
 				4509AC031B247E5100846032 /* 列表 */,
 				4509AC1B1B247E5200846032 /* 详情 */,
 			);
@@ -1712,6 +1735,8 @@
 		4509AC301B247EA600846032 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				7BA5D1F21B64C0620088C706 /* TPCustomerInTripView.h */,
+				7BA5D1F31B64C0620088C706 /* TPCustomerInTripView.m */,
 				4509AC311B247EA600846032 /* TPTripDetailSubView.h */,
 				4509AC321B247EA600846032 /* TPTripDetailSubView.m */,
 			);
@@ -2265,6 +2290,8 @@
 		45D0C7981B29BED800F31BF5 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				7BA5D1F51B64C1B90088C706 /* TPMyServiceCell.h */,
+				7BA5D1F61B64C1B90088C706 /* TPMyServiceCell.m */,
 				45D0C7991B29BED800F31BF5 /* TPMyServiceListCell.h */,
 				45D0C79A1B29BED800F31BF5 /* TPMyServiceListCell.m */,
 			);
@@ -3460,6 +3487,7 @@
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
 				45028B431B1C7D2D00417606 /* TPMeItem.m in Sources */,
 				4509AC1F1B247E5200846032 /* TPTripListViewDataSource.m in Sources */,
+				7BA5D1F01B64BE380088C706 /* TPTripCancelledViewController.m in Sources */,
 				45028AC71B1C753300417606 /* ETContainerViewController.m in Sources */,
 				45D0C77A1B29AE8800F31BF5 /* TPCommentListItem.m in Sources */,
 				45D48C541B32EEBE00B5801F /* TPDDProfileCell.m in Sources */,
@@ -3508,6 +3536,7 @@
 				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				459BAD441B1F5BA600739C7E /* TPDatePickerModel.m in Sources */,
 				45DB44221B3C4D45007101EA /* TPModifyPWDItem.m in Sources */,
+				7BA5D1F71B64C1B90088C706 /* TPMyServiceCell.m in Sources */,
 				45DD4D201B3A95ED008833D1 /* TPBeginTripOrderModel.m in Sources */,
 				45DD47381B28200200D2BB62 /* TPMessageListViewController.m in Sources */,
 				45D0C7DA1B29E0EC00F31BF5 /* TPPSMoreViewController.m in Sources */,
@@ -3539,6 +3568,7 @@
 				45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */,
 				45D48BAA1B32898300B5801F /* TPCancelTripOrderModel.m in Sources */,
 				45DB44211B3C4D45007101EA /* TPModifyPWDViewController.m in Sources */,
+				7BA5D1F11B64BE380088C706 /* TPTrippingContactInfoViewController.m in Sources */,
 				45EB42FC1B2D63AE001B4202 /* TPTripArrangementItem.m in Sources */,
 				45D48C511B32EEBE00B5801F /* TPDDInfoCell.m in Sources */,
 				459BAD5F1B1F5D7E00739C7E /* TPProfilePageListCell.m in Sources */,
@@ -3553,6 +3583,7 @@
 				4509ABF41B23E2C300846032 /* TPAboutViewController.m in Sources */,
 				45D48C531B32EEBE00B5801F /* TPDDInfoCellContainerView.m in Sources */,
 				45028AB01B1B535E00417606 /* VZItem.m in Sources */,
+				7BA5D1EF1B64BE380088C706 /* TPCancelTripViewController.m in Sources */,
 				45D48C601B32EEBE00B5801F /* TPDDInfoItem.m in Sources */,
 				45028B421B1C7D2D00417606 /* TPMeViewController.m in Sources */,
 				45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */,
@@ -3584,6 +3615,7 @@
 				45D48C5D1B32EEBE00B5801F /* TPDiscoveryDetailListViewDataSource.m in Sources */,
 				4509AC371B247EA600846032 /* TPTripDetailSubView.m in Sources */,
 				459BAD641B1F5D7E00739C7E /* TPProfilePageListItem.m in Sources */,
+				7BA5D1F41B64C0620088C706 /* TPCustomerInTripView.m in Sources */,
 				45D0C7931B29AFD800F31BF5 /* TPPublishCommentSubView.m in Sources */,
 				4509AC221B247E5200846032 /* TPTripListModel.m in Sources */,
 				456C68F01B2ED35A003D4C20 /* TPPayViewController.m in Sources */,

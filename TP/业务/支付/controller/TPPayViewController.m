@@ -182,9 +182,7 @@
     self.confirmView.vzOrigin = CGPointMake((CGRectGetWidth(self.view.bounds)-300)/2, (CGRectGetHeight(self.view.bounds) - 160)/2);
     self.confirmView.layer.cornerRadius  = 8.0f;
     self.confirmView.layer.masksToBounds = true;
-    [self.confirmView.confirmBtn setTitle:@"前往旅程查看预定的订单" forState:UIControlStateNormal];
-    
-    
+
     __weak typeof(self)weakSelf = self;
     self.confirmView.onConfirmCallback = ^{
         
@@ -202,6 +200,13 @@
     [self.payModel loadWithCompletion:^(VZModel *model, NSError *error) {
         
         HIDE_SPINNER(weakSelf);
+        UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
+        v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+        v.tag = 996;
+        // 模糊化视图
+        //            UIImage *uiimage = [self convertViewToImage:v];
+        //            UIView* vc =[self blurryImage:uiimage withBlurLevel:3.0];
+        [[[UIApplication sharedApplication].delegate window] addSubview:v];
         
         if (!error) {
             
@@ -210,22 +215,26 @@
                 
                 [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
                 [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
-                [weakSelf.navigationController popToRootViewControllerAnimated:true];
+                [self.confirmView.titleLabel setText:@"您已支付成功" ];
+                [self.confirmView.descLabel setText:@"可以在旅程中查看您的预约"];
+                [self.confirmView.confirmBtn setTitle:@"去到旅程看预定的服务" forState:UIControlStateNormal];
+                [v addSubview:self.confirmView];
             });
         }
         else
         {
+            TOAST_ERROR(weakSelf, error);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                [self.confirmView.titleLabel setText:@"抱歉，您支付未成功" ];
+                [self.confirmView.descLabel setText:@"您可以返回旅程重新完成支付"];
+                [self.confirmView.confirmBtn setTitle:@"去到旅程看预定的服务" forState:UIControlStateNormal];
+                [v addSubview:self.confirmView];
+
+            });
             
-            UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kTPScreenWidth, kTPScreenHeight)];
-            v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
-            v.tag = 996;
-            // 模糊化视图
-            //            UIImage *uiimage = [self convertViewToImage:v];
-            //            UIView* vc =[self blurryImage:uiimage withBlurLevel:3.0];
-            
-            [[[UIApplication sharedApplication].delegate window] addSubview:v];
-            [v addSubview:self.confirmView];
-            //            TOAST_ERROR(weakSelf, error);
         }
         
     }];

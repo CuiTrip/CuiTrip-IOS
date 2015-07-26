@@ -1,4 +1,4 @@
-  
+
 //
 //  TPTripDetailModel.h
 //  TP
@@ -8,7 +8,7 @@
 //
 
 
-  
+
 #import "VZHTTPModel.h"
 
 
@@ -22,17 +22,21 @@
 @interface TPTripDetailModel : VZHTTPModel
 
 @property(nonatomic,strong)NSString* oid;
-
 @property(nonatomic,strong,readonly)NSString* serviceName;
 @property(nonatomic,strong,readonly)NSString* insiderHeadPic;
 @property(nonatomic,strong,readonly)NSString* insiderNickName;
+@property(nonatomic,strong,readonly)NSString* insiderId;
 @property(nonatomic,strong,readonly)NSString* insiderSign;
 @property(nonatomic,strong,readonly)NSString* serviceDate;
+@property(nonatomic,strong,readonly)NSString* servicePIC;
+@property(nonatomic,strong,readonly)NSString* serviceAdress;
 @property(nonatomic,strong,readonly)NSString* buyerNum;
 @property(nonatomic,strong,readonly)NSString* orderPrice;
 @property(nonatomic,strong,readonly)NSString* status;
 @property(nonatomic,strong,readonly)NSString* statusContent;
 @property(nonatomic,strong,readonly)NSString* moneyType;
+@property(nonatomic,strong,readonly)NSString* travellerNickName;
+@property(nonatomic,strong,readonly)NSString* sid;
 
 @end
 

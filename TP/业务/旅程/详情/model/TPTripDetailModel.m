@@ -1,4 +1,4 @@
-  
+
 //
 //  TPTripDetailModel.m
 //  TP
@@ -27,7 +27,7 @@
 
 
 - (NSString *)methodName {
-   
+    
     return [_API_ stringByAppendingPathComponent:@"getOrderInfo"];
 }
 
@@ -54,14 +54,20 @@
     //todo:
     _insiderHeadPic = JSON[@"headPic"];
     _insiderNickName = JSON[@"userNick"];
+    _insiderId = JSON[@"insiderId"];
     _buyerNum = JSON[@"buyerNum"];
     _orderPrice = JSON[@"servicePrice"];
     _serviceName = JSON[@"serviceName"];
+    _servicePIC = JSON[@"servicePIC"];
+    _serviceAdress = JSON[@"serviceAddress"];
     _insiderSign = JSON[@"insiderSign"];
     _status = JSON[@"status"];
     _statusContent = JSON[@"statusContent"];
     _serviceDate = JSON[@"serviceDate"];
     _moneyType = JSON[@"moneyType"];
+    _travellerNickName = JSON[@"travellerName"];
+    _oid = JSON[@"oid"];
+    _sid = JSON[@"sid"];
     
     return true;
 }

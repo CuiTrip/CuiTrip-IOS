@@ -55,7 +55,7 @@
 + (UIImageView* )roundImageView:(CGSize)sz Border:(UIColor* )color
 {
     UIImageView* imageView = [[UIImageView alloc]initWithFrame:(CGRect){0,0,sz}];
-    imageView.layer.cornerRadius = 0.5*sz.width;
+    imageView.layer.cornerRadius = 0.5 * sz.width;
     imageView.layer.borderColor = color.CGColor;
     imageView.layer.borderWidth = 1.0f;
     imageView.layer.masksToBounds=  true;
@@ -111,7 +111,7 @@
 + (void )showSessionErrorView:(UIView* )v loginSuccessCallback:(void(^)(void))c
 {
     [[v viewWithTag:999]removeFromSuperview];
-     UIView*  sev = [self defaultExceptionView:@"您还没有登录" SubTitle:@"请点击下面按钮登录" btnTitle:@"点击登录" Callback:^{
+     UIView* sev = [self defaultExceptionView:@"您还没有登录" SubTitle:@"请点击下面按钮登录" btnTitle:@"点击登录" Callback:^{
            
             [TPLoginManager showLoginViewControllerWithCompletion:^() {
                

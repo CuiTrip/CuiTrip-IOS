@@ -42,4 +42,6 @@
 
 + (void)uploadImage:(NSString* )base64 WithCompletion:(void(^)(NSString* url,NSError* err))callback;
 
++ (NSString* )changeDateFormatString:(NSString *)dateString FromOldFmt:(NSString *)old ToNew:(NSString *)fmt;
+
 @end

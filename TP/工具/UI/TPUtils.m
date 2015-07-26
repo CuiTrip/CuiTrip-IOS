@@ -395,6 +395,13 @@ static NSArray* list = nil;
     
 }
 
++ (NSString* )changeDateFormatString:(NSString *)dateString FromOldFmt:(NSString *)old ToNew:(NSString *)fmt{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:old];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    [dateFormatter setDateFormat:fmt];
+    return [dateFormatter stringFromDate:date];
+}
 
 
 @end

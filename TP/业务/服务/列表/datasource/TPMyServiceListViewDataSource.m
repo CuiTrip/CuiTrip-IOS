@@ -10,8 +10,10 @@
 
 
 #import "TPMyServiceListViewDataSource.h"
-#import "TPMyServiceListCell.h"
+//#import "TPMyServiceListCell.h"
 #import "TPMyServiceListItem.h"
+#import "TPMyServiceCell.h"
+
 
 @interface TPMyServiceListViewDataSource()
 
@@ -30,7 +32,7 @@
 
     //@REQUIRED:
     
-    return [TPMyServiceListCell class];
+    return [TPMyServiceCell class];
     
 
 }

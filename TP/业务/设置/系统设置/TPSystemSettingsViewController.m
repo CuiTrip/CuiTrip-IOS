@@ -65,10 +65,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        
-        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPForgetPWDViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpforgetpwd"];
+
+        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPModifyPWDViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpmodifypwd"];
         [self.navigationController pushViewController:vc animated:true];
-        
         
     }
     else if(indexPath.row == 1)

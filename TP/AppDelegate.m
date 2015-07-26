@@ -37,7 +37,7 @@
     //注册分享
     [UMSocialData setAppKey:um_appKey];
     [UMSocialWechatHandler setWXAppId:wx_appId appSecret:wx_appSecret url:@"http://www.cuitrip.com"];
-    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeOther;
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
     [UMSocialData defaultData].extConfig.wechatSessionData.shareImage = __image(@"icon.png");
     
 //    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://www.cuitrip.com";

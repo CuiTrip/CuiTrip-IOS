@@ -63,7 +63,6 @@
 {
     [super viewDidLoad];
 
-    
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
 
     void(^loadModel)(void) = ^{
@@ -169,13 +168,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
-        
-        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPModifyPWDViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpmodifypwd"];
-        [self.navigationController pushViewController:vc animated:true];
-        
-        
+        TOAST(self, @"我的主页");
     }
     else if(indexPath.row == 2)
+    {
+        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPAboutViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpabout"];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+    else if(indexPath.row == 3)
     {
         UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPAboutViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpabout"];
         [self.navigationController pushViewController:vc animated:true];
@@ -189,7 +189,11 @@
 
 - (void)setupTableView
 {
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(onSetting) ];
+//    UIButton* settingButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,44,44)];
+//    [settingButton setImage:[UIImage imageNamed:@"trip_add_w.png"]forState:UIControlStateNormal];
+//    UIBarButtonItem* settingItem = [[UIBarButtonItem alloc]initWithCustomView:settingButton];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(onSetting) ];
     
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPMeSubView" owner:self options:nil];
     self.headerView = (TPMeSubView *)[nib objectAtIndex:0];

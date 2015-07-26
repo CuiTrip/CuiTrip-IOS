@@ -1,4 +1,4 @@
-  
+
 //
 //  TPMyServiceListViewController.m
 //  TP
@@ -22,8 +22,8 @@
 
 @interface TPMyServiceListViewController()
 
- 
-@property(nonatomic,strong)TPMyServiceListModel *myServiceListModel; 
+
+@property(nonatomic,strong)TPMyServiceListModel *myServiceListModel;
 @property(nonatomic,strong)TPMyServiceListViewDataSource *ds;
 @property(nonatomic,strong)TPMyServiceListViewDelegate *dl;
 
@@ -31,15 +31,15 @@
 
 @implementation TPMyServiceListViewController
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - setters 
+////////////////////////////////////////////////////////////
+#pragma mark - setters
 
 
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - getters 
+////////////////////////////////////////////////////////////
+#pragma mark - getters
 
-   
+
 - (TPMyServiceListModel *)myServiceListModel
 {
     if (!_myServiceListModel) {
@@ -51,20 +51,20 @@
 
 
 - (TPMyServiceListViewDataSource *)ds{
-
-  if (!_ds) {
-      _ds = [TPMyServiceListViewDataSource new];
-   }
-   return _ds;
+    
+    if (!_ds) {
+        _ds = [TPMyServiceListViewDataSource new];
+    }
+    return _ds;
 }
 
- 
-- (TPMyServiceListViewDelegate *)dl{
 
-  if (!_dl) {
-      _dl = [TPMyServiceListViewDelegate new];
-   }
-   return _dl;
+- (TPMyServiceListViewDelegate *)dl{
+    
+    if (!_dl) {
+        _dl = [TPMyServiceListViewDelegate new];
+    }
+    return _dl;
 }
 
 
@@ -74,10 +74,8 @@
 - (void)loadView
 {
     [super loadView];
-    
-    [self setTitle:@"我的发现"];
-
-    
+    [self setTitle:@"发现"];
+    self.view.backgroundColor = [TPTheme bgColor];
 }
 
 - (void)viewDidLoad
@@ -85,8 +83,8 @@
     [super viewDidLoad];
     
     
-    [self registerChannelMsg];
-    
+    //[self registerChannelMsg];
+    //添加观察者，是否登录成功
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     
     
@@ -109,30 +107,30 @@
             loadModel();
             
         }];
-//        
-//        [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
-//            
-//            loadModel();
-//        }];
+        //
+        //        [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
+        //
+        //            loadModel();
+        //        }];
     }
     else
     {
         loadModel();
     }
-
+    
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MobClick beginLogPageView:@"TPMyServiceListView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
+    
     [self setRightBarButtonItem];
     
 }
@@ -140,8 +138,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"TPMyServiceListView"];
-
+    
     //todo..
 }
 
@@ -175,7 +172,7 @@
 - (void)showNoResult:(VZHTTPListModel *)model
 {
     [super showNoResult:model];
-
+    
     [self showEmpty:model];
 }
 
@@ -183,26 +180,20 @@
 - (void)showModel:(VZModel *)model
 {
     [super showModel:model];
-
+    
 }
 
 - (void)showEmpty:(VZHTTPListModel *)model
 {
-
+    
     [[self.view viewWithTag:100]removeFromSuperview];
     
     UIView* empty = [TPUIKit defaultExceptionView:@"您的发现" SubTitle:@"您有什么有趣的发现要告诉旅行者吗?" btnTitle:@"创建我的发现" Callback:^{
         
         if (![TPUser isLogined]) {
-            
-        
             [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
-                
-
-                
                 //重新请求数据
                 [self load];
-            
             }];
         }
         else
@@ -212,11 +203,10 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-           
-            [self.navigationController pushViewController:[TPPubilshServiceViewController new] animated:YES];
             
+            [self.navigationController pushViewController:[TPPubilshServiceViewController new] animated:YES];
         });
-
+        
         
     }];
     empty.tag = 100;
@@ -228,59 +218,59 @@
 #pragma mark - @override methods - VZListViewController
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  //todo...
+    
+    //todo...
     TPMyServiceListItem* item = (TPMyServiceListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
-    if ([item.checkStatus integerValue] == 1 ) {
-        
+    if ([item.checkStatus integerValue] != 0) {
         
         TPDiscoveryDetailListViewController* vc = [TPDiscoveryDetailListViewController new];
         vc.type = kArrangeMent;
         vc.sid = item.sid;
         
-//        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
-//        vc.sid = item.sid;
-//        vc.tripTitle = item.name;
-//        vc.tripContent = item.descpt;
-//        vc.tripAddress = item.address;
-//        vc.tripScore = [item.score floatValue];
-//        vc.pic = item.pic[0];
+        //        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
+        //        vc.sid = item.sid;
+        //        vc.tripTitle = item.name;
+        //        vc.tripContent = item.descpt;
+        //        vc.tripAddress = item.address;
+        //        vc.tripScore = [item.score floatValue];
+        //        vc.pic = item.pic[0];
+        //        vc.pic = item.pi
         
-        
-        //vc.pic = item.pi
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
         [self.navigationController pushViewController:vc animated:true];
-
+        
     }
-
+    
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
-
-  //todo:... 
-
+    
+    //todo:...
+    
 }
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - public method 
+
+////////////////////////////////////////////////////////////
+#pragma mark - public method
 
 
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - private callback method 
+////////////////////////////////////////////////////////////
+#pragma mark - private callback method
 
 - (void)setupTableView
 {
     //1,config your tableview
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44);
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = YES;
+    self.tableView.separatorStyle = NO;
     //self.tableView.tableFooterView = [TPUIKit emptyView];
     //2,set some properties:下拉刷新，自动翻页
     self.needLoadMore = NO;
     self.needPullRefresh = true;
-    
+    self.editing = YES;
     
     //3，bind your delegate and datasource to tableview
     self.dataSource = self.ds;
@@ -302,8 +292,6 @@
     }
     else
         self.navigationItem.rightBarButtonItem = nil;
-
-    
 }
 - (void)onRightItemClicked:(id)sender
 {
@@ -329,4 +317,4 @@
 }
 
 @end
- 
+

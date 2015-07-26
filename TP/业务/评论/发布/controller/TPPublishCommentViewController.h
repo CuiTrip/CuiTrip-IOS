@@ -1,4 +1,4 @@
-  
+
 //
 //  TPPublishCommentViewController.h
 //  TP
@@ -7,13 +7,12 @@
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
-
-  
+#import "TPTripDetailModel.h"
 #import "VZViewController.h"
 
 @interface TPPublishCommentViewController : VZViewController
 
-@property(nonatomic,strong)NSString* oid;
+@property(nonatomic,strong)TPTripDetailModel* tripDetailModel;
 
 @end
-  
+

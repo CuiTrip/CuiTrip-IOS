@@ -17,7 +17,7 @@
 @property(nonatomic,strong)NSString *sid;
 @property(nonatomic,strong)NSString *name;
 @property(nonatomic,strong)NSString *status;
-@property(nonatomic,strong)NSString *checkStatus;
+@property(nonatomic,strong)NSString *checkStatus; /*审核中（0），已审核（1），审核未通过（2）*/
 @property(nonatomic,strong)NSString *type;
 @property(nonatomic,strong)NSString *address;
 @property(nonatomic,strong)NSString *lat;
@@ -27,7 +27,7 @@
 @property(nonatomic,strong)NSString *insiderId;
 @property(nonatomic,strong)NSString *score;
 @property(nonatomic,strong)NSString *descpt;
-@property(nonatomic,strong)NSArray *pic;
+@property(nonatomic,strong)NSArray  *pic;
 @property(nonatomic,strong)NSString *backPic;
 @property(nonatomic,strong)NSString *tag;
 @property(nonatomic,strong)NSString *moneyType;

@@ -23,37 +23,9 @@
     //REFUND_FAILED(9, "退款失败");
 ***/
 
-typedef NS_ENUM(NSInteger, TripOrderStatus)
-{
-    kOrderReadyConfirm  = 1,
-    kOrderReadyPay      = 2,
-    kOrderReadyBegin    = 3,
-    kOrderGoing         = 4,
-    kOrderReadyComment  = 5,
-    kOrderFinished      = 6,
-    kOrderInvalid       = 7,
-    kOrderRefunding     = 8,
-    kOrderRefundFailed  = 9,
-    kOrderUnknown       = -1
 
-};
+@interface TPTripDetailViewController : VZViewController<UITableViewDelegate, UITableViewDataSource>
 
-//typedef enum
-//{
-//    kOrderReadyConfirm = 1,
-//    kOrderReadyPay = 2,
-//    kOrderReadyBegin = 3,
-//    kOrderGoing = 4,
-//    kOrderReadyComment = 5,
-//    kOrderFinished = 6,
-//    kOrderInvalid = 7,
-//    kOrderRefunding = 8,
-//    kOrderRefundFailed =9,
-//    kOrderUnknown = -1
-//    
-//}TripOrderStatus;
-
-@interface TPTripDetailViewController : VZViewController
 
 @property(nonatomic,strong)NSString* oid;
 
