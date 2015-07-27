@@ -1,4 +1,4 @@
-  
+
 //
 //  TPMeViewController.m
 //  TP
@@ -13,10 +13,11 @@
 #import "TPMeSubView.h"
 #import "TPMeModel.h"
 #import "TPSystemSettingsViewController.h"
+#import "TPShareTrippingViewController.h"
 
 @interface TPMeViewController()
 
- 
+
 @property(nonatomic,strong)TPMeModel *meModel;
 @property(nonatomic,strong) TPMeSubView* headerView;
 
@@ -25,15 +26,15 @@
 @implementation TPMeViewController
 
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - setters 
+////////////////////////////////////////////////////////////
+#pragma mark - setters
 
 
 
-//////////////////////////////////////////////////////////// 
-#pragma mark - getters 
+////////////////////////////////////////////////////////////
+#pragma mark - getters
 
-   
+
 - (TPMeModel *)meModel
 {
     if (!_meModel) {
@@ -54,7 +55,7 @@
     //todo..
     [self setTitle:@"我的"];
     
-
+    
     self.tableView.tableFooterView = [TPUIKit emptyView];
     
 }
@@ -62,9 +63,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
-
+    
     void(^loadModel)(void) = ^{
         
         [TPLoginManager hideLoginViewController];
@@ -80,15 +81,15 @@
     if (![TPUser isLogined]) {
         
         [TPUIKit showSessionErrorView:self.view loginSuccessCallback:^{
-           
+            
             
             loadModel();
             
         }];
         
         [TPLoginManager showLoginViewControllerWithCompletion:^(void) {
-
-                loadModel();
+            
+            loadModel();
         }];
     }
     else
@@ -96,7 +97,7 @@
         loadModel();
     }
     
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -104,7 +105,7 @@
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"TPMeView"];
     if ([TPUser isLogined]) {
-     
+        
         [self.headerView.imageView sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
         self.headerView.nameLabel.text = [TPUser userNick];
         self.headerView.descLabel.text = [TPUser sign];
@@ -115,15 +116,15 @@
 {
     [super viewDidAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-   
-
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"TPMeView"];
-
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -172,7 +173,7 @@
     }
     else if(indexPath.row == 2)
     {
-        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPAboutViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpabout"];
+        UIViewController* vc = [TPShareTrippingViewController new];
         [self.navigationController pushViewController:vc animated:true];
     }
     else
@@ -198,7 +199,7 @@
     self.headerView.nameLabel.text = [TPUser userNick];
     self.headerView.descLabel.text = [TPUser sign];
     self.tableView.tableHeaderView = self.headerView;
-
+    
     
     TPUserType type = [TPUser type];
     NSString* title = type == kCustomer? @"切换到发现者模式":@"切换到旅行者模式";
@@ -235,11 +236,11 @@
             
         } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         
-
+        
         
     }];
     [footerView addSubview:btn];
-
+    
     self.tableView.tableFooterView = footerView;
 }
 

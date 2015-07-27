@@ -78,6 +78,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // 解决底部上拉不了
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     
@@ -144,6 +148,14 @@
     [super didReceiveMemoryWarning];
     
 }
+
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
+}
+
 
 -(void)dealloc {
     

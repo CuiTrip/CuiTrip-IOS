@@ -78,7 +78,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
@@ -140,6 +142,14 @@
     [super didReceiveMemoryWarning];
     
 }
+
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
+}
+
 
 -(void)dealloc {
     

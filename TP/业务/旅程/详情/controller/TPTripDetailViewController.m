@@ -107,6 +107,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     self.tripDetailModel.oid = self.oid;
     [self registerModel:self.tripDetailModel];
@@ -149,7 +152,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+
     //todo..
 }
 
@@ -172,6 +175,14 @@
     [super didReceiveMemoryWarning];
     
 }
+
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
+}
+
 
 -(void)dealloc {
     
@@ -455,8 +466,8 @@
             v.moneyType = self.tripDetailModel.moneyType;
             [self.navigationController pushViewController:v animated:true];
         }
-
-        if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {// 旅行者支付
+        // // 旅行者去支付
+        if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {
             SHOW_SPINNER(self);
             __weak typeof(self) weakSelf = self;
             self.tripPayModel.oid = self.oid;
@@ -465,7 +476,7 @@
                 HIDE_SPINNER(weakSelf);
                 if (!error) {
                     TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
-//                    vc.oid = self.oid;
+                    vc.oid = self.oid;
                     vc.tripDetailModel = self.tripDetailModel;
                     [self.navigationController pushViewController:vc animated:true];
                 }

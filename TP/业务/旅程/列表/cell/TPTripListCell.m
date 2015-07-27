@@ -38,10 +38,10 @@
         self.icon = [TPUIKit roundImageView:CGSizeMake(45, 45) Border:[UIColor whiteColor]];
         [self.contentView addSubview:self.icon];
         
-        self.titleLabel = [TPUIKit label:[TPTheme blackColor] Font:ft(18.0f)];
+        self.titleLabel = [TPUIKit label:[TPTheme blackColor] Font:ft(19.0f)];
         [self.contentView addSubview:self.titleLabel];
         
-        self.nameLabel = [TPUIKit label:[TPTheme grayColor] Font:ft(14.0f)];
+        self.nameLabel = [TPUIKit label:[TPTheme grayColor] Font:ft(13.0f)];
         [self.contentView addSubview:self.nameLabel];
         
         self.topColorView = [[UIView alloc]initWithFrame:CGRectZero];
@@ -55,7 +55,7 @@
         self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor colorWithWhite:0.8 alpha:0.0].CGColor,(id)[UIColor colorWithWhite:0.0 alpha:0.8].CGColor,nil];
         [self.bottomColorView.layer addSublayer:self.gradientLayer];
         
-        self.dateLabel = [TPUIKit label:[TPTheme themeColor] Font:ft(14.0f)];
+        self.dateLabel = [TPUIKit label:[TPTheme themeColor] Font:ft(13.0f)];
         [self.bottomColorView addSubview:self.dateLabel];
         
         self.addressIcon = [TPUIKit imageView];
@@ -96,24 +96,24 @@
     [super layoutSubviews];
     self.topColorView.frame = CGRectMake(0, 0, self.vzWidth, 10);
     
-    self.icon.vzOrigin = CGPointMake(10, self.topColorView.vzHeight + 10);
-    self.icon.vzWidth = 45;
-    self.icon.vzHeight = 45;
+    self.icon.vzOrigin = CGPointMake(15, self.topColorView.vzHeight + 15);
+    self.icon.vzWidth = 50;
+    self.icon.vzHeight = 50;
     
-    self.titleLabel.frame = CGRectMake(self.icon.vzRight + 15, self.icon.frame.origin.y + 5, 220, 10);
-    self.nameLabel.frame = CGRectMake(self.titleLabel.frame.origin.x, self.titleLabel.vzBottom + 10, 220, 15);
+    self.titleLabel.frame = CGRectMake(self.icon.vzRight + 15, self.icon.frame.origin.y, 220, 19);
+    self.nameLabel.frame = CGRectMake(self.titleLabel.frame.origin.x, self.titleLabel.vzBottom + 10, 220, 13);
     
     self.bottomColorView.frame = CGRectMake(0, 82, self.vzWidth, 28);
     self.gradientLayer.frame = CGRectMake(0, self.bottomColorView.vzHeight - 1, self.vzWidth, 1);
-    self.dateLabel.frame = CGRectMake(10, 10, 80, 10);
+    self.dateLabel.frame = CGRectMake(15, 7, 80, 13);
     
-    CGSize size = CGSizeMake(100,10);
+    CGSize size = CGSizeMake(100,13);
     UIFont *font = [UIFont systemFontOfSize:13.0f];
     //计算实际frame大小，并将label的frame变成实际大小
     CGSize labelsize = [self.addressLabel.text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
-    self.addressIcon.frame = CGRectMake(self.dateLabel.vzRight + 10, 7, 14, 14);
-    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.frame.origin.y + 2, labelsize.width, 10);
-    self.statusLabel.frame = CGRectMake(self.bottomColorView.vzWidth - 120, self.addressIcon.frame.origin.y + 2, 110, 10);
+    self.addressIcon.frame = CGRectMake(self.dateLabel.vzRight + 10, 7, 14, 13);
+    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.frame.origin.y, labelsize.width, 13);
+    self.statusLabel.frame = CGRectMake(self.bottomColorView.vzWidth - 120, self.addressIcon.frame.origin.y, 110, 13);
 }
 
 

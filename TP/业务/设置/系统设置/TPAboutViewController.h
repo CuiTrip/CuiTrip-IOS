@@ -1,5 +1,5 @@
 //
-//  TPAboutViewController.h
+//  TPSystemSettingsViewController.h
 //  TP
 //
 //  Created by moxin on 15/6/7.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPAboutViewController : UIViewController
+@interface TPAboutViewController : UITableViewController
 
 @end

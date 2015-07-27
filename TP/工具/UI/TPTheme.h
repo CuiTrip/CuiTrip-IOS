@@ -24,4 +24,8 @@
 
 + (UIColor* )blueColor;
 
++ (UIColor* )fillColor;
+
++ (UIColor* )borderColor;
+
 @end

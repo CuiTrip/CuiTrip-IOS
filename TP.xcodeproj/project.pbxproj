@@ -77,8 +77,6 @@
 		4509ABEC1B23DF3600846032 /* TPHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABEB1B23DF3600846032 /* TPHelpViewController.m */; };
 		4509ABEF1B23E1CA00846032 /* TPSystemSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABEE1B23E1CA00846032 /* TPSystemSettingsViewController.m */; };
 		4509ABF11B23E1DA00846032 /* TPSystemSettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABF01B23E1DA00846032 /* TPSystemSettingsViewController.storyboard */; };
-		4509ABF41B23E2C300846032 /* TPAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABF31B23E2C300846032 /* TPAboutViewController.m */; };
-		4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABF51B23E55C00846032 /* TPAboutViewController.storyboard */; };
 		4509ABF91B23E8C000846032 /* TBCityHUDPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */; };
 		4509ABFC1B240A9B00846032 /* TPUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509ABFB1B240A9B00846032 /* TPUserItem.m */; };
 		4509ABFE1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509ABFD1B245AAF00846032 /* TPDatePickerCalenderFooterView.xib */; };
@@ -325,6 +323,10 @@
 		7B0E848A1B5E97D00084C61E /* TPPaySubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E84891B5E97D00084C61E /* TPPaySubView.xib */; };
 		7B5131F81B6514F9007EB19F /* trip_logo_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5131F71B6514F9007EB19F /* trip_logo_a@2x.png */; };
 		7B5131FA1B651C38007EB19F /* trip_set@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5131F91B651C38007EB19F /* trip_set@2x.png */; };
+		7B5131FE1B660C01007EB19F /* TPAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5131FC1B660C01007EB19F /* TPAboutViewController.m */; };
+		7B5131FF1B660C01007EB19F /* TPAboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5131FD1B660C01007EB19F /* TPAboutViewController.storyboard */; };
+		7B5132061B661CB1007EB19F /* TPShareTrippingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132051B661CB1007EB19F /* TPShareTrippingViewController.m */; };
+		7B5132081B662A3C007EB19F /* trip_share_wx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5132071B662A3C007EB19F /* trip_share_wx@2x.png */; };
 		7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B121B56080100E36430 /* trip_alipay@2x.png */; };
 		7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B131B56080100E36430 /* trip_wpay@2x.png */; };
 		7B956B1C1B5614D500E36430 /* TPPayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */; };
@@ -487,9 +489,6 @@
 		4509ABED1B23E1CA00846032 /* TPSystemSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSystemSettingsViewController.h; sourceTree = "<group>"; };
 		4509ABEE1B23E1CA00846032 /* TPSystemSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSystemSettingsViewController.m; sourceTree = "<group>"; };
 		4509ABF01B23E1DA00846032 /* TPSystemSettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPSystemSettingsViewController.storyboard; sourceTree = "<group>"; };
-		4509ABF21B23E2C300846032 /* TPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAboutViewController.h; sourceTree = "<group>"; };
-		4509ABF31B23E2C300846032 /* TPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAboutViewController.m; sourceTree = "<group>"; };
-		4509ABF51B23E55C00846032 /* TPAboutViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPAboutViewController.storyboard; sourceTree = "<group>"; };
 		4509ABF71B23E8C000846032 /* TBCityHUDPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityHUDPicker.h; sourceTree = "<group>"; };
 		4509ABF81B23E8C000846032 /* TBCityHUDPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityHUDPicker.m; sourceTree = "<group>"; };
 		4509ABFA1B240A9B00846032 /* TPUserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPUserItem.h; sourceTree = "<group>"; };
@@ -907,6 +906,12 @@
 		7B0E84891B5E97D00084C61E /* TPPaySubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPPaySubView.xib; sourceTree = "<group>"; };
 		7B5131F71B6514F9007EB19F /* trip_logo_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_logo_a@2x.png"; sourceTree = "<group>"; };
 		7B5131F91B651C38007EB19F /* trip_set@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_set@2x.png"; sourceTree = "<group>"; };
+		7B5131FB1B660C01007EB19F /* TPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAboutViewController.h; sourceTree = "<group>"; };
+		7B5131FC1B660C01007EB19F /* TPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAboutViewController.m; sourceTree = "<group>"; };
+		7B5131FD1B660C01007EB19F /* TPAboutViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPAboutViewController.storyboard; sourceTree = "<group>"; };
+		7B5132041B661C48007EB19F /* TPShareTrippingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPShareTrippingViewController.h; sourceTree = "<group>"; };
+		7B5132051B661CB1007EB19F /* TPShareTrippingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPShareTrippingViewController.m; sourceTree = "<group>"; };
+		7B5132071B662A3C007EB19F /* trip_share_wx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_share_wx@2x.png"; sourceTree = "<group>"; };
 		7B956B121B56080100E36430 /* trip_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_alipay@2x.png"; sourceTree = "<group>"; };
 		7B956B131B56080100E36430 /* trip_wpay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_wpay@2x.png"; sourceTree = "<group>"; };
 		7B956B1B1B5614D500E36430 /* TPPayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPayViewController.storyboard; sourceTree = "<group>"; };
@@ -1503,13 +1508,16 @@
 		4509ABCF1B23D56300846032 /* 系统设置 */ = {
 			isa = PBXGroup;
 			children = (
-				7B5131F71B6514F9007EB19F /* trip_logo_a@2x.png */,
+				7B5132071B662A3C007EB19F /* trip_share_wx@2x.png */,
+				7B5131FB1B660C01007EB19F /* TPAboutViewController.h */,
+				7B5131FC1B660C01007EB19F /* TPAboutViewController.m */,
+				7B5131FD1B660C01007EB19F /* TPAboutViewController.storyboard */,
 				4509ABED1B23E1CA00846032 /* TPSystemSettingsViewController.h */,
 				4509ABEE1B23E1CA00846032 /* TPSystemSettingsViewController.m */,
 				4509ABF01B23E1DA00846032 /* TPSystemSettingsViewController.storyboard */,
-				4509ABF21B23E2C300846032 /* TPAboutViewController.h */,
-				4509ABF31B23E2C300846032 /* TPAboutViewController.m */,
-				4509ABF51B23E55C00846032 /* TPAboutViewController.storyboard */,
+				7B5131F71B6514F9007EB19F /* trip_logo_a@2x.png */,
+				7B5132041B661C48007EB19F /* TPShareTrippingViewController.h */,
+				7B5132051B661CB1007EB19F /* TPShareTrippingViewController.m */,
 			);
 			path = "系统设置";
 			sourceTree = "<group>";
@@ -3332,6 +3340,7 @@
 				45681BF11B3C341200A2FF34 /* trip_down_g@2x.png in Resources */,
 				45D0C8011B2BDA3F00F31BF5 /* o2o_yellow_star@2x.png in Resources */,
 				4524FCAA1B34623400ED3D79 /* default_details@2x.jpg in Resources */,
+				7B5132081B662A3C007EB19F /* trip_share_wx@2x.png in Resources */,
 				4509AC331B247EA600846032 /* tripdetail_meta.json in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				4509AB751B22E3E300846032 /* TPRegisterViewController.storyboard in Resources */,
@@ -3345,7 +3354,6 @@
 				4524FCAB1B34623500ED3D79 /* default_list@2x.jpg in Resources */,
 				45D48BE51B32AF3500B5801F /* UMSocialSDKResourcesNew.bundle in Resources */,
 				4509AB981B23304F00846032 /* TPForgetPWDViewController.storyboard in Resources */,
-				4509ABF61B23E55C00846032 /* TPAboutViewController.storyboard in Resources */,
 				45D48BDE1B32AF3500B5801F /* UMSCommentInputController.xib in Resources */,
 				45D48C661B32EEBE00B5801F /* star_gray@2x.png in Resources */,
 				45D48C581B32EEBE00B5801F /* TPDDTripCell.xib in Resources */,
@@ -3417,6 +3425,7 @@
 				45DB44261B3C4D59007101EA /* TPModifyPWDViewController.storyboard in Resources */,
 				45D48C4F1B32EEBE00B5801F /* TPDDCommentCell.xib in Resources */,
 				459BAEFF1B21E58700739C7E /* trip_StarS_Y@x2.png in Resources */,
+				7B5131FF1B660C01007EB19F /* TPAboutViewController.storyboard in Resources */,
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
 				4509ABBD1B233C9200846032 /* reserve_meta.json in Resources */,
 				459BAEEC1B21E58700739C7E /* trip_cuts_w@2x.png in Resources */,
@@ -3608,7 +3617,6 @@
 				45D0C7C71B29DAA400F31BF5 /* TPPubilshServiceViewController.m in Sources */,
 				45028B441B1C7D2D00417606 /* TPMeModel.m in Sources */,
 				4509AB8F1B22F13100846032 /* TPForgetPWDItem.m in Sources */,
-				4509ABF41B23E2C300846032 /* TPAboutViewController.m in Sources */,
 				45D48C531B32EEBE00B5801F /* TPDDInfoCellContainerView.m in Sources */,
 				45028AB01B1B535E00417606 /* VZItem.m in Sources */,
 				7BA5D1EF1B64BE380088C706 /* TPCancelTripViewController.m in Sources */,
@@ -3630,6 +3638,7 @@
 				45D48C691B32EEBE00B5801F /* TPDiscoveryListCell.m in Sources */,
 				45D48C631B32EEBE00B5801F /* TPDiscoveryDetailListItem.m in Sources */,
 				45028AAE1B1B535E00417606 /* VZHTTPModel.m in Sources */,
+				7B5131FE1B660C01007EB19F /* TPAboutViewController.m in Sources */,
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				4509ABEF1B23E1CA00846032 /* TPSystemSettingsViewController.m in Sources */,
 				4509AC1E1B247E5200846032 /* TPTripListViewController.m in Sources */,
@@ -3653,6 +3662,7 @@
 				45DB44231B3C4D45007101EA /* TPModifyPWDModel.m in Sources */,
 				45D0C80A1B2BDB9000F31BF5 /* O2OCommentImageListView.m in Sources */,
 				45D0C7751B29AE8800F31BF5 /* TPCommentListCell.m in Sources */,
+				7B5132061B661CB1007EB19F /* TPShareTrippingViewController.m in Sources */,
 				45EB43041B2DB610001B4202 /* TPChatStatusListItem.m in Sources */,
 				45D0C7D41B29E0BD00F31BF5 /* TPPSPicsViewController.m in Sources */,
 				45028AAA1B1B535E00417606 /* VZListViewDataSource.m in Sources */,

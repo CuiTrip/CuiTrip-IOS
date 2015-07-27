@@ -95,7 +95,7 @@
 {
     [super viewDidLoad];
     //todo..
-    self.payModel.oid = self.tripDetailModel.oid;
+    self.payModel.oid = self.oid;
     [self registerModel:self.payModel];
     [self load];
 }

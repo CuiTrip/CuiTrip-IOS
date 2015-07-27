@@ -82,7 +82,18 @@
         [self.contactBtn setTitleColor: [TPTheme themeColor] forState:UIControlStateNormal];
         CGColorRef borderColorRef = CGColorCreate(colorSpace,(CGFloat[]){36 / 255.0, 194 / 255.0, 213 / 255.0, 1});
         self.contactBtn.layer.borderColor = borderColorRef;
-        [self.contactBtn setTitle:@"联系他" forState:UIControlStateNormal];
+        if ([_tripDetailModel.male isEqual: @"1"])
+        {
+            [self.contactBtn setTitle:@"联系他" forState:UIControlStateNormal];
+        }
+        else if ([_tripDetailModel.male isEqual: @"2"])
+        {
+            [self.contactBtn setTitle:@"联系她" forState:UIControlStateNormal];
+        }
+        else
+        {
+            [self.contactBtn setTitle:@"联系TA" forState:UIControlStateNormal];
+        }
         [[self.contactBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
          subscribeNext:^(id x) {
              NSString* receiverId = @"";
@@ -160,7 +171,7 @@
     //计算实际frame大小，并将label的frame变成实际大小
     CGSize labelsize = [self.addressLabel.text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
     self.addressIcon.frame = CGRectMake((self.frame.size.width - labelsize.width - 14.0f) / 2, self.titleLabel.vzBottom + 13.0f, 14.0f, 14.0f);
-    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, labelsize.width, 10.0f);
+    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, labelsize.width, 14.0f);
 }
 
 

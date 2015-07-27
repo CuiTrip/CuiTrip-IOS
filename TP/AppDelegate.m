@@ -22,7 +22,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [NSThread sleepForTimeInterval:1.5];
+//    [NSThread sleepForTimeInterval:1.5];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
+        UIApplication *myApp = [UIApplication sharedApplication];
+        [myApp setStatusBarStyle: UIStatusBarStyleLightContent];
+    }
     
     TPTabBarViewController* rootViewController = [TPTabBarViewController new];
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [UIScreen mainScreen].bounds.size.height)];
@@ -40,10 +46,7 @@
     [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
     [UMSocialData defaultData].extConfig.wechatSessionData.shareImage = __image(@"icon.png");
     
-//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://www.cuitrip.com";
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://www.cuitrip.com";
 
-    
     //注册APNS
     [[TPAPNS sharedInstance] setup:launchOptions];
     
@@ -93,6 +96,15 @@
  
     return YES;
 }
+
+
+//
+//- (void) viewDidLayoutSubviews {
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = self.topLayoutGuide.length;
+//    viewBounds.origin.y = topBarOffset * -1;
+//    self.view.bounds = viewBounds;
+//}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {

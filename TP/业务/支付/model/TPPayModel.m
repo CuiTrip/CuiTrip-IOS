@@ -34,7 +34,7 @@
 
 - (NSString *)methodName {
     
-    return [_API_ stringByAppendingPathComponent:@"getOrderInfo"];
+    return [_API_ stringByAppendingPathComponent:@"payOrder"];
 }
 
 - (VZHTTPRequestConfig)requestConfig

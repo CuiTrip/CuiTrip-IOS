@@ -1,5 +1,5 @@
 //
-//  TPAboutViewController.m
+//  TPSystemSettingsViewController.m
 //  TP
 //
 //  Created by moxin on 15/6/7.
@@ -7,9 +7,11 @@
 //
 
 #import "TPAboutViewController.h"
+#import "TPFeedbackViewController.h"
+#import "TPTrippingContactInfoViewController.h"
+#import "TPShareTrippingViewController.h"
 
 @interface TPAboutViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *aboutPic;
 
 @end
 
@@ -20,10 +22,12 @@
     // Do any additional setup after loading the view.
     [self setTitle:@"关于脆饼"];
     
-    self.aboutPic.vzHeight = self.view.vzWidth;
-    self.aboutPic.vzOrigin = (CGPoint){0,kTPHeightWithMargin(self.aboutPic.vzHeight)};
-    self.aboutPic.contentMode = UIViewContentModeScaleAspectFit;
-
+    [self.view setBackgroundColor:[TPTheme yellowColor]];
+    
+    UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
+    
+//    [footerView addSubview:btn];
+    self.tableView.tableFooterView = footerView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,12 +35,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-
-    [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = true;
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
 }
+
 
 /*
 #pragma mark - Navigation
@@ -47,5 +52,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1)
+    {
+        UIViewController* vc = [TPFeedbackViewController new];
+        [self.navigationController pushViewController:vc animated:true];
+        
+    }
+    else if(indexPath.row == 2)
+    {
+        UIViewController* vc = [TPShareTrippingViewController new];
+        [self.navigationController pushViewController:vc animated:true];
+
+    }
+    else if(indexPath.row == 3)
+    {
+        UIViewController* vc = [TPTrippingContactInfoViewController new];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+    else
+    {
+        //打分
+    }
+}
 
 @end

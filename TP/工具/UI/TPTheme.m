@@ -45,6 +45,16 @@
     return HEXCOLOR(0xb8e986);
 }
 
++ (UIColor* )fillColor
+{
+    return HEXCOLOR(0xffffff);
+}
+
++ (UIColor* )borderColor
+{
+    return HEXCOLOR(0xd8d8d8);
+}
+
 + (UIColor* )bar
 {
     return [UIColor colorWithRed:255/255.0 green:107/255.0 blue:103/255.0 alpha:1];

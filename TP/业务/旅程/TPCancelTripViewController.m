@@ -91,6 +91,14 @@
     [super didReceiveMemoryWarning];
     
 }
+//
+//- (void) viewDidLayoutSubviews {
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = self.topLayoutGuide.length;
+//    viewBounds.origin.y = topBarOffset * -1;
+//    self.view.bounds = viewBounds;
+//}
+
 
 - (void)dealloc {
     
@@ -128,13 +136,13 @@
     
     self.addressIcon = [TPUIKit imageView];
     [self.addressIcon setImage:__image(@"trip_position.png")];
-    self.addressIcon.frame = CGRectMake((self.view.vzWidth - 44.0f) / 2, self.titleLabel.vzBottom + 10.0f, 14.0f, 14.0f);
+    self.addressIcon.frame = CGRectMake((self.view.vzWidth - 64.0f) / 2, self.titleLabel.vzBottom + 10.0f, 14.0f, 14.0f);
     [self.scrollView addSubview:self.addressIcon];
     
     self.addressLabel = [TPUIKit label:[UIColor colorWithRed:124 / 255.0f green:124 / 255.0f blue:124 / 255.0f alpha:1.0f] Font:[UIFont systemFontOfSize:13.0f]];
     self.addressLabel.text = self.tripDetailModel.serviceAdress;
     self.addressLabel.textAlignment = NSTextAlignmentCenter;
-    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, 30.0f, 10.0f);
+    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, 50.0f, 15.0f);
     [self.scrollView addSubview:self.addressLabel];
     
     self.providerIcon = [TPUIKit roundImageView:CGSizeMake(65.0f, 65.0f) Border:[UIColor whiteColor]];
