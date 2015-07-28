@@ -36,7 +36,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *wxpayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *codepayBtn;
 
-@property (nonatomic,strong) TPPayModel *payModel;
 @property (nonatomic,strong) TPPaySubView* confirmView;
 
 @end
@@ -57,15 +56,15 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - getters 
 
-   
-- (TPPayModel *)payModel
-{
-    if (!_payModel) {
-        _payModel = [TPPayModel new];
-        _payModel.key = @"__TPPayModel__";
-    }
-    return _payModel;
-}
+
+//- (TPPayModel *)payModel
+//{
+//    if (!_payModel) {
+//        _payModel = [TPPayModel new];
+//        _payModel.key = @"__TPPayModel__";
+//    }
+//    return _payModel;
+//}
 
 
 
@@ -77,7 +76,9 @@
     [super loadView];
     //todo..
     [self setTitle:@"支付"];
-    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     self.bkView.layer.cornerRadius = 5.0f;
     self.bkView.clipsToBounds = true;
     
@@ -96,7 +97,17 @@
     [super viewDidLoad];
     //todo..
     self.payModel.oid = self.oid;
-    [self registerModel:self.payModel];
+//    [self registerModel:self.payModel];
+    
+    self.titleLabel.text = self.tripDetailModel.serviceName;
+    [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
+    self.tripDateLabel.text = self.tripDetailModel.serviceDate;
+    self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
+    self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
+    self.tripMoneyTypeLabel.text = ([self.tripDetailModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
+    self.tripCNYFeeLabel.text = self.tripDetailModel.orderPrice;
+    
+    
     [self load];
 }
 
@@ -134,6 +145,13 @@
     
 }
 
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
+}
+
 -(void)dealloc {
     
     //todo..
@@ -146,14 +164,7 @@
 {
     //todo:
     [super showModel:model];
-    
-    self.titleLabel.text = self.tripDetailModel.serviceName;
-    [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
-    self.tripDateLabel.text = self.tripDetailModel.serviceDate;
-    self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
-    self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
-    self.tripMoneyTypeLabel.text = ([self.tripDetailModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
-    self.tripCNYFeeLabel.text = self.tripDetailModel.orderPrice;
+
 }
 
 - (void)showEmpty:(VZModel *)model

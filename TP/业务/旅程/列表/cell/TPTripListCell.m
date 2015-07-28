@@ -101,7 +101,7 @@
     self.icon.vzHeight = 50;
     
     self.titleLabel.frame = CGRectMake(self.icon.vzRight + 15, self.icon.frame.origin.y, 220, 19);
-    self.nameLabel.frame = CGRectMake(self.titleLabel.frame.origin.x, self.titleLabel.vzBottom + 10, 220, 13);
+    self.nameLabel.frame = CGRectMake(self.titleLabel.frame.origin.x, self.titleLabel.vzBottom + 10, 220, 15);
     
     self.bottomColorView.frame = CGRectMake(0, 82, self.vzWidth, 28);
     self.gradientLayer.frame = CGRectMake(0, self.bottomColorView.vzHeight - 1, self.vzWidth, 1);

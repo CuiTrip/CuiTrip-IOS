@@ -21,9 +21,9 @@
 @property(nonatomic,strong) UIImageView* providerIcon;
 @property(nonatomic,strong) UILabel* providerNameLabel;
 @property(nonatomic,strong) UIButton* commentBtn;
-@property (nonatomic,strong) O2OStarView* starView;
-@property (nonatomic,strong) UITextView *textView;
-@property(nonatomic,strong)TPPublishCommentModel *publishCommentModel;
+@property(nonatomic,strong) O2OStarView* starView;
+@property(nonatomic,strong) UITextView *textView;
+@property(nonatomic,strong) TPPublishCommentModel *publishCommentModel;
 @property(nonatomic,assign) CGFloat score;
 @property(nonatomic,strong) NSString* content;
 @property(nonatomic,assign) float m_curKeyboardHeight;

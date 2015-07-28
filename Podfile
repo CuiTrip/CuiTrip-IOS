@@ -9,3 +9,4 @@ pod 'VZInspector',:configurations => ['Debug']
 pod 'UMengAnalytics-NO-IDFA'
 pod 'Pingpp/Alipay', '~> 2.0.5'
 pod 'Pingpp/Wx', '~> 2.0.5'
+pod 'SECoreTextView'

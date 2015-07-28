@@ -37,8 +37,8 @@
         return NO;
     }
     
-    else if (self.textView.text.length >= 500) {
-        TOAST(self, @"亲，最多只能输入500个字哦~");
+    else if (self.textView.text.length >= 800) {
+        TOAST(self, @"亲，最多只能输入800个字哦~");
         return NO;
     }
     else

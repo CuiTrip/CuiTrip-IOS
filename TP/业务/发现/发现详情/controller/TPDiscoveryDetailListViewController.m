@@ -16,7 +16,7 @@
 #import "TPDiscoveryDetailListViewDelegate.h"
 #import "TPDiscoveryDetailContentViewController.h"
 #import "TPDatePickerViewController.h"
-#import "TPProfilePageListViewController.h"
+//#import "TPProfilePageListViewController.h"
 #import "TPReserveViewController.h"
 #import "BXImageScrollView.h"
 #import "TPDDTripItem.h"

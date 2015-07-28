@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPPersonalPageEditViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "personalPageEditModel",
+          "class": "TPPersonalPageEditModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./PersonalPageEdit/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPPersonalPageEditModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./PersonalPageEdit/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPPersonalPageEditModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPPersonalPageEditModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./PersonalPageEdit/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPPersonalPageEditItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./PersonalPageEdit/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPPersonalPageEditSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./PersonalPageEdit/view/",
+      "namespace": "T_View",
+      "itemclass": "TPPersonalPageEditItem"
+    }
+  ],
+  "config": {
+    "class": "TPPersonalPageEditConfig",
+    "proj": "TP",
+    "package_name": "PersonalPageEdit",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./PersonalPageEdit/config/"
+  }
+}

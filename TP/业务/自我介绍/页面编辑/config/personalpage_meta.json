@@ -1,0 +1,69 @@
+{
+  "controller": [
+    {
+      "class": "TPPersonalPageViewController",
+      "superclass": "VZViewController",
+      "model": [
+        {
+          "name": "personalPageModel",
+          "class": "TPPersonalPageModel",
+          "superclass": "VZHTTPModel"
+        }
+      ],
+      "tpath": "./template/vizzle/template_viewcontroller.rb",
+      "namespace": "T_ViewController",
+      "filepath": "./PersonalPage/controller/"
+    }
+  ],
+  "model": [
+    {
+      "class": "TPPersonalPageModel",
+      "superclass": "VZHTTPModel",
+      "api": "",
+      "tpath": "./template/vizzle/template_httpmodel.rb",
+      "namespace": "T_HTTPModel",
+      "filepath": "./PersonalPage/model/"
+    }
+  ],
+  "modeltest": [
+    {
+      "class": "TPPersonalPageModelTest",
+      "superclass": "XCTestCase",
+      "modelclass": "TPPersonalPageModel",
+      "modelsuperclass": "VZHTTPModel",
+      "sdkheader": "VizzleConfig.h",
+      "tpath": "./template/vizzle/template_modeltest.rb",
+      "namespace": "T_ModelTest",
+      "filepath": "./PersonalPage/test/"
+    }
+  ],
+  "item": [
+    {
+      "class": "TPPersonalPageItem",
+      "superclass": "VZItem",
+      "response": null,
+      "tpath": "./template/vizzle/template_item.rb",
+      "namespace": "T_Item",
+      "filepath": "./PersonalPage/item/"
+    }
+  ],
+  "view": [
+    {
+      "class": "TPPersonalPageSubView",
+      "superclass": "UIView",
+      "tpath": "./template/vizzle/template_view.rb",
+      "xpath": null,
+      "filepath": "./PersonalPage/view/",
+      "namespace": "T_View",
+      "itemclass": "TPPersonalPageItem"
+    }
+  ],
+  "config": {
+    "class": "TPPersonalPageConfig",
+    "proj": "TP",
+    "package_name": "PersonalPage",
+    "tpath": "./template/vizzle/template_config.rb",
+    "namespace": "T_Config",
+    "filepath": "./PersonalPage/config/"
+  }
+}

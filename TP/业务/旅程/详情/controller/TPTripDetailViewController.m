@@ -477,6 +477,7 @@
                 if (!error) {
                     TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
                     vc.oid = self.oid;
+                    vc.payModel.oid = self.oid;
                     vc.tripDetailModel = self.tripDetailModel;
                     [self.navigationController pushViewController:vc animated:true];
                 }
