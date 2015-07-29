@@ -34,7 +34,6 @@
 
 @property(nonatomic,strong) TPTripDetailModel *tripDetailModel;
 @property(nonatomic,strong) TPConfirmTripOrderModel* confirmTripOrderModel;
-@property(nonatomic,strong) TPPayModel *tripPayModel;
 @property(nonatomic,strong) TPBeginTripOrderModel* beginTripOrderModel;
 @property(nonatomic,strong) TPEndTripOrderModel* endTripOrderModel;
 
@@ -68,14 +67,6 @@
         _confirmTripOrderModel = [TPConfirmTripOrderModel new];
     }
     return _confirmTripOrderModel;
-}
-
-- (TPPayModel* )tripPayModel
-{
-    if (!_tripPayModel) {
-        _tripPayModel = [TPPayModel new];
-    }
-    return _tripPayModel;
 }
 
 - (TPBeginTripOrderModel* )beginTripOrderModel
@@ -468,24 +459,10 @@
         }
         // // 旅行者去支付
         if ([self.tripDetailModel.status intValue] == kOrderReadyPay) {
-            SHOW_SPINNER(self);
-            __weak typeof(self) weakSelf = self;
-            self.tripPayModel.oid = self.oid;
-            [self.tripPayModel loadWithCompletion:^(VZModel *model, NSError *error) {
-                
-                HIDE_SPINNER(weakSelf);
-                if (!error) {
-                    TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
-                    vc.oid = self.oid;
-                    vc.payModel.oid = self.oid;
-                    vc.tripDetailModel = self.tripDetailModel;
-                    [self.navigationController pushViewController:vc animated:true];
-                }
-                else
-                {
-                    TOAST_ERROR(weakSelf, error);
-                }
-            }];
+            TPPayViewController* vc = [[UIStoryboard storyboardWithName:@"TPPayViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tppay"];
+            vc.oid = self.oid;
+            vc.tripDetailModel = self.tripDetailModel;
+            [self.navigationController pushViewController:vc animated:true];
         }
 
         if ([self.tripDetailModel.status intValue] == kOrderReadyComment) { //旅行者评价

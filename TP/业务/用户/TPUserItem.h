@@ -39,14 +39,14 @@ typedef NS_ENUM(NSInteger, TPUserType)
 @interface TPUserItem : VZItem<NSCoding,NSCopying>
 
 @property(nonatomic,assign)TPUserType type;
-@property(nonatomic,strong)NSString *uid;
+@property(nonatomic,strong)NSString* uid;
 @property(nonatomic,strong)NSString* country;
 @property(nonatomic,strong)NSString* countryCode;
 @property(nonatomic,strong)NSString* headPic;
-@property(nonatomic,strong)NSString *nick;
+@property(nonatomic,strong)NSString* nick;
 @property(nonatomic,strong)NSString* realName;
-@property(nonatomic,strong)NSString *mobile;
-@property(nonatomic,strong)NSString *token;
+@property(nonatomic,strong)NSString* mobile;
+@property(nonatomic,strong)NSString* token;
 @property(nonatomic,strong)NSString* gender;
 @property(nonatomic,strong)NSString* language;
 @property(nonatomic,strong)NSString* interests;
@@ -54,6 +54,11 @@ typedef NS_ENUM(NSInteger, TPUserType)
 @property(nonatomic,strong)NSString* sign;
 @property(nonatomic,strong)NSString* pwd;
 @property(nonatomic,strong)NSString* city;
+@property(nonatomic,strong)NSString* extInfo;
+
+@property(nonatomic,strong)NSString* introduce;
+@property(nonatomic,strong)NSString* introduceAuditStatus;
+@property(nonatomic,strong)NSString* introduceFailedReason;
 
 
 

@@ -22,9 +22,11 @@
 
 - (NSDictionary *)dataParams {
     
-    //todo:
-      
-    return nil;
+    
+    return @{
+             @"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@""
+             };
 }
 
 - (NSDictionary* )headerParams{
@@ -34,20 +36,29 @@
     return nil;
 }
 
+
 - (NSString *)methodName {
-   
-    //todo:
-   
-    return nil;
+    
+    return [_API_ stringByAppendingPathComponent:@"getIntroduce"];
+}
+
+- (VZHTTPRequestConfig)requestConfig
+{
+    VZHTTPRequestConfig config = vz_defaultHTTPRequestConfig();
+    config.requestMethod = VZHTTPMethodPOST;
+    return config;
 }
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-  
-
-
-    return NO;
+    _nick = JSON[@"nick"];
+    _sign = JSON[@"sign"];
+    _headPic = JSON[@"headPic"];
+    _introduce = JSON[@"introduce"];
+    _introduceAuditStatus = JSON[@"introduceAuditStatus"];
+    _introduceFailedReason = JSON[@"introduceFailedReason"];
+    
+    return true;
 }
 
 @end

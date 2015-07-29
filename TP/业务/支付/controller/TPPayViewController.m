@@ -16,8 +16,8 @@
 #import "TPPaySubView.h"
 #import "Pingpp.h"
 
-#define kUrlScheme      @"YOUR-APP-URL-SCHEME"
-#define kUrl            @"YOUR-URL"
+#define kUrlScheme      wx_appId
+#define kUrl            @"http://58.96.175.29:8080/baseservice/getCharge"
 
 @interface TPPayViewController()
 
@@ -95,10 +95,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //todo..
-    self.payModel.oid = self.oid;
-//    [self registerModel:self.payModel];
-    
+
     self.titleLabel.text = self.tripDetailModel.serviceName;
     [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
     self.tripDateLabel.text = self.tripDetailModel.serviceDate;
@@ -106,7 +103,6 @@
     self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
     self.tripMoneyTypeLabel.text = ([self.tripDetailModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
     self.tripCNYFeeLabel.text = self.tripDetailModel.orderPrice;
-    
     
     [self load];
 }
@@ -210,7 +206,6 @@
     
     
     SHOW_SPINNER(self);
-    self.payModel.oid = self.tripDetailModel.oid;
 
     
     [self.payModel loadWithCompletion:^(VZModel *model, NSError *error) {
@@ -255,15 +250,16 @@
         
     }];
 }
+
 - (IBAction)wxpayAction:(id)sender {
     
     SHOW_SPINNER(self);
-    self.payModel.oid = self.tripDetailModel.oid;
     
     __weak typeof(self) weakSelf = self;
 
 
     self.channel = @"wx";
+    NSString* deviceIp = [TPUtils deviceIPAdress];
     long long amount = [[self.tripCNYFeeLabel.text stringByReplacingOccurrencesOfString:@"." withString:@""] longLongValue];
     if (amount == 0) {
         return;
@@ -274,7 +270,9 @@
     
     NSDictionary* dict = @{
                            @"channel" : self.channel,
-                           @"amount"  : amountStr
+                           @"orderId" : self.oid,
+                           @"clientIp": deviceIp,
+                           @"payCurrency": @"cny"
                            };
     NSData* data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
     NSString *bodyData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -284,7 +282,7 @@
     [postRequest setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-//    [self showAlertWait];
+
     [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
         HIDE_SPINNER(weakSelf);
@@ -297,7 +295,12 @@
             TOAST_ERROR(weakSelf, connectionError);
             return;
         }
-        NSString* charge = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSDictionary *dataObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSString *charge = (NSString*)[dataObj objectForKey:@"result"];
+//        NSString* chargeStr = dataObj[@"result"];
+////        NSData * chargeData = [chargeStr dataUsingEncoding:NSUTF8StringEncoding];
+//        NSString* charge = [[NSString alloc] initWithString:chargeStr];
         NSLog(@"charge = %@", charge);
         dispatch_async(dispatch_get_main_queue(), ^{
             [Pingpp createPayment:charge viewController:weakSelf appURLScheme:kUrlScheme withCompletion:^(NSString *result, PingppError *error) {

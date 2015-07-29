@@ -349,6 +349,7 @@
 		7B5135701B678F17007EB19F /* SEInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B51355E1B678F17007EB19F /* SEInputAccessoryView.xib */; };
 		7B5135711B678F17007EB19F /* SEPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135601B678F17007EB19F /* SEPhotoView.m */; };
 		7B5135721B678F17007EB19F /* TPPersonalPageSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */; };
+		7B5135751B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */; };
 		7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B121B56080100E36430 /* trip_alipay@2x.png */; };
 		7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B131B56080100E36430 /* trip_wpay@2x.png */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
@@ -967,6 +968,7 @@
 		7B5135601B678F17007EB19F /* SEPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEPhotoView.m; sourceTree = "<group>"; };
 		7B5135611B678F17007EB19F /* TPPersonalPageSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPersonalPageSubView.h; sourceTree = "<group>"; };
 		7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPersonalPageSubView.m; sourceTree = "<group>"; };
+		7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPersonalPageDetailViewController.storyboard; sourceTree = "<group>"; };
 		7B956B121B56080100E36430 /* trip_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_alipay@2x.png"; sourceTree = "<group>"; };
 		7B956B131B56080100E36430 /* trip_wpay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_wpay@2x.png"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -3078,6 +3080,7 @@
 			children = (
 				7B51353D1B678F17007EB19F /* TPPersonalPageDetailViewController.h */,
 				7B51353E1B678F17007EB19F /* TPPersonalPageDetailViewController.m */,
+				7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -3300,6 +3303,7 @@
 			files = (
 				7B5135071B675B79007EB19F /* comment_meta.json in Resources */,
 				7B5134671B675B78007EB19F /* default_details@2x.jpg in Resources */,
+				7B5135751B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard in Resources */,
 				45D48BDF1B32AF3500B5801F /* UMSCommentInputControlleriPad.xib in Resources */,
 				7B5134571B675B78007EB19F /* TPDDProfileCell.xib in Resources */,
 				7B5134861B675B78007EB19F /* trip_meta.json in Resources */,

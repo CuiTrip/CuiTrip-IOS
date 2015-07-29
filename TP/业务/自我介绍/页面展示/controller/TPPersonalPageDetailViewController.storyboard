@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--TPPersonalPageDetailViewController-->
+        <scene sceneID="Z5T-s5-UWE">
+            <objects>
+                <viewController storyboardIdentifier="tppersonaldetail" id="4q2-wd-oLa" userLabel="TPPersonalPageDetailViewController" customClass="TPPersonalPageDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v4r-Z3-u6q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sf9-23-dKx">
+                                <rect key="frame" x="15" y="0.0" width="290" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="MBs-bG-GwP" customClass="SETextView">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="548"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="4q2-wd-oLa" id="3BW-QW-lCv"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4q2-wd-oLa" id="mv7-Zt-9aM"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="介绍自己" id="d6o-8e-lEp">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="edit" id="jiT-wa-SoS">
+                            <connections>
+                                <action selector="done:" destination="4q2-wd-oLa" id="K01-7H-9gc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="jiT-wa-SoS" id="KBm-Ks-WZp"/>
+                        <outlet property="scrollView" destination="sf9-23-dKx" id="eEX-8T-b8v"/>
+                        <outlet property="textView" destination="MBs-bG-GwP" id="eHx-B2-uOR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTU-c0-ZqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561.06666666666661" y="74.786666666666662"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

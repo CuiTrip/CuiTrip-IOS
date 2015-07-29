@@ -44,4 +44,6 @@
 
 + (NSString* )changeDateFormatString:(NSString *)dateString FromOldFmt:(NSString *)old ToNew:(NSString *)fmt;
 
++ (NSString *)deviceIPAdress; 
+
 @end
