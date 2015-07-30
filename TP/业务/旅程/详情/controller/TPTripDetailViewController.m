@@ -24,6 +24,7 @@
 #import "TPBeginTripOrderModel.h"
 #import "TPEndTripOrderModel.h"
 #import "TPPayViewController.h"
+#import "TPPSContentViewController.h"
 
 
 @interface TPTripDetailViewController()
@@ -437,7 +438,9 @@
 
 - (void)callTripping
 {
-    [self.navigationController pushViewController:[TPTrippingContactInfoViewController new] animated:true];
+//    [self.navigationController pushViewController:[TPTrippingContactInfoViewController new] animated:true];
+    TPPSContentViewController *vc = [TPPSContentViewController new];
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 - (void)cancelTrip
