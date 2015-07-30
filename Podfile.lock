@@ -28,7 +28,6 @@ DEPENDENCIES:
   - Pingpp/Wx (~> 2.0.5)
   - ReactiveCocoa
   - SDWebImage
-  - SDWebImage (~> 3.7)
   - SECoreTextView
   - TMCache
   - Toast
