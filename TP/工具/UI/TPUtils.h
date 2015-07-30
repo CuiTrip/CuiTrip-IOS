@@ -44,6 +44,8 @@
 
 + (NSString* )changeDateFormatString:(NSString *)dateString FromOldFmt:(NSString *)old ToNew:(NSString *)fmt;
 
-+ (NSString *)deviceIPAdress; 
++ (void)getLANIPAddressWithCompletion:(void (^)(NSString *IPAddress))completion;
+
++ (void)getWANIPAddressWithCompletion:(void(^)(NSString *IPAddress))completion;
 
 @end

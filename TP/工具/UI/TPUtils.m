@@ -406,16 +406,57 @@ static NSArray* list = nil;
     return [dateFormatter stringFromDate:date];
 }
 
-+ (NSString *)deviceIPAdress {
-    NSString *address = @"an error occurred when obtaining ip address";
++ (void)getLANIPAddressWithCompletion:(void (^)(NSString *IPAddress))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *IP = [self getIPAddress];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion) {
+                completion(IP);
+            }
+        });
+    });
+}
+
++ (void)getWANIPAddressWithCompletion:(void(^)(NSString *IPAddress))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSString *IP = @"0.0.0.0";
+        NSURL *url = [NSURL URLWithString:@"http://ifconfig.me/ip"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:3.0];
+        
+        NSURLResponse *response = nil;
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (error) {
+            NSLog(@"Failed to get WAN IP Address!\n%@", error);
+//            [[[UIAlertView alloc] initWithTitle:@"获取外网 IP 地址失败" message:[error localizedFailureReason] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        } else {
+            NSString *responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            IP = responseStr;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(IP);
+        });
+    });
+}
+
+#pragma mark -
+///// http://zachwaugh.me/posts/programmatically-retrieving-ip-address-of-iphone/
++ (NSString *)getIPAddress
+{
+    NSString *address = @"error";
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
     int success = 0;
     
+    // retrieve the current interfaces - returns 0 on success
     success = getifaddrs(&interfaces);
-    
-    if (success == 0) { // 0 表示获取成功
-        
+    if (success == 0) {
+        // Loop through linked list of interfaces
         temp_addr = interfaces;
         while (temp_addr != NULL) {
             if( temp_addr->ifa_addr->sa_family == AF_INET) {
@@ -430,8 +471,11 @@ static NSArray* list = nil;
         }
     }
     
-    freeifaddrs(interfaces);  
+    // Free memory
+    freeifaddrs(interfaces);
+    
     return address;
 }
+
 
 @end

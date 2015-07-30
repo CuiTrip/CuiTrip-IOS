@@ -18,31 +18,38 @@
 
 @implementation TPPersonalPageDetailSubView
 
-- (id)initWithFrame:(CGRect)frame 
+
+- (void)awakeFromNib
 {
-
-  self = [super initWithFrame:frame]; 
-
-  if (self) { 
-
-    //todo...
-
-  }
-
-  return self;
+    [super awakeFromNib];
+    self.imageView.layer.cornerRadius = 0.5*self.imageView.vzWidth;
+    self.imageView.layer.masksToBounds = true;
+    
 }
 
-- (void)setItem:(TPPersonalPageDetailItem *)item
+- (id)initWithFrame:(CGRect)frame
 {
-  
+    
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        //todo...
+        
+    }
+    
+    return self;
 }
+
+
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-  
-  
+    
+    
 }
 
 @end
+
 

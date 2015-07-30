@@ -21,7 +21,7 @@
 
 @interface TPPayViewController()
 
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UIView *allview;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -38,6 +38,7 @@
 
 @property (nonatomic,strong) TPPayModel *payModel;
 @property (nonatomic,strong) TPPaySubView* confirmView;
+@property (nonatomic,strong) NSString* deviceIp;
 
 @end
 
@@ -77,9 +78,11 @@
     [super loadView];
     //todo..
     [self setTitle:@"支付"];
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
+    
+    // 适配底部不能拉到底的情况
+//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//    }
     self.bkView.layer.cornerRadius = 5.0f;
     self.bkView.clipsToBounds = true;
     
@@ -96,12 +99,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CGSize containerSize = self.scrollView.frame.size;
+    CGSize contentSize = [self.allview sizeThatFits:containerSize];
+    
+    CGRect frame = self.allview.frame;
+    frame.size.height = MAX(contentSize.height, containerSize.height);
+    
+    self.allview.frame = frame;
+    self.scrollView.contentSize = frame.size;
+    
+    [self.scrollView scrollRectToVisible:self.allview.frame animated:YES];
 
     self.titleLabel.text = self.tripDetailModel.serviceName;
     [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
     self.tripDateLabel.text = self.tripDetailModel.serviceDate;
     self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
-    self.tripFeeLabel.text = self.tripDetailModel.orderPrice;
+    self.tripFeeLabel.text = self.tripDetailModel.servicePrice;
     self.tripMoneyTypeLabel.text = ([self.tripDetailModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
     self.tripCNYFeeLabel.text = self.tripDetailModel.orderPrice;
     
@@ -142,12 +156,13 @@
     
 }
 
-- (void) viewDidLayoutSubviews {
-    CGRect viewBounds = self.view.bounds;
-    CGFloat topBarOffset = self.topLayoutGuide.length;
-    viewBounds.origin.y = topBarOffset * -1;
-    self.view.bounds = viewBounds;
-}
+// 适配顶端和状态栏重叠的问题
+//- (void) viewDidLayoutSubviews {
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = self.topLayoutGuide.length;
+//    viewBounds.origin.y = topBarOffset * -1;
+//    self.view.bounds = viewBounds;
+//}
 
 -(void)dealloc {
     
@@ -189,18 +204,25 @@
     self.channel = @"alipay";
     SHOW_SPINNER(self);
     __weak typeof(self) weakSelf = self;
+    self.deviceIp = @"0.0.0.0";
     
-    NSString* deviceIp = [TPUtils deviceIPAdress];
-
+    [TPUtils getWANIPAddressWithCompletion:^(NSString *IPAddress) {
+        if ([weakSelf.deviceIp isEqualToString:IPAddress]) {
+            [TPUtils getLANIPAddressWithCompletion:^(NSString *IPAddress) {
+                weakSelf.deviceIp = IPAddress;
+                NSDictionary* dict = @{
+                                       @"channel" : self.channel,
+                                       @"orderId" : self.oid,
+                                       @"clientIp": weakSelf.deviceIp,
+                                       @"payCurrency": weakSelf.tripDetailModel.payCurrency
+                                       };
+                
+                [self toPay:dict];
+            }];
+        }
+    }];
     
-    NSDictionary* dict = @{
-                           @"channel" : self.channel,
-                           @"orderId" : self.oid,
-                           @"clientIp": deviceIp,
-                           @"payCurrency": @"cny"
-                           };
     
-    [self toPay:dict];
     
 }
 
@@ -209,15 +231,24 @@
     __weak typeof(self) weakSelf = self;
     self.oid = self.tripDetailModel.oid;
     self.channel = @"wx";
-    NSString* deviceIp = [TPUtils deviceIPAdress];
+    self.deviceIp = @"0.0.0.0";
     
-    NSDictionary* dict = @{
-                           @"channel" : self.channel,
-                           @"orderId" : self.oid,
-                           @"clientIp": deviceIp,
-                           @"payCurrency": @"cny"
-                           };
-    [self toPay:dict];
+    [TPUtils getWANIPAddressWithCompletion:^(NSString *IPAddress) {
+        if ([weakSelf.deviceIp isEqualToString:IPAddress]) {
+            [TPUtils getLANIPAddressWithCompletion:^(NSString *IPAddress) {
+                weakSelf.deviceIp = IPAddress;
+                NSDictionary* dict = @{
+                                       @"channel" : self.channel,
+                                       @"orderId" : self.oid,
+                                       @"clientIp": weakSelf.deviceIp,
+                                       @"payCurrency": weakSelf.tripDetailModel.payCurrency
+                                       };
+                [self toPay:dict];
+            }];
+        }
+    }];
+    
+    
 }
 
 - (IBAction)codepayAction:(id)sender {

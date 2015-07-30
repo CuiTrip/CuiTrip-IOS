@@ -14,11 +14,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sf9-23-dKx">
-                                <rect key="frame" x="15" y="0.0" width="290" height="548"/>
+                                <rect key="frame" x="15" y="0.0" width="290" height="560"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="MBs-bG-GwP" customClass="SETextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="548"/>
+                                        <rect key="frame" x="0.0" y="160" width="290" height="400"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <connections>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTU-c0-ZqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561.06666666666661" y="74.786666666666662"/>
+            <point key="canvasLocation" x="561" y="74"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

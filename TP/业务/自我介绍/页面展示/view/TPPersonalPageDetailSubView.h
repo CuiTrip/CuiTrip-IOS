@@ -9,13 +9,15 @@
 
 
   
-@class TPPersonalPageDetailItem;
 
 #import <UIKit/UIKit.h>
 
 @interface TPPersonalPageDetailSubView : UIView
 
-@property(nonatomic,strong) TPPersonalPageDetailItem *item;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 @end
 
