@@ -111,6 +111,7 @@
 		6B690B201B64ECB000A295ED /* trip_cal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B1F1B64ECB000A295ED /* trip_cal@2x.png */; };
 		6B7E13A91B6945E000C70FC4 /* TPPSContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E13A81B6945E000C70FC4 /* TPPSContentViewController.m */; };
 		6B7E13AD1B69481200C70FC4 /* TPPSAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E13AC1B69481200C70FC4 /* TPPSAccessoryView.m */; };
+		6BCB0F5E1B6A71BE008321C4 /* TPPSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */; };
 		7B5131FA1B651C38007EB19F /* trip_set@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5131F91B651C38007EB19F /* trip_set@2x.png */; };
 		7B5134481B675B78007EB19F /* TPDiscoveryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132261B675B78007EB19F /* TPDiscoveryListCell.m */; };
 		7B5134491B675B78007EB19F /* discovery_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B5132281B675B78007EB19F /* discovery_meta.json */; };
@@ -549,6 +550,8 @@
 		6B7E13A81B6945E000C70FC4 /* TPPSContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSContentViewController.m; sourceTree = "<group>"; };
 		6B7E13AB1B6947E700C70FC4 /* TPPSAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPSAccessoryView.h; sourceTree = "<group>"; };
 		6B7E13AC1B69481200C70FC4 /* TPPSAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSAccessoryView.m; sourceTree = "<group>"; };
+		6BCB0F5C1B6A7187008321C4 /* TPPSImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPSImageView.h; sourceTree = "<group>"; };
+		6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSImageView.m; sourceTree = "<group>"; };
 		7B5131F91B651C38007EB19F /* trip_set@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_set@2x.png"; sourceTree = "<group>"; };
 		7B5132101B675B78007EB19F /* TPBusinessConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBusinessConstant.h; sourceTree = "<group>"; };
 		7B5132251B675B78007EB19F /* TPDiscoveryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListCell.h; sourceTree = "<group>"; };
@@ -1447,6 +1450,8 @@
 			children = (
 				6B7E13AB1B6947E700C70FC4 /* TPPSAccessoryView.h */,
 				6B7E13AC1B69481200C70FC4 /* TPPSAccessoryView.m */,
+				6BCB0F5C1B6A7187008321C4 /* TPPSImageView.h */,
+				6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -3689,6 +3694,7 @@
 				7B5134F71B675B79007EB19F /* TPProfileSettingsViewController.m in Sources */,
 				7B5134D31B675B78007EB19F /* TPMessageListModel.m in Sources */,
 				7B5134611B675B78007EB19F /* TPDDCommentItem.m in Sources */,
+				6BCB0F5E1B6A71BE008321C4 /* TPPSImageView.m in Sources */,
 				7B5134651B675B78007EB19F /* TPDiscoveryDetailListItem.m in Sources */,
 				7B5134DB1B675B78007EB19F /* TPChatStatusListItem.m in Sources */,
 				459B24981B176A1C009BB189 /* main.m in Sources */,

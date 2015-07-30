@@ -8,7 +8,11 @@
 
 #import "TPPSViewController.h"
 #import "SETextView.h"
+#import "O2OCommentImageListView.h"
+#import "ETImageTransformTool.h"
+#import "O2OCommentImageItem.h"
+#import "O2OCommentImageView.h"
 
-@interface TPPSContentViewController : TPPSViewController<SETextViewDelegate>
+@interface TPPSContentViewController : TPPSViewController<SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
