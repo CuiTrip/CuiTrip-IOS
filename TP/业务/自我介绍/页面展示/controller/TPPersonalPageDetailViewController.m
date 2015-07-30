@@ -13,6 +13,7 @@
 #import "TPPersonalPageDetailViewController.h"
 #import "TPPersonalPageViewController.h"
 #import "TPPersonalPageDetailModel.h"
+#import "TPPersonalPageDetailSubView.h"
 
 #import "SEPhotoView.h"
 #import "SETextView.h"
@@ -28,6 +29,7 @@ static const CGFloat defaultFontSize = 18.0f;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet SETextView *textView;
+@property(nonatomic,strong) TPPersonalPageDetailSubView* headerView;
 
 @property (nonatomic) id normalFont;
 
@@ -67,6 +69,10 @@ static const CGFloat defaultFontSize = 18.0f;
 {
     [super viewDidLoad];
     
+//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//    }
+    
     self.view.backgroundColor = [UIColor whiteColor];
 //    self.inputAccessoryView = [[[UINib nibWithNibName:@"SEInputAccessoryView" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
     
@@ -103,6 +109,12 @@ static const CGFloat defaultFontSize = 18.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if ([TPUser isLogined]) {
+        [self.headerView.imageView sd_setImageWithURL:__url(self.personalPageDetailModel.headPic) placeholderImage:__image(@"girl.jpg")];
+        self.headerView.nameLabel.text = self.personalPageDetailModel.nick;
+        self.headerView.descLabel.text = self.personalPageDetailModel.sign;
+    }
+    
     self.tabBarController.tabBar.hidden = true;
     //todo..
 }
@@ -133,6 +145,14 @@ static const CGFloat defaultFontSize = 18.0f;
     [super didReceiveMemoryWarning];
     
 }
+
+//- (void) viewDidLayoutSubviews {
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = self.topLayoutGuide.length;
+//    viewBounds.origin.y = topBarOffset * -1;
+//    self.view.bounds = viewBounds;
+//}
+
 
 -(void)dealloc {
     
@@ -185,38 +205,77 @@ static const CGFloat defaultFontSize = 18.0f;
 #pragma mark -
 - (void)setupView
 {
-    self.textView.text = self.personalPageDetailModel.introduce;
-    _content = self.textView.text;
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPPersonalPageDetailSubView" owner:self options:nil];
+    self.headerView = (TPPersonalPageDetailSubView *)[nib objectAtIndex:0];
+    self.headerView.vzWidth = self.scrollView.vzWidth;
+    self.headerView.vzHeight = 160;
+    [self.headerView.imageView sd_setImageWithURL:__url(self.personalPageDetailModel.headPic) placeholderImage:__image(@"girl.jpg")];
+    self.headerView.nameLabel.text = self.personalPageDetailModel.nick;
+    self.headerView.descLabel.text = self.personalPageDetailModel.sign;
+    [self.scrollView addSubview:self.headerView];
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = FALSE;
     
+    self.content = self.personalPageDetailModel.introduce;
+    self.textView.text = @"";
+    
+    NSString *preText = [self getPreText:_content];
     NSString *imgUrl = [self getImgUrl:_content];
-    while (![imgUrl  isEqual: @""]) {
+    while (![imgUrl  isEqual: @""] || ![preText  isEqual: @""]) {
+        if (![preText  isEqual: @""])
+        {
+            [self.textView insertText:preText];
+        }
+        if (![imgUrl  isEqual: @""])
+        {
+            UIImageView *asyncImage = [[UIImageView alloc] init];
+            [asyncImage sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:__image(@"default_details.jpg")];
+            
+            UIImage *image = asyncImage.image;
+            SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
+            
+            [self.textView insertObject:asyncImage size:photoView.bounds.size];
+        }
         
-        UIImageView *asyncImage = [[UIImageView alloc] init];
-        [asyncImage sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:__image(@"default_details.jpg")];
-//        [asyncImage 
-        
-        UIImage *image = asyncImage.image;
-        SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
-        photoView.image = image;
-        [self.textView insertText:_content];
-        [self.textView insertObject:photoView size:photoView.bounds.size];
-//        [self updateLayout];
+        [self updateLayout];
+        preText = [self getPreText:_content];
         imgUrl = [self getImgUrl:_content];
     }
     
 }
 
-- (NSString*)getImgUrl:srcStr
+- (NSString*)getPreText:(NSString*)srcStr
+{
+    NSString* result = @"";
+    NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
+    NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
+    NSRange rang1 = [srcStr rangeOfString:urlPre
+                                    options:NSBackwardsSearch
+                                      range:NSMakeRange(0, srcStr.length)
+                                     locale:nil];
+    NSRange rang2 = [srcStr rangeOfString:urlSub
+                                    options:NSBackwardsSearch
+                                      range:NSMakeRange(0, srcStr.length)
+                                     locale:nil];
+    
+    if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
+        result = [_content substringWithRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length)];
+        _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length) withString:@""];
+    }
+    return result;
+}
+
+- (NSString*)getImgUrl:(NSString*)srcStr
 {
     NSString* result = @"";
     NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
     NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
     NSRange rang1 = [_content rangeOfString:urlPre
-                                    options:NSRegularExpressionSearch
+                                    options:NSBackwardsSearch
                                       range:NSMakeRange(0, _content.length)
                                      locale:nil];
     NSRange rang2 = [_content rangeOfString:urlSub
-                                    options:NSRegularExpressionSearch
+                                    options:NSBackwardsSearch
                                       range:NSMakeRange(0, _content.length)
                                      locale:nil];
     
@@ -233,7 +292,7 @@ static const CGFloat defaultFontSize = 18.0f;
     CGSize contentSize = [self.textView sizeThatFits:containerSize];
     
     CGRect frame = self.textView.frame;
-    frame.size.height = MAX(contentSize.height, containerSize.height);
+    frame.size.height = MAX(contentSize.height, containerSize.height) + 160.0F;
     
     self.textView.frame = frame;
     self.scrollView.contentSize = frame.size;
@@ -249,8 +308,9 @@ static const CGFloat defaultFontSize = 18.0f;
 - (IBAction)done:(id)sender
 {
     TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+    vc.content = self.personalPageDetailModel.introduce;
     [self.navigationController pushViewController:vc animated:true];
-    //        loc.callback = ^(NSString* location,...){self.location = location;};
+
 }
 
 

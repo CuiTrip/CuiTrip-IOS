@@ -391,7 +391,7 @@
         else if (indexPath.row == 2)
         {
             cell.textLabel.text = @"服务费用";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", self.tripDetailModel.orderPrice, self.tripDetailModel.moneyType];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", self.tripDetailModel.servicePrice, self.tripDetailModel.moneyType];
         }
         else if (indexPath.row == 3)
         {

@@ -167,6 +167,7 @@
                         <outlet property="bkView" destination="StL-dV-6mq" id="9uR-It-gbc"/>
                         <outlet property="codepayBtn" destination="aXe-fU-J6q" id="vNG-KY-Aea"/>
                         <outlet property="imageView" destination="OZ3-HX-oc5" id="9h8-hI-CgT"/>
+                        <outlet property="scrollView" destination="0oa-CO-anF" id="tLW-qT-I4G"/>
                         <outlet property="titleLabel" destination="Cb4-rb-EwC" id="koM-e0-Gv3"/>
                         <outlet property="tripCNYFeeLabel" destination="zys-yC-ogY" id="fX6-hF-yPe"/>
                         <outlet property="tripDateLabel" destination="1lM-uW-9GS" id="1bU-ZP-Re8"/>

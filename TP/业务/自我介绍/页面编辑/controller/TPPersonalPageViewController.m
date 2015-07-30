@@ -31,20 +31,18 @@ static const CGFloat defaultFontSize = 18.0f;
 @interface TPPersonalPageViewController() <SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property(nonatomic,strong) O2OCommentImageListView* galleryView;
-@property(nonatomic,strong) UIView *imgsBackView;
 @property(nonatomic,strong) O2OCommentImageItem* tobeDeletedItem;
-@property(nonatomic,strong) NSMutableArray* pics;
+@property(nonatomic,strong) NSMutableArray* picsList;
 
-@property(nonatomic,strong) NSString* content;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet SETextView *textView;
+
 @property (nonatomic) SEInputAccessoryView *inputAccessoryView;
+@property(nonatomic,strong)TPPersonalPageModel *personalPageModel;
+@property(nonatomic,strong) NSString* uploadContent;
 
 @property (nonatomic) id normalFont;
-//@property (nonatomic) id boldFont;
- 
-@property(nonatomic,strong)TPPersonalPageModel *personalPageModel; 
 
 @end
 
@@ -86,7 +84,7 @@ static const CGFloat defaultFontSize = 18.0f;
 {
     [super viewDidLoad];
     
-    _pics = [NSMutableArray new];
+    _picsList = [NSMutableArray new];
     _galleryView  = [[O2OCommentImageListView alloc] initWithFrame:CGRectMake(10, 60, self.view.vzWidth-30, 55)];
     _galleryView.enableAddImage = YES;
     _galleryView.delegate = self;
@@ -118,6 +116,8 @@ static const CGFloat defaultFontSize = 18.0f;
     [attributedString addAttribute:(id)kCTFontAttributeName value:self.normalFont range:NSMakeRange(0, initialText.length)];
     self.textView.font = self.normalFont;
     self.textView.attributedText = attributedString;
+    
+    [self setupView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -199,12 +199,22 @@ static const CGFloat defaultFontSize = 18.0f;
 
 - (void)textViewDidBeginEditing:(SETextView *)textView
 {
+    long Len = self.textView.selectedRange.location;
+    NSString *allString = self.textView.text;
+    NSString *stringToCursor = [allString substringToIndex:Len];
+    NSLog(@"textViewDidBeginEditing: %@ at: %ld", stringToCursor, Len);
+
     self.doneButton.enabled = YES;
 }
 
 - (void)textViewDidEndEditing:(SETextView *)textView
 {
-    self.doneButton.enabled = NO;
+    long Len = self.textView.selectedRange.location;
+    NSString *allString = self.textView.text;
+    NSString *stringToCursor = [allString substringToIndex:Len];
+    NSLog(@"textViewDidEndEditing: %@ at: %ld", stringToCursor, Len);
+
+    self.doneButton.enabled = YES;
 }
 
 - (void)textViewDidChangeSelection:(SETextView *)textView
@@ -222,6 +232,11 @@ static const CGFloat defaultFontSize = 18.0f;
 - (void)textViewDidChange:(SETextView *)textView
 {
     self.textView.font = self.normalFont;
+    
+//    long Len = self.textView.selectedRange.location;
+//    NSString *allString = self.textView.text;
+//    NSString *stringToCursor = [allString substringToIndex:Len];
+//    NSLog(@"mouse button pressed: %@ at: %ld", stringToCursor, Len);
 //    self.content = [NSString stringWithFormat:@"%@ %@",self.content,self.textView.text];
     [self updateLayout];
 }
@@ -287,10 +302,8 @@ static const CGFloat defaultFontSize = 18.0f;
     BOOL isPicUploading = false;
     
     NSArray* items = self.galleryView.imageItems;
-    NSMutableArray* list = [NSMutableArray new];
     
     /////// <div>< img src="xxx" width="100%" /></div>
-    self.content = self.textView.text;
     
     for (O2OCommentImageItem* item in items)
     {
@@ -301,7 +314,7 @@ static const CGFloat defaultFontSize = 18.0f;
         }
         
         if (item.imageURL) {
-            [list addObject:item.imageURL];
+            [_picsList addObject:item.imageURL];
             
             NSString * formatUrl = [NSString stringWithFormat:@"<div>< img src=\"%@\" width=\"100\%\" \/><\/div>",item.imageURL];
             NSRange r = [_content rangeOfString:@"cuitripInsiderPic"
@@ -312,7 +325,6 @@ static const CGFloat defaultFontSize = 18.0f;
             if (r.location != NSNotFound) {
                 _content = [_content stringByReplacingCharactersInRange:r withString:formatUrl];
             }
-//            _content = [_content stringByReplacingOccurrencesOfString:@"cuitripInsiderPic" withString:formatUrl];
         }
         
     }
@@ -322,7 +334,7 @@ static const CGFloat defaultFontSize = 18.0f;
         TOAST(self, @"请等待图片上传完毕");
         return;
     }
-    else if (list.count == 0)
+    else if (_picsList.count == 0)
     {
         TOAST(self, @"请上传图片");
         return;
@@ -338,7 +350,7 @@ static const CGFloat defaultFontSize = 18.0f;
 
 - (void)updateIntroduce{
     [self.view endEditing:true];
-    self.personalPageModel.content = self.content;
+    self.personalPageModel.content = self.uploadContent;
     
     SHOW_SPINNER(self);
     __weak typeof(self) weakSelf = self;
@@ -500,23 +512,10 @@ static const CGFloat defaultFontSize = 18.0f;
 
 
 
-#pragma mark -
-
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    UIImage *image = info[UIImagePickerControllerOriginalImage];
-//    
-//    SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, self.view.vzWidth-30, (image.size.height * self.view.vzWidth)/image.size.width)];
-//    photoView.image = image;
-//    
-//    [self.textView insertObject:photoView size:photoView.bounds.size];
-//    
-//    [self dismissViewControllerAnimated:YES completion:NULL];
-//}
-
 #pragma mark -- UIImagePickerControllerDelegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    //        UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
 
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
@@ -524,8 +523,6 @@ static const CGFloat defaultFontSize = 18.0f;
     photoView.image = image;
     
     [picker dismissViewControllerAnimated:YES completion:^{
-        
-//        UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
         
         [self.view makeToastActivity];
         
@@ -543,10 +540,16 @@ static const CGFloat defaultFontSize = 18.0f;
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self.view hideToastActivity];
-//                [_galleryView appendImage:photoItem];
+                [_galleryView appendImage:photoItem];
                 
                 photoView.image = clippedImage;
-                [self.textView insertText:@"cuitripInsiderPic"];
+//                [self.textView insertText:@"cuitripInsiderPic"];
+                long Len = self.textView.selectedRange.location;
+                NSString *allString = self.textView.text;
+                NSString *stringToCursor = [allString substringToIndex:Len];
+                NSLog(@"imagePickerController: %@ at: %ld", stringToCursor, Len);
+                
+                [self.content stringByAppendingString:@"cuitripInsiderPic"];
                 [self.textView insertObject:photoView size:photoView.bounds.size];
             });
             
@@ -561,6 +564,89 @@ static const CGFloat defaultFontSize = 18.0f;
     data = UIImageJPEGRepresentation(image, 0.5);
     return  [data base64Encoding];
 }
+
+- (void)setupView
+{
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = FALSE;
+    
+    self.textView.text = @"";
+    self.uploadContent = @"";
+    
+    NSString *preText = [self getPreText:_content];
+    NSString *imgUrl = [self getImgUrl:_content];
+    while (![imgUrl  isEqual: @""] || ![preText  isEqual: @""]) {
+        if (![preText  isEqual: @""])
+        {
+            [self.textView insertText:preText];
+        }
+        if (![imgUrl  isEqual: @""])
+        {
+            [_picsList addObject:imgUrl];
+            UIImageView *asyncImage = [[UIImageView alloc] init];
+            [asyncImage sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:__image(@"default_details.jpg")];
+            
+            UIImage *image = asyncImage.image;
+            SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
+            
+            [self.textView insertObject:asyncImage size:photoView.bounds.size];
+        }
+        
+        [self updateLayout];
+        preText = [self getPreText:_content];
+        imgUrl = [self getImgUrl:_content];
+    }
+    
+}
+
+- (NSString*)getPreText:(NSString*)srcStr
+{
+    NSString* result = @"";
+    NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
+    NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
+    NSRange rang1 = [srcStr rangeOfString:urlPre
+                                  options:NSBackwardsSearch
+                                    range:NSMakeRange(0, srcStr.length)
+                                   locale:nil];
+    NSRange rang2 = [srcStr rangeOfString:urlSub
+                                  options:NSBackwardsSearch
+                                    range:NSMakeRange(0, srcStr.length)
+                                   locale:nil];
+    
+    if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
+        result = [_content substringWithRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length)];
+        _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length) withString:@""];
+    }
+    [self.uploadContent stringByAppendingString:result];
+    _uploadContent = [NSString stringWithFormat:@"%@ %@",result,_uploadContent];
+    return result;
+}
+
+- (NSString*)getImgUrl:(NSString*)srcStr
+{
+    NSString* result = @"";
+    NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
+    NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
+    NSRange rang1 = [_content rangeOfString:urlPre
+                                    options:NSBackwardsSearch
+                                      range:NSMakeRange(0, _content.length)
+                                     locale:nil];
+    NSRange rang2 = [_content rangeOfString:urlSub
+                                    options:NSBackwardsSearch
+                                      range:NSMakeRange(0, _content.length)
+                                     locale:nil];
+    
+    if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
+        result = [_content substringWithRange:NSMakeRange(rang1.location+rang1.length, rang2.location-rang1.location-rang1.length)];
+        NSString* srcImg = [_content substringWithRange:NSMakeRange(rang1.location, rang2.location+rang2.length-rang1.location)];
+        [self.uploadContent stringByAppendingString:srcImg];
+        _uploadContent = [NSString stringWithFormat:@"%@ %@",srcImg,_uploadContent];
+
+        _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang1.location, rang2.location+rang2.length-rang1.location) withString:@""];
+    }
+    return result;
+}
+
 
 
 @end

@@ -56,7 +56,8 @@
     _insiderNickName = JSON[@"userNick"];
     _insiderId = JSON[@"insiderId"];
     _buyerNum = JSON[@"buyerNum"];
-    _orderPrice = JSON[@"servicePrice"];
+    _orderPrice = JSON[@"orderPrice"];
+    _payCurrency = JSON[@"payCurrency"];
     _serviceName = JSON[@"serviceName"];
     _servicePIC = JSON[@"servicePIC"];
     _serviceAdress = JSON[@"serviceAddress"];
@@ -64,6 +65,7 @@
     _status = JSON[@"status"];
     _statusContent = JSON[@"statusContent"];
     _serviceDate = JSON[@"serviceDate"];
+    _servicePrice = JSON[@"servicePrice"];
     _moneyType = JSON[@"moneyType"];
     _travellerNickName = JSON[@"travellerName"];
     _oid = JSON[@"oid"];

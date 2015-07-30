@@ -13,5 +13,8 @@
 
 @interface TPPersonalPageViewController : VZViewController
 
+@property(nonatomic,strong) NSString* content;
+
+
 @end
   

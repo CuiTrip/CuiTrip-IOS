@@ -350,6 +350,7 @@
 		7B5135711B678F17007EB19F /* SEPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135601B678F17007EB19F /* SEPhotoView.m */; };
 		7B5135721B678F17007EB19F /* TPPersonalPageSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */; };
 		7B5135751B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */; };
+		7B70E1271B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B70E1261B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib */; };
 		7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B121B56080100E36430 /* trip_alipay@2x.png */; };
 		7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B131B56080100E36430 /* trip_wpay@2x.png */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
@@ -969,6 +970,7 @@
 		7B5135611B678F17007EB19F /* TPPersonalPageSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPersonalPageSubView.h; sourceTree = "<group>"; };
 		7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPersonalPageSubView.m; sourceTree = "<group>"; };
 		7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPersonalPageDetailViewController.storyboard; sourceTree = "<group>"; };
+		7B70E1261B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPPersonalPageDetailSubView.xib; sourceTree = "<group>"; };
 		7B956B121B56080100E36430 /* trip_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_alipay@2x.png"; sourceTree = "<group>"; };
 		7B956B131B56080100E36430 /* trip_wpay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_wpay@2x.png"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -3115,6 +3117,7 @@
 			children = (
 				7B5135491B678F17007EB19F /* TPPersonalPageDetailSubView.h */,
 				7B51354A1B678F17007EB19F /* TPPersonalPageDetailSubView.m */,
+				7B70E1261B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3344,6 +3347,7 @@
 				7B5134F31B675B79007EB19F /* TPRegisterViewController.storyboard in Resources */,
 				45D48BE41B32AF3500B5801F /* UMSShareListController.xib in Resources */,
 				7B5134EC1B675B78007EB19F /* forgetpwd_meta.json in Resources */,
+				7B70E1271B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib in Resources */,
 				4509AB7C1B22EA2300846032 /* Localizable.strings in Resources */,
 				7B5135141B675B79007EB19F /* o2o_yellow_star@2x.png in Resources */,
 				7B51346A1B675B78007EB19F /* girl.jpg in Resources */,

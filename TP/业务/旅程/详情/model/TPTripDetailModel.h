@@ -31,7 +31,9 @@
 @property(nonatomic,strong,readonly)NSString* servicePIC;
 @property(nonatomic,strong,readonly)NSString* serviceAdress;
 @property(nonatomic,strong,readonly)NSString* buyerNum;
+@property(nonatomic,strong,readonly)NSString* servicePrice;
 @property(nonatomic,strong,readonly)NSString* orderPrice;
+@property(nonatomic,strong,readonly)NSString* payCurrency;
 @property(nonatomic,strong,readonly)NSString* status;
 @property(nonatomic,strong,readonly)NSString* statusContent;
 @property(nonatomic,strong,readonly)NSString* moneyType;
