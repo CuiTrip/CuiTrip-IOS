@@ -15,6 +15,7 @@
 #import "TPSystemSettingsViewController.h"
 #import "TPShareTrippingViewController.h"
 #import "TPPersonalPageViewController.h"
+#import "TPPersonalPageDetailViewController.h"
 
 @interface TPMeViewController()
 
@@ -171,7 +172,7 @@
 {
     if (indexPath.row == 1) {
         TOAST(self, @"我的主页");
-        TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+        TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
         [self.navigationController pushViewController:vc animated:true];
 //        loc.callback = ^(NSString* location,...){self.location = location;};
     }

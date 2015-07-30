@@ -64,6 +64,16 @@
     self.tabBarController.tabBar.hidden = true;
 }
 
+
+//- (void) viewDidLayoutSubviews {
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = self.topLayoutGuide.length;
+//    viewBounds.origin.y = topBarOffset * -1;
+//    self.view.bounds = viewBounds;
+//}
+//
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

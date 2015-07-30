@@ -18,23 +18,31 @@
 @implementation TPPayModel
 
 
+//● orderId (String): 订单id
+//● channel (String): 支付渠道: alipay. 支付宝移动端支付；wx，微信移动端支付
+//● clientIp (String)：客户端ip
+//● payCurrency(String)：支付的货币类型，现在ping++只支持人民币:cny
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
 - (NSDictionary *)dataParams {
     
-    return @{
-             @"uid":[TPUser uid]?:@"",
-             @"token":[TPUser token]?:@"",
-             @"oid":self.oid?:@""
-             };
+//    return @{
+//             @"orderId":self.oid?:@"",
+//             @"channel":self.channel?:@"",
+//             @"clientIp":self.clientIp?:@"",
+//             @"payCurrency":self.payCurrency?:@""
+//             };
+    return nil;
 
 }
 
 
 - (NSString *)methodName {
     
-    return [_API_ stringByAppendingPathComponent:@"getOrderInfo"];
+    return [_API_ stringByAppendingPathComponent:@"getCharge"];
 }
 
 - (VZHTTPRequestConfig)requestConfig
@@ -44,31 +52,11 @@
     return config;
 }
 
-/**
- "oid": "231 ", //订单ID
- "status": "已结束", //旅程状态
- "insiderId": "25", //发现者id
- "insiderHeadPic": "http://alicdn.aliyun.com/pic1.jpg", //发现者头像
- "insiderNickName": "阿亮", // 发现者昵称
- "serviceDate": "2015-08-09", //服务日期
- "buyerNum": "4人",      //服务人数
- "orderPrice": "免费体验"
- */
+
 
 - (BOOL)parseResponse:(id)JSON
 {
-    //todo:
-    _insiderHeadPic = JSON[@"headPic"];
-    _insiderNickName = JSON[@"userNick"];
-    _buyerNum = JSON[@"buyerNum"];
-    _orderPrice = JSON[@"servicePrice"];
-    _serviceName = JSON[@"serviceName"];
-    _insiderSign = JSON[@"insiderSign"];
-    _status = JSON[@"status"];
-    _statusContent = JSON[@"statusContent"];
-    _serviceDate = JSON[@"serviceDate"];
-    _moneyType = JSON[@"moneyType"];
-    
+
     return true;
 }
 

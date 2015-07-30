@@ -119,7 +119,8 @@
     btnLabel.textAlignment = NSTextAlignmentCenter;
     btnLabel.frame = CGRectMake(btnImage.vzRight + 5.0f, 0.0f, self.shareBtn.vzWidth - btnImage.vzWidth - 5.0f, 44.0f);
     [self.shareBtn addSubview:btnLabel];
-    
+    self.shareBtn.layer.cornerRadius = 22.0f;
+    self.shareBtn.clipsToBounds = true;
 
     [self.view addSubview:self.TripLogo];
     [self.view addSubview:self.shareBtn];

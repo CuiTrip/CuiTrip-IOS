@@ -167,50 +167,6 @@ static const CGFloat defaultFontSize = 18.0f;
     
     //todo..
 }
-
-
-- (IBAction)done:(id)sender
-{
-    [self.textView resignFirstResponder];
-    BOOL isPicUploading = false;
-    
-    NSArray* items = self.galleryView.imageItems;
-    NSMutableArray* list = [NSMutableArray new];
-    
-    for (O2OCommentImageItem* item in items)
-    {
-        
-        if (item.isUploading) {
-            isPicUploading = true;
-            break;
-        }
-        
-        if (item.imageURL) {
-            [list addObject:item.imageURL];
-            _content = [_content stringByReplacingOccurrencesOfString:@"null" withString:item.imageURL];
-        }
-        
-    }
-    
-    if (isPicUploading)
-    {
-        TOAST(self, @"请等待图片上传完毕");
-        return;
-    }
-    else if (list.count == 0)
-    {
-        TOAST(self, @"请上传图片");
-        return;
-    }
-    else
-    {
-        [self updateIntroduce];
-    }
-    return;
-
-}
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
@@ -266,7 +222,7 @@ static const CGFloat defaultFontSize = 18.0f;
 - (void)textViewDidChange:(SETextView *)textView
 {
     self.textView.font = self.normalFont;
-    self.content = [NSString stringWithFormat:@"%@ %@",self.content,self.textView.text];
+//    self.content = [NSString stringWithFormat:@"%@ %@",self.content,self.textView.text];
     [self updateLayout];
 }
 
@@ -324,6 +280,62 @@ static const CGFloat defaultFontSize = 18.0f;
 ////////////////////////////////
 #pragma mark - button action
 
+
+- (IBAction)done:(id)sender
+{
+    [self.textView resignFirstResponder];
+    BOOL isPicUploading = false;
+    
+    NSArray* items = self.galleryView.imageItems;
+    NSMutableArray* list = [NSMutableArray new];
+    
+    /////// <div>< img src="xxx" width="100%" /></div>
+    self.content = self.textView.text;
+    
+    for (O2OCommentImageItem* item in items)
+    {
+        
+        if (item.isUploading) {
+            isPicUploading = true;
+            break;
+        }
+        
+        if (item.imageURL) {
+            [list addObject:item.imageURL];
+            
+            NSString * formatUrl = [NSString stringWithFormat:@"<div>< img src=\"%@\" width=\"100\%\" \/><\/div>",item.imageURL];
+            NSRange r = [_content rangeOfString:@"cuitripInsiderPic"
+                                      options:NSRegularExpressionSearch
+                                        range:NSMakeRange(0, _content.length)
+                                       locale:nil];
+            
+            if (r.location != NSNotFound) {
+                _content = [_content stringByReplacingCharactersInRange:r withString:formatUrl];
+            }
+//            _content = [_content stringByReplacingOccurrencesOfString:@"cuitripInsiderPic" withString:formatUrl];
+        }
+        
+    }
+    
+    if (isPicUploading)
+    {
+        TOAST(self, @"请等待图片上传完毕");
+        return;
+    }
+    else if (list.count == 0)
+    {
+        TOAST(self, @"请上传图片");
+        return;
+    }
+    else
+    {
+        [self updateIntroduce];
+    }
+    return;
+    
+}
+
+
 - (void)updateIntroduce{
     [self.view endEditing:true];
     self.personalPageModel.content = self.content;
@@ -355,7 +367,6 @@ static const CGFloat defaultFontSize = 18.0f;
     [self.textView reloadInputViews];
     
     self.inputAccessoryView.keyboardButton.enabled = NO;
-//    self.inputAccessoryView.stampButton.enabled = YES;
 }
 
 
@@ -363,11 +374,17 @@ static const CGFloat defaultFontSize = 18.0f;
 {
     [self.textView resignFirstResponder];
     
-    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
-    controller.delegate = self;
-    controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-    [self presentViewController:controller animated:YES completion:NULL];
+    [self onAddImgBtnClick];
+    
+    
+//    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+//    controller.delegate = self;
+//    controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    
+//    [self presentViewController:controller animated:YES completion:NULL];
+    
+    
 }
 
 - (IBAction)nomal:(id)sender
@@ -500,9 +517,10 @@ static const CGFloat defaultFontSize = 18.0f;
 #pragma mark -- UIImagePickerControllerDelegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
-    SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, self.view.vzWidth-30, (image.size.height * self.view.vzWidth)/image.size.width)];
+    SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
     photoView.image = image;
     
     [picker dismissViewControllerAnimated:YES completion:^{
@@ -525,10 +543,10 @@ static const CGFloat defaultFontSize = 18.0f;
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self.view hideToastActivity];
-                [_galleryView appendImage:photoItem];
-                //<div>< img src="xxx" width="100%" /></div>
-                NSString * formatUrl = [NSString stringWithFormat:@"<div>< img src=\"%@\" width=\"100\%\" \/><\/div>",photoItem.imageURL];
-                self.content = [NSString stringWithFormat:@"%@ %@",self.content,formatUrl];
+//                [_galleryView appendImage:photoItem];
+                
+                photoView.image = clippedImage;
+                [self.textView insertText:@"cuitripInsiderPic"];
                 [self.textView insertObject:photoView size:photoView.bounds.size];
             });
             

@@ -129,6 +129,11 @@
     return [TPUser sharedInstance].userItem.description;
 }
 
++ (NSString* )extInfo
+{
+    return [TPUser sharedInstance].userItem.extInfo;
+}
+
 + (BOOL)isLogined
 {
     return [TPUser sharedInstance].userItem.token.length > 0;

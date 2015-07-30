@@ -44,6 +44,10 @@
 
 + (NSString* )debugInfo;
 
++ (NSString* )extInfo;
+
+//+ (NSString* )
+
 + (BOOL)isLogined;
 
 + (void)clearUserInfo;

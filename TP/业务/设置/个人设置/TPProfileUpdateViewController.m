@@ -81,6 +81,16 @@
 
 }
 
+
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
+}
+
+
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
