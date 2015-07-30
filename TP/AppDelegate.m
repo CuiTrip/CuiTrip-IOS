@@ -145,12 +145,15 @@
            withCompletion:^(NSString *result, PingppError *error) {
                if ([result isEqualToString:@"success"]) {
                    // 支付成功
+                   NSLog(@"Pingpp is success test");
                } else {
                    // 支付失败或取消
-                   NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);
+                   NSLog(@"Error test23 m, : code=%lu msg=%@", error.code, [error getMsg]);
                }
            }];
-    return  YES;
+    
+    return  [UMSocialSnsService handleOpenURL:url];
+    //    return  YES;
 }
 
 
