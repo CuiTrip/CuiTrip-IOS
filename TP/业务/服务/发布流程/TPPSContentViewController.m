@@ -21,6 +21,10 @@
 @property(nonatomic,strong) O2OCommentImageListView* galleryView;
 @property (nonatomic, strong) NSString *content;
 
+@property (nonatomic, assign) int index;
+
+
+
 @end
 
 @implementation TPPSContentViewController
@@ -38,6 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.index = 0;
     self.content = @"";
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(5.0f, 0.0f, self.view.vzWidth - 10.0f, self.view.vzHeight)];
     [self.view addSubview:self.scrollView];
@@ -161,9 +166,11 @@
         return;
     }
     for (int i = 0; i < attachments.count; ++i) {
-        self.content = [self.content stringByReplacingCharactersInRange:range withString:[NSString stringWithFormat:@"<img%d>", i]];
+        SETextAttachment *attachment = attachments[i];
+        self.content = [self.content stringByReplacingCharactersInRange:range withString:[NSString stringWithFormat:@"<img%d>", attachment.tag]];
         range = [self.content rangeOfString:@"\U0000fffc"];
     }
+    NSLog(@"%@", self.content);
 }
 
 //////////////////////
@@ -299,7 +306,8 @@
                 NSString *allString = self.textView.text;
                 NSString *stringToCursor = [allString substringToIndex:Len];
                 NSLog(@"imagePickerController: %@ at: %ld", stringToCursor, Len);
-                [self.textView insertObject:photoView size:photoView.bounds.size];
+                [self.textView insertObject:photoView size:photoView.bounds.size tag:self.index];
+                self.index++;
             });
         });
     }];
