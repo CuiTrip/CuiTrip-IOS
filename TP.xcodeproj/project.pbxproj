@@ -354,6 +354,25 @@
 		7B5135721B678F17007EB19F /* TPPersonalPageSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */; };
 		7B5135751B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */; };
 		7B70E1271B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B70E1261B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib */; };
+		7B70E14F1B6B1B120029F6F6 /* SECompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E12C1B6B1B120029F6F6 /* SECompatibility.m */; };
+		7B70E1501B6B1B120029F6F6 /* SEConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E12E1B6B1B120029F6F6 /* SEConstants.m */; };
+		7B70E1511B6B1B120029F6F6 /* SELineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1301B6B1B120029F6F6 /* SELineLayout.m */; };
+		7B70E1521B6B1B120029F6F6 /* SELinkText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1321B6B1B120029F6F6 /* SELinkText.m */; };
+		7B70E1531B6B1B120029F6F6 /* SESelectionGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1341B6B1B120029F6F6 /* SESelectionGrabber.m */; };
+		7B70E1541B6B1B120029F6F6 /* SETextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1361B6B1B120029F6F6 /* SETextAttachment.m */; };
+		7B70E1551B6B1B120029F6F6 /* SETextEditingCaret.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1381B6B1B120029F6F6 /* SETextEditingCaret.m */; };
+		7B70E1561B6B1B120029F6F6 /* SETextGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E13A1B6B1B120029F6F6 /* SETextGeometry.m */; };
+		7B70E1571B6B1B120029F6F6 /* SETextInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E13C1B6B1B120029F6F6 /* SETextInput.m */; };
+		7B70E1581B6B1B120029F6F6 /* SETextLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E13E1B6B1B120029F6F6 /* SETextLayout.m */; };
+		7B70E1591B6B1B120029F6F6 /* SETextMagnifierCaret.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1401B6B1B120029F6F6 /* SETextMagnifierCaret.m */; };
+		7B70E15A1B6B1B120029F6F6 /* SETextMagnifierRanged.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1421B6B1B120029F6F6 /* SETextMagnifierRanged.m */; };
+		7B70E15B1B6B1B120029F6F6 /* SETextSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1441B6B1B120029F6F6 /* SETextSelection.m */; };
+		7B70E15C1B6B1B120029F6F6 /* SETextSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1461B6B1B120029F6F6 /* SETextSelectionView.m */; };
+		7B70E15D1B6B1B120029F6F6 /* SETextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E1481B6B1B120029F6F6 /* SETextView.m */; };
+		7B70E15E1B6B1B120029F6F6 /* SEViewCaptureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E14A1B6B1B120029F6F6 /* SEViewCaptureHelper.m */; };
+		7B70E15F1B6B1B120029F6F6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7B70E14B1B6B1B120029F6F6 /* LICENSE */; };
+		7B70E1601B6B1B120029F6F6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E14C1B6B1B120029F6F6 /* README.md */; };
+		7B70E1611B6B1B120029F6F6 /* SECoreTextView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7B70E14E1B6B1B120029F6F6 /* SECoreTextView.bundle */; };
 		7B956B141B56080100E36430 /* trip_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B121B56080100E36430 /* trip_alipay@2x.png */; };
 		7B956B151B56080100E36430 /* trip_wpay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B956B131B56080100E36430 /* trip_wpay@2x.png */; };
 		F8222A959C0A9FAF043E6F48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05280B7AED6003BF1F5B44F3 /* libPods.a */; };
@@ -980,6 +999,41 @@
 		7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPersonalPageSubView.m; sourceTree = "<group>"; };
 		7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPersonalPageDetailViewController.storyboard; sourceTree = "<group>"; };
 		7B70E1261B69F4940029F6F6 /* TPPersonalPageDetailSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPPersonalPageDetailSubView.xib; sourceTree = "<group>"; };
+		7B70E12B1B6B1B120029F6F6 /* SECompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SECompatibility.h; sourceTree = "<group>"; };
+		7B70E12C1B6B1B120029F6F6 /* SECompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SECompatibility.m; sourceTree = "<group>"; };
+		7B70E12D1B6B1B120029F6F6 /* SEConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEConstants.h; sourceTree = "<group>"; };
+		7B70E12E1B6B1B120029F6F6 /* SEConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEConstants.m; sourceTree = "<group>"; };
+		7B70E12F1B6B1B120029F6F6 /* SELineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELineLayout.h; sourceTree = "<group>"; };
+		7B70E1301B6B1B120029F6F6 /* SELineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELineLayout.m; sourceTree = "<group>"; };
+		7B70E1311B6B1B120029F6F6 /* SELinkText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELinkText.h; sourceTree = "<group>"; };
+		7B70E1321B6B1B120029F6F6 /* SELinkText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELinkText.m; sourceTree = "<group>"; };
+		7B70E1331B6B1B120029F6F6 /* SESelectionGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SESelectionGrabber.h; sourceTree = "<group>"; };
+		7B70E1341B6B1B120029F6F6 /* SESelectionGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SESelectionGrabber.m; sourceTree = "<group>"; };
+		7B70E1351B6B1B120029F6F6 /* SETextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextAttachment.h; sourceTree = "<group>"; };
+		7B70E1361B6B1B120029F6F6 /* SETextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextAttachment.m; sourceTree = "<group>"; };
+		7B70E1371B6B1B120029F6F6 /* SETextEditingCaret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextEditingCaret.h; sourceTree = "<group>"; };
+		7B70E1381B6B1B120029F6F6 /* SETextEditingCaret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextEditingCaret.m; sourceTree = "<group>"; };
+		7B70E1391B6B1B120029F6F6 /* SETextGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextGeometry.h; sourceTree = "<group>"; };
+		7B70E13A1B6B1B120029F6F6 /* SETextGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextGeometry.m; sourceTree = "<group>"; };
+		7B70E13B1B6B1B120029F6F6 /* SETextInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextInput.h; sourceTree = "<group>"; };
+		7B70E13C1B6B1B120029F6F6 /* SETextInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextInput.m; sourceTree = "<group>"; };
+		7B70E13D1B6B1B120029F6F6 /* SETextLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextLayout.h; sourceTree = "<group>"; };
+		7B70E13E1B6B1B120029F6F6 /* SETextLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextLayout.m; sourceTree = "<group>"; };
+		7B70E13F1B6B1B120029F6F6 /* SETextMagnifierCaret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextMagnifierCaret.h; sourceTree = "<group>"; };
+		7B70E1401B6B1B120029F6F6 /* SETextMagnifierCaret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextMagnifierCaret.m; sourceTree = "<group>"; };
+		7B70E1411B6B1B120029F6F6 /* SETextMagnifierRanged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextMagnifierRanged.h; sourceTree = "<group>"; };
+		7B70E1421B6B1B120029F6F6 /* SETextMagnifierRanged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextMagnifierRanged.m; sourceTree = "<group>"; };
+		7B70E1431B6B1B120029F6F6 /* SETextSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextSelection.h; sourceTree = "<group>"; };
+		7B70E1441B6B1B120029F6F6 /* SETextSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextSelection.m; sourceTree = "<group>"; };
+		7B70E1451B6B1B120029F6F6 /* SETextSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextSelectionView.h; sourceTree = "<group>"; };
+		7B70E1461B6B1B120029F6F6 /* SETextSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextSelectionView.m; sourceTree = "<group>"; };
+		7B70E1471B6B1B120029F6F6 /* SETextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SETextView.h; sourceTree = "<group>"; };
+		7B70E1481B6B1B120029F6F6 /* SETextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SETextView.m; sourceTree = "<group>"; };
+		7B70E1491B6B1B120029F6F6 /* SEViewCaptureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEViewCaptureHelper.h; sourceTree = "<group>"; };
+		7B70E14A1B6B1B120029F6F6 /* SEViewCaptureHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEViewCaptureHelper.m; sourceTree = "<group>"; };
+		7B70E14B1B6B1B120029F6F6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7B70E14C1B6B1B120029F6F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7B70E14E1B6B1B120029F6F6 /* SECoreTextView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SECoreTextView.bundle; sourceTree = "<group>"; };
 		7B956B121B56080100E36430 /* trip_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_alipay@2x.png"; sourceTree = "<group>"; };
 		7B956B131B56080100E36430 /* trip_wpay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_wpay@2x.png"; sourceTree = "<group>"; };
 		A30DA944BDB4496FCE4343C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -1429,6 +1483,7 @@
 		45D6BA701B268794007DFC7A /* 三方 */ = {
 			isa = PBXGroup;
 			children = (
+				7B70E1291B6B1B120029F6F6 /* SECoreTextView */,
 				45D48BAB1B32AF3500B5801F /* umeng_ios_social_sdk_4.2.3_arm64_custom */,
 				45A4ED9E1B2FE8E0004AAAA3 /* UMessage_Sdk_1.1.0 */,
 				45D6BA711B268794007DFC7A /* SMS_SDK */,
@@ -3217,6 +3272,64 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		7B70E1291B6B1B120029F6F6 /* SECoreTextView */ = {
+			isa = PBXGroup;
+			children = (
+				7B70E12A1B6B1B120029F6F6 /* Lib */,
+				7B70E14B1B6B1B120029F6F6 /* LICENSE */,
+				7B70E14C1B6B1B120029F6F6 /* README.md */,
+				7B70E14D1B6B1B120029F6F6 /* Resources */,
+			);
+			path = SECoreTextView;
+			sourceTree = "<group>";
+		};
+		7B70E12A1B6B1B120029F6F6 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				7B70E12B1B6B1B120029F6F6 /* SECompatibility.h */,
+				7B70E12C1B6B1B120029F6F6 /* SECompatibility.m */,
+				7B70E12D1B6B1B120029F6F6 /* SEConstants.h */,
+				7B70E12E1B6B1B120029F6F6 /* SEConstants.m */,
+				7B70E12F1B6B1B120029F6F6 /* SELineLayout.h */,
+				7B70E1301B6B1B120029F6F6 /* SELineLayout.m */,
+				7B70E1311B6B1B120029F6F6 /* SELinkText.h */,
+				7B70E1321B6B1B120029F6F6 /* SELinkText.m */,
+				7B70E1331B6B1B120029F6F6 /* SESelectionGrabber.h */,
+				7B70E1341B6B1B120029F6F6 /* SESelectionGrabber.m */,
+				7B70E1351B6B1B120029F6F6 /* SETextAttachment.h */,
+				7B70E1361B6B1B120029F6F6 /* SETextAttachment.m */,
+				7B70E1371B6B1B120029F6F6 /* SETextEditingCaret.h */,
+				7B70E1381B6B1B120029F6F6 /* SETextEditingCaret.m */,
+				7B70E1391B6B1B120029F6F6 /* SETextGeometry.h */,
+				7B70E13A1B6B1B120029F6F6 /* SETextGeometry.m */,
+				7B70E13B1B6B1B120029F6F6 /* SETextInput.h */,
+				7B70E13C1B6B1B120029F6F6 /* SETextInput.m */,
+				7B70E13D1B6B1B120029F6F6 /* SETextLayout.h */,
+				7B70E13E1B6B1B120029F6F6 /* SETextLayout.m */,
+				7B70E13F1B6B1B120029F6F6 /* SETextMagnifierCaret.h */,
+				7B70E1401B6B1B120029F6F6 /* SETextMagnifierCaret.m */,
+				7B70E1411B6B1B120029F6F6 /* SETextMagnifierRanged.h */,
+				7B70E1421B6B1B120029F6F6 /* SETextMagnifierRanged.m */,
+				7B70E1431B6B1B120029F6F6 /* SETextSelection.h */,
+				7B70E1441B6B1B120029F6F6 /* SETextSelection.m */,
+				7B70E1451B6B1B120029F6F6 /* SETextSelectionView.h */,
+				7B70E1461B6B1B120029F6F6 /* SETextSelectionView.m */,
+				7B70E1471B6B1B120029F6F6 /* SETextView.h */,
+				7B70E1481B6B1B120029F6F6 /* SETextView.m */,
+				7B70E1491B6B1B120029F6F6 /* SEViewCaptureHelper.h */,
+				7B70E14A1B6B1B120029F6F6 /* SEViewCaptureHelper.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		7B70E14D1B6B1B120029F6F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7B70E14E1B6B1B120029F6F6 /* SECoreTextView.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9FFED9F51BE90EBDBF1336EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3351,11 +3464,13 @@
 				7B5135361B676BD1007EB19F /* trip_addpic@2x.png in Resources */,
 				7B5134491B675B78007EB19F /* discovery_meta.json in Resources */,
 				7B5134CE1B675B78007EB19F /* message_meta.json in Resources */,
+				7B70E15F1B6B1B120029F6F6 /* LICENSE in Resources */,
 				7B5134C01B675B78007EB19F /* add_comment_image@3x.png in Resources */,
 				6B690B1B1B64DE5300A295ED /* trip_mail_blue@2x.png in Resources */,
 				7B5134FA1B675B79007EB19F /* feedback_meta.json in Resources */,
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
 				7B5134BC1B675B78007EB19F /* TPPSTitleViewController.storyboard in Resources */,
+				7B70E1611B6B1B120029F6F6 /* SECoreTextView.bundle in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				6B690B1A1B64DE5300A295ED /* trip_connect@2x.png in Resources */,
 				7B5135631B678F17007EB19F /* personalpagedetail_meta.json in Resources */,
@@ -3509,6 +3624,7 @@
 				7B5134CA1B675B78007EB19F /* TPTripArrangementModel.m in Sources */,
 				7B5134AF1B675B78007EB19F /* TPPSComfirmViewController.m in Sources */,
 				7B51346E1B675B78007EB19F /* ETContainerViewController.m in Sources */,
+				7B70E15A1B6B1B120029F6F6 /* SETextMagnifierRanged.m in Sources */,
 				7B5134CB1B675B78007EB19F /* TPTripArrangementSubView.m in Sources */,
 				7B5134EA1B675B78007EB19F /* TPModifyPWDModel.m in Sources */,
 				7B5134BD1B675B78007EB19F /* TPPSViewController.m in Sources */,
@@ -3527,6 +3643,7 @@
 				45EB31601B3668EE003A97AE /* VZChannel.m in Sources */,
 				7B51348A1B675B78007EB19F /* TPTripListItem.m in Sources */,
 				7B5134751B675B78007EB19F /* TPMeModel.m in Sources */,
+				7B70E1581B6B1B120029F6F6 /* SETextLayout.m in Sources */,
 				7B5134B31B675B78007EB19F /* TPPSFeeViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
 				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
@@ -3544,6 +3661,7 @@
 				7B5134AB1B675B78007EB19F /* TPPubilshServiceViewController.m in Sources */,
 				7B5134E01B675B78007EB19F /* TPUserItem.m in Sources */,
 				45028ABE1B1B535E00417606 /* VZFooterViewFactory.m in Sources */,
+				7B70E1571B6B1B120029F6F6 /* SETextInput.m in Sources */,
 				7B5135011B675B79007EB19F /* TPShareTrippingViewController.m in Sources */,
 				7B5134501B675B78007EB19F /* TPDDCommentCell.m in Sources */,
 				7B5135721B678F17007EB19F /* TPPersonalPageSubView.m in Sources */,
@@ -3568,22 +3686,27 @@
 				7B5134991B675B78007EB19F /* TPDatePickerViewController.m in Sources */,
 				7B5134661B675B78007EB19F /* TPDiscoveryDetailListModel.m in Sources */,
 				7B5134D41B675B78007EB19F /* TPChatListCell.m in Sources */,
+				7B70E1531B6B1B120029F6F6 /* SESelectionGrabber.m in Sources */,
 				7B5135221B675B79007EB19F /* TPReserveDateItem.m in Sources */,
 				7B51349B1B675B78007EB19F /* TPDatePickerModel.m in Sources */,
 				7B5134DE1B675B78007EB19F /* TPLoginManager.m in Sources */,
 				7B51351C1B675B79007EB19F /* TPReserveModel.m in Sources */,
 				45028AA81B1B535E00417606 /* VZAFRequest.m in Sources */,
+				7B70E15D1B6B1B120029F6F6 /* SETextView.m in Sources */,
 				7B5134C91B675B78007EB19F /* TPTripArrangementItem.m in Sources */,
 				7B51356A1B678F17007EB19F /* TPPersonalPageViewController.m in Sources */,
 				7B5135161B675B79007EB19F /* O2OStarView.m in Sources */,
 				45028AC11B1B535E00417606 /* VZListDefaultLoadingCell.m in Sources */,
 				7B5134A11B675B78007EB19F /* TPDatePickerCalenderFooterView.m in Sources */,
 				7B5134DA1B675B78007EB19F /* TPChatListItem.m in Sources */,
+				7B70E15C1B6B1B120029F6F6 /* SETextSelectionView.m in Sources */,
 				7B5134821B675B78007EB19F /* TPCancelTripViewController.m in Sources */,
 				45028AB61B1B535E00417606 /* VZHTTPNetworkAgent.m in Sources */,
 				45028ABC1B1B535E00417606 /* VZHTTPURLResponseCache.m in Sources */,
 				45028B711B1C838100417606 /* UIView+VZEX.m in Sources */,
 				7B51348B1B675B78007EB19F /* TPTripListModel.m in Sources */,
+				7B70E1601B6B1B120029F6F6 /* README.md in Sources */,
+				7B70E15E1B6B1B120029F6F6 /* SEViewCaptureHelper.m in Sources */,
 				7B5134F81B675B79007EB19F /* TPProfileUpdateViewController.m in Sources */,
 				7B5134D51B675B78007EB19F /* TPChatStatusListCell.m in Sources */,
 				45028AB21B1B535E00417606 /* VZListItem.m in Sources */,
@@ -3611,16 +3734,20 @@
 				45028AAD1B1B535E00417606 /* VZHTTPListModel.m in Sources */,
 				456C68DE1B2EB526003D4C20 /* TPGrowingTextView.m in Sources */,
 				7B5134E91B675B78007EB19F /* TPModifyPWDItem.m in Sources */,
+				7B70E1551B6B1B120029F6F6 /* SETextEditingCaret.m in Sources */,
 				7B5134A21B675B78007EB19F /* TPMyServiceCell.m in Sources */,
 				7B5134AC1B675B78007EB19F /* TPPubilshServiceItem.m in Sources */,
+				7B70E1521B6B1B120029F6F6 /* SELinkText.m in Sources */,
 				7B5134A91B675B78007EB19F /* TPMyServiceListModel.m in Sources */,
 				7B5134F01B675B78007EB19F /* TPForgetPWDModel.m in Sources */,
 				7B5134E41B675B78007EB19F /* NSDictionary-DeepMutableCopy.m in Sources */,
 				7B5134641B675B78007EB19F /* TPDDTripItem.m in Sources */,
 				7B5134481B675B78007EB19F /* TPDiscoveryListCell.m in Sources */,
+				7B70E1591B6B1B120029F6F6 /* SETextMagnifierCaret.m in Sources */,
 				45D0C8241B2BE06D00F31BF5 /* ETImageTransformTool.m in Sources */,
 				45028AB71B1B535E00417606 /* VZHTTPNetworkSecurity.m in Sources */,
 				7B5134DD1B675B78007EB19F /* TPSendChatMsgModel.m in Sources */,
+				7B70E1511B6B1B120029F6F6 /* SELineLayout.m in Sources */,
 				7B5134831B675B78007EB19F /* TPTripCancelledViewController.m in Sources */,
 				7B5134F21B675B79007EB19F /* TPRegisterViewController.m in Sources */,
 				45028AB31B1B535E00417606 /* VZModel.m in Sources */,
@@ -3630,6 +3757,7 @@
 				45028AC01B1B535E00417606 /* VZListDefaultErrorCell.m in Sources */,
 				7B5134CC1B675B78007EB19F /* TPMessageListCell.m in Sources */,
 				45D0C8221B2BE06D00F31BF5 /* ETColorTool.m in Sources */,
+				7B70E1501B6B1B120029F6F6 /* SEConstants.m in Sources */,
 				45028AB91B1B535E00417606 /* VZHTTPResponseParser.m in Sources */,
 				7B5135211B675B79007EB19F /* TPReserveDateViewController.m in Sources */,
 				6B7E13AD1B69481200C70FC4 /* TPPSAccessoryView.m in Sources */,
@@ -3637,6 +3765,7 @@
 				7B51356D1B678F17007EB19F /* TPPersonalPageModel.m in Sources */,
 				7B5135681B678F17007EB19F /* TPPersonalPageDetailSubView.m in Sources */,
 				7B5134A81B675B78007EB19F /* TPMyServiceListItem.m in Sources */,
+				7B70E14F1B6B1B120029F6F6 /* SECompatibility.m in Sources */,
 				7B5134CF1B675B78007EB19F /* TPMessageListViewController.m in Sources */,
 				45D0C8231B2BE06D00F31BF5 /* ETImageMaskManagerCenter.m in Sources */,
 				7B51344D1B675B78007EB19F /* TPDiscoveryListItem.m in Sources */,
@@ -3653,6 +3782,7 @@
 				7B5135111B675B79007EB19F /* TPPublishCommentModel.m in Sources */,
 				45028AB81B1B535E00417606 /* VZHTTPRequestGenerator.m in Sources */,
 				7B5135081B675B79007EB19F /* TPCommentListViewController.m in Sources */,
+				7B70E1561B6B1B120029F6F6 /* SETextGeometry.m in Sources */,
 				45028ABA1B1B535E00417606 /* VZHTTPRunloopOperation.m in Sources */,
 				7B5134551B675B78007EB19F /* TPDDInfoCellContainerView.m in Sources */,
 				45D6BA6D1B2686C2007DFC7A /* TPTheme.m in Sources */,
@@ -3671,6 +3801,7 @@
 				45028AAA1B1B535E00417606 /* VZListViewDataSource.m in Sources */,
 				7B5134AD1B675B78007EB19F /* TPPubilshServiceModel.m in Sources */,
 				7B5134901B675B78007EB19F /* TPBeginTripOrderModel.m in Sources */,
+				7B70E1541B6B1B120029F6F6 /* SETextAttachment.m in Sources */,
 				7B5134D11B675B78007EB19F /* TPMessageListViewDelegate.m in Sources */,
 				7B5134941B675B78007EB19F /* TPTripDetailModel.m in Sources */,
 				7B5134CD1B675B78007EB19F /* TPSystemMessageListCell.m in Sources */,
@@ -3686,6 +3817,7 @@
 				7B51349A1B675B78007EB19F /* TPDatePickerItem.m in Sources */,
 				7B5134FB1B675B79007EB19F /* TPFeedbackViewController.m in Sources */,
 				7B5135101B675B79007EB19F /* TPPublishCommentItem.m in Sources */,
+				7B70E15B1B6B1B120029F6F6 /* SETextSelection.m in Sources */,
 				45D48C751B33092200B5801F /* TPLocationManager.m in Sources */,
 				45EB31631B366916003A97AE /* NSObject+VZChannel.m in Sources */,
 				7B5134F41B675B79007EB19F /* TPLoginViewController.m in Sources */,
