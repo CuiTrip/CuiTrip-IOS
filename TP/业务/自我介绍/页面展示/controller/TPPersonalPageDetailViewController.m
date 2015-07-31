@@ -7,8 +7,6 @@
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
-
 
 #import "TPPersonalPageDetailViewController.h"
 #import "TPPersonalPageViewController.h"
@@ -18,20 +16,18 @@
 #import "SEPhotoView.h"
 #import "SETextView.h"
 
-static const CGFloat defaultFontSize = 18.0f;
-
 @interface TPPersonalPageDetailViewController()<SETextViewDelegate ,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
  
-@property(nonatomic,strong)TPPersonalPageDetailModel *personalPageDetailModel; 
-
-@property(nonatomic,strong) NSString* content;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
-@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, weak) IBOutlet SETextView *textView;
+@property(nonatomic,strong) TPPersonalPageDetailModel *personalPageDetailModel;
 @property(nonatomic,strong) TPPersonalPageDetailSubView* headerView;
 
-@property (nonatomic) id normalFont;
+@property(nonatomic,strong) NSString* content;
+
+@property(nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@property(nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property(nonatomic, weak) IBOutlet SETextView *textView;
+
 
 @end
 
@@ -69,33 +65,16 @@ static const CGFloat defaultFontSize = 18.0f;
 {
     [super viewDidLoad];
     
-//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-//        self.edgesForExtendedLayout = UIRectEdgeNone;
-//    }
-    
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.inputAccessoryView = [[[UINib nibWithNibName:@"SEInputAccessoryView" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
+
+//    NSString *initialText = @"关于您自己的介绍，可以包含您的个人生活照。这是您的主页，所以要很认真的编写哦！";
     
-    self.textView.editable = YES;
+    self.textView.font = [UIFont systemFontOfSize:14.0f];
     self.textView.lineSpacing = 8.0f;
-    //    NSString *initialText = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"InitialText" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
-    NSString *initialText = @"关于您自己的介绍，可以包含您的个人生活照。这是您的主页，所以要很认真的编写哦！";
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:initialText];
-    
-    
-    UIFont *normalFont = [UIFont systemFontOfSize:defaultFontSize];
-    CTFontRef ctNormalFont = CTFontCreateWithName((__bridge CFStringRef)normalFont.fontName, normalFont.pointSize, NULL);
-    self.normalFont = (__bridge id)ctNormalFont;
-    CFRelease(ctNormalFont);
-    
-    
-    [attributedString addAttribute:(id)kCTFontAttributeName value:self.normalFont range:NSMakeRange(0, initialText.length)];
-    self.textView.font = self.normalFont;
-    self.textView.attributedText = attributedString;
-    
-    self.doneButton.enabled = YES;
     self.textView.editable = NO;
+
+    self.doneButton.enabled = YES;
+
     [self registerModel:self.personalPageDetailModel];
     [self load];
     
@@ -109,11 +88,6 @@ static const CGFloat defaultFontSize = 18.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if ([TPUser isLogined]) {
-        [self.headerView.imageView sd_setImageWithURL:__url(self.personalPageDetailModel.headPic) placeholderImage:__image(@"girl.jpg")];
-        self.headerView.nameLabel.text = self.personalPageDetailModel.nick;
-        self.headerView.descLabel.text = self.personalPageDetailModel.sign;
-    }
     
     self.tabBarController.tabBar.hidden = true;
     //todo..
@@ -146,13 +120,6 @@ static const CGFloat defaultFontSize = 18.0f;
     
 }
 
-//- (void) viewDidLayoutSubviews {
-//    CGRect viewBounds = self.view.bounds;
-//    CGFloat topBarOffset = self.topLayoutGuide.length;
-//    viewBounds.origin.y = topBarOffset * -1;
-//    self.view.bounds = viewBounds;
-//}
-
 
 -(void)dealloc {
     
@@ -168,8 +135,6 @@ static const CGFloat defaultFontSize = 18.0f;
     
     HIDE_SPINNER(self);
 
-    
-    //todo:
     [self setupView];
 }
 
@@ -198,7 +163,7 @@ static const CGFloat defaultFontSize = 18.0f;
 
 - (void)textViewDidChange:(SETextView *)textView
 {
-    self.textView.font = self.normalFont;
+    self.textView.font = [UIFont systemFontOfSize:14.0f];
     [self updateLayout];
 }
 
@@ -213,7 +178,8 @@ static const CGFloat defaultFontSize = 18.0f;
     self.headerView.nameLabel.text = self.personalPageDetailModel.nick;
     self.headerView.descLabel.text = self.personalPageDetailModel.sign;
     [self.scrollView addSubview:self.headerView];
-    self.scrollView.showsVerticalScrollIndicator = NO;
+    
+    self.scrollView.showsVerticalScrollIndicator = FALSE;
     self.scrollView.showsHorizontalScrollIndicator = FALSE;
     
     self.content = self.personalPageDetailModel.introduce;

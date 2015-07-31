@@ -575,9 +575,30 @@ static const CGFloat defaultFontSize = 18.0f;
     self.textView.text = @"";
     
     NSString *preText = [self getPreText:_content];
-    NSString *imgUrl = [self getImgUrl:_content];
-    while (![imgUrl  isEqual: @""] || ![preText  isEqual: @""]) {
-        if (![preText  isEqual: @""])
+//    NSString *imgUrl = [self getImgUrl:_content];
+    while (![preText  isEqual: @""]) {
+        NSString* urlPre = [NSString stringWithFormat:@"http://cuitrip.oss-cn-shenzhen.aliyuncs.com"];
+        NSRange rang1 = [preText rangeOfString:urlPre
+                                        options:NSBackwardsSearch
+                                          range:NSMakeRange(0, preText.length)
+                                         locale:nil];
+
+        
+        if (rang1.location != NSNotFound && rang1.length > 0) {
+            UIImageView *asyncImage = [[UIImageView alloc] init];
+            [asyncImage sd_setImageWithURL:[NSURL URLWithString:preText] placeholderImage:__image(@"default_details.jpg")];
+            
+            UIImage *image = asyncImage.image;
+            SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
+            
+//                        self.textView.selectedRange=NSMakeRange(self.textView.attributedText.length,0);
+//                        [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
+            
+            [_picsList addObject:preText];
+            [self.textView insertObject:asyncImage size:photoView.bounds.size tag:self.index];
+            self.index++;
+        }
+        else
         {
             [self.textView insertText:preText];
 
@@ -585,24 +606,9 @@ static const CGFloat defaultFontSize = 18.0f;
 //            [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
 
         }
-        if (![imgUrl  isEqual: @""])
-        {
-            UIImageView *asyncImage = [[UIImageView alloc] init];
-            [asyncImage sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:__image(@"default_details.jpg")];
-            
-            UIImage *image = asyncImage.image;
-            SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
-            
-//            self.textView.selectedRange=NSMakeRange(self.textView.attributedText.length,0);
-//            [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
-            
-            [self.textView insertObject:asyncImage size:photoView.bounds.size tag:self.index];
-            self.index++;
-        }
         
         [self updateLayout];
         preText = [self getPreText:_content];
-        imgUrl = [self getImgUrl:_content];
     }
     
 }
@@ -613,17 +619,27 @@ static const CGFloat defaultFontSize = 18.0f;
     NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
     NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
     NSRange rang1 = [srcStr rangeOfString:urlPre
-                                  options:NSBackwardsSearch
+                                  options:NSRegularExpressionSearch
                                     range:NSMakeRange(0, srcStr.length)
                                    locale:nil];
     NSRange rang2 = [srcStr rangeOfString:urlSub
-                                  options:NSBackwardsSearch
+                                  options:NSRegularExpressionSearch
                                     range:NSMakeRange(0, srcStr.length)
                                    locale:nil];
     
     if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
-        result = [_content substringWithRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length)];
-        _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length) withString:@""];
+        // 先取到图片
+        if (rang1.location == 0) {
+            result = [_content substringWithRange:NSMakeRange(rang1.location+rang1.length, rang2.location-rang1.location-rang1.length)];
+            _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang1.location, rang2.location+rang2.length-rang1.location) withString:@""];
+        }
+        else
+        {
+            result = [_content substringWithRange:NSMakeRange(0, rang1.location)];
+            _content = [_content stringByReplacingCharactersInRange:NSMakeRange(0, rang1.location) withString:@""];
+//            result = [_content substringWithRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length)];
+//            _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length) withString:@""];
+        }
     }
     else if(_content.length > 0)
     {
@@ -632,30 +648,6 @@ static const CGFloat defaultFontSize = 18.0f;
     }
     return result;
 }
-
-- (NSString*)getImgUrl:(NSString*)srcStr
-{
-    NSString* result = @"";
-    NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
-    NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
-    NSRange rang1 = [_content rangeOfString:urlPre
-                                    options:NSBackwardsSearch
-                                      range:NSMakeRange(0, _content.length)
-                                     locale:nil];
-    NSRange rang2 = [_content rangeOfString:urlSub
-                                    options:NSBackwardsSearch
-                                      range:NSMakeRange(0, _content.length)
-                                     locale:nil];
-    
-    if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
-        result = [_content substringWithRange:NSMakeRange(rang1.location+rang1.length, rang2.location-rang1.location-rang1.length)];
-//        NSString* srcImg = [_content substringWithRange:NSMakeRange(rang1.location, rang2.location+rang2.length-rang1.location)];
-        [_picsList addObject:result];
-        _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang1.location, rang2.location+rang2.length-rang1.location) withString:@""];
-    }
-    return result;
-}
-
 
 
 @end

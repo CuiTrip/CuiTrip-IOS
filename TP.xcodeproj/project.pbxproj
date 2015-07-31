@@ -340,8 +340,6 @@
 		7B51356C1B678F17007EB19F /* TPPersonalPageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135551B678F17007EB19F /* TPPersonalPageItem.m */; };
 		7B51356D1B678F17007EB19F /* TPPersonalPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135581B678F17007EB19F /* TPPersonalPageModel.m */; };
 		7B51356E1B678F17007EB19F /* InitialText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B51355A1B678F17007EB19F /* InitialText.txt */; };
-		7B51356F1B678F17007EB19F /* SEInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B51355D1B678F17007EB19F /* SEInputAccessoryView.m */; };
-		7B5135701B678F17007EB19F /* SEInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B51355E1B678F17007EB19F /* SEInputAccessoryView.xib */; };
 		7B5135711B678F17007EB19F /* SEPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135601B678F17007EB19F /* SEPhotoView.m */; };
 		7B5135721B678F17007EB19F /* TPPersonalPageSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5135621B678F17007EB19F /* TPPersonalPageSubView.m */; };
 		7B5135751B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5135741B68CDFA007EB19F /* TPPersonalPageDetailViewController.storyboard */; };
@@ -970,9 +968,6 @@
 		7B5135571B678F17007EB19F /* TPPersonalPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPersonalPageModel.h; sourceTree = "<group>"; };
 		7B5135581B678F17007EB19F /* TPPersonalPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPersonalPageModel.m; sourceTree = "<group>"; };
 		7B51355A1B678F17007EB19F /* InitialText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InitialText.txt; sourceTree = "<group>"; };
-		7B51355C1B678F17007EB19F /* SEInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEInputAccessoryView.h; sourceTree = "<group>"; };
-		7B51355D1B678F17007EB19F /* SEInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEInputAccessoryView.m; sourceTree = "<group>"; };
-		7B51355E1B678F17007EB19F /* SEInputAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SEInputAccessoryView.xib; sourceTree = "<group>"; };
 		7B51355F1B678F17007EB19F /* SEPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEPhotoView.h; sourceTree = "<group>"; };
 		7B5135601B678F17007EB19F /* SEPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEPhotoView.m; sourceTree = "<group>"; };
 		7B5135611B678F17007EB19F /* TPPersonalPageSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPersonalPageSubView.h; sourceTree = "<group>"; };
@@ -3229,9 +3224,6 @@
 		7B51355B1B678F17007EB19F /* view */ = {
 			isa = PBXGroup;
 			children = (
-				7B51355C1B678F17007EB19F /* SEInputAccessoryView.h */,
-				7B51355D1B678F17007EB19F /* SEInputAccessoryView.m */,
-				7B51355E1B678F17007EB19F /* SEInputAccessoryView.xib */,
 				7B51355F1B678F17007EB19F /* SEPhotoView.h */,
 				7B5135601B678F17007EB19F /* SEPhotoView.m */,
 				7B5135611B678F17007EB19F /* TPPersonalPageSubView.h */,
@@ -3485,7 +3477,6 @@
 				7B5134C51B675B78007EB19F /* upload_image_failed@2x.png in Resources */,
 				45D48BE21B32AF3500B5801F /* UMSLoginViewController.xib in Resources */,
 				459BAEFD1B21E58700739C7E /* trip_StarS_G@x2.png in Resources */,
-				7B5135701B678F17007EB19F /* SEInputAccessoryView.xib in Resources */,
 				7B51351F1B675B79007EB19F /* TPReserveSubView.xib in Resources */,
 				459BAEF11B21E58700739C7E /* trip_makeovers_w@2x.png in Resources */,
 				459BAEEB1B21E58700739C7E /* trip_addPic_g@2x.png in Resources */,
@@ -3612,7 +3603,6 @@
 				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
 				7B5134AE1B675B78007EB19F /* TPPubilshServiceSubView.m in Sources */,
 				7B5134D01B675B78007EB19F /* TPMessageListViewDataSource.m in Sources */,
-				7B51356F1B678F17007EB19F /* SEInputAccessoryView.m in Sources */,
 				7B5134701B675B78007EB19F /* TPTabBarViewController.m in Sources */,
 				459BAD6C1B1FE79100739C7E /* VZStringBuilder.m in Sources */,
 				7B51344B1B675B78007EB19F /* TPDiscoveryListViewDataSource.m in Sources */,

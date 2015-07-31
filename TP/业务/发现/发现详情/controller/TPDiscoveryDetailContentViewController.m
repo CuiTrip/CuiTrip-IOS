@@ -8,21 +8,15 @@
 
 #import "TPDiscoveryDetailContentViewController.h"
 
-#import <SDWebImage/UIImageView+WebCache.h>
 
 #import "SEPhotoView.h"
 #import "SETextView.h"
 
-static const CGFloat defaultFontSize = 18.0f;
 @interface TPDiscoveryDetailContentViewController ()
-
 
 @property(nonatomic,strong) UIScrollView* scrollView;
 @property(nonatomic,strong) UILabel* titleLabel;
-
 @property(nonatomic, strong)  SETextView *textView;
-
-@property (nonatomic) id normalFont;
 
 
 @end
@@ -32,17 +26,16 @@ static const CGFloat defaultFontSize = 18.0f;
 
 - (void)viewDidLoad
 {
-
     [super viewDidLoad];    
+
     self.navigationController.navigationBarHidden = NO;
     self.view.backgroundColor = HEXCOLOR(0xfffaf1);
 
-    
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(15.0f, self.navigationItem.titleView.vzBottom, self.view.vzWidth - 30.0f, self.view.vzHeight)];
     [self.view addSubview:self.scrollView];
     
     
-    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.view.vzWidth-40, 18)];
+    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 30, self.scrollView.vzWidth, 18)];
     self.titleLabel.textColor = HEXCOLOR(0x4a4a4a);
     self.titleLabel.font = [UIFont systemFontOfSize:18.0f];
     self.titleLabel.text = self.titleString;
@@ -51,18 +44,20 @@ static const CGFloat defaultFontSize = 18.0f;
     [self.scrollView addSubview:self.titleLabel];
 
     
-    self.textView = [[SETextView alloc] initWithFrame:CGRectMake(5.0f, self.titleLabel.vzBottom+20, self.view.vzWidth - 10.0f, self.scrollView.vzHeight-20-self.titleLabel.vzHeight)];
+    self.textView = [[SETextView alloc] initWithFrame:CGRectMake(0, self.titleLabel.vzBottom + 30, self.scrollView.vzWidth, self.scrollView.vzHeight-30-self.titleLabel.vzHeight)];
     self.textView.inputAccessoryView = self.inputAccessoryView;
-    self.textView.backgroundColor = [UIColor whiteColor];
-    self.textView.editable = YES;
+    self.textView.backgroundColor = [UIColor clearColor];
     self.textView.lineSpacing = 8.0f;
-    NSString *initialText = @"";
-    self.textView.text = initialText;
-    self.textView.font = [UIFont systemFontOfSize:18.0f];
+    self.textView.text = @"";
+    self.textView.textColor = HEXCOLOR(0x4a4a4a);
+    self.textView.font = [UIFont systemFontOfSize:14.0f];
     self.textView.delegate = self;
-    [self.scrollView addSubview:self.textView];
-
     self.textView.editable = NO;
+    [self.scrollView addSubview:self.textView];
+    
+    self.scrollView.showsVerticalScrollIndicator = FALSE;
+    self.scrollView.showsHorizontalScrollIndicator = FALSE;
+
     [self setupView];
 }
 
@@ -114,54 +109,16 @@ static const CGFloat defaultFontSize = 18.0f;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods
 
-- (void)showModel:(VZModel *)model
-{
-    //todo:
-    [super showModel:model];
-    
-    HIDE_SPINNER(self);
-    
-    
-    //todo:
-    
-}
-
-- (void)showEmpty:(VZModel *)model
-{
-    //todo:
-    [super showEmpty:model];
-}
-
-
-- (void)showLoading:(VZModel*)model
-{
-    //todo:
-    [super showLoading:model];
-}
-
-- (void)showError:(NSError *)error withModel:(VZModel*)model
-{
-    //todo:
-    [super showError:error withModel:model];
-}
-
-#pragma mark -
-
-
 
 - (void)textViewDidChange:(SETextView *)textView
 {
-    self.textView.font = self.normalFont;
+    self.textView.font = [UIFont systemFontOfSize:14.0f];;
     [self updateLayout];
 }
 
 #pragma mark -
 - (void)setupView
 {
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.showsHorizontalScrollIndicator = FALSE;
-    
-    self.textView.text = @"";
     
     NSString *preText = [self getPreText:_content];
     NSString *imgUrl = [self getImgUrl:_content];
