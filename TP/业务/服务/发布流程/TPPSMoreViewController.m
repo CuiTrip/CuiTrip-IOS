@@ -97,24 +97,32 @@
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"a"])  {
         self.duration = [str substringToIndex:str.length-2];
         [self.durationBtn setTitle:str forState:UIControlStateNormal];
+        [self.durationBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
 
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"b"]) {
         self.number = [str substringToIndex:str.length-1];
         [self.numberBtn setTitle:str forState:UIControlStateNormal];
+        [self.numberBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"c"]) {
         if (index == 0) {
             self.priceType = @"0";
         }
-        else if(index == 0){
+        else if(index == 1){
             self.priceType = @"1";
         }
         else
+        {
             self.priceType = @"2";
+            self.price.text = @"0";
+            self.price.enabled = NO;
+        }
         
         [self.priceTypeBtn setTitle:str forState:UIControlStateNormal];
+        [self.priceTypeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"d"]) {
@@ -125,6 +133,7 @@
             self.moneyType = @"CNY";
 
         [self.moneyTypeBtn setTitle:str forState:UIControlStateNormal];
+        [self.moneyTypeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
 }

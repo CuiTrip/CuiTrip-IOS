@@ -7,12 +7,18 @@
 //
 
 #import "VZViewController.h"
+#import "SETextView.h"
+#import "O2OCommentImageListView.h"
+#import "ETImageTransformTool.h"
+#import "O2OCommentImageItem.h"
+#import "O2OCommentImageView.h"
 
 
+@interface TPDiscoveryDetailContentViewController : VZViewController<SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@interface TPDiscoveryDetailContentViewController : VZViewController
 
 @property(nonatomic,strong)NSString* titleString;
 @property(nonatomic,strong)NSString* content;
  
 @end
+

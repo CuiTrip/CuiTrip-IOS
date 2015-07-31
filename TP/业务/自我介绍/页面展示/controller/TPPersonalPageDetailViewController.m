@@ -250,17 +250,22 @@ static const CGFloat defaultFontSize = 18.0f;
     NSString* urlPre = [NSString stringWithFormat:@"<div>< img src=\""];
     NSString* urlSub = [NSString stringWithFormat:@"\" width=\"100\%\" \/><\/div>"];
     NSRange rang1 = [srcStr rangeOfString:urlPre
-                                    options:NSBackwardsSearch
-                                      range:NSMakeRange(0, srcStr.length)
-                                     locale:nil];
+                                  options:NSBackwardsSearch
+                                    range:NSMakeRange(0, srcStr.length)
+                                   locale:nil];
     NSRange rang2 = [srcStr rangeOfString:urlSub
-                                    options:NSBackwardsSearch
-                                      range:NSMakeRange(0, srcStr.length)
-                                     locale:nil];
+                                  options:NSBackwardsSearch
+                                    range:NSMakeRange(0, srcStr.length)
+                                   locale:nil];
     
     if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
         result = [_content substringWithRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length)];
         _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length) withString:@""];
+    }
+    else if(_content.length > 0)
+    {
+        result = [_content substringWithRange:NSMakeRange(0, srcStr.length)];
+        _content = @"";
     }
     return result;
 }

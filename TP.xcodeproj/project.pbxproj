@@ -218,18 +218,10 @@
 		7B5134AE1B675B78007EB19F /* TPPubilshServiceSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5133221B675B78007EB19F /* TPPubilshServiceSubView.m */; };
 		7B5134AF1B675B78007EB19F /* TPPSComfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5133251B675B78007EB19F /* TPPSComfirmViewController.m */; };
 		7B5134B01B675B78007EB19F /* TPPSConfirmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5133261B675B78007EB19F /* TPPSConfirmViewController.storyboard */; };
-		7B5134B11B675B78007EB19F /* TPPSDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5133281B675B78007EB19F /* TPPSDescriptionViewController.m */; };
-		7B5134B21B675B78007EB19F /* TPPSDescriptionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5133291B675B78007EB19F /* TPPSDescriptionViewController.storyboard */; };
-		7B5134B31B675B78007EB19F /* TPPSFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B51332B1B675B78007EB19F /* TPPSFeeViewController.m */; };
-		7B5134B41B675B78007EB19F /* TPPSFeeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B51332C1B675B78007EB19F /* TPPSFeeViewController.storyboard */; };
-		7B5134B51B675B78007EB19F /* TPPSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B51332E1B675B78007EB19F /* TPPSLocationViewController.m */; };
-		7B5134B61B675B78007EB19F /* TPPSLocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B51332F1B675B78007EB19F /* TPPSLocationViewController.storyboard */; };
 		7B5134B71B675B78007EB19F /* TPPSMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5133311B675B78007EB19F /* TPPSMoreViewController.m */; };
 		7B5134B81B675B78007EB19F /* TPPSMoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5133321B675B78007EB19F /* TPPSMoreViewController.storyboard */; };
 		7B5134B91B675B78007EB19F /* TPPSPicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5133341B675B78007EB19F /* TPPSPicsViewController.m */; };
 		7B5134BA1B675B78007EB19F /* TPPSPicsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5133351B675B78007EB19F /* TPPSPicsViewController.storyboard */; };
-		7B5134BB1B675B78007EB19F /* TPPSTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5133371B675B78007EB19F /* TPPSTitleViewController.m */; };
-		7B5134BC1B675B78007EB19F /* TPPSTitleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5133381B675B78007EB19F /* TPPSTitleViewController.storyboard */; };
 		7B5134BD1B675B78007EB19F /* TPPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B51333A1B675B78007EB19F /* TPPSViewController.m */; };
 		7B5134BE1B675B78007EB19F /* trip_down_g@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B51333B1B675B78007EB19F /* trip_down_g@2x.png */; };
 		7B5134BF1B675B78007EB19F /* add_comment_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B51333D1B675B78007EB19F /* add_comment_image@2x.png */; };
@@ -764,24 +756,12 @@
 		7B5133241B675B78007EB19F /* TPPSComfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSComfirmViewController.h; sourceTree = "<group>"; };
 		7B5133251B675B78007EB19F /* TPPSComfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSComfirmViewController.m; sourceTree = "<group>"; };
 		7B5133261B675B78007EB19F /* TPPSConfirmViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSConfirmViewController.storyboard; sourceTree = "<group>"; };
-		7B5133271B675B78007EB19F /* TPPSDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSDescriptionViewController.h; sourceTree = "<group>"; };
-		7B5133281B675B78007EB19F /* TPPSDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSDescriptionViewController.m; sourceTree = "<group>"; };
-		7B5133291B675B78007EB19F /* TPPSDescriptionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSDescriptionViewController.storyboard; sourceTree = "<group>"; };
-		7B51332A1B675B78007EB19F /* TPPSFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSFeeViewController.h; sourceTree = "<group>"; };
-		7B51332B1B675B78007EB19F /* TPPSFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSFeeViewController.m; sourceTree = "<group>"; };
-		7B51332C1B675B78007EB19F /* TPPSFeeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSFeeViewController.storyboard; sourceTree = "<group>"; };
-		7B51332D1B675B78007EB19F /* TPPSLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSLocationViewController.h; sourceTree = "<group>"; };
-		7B51332E1B675B78007EB19F /* TPPSLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSLocationViewController.m; sourceTree = "<group>"; };
-		7B51332F1B675B78007EB19F /* TPPSLocationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSLocationViewController.storyboard; sourceTree = "<group>"; };
 		7B5133301B675B78007EB19F /* TPPSMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSMoreViewController.h; sourceTree = "<group>"; };
 		7B5133311B675B78007EB19F /* TPPSMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSMoreViewController.m; sourceTree = "<group>"; };
 		7B5133321B675B78007EB19F /* TPPSMoreViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSMoreViewController.storyboard; sourceTree = "<group>"; };
 		7B5133331B675B78007EB19F /* TPPSPicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSPicsViewController.h; sourceTree = "<group>"; };
 		7B5133341B675B78007EB19F /* TPPSPicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSPicsViewController.m; sourceTree = "<group>"; };
 		7B5133351B675B78007EB19F /* TPPSPicsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSPicsViewController.storyboard; sourceTree = "<group>"; };
-		7B5133361B675B78007EB19F /* TPPSTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSTitleViewController.h; sourceTree = "<group>"; };
-		7B5133371B675B78007EB19F /* TPPSTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSTitleViewController.m; sourceTree = "<group>"; };
-		7B5133381B675B78007EB19F /* TPPSTitleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TPPSTitleViewController.storyboard; sourceTree = "<group>"; };
 		7B5133391B675B78007EB19F /* TPPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPSViewController.h; sourceTree = "<group>"; };
 		7B51333A1B675B78007EB19F /* TPPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSViewController.m; sourceTree = "<group>"; };
 		7B51333B1B675B78007EB19F /* trip_down_g@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trip_down_g@2x.png"; path = "../业务/服务/发布流程/trip_down_g@2x.png"; sourceTree = "<group>"; };
@@ -2277,24 +2257,12 @@
 				7B5133261B675B78007EB19F /* TPPSConfirmViewController.storyboard */,
 				6B7E13A71B69459E00C70FC4 /* TPPSContentViewController.h */,
 				6B7E13A81B6945E000C70FC4 /* TPPSContentViewController.m */,
-				7B5133271B675B78007EB19F /* TPPSDescriptionViewController.h */,
-				7B5133281B675B78007EB19F /* TPPSDescriptionViewController.m */,
-				7B5133291B675B78007EB19F /* TPPSDescriptionViewController.storyboard */,
-				7B51332A1B675B78007EB19F /* TPPSFeeViewController.h */,
-				7B51332B1B675B78007EB19F /* TPPSFeeViewController.m */,
-				7B51332C1B675B78007EB19F /* TPPSFeeViewController.storyboard */,
-				7B51332D1B675B78007EB19F /* TPPSLocationViewController.h */,
-				7B51332E1B675B78007EB19F /* TPPSLocationViewController.m */,
-				7B51332F1B675B78007EB19F /* TPPSLocationViewController.storyboard */,
 				7B5133301B675B78007EB19F /* TPPSMoreViewController.h */,
 				7B5133311B675B78007EB19F /* TPPSMoreViewController.m */,
 				7B5133321B675B78007EB19F /* TPPSMoreViewController.storyboard */,
 				7B5133331B675B78007EB19F /* TPPSPicsViewController.h */,
 				7B5133341B675B78007EB19F /* TPPSPicsViewController.m */,
 				7B5133351B675B78007EB19F /* TPPSPicsViewController.storyboard */,
-				7B5133361B675B78007EB19F /* TPPSTitleViewController.h */,
-				7B5133371B675B78007EB19F /* TPPSTitleViewController.m */,
-				7B5133381B675B78007EB19F /* TPPSTitleViewController.storyboard */,
 				7B5133391B675B78007EB19F /* TPPSViewController.h */,
 				7B51333A1B675B78007EB19F /* TPPSViewController.m */,
 				6B7E13AA1B69479D00C70FC4 /* view */,
@@ -3452,7 +3420,6 @@
 				7B5134B01B675B78007EB19F /* TPPSConfirmViewController.storyboard in Resources */,
 				7B5134BA1B675B78007EB19F /* TPPSPicsViewController.storyboard in Resources */,
 				7B51347A1B675B78007EB19F /* TPPayCodeViewController.storyboard in Resources */,
-				7B5134B41B675B78007EB19F /* TPPSFeeViewController.storyboard in Resources */,
 				7B5134E81B675B78007EB19F /* TPModifyPWDViewController.storyboard in Resources */,
 				7B5134781B675B78007EB19F /* pay_meta.json in Resources */,
 				7B5134E31B675B78007EB19F /* trip_display_yes@2x.png in Resources */,
@@ -3469,7 +3436,6 @@
 				6B690B1B1B64DE5300A295ED /* trip_mail_blue@2x.png in Resources */,
 				7B5134FA1B675B79007EB19F /* feedback_meta.json in Resources */,
 				459BAEF41B21E58700739C7E /* trip_nav_m@2x.png in Resources */,
-				7B5134BC1B675B78007EB19F /* TPPSTitleViewController.storyboard in Resources */,
 				7B70E1611B6B1B120029F6F6 /* SECoreTextView.bundle in Resources */,
 				459BAEFE1B21E58700739C7E /* trip_StarS_Y2@x2.png in Resources */,
 				6B690B1A1B64DE5300A295ED /* trip_connect@2x.png in Resources */,
@@ -3514,7 +3480,6 @@
 				7B5135341B67694B007EB19F /* trip_key-up@2x.png in Resources */,
 				7B5131FA1B651C38007EB19F /* trip_set@2x.png in Resources */,
 				7B5134681B675B78007EB19F /* default_list@2x.jpg in Resources */,
-				7B5134B21B675B78007EB19F /* TPPSDescriptionViewController.storyboard in Resources */,
 				459BAEF21B21E58700739C7E /* trip_nav_j@2x.png in Resources */,
 				6B690B1E1B64DE5300A295ED /* trip_weixin2wm@2x.png in Resources */,
 				7B5134C51B675B78007EB19F /* upload_image_failed@2x.png in Resources */,
@@ -3562,7 +3527,6 @@
 				459BAEED1B21E58700739C7E /* trip_display_no@2x.png in Resources */,
 				459BAEEA1B21E58700739C7E /* trip_add_w@2x.png in Resources */,
 				7B5135181B675B79007EB19F /* reserve_meta.json in Resources */,
-				7B5134B61B675B78007EB19F /* TPPSLocationViewController.storyboard in Resources */,
 				459BAEF61B21E58700739C7E /* trip_nav_p@2x.png in Resources */,
 				459BAEEF1B21E58700739C7E /* trip_left_g@2x.png in Resources */,
 				459BAEFA1B21E58700739C7E /* trip_right_g@2x.png in Resources */,
@@ -3644,7 +3608,6 @@
 				7B51348A1B675B78007EB19F /* TPTripListItem.m in Sources */,
 				7B5134751B675B78007EB19F /* TPMeModel.m in Sources */,
 				7B70E1581B6B1B120029F6F6 /* SETextLayout.m in Sources */,
-				7B5134B31B675B78007EB19F /* TPPSFeeViewController.m in Sources */,
 				45028AAB1B1B535E00417606 /* VZListViewDelegate.m in Sources */,
 				45D6BA6E1B2686C2007DFC7A /* TPUIKit.m in Sources */,
 				7B5134AE1B675B78007EB19F /* TPPubilshServiceSubView.m in Sources */,
@@ -3680,7 +3643,6 @@
 				7B5134C41B675B78007EB19F /* O2OCommentImageView.m in Sources */,
 				7B5134FF1B675B79007EB19F /* TPAboutViewController.m in Sources */,
 				7B5134961B675B78007EB19F /* TPTripDetailSubView.m in Sources */,
-				7B5134BB1B675B78007EB19F /* TPPSTitleViewController.m in Sources */,
 				7B51345D1B675B78007EB19F /* TPDiscoveryDetailContentViewController.m in Sources */,
 				7B51351B1B675B79007EB19F /* TPReserveItem.m in Sources */,
 				7B5134991B675B78007EB19F /* TPDatePickerViewController.m in Sources */,
@@ -3810,7 +3772,6 @@
 				7B51347B1B675B78007EB19F /* TPPayViewController.m in Sources */,
 				7B5134921B675B78007EB19F /* TPConfirmTripOrderModel.m in Sources */,
 				7B5134581B675B78007EB19F /* TPDDProfileCellContainerView.m in Sources */,
-				7B5134B51B675B78007EB19F /* TPPSLocationViewController.m in Sources */,
 				7B5134D71B675B78007EB19F /* TPChatListViewController.m in Sources */,
 				7B5134761B675B78007EB19F /* TPMeSubView.m in Sources */,
 				7B5134931B675B78007EB19F /* TPEndTripOrderModel.m in Sources */,
@@ -3835,7 +3796,6 @@
 				7B5135641B678F17007EB19F /* TPPersonalPageDetailViewController.m in Sources */,
 				7B5134601B675B78007EB19F /* TPDiscoveryDetailListViewDelegate.m in Sources */,
 				459B24931B176A1C009BB189 /* AppDelegate.m in Sources */,
-				7B5134B11B675B78007EB19F /* TPPSDescriptionViewController.m in Sources */,
 				7B5134561B675B78007EB19F /* TPDDProfileCell.m in Sources */,
 				7B5134FD1B675B79007EB19F /* TPFeedbackModel.m in Sources */,
 				7B51347D1B675B78007EB19F /* TPPayItem.m in Sources */,

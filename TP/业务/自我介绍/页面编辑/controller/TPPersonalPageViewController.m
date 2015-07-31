@@ -624,7 +624,11 @@ static const CGFloat defaultFontSize = 18.0f;
     if (rang1.location != NSNotFound && rang2.location != NSNotFound) {
         result = [_content substringWithRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length)];
         _content = [_content stringByReplacingCharactersInRange:NSMakeRange(rang2.location+rang2.length, srcStr.length-rang2.location-rang2.length) withString:@""];
-
+    }
+    else if(_content.length > 0)
+    {
+        result = [_content substringWithRange:NSMakeRange(0, srcStr.length)];
+        _content = @"";
     }
     return result;
 }
