@@ -44,6 +44,7 @@
              @"token":[TPUser token]?:@"",
              @"name":self.name?:@"",
              @"address":self.address?:@"",
+             @"country":self.country?:[TPLocationManager locationCountry]?:@"",
              @"city":self.city?:[TPLocationManager locationCity]?:@"",
              @"descpt":self.descpt?:@"",
              @"pic":self.pic?:@"",
@@ -54,8 +55,8 @@
              @"serviceTime":self.serviceTme?:@"",
              @"lat":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].latitude],
              @"lng":[NSString stringWithFormat:@"%f",[TPLocationManager currentLocation].longitude],
-             @"country":@"CN",
              @"descpt":self.descpt?:@"",
+             @"priceType":self.priceType?:@"",
              @"moneyType":self.moneyType?:@""
              };
 }

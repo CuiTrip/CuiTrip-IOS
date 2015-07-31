@@ -13,7 +13,7 @@
  
 #import "TPPersonalPageModel.h" 
 
-#import "SEInputAccessoryView.h"
+#import "TPPSAccessoryView.h"
 #import "SEPhotoView.h"
 #import "SETextView.h"
 #import "SETextInput.h"
@@ -28,7 +28,6 @@
 const int kMaxUserImageCount = 9;
 
 static const CGFloat defaultFontSize = 18.0f;
-static NSString * const OBJECT_REPLACEMENT_CHARACTER = @"\uFFFC";
 
 
 @interface TPPersonalPageViewController() <SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -36,13 +35,12 @@ static NSString * const OBJECT_REPLACEMENT_CHARACTER = @"\uFFFC";
 @property(nonatomic,strong) O2OCommentImageListView* galleryView;
 @property(nonatomic,strong) O2OCommentImageItem* tobeDeletedItem;
 @property(nonatomic,strong) NSMutableArray* picsList;
-@property(nonatomic,strong) NSMutableArray* contentList;
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet SETextView *textView;
 
-@property (nonatomic) SEInputAccessoryView *inputAccessoryView;
+@property (nonatomic) TPPSAccessoryView *inputAccessoryView;
 @property(nonatomic,strong)TPPersonalPageModel *personalPageModel;
 
 @property (nonatomic, assign) int index;
@@ -89,6 +87,7 @@ static NSString * const OBJECT_REPLACEMENT_CHARACTER = @"\uFFFC";
 {
     [super viewDidLoad];
     
+    self.index = 0;
     _picsList = [NSMutableArray new];
     _galleryView  = [[O2OCommentImageListView alloc] initWithFrame:CGRectMake(10, 60, self.view.vzWidth-30, 55)];
     _galleryView.enableAddImage = YES;
@@ -97,16 +96,16 @@ static NSString * const OBJECT_REPLACEMENT_CHARACTER = @"\uFFFC";
     
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.inputAccessoryView = [[[UINib nibWithNibName:@"SEInputAccessoryView" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
-    self.inputAccessoryView.keyboardButton.target = self;
-    self.inputAccessoryView.keyboardButton.action = @selector(showKeyboard:);
-    self.inputAccessoryView.photoButton.target = self;
-    self.inputAccessoryView.photoButton.action = @selector(showImagePicker:);
     
+    self.inputAccessoryView = [[TPPSAccessoryView alloc] initWithFrame : CGRectMake(0.0f, 0.0f, self.view.vzWidth, 44.0f)];
+    self.inputAccessoryView.keyDownBtn.target = self;
+    self.inputAccessoryView.keyDownBtn.action = @selector(hideKeyboard);
+    self.inputAccessoryView.addImageBtn.target = self;
+    self.inputAccessoryView.addImageBtn.action = @selector(showImagePicker);
     self.textView.inputAccessoryView = self.inputAccessoryView;
+    
     self.textView.editable = YES;
     self.textView.lineSpacing = 8.0f;
-//    NSString *initialText = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"InitialText" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
     NSString *initialText = @"关于您自己的介绍，可以包含您的个人生活照。这是您的主页，所以要很认真的编写哦！";
 
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:initialText];
@@ -354,17 +353,15 @@ static NSString * const OBJECT_REPLACEMENT_CHARACTER = @"\uFFFC";
 }
 
 
-- (IBAction)showKeyboard:(id)sender
+
+- (void)hideKeyboard
 {
-    [self.textView resignFirstResponder];
     self.textView.inputView = nil;
     [self.textView reloadInputViews];
-    
+    [self.textView resignFirstResponder];
 }
 
-
-
-- (IBAction)showImagePicker:(id)sender
+- (void)showImagePicker
 {
     [self.textView resignFirstResponder];
 
@@ -567,15 +564,6 @@ static NSString * const OBJECT_REPLACEMENT_CHARACTER = @"\uFFFC";
             self.content = [self.content stringByReplacingCharactersInRange:range withString:formatUrl];
         }
     }
-    
-    //                long Len = self.textView.selectedRange.location;
-    //                NSString *allString = self.textView.text;
-    //                NSString *stringToCursor = [allString substringToIndex:Len];
-    //                NSLog(@"imagePickerController: %@ at: %ld", stringToCursor, Len);
-//    NSRange r = [_uploadContent rangeOfString:@"cuitripInsiderPic"
-//                                      options:NSRegularExpressionSearch
-//                                        range:NSMakeRange(0, _uploadContent.length)
-//                                       locale:nil];
 
 }
 

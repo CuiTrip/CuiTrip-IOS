@@ -16,6 +16,7 @@
 
 @property(nonatomic,strong) NSString* name;
 @property(nonatomic,strong) NSString* address;
+@property(nonatomic,strong) NSString* country;
 @property(nonatomic,strong) NSString* city;
 @property(nonatomic,strong) NSArray* pic;
 @property(nonatomic,strong) NSString* price;
@@ -26,6 +27,7 @@
 @property(nonatomic,strong) NSString* lat;
 @property(nonatomic,strong) NSString* lng;
 @property(nonatomic,strong) NSString* descpt;
+@property(nonatomic,strong) NSString* priceType;
 @property(nonatomic,strong) NSString* moneyType;
 
 @end

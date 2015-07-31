@@ -16,13 +16,16 @@
 @interface TPPSContentViewController()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView* titleView;
+@property (nonatomic, strong) UITextField *titleField;
 @property (nonatomic, strong) SETextView *textView;
 @property (nonatomic, strong) TPPSAccessoryView *inputAccessoryView;
-@property(nonatomic,strong) O2OCommentImageListView* galleryView;
+@property (nonatomic,strong)  O2OCommentImageListView* galleryView;
 @property (nonatomic, strong) NSString *content;
+@property (nonatomic,strong)  NSMutableArray* picsList;
+
 
 @property (nonatomic, assign) int index;
-
 
 
 @end
@@ -32,10 +35,11 @@
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - life cycle methods
 
+
 - (void)loadView
 {
     [super loadView];
-    [self setTitle:@"旅程"];
+    [self setTitle:@"添加发现"];
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
@@ -44,8 +48,27 @@
     [super viewDidLoad];
     self.index = 0;
     self.content = @"";
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(5.0f, 0.0f, self.view.vzWidth - 10.0f, self.view.vzHeight)];
+    
+    _picsList = [NSMutableArray new];
+    _galleryView  = [[O2OCommentImageListView alloc] initWithFrame:CGRectMake(10, 60, self.view.vzWidth-30, 55)];
+    _galleryView.enableAddImage = YES;
+    _galleryView.delegate = self;
+    _galleryView.maxCount = MAX_IMAGE_COUNT;
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(5.0f, self.navigationItem.titleView.vzBottom, self.view.vzWidth - 10.0f, self.view.vzHeight)];
     [self.view addSubview:self.scrollView];
+    
+    
+    self.titleView = [[UIView alloc] initWithFrame:CGRectMake(5.0f, 0, self.view.vzWidth - 10.0f, 50)];
+    self.titleField = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, self.view.vzWidth - 10.0f, 49)];
+    self.titleField.placeholder = @"请输入标题";
+    UIView *bottomBorder = [UIView new];
+    bottomBorder.backgroundColor = [TPTheme grayColor];
+    bottomBorder.frame = CGRectMake(0, _titleView.frame.size.height-1, _titleView.frame.size.width, 1);
+    [bottomBorder setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    [self.titleView addSubview: self.titleField];
+    [self.titleView addSubview: bottomBorder];
+    [self.scrollView addSubview:self.titleView];
     
     self.inputAccessoryView = [[TPPSAccessoryView alloc] initWithFrame : CGRectMake(0.0f, 0.0f, self.view.vzWidth, 44.0f)];
     self.inputAccessoryView.keyDownBtn.target = self;
@@ -53,18 +76,18 @@
     self.inputAccessoryView.addImageBtn.target = self;
     self.inputAccessoryView.addImageBtn.action = @selector(showImagePicker);
     
-    self.textView = [[SETextView alloc] initWithFrame:CGRectMake(5.0f, 0.0f, self.view.vzWidth - 10.0f, self.view.vzHeight)];
+    self.textView = [[SETextView alloc] initWithFrame:CGRectMake(5.0f, self.titleView.vzBottom+20, self.view.vzWidth - 10.0f, self.scrollView.vzHeight-20-self.titleView.vzHeight)];
     self.textView.inputAccessoryView = self.inputAccessoryView;
     self.textView.backgroundColor = [UIColor whiteColor];
     self.textView.editable = YES;
     self.textView.lineSpacing = 8.0f;
-    NSString *initialText = @"1";
+    NSString *initialText = @"";
     self.textView.text = initialText;
     self.textView.font = [UIFont systemFontOfSize:18.0f];
     self.textView.delegate = self;
     [self.scrollView addSubview:self.textView];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -111,6 +134,77 @@
 }
 
 
+- (BOOL)onNext
+{
+    [self.textView resignFirstResponder];
+    [self processText];
+    
+    BOOL isPicUploading = false;
+    NSArray* items = self.galleryView.imageItems;
+    
+    /////// <div>< img src="xxx" width="100%" /></div>
+    
+    for (O2OCommentImageItem* item in items)
+    {
+        
+        if (item.isUploading) {
+            isPicUploading = true;
+            break;
+        }
+        
+        if (item.imageURL) {
+            [_picsList addObject:item.imageURL];
+        }
+        
+    }
+    
+    if (self.titleField.text.length == 0) {
+        TOAST(self, @"请输入名称");
+        return NO;
+    }
+    else if (self.titleField.text.length >= 20)
+    {
+        TOAST(self, @"亲，最多只能输入20个字哦~");
+        return NO;
+    }
+    
+    if (isPicUploading)
+    {
+        TOAST(self, @"请等待图片上传完毕");
+        return NO;
+    }
+    else if (_picsList.count == 0)
+    {
+        TOAST(self, @"请上传图片");
+        return NO;
+    }
+    else if (self.content.length == 0) {
+        TOAST(self, @"请输入图文描述");
+        return NO;
+    }
+    
+    else if (self.content.length >= 800) {
+        TOAST(self, @"亲，最多只能输入800个字哦~");
+        return NO;
+    }
+    else
+    {
+        [self insertUrlInContent];
+        if (self.callback) {
+            self.callback(self.titleField.text, self.content, self.picsList, nil);
+        }
+        return YES;
+    }
+}
+
+- (void)onBack
+{
+    
+}
+
+
+
+
 ///////////////////////
 #pragma mark - btn action 
 
@@ -136,7 +230,8 @@
     [sheet showFromTabBar:self.tabBarController.tabBar];
 }
 
-- (void)done
+
+- (void)processText
 {
     self.content = self.textView.text;
     NSMutableSet *set = [self.textView getAttachments];
@@ -172,6 +267,19 @@
     }
     NSLog(@"%@", self.content);
 }
+
+-(void) insertUrlInContent
+{
+    for (int i = 0; i < _picsList.count; ++i) {
+        NSRange range = [self.content rangeOfString:[NSString stringWithFormat:@"<img%d>",i]];
+        NSString * formatUrl = [NSString stringWithFormat:@"<div>< img src=\"%@\" width=\"100\%\" \/><\/div>",_picsList[i]];
+        if (range.location != NSNotFound && range.length > 0) {
+            self.content = [self.content stringByReplacingCharactersInRange:range withString:formatUrl];
+        }
+    }
+    
+}
+
 
 //////////////////////
 #pragma mark - notify
@@ -218,7 +326,7 @@
     CGSize contentSize = [self.textView sizeThatFits:containerSize];
     
     CGRect frame = self.textView.frame;
-    frame.size.height = MAX(contentSize.height, containerSize.height);
+    frame.size.height = MAX(contentSize.height, containerSize.height) + self.titleView.vzHeight + 20;
     
     self.textView.frame = frame;
     self.scrollView.contentSize = frame.size;

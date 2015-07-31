@@ -20,6 +20,8 @@
 #import "TPPSTitleViewController.h"
 #import "TPPSComfirmViewController.h"
 
+#import "TPPSContentViewController.h"
+
 
 @interface TPPubilshServiceViewController()
 
@@ -33,7 +35,8 @@
 @property(nonatomic,strong) NSString* duration;
 @property(nonatomic,strong) NSString* num;
 @property(nonatomic,strong) NSString* meetWay;
-@property(nonatomic,strong) NSString* fee;
+@property(nonatomic,strong) NSString* price;
+@property(nonatomic,strong) NSString* priceType;
 @property(nonatomic,strong) NSString* moneyType;
 
 
@@ -73,47 +76,74 @@
     if (self) {
         
         //todo..
-        TPPSLocationViewController* loc = __story(@"TPPSLocationViewController",@"tppslocation");
-        loc.callback = ^(NSString* location,...){self.location = location;};
+//        TPPSLocationViewController* loc = __story(@"TPPSLocationViewController",@"tppslocation");
+//        loc.callback = ^(NSString* location,...){self.location = location;};
         
-        TPPSDescriptionViewController* detail = __story(@"TPPSDescriptionViewController", @"tppsdescription");
-        detail.callback = ^(NSString* desc,...){ self.desc = desc;};
-        
-        TPPSPicsViewController* pics = __story(@"TPPSPicsViewController", @"tppspics");
-        pics.callback = ^(NSArray* pics,...){self.pics = pics;};
-        
-        TPPSTitleViewController* title = __story(@"TPPSTitleViewController", @"tppstitle");
-        title.callback = ^(NSString* title,...){self.titleStr =title;};
+//        TPPSDescriptionViewController* detail = __story(@"TPPSDescriptionViewController", @"tppsdescription");
+//        detail.callback = ^(NSString* desc,...){ self.desc = desc;};
         
         
-        // self.callback(self.date,self.duration,self.number,self.meet,nil);
-        TPPSMoreViewController* more = __story(@"TPPSMoreViewController", @"tppsmore");
-        more.callback = ^(NSString* date,...){
-            
+//        TPPSPicsViewController* pics = __story(@"TPPSPicsViewController", @"tppspics");
+//        pics.callback = ^(NSArray* pics,...){self.pics = pics;};
+        
+//        TPPSTitleViewController* title = __story(@"TPPSTitleViewController", @"tppstitle");
+//        title.callback = ^(NSString* title,...){self.titleStr =title;};
+        
+        TPPSContentViewController* content = [TPPSContentViewController new];
+        content.callback = ^(NSString* title,...){
             va_list ap;
-            va_start(ap, date);
+            va_start(ap, title);
             
-            id arg = date;
-            self.date = date;
+            id arg = title;
+            self.titleStr =title;
             int argIndex = 1;
             do
             {
                 arg = va_arg(ap, id);
+                NSLog(@"%@",arg);
                 
+                if (argIndex == 1) {
+                    self.desc = arg;
+                }
+                if (argIndex == 2) {
+                    self.pics = arg;
+                }
+                argIndex ++;
+            }
+            while (arg != nil);
+            va_end(ap);
+
+        };
+        // self.callback(self.address.text,self.duration,self.number,self.price.text,self.priceType,self.moneyType,nil);
+        TPPSMoreViewController* more = __story(@"TPPSMoreViewController", @"tppsmore");
+        more.callback = ^(NSString* address,...){
+            
+            va_list ap;
+            va_start(ap, address);
+            
+            id arg = address;
+            self.location = address;
+            int argIndex = 1;
+            do
+            {
+                arg = va_arg(ap, id);
                 NSLog(@"%@",arg);
                 
                 if (argIndex == 1) {
                     self.duration = arg;
                 }
-                
                 if (argIndex == 2) {
                     self.num = arg;
                 }
-                
                 if (argIndex == 3) {
-                    self.meetWay = arg;
+                    self.price = arg;
                 }
-
+                if (argIndex == 4) {
+                    self.priceType = arg;
+                }
+                if (argIndex == 5) {
+                    self.moneyType = arg;
+                }
                 argIndex ++;
                 
                 
@@ -124,23 +154,20 @@
         
         };
         
-        TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
-        fee.callback = ^(RACTuple* tuple,...){
-        
-            self.fee = tuple[0];
-            self.moneyType = tuple[1];
-        
-        };
+//        TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
+//        fee.callback = ^(RACTuple* tuple,...){
+//            self.fee = tuple[0];
+//            self.moneyType = tuple[1];
+//        };
         
         
         TPPSComfirmViewController* confirm = __story(@"TPPSConfirmViewController", @"tppsconfirm");
         confirm.complete = ^{
-        
             [self.navigationController popViewControllerAnimated:true];
-        
         };
         
-        self.viewControllers = @[loc,detail,pics,title,more,fee,confirm];
+//        self.viewControllers = @[loc,detail,pics,title,more,fee,confirm];
+        self.viewControllers = @[content,more,confirm];
         self.selectedIndex = 0;
     }
     return self;
@@ -293,15 +320,17 @@
 
     SHOW_SPINNER(self);
     
+    self.pubilshServiceModel.country = @"TW";
     self.pubilshServiceModel.name = self.titleStr;
     self.pubilshServiceModel.address = self.location;
     self.pubilshServiceModel.descpt = self.desc;
     self.pubilshServiceModel.pic = self.pics;
-    self.pubilshServiceModel.price = self.fee;
+    self.pubilshServiceModel.price = self.price;
     self.pubilshServiceModel.maxbuyerNum = self.num;
     self.pubilshServiceModel.serviceTme = self.duration;
     self.pubilshServiceModel.bestTime = self.date;
     self.pubilshServiceModel.meetingWay = self.meetWay;
+    self.pubilshServiceModel.priceType = self.priceType;
     self.pubilshServiceModel.moneyType = self.moneyType;
     
     __weak typeof(self) weakSelf = self;
@@ -341,7 +370,7 @@
          self.navigationItem.rightBarButtonItem = nil;
         TPPSComfirmViewController* confirm = (TPPSComfirmViewController* )self.selectedViewController;
         confirm.tripTitle = self.titleStr;
-        confirm.fee = self.fee;
+        confirm.price = self.price;
     }
     else
     {

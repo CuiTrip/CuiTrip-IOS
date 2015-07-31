@@ -23,10 +23,10 @@
     self.titleLabel.text = tripTitle;
 }
 
-- (void)setFee:(NSString *)fee
+- (void)setPrice:(NSString *)price
 {
-    _fee = fee;
-    self.feeLabel.text = fee;
+    _price = price;
+    self.feeLabel.text = price;
 }
 
 - (void)viewDidLoad {

@@ -11,7 +11,7 @@
 @interface TPPSComfirmViewController : VZViewController
 
 @property(nonatomic,strong) NSString* tripTitle;
-@property(nonatomic,strong) NSString* fee;
+@property(nonatomic,strong) NSString* price;
 @property(nonatomic,copy)void(^complete)(void);
 
 
