@@ -107,6 +107,7 @@ static const CGFloat defaultFontSize = 18.0f;
     self.textView.editable = YES;
     self.textView.lineSpacing = 8.0f;
     NSString *initialText = @"关于您自己的介绍，可以包含您的个人生活照。这是您的主页，所以要很认真的编写哦！";
+    
 
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:initialText];
     
@@ -118,6 +119,7 @@ static const CGFloat defaultFontSize = 18.0f;
     [attributedString addAttribute:(id)kCTFontAttributeName value:self.normalFont range:NSMakeRange(0, initialText.length)];
     self.textView.font = self.normalFont;
     self.textView.attributedText = attributedString;
+    self.textView.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -571,9 +573,10 @@ static const CGFloat defaultFontSize = 18.0f;
 {
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = FALSE;
+    [self.textView becomeFirstResponder];
     
     self.textView.text = @"";
-    
+
     NSString *preText = [self getPreText:_content];
 //    NSString *imgUrl = [self getImgUrl:_content];
     while (![preText  isEqual: @""]) {
@@ -595,12 +598,15 @@ static const CGFloat defaultFontSize = 18.0f;
 //                        [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
             
             [_picsList addObject:preText];
-            [self.textView insertObject:asyncImage size:photoView.bounds.size tag:self.index];
+            //[self.textView insertObject:asyncImage size:photoView.bounds.size tag:self.index];
+            [self.textView addObject:asyncImage size:photoView.bounds.size atIndex:self.textView.text.length tag:self.index];
             self.index++;
         }
         else
         {
+
             [self.textView insertText:preText];
+
 
 //            self.textView.selectedRange = NSMakeRange(self.textView.attributedText.length,0);
 //            [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];

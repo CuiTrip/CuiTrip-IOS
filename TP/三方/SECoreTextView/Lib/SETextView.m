@@ -382,9 +382,21 @@ static NSString * const PARAGRAPH_SEPARATOR = @"\u2029";
     [self addObject:object size:size replaceRange:NSMakeRange(index, 0)];
 }
 
+- (void)addObject:(id)object size:(CGSize)size atIndex:(NSInteger)index tag:(int)tag
+{
+    [self addObject:object size:size replaceRange:NSMakeRange(index, 0)];
+}
+
 - (void)addObject:(id)object size:(CGSize)size replaceRange:(NSRange)range
 {
     SETextAttachment *attachment = [[SETextAttachment alloc] initWithObject:object size:size range:range];
+    [self.attachments addObject:attachment];
+}
+
+- (void)addObject:(id)object size:(CGSize)size replaceRange:(NSRange)range tag:(int)tag
+{
+    SETextAttachment *attachment = [[SETextAttachment alloc] initWithObject:object size:size range:range];
+    attachment.tag = tag;
     [self.attachments addObject:attachment];
 }
 

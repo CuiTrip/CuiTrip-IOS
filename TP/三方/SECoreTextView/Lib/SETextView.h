@@ -123,6 +123,11 @@ typedef NS_ENUM(NSUInteger, SETextAttachmentDrawingOptions) {
 #endif
 
 - (void)addObject:(id)object size:(CGSize)size atIndex:(NSInteger)index;
+
+/////trip
+- (void)addObject:(id)object size:(CGSize)size atIndex:(NSInteger)index tag:(int)tag;
+
+
 - (void)addObject:(id)object size:(CGSize)size replaceRange:(NSRange)range;
 #if TARGET_OS_IPHONE
 - (void)insertAttributedText:(NSAttributedString *)attributedText;
