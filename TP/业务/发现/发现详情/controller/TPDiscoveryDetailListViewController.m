@@ -16,7 +16,6 @@
 #import "TPDiscoveryDetailListViewDelegate.h"
 #import "TPDiscoveryDetailContentViewController.h"
 #import "TPDatePickerViewController.h"
-//#import "TPProfilePageListViewController.h"
 #import "TPReserveViewController.h"
 #import "BXImageScrollView.h"
 #import "TPDDTripItem.h"
@@ -314,7 +313,9 @@
     [MobClick beginLogPageView:@"TPDiscoveryDetailListView"];
     if (self.type == kArrangeMent) {
         self.navigationItem.title = @"发现";
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editService)];
+        if (self.checkStatus == 2) {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editService)];
+        }
     }
     else{
         self.navigationController.navigationBarHidden = true;

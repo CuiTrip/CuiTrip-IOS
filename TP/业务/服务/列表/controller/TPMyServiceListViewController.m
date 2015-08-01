@@ -229,34 +229,14 @@
     //todo...
     TPMyServiceListItem* item = (TPMyServiceListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
     if ([item.checkStatus integerValue] != 0) {
-        
         TPDiscoveryDetailListViewController* vc = [TPDiscoveryDetailListViewController new];
         vc.type = kArrangeMent;
         vc.sid = item.sid;
-        
-        //        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
-        //        vc.sid = item.sid;
-        //        vc.tripTitle = item.name;
-        //        vc.tripContent = item.descpt;
-        //        vc.tripAddress = item.address;
-        //        vc.tripScore = [item.score floatValue];
-        //        vc.pic = item.pic[0];
-        //        vc.pic = item.pi
-        
+        vc.checkStatus = [item.checkStatus intValue];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
         [self.navigationController pushViewController:vc animated:true];
-        
     }
-    
 }
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
-    
-    //todo:...
-    
-}
-
 
 ////////////////////////////////////////////////////////////
 #pragma mark - public method
