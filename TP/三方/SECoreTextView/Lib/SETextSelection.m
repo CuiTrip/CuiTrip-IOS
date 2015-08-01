@@ -39,6 +39,11 @@
     }
 }
 
+- (void)setInitialIndex:(NSInteger)initialIndex
+{
+    _initialIndex = initialIndex;
+}
+
 - (NSString *)description
 {
     return NSStringFromRange(self.selectedRange);

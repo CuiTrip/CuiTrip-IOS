@@ -103,6 +103,7 @@
 		45EB31601B3668EE003A97AE /* VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB315F1B3668EE003A97AE /* VZChannel.m */; };
 		45EB31631B366916003A97AE /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB31621B366916003A97AE /* NSObject+VZChannel.m */; };
 		45EB31671B36F369003A97AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31661B36F369003A97AE /* Images.xcassets */; };
+		6B5F0C041B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */; };
 		6B690B1A1B64DE5300A295ED /* trip_connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B151B64DE5300A295ED /* trip_connect@2x.png */; };
 		6B690B1B1B64DE5300A295ED /* trip_mail_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B161B64DE5300A295ED /* trip_mail_blue@2x.png */; };
 		6B690B1C1B64DE5300A295ED /* trip_position@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B171B64DE5300A295ED /* trip_position@2x.png */; };
@@ -548,6 +549,8 @@
 		45EB31621B366916003A97AE /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
 		45EB31661B36F369003A97AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6B5F0C021B6CE9D100070A2B /* TPMyServiceListDeleteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPMyServiceListDeleteModel.h; sourceTree = "<group>"; };
+		6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMyServiceListDeleteModel.m; sourceTree = "<group>"; };
 		6B690B151B64DE5300A295ED /* trip_connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_connect@2x.png"; sourceTree = "<group>"; };
 		6B690B161B64DE5300A295ED /* trip_mail_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_mail_blue@2x.png"; sourceTree = "<group>"; };
 		6B690B171B64DE5300A295ED /* trip_position@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_position@2x.png"; sourceTree = "<group>"; };
@@ -2179,6 +2182,8 @@
 			children = (
 				7B5133111B675B78007EB19F /* TPMyServiceListModel.h */,
 				7B5133121B675B78007EB19F /* TPMyServiceListModel.m */,
+				6B5F0C021B6CE9D100070A2B /* TPMyServiceListDeleteModel.h */,
+				6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3776,6 +3781,7 @@
 				6BCB0F5E1B6A71BE008321C4 /* TPPSImageView.m in Sources */,
 				7B5134651B675B78007EB19F /* TPDiscoveryDetailListItem.m in Sources */,
 				7B5134DB1B675B78007EB19F /* TPChatStatusListItem.m in Sources */,
+				6B5F0C041B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m in Sources */,
 				459B24981B176A1C009BB189 /* main.m in Sources */,
 				7B5135661B678F17007EB19F /* TPPersonalPageDetailModel.m in Sources */,
 				7B5134621B675B78007EB19F /* TPDDInfoItem.m in Sources */,

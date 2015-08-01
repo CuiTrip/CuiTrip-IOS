@@ -18,12 +18,14 @@
 #import "TPTripArrangementViewController.h"
 #import "TPMyServiceListItem.h"
 #import "TPDiscoveryDetailListViewController.h"
+#import "TPMyServiceListDeleteModel.h"
 
 
 @interface TPMyServiceListViewController()
 
 
 @property(nonatomic,strong)TPMyServiceListModel *myServiceListModel;
+@property(nonatomic,strong)TPMyServiceListDeleteModel *myServiceListDeleteModel;
 @property(nonatomic,strong)TPMyServiceListViewDataSource *ds;
 @property(nonatomic,strong)TPMyServiceListViewDelegate *dl;
 
@@ -49,6 +51,16 @@
     return _myServiceListModel;
 }
 
+
+/////////////////////////////////
+#pragma mark - setter and getter
+- (TPMyServiceListDeleteModel* )myServiceListDeleteModel
+{
+    if (!_myServiceListDeleteModel) {
+        _myServiceListDeleteModel = [TPMyServiceListDeleteModel new];
+    }
+    return _myServiceListDeleteModel;
+}
 
 - (TPMyServiceListViewDataSource *)ds{
     
@@ -229,34 +241,14 @@
     //todo...
     TPMyServiceListItem* item = (TPMyServiceListItem* )[self.dataSource itemForCellAtIndexPath:indexPath];
     if ([item.checkStatus integerValue] != 0) {
-        
         TPDiscoveryDetailListViewController* vc = [TPDiscoveryDetailListViewController new];
         vc.type = kArrangeMent;
         vc.sid = item.sid;
-        
-        //        TPTripArrangementViewController* vc = [TPTripArrangementViewController new];
-        //        vc.sid = item.sid;
-        //        vc.tripTitle = item.name;
-        //        vc.tripContent = item.descpt;
-        //        vc.tripAddress = item.address;
-        //        vc.tripScore = [item.score floatValue];
-        //        vc.pic = item.pic[0];
-        //        vc.pic = item.pi
-        
+        vc.checkStatus = [item.checkStatus intValue];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
         [self.navigationController pushViewController:vc animated:true];
-        
     }
-    
 }
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
-    
-    //todo:...
-    
-}
-
 
 ////////////////////////////////////////////////////////////
 #pragma mark - public method
@@ -321,6 +313,12 @@
     //setupUI
     [self setupTableView];
     [self load];
+}
+
+- (void)deleteUnpassService:(NSString *)sid callback:(VZModelCallback)aCallback
+{
+    self.myServiceListDeleteModel.sid = sid;
+    [self.myServiceListDeleteModel loadWithCompletion:aCallback];
 }
 
 @end

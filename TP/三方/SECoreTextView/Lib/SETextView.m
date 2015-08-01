@@ -157,6 +157,12 @@ static NSString * const PARAGRAPH_SEPARATOR = @"\u2029";
     return self.attachments;
 }
 
+
+- (SETextLayout *)getTextLayout
+{
+    return self.textLayout;
+}
+
 #pragma mark -
 
 + (CGRect)frameRectWithAttributtedString:(NSAttributedString *)attributedString
@@ -387,6 +393,23 @@ static NSString * const PARAGRAPH_SEPARATOR = @"\u2029";
     SETextAttachment *attachment = [[SETextAttachment alloc] initWithObject:object size:size range:range];
     [self.attachments addObject:attachment];
 }
+
+
+
+////////////
+#pragma mark - for trip
+- (void)addObject:(id)object size:(CGSize)size atIndex:(NSInteger)index tag:(int)tag
+{
+    [self addObject:object size:size replaceRange:NSMakeRange(index, 0) tag:tag];
+}
+
+- (void)addObject:(id)object size:(CGSize)size replaceRange:(NSRange)range tag:(int)tag
+{
+    SETextAttachment *attachment = [[SETextAttachment alloc] initWithObject:object size:size range:range];
+    attachment.tag = tag;
+    [self.attachments addObject:attachment];
+}
+////////////
 
 - (void)setAdditionalAttributes
 {

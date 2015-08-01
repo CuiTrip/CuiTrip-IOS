@@ -14,5 +14,6 @@
 
 - (id)initWithIndex:(NSInteger)index;
 - (void)setSelectionEndAtIndex:(NSInteger)index;
+- (void)setInitialIndex:(NSInteger)initialIndex;
 
 @end

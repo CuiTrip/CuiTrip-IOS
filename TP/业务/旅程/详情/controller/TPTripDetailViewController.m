@@ -429,9 +429,7 @@
 
 - (void)callTripping
 {
-//    [self.navigationController pushViewController:[TPTrippingContactInfoViewController new] animated:true];
-    TPPSContentViewController *vc = [TPPSContentViewController new];
-    [self.navigationController pushViewController:vc animated:true];
+    [self.navigationController pushViewController:[TPTrippingContactInfoViewController new] animated:true];
 }
 
 - (void)cancelTrip

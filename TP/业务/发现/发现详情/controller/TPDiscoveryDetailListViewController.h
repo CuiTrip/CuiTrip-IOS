@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, Type)
 
 @property(nonatomic,assign)Type type;
 @property(nonatomic,strong)NSString* sid;
+@property(nonatomic,assign)int checkStatus;
 
 @end
   

@@ -10,8 +10,10 @@
 
   
 #import "VZListViewDataSource.h"
+#import "TPMyServiceListDeleteModel.h"
 
 @interface TPMyServiceListViewDataSource : VZListViewDataSource
+
 
 @end
   

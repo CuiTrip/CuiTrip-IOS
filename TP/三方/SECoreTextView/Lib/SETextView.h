@@ -11,6 +11,7 @@
 #import "SELinkText.h"
 #import "SETextAttachment.h"
 #import "SECompatibility.h"
+#import "SETextLayout.h"
 
 typedef void(^SETextAttachmentDrawingBlock)(CGRect rect, CGContextRef context);
 
@@ -91,6 +92,8 @@ typedef NS_ENUM(NSUInteger, SETextAttachmentDrawingOptions) {
 
 - (NSMutableSet *)getAttachments;
 
+- (SETextLayout *)getTextLayout;
+
 ////////////////////////////////////////
 
 - (id)initWithFrame:(CGRect)frame;
@@ -123,6 +126,11 @@ typedef NS_ENUM(NSUInteger, SETextAttachmentDrawingOptions) {
 #endif
 
 - (void)addObject:(id)object size:(CGSize)size atIndex:(NSInteger)index;
+
+/////trip
+- (void)addObject:(id)object size:(CGSize)size atIndex:(NSInteger)index tag:(int)tag;
+
+
 - (void)addObject:(id)object size:(CGSize)size replaceRange:(NSRange)range;
 #if TARGET_OS_IPHONE
 - (void)insertAttributedText:(NSAttributedString *)attributedText;

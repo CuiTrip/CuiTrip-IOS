@@ -562,4 +562,24 @@
     self.textSelection = nil;
 }
 
+
+///////////
+#pragma mark - for trip
+- (void)setSelectionEndAtIndex:(NSInteger)index
+{
+    if (self.textSelection == nil) {
+        self.textSelection = [[SETextSelection alloc] initWithIndex:index];
+    }
+    [self.textSelection setSelectionEndAtIndex:index];
+}
+
+- (void)setSelectionStart:(NSInteger)index
+{
+    if (self.textSelection == nil) {
+        self.textSelection = [[SETextSelection alloc] initWithIndex:index];
+    }
+    [self.textSelection setInitialIndex:index];
+}
+//////////
+
 @end

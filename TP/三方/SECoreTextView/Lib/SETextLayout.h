@@ -50,6 +50,11 @@
 - (void)selectAll;
 - (void)clearSelection;
 
+//////for trip////////////
+- (void)setSelectionEndAtIndex:(NSInteger)index;
+- (void)setSelectionStart:(NSInteger)index;
+//////////////////////////
+
 + (CGRect)frameRectWithAttributtedString:(NSAttributedString *)attributedString
                           constraintSize:(CGSize)constraintSize;
 

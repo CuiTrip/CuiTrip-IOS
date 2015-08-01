@@ -10,9 +10,9 @@
 
 
 #import "TPMyServiceListViewDataSource.h"
-//#import "TPMyServiceListCell.h"
 #import "TPMyServiceListItem.h"
 #import "TPMyServiceCell.h"
+#import "TPMyServiceListViewController.h"
 
 
 @interface TPMyServiceListViewDataSource()
@@ -57,8 +57,25 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        [self removeItemAtIndexPath:indexPath];
-        [tableView reloadData];
+        TPMyServiceListViewController *serviceVC = (TPMyServiceListViewController *)self.controller;
+        TPMyServiceListItem* item = (TPMyServiceListItem* )[self itemForCellAtIndexPath:indexPath];
+
+        SHOW_SPINNER(serviceVC);
+        __weak typeof(TPMyServiceListViewController *) weakSelf = serviceVC;
+        [serviceVC deleteUnpassService:item.sid callback:^(VZModel *model, NSError *error) {
+            HIDE_SPINNER(weakSelf);
+            if (!error) {
+                TOAST(weakSelf, @"删除成功");
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self removeItemAtIndexPath:indexPath];
+                    [tableView reloadData];
+                });
+            }
+            else
+            {
+                TOAST_ERROR(weakSelf, error);
+            }
+        }];
     }
 
 }
