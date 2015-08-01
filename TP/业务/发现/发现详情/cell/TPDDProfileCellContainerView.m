@@ -34,12 +34,21 @@
     self.avatarIcon.layer.masksToBounds = true;
     
     self.avatarIcon.userInteractionEnabled = YES;
-    UIGestureRecognizer *singleTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(headPicClicked:)];
+    
+    
+    //单个手指双击屏幕事件注册
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headPicClicked)];
+    // Set required taps and number of touches
+    [singleTap setNumberOfTapsRequired:1];
+    [singleTap setNumberOfTouchesRequired:1];
+    
+    // Add the gesture to the view
     [self.avatarIcon addGestureRecognizer:singleTap];
 
 }
 
-- (void)headPicClicked:(id)sender
+
+- (void)headPicClicked
 {
     __weak typeof(self) weakSelf = self;
     if (self.callback) {
