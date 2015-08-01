@@ -301,10 +301,7 @@
     UIView* footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), 44)];
     footer.backgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = footer;
-    
-    
-        [self.view addSubview:self.headerNavView];
-
+    [self.view addSubview:self.headerNavView];
 }
 
 - (void)viewWillAppear:(BOOL)animated

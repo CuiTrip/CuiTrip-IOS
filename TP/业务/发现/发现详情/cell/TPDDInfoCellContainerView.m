@@ -48,7 +48,17 @@
     
     self.infoNameLabel.text = item.name;
     self.infoAddressLabel.text=  item.address;
-    self.infoContentLabel.text = item.desc;
+
+    NSString *string = @"";
+    NSRange range = [item.desc rangeOfString:@"<div>"];
+    if (range.length == 0) {
+        string = item.desc;
+    }
+    else{
+        string = [item.desc substringToIndex:range.location];
+    }
+    
+    self.infoContentLabel.text = string;
     [self setScore:[item.score floatValue]];
 }
 
