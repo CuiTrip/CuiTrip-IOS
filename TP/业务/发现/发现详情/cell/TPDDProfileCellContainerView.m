@@ -32,7 +32,19 @@
     self.avatarIcon.image = __image(@"girl.jpg");
     self.avatarIcon.layer.cornerRadius = 0.5*self.avatarIcon.vzWidth;
     self.avatarIcon.layer.masksToBounds = true;
+    
+    self.avatarIcon.userInteractionEnabled = YES;
+    UIGestureRecognizer *singleTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(headPicClicked:)];
+    [self.avatarIcon addGestureRecognizer:singleTap];
 
+}
+
+- (void)headPicClicked:(id)sender
+{
+    __weak typeof(self) weakSelf = self;
+    if (self.callback) {
+        self.callback(@"gotoUserIntroduce",weakSelf.item);
+    }
 }
 
 - (void)setItem:(TPDDProfileItem* )item

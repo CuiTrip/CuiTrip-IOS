@@ -78,6 +78,14 @@
         profileItem.registerTime = userInfo[@"gmtModified"];
         profileItem.status = userInfo[@"status"];
         profileItem.career = userInfo[@"career"];
+        
+        NSString* extInfoDic = userInfo[@"extInfo"];
+        NSData *extInfoData = [extInfoDic dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *extInfoObj = [NSJSONSerialization JSONObjectWithData:extInfoData options:0 error:nil];
+        profileItem.introduce = extInfoObj[@"introduce"];
+        profileItem.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
+        profileItem.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
+        
         self.insiderProfileItem = profileItem;
         [list addObject:profileItem];
     }

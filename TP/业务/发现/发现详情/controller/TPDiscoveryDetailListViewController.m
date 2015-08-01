@@ -23,6 +23,9 @@
 #import "TPDDProfileItem.h"
 #import "TPLicenceViewController.h"
 #import "TPTripArrangementModel.h"
+#import "TPPSContentEditViewController.h"
+#import "TPPersonalPageViewController.h"
+#import "TPPersonalPageDetailViewController.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -410,6 +413,10 @@
         vc.content = self.discoveryDetailListModel.tripInfoItem.desc;
         [self.navigationController pushViewController:vc animated:YES];
     }
+    else if ([type isEqualToString:@"gotoUserIntroduce"])
+    {
+        [self gotoUserPage];
+    }
     else if ([type isEqualToString:@"gotoComment"])
     {
         TPCommentListViewController* vc = [TPCommentListViewController new];
@@ -450,17 +457,60 @@
 #pragma mark - private method
 
 - (void)editService{
-    NSLog(@"edit service, yeah!");
+    TPPSContentEditViewController *vc = [TPPSContentEditViewController new];
+    vc.tripArrangementModel = _tripArrangementModel;
+    vc.discoveryDetailListModel = _discoveryDetailListModel;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
+-(void)gotoUserPage{
+    if (self.type == kDetail) {
+        // 旅行者模式，跳转到发现者详情页
+        if ([self.discoveryDetailListModel.insiderProfileItem.introduceAuditStatus isEqualToString:@"1"])
+        {
+            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
+            vc.content = self.discoveryDetailListModel.insiderProfileItem.introduce;
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else{
+            TOAST(self, @"发现者自我介绍页审核中，敬请期待~");
+        }
+    } else{
+        // 发现者模式，跳转到个人主页
+        if ([TPUser introduce]==nil)
+        {
+            TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+            vc.content = @"";
+            [self.navigationController pushViewController:vc animated:true];
+            
+        }
+        else if ([[TPUser introduceAuditStatus] isEqualToString:@"2"])
+        {
+            TOAST(self, @"自我介绍页审核未通过");
+            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+            vc.content = [TPUser introduce];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else if ([[TPUser introduceAuditStatus] isEqualToString:@"1"])
+        {
+            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
+            vc.content = [TPUser introduce];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else{
+            TOAST(self, @"自我介绍页正在审核中");
+        }
 
+    }
+    
+}
 
 /**
  * 分享到微信设置
  *
  */
-//////////////////////////////////////////////////////////// 
-#pragma mark - private callback method 
+////////////////////////////////////////////////////////////
+#pragma mark - private callback method
 
 -(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
 {
