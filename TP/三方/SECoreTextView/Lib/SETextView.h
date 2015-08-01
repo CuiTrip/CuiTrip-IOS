@@ -11,6 +11,7 @@
 #import "SELinkText.h"
 #import "SETextAttachment.h"
 #import "SECompatibility.h"
+#import "SETextLayout.h"
 
 typedef void(^SETextAttachmentDrawingBlock)(CGRect rect, CGContextRef context);
 
@@ -90,6 +91,8 @@ typedef NS_ENUM(NSUInteger, SETextAttachmentDrawingOptions) {
 //////////////////for trip //////////////
 
 - (NSMutableSet *)getAttachments;
+
+- (SETextLayout *)getTextLayout;
 
 ////////////////////////////////////////
 

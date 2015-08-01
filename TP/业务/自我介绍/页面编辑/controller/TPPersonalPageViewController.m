@@ -17,12 +17,13 @@
 #import "SEPhotoView.h"
 #import "SETextView.h"
 #import "SETextInput.h"
-
+#import "SETextLayout.h"
 
 #import "O2OCommentImageListView.h"
 #import "ETImageTransformTool.h"
 #import "O2OCommentImageItem.h"
 #import "O2OCommentImageView.h"
+
 
 
 const int kMaxUserImageCount = 9;
@@ -576,7 +577,6 @@ static const CGFloat defaultFontSize = 18.0f;
     [self.textView becomeFirstResponder];
     
     self.textView.text = @"";
-
     NSString *preText = [self getPreText:_content];
 //    NSString *imgUrl = [self getImgUrl:_content];
     while (![preText  isEqual: @""]) {
@@ -604,13 +604,10 @@ static const CGFloat defaultFontSize = 18.0f;
         }
         else
         {
-
+            SETextLayout *textLayout = [self.textView getTextLayout];
+            [textLayout setSelectionStart:self.textView.text.length];
+            [textLayout setSelectionEndAtIndex:self.textView.text.length];
             [self.textView insertText:preText];
-
-
-//            self.textView.selectedRange = NSMakeRange(self.textView.attributedText.length,0);
-//            [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
-
         }
         
         [self updateLayout];
