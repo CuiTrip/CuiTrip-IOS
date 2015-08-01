@@ -23,6 +23,7 @@
 #import "TPDDProfileItem.h"
 #import "TPLicenceViewController.h"
 #import "TPTripArrangementModel.h"
+#import "TPPSContentEditViewController.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -450,7 +451,10 @@
 #pragma mark - private method
 
 - (void)editService{
-    NSLog(@"edit service, yeah!");
+    TPPSContentEditViewController *vc = [TPPSContentEditViewController new];
+    vc.tripArrangementModel = _tripArrangementModel;
+    vc.discoveryDetailListModel = _discoveryDetailListModel;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
