@@ -13,5 +13,7 @@
 
 @interface TPMyServiceListViewController : VZListViewController
 
+- (void)deleteUnpassService:(NSString *)sid callback:(VZModelCallback)aCallback;
+
 @end
   

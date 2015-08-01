@@ -18,12 +18,14 @@
 #import "TPTripArrangementViewController.h"
 #import "TPMyServiceListItem.h"
 #import "TPDiscoveryDetailListViewController.h"
+#import "TPMyServiceListDeleteModel.h"
 
 
 @interface TPMyServiceListViewController()
 
 
 @property(nonatomic,strong)TPMyServiceListModel *myServiceListModel;
+@property(nonatomic,strong)TPMyServiceListDeleteModel *myServiceListDeleteModel;
 @property(nonatomic,strong)TPMyServiceListViewDataSource *ds;
 @property(nonatomic,strong)TPMyServiceListViewDelegate *dl;
 
@@ -49,6 +51,16 @@
     return _myServiceListModel;
 }
 
+
+/////////////////////////////////
+#pragma mark - setter and getter
+- (TPMyServiceListDeleteModel* )myServiceListDeleteModel
+{
+    if (!_myServiceListDeleteModel) {
+        _myServiceListDeleteModel = [TPMyServiceListDeleteModel new];
+    }
+    return _myServiceListDeleteModel;
+}
 
 - (TPMyServiceListViewDataSource *)ds{
     
@@ -301,6 +313,12 @@
     //setupUI
     [self setupTableView];
     [self load];
+}
+
+- (void)deleteUnpassService:(NSString *)sid callback:(VZModelCallback)aCallback
+{
+    self.myServiceListDeleteModel.sid = sid;
+    [self.myServiceListDeleteModel loadWithCompletion:aCallback];
 }
 
 @end
