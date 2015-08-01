@@ -46,6 +46,12 @@
 
 + (NSString* )extInfo;
 
++ (NSString* )introduce;
+
++ (NSString* )introduceAuditStatus;
+
++ (NSString* )introduceFailedReason;
+
 //+ (NSString* )
 
 + (BOOL)isLogined;

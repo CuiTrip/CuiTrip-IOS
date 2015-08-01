@@ -20,7 +20,7 @@
 @interface TPMeViewController()
 
 
-@property(nonatomic,strong)TPMeModel *meModel;
+@property(nonatomic,strong) TPMeModel *meModel;
 @property(nonatomic,strong) TPMeSubView* headerView;
 
 @end
@@ -171,10 +171,29 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
-        TOAST(self, @"我的主页");
-        TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
-        [self.navigationController pushViewController:vc animated:true];
-//        loc.callback = ^(NSString* location,...){self.location = location;};
+        if ([TPUser introduce]==nil)
+        {
+            TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+            vc.content = @"";
+            [self.navigationController pushViewController:vc animated:true];
+            
+        }
+        else if ([[TPUser introduceAuditStatus] isEqualToString:@"2"])
+        {
+            TOAST(self, @"自我介绍页审核未通过");
+            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+            vc.content = [TPUser introduce];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else if ([[TPUser introduceAuditStatus] isEqualToString:@"1"])
+        {
+            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
+            vc.content = [TPUser introduce];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else{
+            TOAST(self, @"自我介绍页正在审核中");
+        }
     }
     else if(indexPath.row == 2)
     {
@@ -204,6 +223,20 @@
     self.headerView.nameLabel.text = [TPUser userNick];
     self.headerView.descLabel.text = [TPUser sign];
     self.tableView.tableHeaderView = self.headerView;
+    
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(self.view.vzWidth-100, 5, 54, 10)];
+    label1.backgroundColor = [UIColor clearColor];
+    label1.font = [UIFont systemFontOfSize:12.0f];
+    if ([[TPUser introduceAuditStatus] isEqualToString:@"0"]) {
+        label1.textColor = [TPTheme bgColor];;
+        label1.text = @"正在审核中";
+    } else if ([[TPUser introduceAuditStatus] isEqualToString:@"1"]){
+        label1.textColor = [TPTheme bgColor];;
+        label1.text = @"审核已通过";
+    } else {
+        label1.textColor = [TPTheme bgColor];;
+        label1.text = @"审核未通过";
+    }
     
     
     TPUserType type = [TPUser type];

@@ -22,8 +22,6 @@
 @property(nonatomic,strong) TPPersonalPageDetailModel *personalPageDetailModel;
 @property(nonatomic,strong) TPPersonalPageDetailSubView* headerView;
 
-@property(nonatomic,strong) NSString* content;
-
 @property(nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 @property(nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property(nonatomic, weak) IBOutlet SETextView *textView;

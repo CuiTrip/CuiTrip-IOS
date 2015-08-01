@@ -76,6 +76,8 @@
     rightButton.titleLabel.textAlignment = NSTextAlignmentCenter;//设置title的字体居中
     [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];//设置title在一般情况下为白色字体
     [rightButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];//设置title在button被选中情况下为灰色字体
+    [rightButton addTarget:self action:@selector(submitFeedback:) forControlEvents:UIControlEventValueChanged];
+    
     //    [rightButton addTarget:self action:@selector(searchprogram)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightItem;
@@ -157,6 +159,10 @@
     [super showError:error withModel:model];
 }
 
+- (void)submitFeedback
+{
+    TOAST(self, @"提交成功");
+}
 
 @end
  

@@ -55,19 +55,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 1)
-    {
-        UIViewController* vc = [TPFeedbackViewController new];
-        [self.navigationController pushViewController:vc animated:true];
-        
-    }
-    else if(indexPath.row == 2)
+//    if (indexPath.row == 1)
+//    {
+//        UIViewController* vc = [TPFeedbackViewController new];
+//        [self.navigationController pushViewController:vc animated:true];
+//        
+//    }
+    if(indexPath.row == 1)
     {
         UIViewController* vc = [TPShareTrippingViewController new];
         [self.navigationController pushViewController:vc animated:true];
 
     }
-    else if(indexPath.row == 3)
+    else if(indexPath.row == 2)
     {
         UIViewController* vc = [TPTrippingContactInfoViewController new];
         [self.navigationController pushViewController:vc animated:true];

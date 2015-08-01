@@ -134,6 +134,21 @@
     return [TPUser sharedInstance].userItem.extInfo;
 }
 
++ (NSString* )introduce
+{
+    return [TPUser sharedInstance].userItem.introduce;
+}
+
++ (NSString* )introduceAuditStatus
+{
+    return [TPUser sharedInstance].userItem.introduceAuditStatus;
+}
+
++ (NSString* )introduceFailedReason
+{
+    return [TPUser sharedInstance].userItem.introduceFailedReason;
+}
+
 + (BOOL)isLogined
 {
     return [TPUser sharedInstance].userItem.token.length > 0;

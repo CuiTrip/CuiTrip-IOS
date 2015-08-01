@@ -56,6 +56,8 @@
 
 - (BOOL)parseResponse:(id)JSON
 {
+    NSDictionary* result = JSON;
+    [TPUser update:result];
     return true;
 }
 

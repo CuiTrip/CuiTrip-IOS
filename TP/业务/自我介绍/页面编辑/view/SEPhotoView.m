@@ -26,7 +26,8 @@
         
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectInset(self.bounds, 1.0f, 1.0f)];
         self.imageView.backgroundColor = [UIColor clearColor];
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:self.imageView];
         
         self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];

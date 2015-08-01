@@ -56,6 +56,9 @@
     // Do any additional setup after loading the view.
     
     [self setTitle:@"注册"];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     self.areaCode = [TPUtils defaultLocalCode];
     self.pwdTextField.secureTextEntry = true;
