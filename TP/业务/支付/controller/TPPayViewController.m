@@ -113,7 +113,8 @@
 
     self.titleLabel.text = self.tripDetailModel.serviceName;
     [self.imageView sd_setImageWithURL:__url(self.tripDetailModel.insiderHeadPic) placeholderImage:__image(@"default_details.jpg")];
-    self.tripDateLabel.text = self.tripDetailModel.serviceDate;
+    NSData *sDate = [TPUtils dateWithString:self.tripDetailModel.serviceDate forFormat:nil];
+    self.tripDateLabel.text = [TPUtils fullDateFormatString:sDate];
     self.tripNumberLabel.text = [self.tripDetailModel.buyerNum stringByAppendingString:@"人"];
     self.tripFeeLabel.text = self.tripDetailModel.servicePrice;
     self.tripMoneyTypeLabel.text = ([self.tripDetailModel.moneyType isEqual:@"TWD"])?@"新台币":@"人民币";
