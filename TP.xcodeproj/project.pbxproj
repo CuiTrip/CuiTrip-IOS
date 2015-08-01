@@ -113,6 +113,7 @@
 		6B7E13A91B6945E000C70FC4 /* TPPSContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E13A81B6945E000C70FC4 /* TPPSContentViewController.m */; };
 		6B7E13AD1B69481200C70FC4 /* TPPSAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E13AC1B69481200C70FC4 /* TPPSAccessoryView.m */; };
 		6BCB0F5E1B6A71BE008321C4 /* TPPSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */; };
+		6BD6FE461B6D3DE6000F15E0 /* TPPSContentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6FE451B6D3DE6000F15E0 /* TPPSContentEditViewController.m */; };
 		7B5131FA1B651C38007EB19F /* trip_set@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5131F91B651C38007EB19F /* trip_set@2x.png */; };
 		7B5134481B675B78007EB19F /* TPDiscoveryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132261B675B78007EB19F /* TPDiscoveryListCell.m */; };
 		7B5134491B675B78007EB19F /* discovery_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B5132281B675B78007EB19F /* discovery_meta.json */; };
@@ -563,6 +564,8 @@
 		6B7E13AC1B69481200C70FC4 /* TPPSAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSAccessoryView.m; sourceTree = "<group>"; };
 		6BCB0F5C1B6A7187008321C4 /* TPPSImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPSImageView.h; sourceTree = "<group>"; };
 		6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSImageView.m; sourceTree = "<group>"; };
+		6BD6FE431B6D3DAE000F15E0 /* TPPSContentEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPSContentEditViewController.h; sourceTree = "<group>"; };
+		6BD6FE451B6D3DE6000F15E0 /* TPPSContentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSContentEditViewController.m; sourceTree = "<group>"; };
 		7B5131F91B651C38007EB19F /* trip_set@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_set@2x.png"; sourceTree = "<group>"; };
 		7B5132101B675B78007EB19F /* TPBusinessConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBusinessConstant.h; sourceTree = "<group>"; };
 		7B5132251B675B78007EB19F /* TPDiscoveryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListCell.h; sourceTree = "<group>"; };
@@ -2262,6 +2265,8 @@
 				7B5133351B675B78007EB19F /* TPPSPicsViewController.storyboard */,
 				7B5133391B675B78007EB19F /* TPPSViewController.h */,
 				7B51333A1B675B78007EB19F /* TPPSViewController.m */,
+				6BD6FE431B6D3DAE000F15E0 /* TPPSContentEditViewController.h */,
+				6BD6FE451B6D3DE6000F15E0 /* TPPSContentEditViewController.m */,
 				6B7E13AA1B69479D00C70FC4 /* view */,
 			);
 			path = "发布流程";
@@ -3661,6 +3666,7 @@
 				7B70E1601B6B1B120029F6F6 /* README.md in Sources */,
 				7B70E15E1B6B1B120029F6F6 /* SEViewCaptureHelper.m in Sources */,
 				7B5134F81B675B79007EB19F /* TPProfileUpdateViewController.m in Sources */,
+				6BD6FE461B6D3DE6000F15E0 /* TPPSContentEditViewController.m in Sources */,
 				7B5134D51B675B78007EB19F /* TPChatStatusListCell.m in Sources */,
 				45028AB21B1B535E00417606 /* VZListItem.m in Sources */,
 				7B5134C81B675B78007EB19F /* TPTripArrangementViewController.m in Sources */,
