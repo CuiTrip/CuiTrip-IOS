@@ -48,4 +48,6 @@
 
 + (void)getWANIPAddressWithCompletion:(void(^)(NSString *IPAddress))completion;
 
++ (BOOL)stringContainsEmoji:(NSString *)string;
+
 @end

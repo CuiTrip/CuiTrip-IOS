@@ -73,7 +73,7 @@
     [super setItem:item];
     [self.poster sd_setImageWithURL:__url(item.backPic) placeholderImage:__image(@"default_list.jpg")];
     [self.icon sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
-    self.posterNameLabel.text = item.descpt;
+    self.posterNameLabel.text = item.name;
 }
 
 - (void)layoutSubviews

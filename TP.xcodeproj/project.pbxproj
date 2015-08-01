@@ -193,7 +193,6 @@
 		7B5134951B675B78007EB19F /* TPCustomerInTripView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132DD1B675B78007EB19F /* TPCustomerInTripView.m */; };
 		7B5134961B675B78007EB19F /* TPTripDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132DF1B675B78007EB19F /* TPTripDetailSubView.m */; };
 		7B5134971B675B78007EB19F /* datepicker_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B5132E21B675B78007EB19F /* datepicker_meta.json */; };
-		7B5134981B675B78007EB19F /* TPDatePickerCalenderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B5132E51B675B78007EB19F /* TPDatePickerCalenderFooterView.xib */; };
 		7B5134991B675B78007EB19F /* TPDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132E71B675B78007EB19F /* TPDatePickerViewController.m */; };
 		7B51349A1B675B78007EB19F /* TPDatePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132EA1B675B78007EB19F /* TPDatePickerItem.m */; };
 		7B51349B1B675B78007EB19F /* TPDatePickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132ED1B675B78007EB19F /* TPDatePickerModel.m */; };
@@ -708,7 +707,6 @@
 		7B5132DF1B675B78007EB19F /* TPTripDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTripDetailSubView.m; sourceTree = "<group>"; };
 		7B5132E21B675B78007EB19F /* datepicker_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datepicker_meta.json; sourceTree = "<group>"; };
 		7B5132E31B675B78007EB19F /* TPDatePickerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerConfig.h; sourceTree = "<group>"; };
-		7B5132E51B675B78007EB19F /* TPDatePickerCalenderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPDatePickerCalenderFooterView.xib; sourceTree = "<group>"; };
 		7B5132E61B675B78007EB19F /* TPDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerViewController.h; sourceTree = "<group>"; };
 		7B5132E71B675B78007EB19F /* TPDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDatePickerViewController.m; sourceTree = "<group>"; };
 		7B5132E91B675B78007EB19F /* TPDatePickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDatePickerItem.h; sourceTree = "<group>"; };
@@ -2047,7 +2045,6 @@
 		7B5132E41B675B78007EB19F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				7B5132E51B675B78007EB19F /* TPDatePickerCalenderFooterView.xib */,
 				7B5132E61B675B78007EB19F /* TPDatePickerViewController.h */,
 				7B5132E71B675B78007EB19F /* TPDatePickerViewController.m */,
 			);
@@ -3435,7 +3432,6 @@
 				7B5135041B675B79007EB19F /* trip_logo_a@2x.png in Resources */,
 				45D6BA6C1B2686C2007DFC7A /* ExceptionView.xib in Resources */,
 				45D48BE51B32AF3500B5801F /* UMSocialSDKResourcesNew.bundle in Resources */,
-				7B5134981B675B78007EB19F /* TPDatePickerCalenderFooterView.xib in Resources */,
 				45D48BDE1B32AF3500B5801F /* UMSCommentInputController.xib in Resources */,
 				7B5135691B678F17007EB19F /* personalpage_meta.json in Resources */,
 				459BAEEE1B21E58700739C7E /* trip_display_yes@2x.png in Resources */,

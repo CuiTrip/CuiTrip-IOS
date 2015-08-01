@@ -13,6 +13,7 @@
 #import "TPDatePickerModel.h"
 #import "TBCityCalendarMonthView.h"
 #import "TPGetServiceEnableDateModel.h"
+#import "TPDatePickerCalenderFooterView.h"
 
 @interface TPDatePickerSelectionView : UIView
 @property (strong, nonatomic)  UILabel *dateLabel;
@@ -421,8 +422,7 @@
     self.calendarView = calendarView;
     [self.view addSubview:calendarView];
     
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TPDatePickerCalenderFooterView" owner:self options:nil];
-    UIView* v =(UIView *)[nib objectAtIndex:0];
+    UIView *v = [TPDatePickerCalenderFooterView new];
     v.backgroundColor = [UIColor clearColor];
     v.vzOrigin = CGPointMake(0, self.calendarView.vzBottom);
     v.vzSize = CGSizeMake(self.view.vzWidth, 20);

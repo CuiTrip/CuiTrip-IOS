@@ -271,7 +271,7 @@ static const CGFloat defaultFontSize = 18.0f;
     CGSize contentSize = [self.textView sizeThatFits:containerSize];
     
     CGRect frame = self.textView.frame;
-    frame.size.height = MAX(contentSize.height, containerSize.height);
+    frame.size.height = MAX(contentSize.height, containerSize.height)+30;
     
     self.textView.frame = frame;
     self.scrollView.contentSize = frame.size;
@@ -591,20 +591,21 @@ static const CGFloat defaultFontSize = 18.0f;
             UIImage *image = asyncImage.image;
             SEPhotoView *photoView = [[SEPhotoView alloc] initWithFrame:CGRectMake(15.0f, 20.0f, kTPScreenWidth-30, (image.size.height * kTPScreenWidth)/image.size.width)];
             
-//                        self.textView.selectedRange=NSMakeRange(self.textView.attributedText.length,0);
-//                        [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
+//            self.textView.selectedRange = NSMakeRange(self.textView.text.length+1 ,0);
+//            [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
             
             [_picsList addObject:preText];
             [self.textView insertObject:asyncImage size:photoView.bounds.size tag:self.index];
+//            [self.textView addObject:asyncImage size:photoView.bounds.size replaceRange:NSMakeRange(self.textView.text.length+1 ,0)];
             self.index++;
         }
         else
         {
+            NSRange selectRange = NSMakeRange(self.textView.text.length + 1, 0);
+            SETextRange *textRange = [SETextRange rangeWithNSRange:selectRange];
+//            [self.textView replaceRange:textRange withText:preText];
+            
             [self.textView insertText:preText];
-
-//            self.textView.selectedRange = NSMakeRange(self.textView.attributedText.length,0);
-//            [self.scrollView scrollRectToVisible:self.textView.frame animated:YES];
-
         }
         
         [self updateLayout];

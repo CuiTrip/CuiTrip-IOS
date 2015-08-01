@@ -182,9 +182,13 @@
         TOAST(self, @"请输入图文描述");
         return NO;
     }
-    
     else if (self.content.length >= 800) {
         TOAST(self, @"亲，最多只能输入800个字哦~");
+        return NO;
+    }
+    else if ([TPUtils stringContainsEmoji:self.titleField.text] || [TPUtils stringContainsEmoji:self.content])
+    {
+        TOAST(self, @"亲，现在还不支持表情输入哦，请检查后发布吧~");
         return NO;
     }
     else
