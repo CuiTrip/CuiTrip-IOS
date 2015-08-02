@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="JAS-Zh-Sa7">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="F37-EO-1kh">
                                     <rect key="frame" x="0.0" y="295" width="375" height="5"/>
@@ -24,14 +24,14 @@
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip_logo_a.png" id="lof-Lc-IZB">
                                     <rect key="frame" x="124" y="85" width="126" height="115"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="3Ex-cD-iqm">
                             <rect key="frame" x="0.0" y="343" width="375" height="214"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="I3o-Yw-Axf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="5"/>
