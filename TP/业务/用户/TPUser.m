@@ -136,17 +136,20 @@
 
 + (NSString* )introduce
 {
-    return [TPUser sharedInstance].userItem.introduce;
+//    return [TPUser sharedInstance].userItem.introduce;
+    return @"";
 }
 
 + (NSString* )introduceAuditStatus
 {
-    return [TPUser sharedInstance].userItem.introduceAuditStatus;
+//    return [TPUser sharedInstance].userItem.introduceAuditStatus;
+    return @"";
 }
 
 + (NSString* )introduceFailedReason
 {
-    return [TPUser sharedInstance].userItem.introduceFailedReason;
+//    return [TPUser sharedInstance].userItem.introduceFailedReason;
+    return @"";
 }
 
 + (BOOL)isLogined
