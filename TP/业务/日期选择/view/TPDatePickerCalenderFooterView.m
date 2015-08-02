@@ -11,11 +11,6 @@
 
 @interface TPDatePickerCalenderFooterView()
 
-@property(nonatomic,strong) UIView* titleView;
-@property(nonatomic,strong) UIView* titleLabel;
-
-@property(nonatomic,strong) UILabel* addressView;
-@property(nonatomic,strong) UILabel* addressLabel;
 
 @end
 
@@ -29,25 +24,25 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 5, 10, 10)];
-        view.backgroundColor = [UIColor grayColor];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(26, 5, 54, 10)];
-        label.text = @"已被预定";
-        label.textColor = [UIColor grayColor];
-        label.font = [UIFont systemFontOfSize:12.0f];
-        label.backgroundColor = [UIColor clearColor];
+        self.grayView = [[UIView alloc] initWithFrame:CGRectMake(10, 5, 10, 10)];
+        self.grayView.backgroundColor = [UIColor grayColor];
+        self.grayLabel = [[UILabel alloc] initWithFrame:CGRectMake(26, 5, 54, 10)];
+        self.grayLabel.text = @"不可预定";
+        self.grayLabel.textColor = [UIColor grayColor];
+        self.grayLabel.font = [UIFont systemFontOfSize:12.0f];
+        self.grayLabel.backgroundColor = [UIColor clearColor];
         
-        UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(94, 5, 10, 10)];
-        view1.backgroundColor = [TPTheme bgColor];
-        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(112, 5, 54, 10)];
-        label1.text = @"可以预定";
-        label1.textColor = [TPTheme bgColor];;
-        label1.backgroundColor = [UIColor clearColor];
-        label1.font = [UIFont systemFontOfSize:12.0f];
-        [self addSubview:view];
-        [self addSubview:label];
-        [self addSubview:view1];
-        [self addSubview:label1];
+        self.blueview = [[UIView alloc] initWithFrame:CGRectMake(94, 5, 10, 10)];
+        self.blueview.backgroundColor = [TPTheme bgColor];
+        self.blueLabel = [[UILabel alloc] initWithFrame:CGRectMake(112, 5, 54, 10)];
+        self.blueLabel.text = @"可以预定";
+        self.blueLabel.textColor = [TPTheme bgColor];;
+        self.blueLabel.backgroundColor = [UIColor clearColor];
+        self.blueLabel.font = [UIFont systemFontOfSize:12.0f];
+        [self addSubview:self.grayView];
+        [self addSubview:self.grayLabel];
+        [self addSubview:self.blueview];
+        [self addSubview:self.blueLabel];
         
     }
     

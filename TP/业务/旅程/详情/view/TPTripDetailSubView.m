@@ -110,7 +110,7 @@
              vc.orderStatus = _tripDetailModel.status;
              vc.msgUserType = [TPUser type];
              
-             [self.inputViewController.navigationController pushViewController:vc animated:true];
+//             [self.navigationController pushViewController:vc animated:true];
          }];
         [self addSubview:self.contactBtn];
     }

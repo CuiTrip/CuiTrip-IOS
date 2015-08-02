@@ -14,5 +14,12 @@
 
 @interface TPDatePickerCalenderFooterView : UIView
 
+
+@property(nonatomic,strong) UIView* grayView;
+@property(nonatomic,strong) UILabel* grayLabel;
+
+@property(nonatomic,strong) UIView* blueview;
+@property(nonatomic,strong) UILabel* blueLabel;
+
 @end
 

@@ -94,6 +94,9 @@
 {
     [super viewDidLoad];
     
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     //[self registerChannelMsg];
     //添加观察者，是否登录成功
