@@ -64,6 +64,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    self.delegate = nil;
+}
+
 - (void)setTripDetailModel:(TPTripDetailModel *)tripDetailModel
 {
     _tripDetailModel = tripDetailModel;

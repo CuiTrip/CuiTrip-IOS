@@ -372,7 +372,7 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    [weakSelf.view makeToast:@"" duration:2.0 position:CSToastPositionCenter title:@"编辑成功!"];
+                    [weakSelf.view makeToast:@"你的修改已经提交" duration:2.0 position:CSToastPositionCenter title:@"编辑成功!"];
                     
                     //通知列表刷新
                     [weakSelf vz_postToChannel:kChannelNewService withObject:nil Data:nil];

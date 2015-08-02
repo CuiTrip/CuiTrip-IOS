@@ -12,9 +12,17 @@
 #import "TPTripDetailSubView.h"
 #import "TPTripDetailModel.h"
 
+@protocol TripSubViewDelegate <NSObject>
+
+- (void)goToUser;
+
+@end
+
+
 @interface TPTripDetailSubView : UIView
 
 @property(nonatomic,strong)TPTripDetailModel* tripDetailModel;
+@property(nonatomic,strong)id<TripSubViewDelegate> delegate;
 
 @end
 
