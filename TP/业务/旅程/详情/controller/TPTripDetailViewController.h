@@ -10,6 +10,7 @@
 
   
 #import "VZViewController.h"
+#import "TPTripDetailSubView.h"
 
 /****
     //READY_CONFIRM(1, "待确认"),
@@ -24,7 +25,7 @@
 ***/
 
 
-@interface TPTripDetailViewController : VZViewController<UITableViewDelegate, UITableViewDataSource>
+@interface TPTripDetailViewController : VZViewController<UITableViewDelegate, UITableViewDataSource, TripSubViewDelegate>
 
 
 @property(nonatomic,strong)NSString* oid;

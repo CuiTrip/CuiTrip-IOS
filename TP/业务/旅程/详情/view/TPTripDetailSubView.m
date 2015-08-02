@@ -101,21 +101,7 @@
         }
         [[self.contactBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
          subscribeNext:^(id x) {
-             NSString* receiverId = @"";
-             if ([TPUser type] == kCustomer) {
-                 receiverId = _tripDetailModel.insiderId;
-             }
-             else
-             {
-                 receiverId = [TPUser uid];
-             }
-             TPChatListViewController* vc = [TPChatListViewController new];
-             vc.orderId = _tripDetailModel.oid;
-             vc.receiverId = receiverId;
-             vc.orderStatus = _tripDetailModel.status;
-             vc.msgUserType = [TPUser type];
-             
-             [self.inputViewController.navigationController pushViewController:vc animated:true];
+             [self.delegate goToUser];
          }];
         [self addSubview:self.contactBtn];
     }
@@ -177,6 +163,12 @@
     CGSize labelsize = [self.addressLabel.text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
     self.addressIcon.frame = CGRectMake((self.frame.size.width - labelsize.width - 14.0f) / 2, self.titleLabel.vzBottom + 13.0f, 14.0f, 14.0f);
     self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, labelsize.width, 14.0f);
+}
+
+
+- (void)goToUser
+{
+    
 }
 
 

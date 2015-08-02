@@ -11,7 +11,6 @@
 
 #import "TPTripDetailViewController.h"
 #import "TPCustomerInTripView.h"
-#import "TPTripDetailSubView.h"
 #import "TPCustomerInTripView.h"
 #import "TPTrippingContactInfoViewController.h"
 #import "TPCancelTripViewController.h"
@@ -25,6 +24,7 @@
 #import "TPEndTripOrderModel.h"
 #import "TPPayViewController.h"
 #import "TPPSContentViewController.h"
+#import "TPChatListViewController.h"
 
 
 @interface TPTripDetailViewController()
@@ -221,6 +221,7 @@
         }
         self.subView = [[TPTripDetailSubView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, height)];
         self.subView.tripDetailModel = self.tripDetailModel;
+        self.subView.delegate = self;
         self.tableView.tableHeaderView = self.subView;
     }
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
@@ -566,6 +567,26 @@
     //setupUI
     [self setupTableView];
     [self load];
+}
+
+
+- (void)goToUser
+{
+    NSString* receiverId = @"";
+    if ([TPUser type] == kCustomer) {
+        receiverId = _tripDetailModel.insiderId;
+    }
+    else
+    {
+        receiverId = [TPUser uid];
+    }
+    TPChatListViewController* vc = [TPChatListViewController new];
+    vc.orderId = _tripDetailModel.oid;
+    vc.receiverId = receiverId;
+    vc.orderStatus = _tripDetailModel.status;
+    vc.msgUserType = [TPUser type];
+    
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 
