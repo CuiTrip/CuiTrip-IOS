@@ -105,6 +105,7 @@
 		45EB31671B36F369003A97AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31661B36F369003A97AE /* Images.xcassets */; };
 		6B409A591B6DFBA4001306C4 /* TPEditServiceContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B409A581B6DFBA4001306C4 /* TPEditServiceContentModel.m */; };
 		6B409A5D1B6E0BDE001306C4 /* TPPSFeeExplanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B409A5C1B6E0BDE001306C4 /* TPPSFeeExplanView.m */; };
+		6B409A5F1B6E1396001306C4 /* trip_fee_explan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B409A5E1B6E1396001306C4 /* trip_fee_explan.jpg */; };
 		6B5F0C041B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */; };
 		6B690B1A1B64DE5300A295ED /* trip_connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B151B64DE5300A295ED /* trip_connect@2x.png */; };
 		6B690B1B1B64DE5300A295ED /* trip_mail_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B161B64DE5300A295ED /* trip_mail_blue@2x.png */; };
@@ -556,6 +557,7 @@
 		6B409A581B6DFBA4001306C4 /* TPEditServiceContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPEditServiceContentModel.m; sourceTree = "<group>"; };
 		6B409A5B1B6E0BBF001306C4 /* TPPSFeeExplanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPSFeeExplanView.h; sourceTree = "<group>"; };
 		6B409A5C1B6E0BDE001306C4 /* TPPSFeeExplanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSFeeExplanView.m; sourceTree = "<group>"; };
+		6B409A5E1B6E1396001306C4 /* trip_fee_explan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trip_fee_explan.jpg; sourceTree = "<group>"; };
 		6B5F0C021B6CE9D100070A2B /* TPMyServiceListDeleteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPMyServiceListDeleteModel.h; sourceTree = "<group>"; };
 		6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMyServiceListDeleteModel.m; sourceTree = "<group>"; };
 		6B690B151B64DE5300A295ED /* trip_connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_connect@2x.png"; sourceTree = "<group>"; };
@@ -1277,6 +1279,7 @@
 		459BAED31B21E58700739C7E /* 资源 */ = {
 			isa = PBXGroup;
 			children = (
+				6B409A5E1B6E1396001306C4 /* trip_fee_explan.jpg */,
 				7B51333B1B675B78007EB19F /* trip_down_g@2x.png */,
 				7B5135351B676BD1007EB19F /* trip_addpic@2x.png */,
 				7B5135311B67694B007EB19F /* trip_key-down@2x.png */,
@@ -3525,6 +3528,7 @@
 				7B51356E1B678F17007EB19F /* InitialText.txt in Resources */,
 				7B5134BF1B675B78007EB19F /* add_comment_image@2x.png in Resources */,
 				7B5134E61B675B78007EB19F /* modifypwd_meta.json in Resources */,
+				6B409A5F1B6E1396001306C4 /* trip_fee_explan.jpg in Resources */,
 				459BAEFB1B21E58700739C7E /* trip_right_w@2x.png in Resources */,
 				459BAEEC1B21E58700739C7E /* trip_cuts_w@2x.png in Resources */,
 				7B5135131B675B79007EB19F /* o2o_gray_star@3x.png in Resources */,
