@@ -298,7 +298,7 @@
     keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
     
     CGRect containerFrame = self.scrollView.frame;
-    containerFrame.size.height = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(keyboardBounds);
+    containerFrame.size.height = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(keyboardBounds)-20;
     
     self.scrollView.frame = containerFrame;
     
