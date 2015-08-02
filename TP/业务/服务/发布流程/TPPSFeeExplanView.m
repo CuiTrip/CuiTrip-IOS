@@ -12,6 +12,9 @@
 
 @property (nonatomic) UIImageView *backImageView;
 
+@property (nonatomic, strong) UIButton *exitBtn;
+
+
 @end
 
 
@@ -25,10 +28,20 @@
         self.backImageView = [[UIImageView alloc] initWithFrame:frame];
         self.backImageView.image = __image(@"trip_fee_explan.jpg");
         [self addSubview:self.backImageView];
+        
+        self.exitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.exitBtn.frame = CGRectMake((self.vzWidth - 44.0f) / 2, self.vzBottom - 53.0f, 44.0f, 44.0f);
+        [self.exitBtn setImage:__image(@"trip_close.png") forState:UIControlStateNormal];
+        [self.exitBtn addTarget:self action:@selector(removeView) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.exitBtn];
     }
     
     return self;
 }
 
+- (void)removeView
+{
+    [self removeFromSuperview];
+}
 
 @end

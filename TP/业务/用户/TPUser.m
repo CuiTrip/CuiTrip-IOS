@@ -136,20 +136,17 @@
 
 + (NSString* )introduce
 {
-//    return [TPUser sharedInstance].userItem.introduce;
-    return @"";
+    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduce"];
 }
 
 + (NSString* )introduceAuditStatus
 {
-//    return [TPUser sharedInstance].userItem.introduceAuditStatus;
-    return @"";
+    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceAuditStatus"];
 }
 
 + (NSString* )introduceFailedReason
 {
-//    return [TPUser sharedInstance].userItem.introduceFailedReason;
-    return @"";
+    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceFailedReason"];
 }
 
 + (BOOL)isLogined

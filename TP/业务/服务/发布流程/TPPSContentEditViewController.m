@@ -21,7 +21,6 @@
 #import "TPDDTripItem.h"
 #import "TPPubilshServiceModel.h"
 #import "TPEditServiceContentModel.h"
-#import "TPPSFeeExplanView.h"
 
 @interface TPPSContentEditViewController()<SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -127,10 +126,6 @@
     self.textView.font = self.normalFont;
     self.textView.delegate = self;
     [self.scrollView addSubview:self.textView];
-    
-    
-    TPPSFeeExplanView *fee = [[TPPSFeeExplanView alloc] initWithFrame:self.scrollView.frame];
-    [self.scrollView addSubview:fee];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
     

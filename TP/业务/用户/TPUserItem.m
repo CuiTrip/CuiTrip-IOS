@@ -67,15 +67,13 @@
         self.pwd = [aDecoder decodeObjectForKey:@"pwd"];
         self.city = [aDecoder decodeObjectForKey:@"city"];
         self.extInfo = [aDecoder decodeObjectForKey:@"extInfo"];
-        
-        
-        NSDictionary* extInfoDic = [aDecoder decodeObjectForKey:@"extInfo"];
-        if (self.extInfo) {
-//            self.introduce = extInfoDic[@"introduce"];
-//            self.introduceAuditStatus = extInfoDic[@"introduceAuditStatus"];
-//            self.introduceFailedReason = extInfoDic[@"introduceFailedReason"];
+        self.extInfoDic = [aDecoder decodeObjectForKey:@"extInfo"];
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:[self.extInfo dataUsingEncoding:NSUTF8StringEncoding]
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:nil];
+        if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+            self.extInfoDic = [NSDictionary dictionaryWithDictionary:jsonObject];
         }
-
     }
     return self;
 }
