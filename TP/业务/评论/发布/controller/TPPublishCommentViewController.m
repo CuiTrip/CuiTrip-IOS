@@ -144,6 +144,7 @@
     [super viewWillAppear:animated];
     
     //todo..
+    [MobClick beginLogPageView:@"TPPublishCommentView"];
     [self registerNotifications];
 }
 
@@ -157,7 +158,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPPublishCommentView"];
     //todo..
     [self unregisterNotifications];
 }

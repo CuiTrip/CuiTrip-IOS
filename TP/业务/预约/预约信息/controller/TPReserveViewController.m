@@ -135,8 +135,24 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
-
+//    self.tabBarController.tabBar.hidden = true;
+    //todo..
+    [MobClick beginLogPageView:@"TPReserveView"];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //todo..
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"TPReserveView"];
+    //todo..
+}
+
 
 
 -(void)dealloc {

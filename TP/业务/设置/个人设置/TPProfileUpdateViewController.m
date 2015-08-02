@@ -89,7 +89,12 @@
     self.view.bounds = viewBounds;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 
+    [MobClick beginLogPageView:@"TPProfileUpdateView"];
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -97,6 +102,7 @@
     
     [self.textView resignFirstResponder];
     [self.textField resignFirstResponder];
+    [MobClick endLogPageView:@"TPProfileUpdateView"];
 }
 
 - (void)didReceiveMemoryWarning {

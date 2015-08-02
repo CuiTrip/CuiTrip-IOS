@@ -62,8 +62,14 @@
 {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
+    [MobClick beginLogPageView:@"TPProfileSettingsView"];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"TPProfileSettingsView"];
+}
 
 //- (void) viewDidLayoutSubviews {
 //    CGRect viewBounds = self.view.bounds;

@@ -669,7 +669,6 @@
 		7B5132A41B675B78007EB19F /* TPPaySubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPaySubView.h; sourceTree = "<group>"; };
 		7B5132A51B675B78007EB19F /* TPPaySubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPaySubView.m; sourceTree = "<group>"; };
 		7B5132A61B675B78007EB19F /* TPPaySubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPPaySubView.xib; sourceTree = "<group>"; };
-		7B5132A81B675B78007EB19F /* TPBusinessConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBusinessConstant.h; sourceTree = "<group>"; };
 		7B5132A91B675B78007EB19F /* TPCancelTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCancelTripViewController.h; sourceTree = "<group>"; };
 		7B5132AA1B675B78007EB19F /* TPCancelTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCancelTripViewController.m; sourceTree = "<group>"; };
 		7B5132AB1B675B78007EB19F /* TPTripCancelledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTripCancelledViewController.h; sourceTree = "<group>"; };
@@ -1868,7 +1867,6 @@
 		7B5132A71B675B78007EB19F /* 旅程 */ = {
 			isa = PBXGroup;
 			children = (
-				7B5132A81B675B78007EB19F /* TPBusinessConstant.h */,
 				7B5132A91B675B78007EB19F /* TPCancelTripViewController.h */,
 				7B5132AA1B675B78007EB19F /* TPCancelTripViewController.m */,
 				7B5132AB1B675B78007EB19F /* TPTripCancelledViewController.h */,
