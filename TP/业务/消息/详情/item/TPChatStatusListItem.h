@@ -14,6 +14,7 @@
 @interface TPChatStatusListItem : VZListItem
 
 @property(nonatomic,strong)NSString* content;
+@property(nonatomic,strong)NSString* gmtCreated;
 
 @end
 

@@ -32,7 +32,7 @@
               @"serviceDate":self.serviceDate?:@"",
               @"buyerNum":self.buyerNum?:@"",
               @"servicePrice":self.servicePrice?:@"",
-              @"moneyType":self.moneyType?:@""};
+              @"payCurrency":self.payCurrency?:@""};
 }
 
 

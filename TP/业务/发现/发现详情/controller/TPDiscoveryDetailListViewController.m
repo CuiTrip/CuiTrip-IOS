@@ -198,7 +198,7 @@
                 v.serviceName = self.discoveryDetailListModel.tripInfoItem.name;
                 v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
                 v.pic = self.discoveryDetailListModel.tripInfoItem.pics[0];
-                v.moneyType = self.discoveryDetailListModel.tripInfoItem.moneyType;
+                v.payCurrency = self.discoveryDetailListModel.tripInfoItem.moneyType;
                 //v.insiderId = self.discoveryDetailListModel.tripf
                 [self.navigationController pushViewController:v animated:true];
             };

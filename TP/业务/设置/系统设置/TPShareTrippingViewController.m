@@ -114,6 +114,7 @@
     btnImage.image = __image(@"trip_share_wx.png");
     btnImage.frame = CGRectMake(10.0f, 10.0f, 25.0f, 24.0f);
     [self.shareBtn addSubview:btnImage];
+    
     UILabel *btnLabel = [TPUIKit label:[UIColor whiteColor] Font:[UIFont systemFontOfSize:15.0f]];
     btnLabel.text = @"分享给朋友";
     btnLabel.textAlignment = NSTextAlignmentCenter;

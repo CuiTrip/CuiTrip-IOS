@@ -81,6 +81,10 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
+    //2,set some properties:下拉刷新，自动翻页
+    self.needLoadMore = YES;
+    self.needPullRefresh = YES;
+    
     UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"旅行者", @"发现者", nil]];
     segment.segmentedControlStyle = UISegmentedControlStyleBar;
     [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateSelected];

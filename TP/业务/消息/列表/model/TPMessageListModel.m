@@ -26,7 +26,18 @@
     
     NSString* type = (self.userType==kCustomer)?@"0":@"1";
 
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"userType":type};
+    return @{
+             @"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:@"",
+             @"userType":type,
+             @"size":@"10",
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]
+             };
+}
+
+- (NSInteger)pageSize
+{
+    return 10;
 }
 
 - (VZHTTPRequestConfig)requestConfig

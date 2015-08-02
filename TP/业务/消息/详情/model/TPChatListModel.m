@@ -39,7 +39,7 @@
     return @{@"orderId":self.orderId?:@"",
              @"uid":[TPUser uid]?:@"",
              @"token":[TPUser token]?:@"",
-             @"size":@"100",
+             @"size":@"20",
              @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]
              };
 }
@@ -79,19 +79,18 @@
     for(NSDictionary* info in list)
     {
         NSInteger type = [info[@"type"] integerValue];
-        
-        //系统消息
-        if(type == 2 || type == 3 || type == 5 || type == 6)
-        {
-            TPChatStatusListItem* item = [TPChatStatusListItem new];
-            [item autoKVCBinding:info];
-            [ret addObject:item];
-        }
-        
+ 
         //聊天消息
         if (type == 4)
         {
             TPChatListItem* item = [TPChatListItem new];
+            [item autoKVCBinding:info];
+            [ret addObject:item];
+        }
+        //系统消息
+        else if(type != 1)
+        {
+            TPChatStatusListItem* item = [TPChatStatusListItem new];
             [item autoKVCBinding:info];
             [ret addObject:item];
         }

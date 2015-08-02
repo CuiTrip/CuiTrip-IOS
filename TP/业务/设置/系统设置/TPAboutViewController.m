@@ -13,7 +13,8 @@
 
 @interface TPAboutViewController ()
 
-//@property(nonatomic,strong) UITableView* tableView;
+@property(nonatomic,weak)  UIView *headView;
+@property(nonatomic,weak)  UIView *footView;
 
 @end
 
@@ -23,33 +24,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setTitle:@"关于脆饼"];
-    
-    [self.view setBackgroundColor:[TPTheme yellowColor]];
-    
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.vzWidth, self.view.vzHeight) style:UITableViewStyleGrouped];
-    //self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.opaque = YES;
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    //[self.view addSubview:self.tableView];
-    
-    UIImageView *tripLogo = [TPUIKit imageView];
-    tripLogo.contentMode = UIViewContentModeScaleAspectFit;
-    tripLogo.frame = CGRectMake(0.0f, 0.0f, self.tableView.vzWidth, 240.0f);
-    tripLogo.image = __image(@"trip_logo_a.png");
-    
-    UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
-    UILabel *label = [TPUIKit label:[TPTheme blackColor] Font:[UIFont systemFontOfSize:9.0f]];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.frame = CGRectMake(0.0f, 0.0f, footerView.vzWidth, 15.0f);
-    
-    label.text = @"Copyright © 2015  Cuitrip All Rights Reserved";
-    [footerView addSubview:label];
-    
-//    [footerView addSubview:btn];
-    self.tableView.tableHeaderView = tripLogo;
-    self.tableView.tableFooterView = footerView;
+    self.tableView.tableFooterView = [TPUIKit emptyView];
+//    
+//    [self.view setBackgroundColor:[UIColor whiteColor]];
+//    
+//    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.vzWidth, self.view.vzHeight) style:UITableViewStyleGrouped];
+//    self.tableView.backgroundColor = [UIColor whiteColor];
+//    self.tableView.opaque = YES;
+//    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    self.tableView.dataSource = self;
+//    self.tableView.delegate = self;
+//    //[self.view addSubview:self.tableView];
+//    
+//   
+//    UIImage *img = __image(@"trip_logo_a.png");
+//    _tripLogo= [[UIImageView alloc] initWithImage:img];
+//    _tripLogo.frame = CGRectMake((self.view.vzWidth - 155.0f) / 2, 85.0f, 155.0f, (img.size.height * 155)/img.size.width);
+//    
+//    UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
+//    UILabel *label = [TPUIKit label:[TPTheme blackColor] Font:[UIFont systemFontOfSize:9.0f]];
+//    label.textAlignment = NSTextAlignmentCenter;
+//    label.frame = CGRectMake(0.0f, 0.0f, footerView.vzWidth, 15.0f);
+//    
+//    label.text = @"Copyright © 2015  Cuitrip All Rights Reserved";
+//    [footerView addSubview:label];
+//    
+////    [footerView addSubview:btn];
+//    self.tableView.tableHeaderView = _tripLogo;
+//    self.tableView.tableFooterView = footerView;
 }
 
 - (void)viewWillAppear:(BOOL)animated

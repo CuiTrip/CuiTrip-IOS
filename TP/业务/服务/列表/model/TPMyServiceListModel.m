@@ -23,7 +23,15 @@
 
 - (NSDictionary *)dataParams {
     
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@""};
+    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize],
+             @"size":@"10"
+             };
+}
+
+- (NSInteger)pageSize
+{
+    return 10;
 }
 
 - (VZHTTPRequestConfig)requestConfig

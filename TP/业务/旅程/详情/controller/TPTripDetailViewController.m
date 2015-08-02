@@ -460,7 +460,7 @@
             v.insiderId = self.tripDetailModel.insiderId;
             v.servicePrice = self.tripDetailModel.orderPrice;
             v.serviceName = self.tripDetailModel.serviceName;
-            v.moneyType = self.tripDetailModel.moneyType;
+            v.payCurrency = self.tripDetailModel.payCurrency;
             [self.navigationController pushViewController:v animated:true];
         }
         // // 旅行者去支付

@@ -100,7 +100,7 @@
     self.tableView.separatorStyle = NO;
     
     //2,set some properties:下拉刷新，自动翻页
-    self.needLoadMore = NO;
+    self.needLoadMore = YES;
     self.needPullRefresh = NO;
 
     

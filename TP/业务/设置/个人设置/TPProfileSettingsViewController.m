@@ -52,7 +52,7 @@
         
         
     }];
-    [footerView addSubview:btn];
+//    [footerView addSubview:btn];
     self.tableView.tableFooterView = footerView;
 
     

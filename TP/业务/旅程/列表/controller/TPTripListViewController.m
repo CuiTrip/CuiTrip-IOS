@@ -84,8 +84,9 @@
     }
     
     
-    self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.separatorStyle = NO;
+    //2,set some properties:下拉刷新，自动翻页
+    self.needLoadMore = true;
+    self.needPullRefresh = YES;
     
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     

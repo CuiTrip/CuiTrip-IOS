@@ -29,7 +29,7 @@
              @"uid":[TPUser uid]?:@"",
              @"token":[TPUser token]?:
              @"",@"userType":userType,
-             @"size":@"20",
+             @"size":@"10",
              @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]
              };
     
