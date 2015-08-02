@@ -78,9 +78,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-//        self.edgesForExtendedLayout = UIRectEdgeNone;
-//    }
+    
+    // 发现列表滑不到最低端，和底部导航栏重叠问题
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     //1,config your tableview
     self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44);
