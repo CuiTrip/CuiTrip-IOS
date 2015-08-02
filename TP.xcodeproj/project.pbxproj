@@ -115,6 +115,7 @@
 		6B7E13AD1B69481200C70FC4 /* TPPSAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E13AC1B69481200C70FC4 /* TPPSAccessoryView.m */; };
 		6BCB0F5E1B6A71BE008321C4 /* TPPSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */; };
 		6BD6FE461B6D3DE6000F15E0 /* TPPSContentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6FE451B6D3DE6000F15E0 /* TPPSContentEditViewController.m */; };
+		7B4B19931B6E0BC40074C74C /* ct_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B4B19921B6E0BC40074C74C /* ct_info.png */; };
 		7B5131FA1B651C38007EB19F /* trip_set@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5131F91B651C38007EB19F /* trip_set@2x.png */; };
 		7B5134481B675B78007EB19F /* TPDiscoveryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5132261B675B78007EB19F /* TPDiscoveryListCell.m */; };
 		7B5134491B675B78007EB19F /* discovery_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B5132281B675B78007EB19F /* discovery_meta.json */; };
@@ -569,6 +570,7 @@
 		6BCB0F5D1B6A71BE008321C4 /* TPPSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSImageView.m; sourceTree = "<group>"; };
 		6BD6FE431B6D3DAE000F15E0 /* TPPSContentEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPSContentEditViewController.h; sourceTree = "<group>"; };
 		6BD6FE451B6D3DE6000F15E0 /* TPPSContentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPSContentEditViewController.m; sourceTree = "<group>"; };
+		7B4B19921B6E0BC40074C74C /* ct_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ct_info.png; sourceTree = "<group>"; };
 		7B5131F91B651C38007EB19F /* trip_set@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_set@2x.png"; sourceTree = "<group>"; };
 		7B5132101B675B78007EB19F /* TPBusinessConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBusinessConstant.h; sourceTree = "<group>"; };
 		7B5132251B675B78007EB19F /* TPDiscoveryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDiscoveryListCell.h; sourceTree = "<group>"; };
@@ -1274,6 +1276,7 @@
 		459BAED31B21E58700739C7E /* 资源 */ = {
 			isa = PBXGroup;
 			children = (
+				7B4B19921B6E0BC40074C74C /* ct_info.png */,
 				7B51333B1B675B78007EB19F /* trip_down_g@2x.png */,
 				7B5135351B676BD1007EB19F /* trip_addpic@2x.png */,
 				7B5135311B67694B007EB19F /* trip_key-down@2x.png */,
@@ -3492,6 +3495,7 @@
 				7B5134971B675B78007EB19F /* datepicker_meta.json in Resources */,
 				7B51356B1B678F17007EB19F /* TPPersonalPageViewController.storyboard in Resources */,
 				7B5135001B675B79007EB19F /* TPAboutViewController.storyboard in Resources */,
+				7B4B19931B6E0BC40074C74C /* ct_info.png in Resources */,
 				7B5134541B675B78007EB19F /* TPDDInfoCell.xib in Resources */,
 				7B5134EE1B675B78007EB19F /* TPForgetPWDViewController.storyboard in Resources */,
 				7B5135121B675B79007EB19F /* o2o_gray_star@2x.png in Resources */,

@@ -15,12 +15,16 @@
 
 
 @interface TPPSMoreViewController ()<TBCityHUDPickerDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *allview;
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UIButton *durationBtn;
 @property (weak, nonatomic) IBOutlet UIButton *numberBtn;
 @property (weak, nonatomic) IBOutlet UITextField *price;
 @property (weak, nonatomic) IBOutlet UIButton *moneyTypeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *priceTypeBtn;
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarIcon;
 
 @property(nonatomic,strong) NSString* duration;
 @property(nonatomic,strong) NSString* number;
@@ -34,12 +38,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    CGSize containerSize = self.scrollView.frame.size;
+    CGSize contentSize = [self.allview sizeThatFits:containerSize];
+    
+    CGRect frame = self.allview.frame;
+    frame.size.height = MAX(contentSize.height, containerSize.height);
+    
+    self.allview.frame = frame;
+    self.scrollView.contentSize = frame.size;
+    
+    [self.scrollView scrollRectToVisible:self.allview.frame animated:YES];
+    self.scrollView.scrollEnabled = YES;
+    
+
+    self.avatarIcon.userInteractionEnabled = YES;
+
+    //单个手指双击屏幕事件注册
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(infoPicClicked)];
+    // Set required taps and number of touches
+    [singleTap setNumberOfTapsRequired:1];
+    [singleTap setNumberOfTouchesRequired:1];
+    
+    // Add the gesture to the view
+    [self.avatarIcon addGestureRecognizer:singleTap];
+
+}
+
+- (void) viewDidLayoutSubviews {
+    CGRect viewBounds = self.view.bounds;
+    CGFloat topBarOffset = self.topLayoutGuide.length;
+    viewBounds.origin.y = topBarOffset * -1;
+    self.view.bounds = viewBounds;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void) infoPicClicked {
+    TOAST(self, @"跳转计费说明");
+}
+
 - (IBAction)onAction:(UIButton* )sender {
 
     if (sender.tag == 1) {
@@ -111,16 +153,19 @@
         if (index == 0) {
             self.priceType = @"0";
             self.price.enabled = YES;
+            [self.moneyTypeBtn setTitle:@"新台币" forState:UIControlStateNormal];
         }
         else if(index == 1){
             self.priceType = @"1";
             self.price.enabled = YES;
+            [self.moneyTypeBtn setTitle:@"新台币" forState:UIControlStateNormal];
         }
         else
         {
             self.priceType = @"2";
             self.price.text = @"0";
             self.price.enabled = NO;
+            [self.moneyTypeBtn setTitle:[@"新台币" stringByAppendingString:@"/人"] forState:UIControlStateNormal];
         }
         
         [self.priceTypeBtn setTitle:str forState:UIControlStateNormal];
@@ -136,7 +181,7 @@
             self.moneyType = @"CNY";
 
         [self.moneyTypeBtn setTitle:str forState:UIControlStateNormal];
-        if ([self.priceType isEqualToString:@"2"]) {
+        if ([self.priceType isEqualToString:@"1"]) {
             [self.moneyTypeBtn setTitle:[str stringByAppendingString:@"/人"] forState:UIControlStateNormal];
         }
 
