@@ -10,6 +10,7 @@
 
 @interface TPPSFeeExplanView()
 
+@property (nonatomic) UIImageView *backImageView;
 
 @end
 
@@ -21,7 +22,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.backImageView = [[UIImageView alloc] initWithFrame:frame];
+        self.backImageView.image = __image(@"trip_fee_explan.jpg");
+        [self addSubview:self.backImageView];
     }
     
     return self;

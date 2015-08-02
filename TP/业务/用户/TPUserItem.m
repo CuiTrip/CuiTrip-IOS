@@ -38,9 +38,9 @@
     NSData *extInfoData = [extInfoDic dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *extInfoObj = [NSJSONSerialization JSONObjectWithData:extInfoData options:0 error:nil];
     NSLog(@"extInfoObj:%@",extInfoObj);
-    self.introduce = extInfoObj[@"introduce"];
-    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
-    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
+//    self.introduce = extInfoObj[@"introduce"];
+//    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
+//    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -71,9 +71,9 @@
         
         NSDictionary* extInfoDic = [aDecoder decodeObjectForKey:@"extInfo"];
         if (self.extInfo) {
-            self.introduce = extInfoDic[@"introduce"];
-            self.introduceAuditStatus = extInfoDic[@"introduceAuditStatus"];
-            self.introduceFailedReason = extInfoDic[@"introduceFailedReason"];
+//            self.introduce = extInfoDic[@"introduce"];
+//            self.introduceAuditStatus = extInfoDic[@"introduceAuditStatus"];
+//            self.introduceFailedReason = extInfoDic[@"introduceFailedReason"];
         }
 
     }
@@ -102,8 +102,6 @@
     [aCoder encodeObject:self.pwd forKey:@"pwd"];
     [aCoder encodeObject:self.city forKey:@"city"];
     [aCoder encodeObject:self.extInfo forKey:@"extInfo"];
-
-    
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -126,9 +124,9 @@
     item.pwd = self.pwd;
     item.city = self.city;
     item.extInfo = self.extInfo;
-    item.introduce = self.introduce;
-    item.introduceAuditStatus = self.introduceAuditStatus;
-    item.introduceFailedReason = self.introduceFailedReason;
+//    item.introduce = self.introduce;
+//    item.introduceAuditStatus = self.introduceAuditStatus;
+//    item.introduceFailedReason = self.introduceFailedReason;
     
     return item;
 }
