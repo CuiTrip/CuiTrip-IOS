@@ -1,18 +1,14 @@
-  
 //
-//  TPPubilshServiceModel.h
+//  TPEditServiceContentModel.h
 //  TP
 //
-//  Created by moxin on 2015-06-11 23:01:53 +0800.
+//  Created by zhou li on 15/8/2.
 //  Copyright (c) 2015年 VizLab. All rights reserved.
 //
 
 
-  
-#import "VZHTTPModel.h"
 
-
-@interface TPPubilshServiceModel : VZHTTPModel
+@interface TPEditServiceContentModel : VZHTTPModel
 
 @property(nonatomic,strong) NSString* name;
 @property(nonatomic,strong) NSString* address;
@@ -31,5 +27,5 @@
 @property(nonatomic,strong) NSString* moneyType;
 @property(nonatomic,strong) NSString* sid;
 
-@end
 
+@end

@@ -19,6 +19,8 @@
 #import "TPDDProfileItem.h"
 #import "TPDDCommentItem.h"
 #import "TPDDTripItem.h"
+#import "TPPubilshServiceModel.h"
+#import "TPEditServiceContentModel.h"
 
 @interface TPPSContentEditViewController()<SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -33,11 +35,37 @@
 @property (nonatomic, assign) int index;
 @property (nonatomic) id normalFont;
 
+@property(nonatomic,strong)TPPubilshServiceModel *pubilshServiceModel;
+@property(nonatomic,strong)TPEditServiceContentModel *  editServiceContentModel;
+
 @end
 
 #define MAX_IMAGE_COUNT 9
 
 @implementation TPPSContentEditViewController
+
+
+////////////////////////////////////////////////////////////
+#pragma mark - getters
+
+
+- (TPPubilshServiceModel *)pubilshServiceModel
+{
+    if (!_pubilshServiceModel) {
+        _pubilshServiceModel = [TPPubilshServiceModel new];
+        _pubilshServiceModel.key = @"__TPEditServiceModel__";
+    }
+    return _pubilshServiceModel;
+}
+
+- (TPEditServiceContentModel *)editServiceContentModel
+{
+    if (!_editServiceContentModel) {
+        _editServiceContentModel = [TPEditServiceContentModel new];
+        _editServiceContentModel.key = @"__TPEditServiceModel__";
+    }
+    return _editServiceContentModel;
+}
 
 
 - (void)loadView
@@ -84,6 +112,7 @@
     self.textView.backgroundColor = [UIColor whiteColor];
     self.textView.editable = YES;
     self.textView.lineSpacing = 8.0f;
+    self.textView.delegate = self;
     NSString *initialText = @"";
     self.textView.text = initialText;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:initialText];
@@ -98,6 +127,7 @@
     self.textView.delegate = self;
     [self.scrollView addSubview:self.textView];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -190,15 +220,13 @@
     CGSize contentSize = [self.textView sizeThatFits:containerSize];
     
     CGRect frame = self.textView.frame;
-    frame.size.height = MAX(contentSize.height, containerSize.height);
+    frame.size.height = MAX(contentSize.height, containerSize.height) + self.titleView.vzHeight + 20;
     
     self.textView.frame = frame;
     self.scrollView.contentSize = frame.size;
     
     [self.scrollView scrollRectToVisible:self.textView.caretRect animated:YES];
 }
-
-
 
 - (void)hideKeyboard
 {
@@ -279,6 +307,88 @@
         [self presentViewController:imagePickerController animated:YES completion:nil];
     }
     
+}
+
+
+- (void)done
+{
+
+    [self.textView resignFirstResponder];
+    [self processText];
+    
+    BOOL isPicUploading = false;
+    NSArray* items = self.galleryView.imageItems;
+    
+    /////// <div>< img src="xxx" width="100%" /></div>
+    
+    for (O2OCommentImageItem* item in items)
+    {
+        
+        if (item.isUploading) {
+            isPicUploading = true;
+            break;
+        }
+        
+        if (item.imageURL) {
+            [_picsList addObject:item.imageURL];
+        }
+        
+    }
+    
+    if (isPicUploading)
+    {
+        TOAST(self, @"请等待图片上传完毕");
+        return;
+    }
+    else if (_picsList.count == 0)
+    {
+        TOAST(self, @"请上传图片");
+        return;
+    }
+    else
+    {
+        [self insertUrlInContent];
+        
+        
+        SHOW_SPINNER(self);
+        self.pubilshServiceModel.sid = self.discoveryDetailListModel.sid;
+        self.pubilshServiceModel.country = @"TW";
+        self.pubilshServiceModel.name = self.discoveryDetailListModel.tripInfoItem.name;
+        self.pubilshServiceModel.address = self.discoveryDetailListModel.tripInfoItem.address;
+        self.pubilshServiceModel.descpt = self.content;
+        self.pubilshServiceModel.pic = self.discoveryDetailListModel.tripInfoItem.pics;
+        self.pubilshServiceModel.price = self.discoveryDetailListModel.tripDetailItem.tripFee;
+        self.pubilshServiceModel.maxbuyerNum = self.discoveryDetailListModel.tripDetailItem.tripPeopleNum;
+        self.pubilshServiceModel.serviceTme = self.discoveryDetailListModel.tripDetailItem.tripTimeLength;
+        self.pubilshServiceModel.bestTime = self.discoveryDetailListModel.tripInfoItem.bestTime;
+        self.pubilshServiceModel.meetingWay = self.discoveryDetailListModel.tripInfoItem.meetingWay;
+        self.pubilshServiceModel.priceType = self.discoveryDetailListModel.tripInfoItem.priceType;
+        self.pubilshServiceModel.moneyType = self.discoveryDetailListModel.tripInfoItem.moneyType;
+        __weak typeof(self) weakSelf = self;
+        [self.pubilshServiceModel loadWithCompletion:^(VZModel *model, NSError *error) {
+            
+            HIDE_SPINNER(weakSelf);
+            if (!error) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [weakSelf.view makeToast:@"" duration:2.0 position:CSToastPositionCenter title:@"编辑成功!"];
+                    
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewService withObject:nil Data:nil];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        
+                        [weakSelf.navigationController popViewControllerAnimated:true];
+                    });
+                    
+                });
+            }
+            else
+                TOAST_ERROR(weakSelf, error);
+        }];
+    }
+    return;
 }
 
 
@@ -455,6 +565,16 @@
     return result;
 }
 
+
+- (void)textViewDidBeginEditing:(SETextView *)textView
+{
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+}
+
+- (void)textViewDidEndEditing:(SETextView *)textView
+{
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+}
 
 
 
