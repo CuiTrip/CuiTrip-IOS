@@ -59,7 +59,7 @@
     }
     else if (sender.tag == 4)
     {
-        NSArray* list = @[@"人民币",@"新台币"];
+        NSArray* list = @[@"新台币",@"人民币"];
         [TBCityHUDPicker showPicker:list Title:@"请选择货币类型" Tag:@"d" Delegate:self];
     }
 }
@@ -110,9 +110,11 @@
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"c"]) {
         if (index == 0) {
             self.priceType = @"0";
+            self.price.enabled = YES;
         }
         else if(index == 1){
             self.priceType = @"1";
+            self.price.enabled = YES;
         }
         else
         {
@@ -123,6 +125,7 @@
         
         [self.priceTypeBtn setTitle:str forState:UIControlStateNormal];
         [self.priceTypeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.moneyTypeBtn setTitleColor:[TPTheme bgColor] forState:UIControlStateNormal];
     }
     
     if ([[TBCityHUDPicker sharedInstance].tag isEqualToString:@"d"]) {
@@ -133,7 +136,11 @@
             self.moneyType = @"CNY";
 
         [self.moneyTypeBtn setTitle:str forState:UIControlStateNormal];
-        [self.moneyTypeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        if ([self.priceType isEqualToString:@"2"]) {
+            [self.moneyTypeBtn setTitle:[str stringByAppendingString:@"/人"] forState:UIControlStateNormal];
+        }
+
+        [self.moneyTypeBtn setTitleColor:[TPTheme bgColor] forState:UIControlStateNormal];
     }
     
 }

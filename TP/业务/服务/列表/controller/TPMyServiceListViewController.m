@@ -136,6 +136,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"TPMyServiceListView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -150,7 +151,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPMyServiceListView"];
     //todo..
 }
 

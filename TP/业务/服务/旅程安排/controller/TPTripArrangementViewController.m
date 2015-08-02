@@ -157,6 +157,7 @@
 {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
+    [MobClick beginLogPageView:@"tripArrangement"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -169,7 +170,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"tripArrangement"];
     //todo..
 }
 

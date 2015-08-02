@@ -22,6 +22,13 @@
     [super autoKVCBinding:dictionary];
     
     //todo...
+    NSString* extInfoDic = dictionary[@"extInfo"];
+    NSData *extInfoData = [extInfoDic dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *extInfoObj = [NSJSONSerialization JSONObjectWithData:extInfoData options:0 error:nil];
+    NSLog(@"extInfoObj:%@",extInfoObj);
+    self.introduce = extInfoObj[@"introduce"];
+    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
+    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
 }
 
 @end

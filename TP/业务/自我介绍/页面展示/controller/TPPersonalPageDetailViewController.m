@@ -88,6 +88,7 @@
     [super viewWillAppear:animated];
     
     self.tabBarController.tabBar.hidden = true;
+    [MobClick beginLogPageView:@"TPPersonalPageDetail"];
     //todo..
 }
 
@@ -101,7 +102,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPPersonalPageDetail"];
     //todo..
 }
 

@@ -44,6 +44,7 @@
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
     //todo..
+    [MobClick beginLogPageView:@"TPTripCancelledView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,6 +58,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"TPTripCancelledView"];
     
     //todo..
 }

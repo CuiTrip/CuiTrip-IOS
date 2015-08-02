@@ -8,14 +8,17 @@
 
 
 
-
-typedef enum
+typedef NS_ENUM(NSInteger, TripOrderStatus)
 {
-    kOrderReadyConfirm = 1,
-    kOrderReadyPay,
-    kOrderReadyBegin,
-    kOrderInTrip,
-    kOrderReadyComment,
-    kOrderFinished,
-    kOrderInvalid
-}TripOrderStatus;
+    kOrderReadyConfirm  = 1,
+    kOrderReadyPay      = 2,
+    kOrderReadyBegin    = 3,
+    kOrderInTrip        = 4,
+    kOrderReadyComment  = 5,
+    kOrderFinished      = 6,
+    kOrderInvalid       = 7,
+    kOrderRefunding     = 8,
+    kOrderRefundFailed  = 9,
+    kOrderUnknown       = -1
+    
+};

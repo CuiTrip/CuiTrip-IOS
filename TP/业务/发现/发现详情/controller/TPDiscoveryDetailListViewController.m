@@ -24,6 +24,8 @@
 #import "TPLicenceViewController.h"
 #import "TPTripArrangementModel.h"
 #import "TPPSContentEditViewController.h"
+#import "TPPersonalPageViewController.h"
+#import "TPPersonalPageDetailViewController.h"
 
 @interface TPDiscoveryDetailListViewHeaderView:UIView
 
@@ -411,6 +413,10 @@
         vc.content = self.discoveryDetailListModel.tripInfoItem.desc;
         [self.navigationController pushViewController:vc animated:YES];
     }
+    else if ([type isEqualToString:@"gotoUserIntroduce"])
+    {
+        [self gotoUserPage];
+    }
     else if ([type isEqualToString:@"gotoComment"])
     {
         TPCommentListViewController* vc = [TPCommentListViewController new];
@@ -461,8 +467,8 @@
  * 分享到微信设置
  *
  */
-//////////////////////////////////////////////////////////// 
-#pragma mark - private callback method 
+////////////////////////////////////////////////////////////
+#pragma mark - private callback method
 
 -(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
 {

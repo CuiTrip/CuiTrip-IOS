@@ -139,6 +139,7 @@ static const CGFloat defaultFontSize = 18.0f;
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
     //todo..
+    [MobClick beginLogPageView:@"TPPersonalPageView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -151,7 +152,7 @@ static const CGFloat defaultFontSize = 18.0f;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPPersonalPageView"];
     //todo..
 }
 

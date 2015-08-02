@@ -57,6 +57,7 @@
 {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
+    [MobClick beginLogPageView:@"TPCancelTripOrder"];
     //todo..
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillAppear:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillDisappear:) name:UIKeyboardWillHideNotification object:nil];
@@ -73,7 +74,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPCancelTripOrder"];
     //todo..
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];

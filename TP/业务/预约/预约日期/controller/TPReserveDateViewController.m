@@ -61,7 +61,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"TPReserveDateView"];
     //todo..
 }
 
@@ -75,7 +75,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPReserveDateView"];
     //todo..
 }
 

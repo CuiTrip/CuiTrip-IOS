@@ -52,19 +52,19 @@
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = true;
     //todo..
+    [MobClick beginLogPageView:@"TPShareTrippingView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     //todo..
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPShareTrippingView"];
     //todo..
 }
 

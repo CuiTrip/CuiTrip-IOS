@@ -121,6 +121,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"TPTripListView"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -132,7 +133,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPTripListView"];
     //todo..
 }
 

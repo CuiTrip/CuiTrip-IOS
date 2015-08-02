@@ -22,6 +22,11 @@
 @property(nonatomic,strong)NSString* registerTime;
 @property(nonatomic,strong)NSString* status;
 
+@property(nonatomic,strong)NSString* extInfo;
+@property(nonatomic,strong)NSString* introduce;
+@property(nonatomic,strong)NSString* introduceAuditStatus;
+@property(nonatomic,strong)NSString* introduceFailedReason;
+
 @end
 
   

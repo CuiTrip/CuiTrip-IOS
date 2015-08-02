@@ -184,7 +184,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MobClick beginLogPageView:@"TPDatePickerView"];
     //todo..
     
 }
@@ -199,7 +199,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"TPDatePickerView"];
     //todo..
 }
 
