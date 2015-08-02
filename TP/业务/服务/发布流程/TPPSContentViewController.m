@@ -149,6 +149,7 @@
         
         if (item.isUploading) {
             isPicUploading = true;
+            [_picsList removeAllObjects];
             break;
         }
         

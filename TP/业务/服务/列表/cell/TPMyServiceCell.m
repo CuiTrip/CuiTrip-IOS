@@ -125,7 +125,6 @@
             id jsonObject = [NSJSONSerialization JSONObjectWithData:[myServiceItem.extInfo dataUsingEncoding:NSUTF8StringEncoding]options:NSJSONReadingMutableContainers error:nil];
             if ([jsonObject isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *dict = (NSDictionary *)jsonObject;
-                NSLog(@"reason : %@", [dict objectForKey:@"refuseReason"]);
                 self.delReasonLabel.text = [NSString stringWithFormat:@"未通过原因：%@",[dict objectForKey:@"refuseReason"]];
             }
         }

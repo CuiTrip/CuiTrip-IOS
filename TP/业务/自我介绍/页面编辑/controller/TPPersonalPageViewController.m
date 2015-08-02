@@ -304,6 +304,7 @@ static const CGFloat defaultFontSize = 18.0f;
         
         if (item.isUploading) {
             isPicUploading = true;
+            [_picsList removeAllObjects];
             break;
         }
         

@@ -69,7 +69,7 @@
         self.extInfo = [aDecoder decodeObjectForKey:@"extInfo"];
         self.extInfoDic = [aDecoder decodeObjectForKey:@"extInfo"];
         id jsonObject = [NSJSONSerialization JSONObjectWithData:[self.extInfo dataUsingEncoding:NSUTF8StringEncoding]
-                                                        options:NSJSONReadingAllowFragments
+                                                        options:NSJSONReadingMutableContainers
                                                           error:nil];
         if ([jsonObject isKindOfClass:[NSDictionary class]]) {
             self.extInfoDic = [NSDictionary dictionaryWithDictionary:jsonObject];

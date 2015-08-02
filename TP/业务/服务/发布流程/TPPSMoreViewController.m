@@ -138,7 +138,7 @@
 
 
 - (void) infoPicClicked {
-    TPPSFeeExplanView *view = [[TPPSFeeExplanView alloc] initWithFrame:CGRectMake(0.0f, self.view.frame.origin.y - 64.0f, kTPScreenWidth, kTPScreenHeight)];
+    TPPSFeeExplanView *view = [[TPPSFeeExplanView alloc] initWithFrame:CGRectMake(0.0f, self.view.frame.origin.y - 44.0f, kTPScreenWidth, kTPScreenHeight)];
     [self.view addSubview:view];
 }
 
