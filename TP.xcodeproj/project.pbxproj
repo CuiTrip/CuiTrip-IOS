@@ -103,6 +103,7 @@
 		45EB31601B3668EE003A97AE /* VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB315F1B3668EE003A97AE /* VZChannel.m */; };
 		45EB31631B366916003A97AE /* NSObject+VZChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB31621B366916003A97AE /* NSObject+VZChannel.m */; };
 		45EB31671B36F369003A97AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EB31661B36F369003A97AE /* Images.xcassets */; };
+		6B409A591B6DFBA4001306C4 /* TPEditServiceContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B409A581B6DFBA4001306C4 /* TPEditServiceContentModel.m */; };
 		6B5F0C041B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */; };
 		6B690B1A1B64DE5300A295ED /* trip_connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B151B64DE5300A295ED /* trip_connect@2x.png */; };
 		6B690B1B1B64DE5300A295ED /* trip_mail_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B690B161B64DE5300A295ED /* trip_mail_blue@2x.png */; };
@@ -550,6 +551,8 @@
 		45EB31621B366916003A97AE /* NSObject+VZChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+VZChannel.m"; sourceTree = "<group>"; };
 		45EB31661B36F369003A97AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		550D6DECC839DE03E8B42771 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6B409A571B6DFB83001306C4 /* TPEditServiceContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPEditServiceContentModel.h; sourceTree = "<group>"; };
+		6B409A581B6DFBA4001306C4 /* TPEditServiceContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPEditServiceContentModel.m; sourceTree = "<group>"; };
 		6B5F0C021B6CE9D100070A2B /* TPMyServiceListDeleteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPMyServiceListDeleteModel.h; sourceTree = "<group>"; };
 		6B5F0C031B6CEA3D00070A2B /* TPMyServiceListDeleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMyServiceListDeleteModel.m; sourceTree = "<group>"; };
 		6B690B151B64DE5300A295ED /* trip_connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trip_connect@2x.png"; sourceTree = "<group>"; };
@@ -2233,6 +2236,8 @@
 			children = (
 				7B51331E1B675B78007EB19F /* TPPubilshServiceModel.h */,
 				7B51331F1B675B78007EB19F /* TPPubilshServiceModel.m */,
+				6B409A571B6DFB83001306C4 /* TPEditServiceContentModel.h */,
+				6B409A581B6DFBA4001306C4 /* TPEditServiceContentModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3635,6 +3640,7 @@
 				7B5134D21B675B78007EB19F /* TPMessageListItem.m in Sources */,
 				7B5134E71B675B78007EB19F /* TPModifyPWDViewController.m in Sources */,
 				7B5134C41B675B78007EB19F /* O2OCommentImageView.m in Sources */,
+				6B409A591B6DFBA4001306C4 /* TPEditServiceContentModel.m in Sources */,
 				7B5134FF1B675B79007EB19F /* TPAboutViewController.m in Sources */,
 				7B5134961B675B78007EB19F /* TPTripDetailSubView.m in Sources */,
 				7B51345D1B675B78007EB19F /* TPDiscoveryDetailContentViewController.m in Sources */,

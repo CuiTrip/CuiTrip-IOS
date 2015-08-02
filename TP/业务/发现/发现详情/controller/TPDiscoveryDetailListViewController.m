@@ -415,7 +415,7 @@
     }
     else if ([type isEqualToString:@"gotoUserIntroduce"])
     {
-        [self gotoUserPage];
+        //[self gotoUserPage];
     }
     else if ([type isEqualToString:@"gotoComment"])
     {

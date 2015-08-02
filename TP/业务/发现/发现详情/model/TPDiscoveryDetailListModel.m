@@ -61,7 +61,10 @@
     infoItem.pics = serviceInfo[@"pic"];
     infoItem.insiderId = serviceInfo[@"insiderId"];
     infoItem.moneyType = serviceInfo[@"moneyType"];
+    infoItem.priceType = serviceInfo[@"priceType"];
     infoItem.checkStatus = serviceInfo[@"checkStatus"];
+    infoItem.bestTime = serviceInfo[@"bestTime"];
+    infoItem.meetingWay = serviceInfo[@"meetingWay"];
     self.tripInfoItem = infoItem;
     [list addObject:infoItem];
     

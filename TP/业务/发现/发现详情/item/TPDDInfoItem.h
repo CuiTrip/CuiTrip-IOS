@@ -20,7 +20,10 @@
 @property(nonatomic,strong)NSArray* pics;
 @property(nonatomic,strong)NSString* insiderId;
 @property(nonatomic,strong)NSString* moneyType;
+@property(nonatomic,strong)NSString* priceType;
 @property(nonatomic,strong)NSString* checkStatus;
+@property(nonatomic,strong)NSString* bestTime;
+@property(nonatomic,strong)NSString* meetingWay;
 
 @end
 
