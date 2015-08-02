@@ -74,12 +74,6 @@
     [self.poster sd_setImageWithURL:__url(item.backPic) placeholderImage:__image(@"default_list.jpg")];
     [self.icon sd_setImageWithURL:__url([TPUser avatar]) placeholderImage:__image(@"girl.jpg")];
     self.posterNameLabel.text = item.name;
-    
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:[item.extInfo dataUsingEncoding:NSUTF8StringEncoding]options:NSJSONReadingAllowFragments error:nil];
-    if ([jsonObject isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *dict = (NSDictionary *)jsonObject;
-        self.delReasonLabel.text = [NSString stringWithFormat:@"未通过原因：%@",[dict objectForKey:@"refuseReason"]];
-    }
 }
 
 - (void)layoutSubviews
@@ -127,6 +121,13 @@
             self.delReasonLabel.font = [UIFont systemFontOfSize:13.0f];
             self.delReasonLabel.textColor = [UIColor colorWithRed:(255 / 255.0f) green:(255 / 255.0f) blue:(255 / 255.0f) alpha:1.0f];
             self.delReasonLabel.textAlignment = NSTextAlignmentLeft;
+            TPMyServiceListItem *myServiceItem = (TPMyServiceListItem *)self.item;
+            id jsonObject = [NSJSONSerialization JSONObjectWithData:[myServiceItem.extInfo dataUsingEncoding:NSUTF8StringEncoding]options:NSJSONReadingMutableContainers error:nil];
+            if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *dict = (NSDictionary *)jsonObject;
+                NSLog(@"reason : %@", [dict objectForKey:@"refuseReason"]);
+                self.delReasonLabel.text = [NSString stringWithFormat:@"未通过原因：%@",[dict objectForKey:@"refuseReason"]];
+            }
         }
         if (self.delTipLabel == nil) {
             self.delTipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
