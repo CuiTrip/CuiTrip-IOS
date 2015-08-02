@@ -232,6 +232,7 @@
     [super showModel:model];
     
     [self checkAPNS];
+    [self.tableView reloadData];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - @override methods - VZListViewController
@@ -322,7 +323,7 @@
             [weakSelf load];
         }
     }];
-
+    
 }
 
 - (void)onLoginSuccess
