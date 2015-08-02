@@ -32,24 +32,34 @@
 @property(nonatomic,strong) NSString* moneyType;
 
 @end
+#define ios7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
+
 
 @implementation TPPSMoreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    CGFloat origin_y;
+    if(ios7){
+        origin_y = 64.0;
+    }else{
+        origin_y=0;
+    }
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     
     CGSize containerSize = self.scrollView.frame.size;
     CGSize contentSize = [self.allview sizeThatFits:containerSize];
-    
     CGRect frame = self.allview.frame;
     frame.size.height = MAX(contentSize.height, containerSize.height);
-    
     self.allview.frame = frame;
     self.scrollView.contentSize = frame.size;
-    
     [self.scrollView scrollRectToVisible:self.allview.frame animated:YES];
     self.scrollView.scrollEnabled = YES;
+    
     
 
     self.avatarIcon.userInteractionEnabled = YES;
@@ -62,6 +72,11 @@
     
     // Add the gesture to the view
     [self.avatarIcon addGestureRecognizer:singleTap];
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
 }
 
@@ -78,12 +93,57 @@
 }
 
 
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    self.scrollView.scrollEnabled = NO;
+    
+    CGRect keyboardBounds;
+    [notification.userInfo[UIKeyboardFrameEndUserInfoKey] getValue:&keyboardBounds];
+    
+    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    
+    CGRect containerFrame = self.scrollView.frame;
+    containerFrame.size.height = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(keyboardBounds)-20;
+    
+    self.scrollView.frame = containerFrame;
+    
+    self.scrollView.scrollEnabled = YES;
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    self.scrollView.scrollEnabled = NO;
+    
+    CGRect keyboardBounds;
+    [notification.userInfo[UIKeyboardFrameEndUserInfoKey] getValue:&keyboardBounds];
+    
+    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    
+    CGRect containerFrame = self.scrollView.frame;
+    containerFrame.size.height = CGRectGetHeight(self.view.bounds);
+    
+    self.scrollView.frame = containerFrame;
+    
+    self.scrollView.scrollEnabled = YES;
+    
+}
+
+- (void)closeKeyboard
+{
+    [self.address resignFirstResponder];
+    [self.price resignFirstResponder];
+}
+
+
 - (void) infoPicClicked {
     TOAST(self, @"跳转计费说明");
 }
 
 - (IBAction)onAction:(UIButton* )sender {
-
+    [self closeKeyboard];
+    [self.address resignFirstResponder];
     if (sender.tag == 1) {
         NSArray* list = @[@"1小时",@"2小时",@"3小时",@"4小时",@"5小时",@"6小时",@"7小时",@"8小时",@"9小时",@"10小时",@"11小时",@"12小时"];
         [TBCityHUDPicker showPicker:list Title:@"请选择游玩时长" Tag:@"a" Delegate:self];
@@ -158,14 +218,14 @@
         else if(index == 1){
             self.priceType = @"1";
             self.price.enabled = YES;
-            [self.moneyTypeBtn setTitle:@"新台币" forState:UIControlStateNormal];
+            [self.moneyTypeBtn setTitle:[@"新台币" stringByAppendingString:@"/人"] forState:UIControlStateNormal];
         }
         else
         {
             self.priceType = @"2";
             self.price.text = @"0";
             self.price.enabled = NO;
-            [self.moneyTypeBtn setTitle:[@"新台币" stringByAppendingString:@"/人"] forState:UIControlStateNormal];
+            [self.moneyTypeBtn setTitle:@"新台币" forState:UIControlStateNormal];
         }
         
         [self.priceTypeBtn setTitle:str forState:UIControlStateNormal];
