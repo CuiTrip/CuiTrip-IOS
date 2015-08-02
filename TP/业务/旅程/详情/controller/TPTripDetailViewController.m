@@ -109,6 +109,7 @@
     [self registerModel:self.tripDetailModel];
     
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
+    
     void(^loadModel)(void) = ^{
         
         [TPLoginManager hideLoginViewController];

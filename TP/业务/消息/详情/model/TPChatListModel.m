@@ -40,7 +40,13 @@
              @"uid":[TPUser uid]?:@"",
              @"token":[TPUser token]?:@"",
              @"size":@"100",
-             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]};
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]
+             };
+}
+
+- (NSInteger)pageSize
+{
+    return 10;
 }
 
 - (VZHTTPRequestConfig)requestConfig

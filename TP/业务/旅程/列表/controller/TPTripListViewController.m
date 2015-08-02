@@ -83,6 +83,10 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
+    
+    self.tableView.showsVerticalScrollIndicator = YES;
+    self.tableView.separatorStyle = NO;
+    
     __observeNotify(@selector(onLoginSuccess),kTPNotifyMessageLoginSuccess);
     
     [self registerChannelMsg];

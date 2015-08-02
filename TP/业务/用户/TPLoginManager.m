@@ -89,14 +89,6 @@
                                     
                                     if ([code integerValue] == 0 ) {
                                         
-                                        //register APNS
-                                        
-                                        NSData* token = [[TMCache sharedCache] objectForKey:kTPCacheKey_APNS_Token];
-                                        [[TPAPNS sharedInstance] updateDeviceToken:token];
-                                        
-                                        __notify(kTPNotifyMessageLoginSuccess);
-                                        
-                                        
                                         NSDictionary* result = responseObj[@"result"];
                                         
                                         if (IsDictionaryValid(result)) {
@@ -106,6 +98,15 @@
                                         if (completion) {
                                             completion(nil);
                                         }
+                                        
+                                        
+                                        //register APNS
+                                        
+                                        NSData* token = [[TMCache sharedCache] objectForKey:kTPCacheKey_APNS_Token];
+                                        [[TPAPNS sharedInstance] updateDeviceToken:token];
+                                        
+                                        __notify(kTPNotifyMessageLoginSuccess);
+                                        
                                         
         
                                     }

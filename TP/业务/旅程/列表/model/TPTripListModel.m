@@ -25,8 +25,19 @@
     
     NSString* userType = [TPUser type] == kCustomer?@"1":@"2";
     
-    return @{@"uid":[TPUser uid]?:@"",@"token":[TPUser token]?:@"",@"userType":userType};
+    return @{
+             @"uid":[TPUser uid]?:@"",
+             @"token":[TPUser token]?:
+             @"",@"userType":userType,
+             @"size":@"20",
+             @"start":[NSString stringWithFormat:@"%ld",(long)self.currentPageIndex*self.pageSize]
+             };
     
+}
+
+- (NSInteger)pageSize
+{
+    return 10;
 }
 
 - (NSString *)methodName {

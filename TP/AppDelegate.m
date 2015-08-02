@@ -59,6 +59,8 @@
             [[TPAPNS sharedInstance] receiveRemoteNotification:userInfo];
         }
     }
+    [UMessage setLogEnabled:YES];
+    
     
     // 注册友盟统计 channelId默认AppStore渠道
     [MobClick startWithAppkey:um_appKey reportPolicy:BATCH channelId:@""];
@@ -122,6 +124,9 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
+    NSLog(@"%@",[[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                  stringByReplacingOccurrencesOfString: @">" withString: @""]
+                 stringByReplacingOccurrencesOfString: @" " withString: @""]);
     [[TPAPNS sharedInstance] updateDeviceToken:deviceToken];
 }
 
