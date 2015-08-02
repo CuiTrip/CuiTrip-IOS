@@ -80,8 +80,6 @@
         NSDictionary *dict = (NSDictionary *)jsonObject;
         self.delReasonLabel.text = [NSString stringWithFormat:@"未通过原因：%@",[dict objectForKey:@"refuseReason"]];
     }
-    
-    
 }
 
 - (void)layoutSubviews

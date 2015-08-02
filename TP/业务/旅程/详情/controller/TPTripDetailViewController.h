@@ -25,7 +25,7 @@
 ***/
 
 
-@interface TPTripDetailViewController : VZViewController<UITableViewDelegate, UITableViewDataSource, TripSubViewDelegate>
+@interface TPTripDetailViewController : VZViewController<UITableViewDelegate, UITableViewDataSource, TripSubViewDelegate, UIAlertViewDelegate>
 
 
 @property(nonatomic,strong)NSString* oid;
