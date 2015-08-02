@@ -171,7 +171,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
-        if ([TPUser introduce]==nil)
+        if ([[TPUser introduce] isEqualToString:@""]||[TPUser introduce]==nil || [[TPUser introduce]isKindOfClass:[NSNull class]])
         {
             TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
             vc.content = @"";

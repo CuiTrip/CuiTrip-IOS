@@ -67,7 +67,7 @@
         self.pwd = [aDecoder decodeObjectForKey:@"pwd"];
         self.city = [aDecoder decodeObjectForKey:@"city"];
         self.extInfo = [aDecoder decodeObjectForKey:@"extInfo"];
-        self.extInfoDic = [aDecoder decodeObjectForKey:@"extInfo"];
+//        self.extInfoDic = [aDecoder decodeObjectForKey:@"extInfo"];
         id jsonObject = [NSJSONSerialization JSONObjectWithData:[self.extInfo dataUsingEncoding:NSUTF8StringEncoding]
                                                         options:NSJSONReadingAllowFragments
                                                           error:nil];

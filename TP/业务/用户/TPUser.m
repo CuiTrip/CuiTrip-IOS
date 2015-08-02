@@ -136,16 +136,25 @@
 
 + (NSString* )introduce
 {
+    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
+        return @"";
+    }
     return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduce"];
 }
 
 + (NSString* )introduceAuditStatus
 {
+    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
+        return @"";
+    }
     return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceAuditStatus"];
 }
 
 + (NSString* )introduceFailedReason
 {
+    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
+        return @"";
+    }
     return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceFailedReason"];
 }
 
