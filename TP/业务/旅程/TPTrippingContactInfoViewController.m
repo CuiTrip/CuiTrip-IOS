@@ -117,7 +117,7 @@
     
     self.emailIcon = [TPUIKit imageView];
     self.emailIcon.image = __image(@"trip_mail_blue.png");
-    self.emailIcon.frame = CGRectMake((self.view.vzWidth - 36.0f) / 2, self.callBtn.vzBottom + 50.0f, 36.0f, 24.0f);
+    self.emailIcon.frame = CGRectMake((self.view.vzWidth - 36.0f) / 2, self.callBtn.vzBottom + 25.0f, 36.0f, 24.0f);
     
     self.emailLabel = [TPUIKit label:[UIColor colorWithRed:0 / 255.0f green:204 / 255.0f blue:221 / 255.0f alpha:1.0f] Font:[UIFont systemFontOfSize:15.0f]];
     self.emailLabel.text = @"service@cuitrip.com";

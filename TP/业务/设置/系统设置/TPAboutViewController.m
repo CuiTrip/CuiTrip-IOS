@@ -13,6 +13,8 @@
 
 @interface TPAboutViewController ()
 
+//@property(nonatomic,strong) UITableView* tableView;
+
 @end
 
 @implementation TPAboutViewController
@@ -24,9 +26,29 @@
     
     [self.view setBackgroundColor:[TPTheme yellowColor]];
     
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.vzWidth, self.view.vzHeight) style:UITableViewStyleGrouped];
+    //self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.opaque = YES;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    //[self.view addSubview:self.tableView];
+    
+    UIImageView *tripLogo = [TPUIKit imageView];
+    tripLogo.contentMode = UIViewContentModeScaleAspectFit;
+    tripLogo.frame = CGRectMake(0.0f, 0.0f, self.tableView.vzWidth, 240.0f);
+    tripLogo.image = __image(@"trip_logo_a.png");
+    
     UIView* footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.vzWidth, 160)];
+    UILabel *label = [TPUIKit label:[TPTheme blackColor] Font:[UIFont systemFontOfSize:9.0f]];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(0.0f, 0.0f, footerView.vzWidth, 15.0f);
+    
+    label.text = @"Copyright © 2015  Cuitrip All Rights Reserved";
+    [footerView addSubview:label];
     
 //    [footerView addSubview:btn];
+    self.tableView.tableHeaderView = tripLogo;
     self.tableView.tableFooterView = footerView;
 }
 
@@ -73,6 +95,47 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44.0f;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"aboutTripCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    }
+
+    if (indexPath.row == 0)
+    {
+        cell.textLabel.text = @"版本号";
+        cell.detailTextLabel.text = @"V1.1.0";
+    }
+    else if (indexPath.row == 1)
+    {
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = @"支持脆饼";
+    }
+    else if (indexPath.row == 2)
+    {
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = @"联系脆饼";
+    }
+    return cell;
+    
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -7,6 +7,7 @@
 //
 
 #import "TPSystemSettingsViewController.h"
+#import "TPAboutViewController.h"
 
 @interface TPSystemSettingsViewController ()
 
@@ -94,7 +95,8 @@
     }
     else if(indexPath.row == 1)
     {
-        UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPAboutViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpabout"];
+        //UIViewController* vc = [[UIStoryboard storyboardWithName:@"TPAboutViewController" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"tpabout"];
+        TPAboutViewController* vc = [TPAboutViewController new];
         [self.navigationController pushViewController:vc animated:true];
     }
     else
