@@ -19,6 +19,7 @@
 #import "TPDDProfileItem.h"
 #import "TPDDCommentItem.h"
 #import "TPDDTripItem.h"
+#import "TPPubilshServiceModel.h"
 
 @interface TPPSContentEditViewController()<SETextViewDelegate, O2OCommentImageListViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -33,11 +34,27 @@
 @property (nonatomic, assign) int index;
 @property (nonatomic) id normalFont;
 
+@property(nonatomic,strong)TPPubilshServiceModel *pubilshServiceModel; 
+
 @end
 
 #define MAX_IMAGE_COUNT 9
 
 @implementation TPPSContentEditViewController
+
+
+////////////////////////////////////////////////////////////
+#pragma mark - getters
+
+
+- (TPPubilshServiceModel *)pubilshServiceModel
+{
+    if (!_pubilshServiceModel) {
+        _pubilshServiceModel = [TPPubilshServiceModel new];
+        _pubilshServiceModel.key = @"__TPPubilshServiceModel__";
+    }
+    return _pubilshServiceModel;
+}
 
 
 - (void)loadView
@@ -84,6 +101,7 @@
     self.textView.backgroundColor = [UIColor whiteColor];
     self.textView.editable = YES;
     self.textView.lineSpacing = 8.0f;
+    self.textView.delegate = self;
     NSString *initialText = @"";
     self.textView.text = initialText;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:initialText];
@@ -98,6 +116,7 @@
     self.textView.delegate = self;
     [self.scrollView addSubview:self.textView];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -278,6 +297,12 @@
         imagePickerController.allowsEditing = YES;
         [self presentViewController:imagePickerController animated:YES completion:nil];
     }
+    
+}
+
+
+- (void)done
+{
     
 }
 

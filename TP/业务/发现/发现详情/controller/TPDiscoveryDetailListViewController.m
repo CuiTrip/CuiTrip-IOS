@@ -457,8 +457,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
-
 /**
  * 分享到微信设置
  *
