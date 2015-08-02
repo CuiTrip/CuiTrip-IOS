@@ -41,6 +41,8 @@
 
 @end
 
+#define ALERT_TAG  12345
+
 @implementation TPTripDetailViewController
 
 
@@ -478,79 +480,104 @@
         if ([self.tripDetailModel.status intValue] != kOrderReadyConfirm && [self.tripDetailModel.status intValue] != kOrderReadyBegin && [self.tripDetailModel.status intValue] != kOrderInTrip) {
             return;
         }
+        UIAlertView *alert;
         if ([self.tripDetailModel.status intValue] == kOrderReadyConfirm) {
             //去确认行程
-            self.confirmTripOrderModel.oid = self.oid;
-            
-            SHOW_SPINNER(self);
-            __weak typeof(self) weakSelf = self;;
-            [self.confirmTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
-                
-                HIDE_SPINNER(weakSelf);
-                if (!error) {
-                    TOAST(weakSelf, @"确认成功");
-                    //通知列表刷新
-                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
-                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [weakSelf.navigationController popViewControllerAnimated:true];
-                    });
-                }
-                else
-                {
-                    TOAST_ERROR(weakSelf, error);
-                }
-            }];
+            alert = [[UIAlertView alloc] initWithTitle:@"" message:@"确定确认行程吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
             
         }
         if ([self.tripDetailModel.status intValue] == kOrderReadyBegin) {//开始旅程
-            SHOW_SPINNER(self);
-            __weak typeof(self) weakSelf = self;
-            self.beginTripOrderModel.oid = self.oid;
-            [self.beginTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
-                
-                HIDE_SPINNER(weakSelf);
-                if (!error) {
-                    TOAST(weakSelf, @"旅行已开始");
-                    //通知列表刷新
-                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
-                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [weakSelf.navigationController popViewControllerAnimated:true];
-                    });
-                }
-                else
-                {
-                    TOAST_ERROR(weakSelf, error);
-                }
-            }];
+            //去确认行程
+            alert = [[UIAlertView alloc] initWithTitle:@"" message:@"确定确认行程吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+           
         }
         if ([self.tripDetailModel.status intValue] == kOrderInTrip) {
-            //结束旅程
-            SHOW_SPINNER(self);
-            __weak typeof(self) weakSelf = self;
-            self.endTripOrderModel.oid = self.oid;
-            [self.endTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
-                
-                HIDE_SPINNER(weakSelf);
-                if (!error) {
-                    TOAST(weakSelf, @"旅程已结束");
-                    //通知列表刷新
-                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
-                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [weakSelf.navigationController popViewControllerAnimated:true];
-                    });
-                }
-                else
-                {
-                    TOAST_ERROR(weakSelf, error);
-                }
-            }];
+            //去确认行程
+            alert = [[UIAlertView alloc] initWithTitle:@"" message:@"确定确认行程吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
             
         }
-        
+        alert.tag = ALERT_TAG + [self.tripDetailModel.status intValue];
+        [alert show];
     }
+}
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        return;
+    }
+    int status = (int)alertView.tag - ALERT_TAG;
+    if (status == kOrderReadyConfirm) {
+        self.confirmTripOrderModel.oid = self.oid;
+        SHOW_SPINNER(self);
+        __weak typeof(self) weakSelf = self;;
+        [self.confirmTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+            
+            HIDE_SPINNER(weakSelf);
+            if (!error) {
+                TOAST(weakSelf, @"确认成功");
+                //通知列表刷新
+                [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakSelf.navigationController popViewControllerAnimated:true];
+                });
+            }
+            else
+            {
+                TOAST_ERROR(weakSelf, error);
+            }
+        }];
+    }
+    else if (status == kOrderReadyBegin)
+    {
+        SHOW_SPINNER(self);
+        __weak typeof(self) weakSelf = self;
+        self.beginTripOrderModel.oid = self.oid;
+        [self.beginTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+            
+            HIDE_SPINNER(weakSelf);
+            if (!error) {
+                TOAST(weakSelf, @"旅行已开始");
+                //通知列表刷新
+                [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakSelf.navigationController popViewControllerAnimated:true];
+                });
+            }
+            else
+            {
+                TOAST_ERROR(weakSelf, error);
+            }
+        }];
+    }
+    else if(status == kOrderInTrip)
+    {
+        //结束旅程
+        SHOW_SPINNER(self);
+        __weak typeof(self) weakSelf = self;
+        self.endTripOrderModel.oid = self.oid;
+        [self.endTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+            
+            HIDE_SPINNER(weakSelf);
+            if (!error) {
+                TOAST(weakSelf, @"旅程已结束");
+                //通知列表刷新
+                [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakSelf.navigationController popViewControllerAnimated:true];
+                });
+            }
+            else
+            {
+                TOAST_ERROR(weakSelf, error);
+            }
+        }];
+    }
+    
 }
 
 

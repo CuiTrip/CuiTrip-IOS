@@ -121,7 +121,13 @@
             self.delReasonLabel.font = [UIFont systemFontOfSize:13.0f];
             self.delReasonLabel.textColor = [UIColor colorWithRed:(255 / 255.0f) green:(255 / 255.0f) blue:(255 / 255.0f) alpha:1.0f];
             self.delReasonLabel.textAlignment = NSTextAlignmentLeft;
-            self.delReasonLabel.text = @"未通过原因：含有与当前政策不符内容";
+            TPMyServiceListItem *myServiceItem = (TPMyServiceListItem *)self.item;
+            id jsonObject = [NSJSONSerialization JSONObjectWithData:[myServiceItem.extInfo dataUsingEncoding:NSUTF8StringEncoding]options:NSJSONReadingMutableContainers error:nil];
+            if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *dict = (NSDictionary *)jsonObject;
+                NSLog(@"reason : %@", [dict objectForKey:@"refuseReason"]);
+                self.delReasonLabel.text = [NSString stringWithFormat:@"未通过原因：%@",[dict objectForKey:@"refuseReason"]];
+            }
         }
         if (self.delTipLabel == nil) {
             self.delTipLabel = [[UILabel alloc] initWithFrame:CGRectZero];

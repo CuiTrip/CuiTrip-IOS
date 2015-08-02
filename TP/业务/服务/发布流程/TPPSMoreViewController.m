@@ -9,7 +9,7 @@
 #import "TPPSMoreViewController.h"
 #import "TBCityHUDPicker.h"
 #import "TPDatePickerViewController.h"
-
+#import "TPPSFeeExplanView.h"
 
 
 
@@ -138,7 +138,8 @@
 
 
 - (void) infoPicClicked {
-    TOAST(self, @"跳转计费说明");
+    TPPSFeeExplanView *view = [[TPPSFeeExplanView alloc] initWithFrame:CGRectMake(0.0f, self.view.frame.origin.y - 64.0f, kTPScreenWidth, kTPScreenHeight)];
+    [self.view addSubview:view];
 }
 
 - (IBAction)onAction:(UIButton* )sender {
