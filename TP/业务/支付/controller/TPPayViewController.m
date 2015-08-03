@@ -330,7 +330,7 @@
     }];
     
 }
-
+   
 - (void)initResultSubView:(NSString*) result
 {
     __weak typeof(self) weakSelf = self;

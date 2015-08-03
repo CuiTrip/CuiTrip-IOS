@@ -439,6 +439,7 @@
 
 - (void)cancelTrip
 {
+
     TPCancelTripViewController *vc = [TPCancelTripViewController new];
     vc.tripDetailModel = self.tripDetailModel;
     [self.navigationController pushViewController:vc animated:true];
@@ -455,7 +456,7 @@
             TPReserveViewController* v = [[UIStoryboard storyboardWithName:@"TPReserveViewController" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"tpreservedetail"];
             v.type = kModifyOrder;
             v.sid = self.tripDetailModel.sid;
-            v.maxNum = 6;
+            v.maxNum = [self.tripDetailModel.buyerNum integerValue];
             v.oid = self.tripDetailModel.oid;
             v.insiderId = self.tripDetailModel.insiderId;
             v.servicePrice = self.tripDetailModel.orderPrice;

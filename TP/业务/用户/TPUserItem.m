@@ -38,9 +38,9 @@
     NSData *extInfoData = [extInfoDic dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *extInfoObj = [NSJSONSerialization JSONObjectWithData:extInfoData options:0 error:nil];
     NSLog(@"extInfoObj:%@",extInfoObj);
-//    self.introduce = extInfoObj[@"introduce"];
-//    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
-//    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
+    self.introduce = extInfoObj[@"introduce"];
+    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
+    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

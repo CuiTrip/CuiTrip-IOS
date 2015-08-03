@@ -137,7 +137,7 @@
     self.providerIcon.frame = CGRectMake(25.0f, self.poster.vzBottom - 32.5f, 65.0f, 65.0f);
     self.customerIcon.frame = CGRectMake(self.poster.vzWidth - 90.0f, self.poster.vzBottom - 32.5f, 65.0f, 65.0f);
     self.addressIcon.frame = CGRectMake((self.frame.size.width - 44.0f) / 2, self.titleLabel.vzBottom + 10.0f, 14.0f, 14.0f);
-    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, 30.0f, 10.0f);
+    self.addressLabel.frame = CGRectMake(self.addressIcon.vzRight + 5, self.addressIcon.vzTop + 2, 50.0f, 13.0f);
     self.arrow.frame = CGRectMake(self.providerIcon.vzRight, self.poster.vzBottom + 10.0f, self.vzWidth - 180.0f, 15.0f);
     self.providerNameLabel.frame = CGRectMake(0.0f, self.providerIcon.vzBottom + 5.0f, 115.0f, 18.0f);
     self.customerNameLabel.frame = CGRectMake(self.vzWidth - 115.0f, self.customerIcon.vzBottom + 5.0f, 115.0f, 18.0f);

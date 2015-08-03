@@ -216,29 +216,40 @@
 
 - (void)confirm
 {
+
     //取消旅程
     self.cancelTripOrderModel.oid = self.tripDetailModel.oid;
     self.cancelTripOrderModel.reason = self.reasonText.text;
     SHOW_SPINNER(self);
-    __weak typeof(self) weakSelf = self;;
-    [self.cancelTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
-        HIDE_SPINNER(weakSelf);
-        if (!error) {
-            TOAST(weakSelf, @"取消成功");
-            //通知列表刷新
-            [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
-            [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                TPTripCancelledViewController *vc = [TPTripCancelledViewController new];
-                vc.tripDetailModel = self.tripDetailModel;
-                [self.navigationController pushViewController:vc animated:true];
-            });
+    __weak typeof(self) weakSelf = self;
+    [WCAlertView showAlertWithTitle:@"" message:@"确定要取消旅程吗?" customizationBlock:^(WCAlertView *alertView) {
+        
+    } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
+        
+        if (buttonIndex == 1) {
+            [self.cancelTripOrderModel loadWithCompletion:^(VZModel *model, NSError *error) {
+                HIDE_SPINNER(weakSelf);
+                if (!error) {
+                    TOAST(weakSelf, @"取消成功");
+                    //通知列表刷新
+                    [weakSelf vz_postToChannel:kChannelNewOrder withObject:nil Data:nil];
+                    [weakSelf vz_postToChannel:kChannelNewMessage withObject:nil Data:nil];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        TPTripCancelledViewController *vc = [TPTripCancelledViewController new];
+                        vc.tripDetailModel = self.tripDetailModel;
+                        [self.navigationController pushViewController:vc animated:true];
+                    });
+                }
+                else
+                {
+                    TOAST_ERROR(weakSelf, error);
+                }
+            }];
+
         }
-        else
-        {
-            TOAST_ERROR(weakSelf, error);
-        }
-    }];
+        
+    } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    // todo
     
 }
 
