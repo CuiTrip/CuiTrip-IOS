@@ -113,6 +113,14 @@
     self.tableView.tableHeaderView = _segmentView;
     [self.view addSubview:_segmentView];     // 加上后不随tableview滑动
     
+//    if (item.hasNewMsg == false) {
+//        if (self.messageListModel.userType == kCustomer) {
+//            [self hideBadgeOnView:self.segmentView inIndex:0];
+//        } else{
+//            [self hideBadgeOnView:self.segmentView inIndex:1];
+//        }
+//    }
+
     
 //    [[self navigationController] tabBarItem].badgeValue = @"";
 //    [self navigationController].tabBarController.tabBar
@@ -357,10 +365,12 @@
 
             if ([item.orderId isEqualToString:orderId]) {
                 item.hasNewMsg = true;
-                if (self.messageListModel.userType == kCustomer) {
-                    [self showBadgeOnView:self.segmentView inIndex:0];
-                } else{
-                    [self showBadgeOnView:self.segmentView inIndex:1];
+                if (self.messageListModel.userType != [TPUser type]){
+                    if (self.messageListModel.userType == kCustomer) {
+                        [self showBadgeOnView:self.segmentView inIndex:0];
+                    } else{
+                        [self showBadgeOnView:self.segmentView inIndex:1];
+                    }
                 }
                 break;
             }
@@ -396,6 +406,7 @@
         }
     }
 }
+
 
 
 @end

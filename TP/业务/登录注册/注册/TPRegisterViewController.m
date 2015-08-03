@@ -131,6 +131,11 @@
     }];
 }
 - (IBAction)onGetVCode:(id)sender {
+    if (self.phoneTextField.text.length < 5)
+    {
+        TOAST(self , @"请填写正确手机号");
+        return;
+    }
 
     [self startTimer];
     [SMS_SDK getVerificationCodeBySMSWithPhone:self.phoneTextField.text zone:self.areaCode result:^(SMS_SDKError *error) {
@@ -141,7 +146,7 @@
         else
         {
             NSString* str = [NSString stringWithFormat:@"状态码：%zi ,错误描述：%@",error.errorCode,error.errorDescription];
-            TOAST(self , str);
+            TOAST(self , error.errorDescription);
         }
     }];
     

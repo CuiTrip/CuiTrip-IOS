@@ -200,7 +200,7 @@
                 v.servicePrice = self.discoveryDetailListModel.tripDetailItem.tripFee;
                 v.pic = self.discoveryDetailListModel.tripInfoItem.pics[0];
                 v.moneyType = self.discoveryDetailListModel.tripInfoItem.moneyType;
-                v.payCurrency = self.discoveryDetailListModel.tripInfoItem.moneyType;
+                v.payCurrency = @"CNY";
                 //v.insiderId = self.discoveryDetailListModel.tripf
                 [self.navigationController pushViewController:v animated:true];
             };
@@ -435,7 +435,7 @@
     }
     else if ([type isEqualToString:@"gotoFee"])
     {
-        TPPSFeeExplanView *view = [[TPPSFeeExplanView alloc] initWithFrame:CGRectMake(0.0f, self.view.frame.origin.y - 44.0f, kTPScreenWidth, kTPScreenHeight)];
+        TPPSFeeExplanView *view = [[TPPSFeeExplanView alloc] initWithFrame:CGRectMake(0.0f, 0, self.view.vzWidth, self.view.vzHeight)];
         [self.view addSubview:view];
 //        TPDiscoveryDetailContentViewController* vc = [TPDiscoveryDetailContentViewController new];
 //        vc.title = @"费用说明";

@@ -73,6 +73,9 @@
                                                           error:nil];
         if ([jsonObject isKindOfClass:[NSDictionary class]]) {
             self.extInfoDic = [NSDictionary dictionaryWithDictionary:jsonObject];
+            self.introduce = self.extInfoDic[@"introduce"];
+            self.introduceAuditStatus = self.extInfoDic[@"introduceAuditStatus"];
+            self.introduceFailedReason = self.extInfoDic[@"introduceFailedReason"];
         }
     }
     return self;
@@ -122,9 +125,9 @@
     item.pwd = self.pwd;
     item.city = self.city;
     item.extInfo = self.extInfo;
-//    item.introduce = self.introduce;
-//    item.introduceAuditStatus = self.introduceAuditStatus;
-//    item.introduceFailedReason = self.introduceFailedReason;
+    item.introduce = self.introduce;
+    item.introduceAuditStatus = self.introduceAuditStatus;
+    item.introduceFailedReason = self.introduceFailedReason;
     
     return item;
 }

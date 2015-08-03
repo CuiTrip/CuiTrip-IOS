@@ -71,19 +71,11 @@
     if (self) {
         
         //todo..
-//        TPPSLocationViewController* loc = __story(@"TPPSLocationViewController",@"tppslocation");
-//        loc.callback = ^(NSString* location,...){self.location = location;};
-        
-//        TPPSDescriptionViewController* detail = __story(@"TPPSDescriptionViewController", @"tppsdescription");
-//        detail.callback = ^(NSString* desc,...){ self.desc = desc;};
-        
-        
+
 //        TPPSPicsViewController* pics = __story(@"TPPSPicsViewController", @"tppspics");
 //        pics.callback = ^(NSArray* pics,...){self.pics = pics;};
         
-//        TPPSTitleViewController* title = __story(@"TPPSTitleViewController", @"tppstitle");
-//        title.callback = ^(NSString* title,...){self.titleStr =title;};
-        
+
         TPPSContentViewController* content = [TPPSContentViewController new];
         content.callback = ^(NSString* title,...){
             va_list ap;
@@ -148,13 +140,6 @@
             va_end(ap);
         
         };
-        
-//        TPPSFeeViewController* fee = __story(@"TPPSFeeViewController", @"tppsfee");
-//        fee.callback = ^(RACTuple* tuple,...){
-//            self.fee = tuple[0];
-//            self.moneyType = tuple[1];
-//        };
-        
         
         TPPSComfirmViewController* confirm = __story(@"TPPSConfirmViewController", @"tppsconfirm");
         confirm.complete = ^{

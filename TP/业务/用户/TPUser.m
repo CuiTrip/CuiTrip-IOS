@@ -136,26 +136,29 @@
 
 + (NSString* )introduce
 {
-    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
-        return @"";
-    }
-    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduce"];
+    return [TPUser sharedInstance].userItem.introduce;
+//    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
+//        return @"";
+//    }
+//    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduce"];
 }
 
 + (NSString* )introduceAuditStatus
 {
-    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
-        return @"";
-    }
-    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceAuditStatus"];
+    return [TPUser sharedInstance].userItem.introduceAuditStatus;
+//    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
+//        return @"";
+//    }
+//    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceAuditStatus"];
 }
 
 + (NSString* )introduceFailedReason
 {
-    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
-        return @"";
-    }
-    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceFailedReason"];
+    return [TPUser sharedInstance].userItem.introduceFailedReason;
+//    if ([TPUser sharedInstance].userItem.extInfoDic ==nil) {
+//        return @"";
+//    }
+//    return [[TPUser sharedInstance].userItem.extInfoDic objectForKey:@"introduceFailedReason"];
 }
 
 + (BOOL)isLogined

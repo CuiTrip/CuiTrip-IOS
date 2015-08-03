@@ -171,12 +171,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
-        if ([[TPUser introduce] isEqualToString:@""]||[TPUser introduce]==nil || [[TPUser introduce]isKindOfClass:[NSNull class]])
+        if ([[TPUser introduceAuditStatus] isEqualToString:@"1"])
         {
-            TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
-            vc.content = @"";
+            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
+            vc.content = [TPUser introduce];
             [self.navigationController pushViewController:vc animated:true];
-            
         }
         else if ([[TPUser introduceAuditStatus] isEqualToString:@"2"])
         {
@@ -185,13 +184,14 @@
             vc.content = [TPUser introduce];
             [self.navigationController pushViewController:vc animated:true];
         }
-        else if ([[TPUser introduceAuditStatus] isEqualToString:@"1"])
+        else if ([[TPUser introduce] isEqualToString:@""]||[TPUser introduce]==nil || [[TPUser introduce]isKindOfClass:[NSNull class]])
         {
-            TPPersonalPageDetailViewController* vc = __story(@"TPPersonalPageDetailViewController",@"tppersonaldetail");
-            vc.content = [TPUser introduce];
+            TPPersonalPageViewController* vc = __story(@"TPPersonalPageViewController",@"tppersonal");
+            vc.content = @"";
             [self.navigationController pushViewController:vc animated:true];
+            
         }
-        else{
+        else {
             TOAST(self, @"自我介绍页正在审核中");
         }
     }

@@ -234,8 +234,8 @@
     self.channel = @"wx";
     self.deviceIp = @"0.0.0.0";
     
-    [TPUtils getWANIPAddressWithCompletion:^(NSString *IPAddress) {
-        if ([weakSelf.deviceIp isEqualToString:IPAddress]) {
+//    [TPUtils getWANIPAddressWithCompletion:^(NSString *IPAddress) {
+//        if ([weakSelf.deviceIp isEqualToString:IPAddress]) {
             [TPUtils getLANIPAddressWithCompletion:^(NSString *IPAddress) {
                 weakSelf.deviceIp = IPAddress;
                 NSDictionary* dict = @{
@@ -246,8 +246,8 @@
                                        };
                 [self toPay:dict];
             }];
-        }
-    }];
+//        }
+//    }];
     
     
 }
