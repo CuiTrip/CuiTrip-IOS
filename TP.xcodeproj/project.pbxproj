@@ -3392,9 +3392,11 @@
 					454781641B14234F00B4A24D = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = W26Q3SJ776;
+						DevelopmentTeam = JQ66S25487;
 					};
 					4547817D1B14234F00B4A24D = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 448XX254EU;
 						TestTargetID = 454781641B14234F00B4A24D;
 					};
 				};
@@ -4022,7 +4024,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bei Bei Wu (LMV2XL69C7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -4034,6 +4037,7 @@
 				INFOPLIST_FILE = TPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TP.app/TP";
 			};
 			name = Debug;
@@ -4043,6 +4047,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Lu (USRH6F2N9Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -4050,6 +4056,7 @@
 				INFOPLIST_FILE = TPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TP.app/TP";
 			};
 			name = Release;

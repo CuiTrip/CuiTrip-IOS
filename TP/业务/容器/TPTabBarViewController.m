@@ -106,7 +106,9 @@
     self.tabBarController.selectedViewController.tabBarItem.badgeValue = @"2";
 }
 
-- (void)showBadgeOnItemIndex:(int)index{
+// self.window.rootViewController
+//TPTabBarViewController* rootViewController
+- (void)showBadgeOnItemIndex:(TPTabBarViewController*)root in:(int)index{
     [self removeBadgeOnItemIndex:index];
     UIView *badgeView = [[UIView alloc]init];
     badgeView.tag = 888 + index;
@@ -117,7 +119,7 @@
     CGFloat x = ceilf(percentX * tabFrame.size.width);
     CGFloat y = ceilf(0.1 * tabFrame.size.height);
     badgeView.frame = CGRectMake(x, y, 10, 10);
-    [self.tabBar addSubview:badgeView];
+    [root.tabBar addSubview:badgeView];
 }
 
 - (void)hideBadgeOnItemIndex:(int)index{
@@ -131,6 +133,5 @@
         }
     }
 }
-
 
 @end

@@ -102,7 +102,7 @@
 
     };
     
-    self.feeLabel.text = [TPUtils money:self.servicePrice WithType:@""];
+    self.feeLabel.text = [TPUtils money:self.servicePrice WithType:self.moneyType];
 
     SHOW_SPINNER(self);
     self.availabeDateModel.sid = self.sid;
@@ -191,6 +191,7 @@
     self.reserveModel.serviceDate = self.selectedServiceDate;
     self.reserveModel.buyerNum = self.selectedMaxNum;
     self.reserveModel.servicePrice = self.servicePrice;
+    self.reserveModel.moneyType = self.moneyType;
     self.reserveModel.payCurrency = self.payCurrency;
     
     SHOW_SPINNER(self);

@@ -18,9 +18,9 @@
 #define wx_appId @"wx97ebed4baebb4770"
 #define wx_appSecret @"740d9a43ee998b71a27fcf0830ccee7c"
 
-#define _API_ @"http://58.96.175.29:8080/baseservice/"
+//#define _API_ @"http://58.96.175.29:8080/baseservice/"
 //#define _API_ @"http://42.121.16.186:9999/baseservice/"
-//#define _API_ @"http://api.cuitrip.com/baseservice/"
+#define _API_ @"http://api.cuitrip.com/baseservice/"
 
 #define kTPCacheKey_User @"TP_USER"
 #define kTPCacheKey_APNS @"TPAPNS"

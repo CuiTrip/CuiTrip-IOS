@@ -124,9 +124,9 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    NSLog(@"%@",[[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
-                  stringByReplacingOccurrencesOfString: @">" withString: @""]
-                 stringByReplacingOccurrencesOfString: @" " withString: @""]);
+//    NSLog(@"deviceToken: %@",[[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
+//                  stringByReplacingOccurrencesOfString: @">" withString: @""]
+//                 stringByReplacingOccurrencesOfString: @" " withString: @""]);
     [[TPAPNS sharedInstance] updateDeviceToken:deviceToken];
 }
 

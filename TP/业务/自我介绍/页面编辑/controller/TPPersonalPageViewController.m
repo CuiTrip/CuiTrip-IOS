@@ -349,6 +349,7 @@ static const CGFloat defaultFontSize = 18.0f;
             TOAST(weakSelf, @"提交成功!");
     
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
                 [weakSelf.navigationController popToRootViewControllerAnimated:true];
             });
         }

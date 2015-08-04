@@ -38,9 +38,9 @@
     NSData *extInfoData = [extInfoDic dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *extInfoObj = [NSJSONSerialization JSONObjectWithData:extInfoData options:0 error:nil];
     NSLog(@"extInfoObj:%@",extInfoObj);
-//    self.introduce = extInfoObj[@"introduce"];
-//    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
-//    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
+    self.introduce = extInfoObj[@"introduce"];
+    self.introduceAuditStatus = extInfoObj[@"introduceAuditStatus"];
+    self.introduceFailedReason = extInfoObj[@"introduceFailedReason"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -73,6 +73,9 @@
                                                           error:nil];
         if ([jsonObject isKindOfClass:[NSDictionary class]]) {
             self.extInfoDic = [NSDictionary dictionaryWithDictionary:jsonObject];
+            self.introduce = self.extInfoDic[@"introduce"];
+            self.introduceAuditStatus = self.extInfoDic[@"introduceAuditStatus"];
+            self.introduceFailedReason = self.extInfoDic[@"introduceFailedReason"];
         }
     }
     return self;
@@ -122,9 +125,9 @@
     item.pwd = self.pwd;
     item.city = self.city;
     item.extInfo = self.extInfo;
-//    item.introduce = self.introduce;
-//    item.introduceAuditStatus = self.introduceAuditStatus;
-//    item.introduceFailedReason = self.introduceFailedReason;
+    item.introduce = self.introduce;
+    item.introduceAuditStatus = self.introduceAuditStatus;
+    item.introduceFailedReason = self.introduceFailedReason;
     
     return item;
 }

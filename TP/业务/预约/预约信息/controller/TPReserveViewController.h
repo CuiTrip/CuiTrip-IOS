@@ -28,6 +28,7 @@ typedef enum
 @property(nonatomic,strong)NSString* serviceName;
 @property(nonatomic,strong)NSString* serviceDate;
 @property(nonatomic,strong)NSString* servicePrice;
+@property(nonatomic,strong)NSString* moneyType;
 @property(nonatomic,strong)NSString* payCurrency;
 @property(nonatomic,assign)NSInteger maxNum;
 @property(nonatomic,strong)NSString* pic;

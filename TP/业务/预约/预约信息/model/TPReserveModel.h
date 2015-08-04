@@ -32,6 +32,7 @@
 @property(nonatomic,strong)NSString* buyerNum;
 @property(nonatomic,strong)NSString* servicePrice;
 @property(nonatomic,strong)NSString* serviceDate;
+@property(nonatomic,strong)NSString* moneyType;
 @property(nonatomic,strong)NSString* payCurrency;
 
 

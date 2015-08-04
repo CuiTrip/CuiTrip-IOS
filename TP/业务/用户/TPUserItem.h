@@ -57,9 +57,9 @@ typedef NS_ENUM(NSInteger, TPUserType)
 @property(nonatomic,strong)NSString* extInfo;
 @property(nonatomic,strong)NSDictionary* extInfoDic;
 
-//@property(nonatomic,strong)NSString* introduce;
-//@property(nonatomic,strong)NSString* introduceAuditStatus;
-//@property(nonatomic,strong)NSString* introduceFailedReason;
+@property(nonatomic,strong)NSString* introduce;
+@property(nonatomic,strong)NSString* introduceAuditStatus;
+@property(nonatomic,strong)NSString* introduceFailedReason;
 
 
 

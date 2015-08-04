@@ -33,6 +33,15 @@
         self.exitBtn.frame = CGRectMake((self.vzWidth - 44.0f) / 2, self.vzBottom - 53.0f, 44.0f, 44.0f);
         [self.exitBtn setImage:__image(@"trip_close.png") forState:UIControlStateNormal];
         [self.exitBtn addTarget:self action:@selector(removeView) forControlEvents:UIControlEventTouchUpInside];
+        //单个手指双击屏幕事件注册
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeView)];
+        // Set required taps and number of touches
+        [singleTap setNumberOfTapsRequired:1];
+        [singleTap setNumberOfTouchesRequired:1];
+        
+        // Add the gesture to the view
+        [self.backImageView addGestureRecognizer:singleTap];
+
         [self addSubview:self.exitBtn];
     }
     
