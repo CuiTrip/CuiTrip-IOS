@@ -22,7 +22,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
     //default:
-    return 1; 
+    return 1;
 
 }
 

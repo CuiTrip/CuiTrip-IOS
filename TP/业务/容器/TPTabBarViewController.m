@@ -91,6 +91,7 @@
     }
     
     [self setSelectedIndex:0];
+    [self setBadge];
 
 }
 

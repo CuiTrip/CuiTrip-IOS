@@ -1,0 +1,1 @@
+VZINSPECTOR_OTHER_LDFLAGS = -l"z" -framework "CoreGraphics" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"
